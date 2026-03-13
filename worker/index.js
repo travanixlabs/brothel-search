@@ -438,12 +438,31 @@ async function syncGirls(env, site) {
   const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
 
   const cards = await scrapeGirlsListing(site);
+  const activeNames = new Set(cards.map(c => c.name));
+
+  // Update originalSite for all existing girls
+  let siteChanged = false;
+  for (const g of existing) {
+    const shouldBe = activeNames.has(g.name) ? 'Exists' : '';
+    if (g.originalSite !== shouldBe) {
+      g.originalSite = shouldBe;
+      siteChanged = true;
+    }
+  }
+
   const allNew = cards.filter(c => {
     const url = `${site.girlsUrl}/${c.id}`;
     return !knownNames.has(c.name) && !knownUrls.has(url);
   });
 
   if (allNew.length === 0) {
+    // Still save if originalSite flags changed
+    if (siteChanged) {
+      data.girls = existing;
+      data.lastGirlsSync = new Date().toISOString();
+      await ghPut(env, site.jsonPath, data, sha,
+        `[${site.name}] Update originalSite status`);
+    }
     console.log(`[${site.name}] Girls sync: no new profiles`);
     return { added: 0, remaining: 0, names: [] };
   }
@@ -479,6 +498,7 @@ async function syncGirls(env, site) {
       entry.oldUrl = `${site.girlsUrl}/${card.id}`;
       entry.type = profile.profileType || '';
       entry.desc = profile.desc || '';
+      entry.originalSite = 'Exists';
 
       // Download & upload images
       const photos = [];

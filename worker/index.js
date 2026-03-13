@@ -429,7 +429,7 @@ async function loadData(env, site) {
 
 /* ── Sync: Girls ── */
 
-const MAX_NEW_PER_RUN = 2;
+const MAX_NEW_PER_RUN = 1;
 
 async function syncGirls(env, site) {
   const { data, sha } = await loadData(env, site);

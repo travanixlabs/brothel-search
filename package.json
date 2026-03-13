@@ -1,0 +1,9 @@
+{
+  "name": "brothel-search",
+  "private": true,
+  "scripts": {
+    "deploy": "cd worker && wrangler deploy",
+    "dev": "cd worker && wrangler dev",
+    "tail": "cd worker && wrangler tail"
+  }
+}

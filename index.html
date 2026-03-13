@@ -34,21 +34,65 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .section-tag{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold)}
 .section-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(28px,4vw,48px);letter-spacing:4px;text-transform:uppercase;color:#fff}
 
-/* Filter bar */
-.filter-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
-.filter-btn{background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all .3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
-.filter-btn:hover,.filter-btn.active{background:rgba(180,74,255,0.1);border-color:var(--accent);color:var(--accent)}
-.filter-count{font-size:11px;opacity:.6;margin-left:4px}
+/* Filter section */
+.filter-sort-bar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap}
+.filter-section{flex:1;min-width:0}
+.filter-section-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.filter-row{display:flex;gap:16px;flex-wrap:wrap}
+.sort-section-inline{flex-shrink:0}
+.sort-section-inline .filter-section-title{text-align:right}
+.sort-section-inline .sort-row{justify-content:flex-end}
 
-/* Sort bar */
-.sort-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;align-items:center}
-.sort-label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-right:4px}
-.sort-btn{background:none;border:1px solid rgba(255,255,255,0.06);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;cursor:pointer;transition:all .3s}
-.sort-btn:hover,.sort-btn.active{border-color:var(--accent);color:var(--accent)}
-.sort-dir{background:none;border:1px solid rgba(255,255,255,0.06);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;padding:6px 10px;cursor:pointer;transition:all .3s;margin-left:4px}
-.sort-dir:hover{border-color:var(--accent);color:var(--accent)}
-.sort-dir svg{width:14px;height:14px;vertical-align:middle;fill:currentColor;transition:transform .2s}
-.sort-dir.desc svg{transform:rotate(180deg)}
+/* Dropdown filter */
+.filter-dropdown{position:relative;min-width:200px;flex:1;max-width:320px}
+.filter-dropdown-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,rgba(201,149,44,0.25),rgba(201,149,44,0.1));border:1px solid rgba(201,149,44,0.4);color:#fff;font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .3s}
+.filter-dropdown-btn:hover{background:linear-gradient(135deg,rgba(201,149,44,0.35),rgba(201,149,44,0.15));border-color:var(--gold)}
+.filter-dropdown-btn.has-selection{border-color:var(--accent);background:linear-gradient(135deg,rgba(180,74,255,0.2),rgba(180,74,255,0.08))}
+.filter-dropdown-btn svg{width:16px;height:16px;fill:currentColor;transition:transform .2s;flex-shrink:0}
+.filter-dropdown-btn.open svg{transform:rotate(180deg)}
+.filter-dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;width:100%;background:#1a1a24;border:1px solid rgba(201,149,44,0.3);z-index:50;max-height:300px;overflow-y:auto;padding:8px 0}
+.filter-dropdown-panel.open{display:block}
+.filter-option{display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:1px;padding:9px 16px;cursor:pointer;transition:all .2s;text-align:left}
+.filter-option:hover{background:rgba(255,255,255,0.04);color:#fff}
+.filter-option.active{color:var(--accent)}
+.filter-checkbox{width:16px;height:16px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.filter-option.active .filter-checkbox{border-color:var(--accent);background:rgba(180,74,255,0.2)}
+.filter-option.active .filter-checkbox::after{content:'';width:8px;height:8px;background:var(--accent)}
+.filter-option-count{margin-left:auto;font-size:12px;color:var(--text-dim);opacity:.6}
+
+/* Clear all button */
+.clear-all-btn{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .3s;white-space:nowrap;align-self:flex-end}
+.clear-all-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* More filters */
+.more-filters-section{margin-bottom:24px}
+.more-filters-toggle{display:flex;align-items:center;justify-content:center;gap:8px;background:none;border:1px solid rgba(201,149,44,0.3);color:var(--gold);font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all .3s;margin:0 auto 16px}
+.more-filters-toggle:hover{background:rgba(201,149,44,0.08);border-color:var(--gold)}
+.more-filters-toggle svg{width:14px;height:14px;fill:currentColor;transition:transform .2s}
+.more-filters-toggle.open svg{transform:rotate(180deg)}
+.more-filters-panel{display:none;width:95%;margin:0 auto}
+.more-filters-panel.open{display:block}
+.range-filter{margin-bottom:20px;padding:0 8px}
+.range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.range-filter-label span:first-child{color:var(--text-dim)}
+.range-filter-label span:last-child{color:var(--accent);font-weight:600}
+.range-slider{position:relative;height:36px;display:flex;align-items:center}
+.range-slider-track{position:absolute;left:0;right:0;height:4px;background:rgba(255,255,255,0.08);border-radius:2px}
+.range-slider-fill{position:absolute;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:2px}
+.range-slider input[type=range]{position:absolute;width:100%;height:36px;-webkit-appearance:none;appearance:none;background:none;pointer-events:none;margin:0}
+.range-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8a2be2);border:2px solid #fff;cursor:pointer;pointer-events:auto;box-shadow:0 0 8px rgba(180,74,255,0.4);position:relative;z-index:2}
+.range-slider input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8a2be2);border:2px solid #fff;cursor:pointer;pointer-events:auto;box-shadow:0 0 8px rgba(180,74,255,0.4)}
+.range-slider input[type=range]::-webkit-slider-runnable-track{height:4px;background:transparent}
+.range-slider input[type=range]::-moz-range-track{height:4px;background:transparent}
+.range-filters-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px 32px;width:100%}
+@media(max-width:600px){.range-filters-grid{grid-template-columns:1fr}}
+
+/* Sort section */
+.sort-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.sort-dir-btn{display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(201,149,44,0.25),rgba(201,149,44,0.1));border:1px solid rgba(201,149,44,0.4);color:#fff;font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .3s;min-width:120px;justify-content:center}
+.sort-dir-btn:hover{background:linear-gradient(135deg,rgba(201,149,44,0.35),rgba(201,149,44,0.15));border-color:var(--gold)}
+.sort-dir-btn svg{width:16px;height:16px;fill:currentColor;transition:transform .2s}
+.sort-dir-btn.desc svg{transform:rotate(180deg)}
 
 /* Grid */
 .girls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
@@ -148,9 +192,22 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 </div>
 </div>
 
-<div class="filter-bar" id="venueFilter"></div>
-<div class="filter-bar" id="countryFilter"></div>
-<div class="sort-bar" id="sortBar"></div>
+<div class="filter-sort-bar">
+<div class="filter-section">
+<div class="filter-section-title">Filter By</div>
+<div class="filter-row" id="filterRow"></div>
+</div>
+<div class="sort-section-inline">
+<div class="filter-section-title">Sort By</div>
+<div class="sort-row" id="sortRow"></div>
+</div>
+</div>
+<div class="more-filters-section">
+<button class="more-filters-toggle" id="moreFiltersToggle">More Filters <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
+<div class="more-filters-panel" id="moreFiltersPanel">
+<div class="range-filters-grid" id="rangeFiltersGrid"></div>
+</div>
+</div>
 <div class="result-count" id="resultCount"></div>
 <div class="girls-grid" id="girlsGrid"><div class="loading">Loading profiles...</div></div>
 </section>
@@ -175,9 +232,29 @@ const VENUES = [
 let allGirls = [];
 let activeVenue = null;
 let activeCountry = null;
+let activeLabels = [];
+let rangeFilters = {};
+let rangeDefaults = {};
 let activeSort = 'name';
 let sortDir = 'asc';
 let searchQuery = '';
+
+const RANGE_DEFS = [
+  { key: 'age', label: 'Age', field: 'age', type: 'num' },
+  { key: 'body', label: 'Body', field: 'body', type: 'num' },
+  { key: 'height', label: 'Height', field: 'height', type: 'num', suffix: 'cm' },
+  { key: 'cup', label: 'Cup', field: 'cup', type: 'cup' },
+  { key: 'val1', label: '30 Min', field: 'val1', type: 'num', prefix: '$' },
+  { key: 'val2', label: '45 Min', field: 'val2', type: 'num', prefix: '$' },
+  { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' },
+  { key: 'startDate', label: 'Start Date', field: 'startDate', type: 'date' },
+  { key: 'lastRostered', label: 'Last Rostered', field: 'lastRostered', type: 'date' }
+];
+const CUP_ORDER = ['A','B','C','D','DD','E','F','G','H'];
+function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); return i >= 0 ? i : -1; }
+function numToCup(n) { return CUP_ORDER[n] || ''; }
+function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
+function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 
 async function loadProfiles() {
   const results = await Promise.allSettled(
@@ -190,49 +267,97 @@ async function loadProfiles() {
   );
   allGirls = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
   renderFilters();
+  renderRangeFilters();
   renderGrid();
 }
 
+function closeAllDropdowns(except) {
+  document.querySelectorAll('.filter-dropdown-btn.open').forEach(b => { if (b !== except) b.classList.remove('open') });
+  document.querySelectorAll('.filter-dropdown-panel.open').forEach(p => { if (p.previousElementSibling !== except) p.classList.remove('open') });
+}
+document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdown') && !e.target.closest('.sort-dir-btn')) closeAllDropdowns() });
+
+function buildDropdown(id, label, options, selected) {
+  const hasSel = selected.length > 0 && selected[0] !== '';
+  let selLabel = label;
+  if (hasSel) {
+    const names = selected.map(s => { const o = options.find(x => x.value === s); return o ? o.label : s }).filter(Boolean);
+    selLabel = names.length <= 2 ? names.join(', ') : names.slice(0, 2).join(', ') + ' +' + (names.length - 2);
+  }
+  let html = `<div class="filter-dropdown" id="${id}">`;
+  html += `<button class="filter-dropdown-btn${hasSel ? ' has-selection' : ''}">${selLabel}<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>`;
+  html += `<div class="filter-dropdown-panel">`;
+  options.forEach(o => {
+    const active = selected.includes(o.value);
+    html += `<button class="filter-option${active ? ' active' : ''}" data-value="${o.value}"><span class="filter-checkbox"></span>${o.label}${o.count != null ? '<span class="filter-option-count">' + o.count + '</span>' : ''}</button>`;
+  });
+  html += `</div></div>`;
+  return html;
+}
+
 function renderFilters() {
-  // Venue filter
-  const vf = document.getElementById('venueFilter');
-  const venueCounts = {};
-  VENUES.forEach(v => { venueCounts[v.id] = allGirls.filter(g => g.venue === v.id).length });
+  const fr = document.getElementById('filterRow');
+  const base = activeVenue ? allGirls.filter(g => g.venue === activeVenue) : allGirls;
 
-  let vhtml = `<button class="filter-btn${activeVenue === null ? ' active' : ''}" data-venue="">All<span class="filter-count">(${allGirls.length})</span></button>`;
-  VENUES.forEach(v => {
-    vhtml += `<button class="filter-btn${activeVenue === v.id ? ' active' : ''}" data-venue="${v.id}">${v.name}<span class="filter-count">(${venueCounts[v.id] || 0})</span></button>`;
-  });
-  vf.innerHTML = vhtml;
-  vf.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.onclick = () => { activeVenue = btn.dataset.venue || null; renderFilters(); renderGrid(); };
-  });
+  // Venue options
+  const venueOpts = [];
+  VENUES.forEach(v => { venueOpts.push({ value: v.id, label: v.name, count: allGirls.filter(g => g.venue === v.id).length }) });
+  const venueSelected = activeVenue ? [activeVenue] : [];
 
-  // Country filter
-  const cf = document.getElementById('countryFilter');
-  const filtered = activeVenue ? allGirls.filter(g => g.venue === activeVenue) : allGirls;
+  // Country options
   const countryCounts = {};
-  filtered.forEach(g => {
-    const countries = Array.isArray(g.country) ? g.country : (g.country ? [g.country] : []);
-    countries.forEach(c => { countryCounts[c] = (countryCounts[c] || 0) + 1 });
+  base.forEach(g => {
+    (Array.isArray(g.country) ? g.country : (g.country ? [g.country] : [])).forEach(c => { countryCounts[c] = (countryCounts[c] || 0) + 1 });
   });
-  const sortedCountries = Object.keys(countryCounts).sort((a, b) => countryCounts[b] - countryCounts[a]);
+  const countryOpts = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b)).map(c => ({ value: c, label: c, count: countryCounts[c] }));
+  const countrySelected = activeCountry ? [activeCountry] : [];
 
-  if (sortedCountries.length > 1) {
-    let chtml = `<button class="filter-btn${activeCountry === null ? ' active' : ''}" data-country="">All Nationalities</button>`;
-    sortedCountries.forEach(c => {
-      chtml += `<button class="filter-btn${activeCountry === c ? ' active' : ''}" data-country="${c}">${c}<span class="filter-count">(${countryCounts[c]})</span></button>`;
-    });
-    cf.innerHTML = chtml;
-    cf.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.onclick = () => { activeCountry = btn.dataset.country || null; renderGrid(); renderFilters(); };
-    });
-  } else {
-    cf.innerHTML = '';
+  // Label options
+  const labelCounts = {};
+  base.forEach(g => { (g.labels || []).forEach(l => { labelCounts[l] = (labelCounts[l] || 0) + 1 }) });
+  const labelOpts = Object.keys(labelCounts).sort((a, b) => a.localeCompare(b)).map(l => ({ value: l, label: l, count: labelCounts[l] }));
+
+  const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
+  const hasFilters = activeVenue || activeCountry || activeLabels.length || hasRangeActive;
+  fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
+    + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
+    + buildDropdown('ddLabels', 'Services', labelOpts, activeLabels)
+    + (hasFilters ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
+
+  // Bind dropdown toggles
+  fr.querySelectorAll('.filter-dropdown-btn').forEach(btn => {
+    btn.onclick = e => { e.stopPropagation(); closeAllDropdowns(btn); btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open') };
+  });
+
+  // Venue options
+  document.querySelectorAll('#ddVenue .filter-option').forEach(opt => {
+    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); };
+  });
+
+  // Country options
+  document.querySelectorAll('#ddCountry .filter-option').forEach(opt => {
+    opt.onclick = e => { e.stopPropagation(); activeCountry = activeCountry === opt.dataset.value ? null : opt.dataset.value; renderFilters(); renderGrid(); };
+  });
+
+  // Label options (multi-select)
+  document.querySelectorAll('#ddLabels .filter-option').forEach(opt => {
+    opt.onclick = e => {
+      e.stopPropagation();
+      const v = opt.dataset.value;
+      const idx = activeLabels.indexOf(v);
+      if (idx >= 0) activeLabels.splice(idx, 1); else activeLabels.push(v);
+      renderFilters(); renderGrid();
+    };
+  });
+
+  // Clear all filters
+  const clearBtn = document.getElementById('clearAllBtn');
+  if (clearBtn) {
+    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.length = 0; rangeFilters = {}; renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
-  // Sort bar
-  const sb = document.getElementById('sortBar');
+  // Sort row (dropdown + direction toggle)
+  const sr = document.getElementById('sortRow');
   const sorts = [
     { id: 'name', label: 'Name' },
     { id: 'age', label: 'Age' },
@@ -245,13 +370,87 @@ function renderFilters() {
     { id: 'startDate', label: 'Start Date' },
     { id: 'lastRostered', label: 'Last Rostered' }
   ];
-  sb.innerHTML = '<span class="sort-label">Sort</span>' + sorts.map(s =>
-    `<button class="sort-btn${activeSort === s.id ? ' active' : ''}" data-sort="${s.id}">${s.label}</button>`
-  ).join('') + `<button class="sort-dir ${sortDir}" id="sortDirBtn" title="${sortDir === 'asc' ? 'Ascending' : 'Descending'}"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> ${sortDir === 'asc' ? 'ASC' : 'DESC'}</button>`;
-  sb.querySelectorAll('.sort-btn').forEach(btn => {
-    btn.onclick = () => { activeSort = btn.dataset.sort; renderFilters(); renderGrid(); };
+  const activeSortLabel = sorts.find(s => s.id === activeSort)?.label || 'Name';
+  const sortOpts = sorts.map(s => ({ value: s.id, label: s.label }));
+  sr.innerHTML = buildDropdown('ddSort', activeSortLabel, sortOpts, [activeSort])
+    + `<button class="sort-dir-btn ${sortDir}" id="sortDirBtn" title="${sortDir === 'asc' ? 'Ascending' : 'Descending'}"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>${sortDir === 'asc' ? 'ASC' : 'DESC'}</button>`;
+
+  // Sort dropdown toggle
+  const sortBtn = sr.querySelector('.filter-dropdown-btn');
+  sortBtn.onclick = e => { e.stopPropagation(); closeAllDropdowns(sortBtn); sortBtn.classList.toggle('open'); sortBtn.nextElementSibling.classList.toggle('open') };
+
+  // Sort options
+  document.querySelectorAll('#ddSort .filter-option').forEach(opt => {
+    opt.onclick = e => { e.stopPropagation(); activeSort = opt.dataset.value; closeAllDropdowns(); renderFilters(); renderGrid(); };
   });
+
+  // Direction toggle
   document.getElementById('sortDirBtn').onclick = () => { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; renderFilters(); renderGrid(); };
+}
+
+function renderRangeFilters() {
+  const grid = document.getElementById('rangeFiltersGrid');
+  grid.innerHTML = '';
+  RANGE_DEFS.forEach(def => {
+    let vals = [];
+    allGirls.forEach(g => {
+      const raw = g[def.field];
+      if (!raw && raw !== 0) return;
+      if (def.type === 'num') { const n = parseFloat(raw); if (!isNaN(n)) vals.push(n); }
+      else if (def.type === 'cup') { const n = cupToNum(raw); if (n >= 0) vals.push(n); }
+      else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n)) vals.push(n); }
+    });
+    if (vals.length < 2) return;
+    const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
+    if (dataMin === dataMax) return;
+    rangeDefaults[def.key] = { min: dataMin, max: dataMax };
+    const rf = rangeFilters[def.key] || { min: dataMin, max: dataMax };
+    if (rf.min < dataMin) rf.min = dataMin;
+    if (rf.max > dataMax) rf.max = dataMax;
+
+    const fmt = v => {
+      if (def.type === 'cup') return numToCup(v);
+      if (def.type === 'date') return numToDate(v);
+      return (def.prefix || '') + Math.round(v) + (def.suffix || '');
+    };
+
+    const isActive = rf.min > dataMin || rf.max < dataMax;
+    const wrap = document.createElement('div');
+    wrap.className = 'range-filter';
+    wrap.innerHTML = `
+      <div class="range-filter-label"><span>${def.label}</span><span>${fmt(rf.min)} – ${fmt(rf.max)}</span></div>
+      <div class="range-slider">
+        <div class="range-slider-track"></div>
+        <div class="range-slider-fill" id="fill_${def.key}"></div>
+        <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.min}" step="${def.type === 'date' ? 86400000 : 1}" data-handle="min" data-key="${def.key}">
+        <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.max}" step="${def.type === 'date' ? 86400000 : 1}" data-handle="max" data-key="${def.key}">
+      </div>`;
+    grid.appendChild(wrap);
+
+    // Position fill bar
+    const fillPct = v => ((v - dataMin) / (dataMax - dataMin)) * 100;
+    const fill = wrap.querySelector(`#fill_${def.key}`);
+    fill.style.left = fillPct(rf.min) + '%';
+    fill.style.right = (100 - fillPct(rf.max)) + '%';
+
+    // Bind inputs
+    wrap.querySelectorAll('input[type=range]').forEach(inp => {
+      const update = () => {
+        const handle = inp.dataset.handle;
+        let v = parseFloat(inp.value);
+        const other = wrap.querySelector(`input[data-handle="${handle === 'min' ? 'max' : 'min'}"]`);
+        if (handle === 'min' && v > parseFloat(other.value)) { v = parseFloat(other.value); inp.value = v; }
+        if (handle === 'max' && v < parseFloat(other.value)) { v = parseFloat(other.value); inp.value = v; }
+        if (!rangeFilters[def.key]) rangeFilters[def.key] = { min: dataMin, max: dataMax };
+        rangeFilters[def.key][handle] = v;
+        fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
+        fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
+        wrap.querySelector('.range-filter-label span:last-child').textContent = fmt(rangeFilters[def.key].min) + ' \u2013 ' + fmt(rangeFilters[def.key].max);
+      };
+      inp.addEventListener('input', update);
+      inp.addEventListener('change', () => { update(); renderFilters(); renderGrid(); });
+    });
+  });
 }
 
 function getFiltered() {
@@ -260,6 +459,25 @@ function getFiltered() {
   if (activeCountry) list = list.filter(g => {
     const countries = Array.isArray(g.country) ? g.country : (g.country ? [g.country] : []);
     return countries.includes(activeCountry);
+  });
+  if (activeLabels.length) list = list.filter(g => {
+    const gl = g.labels || [];
+    return activeLabels.every(l => gl.includes(l));
+  });
+  // Range filters
+  RANGE_DEFS.forEach(def => {
+    const rf = rangeFilters[def.key];
+    if (!rf) return;
+    list = list.filter(g => {
+      const raw = g[def.field];
+      if (!raw && raw !== 0) return true; // no data = pass through
+      let v;
+      if (def.type === 'num') v = parseFloat(raw);
+      else if (def.type === 'cup') v = cupToNum(raw);
+      else if (def.type === 'date') v = dateToNum(raw);
+      if (isNaN(v) || v < 0) return true;
+      return v >= rf.min && v <= rf.max;
+    });
   });
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
@@ -337,6 +555,23 @@ function renderGrid() {
         <div class="card-hover-line"></div>
       </div>`;
     el.onclick = () => showProfile(g);
+    if (g.photos && g.photos.length > 1) {
+      let hoverInterval = null, hoverIdx = 0;
+      const thumb = () => el.querySelector('.card-thumb');
+      el.addEventListener('mouseenter', () => {
+        hoverIdx = 0;
+        hoverInterval = setInterval(() => {
+          hoverIdx = (hoverIdx + 1) % g.photos.length;
+          const img = thumb();
+          if (img) img.src = g.photos[hoverIdx];
+        }, 2000);
+      });
+      el.addEventListener('mouseleave', () => {
+        clearInterval(hoverInterval);
+        const img = thumb();
+        if (img) img.src = g.photos[0];
+      });
+    }
     grid.appendChild(el);
   });
 }
@@ -356,32 +591,46 @@ function showProfile(g) {
       <div class="profile-gallery">
         <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
         <div class="profile-thumbs">
-          ${photos.map((p, i) => `<img src="${p}" alt="" class="${i === 0 ? 'active' : ''}" onclick="document.getElementById('profileMainImg').src='${p}';document.querySelectorAll('.profile-thumbs img').forEach(t=>t.classList.remove('active'));this.classList.add('active')">`).join('')}
+          ${photos.map((p, i) => `<img src="${p}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
       </div>
       <div>
         <div class="profile-detail">
+          ${detailRow('Country', countries)}
           ${detailRow('Age', g.age)}
           ${detailRow('Body', g.body)}
           ${detailRow('Height', g.height ? g.height + ' cm' : '')}
           ${detailRow('Cup', g.cup)}
-          ${detailRow('Country', countries)}
-          ${detailRow('Experience', g.exp)}
-          ${detailRow('Language', g.lang)}
-          ${detailRow('Type', g.type)}
           ${detailRow('30 min', g.val1 ? '$' + g.val1 : '')}
           ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
-          ${g.special ? detailRow('Special', g.special) : ''}
-          ${g.startDate ? detailRow('Start Date', g.startDate) : ''}
-          ${g.lastRostered ? detailRow('Last Rostered', g.lastRostered) : ''}
+          ${detailRow('Start Date', g.startDate)}
+          ${detailRow('Last Rostered', g.lastRostered)}
+          ${detailRow('Experience', g.exp)}
+          ${detailRow('Special', g.special)}
+          ${detailRow('Language', g.lang)}
+          ${detailRow('Type', g.type)}
+          ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">' + g.oldUrl + '</a></span></div>' : ''}
         </div>
-        ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
         ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
       </div>
     </div>`;
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  // Auto-rotate profile photos
+  clearInterval(window._profileRotate);
+  window._profilePhotos = photos;
+  window._profilePhotoIdx = 0;
+  if (photos.length > 1) {
+    window._profileRotate = setInterval(() => {
+      window._profilePhotoIdx = (window._profilePhotoIdx + 1) % photos.length;
+      const img = document.getElementById('profileMainImg');
+      if (img) img.src = photos[window._profilePhotoIdx];
+      document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === window._profilePhotoIdx));
+    }, 2000);
+  }
 }
 
 function detailRow(label, value) {
@@ -389,7 +638,16 @@ function detailRow(label, value) {
   return `<div class="profile-detail-row"><span>${label}</span><span>${value}</span></div>`;
 }
 
+function selectProfilePhoto(idx) {
+  window._profilePhotoIdx = idx;
+  const photos = window._profilePhotos || [];
+  const img = document.getElementById('profileMainImg');
+  if (img && photos[idx]) img.src = photos[idx];
+  document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === idx));
+}
+
 function closeProfile() {
+  clearInterval(window._profileRotate);
   document.getElementById('profileOverlay').classList.remove('active');
   document.body.style.overflow = '';
 }
@@ -416,6 +674,12 @@ window.addEventListener('scroll', () => {
   btt.classList.toggle('visible', window.scrollY > 400);
 });
 btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// More filters toggle
+document.getElementById('moreFiltersToggle').onclick = function() {
+  this.classList.toggle('open');
+  document.getElementById('moreFiltersPanel').classList.toggle('open');
+};
 
 // Init
 loadProfiles();

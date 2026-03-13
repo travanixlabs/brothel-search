@@ -14,7 +14,7 @@
 
 const REPO = 'travanixlabs/brothel-search';
 const GH_API = 'https://api.github.com';
-const COMBINED_PATH = 'Profiles/combined.json';
+const COMBINED_PATH = 'Profiles/Ginza Empire/ginzaempire.json';
 
 const GIRLS_URL = 'https://479ginza.com.au/Girls';
 const ROSTER_URL = 'https://479ginza.com.au/Roster';
@@ -447,7 +447,7 @@ async function syncGirls(env) {
       for (let i = 0; i < profile.images.length; i++) {
         try {
           const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-          const path = `Profiles/${card.name}/${card.name}_${i + 1}.${ext}`;
+          const path = `Profiles/Ginza Empire/${card.name}/${card.name}_${i + 1}.${ext}`;
           const ghUrl = await uploadImage(env, profile.images[i], path);
           photos.push(ghUrl);
           await new Promise(r => setTimeout(r, 500)); // delay between uploads

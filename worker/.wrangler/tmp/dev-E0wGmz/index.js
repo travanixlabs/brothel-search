@@ -468,6 +468,23 @@ async function syncCalendar(env) {
     }
   }
   calendar._published.sort();
+  const now2 = getAEDTDate();
+  now2.setDate(now2.getDate() - 2);
+  const cutoff = fmtDate(now2);
+  for (const key of Object.keys(calendar)) {
+    if (key.startsWith("_")) continue;
+    const sched = calendar[key];
+    if (typeof sched !== "object") continue;
+    for (const dateStr of Object.keys(sched)) {
+      if (dateStr < cutoff) {
+        delete sched[dateStr];
+        changed = true;
+      }
+    }
+  }
+  const before = calendar._published.length;
+  calendar._published = calendar._published.filter((d) => d >= cutoff);
+  if (calendar._published.length !== before) changed = true;
   if (!changed) {
     console.log("Calendar sync: no changes needed");
     return true;

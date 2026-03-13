@@ -521,6 +521,29 @@ async function syncCalendar(env) {
   }
   calendar._published.sort();
 
+  // Prune dates older than 2 days (AEDT)
+  const now2 = getAEDTDate();
+  now2.setDate(now2.getDate() - 2);
+  const cutoff = fmtDate(now2);
+
+  // Remove old dates from each girl's schedule
+  for (const key of Object.keys(calendar)) {
+    if (key.startsWith('_')) continue; // skip _published, _bookings
+    const sched = calendar[key];
+    if (typeof sched !== 'object') continue;
+    for (const dateStr of Object.keys(sched)) {
+      if (dateStr < cutoff) {
+        delete sched[dateStr];
+        changed = true;
+      }
+    }
+  }
+
+  // Remove old dates from _published
+  const before = calendar._published.length;
+  calendar._published = calendar._published.filter(d => d >= cutoff);
+  if (calendar._published.length !== before) changed = true;
+
   if (!changed) {
     console.log('Calendar sync: no changes needed');
     return true;

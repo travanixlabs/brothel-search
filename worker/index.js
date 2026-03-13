@@ -2,7 +2,7 @@
  * Cloudflare Worker — Brothel Search Data Sync
  *
  * Scrapes 479ginza.com.au directly and maintains a combined JSON file
- * at profiles/combined.json in the brothel-search repo.
+ * at profiles/Ginza Empire/ginzaempire.json in the brothel-search repo.
  *
  * Cron schedule:
  *   9:00 UTC  (7pm AEST) — sync girls (new profiles)

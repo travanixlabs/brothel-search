@@ -1,12 +1,13 @@
 /*
  * Cloudflare Worker — Brothel Search Data Sync
  *
- * Scrapes 479ginza.com.au directly and maintains a combined JSON file
- * at profiles/ginzaempire/ginzaempire.json in the brothel-search repo.
+ * Scrapes ginza sites and maintains JSON files in the brothel-search repo:
+ *   profiles/ginzaempire/ginzaempire.json  — from 479ginza.com.au
+ *   profiles/ginzaclub/ginzaclub.json      — from www.ginzaclub.com.au
  *
  * Cron schedule:
- *   9:00 UTC  (7pm AEST) — sync girls (new profiles)
- *   10:00 UTC (8pm AEST) — sync calendar (roster)
+ *   9:00 UTC  (7pm AEST) — sync girls (both sites)
+ *   10:00 UTC (8pm AEST) — sync calendar (both sites)
  *
  * Secrets required (set via Cloudflare dashboard or `wrangler secret put`):
  *   GITHUB_TOKEN — GitHub personal access token (contents read/write scope)
@@ -14,12 +15,30 @@
 
 const REPO = 'travanixlabs/brothel-search';
 const GH_API = 'https://api.github.com';
-const COMBINED_PATH = 'profiles/ginzaempire/ginzaempire.json';
-
-const GIRLS_URL = 'https://479ginza.com.au/Girls';
-const ROSTER_URL = 'https://479ginza.com.au/Roster';
-
 const UA = 'Mozilla/5.0 (compatible; BrothelSearchBot/1.0)';
+
+/* ── Site configs ── */
+
+const SITES = {
+  empire: {
+    name: 'Ginza Empire',
+    baseUrl: 'https://479ginza.com.au',
+    girlsUrl: 'https://479ginza.com.au/Girls',
+    rosterUrl: 'https://479ginza.com.au/Roster',
+    jsonPath: 'profiles/ginzaempire/ginzaempire.json',
+    imgPrefix: 'profiles/ginzaempire',
+    rosterFormat: 'empire', // "Happy Thursday 13th of March"
+  },
+  club: {
+    name: 'Ginza Club',
+    baseUrl: 'https://www.ginzaclub.com.au',
+    girlsUrl: 'https://www.ginzaclub.com.au/Girls',
+    rosterUrl: 'https://www.ginzaclub.com.au/Roster',
+    jsonPath: 'profiles/ginzaclub/ginzaclub.json',
+    imgPrefix: 'profiles/ginzaclub',
+    rosterFormat: 'club', // "Wow Friday 13/3/2026"
+  },
+};
 
 /* ── GitHub helpers ── */
 
@@ -75,7 +94,8 @@ function fmtDate(d) {
 }
 
 function parseTime12to24(timeStr) {
-  const m = timeStr.match(/^(\d{1,2})(?::(\d{2}))?([ap]m)$/i);
+  // Handle both "10:30am" and "10.30am" formats
+  const m = timeStr.match(/^(\d{1,2})(?:[:.](\d{2}))?([ap]m)$/i);
   if (!m) return null;
   let h = parseInt(m[1], 10);
   const min = m[2] ? parseInt(m[2], 10) : 0;
@@ -99,7 +119,7 @@ function resolveDate(day, monthName) {
   return fmtDate(new Date(year, month, day));
 }
 
-/* ── Girls scraping ── */
+/* ── Girls scraping (shared) ── */
 
 const COUNTRY_PREFIX = {
   J: 'Japanese', K: 'Korean', T: 'Thai', C: 'Chinese',
@@ -168,6 +188,9 @@ function parseGirlTitle(raw) {
   }
   clean = clean.replace(restrictRe, '').trim();
 
+  // Remove "Diamond Class" / "Gold Class" etc.
+  clean = clean.replace(/\b\w+\s+Class\b/gi, '').trim();
+
   clean = clean.replace(/^(New\s+)+/i, '').trim();
 
   const words = clean.split(/\s+/).filter(Boolean);
@@ -194,8 +217,8 @@ function parseGirlTitle(raw) {
   return { name, country, special };
 }
 
-async function scrapeGirlsListing() {
-  const resp = await fetch(GIRLS_URL, { headers: { 'User-Agent': UA } });
+async function scrapeGirlsListing(site) {
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Girls listing fetch failed: ${resp.status}`);
   const html = await resp.text();
 
@@ -214,7 +237,7 @@ async function scrapeGirlsListing() {
 
     const age    = (cardHtml.match(/Age:(\d+)/)        || [])[1] || '';
     const body   = (cardHtml.match(/Body Size:(\d+)/)   || [])[1] || '';
-    const cup    = (cardHtml.match(/Cup Size:([\w\-]+)/) || [])[1] || '';
+    const cup    = (cardHtml.match(/Cup Size:([\w\-+]+)/) || [])[1] || '';
     const height = (cardHtml.match(/Height:(\d+)/)       || [])[1] || '';
 
     cards.push({ id, ...parsed, age, body, cup, height });
@@ -222,8 +245,8 @@ async function scrapeGirlsListing() {
   return cards;
 }
 
-async function scrapeGirlProfile(id) {
-  const resp = await fetch(`${GIRLS_URL}/${id}`, { headers: { 'User-Agent': UA } });
+async function scrapeGirlProfile(site, id) {
+  const resp = await fetch(`${site.girlsUrl}/${id}`, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Profile fetch ${resp.status} for /Girls/${id}`);
   const html = await resp.text();
 
@@ -250,7 +273,7 @@ async function scrapeGirlProfile(id) {
                 || html.match(/Experience:<\/label>\s*([^<]+)/i);
   const profileExp = expMatch ? expMatch[1].replace(/&nbsp;/g, ' ').trim() : '';
 
-  // Images: source URLs from 479ginza.com.au
+  // Images: source URLs
   const imgRe = /<a[^>]+href="(\/data\/upload\/[^"]+\.\w+)"[^>]*>/gi;
   const images = [];
   let im;
@@ -258,7 +281,7 @@ async function scrapeGirlProfile(id) {
     const src = im[1];
     if (/s\.\w+$/i.test(src)) continue;
     if (/\.(jpe?g|png|webp)$/i.test(src)) {
-      images.push('https://479ginza.com.au' + src);
+      images.push(site.baseUrl + src);
     }
   }
 
@@ -325,8 +348,8 @@ async function uploadImage(env, imageUrl, repoPath) {
 
 /* ── Roster scraping ── */
 
-async function scrapeRoster() {
-  const resp = await fetch(ROSTER_URL, { headers: { 'User-Agent': UA } });
+async function scrapeRoster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
@@ -339,24 +362,42 @@ async function scrapeRoster() {
 
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-  const dayHeaderRe = /Happy\s+\w+\s+(\d+)\w*\s+of\s+(\w+)/i;
-  const entryRe = /(\w[\w .]*?)\s+(\d{1,2}(?::\d{2})?[ap]m)-(\d{1,2}(?::\d{2})?[ap]m)/i;
+  // Empire: "Happy Thursday 13th of March"
+  const empireHeaderRe = /Happy\s+\w+\s+(\d+)\w*\s+of\s+(\w+)/i;
+  // Club: "Wow Friday 13/3/2026" or "Wow  Friday 13/3/2026"
+  const clubHeaderRe = /Wow\s+\w+\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/i;
+  // Entry: name with time range (supports both : and . in time)
+  const entryRe = /(\w[\w .]*?)\s+(\d{1,2}(?:[:.]?\d{2})?[ap]m)-(\d{1,2}(?:[:.]?\d{2})?[ap]m)/i;
 
   const result = {};
   let currentDate = null;
 
   for (const line of lines) {
-    const dayMatch = line.match(dayHeaderRe);
-    if (dayMatch) {
-      currentDate = resolveDate(parseInt(dayMatch[1], 10), dayMatch[2]);
-      continue;
+    // Try empire format first, then club format
+    if (site.rosterFormat === 'empire') {
+      const dayMatch = line.match(empireHeaderRe);
+      if (dayMatch) {
+        currentDate = resolveDate(parseInt(dayMatch[1], 10), dayMatch[2]);
+        continue;
+      }
+    } else {
+      const dayMatch = line.match(clubHeaderRe);
+      if (dayMatch) {
+        const day = parseInt(dayMatch[1], 10);
+        const month = parseInt(dayMatch[2], 10);
+        const year = parseInt(dayMatch[3], 10);
+        currentDate = year + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+        continue;
+      }
     }
     if (!currentDate) continue;
 
     const entryMatch = line.match(entryRe);
     if (entryMatch) {
       const rawName = entryMatch[1].trim();
-      const nameParts = rawName.split(/\s+/);
+      // Remove "Diamond Class", "Gold Class" etc.
+      const cleanedName = rawName.replace(/\b\w+\s+Class\b/gi, '').trim();
+      const nameParts = cleanedName.split(/\s+/);
       const name = nameParts[nameParts.length - 1].replace(/\./g, '');
       if (name.toLowerCase() === 'open') continue;
 
@@ -372,15 +413,15 @@ async function scrapeRoster() {
   return result;
 }
 
-/* ── Load existing combined.json (or default) ── */
+/* ── Load existing JSON (or default) ── */
 
-async function loadCombined(env) {
+async function loadData(env, site) {
   try {
-    const { content, sha } = await ghGet(env, COMBINED_PATH);
-    return { combined: content, sha };
+    const { content, sha } = await ghGet(env, site.jsonPath);
+    return { data: content, sha };
   } catch {
     return {
-      combined: { girls: [], calendar: {}, lastGirlsSync: null, lastCalendarSync: null },
+      data: { girls: [], calendar: {}, lastGirlsSync: null, lastCalendarSync: null },
       sha: null,
     };
   }
@@ -388,41 +429,37 @@ async function loadCombined(env) {
 
 /* ── Sync: Girls ── */
 
-// Cloudflare Workers free tier: 50 subrequests per invocation.
-// Each girl needs ~1 profile fetch + N image uploads + SHA checks.
-// Process max 2 new girls per run to stay within limits.
 const MAX_NEW_PER_RUN = 2;
 
-async function syncGirls(env) {
-  const { combined, sha } = await loadCombined(env);
-  const existing = combined.girls || [];
+async function syncGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
   const knownNames = new Set(existing.map(g => g.name));
   const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
 
-  const cards = await scrapeGirlsListing();
+  const cards = await scrapeGirlsListing(site);
   const allNew = cards.filter(c => {
-    const url = `https://479ginza.com.au/Girls/${c.id}`;
+    const url = `${site.girlsUrl}/${c.id}`;
     return !knownNames.has(c.name) && !knownUrls.has(url);
   });
 
   if (allNew.length === 0) {
-    console.log('Girls sync: no new profiles');
+    console.log(`[${site.name}] Girls sync: no new profiles`);
     return { added: 0, remaining: 0, names: [] };
   }
 
-  // Batch: only process up to MAX_NEW_PER_RUN per invocation
   const newCards = allNew.slice(0, MAX_NEW_PER_RUN);
   const remaining = allNew.length - newCards.length;
 
-  console.log(`Girls sync: ${allNew.length} new, processing ${newCards.length} this run (${remaining} remaining)`);
+  console.log(`[${site.name}] Girls sync: ${allNew.length} new, processing ${newCards.length} (${remaining} remaining)`);
   const now = new Date().toISOString();
   const todayStr = now.split('T')[0];
   const addedNames = [];
 
   for (const card of newCards) {
     try {
-      await new Promise(r => setTimeout(r, 1000)); // polite delay
-      const profile = await scrapeGirlProfile(card.id);
+      await new Promise(r => setTimeout(r, 1000));
+      const profile = await scrapeGirlProfile(site, card.id);
 
       const entry = {
         name: card.name,
@@ -439,20 +476,21 @@ async function syncGirls(env) {
       entry.exp = profile.profileExp || 'Inexperienced';
       entry.startDate = todayStr;
       entry.lang = profile.profileLang || (card.country.length ? LANG_FROM_COUNTRY[card.country[0]] || '' : '');
-      entry.oldUrl = `https://479ginza.com.au/Girls/${card.id}`;
+      entry.oldUrl = `${site.girlsUrl}/${card.id}`;
       entry.type = profile.profileType || '';
       entry.desc = profile.desc || '';
-      // Download & upload images to profiles/{Name}/{Name}_1.jpeg, etc.
+
+      // Download & upload images
       const photos = [];
       for (let i = 0; i < profile.images.length; i++) {
         try {
           const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-          const path = `profiles/ginzaempire/${card.name}/${card.name}_${i + 1}.${ext}`;
+          const path = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
           const ghUrl = await uploadImage(env, profile.images[i], path);
           photos.push(ghUrl);
-          await new Promise(r => setTimeout(r, 500)); // delay between uploads
+          await new Promise(r => setTimeout(r, 500));
         } catch (e) {
-          console.error(`Image error ${card.name} #${i + 1}: ${e.message}`);
+          console.error(`[${site.name}] Image error ${card.name} #${i + 1}: ${e.message}`);
         }
       }
       entry.photos = photos;
@@ -465,18 +503,17 @@ async function syncGirls(env) {
 
       existing.push(entry);
       addedNames.push(card.name);
-      console.log(`Girls sync: added ${card.name} (${profile.images.length} photos)`);
+      console.log(`[${site.name}] Added ${card.name} (${profile.images.length} photos)`);
     } catch (e) {
-      console.error(`Failed to process ${card.name}: ${e.message}`);
+      console.error(`[${site.name}] Failed to process ${card.name}: ${e.message}`);
     }
   }
 
   if (addedNames.length > 0) {
-    combined.girls = existing;
-    combined.lastGirlsSync = now;
-    await ghPut(env, COMBINED_PATH, combined, sha,
-      `Auto-sync new girls: ${addedNames.join(', ')}`);
-    console.log(`Girls sync: combined.json updated with ${addedNames.length} new profile(s)`);
+    data.girls = existing;
+    data.lastGirlsSync = now;
+    await ghPut(env, site.jsonPath, data, sha,
+      `[${site.name}] Auto-sync new girls: ${addedNames.join(', ')}`);
   }
 
   return { added: addedNames.length, remaining, names: addedNames };
@@ -484,16 +521,16 @@ async function syncGirls(env) {
 
 /* ── Sync: Calendar ── */
 
-async function syncCalendar(env) {
-  const scraped = await scrapeRoster();
+async function syncCalendar(env, site) {
+  const scraped = await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
-    console.log('Roster scrape: no data found');
+    console.log(`[${site.name}] Roster scrape: no data found`);
     return false;
   }
 
-  const { combined, sha } = await loadCombined(env);
-  const calendar = combined.calendar || {};
-  const validNames = new Set((combined.girls || []).map(g => g.name));
+  const { data, sha } = await loadData(env, site);
+  const calendar = data.calendar || {};
+  const validNames = new Set((data.girls || []).map(g => g.name));
 
   let changed = false;
 
@@ -526,9 +563,8 @@ async function syncCalendar(env) {
   now2.setDate(now2.getDate() - 2);
   const cutoff = fmtDate(now2);
 
-  // Remove old dates from each girl's schedule
   for (const key of Object.keys(calendar)) {
-    if (key.startsWith('_')) continue; // skip _published, _bookings
+    if (key.startsWith('_')) continue;
     const sched = calendar[key];
     if (typeof sched !== 'object') continue;
     for (const dateStr of Object.keys(sched)) {
@@ -539,24 +575,23 @@ async function syncCalendar(env) {
     }
   }
 
-  // Remove old dates from _published
   const before = calendar._published.length;
   calendar._published = calendar._published.filter(d => d >= cutoff);
   if (calendar._published.length !== before) changed = true;
 
   if (!changed) {
-    console.log('Calendar sync: no changes needed');
+    console.log(`[${site.name}] Calendar sync: no changes needed`);
     return true;
   }
 
   const now = new Date().toISOString();
-  combined.calendar = calendar;
-  combined.lastCalendarSync = now;
+  data.calendar = calendar;
+  data.lastCalendarSync = now;
 
-  await ghPut(env, COMBINED_PATH, combined, sha,
-    'Auto-sync roster from 479ginza.com.au');
+  await ghPut(env, site.jsonPath, data, sha,
+    `[${site.name}] Auto-sync roster`);
 
-  console.log('Calendar sync: combined.json updated');
+  console.log(`[${site.name}] Calendar sync: updated`);
   return true;
 }
 
@@ -565,30 +600,26 @@ async function syncCalendar(env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const json = h => new Response(JSON.stringify(h), { headers: { 'Content-Type': 'application/json' } });
 
-    // Manual triggers: POST /sync-girls, POST /sync-calendar, POST /sync-all
-    // POST /sync-girls — sync one batch of new girls
+    // Empire endpoints
     if (url.pathname === '/sync-girls' && request.method === 'POST') {
-      try {
-        const result = await syncGirls(env);
-        return new Response(JSON.stringify(result), {
-          headers: { 'Content-Type': 'application/json' },
-        });
-      } catch (e) {
-        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
-      }
+      try { return json(await syncGirls(env, SITES.empire)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.empire) }); }
+      catch (e) { return json({ error: e.message }); }
     }
 
-    // POST /sync-calendar — sync roster
-    if (url.pathname === '/sync-calendar' && request.method === 'POST') {
-      try {
-        const result = await syncCalendar(env);
-        return new Response(JSON.stringify({ success: result }), {
-          headers: { 'Content-Type': 'application/json' },
-        });
-      } catch (e) {
-        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
-      }
+    // Club endpoints
+    if (url.pathname === '/sync-club-girls' && request.method === 'POST') {
+      try { return json(await syncGirls(env, SITES.club)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-club-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.club) }); }
+      catch (e) { return json({ error: e.message }); }
     }
 
     return new Response('Not found', { status: 404 });
@@ -597,17 +628,23 @@ export default {
   async scheduled(event, env, ctx) {
     const hour = new Date(event.scheduledTime).getUTCHours();
 
-    // 9:00 UTC = 7pm AEST — girls sync (new profiles)
+    // 9:00 UTC = 7pm AEST — girls sync (both sites)
     if (hour === 9) {
       ctx.waitUntil(
-        syncGirls(env).catch(e => console.error('Girls sync error:', e))
+        syncGirls(env, SITES.empire).catch(e => console.error('[Empire] Girls sync error:', e))
+      );
+      ctx.waitUntil(
+        syncGirls(env, SITES.club).catch(e => console.error('[Club] Girls sync error:', e))
       );
     }
 
-    // 10:00 UTC = 8pm AEST — calendar sync
+    // 10:00 UTC = 8pm AEST — calendar sync (both sites)
     if (hour === 10) {
       ctx.waitUntil(
-        syncCalendar(env).catch(e => console.error('Calendar sync error:', e))
+        syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e))
+      );
+      ctx.waitUntil(
+        syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e))
       );
     }
   },

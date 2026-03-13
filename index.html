@@ -462,7 +462,7 @@ function getFiltered() {
   });
   if (activeLabels.length) list = list.filter(g => {
     const gl = g.labels || [];
-    return activeLabels.every(l => gl.includes(l));
+    return activeLabels.every(l => gl.some(g => g.toLowerCase() === l.toLowerCase()));
   });
   // Range filters
   RANGE_DEFS.forEach(def => {

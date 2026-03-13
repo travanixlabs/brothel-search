@@ -1881,9 +1881,28 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-03-13T08:16:18.470Z"
+    },
+    {
+      "name": "Aya",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "body": "7",
+      "height": "160",
+      "cup": "C",
+      "exp": "Inexperienced",
+      "startDate": "2026-03-13",
+      "lang": "Japanese, English",
+      "oldUrl": "https://www.ginzaclub.com.au/Girls/473",
+      "type": "",
+      "desc": "",
+      "photos": [],
+      "labels": [],
+      "lastModified": "2026-03-13T08:16:24.881Z"
     }
   ],
   "calendar": {},
-  "lastGirlsSync": "2026-03-13T08:16:18.470Z",
+  "lastGirlsSync": "2026-03-13T08:16:24.881Z",
   "lastCalendarSync": null
 }

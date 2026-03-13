@@ -273,15 +273,21 @@ async function scrapeGirlProfile(site, id) {
                 || html.match(/Experience:<\/label>\s*([^<]+)/i);
   const profileExp = expMatch ? expMatch[1].replace(/&nbsp;/g, ' ').trim() : '';
 
-  // Images: source URLs
+  // Images: source URLs + extract earliest upload date
   const imgRe = /<a[^>]+href="(\/data\/upload\/[^"]+\.\w+)"[^>]*>/gi;
   const images = [];
+  let earliestUpload = null;
   let im;
   while ((im = imgRe.exec(html)) !== null) {
     const src = im[1];
     if (/s\.\w+$/i.test(src)) continue;
     if (/\.(jpe?g|png|webp)$/i.test(src)) {
       images.push(site.baseUrl + src);
+      const dm = src.match(/\/data\/upload\/(\d{4})-(\d{2})\//);
+      if (dm) {
+        const d = `${dm[1]}-${dm[2]}-01`;
+        if (!earliestUpload || d < earliestUpload) earliestUpload = d;
+      }
     }
   }
 
@@ -305,7 +311,7 @@ async function scrapeGirlProfile(site, id) {
     }
   }
 
-  return { val1, val2, val3, images, desc, profileHeight, profileType, profileLang, profileExp };
+  return { val1, val2, val3, images, desc, profileHeight, profileType, profileLang, profileExp, earliestUpload };
 }
 
 /* ── Image upload ── */
@@ -493,7 +499,7 @@ async function syncGirls(env, site) {
       };
       if (card.special) entry.special = card.special;
       entry.exp = profile.profileExp || 'Inexperienced';
-      entry.startDate = todayStr;
+      entry.startDate = profile.earliestUpload || todayStr;
       entry.lang = profile.profileLang || (card.country.length ? LANG_FROM_COUNTRY[card.country[0]] || '' : '');
       entry.oldUrl = `${site.girlsUrl}/${card.id}`;
       entry.type = profile.profileType || '';

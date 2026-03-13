@@ -388,6 +388,11 @@ async function loadCombined(env) {
 
 /* ── Sync: Girls ── */
 
+// Cloudflare Workers free tier: 50 subrequests per invocation.
+// Each girl needs ~1 profile fetch + N image uploads + SHA checks.
+// Process max 2 new girls per run to stay within limits.
+const MAX_NEW_PER_RUN = 2;
+
 async function syncGirls(env) {
   const { combined, sha } = await loadCombined(env);
   const existing = combined.girls || [];
@@ -395,17 +400,21 @@ async function syncGirls(env) {
   const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
 
   const cards = await scrapeGirlsListing();
-  const newCards = cards.filter(c => {
+  const allNew = cards.filter(c => {
     const url = `https://479ginza.com.au/Girls/${c.id}`;
     return !knownNames.has(c.name) && !knownUrls.has(url);
   });
 
-  if (newCards.length === 0) {
+  if (allNew.length === 0) {
     console.log('Girls sync: no new profiles');
-    return { added: 0, names: [] };
+    return { added: 0, remaining: 0, names: [] };
   }
 
-  console.log(`Girls sync: ${newCards.length} new profile(s) found`);
+  // Batch: only process up to MAX_NEW_PER_RUN per invocation
+  const newCards = allNew.slice(0, MAX_NEW_PER_RUN);
+  const remaining = allNew.length - newCards.length;
+
+  console.log(`Girls sync: ${allNew.length} new, processing ${newCards.length} this run (${remaining} remaining)`);
   const now = new Date().toISOString();
   const todayStr = now.split('T')[0];
   const addedNames = [];
@@ -470,7 +479,7 @@ async function syncGirls(env) {
     console.log(`Girls sync: combined.json updated with ${addedNames.length} new profile(s)`);
   }
 
-  return { added: addedNames.length, names: addedNames };
+  return { added: addedNames.length, remaining, names: addedNames };
 }
 
 /* ── Sync: Calendar ── */
@@ -531,6 +540,37 @@ async function syncCalendar(env) {
 /* ── Export ── */
 
 export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    // Manual triggers: POST /sync-girls, POST /sync-calendar, POST /sync-all
+    // POST /sync-girls — sync one batch of new girls
+    if (url.pathname === '/sync-girls' && request.method === 'POST') {
+      try {
+        const result = await syncGirls(env);
+        return new Response(JSON.stringify(result), {
+          headers: { 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
+      }
+    }
+
+    // POST /sync-calendar — sync roster
+    if (url.pathname === '/sync-calendar' && request.method === 'POST') {
+      try {
+        const result = await syncCalendar(env);
+        return new Response(JSON.stringify({ success: result }), {
+          headers: { 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
+      }
+    }
+
+    return new Response('Not found', { status: 404 });
+  },
+
   async scheduled(event, env, ctx) {
     const hour = new Date(event.scheduledTime).getUTCHours();
 

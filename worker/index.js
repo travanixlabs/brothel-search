@@ -568,6 +568,19 @@ async function syncCalendar(env, site) {
     }
   }
 
+  // Update lastRostered on each girl profile
+  const girlsByName = {};
+  for (const g of (data.girls || [])) girlsByName[g.name] = g;
+  for (const [dateStr, entries] of Object.entries(scraped)) {
+    for (const { name } of entries) {
+      const girl = girlsByName[name];
+      if (girl && (!girl.lastRostered || dateStr > girl.lastRostered)) {
+        girl.lastRostered = dateStr;
+        changed = true;
+      }
+    }
+  }
+
   // Auto-publish scraped dates
   if (!Array.isArray(calendar._published)) calendar._published = [];
   for (const dateStr of Object.keys(scraped)) {

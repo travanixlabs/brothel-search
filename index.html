@@ -370,7 +370,13 @@ function renderFilters() {
   // Label options
   const labelCounts = {};
   base.forEach(g => { (g.labels || []).forEach(l => { labelCounts[l] = (labelCounts[l] || 0) + 1 }) });
-  const labelOpts = Object.keys(labelCounts).sort((a, b) => a.localeCompare(b)).map(l => ({ value: l, label: l, count: labelCounts[l] }));
+  const labelOpts = Object.keys(labelCounts).sort((a, b) => {
+    const aActive = activeLabels.include.includes(a) || activeLabels.exclude.includes(a);
+    const bActive = activeLabels.include.includes(b) || activeLabels.exclude.includes(b);
+    if (aActive && !bActive) return -1;
+    if (!aActive && bActive) return 1;
+    return a.localeCompare(b);
+  }).map(l => ({ value: l, label: l, count: labelCounts[l] }));
 
   fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
     + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)

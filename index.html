@@ -22,7 +22,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 @keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
 /* Search */
-.search-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;padding:8px 14px;width:160px;outline:none;transition:border-color .3s}
+.search-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;padding:8px 14px;outline:none;transition:border-color .3s}
 .search-input:focus{border-color:var(--accent)}
 .search-input::placeholder{color:var(--text-dim)}
 
@@ -83,8 +83,10 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .range-slider input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8a2be2);border:2px solid #fff;cursor:pointer;pointer-events:auto;box-shadow:0 0 8px rgba(180,74,255,0.4)}
 .range-slider input[type=range]::-webkit-slider-runnable-track{height:4px;background:transparent}
 .range-slider input[type=range]::-moz-range-track{height:4px;background:transparent}
+.text-filters-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px 32px;width:100%;margin-bottom:24px}
+.text-filters-grid .search-input{width:100%;box-sizing:border-box}
 .range-filters-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px 32px;width:100%}
-@media(max-width:600px){.range-filters-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.text-filters-grid{grid-template-columns:1fr}.range-filters-grid{grid-template-columns:1fr}}
 
 /* Sort section */
 .sort-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
@@ -158,7 +160,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 @media(max-width:768px){
   nav{padding:0 16px;height:60px}
   .logo{font-size:16px;letter-spacing:3px}
-  .search-input{width:140px;font-size:13px;padding:6px 10px}
+  .search-input{font-size:13px;padding:6px 10px}
   .section{padding:80px 16px;padding-top:100px}
   .section-title{font-size:24px;letter-spacing:2px}
   .girls-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
@@ -201,7 +203,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <div class="more-filters-section">
 <button class="more-filters-toggle" id="moreFiltersToggle">More Filters <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
 <div class="more-filters-panel" id="moreFiltersPanel">
-<div class="more-filters-dropdowns" id="moreFiltersDropdowns" style="margin-bottom:20px;display:flex;gap:16px;flex-wrap:wrap"></div>
+<div class="text-filters-grid" id="moreFiltersDropdowns"></div>
 <div class="range-filters-grid" id="rangeFiltersGrid"></div>
 </div>
 </div>

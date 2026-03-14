@@ -438,7 +438,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     if (pb) { val1 = pb[1]; val2 = pb[2]; val3 = pb[3]; }
   }
 
-  // Images: filter to those matching girl's name in filename
+  // Images: filter to those matching girl's name, or fallback to non-portfolio images
   const imgRe = /(https?:\/\/citybrothel\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
   const allImages = [];
   let im;
@@ -458,10 +458,31 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     if (slugName && !nameVariants.includes(slugName)) nameVariants.push(slugName);
   }
 
-  const girlImgs = allImages.filter(url => {
+  let girlImgs = allImages.filter(url => {
     const filename = url.split('/').pop().toLowerCase();
     return nameVariants.some(v => filename.includes(v));
   });
+
+  // Fallback: if no name-matched images, grab non-portfolio images (hash filenames, not other girls)
+  // Portfolio thumbnails use -746x548 or -160x160 and belong to other profiles
+  if (girlImgs.length === 0) {
+    // Collect all known girl-name prefixes from portfolio thumbs to exclude them
+    const portfolioNames = new Set();
+    allImages.forEach(url => {
+      const fn = url.split('/').pop();
+      const nameMatch = fn.match(/^([A-Z][a-z]+)-/);
+      if (nameMatch) portfolioNames.add(nameMatch[1].toLowerCase());
+    });
+    girlImgs = allImages.filter(url => {
+      const fn = url.split('/').pop().toLowerCase();
+      if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信')) return false;
+      if (/-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
+      // Skip images with other girl names (portfolio images)
+      const namePrefix = fn.match(/^([a-z]+)-/);
+      if (namePrefix && portfolioNames.has(namePrefix[1]) && !nameVariants.includes(namePrefix[1])) return false;
+      return true;
+    });
+  }
 
   // Group by base, prefer -scaled, then highest resolution
   const groups = {};

@@ -283,10 +283,28 @@ async function scrapeProfile(profileUrl, girlNameHint) {
     if (slugName && !nameVariants.includes(slugName)) nameVariants.push(slugName);
   }
 
-  const girlImages = allImages.filter(url => {
+  let girlImages = allImages.filter(url => {
     const filename = url.split('/').pop().toLowerCase();
     return nameVariants.some(v => filename.includes(v));
   });
+
+  // Fallback: if no name-matched images, grab non-portfolio images (hash filenames)
+  if (girlImages.length === 0) {
+    const portfolioNames = new Set();
+    allImages.forEach(url => {
+      const fn = url.split('/').pop();
+      const nameMatch = fn.match(/^([A-Z][a-z]+)-/);
+      if (nameMatch) portfolioNames.add(nameMatch[1].toLowerCase());
+    });
+    girlImages = allImages.filter(url => {
+      const fn = url.split('/').pop().toLowerCase();
+      if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信')) return false;
+      if (/-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
+      const namePrefix = fn.match(/^([a-z]+)-/);
+      if (namePrefix && portfolioNames.has(namePrefix[1]) && !nameVariants.includes(namePrefix[1])) return false;
+      return true;
+    });
+  }
 
   // Group images by base name, prefer -scaled, fallback to highest resolution
   const imageGroups = {};

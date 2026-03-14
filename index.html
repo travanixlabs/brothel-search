@@ -289,6 +289,27 @@ function closeAllDropdowns(except) {
 }
 document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdown') && !e.target.closest('.sort-dir-btn')) closeAllDropdowns() });
 
+function hasAnyFilter() {
+  const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
+  const hasTextFilter = Object.values(textFilters).some(v => v);
+  return activeVenue || activeCountry || activeLabels.include.length || activeLabels.exclude.length || hasRangeActive || hasTextFilter;
+}
+
+function updateClearBtn() {
+  const fr = document.getElementById('filterRow');
+  const existing = document.getElementById('clearAllBtn');
+  if (hasAnyFilter() && !existing) {
+    const btn = document.createElement('button');
+    btn.className = 'clear-all-btn';
+    btn.id = 'clearAllBtn';
+    btn.textContent = 'Clear All';
+    btn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.include.length = 0; activeLabels.exclude.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    fr.appendChild(btn);
+  } else if (!hasAnyFilter() && existing) {
+    existing.remove();
+  }
+}
+
 function buildDropdown(id, label, options, selected) {
   const hasSel = selected.length > 0 && selected[0] !== '';
   let selLabel = label;
@@ -351,13 +372,10 @@ function renderFilters() {
   base.forEach(g => { (g.labels || []).forEach(l => { labelCounts[l] = (labelCounts[l] || 0) + 1 }) });
   const labelOpts = Object.keys(labelCounts).sort((a, b) => a.localeCompare(b)).map(l => ({ value: l, label: l, count: labelCounts[l] }));
 
-  const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
-  const hasTextFilter = Object.values(textFilters).some(v => v);
-  const hasFilters = activeVenue || activeCountry || activeLabels.include.length || activeLabels.exclude.length || hasRangeActive || hasTextFilter;
   fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
     + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
-    + (hasFilters ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
+    + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');
@@ -373,7 +391,7 @@ function renderFilters() {
   mfd.querySelectorAll('.search-input').forEach(inp => {
     inp.addEventListener('input', e => {
       clearTimeout(searchTimer);
-      searchTimer = setTimeout(() => { textFilters[inp.dataset.tf] = e.target.value.trim(); renderGrid(); }, 200);
+      searchTimer = setTimeout(() => { textFilters[inp.dataset.tf] = e.target.value.trim(); renderGrid(); updateClearBtn(); }, 200);
     });
   });
 

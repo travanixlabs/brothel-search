@@ -1,13 +1,14 @@
 /*
  * Cloudflare Worker — Brothel Search Data Sync
  *
- * Scrapes ginza sites and maintains JSON files in the brothel-search repo:
+ * Scrapes sites and maintains JSON files in the brothel-search repo:
  *   profiles/ginzaempire/ginzaempire.json  — from 479ginza.com.au
  *   profiles/ginzaclub/ginzaclub.json      — from www.ginzaclub.com.au
+ *   profiles/kyoto206/kyoto206.json        — from citybrothel.com.au
  *
  * Cron schedule:
- *   9:00 UTC  (7pm AEST) — sync girls (both sites)
- *   10:00 UTC (8pm AEST) — sync calendar (both sites)
+ *   9:00 UTC  (7pm AEST) — sync girls (all sites)
+ *   10:00 UTC (8pm AEST) — sync calendar (ginza sites)
  *
  * Secrets required (set via Cloudflare dashboard or `wrangler secret put`):
  *   GITHUB_TOKEN — GitHub personal access token (contents read/write scope)
@@ -37,6 +38,14 @@ const SITES = {
     jsonPath: 'profiles/ginzaclub/ginzaclub.json',
     imgPrefix: 'profiles/ginzaclub',
     rosterFormat: 'club', // "Wow Friday 13/3/2026"
+  },
+  kyoto206: {
+    name: 'Kyoto 206',
+    baseUrl: 'https://citybrothel.com.au',
+    girlsUrl: 'https://citybrothel.com.au/our-girls/',
+    jsonPath: 'profiles/kyoto206/kyoto206.json',
+    imgPrefix: 'profiles/kyoto206',
+    siteType: 'wordpress', // different scraping logic
   },
 };
 
@@ -134,6 +143,11 @@ const LANG_FROM_COUNTRY = {
   Vietnamese: 'Vietnamese, Limited English',
   Malaysian: 'English',
   Singaporean: 'English',
+  Indonesian: 'Indonesian, Limited English',
+  Taiwanese: 'Mandarin, Limited English',
+  'Hong Konger': 'Cantonese, Limited English',
+  Latina: 'English',
+  Eurasian: 'English',
 };
 
 const LABEL_PATTERNS = [
@@ -314,6 +328,279 @@ async function scrapeGirlProfile(site, id) {
   }
 
   return { val1, val2, val3, images, desc, profileHeight, profileType, profileLang, profileExp, earliestUpload };
+}
+
+/* ── WordPress (Kyoto 206) scraping ── */
+
+const WP_COUNTRY_MAP = {
+  japan: ['Japanese'], korea: ['Korean'], china: ['Chinese'],
+  thailand: ['Thai'], vietnam: ['Vietnamese'], indonesia: ['Indonesian'],
+  malaysia: ['Malaysian'], singapore: ['Singaporean'], taiwan: ['Taiwanese'],
+  'hong kong': ['Hong Konger'], latina: ['Latina'], eurasian: ['Eurasian'],
+};
+
+function decodeHtmlEntities(str) {
+  return str
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&nbsp;/g, ' ');
+}
+
+function parseWpPageTitle(html) {
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+  if (!titleMatch) return { name: '', country: [], special: '' };
+
+  let titleText = decodeHtmlEntities(titleMatch[1])
+    .replace(/\s*[–—|\-]\s*Kyoto\s*206.*$/i, '').trim();
+
+  let special = '';
+  const parenParts = [];
+  titleText = titleText.replace(/[（(]([^）)]+)[）)]/g, (_, inner) => {
+    parenParts.push(inner.trim());
+    return '';
+  }).trim();
+
+  let name = titleText.replace(/\s+/g, ' ').trim();
+  if (name === name.toUpperCase() && name.length > 1) {
+    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  }
+  if (!name) return { name: '', country: [], special: '' };
+
+  let country = [];
+  for (const pp of parenParts) {
+    const lower = pp.toLowerCase();
+    if (/porn\s*star|new|retired/i.test(lower)) {
+      special = special ? `${special}, ${pp}` : pp;
+      continue;
+    }
+    if (lower.includes('mix')) {
+      for (const mp of lower.split(/\s*mix\s*/)) {
+        const c = WP_COUNTRY_MAP[mp.trim()];
+        if (c) country.push(...c);
+        else if (mp.trim()) country.push(mp.trim().charAt(0).toUpperCase() + mp.trim().slice(1));
+      }
+    } else if (WP_COUNTRY_MAP[lower]) {
+      country.push(...WP_COUNTRY_MAP[lower]);
+    } else if (lower) {
+      const found = Object.keys(WP_COUNTRY_MAP).find(k => lower.includes(k));
+      if (found) country.push(...WP_COUNTRY_MAP[found]);
+      else country.push(lower.charAt(0).toUpperCase() + lower.slice(1));
+    }
+  }
+  return { name, country, special };
+}
+
+async function scrapeWpListing(site) {
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`WP listing fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const linkRe = /href="(https?:\/\/citybrothel\.com\.au\/project\/[^"]+)"/gi;
+  const seen = new Set();
+  const urls = [];
+  let m;
+  while ((m = linkRe.exec(html)) !== null) {
+    const url = m[1].replace(/\/$/, '') + '/';
+    if (!seen.has(url)) { seen.add(url); urls.push(url); }
+  }
+  return urls;
+}
+
+async function scrapeWpProfile(site, profileUrl, girlName) {
+  const resp = await fetch(profileUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`WP profile fetch ${resp.status} for ${profileUrl}`);
+  const html = await resp.text();
+
+  const titleInfo = parseWpPageTitle(html);
+  const name = girlName || titleInfo.name;
+
+  const ageMatch = html.match(/Age:\s*(\d+)/i);
+  const age = ageMatch ? ageMatch[1] : '';
+
+  const heightMatch = html.match(/Height:\s*(1[3-9]\d|20\d)/i) || html.match(/(1[4-8]\d)\s*cm/i);
+  const height = heightMatch ? heightMatch[1] : '';
+
+  const cupMatch = html.match(/(?:Cup|Bust)\s*(?:Size)?\s*:?\s*([A-HJ-Z](?:-[A-HJ-Z])?)\b/i);
+  const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
+
+  let val1 = '', val2 = '', val3 = '';
+  const p30 = html.match(/30\s*min\w*\s*\$?\s*(\d+)/i);
+  const p45 = html.match(/45\s*min\w*\s*\$?\s*(\d+)/i);
+  const p60 = html.match(/60\s*min\w*\s*\$?\s*(\d+)/i);
+  if (p30) val1 = p30[1];
+  if (p45) val2 = p45[1];
+  if (p60) val3 = p60[1];
+  if (!val1) {
+    const pb = html.match(/\$(\d+)\s*(?:\/|,|\s)\s*\$(\d+)\s*(?:\/|,|\s)\s*\$(\d+)/);
+    if (pb) { val1 = pb[1]; val2 = pb[2]; val3 = pb[3]; }
+  }
+
+  // Images: filter to those matching girl's name in filename
+  const imgRe = /(https?:\/\/citybrothel\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
+  const allImages = [];
+  let im;
+  while ((im = imgRe.exec(html)) !== null) allImages.push(im[1]);
+
+  const nameLower = name.toLowerCase();
+  const nameVariants = [nameLower];
+  // Try name variants for fuzzy matching (e.g. Bela -> Bella)
+  for (let i = 1; i < nameLower.length; i++) {
+    if (!'aeiou'.includes(nameLower[i])) {
+      nameVariants.push(nameLower.slice(0, i + 1) + nameLower[i] + nameLower.slice(i + 1));
+    }
+  }
+  const slugMatch = profileUrl.match(/\/project\/([^/]+)/);
+  if (slugMatch) {
+    const slugName = decodeURIComponent(slugMatch[1]).split('-')[0].toLowerCase();
+    if (slugName && !nameVariants.includes(slugName)) nameVariants.push(slugName);
+  }
+
+  const girlImgs = allImages.filter(url => {
+    const filename = url.split('/').pop().toLowerCase();
+    return nameVariants.some(v => filename.includes(v));
+  });
+
+  // Group by base, prefer -scaled, then highest resolution
+  const groups = {};
+  for (const imgUrl of girlImgs) {
+    const base = imgUrl.replace(/-scaled\.(jpe?g|png|webp)$/i, '.$1')
+                       .replace(/-\d+x\d+\.(jpe?g|png|webp)$/i, '.$1');
+    if (!groups[base]) groups[base] = { scaled: null, resolution: null, original: null, resPixels: 0 };
+    if (/-scaled\./i.test(imgUrl)) groups[base].scaled = imgUrl;
+    else if (/-\d+x\d+\./i.test(imgUrl)) {
+      const res = imgUrl.match(/-(\d+)x(\d+)\./);
+      const px = res ? parseInt(res[1]) * parseInt(res[2]) : 0;
+      if (px > groups[base].resPixels) { groups[base].resolution = imgUrl; groups[base].resPixels = px; }
+    } else groups[base].original = imgUrl;
+  }
+
+  const images = [];
+  let earliestUpload = null;
+  for (const g of Object.values(groups)) {
+    const pick = g.scaled || g.resolution || g.original;
+    if (pick) {
+      images.push(pick);
+      const dm = pick.match(/\/uploads\/(\d{4})\/(\d{2})\//);
+      if (dm) {
+        const d = `${dm[1]}-${dm[2]}-01`;
+        if (!earliestUpload || d < earliestUpload) earliestUpload = d;
+      }
+    }
+  }
+
+  return { titleInfo, age, height, cup, val1, val2, val3, images, earliestUpload };
+}
+
+/* ── Sync: Kyoto 206 Girls ── */
+
+async function syncKyoto206Girls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
+
+  const allUrls = await scrapeWpListing(site);
+  const activeUrls = new Set(allUrls);
+
+  // Update originalSite for existing girls
+  let siteChanged = false;
+  for (const g of existing) {
+    const shouldBe = activeUrls.has(g.oldUrl) ? 'Exists' : '';
+    if (g.originalSite !== shouldBe) {
+      g.originalSite = shouldBe;
+      siteChanged = true;
+    }
+  }
+
+  const newUrls = allUrls.filter(url => !knownUrls.has(url));
+
+  if (newUrls.length === 0) {
+    if (siteChanged) {
+      data.girls = existing;
+      data.lastGirlsSync = new Date().toISOString();
+      await ghPut(env, site.jsonPath, data, sha, `[${site.name}] Update originalSite status`);
+    }
+    console.log(`[${site.name}] Girls sync: no new profiles`);
+    return { added: 0, remaining: 0, names: [] };
+  }
+
+  const toProcess = newUrls.slice(0, MAX_NEW_PER_RUN);
+  const remaining = newUrls.length - toProcess.length;
+  console.log(`[${site.name}] Girls sync: ${newUrls.length} new, processing ${toProcess.length} (${remaining} remaining)`);
+
+  const now = new Date().toISOString();
+  const todayStr = now.split('T')[0];
+  const addedNames = [];
+  const knownNames = new Set(existing.map(g => g.name));
+
+  for (const profileUrl of toProcess) {
+    try {
+      await new Promise(r => setTimeout(r, 1000));
+      const profile = await scrapeWpProfile(site, profileUrl, null);
+      const { titleInfo } = profile;
+
+      if (!titleInfo.name || knownNames.has(titleInfo.name)) {
+        console.log(`[${site.name}] Skip ${profileUrl}: ${!titleInfo.name ? 'no name' : 'duplicate'}`);
+        continue;
+      }
+
+      const name = titleInfo.name;
+      const entry = {
+        name,
+        country: titleInfo.country.length ? titleInfo.country : undefined,
+        age: profile.age || undefined,
+        height: profile.height || undefined,
+        cup: profile.cup || undefined,
+        val1: profile.val1 || undefined,
+        val2: profile.val2 || undefined,
+        val3: profile.val3 || undefined,
+      };
+      if (titleInfo.special) entry.special = titleInfo.special;
+      entry.startDate = profile.earliestUpload || todayStr;
+      entry.lang = titleInfo.country.length ? LANG_FROM_COUNTRY[titleInfo.country[0]] || '' : '';
+      entry.oldUrl = profileUrl;
+      entry.desc = '';
+      entry.originalSite = 'Exists';
+
+      // Upload images
+      const photos = [];
+      for (let i = 0; i < profile.images.length; i++) {
+        try {
+          const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+          const path = `${site.imgPrefix}/${name}/${name}_${i + 1}.${ext}`;
+          const ghUrl = await uploadImage(env, profile.images[i], path);
+          photos.push(ghUrl);
+          await new Promise(r => setTimeout(r, 500));
+        } catch (e) {
+          console.error(`[${site.name}] Image error ${name} #${i + 1}: ${e.message}`);
+        }
+      }
+      entry.photos = photos;
+      entry.labels = [];
+      entry.lastModified = now;
+      entry.lastRostered = '';
+
+      for (const k of Object.keys(entry)) {
+        if (entry[k] === undefined) delete entry[k];
+      }
+
+      existing.push(entry);
+      knownNames.add(name);
+      addedNames.push(name);
+      console.log(`[${site.name}] Added ${name} (${photos.length} photos)`);
+    } catch (e) {
+      console.error(`[${site.name}] Failed to process ${profileUrl}: ${e.message}`);
+    }
+  }
+
+  if (addedNames.length > 0 || siteChanged) {
+    data.girls = existing;
+    data.lastGirlsSync = now;
+    await ghPut(env, site.jsonPath, data, sha,
+      `[${site.name}] Auto-sync new girls: ${addedNames.join(', ')}`);
+  }
+
+  return { added: addedNames.length, remaining, names: addedNames };
 }
 
 /* ── Image upload ── */
@@ -663,13 +950,19 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // Kyoto 206 endpoints
+    if (url.pathname === '/sync-kyoto206-girls' && request.method === 'POST') {
+      try { return json(await syncKyoto206Girls(env, SITES.kyoto206)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     return new Response('Not found', { status: 404 });
   },
 
   async scheduled(event, env, ctx) {
     const hour = new Date(event.scheduledTime).getUTCHours();
 
-    // 9:00 UTC = 7pm AEST — girls sync (both sites)
+    // 9:00 UTC = 7pm AEST — girls sync (all sites)
     if (hour === 9) {
       ctx.waitUntil(
         syncGirls(env, SITES.empire).catch(e => console.error('[Empire] Girls sync error:', e))
@@ -677,9 +970,12 @@ export default {
       ctx.waitUntil(
         syncGirls(env, SITES.club).catch(e => console.error('[Club] Girls sync error:', e))
       );
+      ctx.waitUntil(
+        syncKyoto206Girls(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Girls sync error:', e))
+      );
     }
 
-    // 10:00 UTC = 8pm AEST — calendar sync (both sites)
+    // 10:00 UTC = 8pm AEST — calendar sync (ginza sites)
     if (hour === 10) {
       ctx.waitUntil(
         syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e))

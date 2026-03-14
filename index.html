@@ -22,8 +22,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 @keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
 /* Search */
-.search-wrap{display:flex;align-items:center;gap:10px}
-.search-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;padding:8px 14px;width:240px;outline:none;transition:border-color .3s}
+.search-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;padding:8px 14px;width:160px;outline:none;transition:border-color .3s}
 .search-input:focus{border-color:var(--accent)}
 .search-input::placeholder{color:var(--text-dim)}
 
@@ -235,8 +234,8 @@ let rangeFilters = {};
 let rangeDefaults = {};
 let activeSort = 'name';
 let sortDir = 'asc';
-let searchQuery = '';
 let searchTimer;
+const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
 
 const RANGE_DEFS = [
   { key: 'age', label: 'Age', field: 'age', type: 'num' },
@@ -317,18 +316,29 @@ function renderFilters() {
   const labelOpts = Object.keys(labelCounts).sort((a, b) => a.localeCompare(b)).map(l => ({ value: l, label: l, count: labelCounts[l] }));
 
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
-  const hasFilters = activeVenue || activeCountry || activeLabels.length || hasRangeActive;
+  const hasTextFilter = Object.values(textFilters).some(v => v);
+  const hasFilters = activeVenue || activeCountry || activeLabels.length || hasRangeActive || hasTextFilter;
   fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
     + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
     + buildDropdown('ddLabels', 'Services', labelOpts, activeLabels)
     + (hasFilters ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
-  // Search input in More Filters panel
+  // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');
-  mfd.innerHTML = '<input type="text" class="search-input" id="moreSearchInput" placeholder="Search girls..." autocomplete="off" value="' + (searchQuery || '').replace(/"/g, '&quot;') + '">';
-  document.getElementById('moreSearchInput').addEventListener('input', e => {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => { searchQuery = e.target.value.trim(); renderGrid(); }, 200);
+  const tfDefs = [
+    { key: 'name', placeholder: 'Name' },
+    { key: 'exp', placeholder: 'Experience' },
+    { key: 'special', placeholder: 'Special' },
+    { key: 'lang', placeholder: 'Language' },
+    { key: 'type', placeholder: 'Type' },
+    { key: 'desc', placeholder: 'Description' }
+  ];
+  mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off" value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
+  mfd.querySelectorAll('.search-input').forEach(inp => {
+    inp.addEventListener('input', e => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => { textFilters[inp.dataset.tf] = e.target.value.trim(); renderGrid(); }, 200);
+    });
   });
 
   // Bind dropdown toggles
@@ -360,7 +370,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.length = 0; rangeFilters = {}; renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -486,16 +496,13 @@ function getFiltered() {
       return v >= rf.min && v <= rf.max;
     });
   });
-  if (searchQuery) {
-    const q = searchQuery.toLowerCase();
-    list = list.filter(g =>
-      (g.name || '').toLowerCase().includes(q) ||
-      (Array.isArray(g.country) ? g.country.join(' ') : (g.country || '')).toLowerCase().includes(q) ||
-      (g.type || '').toLowerCase().includes(q) ||
-      (g.desc || '').toLowerCase().includes(q) ||
-      (g.labels || []).some(l => l.toLowerCase().includes(q))
-    );
-  }
+  // Text filters
+  const tfMap = { name: 'name', exp: 'exp', special: 'special', lang: 'lang', type: 'type', desc: 'desc' };
+  Object.entries(tfMap).forEach(([key, field]) => {
+    const q = (textFilters[key] || '').toLowerCase();
+    if (!q) return;
+    list = list.filter(g => (g[field] || '').toLowerCase().includes(q));
+  });
   // Sort
   const dir = sortDir === 'desc' ? -1 : 1;
   const emptyLast = (a, b, cmp) => {

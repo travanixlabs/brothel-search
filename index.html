@@ -87,6 +87,10 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase}
 .range-filter-label span:first-child{color:var(--text-dim)}
 .range-filter-label span:last-child{color:var(--accent);font-weight:600}
+.range-date-val{color:var(--accent);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--accent);padding-bottom:1px}
+.range-date-val:hover{color:var(--gold-light)}
+.range-date-input{background:rgba(255,255,255,0.08);border:1px solid var(--accent);color:#fff;font-family:'Rajdhani',sans-serif;font-size:12px;padding:2px 6px;width:120px;outline:none}
+.range-date-input::-webkit-calendar-picker-indicator{filter:invert(1) brightness(0.8)}
 .range-slider{position:relative;height:36px;display:flex;align-items:center}
 .range-slider-track{position:absolute;left:0;right:0;height:4px;background:rgba(255,255,255,0.08);border-radius:2px}
 .range-slider-fill{position:absolute;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:2px}
@@ -660,14 +664,25 @@ function renderRangeFilters() {
     const isActive = rf.min > dataMin || rf.max < dataMax;
     const wrap = document.createElement('div');
     wrap.className = 'range-filter';
-    wrap.innerHTML = `
-      <div class="range-filter-label"><span>${def.label}</span><span>${fmt(rf.min)} – ${fmt(rf.max)}</span></div>
-      <div class="range-slider">
-        <div class="range-slider-track"></div>
-        <div class="range-slider-fill" id="fill_${def.key}"></div>
-        <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.min}" step="${def.type === 'date' ? 86400000 : 1}" data-handle="min" data-key="${def.key}">
-        <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.max}" step="${def.type === 'date' ? 86400000 : 1}" data-handle="max" data-key="${def.key}">
-      </div>`;
+    if (def.type === 'date') {
+      wrap.innerHTML = `
+        <div class="range-filter-label"><span>${def.label}</span><span><span class="range-date-val" data-handle="min" data-key="${def.key}">${fmt(rf.min)}</span> – <span class="range-date-val" data-handle="max" data-key="${def.key}">${fmt(rf.max)}</span></span></div>
+        <div class="range-slider">
+          <div class="range-slider-track"></div>
+          <div class="range-slider-fill" id="fill_${def.key}"></div>
+          <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.min}" step="86400000" data-handle="min" data-key="${def.key}">
+          <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.max}" step="86400000" data-handle="max" data-key="${def.key}">
+        </div>`;
+    } else {
+      wrap.innerHTML = `
+        <div class="range-filter-label"><span>${def.label}</span><span>${fmt(rf.min)} – ${fmt(rf.max)}</span></div>
+        <div class="range-slider">
+          <div class="range-slider-track"></div>
+          <div class="range-slider-fill" id="fill_${def.key}"></div>
+          <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.min}" step="1" data-handle="min" data-key="${def.key}">
+          <input type="range" min="${dataMin}" max="${dataMax}" value="${rf.max}" step="1" data-handle="max" data-key="${def.key}">
+        </div>`;
+    }
     grid.appendChild(wrap);
 
     // Position fill bar
@@ -676,23 +691,76 @@ function renderRangeFilters() {
     fill.style.left = fillPct(rf.min) + '%';
     fill.style.right = (100 - fillPct(rf.max)) + '%';
 
-    // Bind inputs
+    // Update label helper
+    const updateLabel = () => {
+      const rf2 = rangeFilters[def.key] || { min: dataMin, max: dataMax };
+      if (def.type === 'date') {
+        const minEl = wrap.querySelector('.range-date-val[data-handle="min"]');
+        const maxEl = wrap.querySelector('.range-date-val[data-handle="max"]');
+        if (minEl) minEl.textContent = fmt(rf2.min);
+        if (maxEl) maxEl.textContent = fmt(rf2.max);
+      } else {
+        wrap.querySelector('.range-filter-label span:last-child').textContent = fmt(rf2.min) + ' \u2013 ' + fmt(rf2.max);
+      }
+    };
+
+    // Bind range inputs
     wrap.querySelectorAll('input[type=range]').forEach(inp => {
       const update = () => {
         const handle = inp.dataset.handle;
         let v = parseFloat(inp.value);
-        const other = wrap.querySelector(`input[data-handle="${handle === 'min' ? 'max' : 'min'}"]`);
+        const other = wrap.querySelector(`input[type=range][data-handle="${handle === 'min' ? 'max' : 'min'}"]`);
         if (handle === 'min' && v > parseFloat(other.value)) { v = parseFloat(other.value); inp.value = v; }
         if (handle === 'max' && v < parseFloat(other.value)) { v = parseFloat(other.value); inp.value = v; }
         if (!rangeFilters[def.key]) rangeFilters[def.key] = { min: dataMin, max: dataMax };
         rangeFilters[def.key][handle] = v;
         fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
         fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
-        wrap.querySelector('.range-filter-label span:last-child').textContent = fmt(rangeFilters[def.key].min) + ' \u2013 ' + fmt(rangeFilters[def.key].max);
+        updateLabel();
       };
       inp.addEventListener('input', update);
       inp.addEventListener('change', () => { update(); renderFilters(); renderGrid(); });
     });
+
+    // Date picker on click for date-type filters
+    if (def.type === 'date') {
+      wrap.querySelectorAll('.range-date-val').forEach(el => {
+        el.onclick = () => {
+          const handle = el.dataset.handle;
+          const dateInput = document.createElement('input');
+          dateInput.type = 'date';
+          dateInput.className = 'range-date-input';
+          dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
+          dateInput.min = numToDate(dataMin);
+          dateInput.max = numToDate(dataMax);
+          el.replaceWith(dateInput);
+          dateInput.focus();
+          const commit = () => {
+            const v = dateToNum(dateInput.value);
+            if (!isNaN(v) && v >= dataMin && v <= dataMax) {
+              if (!rangeFilters[def.key]) rangeFilters[def.key] = { min: dataMin, max: dataMax };
+              rangeFilters[def.key][handle] = v;
+              const slider = wrap.querySelector(`input[type=range][data-handle="${handle}"]`);
+              if (slider) slider.value = v;
+              fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
+              fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
+            }
+            const span = document.createElement('span');
+            span.className = 'range-date-val';
+            span.dataset.handle = handle;
+            span.dataset.key = def.key;
+            span.textContent = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
+            dateInput.replaceWith(span);
+            // Re-bind click
+            span.onclick = el.onclick;
+            renderFilters(); renderGrid();
+          };
+          dateInput.addEventListener('change', commit);
+          dateInput.addEventListener('blur', commit);
+          dateInput.addEventListener('keydown', e => { if (e.key === 'Enter') commit(); });
+        };
+      });
+    }
   });
 }
 

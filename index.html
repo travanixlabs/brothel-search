@@ -648,7 +648,7 @@ function renderRangeFilters() {
       if (!raw && raw !== 0) return;
       if (def.type === 'num') { const n = parseFloat(raw); if (!isNaN(n)) vals.push(n); }
       else if (def.type === 'cup') { const n = cupToNum(raw); if (n >= 0) vals.push(n); }
-      else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n) && (def.key !== 'lastRostered' || n <= Date.now())) vals.push(n); }
+      else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n)) vals.push(n); }
     });
     if (vals.length < 2) return;
     const dataMin = Math.min(...vals), dataMax = Math.max(...vals);

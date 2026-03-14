@@ -203,7 +203,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": []
     },
     {
@@ -245,7 +245,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": []
     },
     {
@@ -266,7 +266,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": []
     },
     {
@@ -500,7 +500,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-14",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Wendy/Wendy_1.jpeg"
       ]
@@ -673,7 +673,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Amy/Amy_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Amy/Amy_2.jpeg"
@@ -697,7 +697,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Tsuki/Tsuki_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Tsuki/Tsuki_2.jpeg",
@@ -780,7 +780,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Kiwi/Kiwi_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Kiwi/Kiwi_2.jpeg",
@@ -939,7 +939,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Ada/Ada_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Ada/Ada_2.jpg",
@@ -1037,7 +1037,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Moca/Moca_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Moca/Moca_2.jpeg",
@@ -1093,7 +1093,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Nako/Nako_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Nako/Nako_2.jpeg"
@@ -1622,7 +1622,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Alisa/Alisa_1.jpeg"
       ]
@@ -6682,7 +6682,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-14",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Jasmine/Jasmine_1.jpg"
       ]
@@ -7413,7 +7413,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Mari/Mari_1.jpeg"
       ]
@@ -8068,8 +8068,129 @@
     }
   ],
   "calendar": {
-    "_published": []
+    "_published": [
+      "2026-03-14",
+      "2026-03-15"
+    ],
+    "Muku": {
+      "2026-03-14": {
+        "start": "10:00",
+        "end": "19:00"
+      },
+      "2026-03-15": {
+        "start": "10:00",
+        "end": "19:00"
+      }
+    },
+    "Kiwi": {
+      "2026-03-14": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-03-15": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
+    "Tsuki": {
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "01:00"
+      },
+      "2026-03-15": {
+        "start": "11:00",
+        "end": "01:00"
+      }
+    },
+    "Jasmine": {
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "16:00"
+      }
+    },
+    "Mari": {
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "17:00"
+      },
+      "2026-03-15": {
+        "start": "11:00",
+        "end": "17:00"
+      }
+    },
+    "Wendy": {
+      "2026-03-14": {
+        "start": "14:00",
+        "end": "02:00"
+      }
+    },
+    "Moca": {
+      "2026-03-14": {
+        "start": "18:00",
+        "end": "23:00"
+      },
+      "2026-03-15": {
+        "start": "18:00",
+        "end": "23:00"
+      }
+    },
+    "Ada": {
+      "2026-03-14": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-03-15": {
+        "start": "19:00",
+        "end": "05:00"
+      }
+    },
+    "Hiya": {
+      "2026-03-14": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-03-15": {
+        "start": "14:00",
+        "end": "05:00"
+      }
+    },
+    "Nako": {
+      "2026-03-14": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-03-15": {
+        "start": "19:00",
+        "end": "05:00"
+      }
+    },
+    "Amy": {
+      "2026-03-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-03-15": {
+        "start": "21:00",
+        "end": "05:00"
+      }
+    },
+    "Alisa": {
+      "2026-03-14": {
+        "start": "21:00",
+        "end": "02:00"
+      },
+      "2026-03-15": {
+        "start": "21:00",
+        "end": "02:00"
+      }
+    },
+    "Nagi": {
+      "2026-03-15": {
+        "start": "14:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-03-14T05:51:41.857Z",
-  "lastCalendarSync": ""
+  "lastCalendarSync": "2026-03-14T06:54:13.911Z"
 }

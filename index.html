@@ -90,7 +90,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .range-filter-label .range-date-val{color:var(--accent);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--accent);padding-bottom:1px}
 .range-date-val:hover{color:var(--gold-light)}
 .range-filter-label .range-date-sep{color:var(--accent);font-weight:600}
-.range-date-input{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden;z-index:-1}
+.range-date-input{background:rgba(255,255,255,0.08);border:1px solid var(--accent);color:var(--accent);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;padding:1px 4px;outline:none;text-transform:uppercase}
 .range-slider{position:relative;height:36px;display:flex;align-items:center}
 .range-slider-track{position:absolute;left:0;right:0;height:4px;background:rgba(255,255,255,0.08);border-radius:2px}
 .range-slider-fill{position:absolute;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:2px}
@@ -734,6 +734,8 @@ function renderRangeFilters() {
         dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
         dateInput.min = numToDate(dataMin);
         dateInput.max = numToDate(dataMax);
+        dateInput.addEventListener('keydown', ev => ev.preventDefault());
+        el.style.display = 'none';
         el.after(dateInput);
         try { dateInput.showPicker(); } catch { dateInput.focus(); }
         let committed = false;
@@ -748,9 +750,10 @@ function renderRangeFilters() {
             if (slider) slider.value = v;
             fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
             fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
-            updateLabel();
           }
           dateInput.remove();
+          el.style.display = '';
+          updateLabel();
           renderFilters(); renderGrid();
         };
         dateInput.addEventListener('change', commit);

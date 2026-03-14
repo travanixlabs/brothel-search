@@ -90,7 +90,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .range-filter-label .range-date-val{color:var(--accent);font-weight:600;cursor:pointer;border-bottom:1px dashed var(--accent);padding-bottom:1px}
 .range-date-val:hover{color:var(--gold-light)}
 .range-filter-label .range-date-sep{color:var(--accent);font-weight:600}
-.range-date-input{position:fixed;opacity:0;pointer-events:none;width:0;height:0}
+.range-date-input{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden;z-index:-1}
 .range-slider{position:relative;height:36px;display:flex;align-items:center}
 .range-slider-track{position:absolute;left:0;right:0;height:4px;background:rgba(255,255,255,0.08);border-radius:2px}
 .range-slider-fill{position:absolute;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:2px}
@@ -728,16 +728,13 @@ function renderRangeFilters() {
         const el = e.target.closest('.range-date-val');
         if (!el || wrap.querySelector('.range-date-input')) return;
         const handle = el.dataset.handle;
-        const rect = el.getBoundingClientRect();
         const dateInput = document.createElement('input');
         dateInput.type = 'date';
         dateInput.className = 'range-date-input';
-        dateInput.style.top = rect.bottom + 'px';
-        dateInput.style.left = rect.left + 'px';
         dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
         dateInput.min = numToDate(dataMin);
         dateInput.max = numToDate(dataMax);
-        document.body.appendChild(dateInput);
+        el.after(dateInput);
         try { dateInput.showPicker(); } catch { dateInput.focus(); }
         let committed = false;
         const commit = () => {

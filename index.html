@@ -649,11 +649,11 @@ function renderRangeFilters() {
       else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n) && (def.key !== 'lastRostered' || n <= Date.now())) vals.push(n); }
     });
     if (vals.length < 2) return;
-    let dataMin = Math.min(...vals), dataMax = Math.max(...vals);
-    if (def.key === 'lastRostered') dataMin = Math.max(dataMin, dateToNum('2026-01-01'));
+    const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
     if (dataMin === dataMax) return;
     rangeDefaults[def.key] = { min: dataMin, max: dataMax };
-    const rf = rangeFilters[def.key] || { min: dataMin, max: dataMax };
+    const defaultMin = def.key === 'lastRostered' ? Math.max(dataMin, dateToNum('2026-01-01')) : dataMin;
+    const rf = rangeFilters[def.key] || { min: defaultMin, max: dataMax };
     if (rf.min < dataMin) rf.min = dataMin;
     if (rf.max > dataMax) rf.max = dataMax;
 

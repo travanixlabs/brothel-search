@@ -301,6 +301,16 @@ function getAvailabilityText(g) {
   const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
   if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
   if (nowMins < startMins) return 'Available Later Today (' + timeStr + ')';
+  // Check future dates
+  const futureDates = Object.keys(cal).filter(d => d > today && !d.startsWith('_'));
+  if (futureDates.length) {
+    const next = futureDates.sort()[0];
+    const fSlot = cal[next];
+    const fTimeStr = fmt24to12(fSlot.start) + ' - ' + fmt24to12(fSlot.end);
+    const dObj = new Date(next + 'T00:00:00');
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    return dayNames[dObj.getDay()] + ' ' + next.slice(5) + ' (' + fTimeStr + ')';
+  }
   return 'ended';
 }
 
@@ -587,6 +597,7 @@ function renderFilters() {
   // Sort row (dropdown + direction toggle)
   const sr = document.getElementById('sortRow');
   const sorts = [
+    { id: 'venue', label: 'Venue' },
     { id: 'name', label: 'Name' },
     { id: 'age', label: 'Age' },
     { id: 'body', label: 'Body' },
@@ -734,7 +745,8 @@ function getFiltered() {
     if (!an && !bn) return 0; if (!an) return 1; if (!bn) return -1;
     return cmp(a, b) * dir;
   };
-  if (activeSort === 'age') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.age) || 999) - (parseFloat(b.age) || 999)));
+  if (activeSort === 'venue') list.sort((a, b) => (a.venueName || '').localeCompare(b.venueName || ''));
+  else if (activeSort === 'age') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.age) || 999) - (parseFloat(b.age) || 999)));
   else if (activeSort === 'body') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.body) || 999) - (parseFloat(b.body) || 999)));
   else if (activeSort === 'height') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.height) || 999) - (parseFloat(b.height) || 999)));
   else if (activeSort === 'cup') list.sort((a, b) => emptyLast(a, b, () => (a.cup || '').toLowerCase().localeCompare((b.cup || '').toLowerCase())));
@@ -846,6 +858,7 @@ function showProfile(g) {
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
           ${detailRow('Start Date', g.startDate)}
           ${detailRow('Last Rostered', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
+          ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : '') + '">' + avail + '</span></div>' : ''; })()}
           ${detailRow('Experience', g.exp)}
           ${detailRow('Special', g.special)}
           ${detailRow('Language', g.lang)}

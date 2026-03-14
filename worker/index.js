@@ -43,9 +43,11 @@ const SITES = {
     name: 'Kyoto 206',
     baseUrl: 'https://citybrothel.com.au',
     girlsUrl: 'https://citybrothel.com.au/our-girls/',
+    rosterUrl: 'https://citybrothel.com.au/girls-roster/',
     jsonPath: 'profiles/kyoto206/kyoto206.json',
     imgPrefix: 'profiles/kyoto206',
     siteType: 'wordpress', // different scraping logic
+    rosterFormat: 'kyoto206',
   },
 };
 
@@ -603,6 +605,60 @@ async function syncKyoto206Girls(env, site) {
   return { added: addedNames.length, remaining, names: addedNames };
 }
 
+/* ── Kyoto 206 Roster scraping ── */
+
+function parseKyoto206Time(timeStr) {
+  // "close" = 05:00
+  const t = timeStr.trim().toLowerCase();
+  if (t === 'close') return '05:00';
+  return parseTime12to24(t);
+}
+
+async function scrapeKyoto206Roster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Kyoto 206 roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const result = {};
+
+  // Find today/tomorrow sections with date titles
+  // Format: <div class="roster-date-title">Saturday - MARCH 14</div>
+  // Followed by table rows: <td class="col-name">Name</td><td ...>Country</td><td class="col-time">Time</td>
+  const sectionRe = /roster-date-title[^>]*>\s*\w+\s*-\s*(\w+)\s+(\d+)\s*<\/div>([\s\S]*?)(?=roster-date-title|$)/gi;
+  let sm;
+
+  while ((sm = sectionRe.exec(html)) !== null) {
+    const monthName = sm[1];
+    const day = parseInt(sm[2], 10);
+    const dateStr = resolveDate(day, monthName);
+    if (!dateStr) continue;
+
+    const tableHtml = sm[3];
+    // Extract rows: <td class="col-name">Name</td>...<td class="col-time">Time</td>
+    const rowRe = /col-name[^>]*>([^<]+)<\/td>[\s\S]*?col-time[^>]*>([^<]+)<\/td>/gi;
+    let rm;
+
+    while ((rm = rowRe.exec(tableHtml)) !== null) {
+      const name = rm[1].trim();
+      const timeRaw = rm[2].trim();
+      if (!name) continue;
+
+      // Parse time range: "12pm - 2am" or "3pm - close"
+      const timeParts = timeRaw.split(/\s*-\s*/);
+      if (timeParts.length !== 2) continue;
+
+      const start = parseKyoto206Time(timeParts[0]);
+      const end = parseKyoto206Time(timeParts[1]);
+      if (!start || !end) continue;
+
+      if (!result[dateStr]) result[dateStr] = [];
+      result[dateStr].push({ name, start, end });
+    }
+  }
+
+  return result;
+}
+
 /* ── Image upload ── */
 
 function arrayBufferToBase64(buffer) {
@@ -837,7 +893,9 @@ async function syncGirls(env, site) {
 /* ── Sync: Calendar ── */
 
 async function syncCalendar(env, site) {
-  const scraped = await scrapeRoster(site);
+  const scraped = site.rosterFormat === 'kyoto206'
+    ? await scrapeKyoto206Roster(site)
+    : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
     return false;
@@ -955,6 +1013,10 @@ export default {
       try { return json(await syncKyoto206Girls(env, SITES.kyoto206)); }
       catch (e) { return json({ error: e.message }); }
     }
+    if (url.pathname === '/sync-kyoto206-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.kyoto206) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
 
     return new Response('Not found', { status: 404 });
   },
@@ -975,13 +1037,16 @@ export default {
       );
     }
 
-    // 10:00 UTC = 8pm AEST — calendar sync (ginza sites)
+    // 10:00 UTC = 8pm AEST — calendar sync (all sites)
     if (hour === 10) {
       ctx.waitUntil(
         syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e))
       );
       ctx.waitUntil(
         syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e))
+      );
+      ctx.waitUntil(
+        syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e))
       );
     }
   },

@@ -782,15 +782,19 @@ function renderGrid() {
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
-    const lastRostered = g.lastRostered ? (() => {
+    const lastRostered = (() => {
+      // Always check calendar availability first (regardless of lastRostered)
+      const avail = getAvailabilityText(g);
+      if (avail && avail !== 'ended') return avail;
+      if (!g.lastRostered) return '';
       const today = new Date(); today.setHours(0,0,0,0);
       const rd = new Date(g.lastRostered + 'T00:00:00');
       if (rd > today) return '';
       const diff = Math.round((today - rd) / 86400000);
-      if (diff === 0) { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? avail : 'Last rostered: Today'; }
+      if (diff === 0) return 'Last rostered: Today';
       if (diff === 1) return 'Last rostered: Yesterday';
       return 'Last rostered: ' + diff + ' days ago';
-    })() : '';
+    })();
 
     el.innerHTML = `
       <div class="card-img">${img}</div>

@@ -57,6 +57,14 @@ const SITES = {
     imgPrefix: 'profiles/sakura57',
     siteType: 'wordpress',
   },
+  top127: {
+    name: 'Top 127',
+    baseUrl: 'https://127city.com',
+    girlsUrl: 'https://127city.com/ladies/',
+    jsonPath: 'profiles/top127/top127.json',
+    imgPrefix: 'profiles/top127',
+    siteType: 'wordpress',
+  },
 };
 
 /* ── GitHub helpers ── */
@@ -362,7 +370,7 @@ function parseWpPageTitle(html) {
   if (!titleMatch) return { name: '', country: [], special: '' };
 
   let titleText = decodeHtmlEntities(titleMatch[1])
-    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57).*$/i, '').trim();
+    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57|Top\s*127).*$/i, '').trim();
 
   let special = '';
   const parenParts = [];
@@ -1056,6 +1064,12 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // Top 127 endpoints
+    if (url.pathname === '/sync-top127-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.top127)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     return new Response('Not found', { status: 404 });
   },
 
@@ -1075,6 +1089,9 @@ export default {
       );
       ctx.waitUntil(
         syncWpGirls(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Girls sync error:', e))
+      );
+      ctx.waitUntil(
+        syncWpGirls(env, SITES.top127).catch(e => console.error('[Top 127] Girls sync error:', e))
       );
     }
 

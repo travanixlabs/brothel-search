@@ -178,9 +178,6 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 
 <nav>
 <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Brothel Search</div>
-<div class="search-wrap">
-<input type="text" class="search-input" id="searchInput" placeholder="Search girls..." autocomplete="off">
-</div>
 </nav>
 
 <section class="section">
@@ -205,6 +202,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <div class="more-filters-section">
 <button class="more-filters-toggle" id="moreFiltersToggle">More Filters <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
 <div class="more-filters-panel" id="moreFiltersPanel">
+<div class="more-filters-dropdowns" id="moreFiltersDropdowns" style="margin-bottom:20px;display:flex;gap:16px;flex-wrap:wrap"></div>
 <div class="range-filters-grid" id="rangeFiltersGrid"></div>
 </div>
 </div>
@@ -238,6 +236,7 @@ let rangeDefaults = {};
 let activeSort = 'name';
 let sortDir = 'asc';
 let searchQuery = '';
+let searchTimer;
 
 const RANGE_DEFS = [
   { key: 'age', label: 'Age', field: 'age', type: 'num' },
@@ -323,6 +322,14 @@ function renderFilters() {
     + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
     + buildDropdown('ddLabels', 'Services', labelOpts, activeLabels)
     + (hasFilters ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
+
+  // Search input in More Filters panel
+  const mfd = document.getElementById('moreFiltersDropdowns');
+  mfd.innerHTML = '<input type="text" class="search-input" id="moreSearchInput" placeholder="Search girls..." autocomplete="off" value="' + (searchQuery || '').replace(/"/g, '&quot;') + '">';
+  document.getElementById('moreSearchInput').addEventListener('input', e => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { searchQuery = e.target.value.trim(); renderGrid(); }, 200);
+  });
 
   // Bind dropdown toggles
   fr.querySelectorAll('.filter-dropdown-btn').forEach(btn => {
@@ -658,15 +665,6 @@ document.getElementById('profileOverlay').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeProfile();
 });
 
-// Search
-let searchTimer;
-document.getElementById('searchInput').addEventListener('input', e => {
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => {
-    searchQuery = e.target.value.trim();
-    renderGrid();
-  }, 200);
-});
 
 // Back to top
 const btt = document.getElementById('backToTop');

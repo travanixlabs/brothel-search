@@ -723,43 +723,44 @@ function renderRangeFilters() {
       inp.addEventListener('change', () => { update(); renderFilters(); renderGrid(); });
     });
 
-    // Date picker on click for date-type filters
+    // Date picker on click for date-type filters (event delegation)
     if (def.type === 'date') {
-      wrap.querySelectorAll('.range-date-val').forEach(el => {
-        el.onclick = () => {
-          const handle = el.dataset.handle;
-          const dateInput = document.createElement('input');
-          dateInput.type = 'date';
-          dateInput.className = 'range-date-input';
-          dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
-          dateInput.min = numToDate(dataMin);
-          dateInput.max = numToDate(dataMax);
-          el.replaceWith(dateInput);
-          dateInput.focus();
-          const commit = () => {
-            const v = dateToNum(dateInput.value);
-            if (!isNaN(v) && v >= dataMin && v <= dataMax) {
-              if (!rangeFilters[def.key]) rangeFilters[def.key] = { min: dataMin, max: dataMax };
-              rangeFilters[def.key][handle] = v;
-              const slider = wrap.querySelector(`input[type=range][data-handle="${handle}"]`);
-              if (slider) slider.value = v;
-              fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
-              fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
-            }
-            const span = document.createElement('span');
-            span.className = 'range-date-val';
-            span.dataset.handle = handle;
-            span.dataset.key = def.key;
-            span.textContent = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
-            dateInput.replaceWith(span);
-            // Re-bind click
-            span.onclick = el.onclick;
-            renderFilters(); renderGrid();
-          };
-          dateInput.addEventListener('change', commit);
-          dateInput.addEventListener('blur', commit);
-          dateInput.addEventListener('keydown', e => { if (e.key === 'Enter') commit(); });
+      wrap.addEventListener('click', e => {
+        const el = e.target.closest('.range-date-val');
+        if (!el || wrap.querySelector('.range-date-input')) return;
+        const handle = el.dataset.handle;
+        const dateInput = document.createElement('input');
+        dateInput.type = 'date';
+        dateInput.className = 'range-date-input';
+        dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
+        dateInput.min = numToDate(dataMin);
+        dateInput.max = numToDate(dataMax);
+        el.replaceWith(dateInput);
+        dateInput.focus();
+        let committed = false;
+        const commit = () => {
+          if (committed) return;
+          committed = true;
+          const v = dateToNum(dateInput.value);
+          if (!isNaN(v) && v >= dataMin && v <= dataMax) {
+            if (!rangeFilters[def.key]) rangeFilters[def.key] = { min: dataMin, max: dataMax };
+            rangeFilters[def.key][handle] = v;
+            const slider = wrap.querySelector(`input[type=range][data-handle="${handle}"]`);
+            if (slider) slider.value = v;
+            fill.style.left = fillPct(rangeFilters[def.key].min) + '%';
+            fill.style.right = (100 - fillPct(rangeFilters[def.key].max)) + '%';
+          }
+          const span = document.createElement('span');
+          span.className = 'range-date-val';
+          span.dataset.handle = handle;
+          span.dataset.key = def.key;
+          span.textContent = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
+          dateInput.replaceWith(span);
+          renderFilters(); renderGrid();
         };
+        dateInput.addEventListener('change', commit);
+        dateInput.addEventListener('blur', commit);
+        dateInput.addEventListener('keydown', e => { if (e.key === 'Enter') commit(); });
       });
     }
   });

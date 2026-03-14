@@ -117,6 +117,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-thumb{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:opacity .4s}
 .card-info{padding:16px}
 .card-name{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:4px}
+.new-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;background:linear-gradient(135deg,#ff6f00,#ff3d00);padding:1px 6px;border-radius:3px;margin-left:8px;vertical-align:middle;text-transform:uppercase;animation:newPulse 2s ease-in-out infinite}
+@keyframes newPulse{0%,100%{opacity:1}50%{opacity:.7}}
 .card-venue{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;padding:2px 8px;display:inline-block;border:1px solid;clip-path:polygon(0 0,calc(100% - 4px) 0,100% 4px,100% 100%,4px 100%,0 calc(100% - 4px))}
 .card-venue.ginzaempire{color:var(--accent);border-color:var(--accent);background:rgba(180,74,255,0.1)}
 .card-venue.ginzaclub{color:#00c864;border-color:#00c864;background:rgba(0,200,100,0.1)}
@@ -267,6 +269,7 @@ function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); retur
 function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
+function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
 
 const LABEL_RULES = [
   { keywords: ['lesbian'], label: 'Double Lesbian' },
@@ -521,7 +524,7 @@ function renderRangeFilters() {
       if (!raw && raw !== 0) return;
       if (def.type === 'num') { const n = parseFloat(raw); if (!isNaN(n)) vals.push(n); }
       else if (def.type === 'cup') { const n = cupToNum(raw); if (n >= 0) vals.push(n); }
-      else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n)) vals.push(n); }
+      else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n) && (def.key !== 'lastRostered' || n <= Date.now())) vals.push(n); }
     });
     if (vals.length < 2) return;
     const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
@@ -654,17 +657,19 @@ function renderGrid() {
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
     const lastRostered = g.lastRostered ? (() => {
-      const diff = Math.round((Date.now() - new Date(g.lastRostered + 'T00:00:00')) / 86400000);
+      const today = new Date(); today.setHours(0,0,0,0);
+      const rd = new Date(g.lastRostered + 'T00:00:00');
+      if (rd > today) return '';
+      const diff = Math.round((today - rd) / 86400000);
       if (diff === 0) return 'Last rostered: Today';
       if (diff === 1) return 'Last rostered: Yesterday';
-      if (diff > 0) return 'Last rostered: ' + diff + ' days ago';
-      return '';
+      return 'Last rostered: ' + diff + ' days ago';
     })() : '';
 
     el.innerHTML = `
       <div class="card-img">${img}</div>
       <div class="card-info">
-        <div class="card-name">${g.name || ''}</div>
+        <div class="card-name">${g.name || ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
         <div class="card-venue ${g.venue}">${g.venueName}</div>
         <div class="card-country">${countries}</div>
         ${g.special ? '<div class="card-special">' + g.special + '</div>' : ''}
@@ -710,7 +715,7 @@ function showProfile(g) {
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <div class="card-venue ${g.venue}" style="margin-bottom:12px">${g.venueName}</div>
-    <div class="profile-name">${g.name || ''}</div>
+    <div class="profile-name">${g.name || ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
     <div class="profile-layout">
       <div class="profile-gallery">
         <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
@@ -729,7 +734,7 @@ function showProfile(g) {
           ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
           ${detailRow('Start Date', g.startDate)}
-          ${detailRow('Last Rostered', g.lastRostered)}
+          ${detailRow('Last Rostered', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
           ${detailRow('Experience', g.exp)}
           ${detailRow('Special', g.special)}
           ${detailRow('Language', g.lang)}

@@ -134,6 +134,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-last-rostered{font-size:11px;color:var(--text-dim);margin-top:4px}
 .card-last-rostered.available-now{color:#00e676}
 .card-last-rostered.available-later{color:#ffab00}
+.available-now{color:#00e676}
+.available-later{color:#ffab00}
 
 /* Silhouette */
 .silhouette{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,rgba(180,74,255,0.08),rgba(255,111,0,0.04));display:flex;align-items:center;justify-content:center}
@@ -290,17 +292,18 @@ function getAvailabilityText(g) {
   const now = new Date();
   const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   const slot = cal[today];
-  if (!slot) return null;
-  const [sh, sm] = slot.start.split(':').map(Number);
-  const [eh, em] = slot.end.split(':').map(Number);
-  const nowMins = now.getHours() * 60 + now.getMinutes();
-  const startMins = sh * 60 + sm;
-  // end time: if end < start it wraps past midnight (e.g. 04:00 = next day)
-  const endMins = eh * 60 + em;
-  const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
-  const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
-  if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
-  if (nowMins < startMins) return 'Available Later Today (' + timeStr + ')';
+  if (slot) {
+    const [sh, sm] = slot.start.split(':').map(Number);
+    const [eh, em] = slot.end.split(':').map(Number);
+    const nowMins = now.getHours() * 60 + now.getMinutes();
+    const startMins = sh * 60 + sm;
+    // end time: if end < start it wraps past midnight (e.g. 04:00 = next day)
+    const endMins = eh * 60 + em;
+    const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+    const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
+    if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
+    if (nowMins < startMins) return 'Available Later Today (' + timeStr + ')';
+  }
   // Check future dates
   const futureDates = Object.keys(cal).filter(d => d > today && !d.startsWith('_'));
   if (futureDates.length) {

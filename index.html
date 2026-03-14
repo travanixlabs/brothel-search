@@ -649,7 +649,8 @@ function renderRangeFilters() {
       else if (def.type === 'date') { const n = dateToNum(raw); if (!isNaN(n) && (def.key !== 'lastRostered' || n <= Date.now())) vals.push(n); }
     });
     if (vals.length < 2) return;
-    const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
+    let dataMin = Math.min(...vals), dataMax = Math.max(...vals);
+    if (def.key === 'lastRostered') dataMin = Math.max(dataMin, dateToNum('2026-01-01'));
     if (dataMin === dataMax) return;
     rangeDefaults[def.key] = { min: dataMin, max: dataMax };
     const rf = rangeFilters[def.key] || { min: dataMin, max: dataMax };

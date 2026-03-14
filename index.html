@@ -256,6 +256,7 @@ let sortDir = 'asc';
 let searchTimer;
 let calendarData = {};
 let activeAvailability = null;
+let activePhotos = null;
 const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
 
 const RANGE_DEFS = [
@@ -400,7 +401,7 @@ document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdow
 function hasAnyFilter() {
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  return activeVenue || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAvailability || hasRangeActive || hasTextFilter;
+  return activeVenue || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAvailability || activePhotos || hasRangeActive || hasTextFilter;
 }
 
 function updateClearBtn() {
@@ -411,7 +412,7 @@ function updateClearBtn() {
     btn.className = 'clear-all-btn';
     btn.id = 'clearAllBtn';
     btn.textContent = 'Clear All';
-    btn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    btn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; activePhotos = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
     fr.appendChild(btn);
   } else if (!hasAnyFilter() && existing) {
     existing.remove();
@@ -502,6 +503,7 @@ function renderFilters() {
     + buildLabelDropdown('ddCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildDropdown('ddAvailability', 'Availability', availOpts, activeAvailability ? [activeAvailability] : [])
+    + buildDropdown('ddPhotos', 'Photos', [{ value: 'Yes', label: 'Yes', count: base.filter(g => g.photos && g.photos.length > 0).length }, { value: 'No', label: 'No', count: base.filter(g => !g.photos || g.photos.length === 0).length }], activePhotos ? [activePhotos] : [])
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Text filter inputs in More Filters panel
@@ -571,10 +573,15 @@ function renderFilters() {
     opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value; activeAvailability = (activeAvailability === v) ? null : v; renderFilters(); renderGrid(); };
   });
 
+  // Photos options (single select)
+  document.querySelectorAll('#ddPhotos .filter-option').forEach(opt => {
+    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value; activePhotos = (activePhotos === v) ? null : v; renderFilters(); renderGrid(); };
+  });
+
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; activePhotos = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -695,6 +702,9 @@ function getFiltered() {
   });
   // Availability filter
   if (activeAvailability) list = list.filter(g => getAvailabilityStatus(g) === activeAvailability);
+  // Photos filter
+  if (activePhotos === 'Yes') list = list.filter(g => g.photos && g.photos.length > 0);
+  if (activePhotos === 'No') list = list.filter(g => !g.photos || g.photos.length === 0);
   // Range filters
   RANGE_DEFS.forEach(def => {
     const rf = rangeFilters[def.key];

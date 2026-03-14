@@ -132,6 +132,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-hover-line{position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .3s}
 .girl-card:hover .card-hover-line{width:100%}
 .card-last-rostered{font-size:11px;color:var(--text-dim);margin-top:4px}
+.card-last-rostered.available-now{color:#00e676}
+.card-last-rostered.available-later{color:#ffab00}
 
 /* Silhouette */
 .silhouette{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,rgba(180,74,255,0.08),rgba(255,111,0,0.04));display:flex;align-items:center;justify-content:center}
@@ -244,13 +246,15 @@ const VENUES = [
 
 let allGirls = [];
 let activeVenue = null;
-let activeCountry = null;
+let activeCountry = { include: [], exclude: [] };
 let activeLabels = { include: [], exclude: [] };
 let rangeFilters = {};
 let rangeDefaults = {};
 let activeSort = 'name';
 let sortDir = 'asc';
 let searchTimer;
+let calendarData = {};
+let activeAvailability = null;
 const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
 
 const RANGE_DEFS = [
@@ -270,6 +274,55 @@ function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
+
+function fmt24to12(t) {
+  const [h, m] = t.split(':').map(Number);
+  const suffix = h >= 12 ? 'pm' : 'am';
+  const h12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
+  return m === 0 ? h12 + suffix : h12 + ':' + String(m).padStart(2, '0') + suffix;
+}
+
+function getAvailabilityText(g) {
+  const cal = calendarData[g.name];
+  if (!cal) return null;
+  const now = new Date();
+  const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  const slot = cal[today];
+  if (!slot) return null;
+  const [sh, sm] = slot.start.split(':').map(Number);
+  const [eh, em] = slot.end.split(':').map(Number);
+  const nowMins = now.getHours() * 60 + now.getMinutes();
+  const startMins = sh * 60 + sm;
+  // end time: if end < start it wraps past midnight (e.g. 04:00 = next day)
+  const endMins = eh * 60 + em;
+  const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+  const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
+  if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
+  if (nowMins < startMins) return 'Available Later Today (' + timeStr + ')';
+  return 'ended';
+}
+
+function getAvailabilityStatus(g) {
+  const cal = calendarData[g.name];
+  if (!cal) return 'Unavailable';
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  const slot = cal[todayStr];
+  if (slot) {
+    const [sh, sm] = slot.start.split(':').map(Number);
+    const [eh, em] = slot.end.split(':').map(Number);
+    const nowMins = now.getHours() * 60 + now.getMinutes();
+    const startMins = sh * 60 + sm;
+    const endMins = eh * 60 + em;
+    const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+    if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now';
+    if (nowMins < startMins) return 'Available Later Today';
+  }
+  // Check future dates
+  const dates = Object.keys(cal).filter(d => d > todayStr);
+  if (dates.length) return 'Available Future Date';
+  return 'Unavailable';
+}
 
 const LABEL_RULES = [
   { keywords: ['lesbian'], label: 'Double Lesbian' },
@@ -313,12 +366,24 @@ async function loadProfiles() {
   const results = await Promise.allSettled(
     VENUES.map(async v => {
       const r = await fetch(`${PROFILES_BASE}/${v.file}`);
-      if (!r.ok) return [];
+      if (!r.ok) return { girls: [], calendar: {} };
       const data = await r.json();
-      return (data.girls || []).map(g => ({ ...g, venue: v.id, venueName: v.name }));
+      return {
+        girls: (data.girls || []).map(g => ({ ...g, venue: v.id, venueName: v.name })),
+        calendar: data.calendar || {}
+      };
     })
   );
-  allGirls = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+  allGirls = [];
+  calendarData = {};
+  results.forEach(r => {
+    if (r.status !== 'fulfilled') return;
+    allGirls.push(...r.value.girls);
+    const cal = r.value.calendar;
+    for (const key of Object.keys(cal)) {
+      if (!key.startsWith('_')) calendarData[key] = cal[key];
+    }
+  });
   autoExtractLabels(allGirls);
   renderFilters();
   renderRangeFilters();
@@ -334,7 +399,7 @@ document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdow
 function hasAnyFilter() {
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  return activeVenue || activeCountry || activeLabels.include.length || activeLabels.exclude.length || hasRangeActive || hasTextFilter;
+  return activeVenue || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAvailability || hasRangeActive || hasTextFilter;
 }
 
 function updateClearBtn() {
@@ -345,7 +410,7 @@ function updateClearBtn() {
     btn.className = 'clear-all-btn';
     btn.id = 'clearAllBtn';
     btn.textContent = 'Clear All';
-    btn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.include.length = 0; activeLabels.exclude.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    btn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
     fr.appendChild(btn);
   } else if (!hasAnyFilter() && existing) {
     existing.remove();
@@ -386,7 +451,7 @@ function buildLabelDropdown(id, label, options, includeList, excludeList) {
     const isIncluded = includeList.includes(o.value);
     const isExcluded = excludeList.includes(o.value);
     const cls = isIncluded ? ' included' : (isExcluded ? ' excluded' : '');
-    html += `<div class="filter-option${cls}" data-value="${o.value}"><span class="filter-checkbox"></span>${o.label}<div class="label-toggle"><button class="label-toggle-btn${isIncluded ? ' active-include' : ''}" data-action="include" data-label="${o.value}">+</button><button class="label-toggle-btn${isExcluded ? ' active-exclude' : ''}" data-action="exclude" data-label="${o.value}">&minus;</button></div></div>`;
+    html += `<div class="filter-option${cls}" data-value="${o.value}">${o.label}${o.count != null ? '<span class="filter-option-count">' + o.count + '</span>' : ''}<div class="label-toggle"><button class="label-toggle-btn${isIncluded ? ' active-include' : ''}" data-action="include" data-label="${o.value}">+</button><button class="label-toggle-btn${isExcluded ? ' active-exclude' : ''}" data-action="exclude" data-label="${o.value}">&minus;</button></div></div>`;
   });
   html += `</div></div>`;
   return html;
@@ -406,8 +471,13 @@ function renderFilters() {
   base.forEach(g => {
     (Array.isArray(g.country) ? g.country : (g.country ? [g.country] : [])).forEach(c => { countryCounts[c] = (countryCounts[c] || 0) + 1 });
   });
-  const countryOpts = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b)).map(c => ({ value: c, label: c, count: countryCounts[c] }));
-  const countrySelected = activeCountry ? [activeCountry] : [];
+  const countryOpts = Object.keys(countryCounts).sort((a, b) => {
+    const aActive = activeCountry.include.includes(a) || activeCountry.exclude.includes(a);
+    const bActive = activeCountry.include.includes(b) || activeCountry.exclude.includes(b);
+    if (aActive && !bActive) return -1;
+    if (!aActive && bActive) return 1;
+    return a.localeCompare(b);
+  }).map(c => ({ value: c, label: c, count: countryCounts[c] }));
 
   // Label options
   const labelCounts = {};
@@ -420,9 +490,17 @@ function renderFilters() {
     return a.localeCompare(b);
   }).map(l => ({ value: l, label: l, count: labelCounts[l] }));
 
+  // Availability options
+  const availStatuses = ['Available Now', 'Available Later Today', 'Available Future Date', 'Unavailable'];
+  const availCounts = {};
+  availStatuses.forEach(s => { availCounts[s] = 0 });
+  base.forEach(g => { const s = getAvailabilityStatus(g); availCounts[s] = (availCounts[s] || 0) + 1; });
+  const availOpts = availStatuses.map(s => ({ value: s, label: s, count: availCounts[s] }));
+
   fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
-    + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
+    + buildLabelDropdown('ddCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
+    + buildDropdown('ddAvailability', 'Availability', availOpts, activeAvailability ? [activeAvailability] : [])
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Text filter inputs in More Filters panel
@@ -453,9 +531,20 @@ function renderFilters() {
     opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); };
   });
 
-  // Country options
-  document.querySelectorAll('#ddCountry .filter-option').forEach(opt => {
-    opt.onclick = e => { e.stopPropagation(); activeCountry = activeCountry === opt.dataset.value ? null : opt.dataset.value; renderFilters(); renderGrid(); };
+  // Country options (+/- toggle)
+  document.querySelectorAll('#ddCountry .label-toggle-btn').forEach(btn => {
+    btn.onclick = e => {
+      e.stopPropagation();
+      const label = btn.dataset.label;
+      const action = btn.dataset.action;
+      const incIdx = activeCountry.include.indexOf(label);
+      const excIdx = activeCountry.exclude.indexOf(label);
+      if (incIdx >= 0) activeCountry.include.splice(incIdx, 1);
+      if (excIdx >= 0) activeCountry.exclude.splice(excIdx, 1);
+      if (action === 'include' && incIdx < 0) activeCountry.include.push(label);
+      else if (action === 'exclude' && excIdx < 0) activeCountry.exclude.push(label);
+      renderFilters(); renderGrid();
+    };
   });
 
   // Label options (+/- toggle)
@@ -476,10 +565,15 @@ function renderFilters() {
     };
   });
 
+  // Availability options (single select)
+  document.querySelectorAll('#ddAvailability .filter-option').forEach(opt => {
+    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value; activeAvailability = (activeAvailability === v) ? null : v; renderFilters(); renderGrid(); };
+  });
+
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.include.length = 0; activeLabels.exclude.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue = null; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability = null; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -582,9 +676,13 @@ function renderRangeFilters() {
 function getFiltered() {
   let list = [...allGirls];
   if (activeVenue) list = list.filter(g => g.venue === activeVenue);
-  if (activeCountry) list = list.filter(g => {
+  if (activeCountry.include.length) list = list.filter(g => {
     const countries = Array.isArray(g.country) ? g.country : (g.country ? [g.country] : []);
-    return countries.includes(activeCountry);
+    return activeCountry.include.every(c => countries.includes(c));
+  });
+  if (activeCountry.exclude.length) list = list.filter(g => {
+    const countries = Array.isArray(g.country) ? g.country : (g.country ? [g.country] : []);
+    return activeCountry.exclude.every(c => !countries.includes(c));
   });
   if (activeLabels.include.length) list = list.filter(g => {
     const gl = g.labels || [];
@@ -594,6 +692,8 @@ function getFiltered() {
     const gl = g.labels || [];
     return activeLabels.exclude.every(l => !gl.some(lb => lb.toLowerCase() === l.toLowerCase()));
   });
+  // Availability filter
+  if (activeAvailability) list = list.filter(g => getAvailabilityStatus(g) === activeAvailability);
   // Range filters
   RANGE_DEFS.forEach(def => {
     const rf = rangeFilters[def.key];
@@ -661,7 +761,7 @@ function renderGrid() {
       const rd = new Date(g.lastRostered + 'T00:00:00');
       if (rd > today) return '';
       const diff = Math.round((today - rd) / 86400000);
-      if (diff === 0) return 'Last rostered: Today';
+      if (diff === 0) { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? avail : 'Last rostered: Today'; }
       if (diff === 1) return 'Last rostered: Yesterday';
       return 'Last rostered: ' + diff + ' days ago';
     })() : '';
@@ -680,7 +780,7 @@ function renderGrid() {
           ${g.cup ? '<span>' + g.cup + ' cup</span>' : ''}
         </div>
         ${(g.val1 || g.val2 || g.val3) ? '<div class="card-rates">' + [g.val1 ? '30m $'+g.val1 : '', g.val2 ? '45m $'+g.val2 : '', g.val3 ? '60m $'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>' : ''}
-        ${lastRostered ? '<div class="card-last-rostered">' + lastRostered + '</div>' : ''}
+        ${lastRostered ? '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : '') + '">' + lastRostered + '</div>' : ''}
         <div class="card-hover-line"></div>
       </div>`;
     el.onclick = () => showProfile(g);

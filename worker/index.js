@@ -61,9 +61,11 @@ const SITES = {
     name: 'Top 127',
     baseUrl: 'https://127city.com',
     girlsUrl: 'https://127city.com/ladies/',
+    rosterUrl: 'https://127city.com/',
     jsonPath: 'profiles/top127/top127.json',
     imgPrefix: 'profiles/top127',
     siteType: 'wordpress',
+    rosterFormat: 'top127',
   },
 };
 
@@ -699,6 +701,46 @@ async function scrapeKyoto206Roster(site) {
   return result;
 }
 
+/* ── Top 127 Roster scraping ── */
+
+async function scrapeTop127Roster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Top 127 roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  // Find date: "Sunday 15/03/2026" or similar near "ROSTER"
+  const dateMatch = html.match(/(?:Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
+  if (!dateMatch) return {};
+
+  const day = parseInt(dateMatch[1], 10);
+  const month = parseInt(dateMatch[2], 10);
+  const year = parseInt(dateMatch[3], 10);
+  const dateStr = year + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+
+  // Determine day of week for default times: Fri/Sat = 12pm-3am, else 12pm-2am
+  const dayOfWeek = new Date(year, month - 1, day).getDay();
+  const isFriSat = dayOfWeek === 5 || dayOfWeek === 6;
+  const start = '12:00';
+  const end = isFriSat ? '03:00' : '02:00';
+
+  // Extract names: "J Sana", "C Angela", "Chanel" etc.
+  // Look for roster section names - patterns like "J Name" or just "Name" with ~ separator
+  const rosterSection = html.split(/ROSTER/i).pop() || html;
+  const nameRe = /(?:^|\n|>)\s*(?:[JKCVSTM]\s+)?([A-Z][a-z]+)\s*(?:~|–)/gm;
+  const names = [];
+  let m;
+  while ((m = nameRe.exec(rosterSection)) !== null) {
+    const name = m[1].trim();
+    if (name && !names.includes(name)) names.push(name);
+  }
+
+  if (names.length === 0) return {};
+
+  const result = {};
+  result[dateStr] = names.map(name => ({ name, start, end }));
+  return result;
+}
+
 /* ── Image upload ── */
 
 function arrayBufferToBase64(buffer) {
@@ -935,6 +977,8 @@ async function syncGirls(env, site) {
 async function syncCalendar(env, site) {
   const scraped = site.rosterFormat === 'kyoto206'
     ? await scrapeKyoto206Roster(site)
+    : site.rosterFormat === 'top127'
+    ? await scrapeTop127Roster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
@@ -1069,6 +1113,10 @@ export default {
       try { return json(await syncWpGirls(env, SITES.top127)); }
       catch (e) { return json({ error: e.message }); }
     }
+    if (url.pathname === '/sync-top127-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.top127) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
 
     return new Response('Not found', { status: 404 });
   },
@@ -1105,6 +1153,9 @@ export default {
       );
       ctx.waitUntil(
         syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e))
+      );
+      ctx.waitUntil(
+        syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e))
       );
     }
   },

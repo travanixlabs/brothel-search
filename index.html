@@ -294,7 +294,7 @@ function fmt24to12(t) {
 }
 
 function getAvailabilityText(g) {
-  const cal = calendarData[g.name];
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
   if (!cal) return null;
   const now = new Date();
   const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
@@ -325,7 +325,7 @@ function getAvailabilityText(g) {
 }
 
 function getAvailabilityStatus(g) {
-  const cal = calendarData[g.name];
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
   if (!cal) return 'Unavailable';
   const now = new Date();
   const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
@@ -398,12 +398,13 @@ async function loadProfiles() {
   );
   allGirls = [];
   calendarData = {};
-  results.forEach(r => {
+  results.forEach((r, i) => {
     if (r.status !== 'fulfilled') return;
+    const venueId = VENUES[i].id;
     allGirls.push(...r.value.girls);
     const cal = r.value.calendar;
     for (const key of Object.keys(cal)) {
-      if (!key.startsWith('_')) calendarData[key] = cal[key];
+      if (!key.startsWith('_')) calendarData[venueId + ':' + key] = cal[key];
     }
   });
   autoExtractLabels(allGirls);

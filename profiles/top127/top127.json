@@ -20,7 +20,7 @@
       ],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Mizuki/Mizuki_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Mizuki/Mizuki_2.jpg",
@@ -46,7 +46,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Chanel/Chanel_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Chanel/Chanel_2.jpg"
@@ -93,7 +93,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Angela/Angela_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Angela/Angela_2.jpg"
@@ -341,7 +341,7 @@
       ],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Mio/Mio_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Mio/Mio_2.jpg",
@@ -369,7 +369,7 @@
       ],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Ayami/Ayami_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Ayami/Ayami_2.jpg",
@@ -423,7 +423,7 @@
       ],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Sana/Sana_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Sana/Sana_2.jpg",
@@ -553,7 +553,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Annie/Annie_1.jpg"
       ]
@@ -576,15 +576,65 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Alice/Alice_1.jpg"
       ]
     }
   ],
   "calendar": {
-    "_published": []
+    "_published": [
+      "2026-03-15"
+    ],
+    "Sana": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Ayami": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Mizuki": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Mio": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Chanel": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Alice": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Annie": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Angela": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-03-14T09:23:23.641Z",
-  "lastCalendarSync": ""
+  "lastCalendarSync": "2026-03-14T09:41:26.998Z"
 }

@@ -204,6 +204,11 @@ async function scrapeProfile(profileUrl) {
 
   const images = Object.values(imageGroups).map(g => g.scaled || g.original || g.resolution).filter(Boolean);
 
+  // Published date from JSON-LD or meta tag
+  const jsonLdDate = html.match(/"datePublished"\s*:\s*"([^"]+)"/i);
+  const metaDate = html.match(/property="article:published_time"\s+content="([^"]+)"/i);
+  const publishedDate = (jsonLdDate || metaDate)?.[1]?.slice(0, 10) || null;
+
   let earliestUpload = null;
   for (const imgUrl of images) {
     const dm = imgUrl.match(/\/uploads\/(\d{4})\/(\d{2})\//);
@@ -218,7 +223,7 @@ async function scrapeProfile(profileUrl) {
     desc = longest.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
   }
 
-  return { name, country, special, age, height, cup, val1, val2, val3, images, earliestUpload, desc };
+  return { name, country, special, age, height, cup, val1, val2, val3, images, publishedDate, earliestUpload, desc };
 }
 
 /* ── Download image ── */
@@ -292,7 +297,7 @@ async function main() {
         name, country: detail.country.length ? detail.country : [],
         age: detail.age || '', height: detail.height || '', cup: detail.cup || '',
         val1: detail.val1 || '', val2: detail.val2 || '', val3: detail.val3 || '',
-        startDate: detail.earliestUpload || now.split('T')[0],
+        startDate: detail.publishedDate || detail.earliestUpload || now.split('T')[0],
         oldUrl: profileUrl,
       };
       if (detail.country.length) entry.lang = LANG_FROM_COUNTRY[detail.country[0]] || '';

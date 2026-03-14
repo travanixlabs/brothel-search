@@ -58,6 +58,18 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .filter-option.active .filter-checkbox{border-color:var(--accent);background:rgba(180,74,255,0.2)}
 .filter-option.active .filter-checkbox::after{content:'';width:8px;height:8px;background:var(--accent)}
 .filter-option-count{margin-left:auto;font-size:12px;color:var(--text-dim);opacity:.6}
+.label-toggle{display:flex;gap:0;margin-left:auto;flex-shrink:0}
+.label-toggle-btn{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.03);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;padding:0}
+.label-toggle-btn:first-child{border-right:none}
+.label-toggle-btn.active-include{background:rgba(0,200,100,0.2);border-color:#00c864;color:#00c864}
+.label-toggle-btn.active-exclude{background:rgba(255,60,60,0.2);border-color:#ff3c3c;color:#ff3c3c}
+.label-toggle-btn:hover{background:rgba(255,255,255,0.08)}
+.filter-option.included{color:#00c864}
+.filter-option.included .filter-checkbox{border-color:#00c864;background:rgba(0,200,100,0.2)}
+.filter-option.included .filter-checkbox::after{content:'';width:8px;height:8px;background:#00c864}
+.filter-option.excluded{color:#ff3c3c}
+.filter-option.excluded .filter-checkbox{border-color:#ff3c3c;background:rgba(255,60,60,0.2)}
+.filter-option.excluded .filter-checkbox::after{content:'';width:8px;height:8px;background:#ff3c3c}
 
 /* Clear all button */
 .clear-all-btn{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .3s;white-space:nowrap;align-self:flex-end}
@@ -231,7 +243,7 @@ const VENUES = [
 let allGirls = [];
 let activeVenue = null;
 let activeCountry = null;
-let activeLabels = [];
+let activeLabels = { include: [], exclude: [] };
 let rangeFilters = {};
 let rangeDefaults = {};
 let activeSort = 'name';
@@ -295,6 +307,28 @@ function buildDropdown(id, label, options, selected) {
   return html;
 }
 
+function buildLabelDropdown(id, label, options, includeList, excludeList) {
+  const hasSel = includeList.length > 0 || excludeList.length > 0;
+  let selLabel = label;
+  if (hasSel) {
+    const parts = [];
+    if (includeList.length) parts.push('+' + includeList.length);
+    if (excludeList.length) parts.push('-' + excludeList.length);
+    selLabel = label + ' (' + parts.join(', ') + ')';
+  }
+  let html = `<div class="filter-dropdown" id="${id}">`;
+  html += `<button class="filter-dropdown-btn${hasSel ? ' has-selection' : ''}">${selLabel}<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>`;
+  html += `<div class="filter-dropdown-panel">`;
+  options.forEach(o => {
+    const isIncluded = includeList.includes(o.value);
+    const isExcluded = excludeList.includes(o.value);
+    const cls = isIncluded ? ' included' : (isExcluded ? ' excluded' : '');
+    html += `<div class="filter-option${cls}" data-value="${o.value}"><span class="filter-checkbox"></span>${o.label}<div class="label-toggle"><button class="label-toggle-btn${isIncluded ? ' active-include' : ''}" data-action="include" data-label="${o.value}">+</button><button class="label-toggle-btn${isExcluded ? ' active-exclude' : ''}" data-action="exclude" data-label="${o.value}">&minus;</button></div></div>`;
+  });
+  html += `</div></div>`;
+  return html;
+}
+
 function renderFilters() {
   const fr = document.getElementById('filterRow');
   const base = activeVenue ? allGirls.filter(g => g.venue === activeVenue) : allGirls;
@@ -319,10 +353,10 @@ function renderFilters() {
 
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  const hasFilters = activeVenue || activeCountry || activeLabels.length || hasRangeActive || hasTextFilter;
+  const hasFilters = activeVenue || activeCountry || activeLabels.include.length || activeLabels.exclude.length || hasRangeActive || hasTextFilter;
   fr.innerHTML = buildDropdown('ddVenue', 'Venue', venueOpts, venueSelected)
     + buildDropdown('ddCountry', 'Country', countryOpts, countrySelected)
-    + buildDropdown('ddLabels', 'Services', labelOpts, activeLabels)
+    + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + (hasFilters ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Text filter inputs in More Filters panel
@@ -358,13 +392,20 @@ function renderFilters() {
     opt.onclick = e => { e.stopPropagation(); activeCountry = activeCountry === opt.dataset.value ? null : opt.dataset.value; renderFilters(); renderGrid(); };
   });
 
-  // Label options (multi-select)
-  document.querySelectorAll('#ddLabels .filter-option').forEach(opt => {
-    opt.onclick = e => {
+  // Label options (+/- toggle)
+  document.querySelectorAll('#ddLabels .label-toggle-btn').forEach(btn => {
+    btn.onclick = e => {
       e.stopPropagation();
-      const v = opt.dataset.value;
-      const idx = activeLabels.indexOf(v);
-      if (idx >= 0) activeLabels.splice(idx, 1); else activeLabels.push(v);
+      const label = btn.dataset.label;
+      const action = btn.dataset.action;
+      const incIdx = activeLabels.include.indexOf(label);
+      const excIdx = activeLabels.exclude.indexOf(label);
+      // Remove from both first
+      if (incIdx >= 0) activeLabels.include.splice(incIdx, 1);
+      if (excIdx >= 0) activeLabels.exclude.splice(excIdx, 1);
+      // Toggle: if was already active for this action, just remove (done above); otherwise add
+      if (action === 'include' && incIdx < 0) activeLabels.include.push(label);
+      else if (action === 'exclude' && excIdx < 0) activeLabels.exclude.push(label);
       renderFilters(); renderGrid();
     };
   });
@@ -372,7 +413,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue = null; activeCountry = null; activeLabels.include.length = 0; activeLabels.exclude.length = 0; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -479,9 +520,13 @@ function getFiltered() {
     const countries = Array.isArray(g.country) ? g.country : (g.country ? [g.country] : []);
     return countries.includes(activeCountry);
   });
-  if (activeLabels.length) list = list.filter(g => {
+  if (activeLabels.include.length) list = list.filter(g => {
     const gl = g.labels || [];
-    return activeLabels.every(l => gl.some(g => g.toLowerCase() === l.toLowerCase()));
+    return activeLabels.include.every(l => gl.some(lb => lb.toLowerCase() === l.toLowerCase()));
+  });
+  if (activeLabels.exclude.length) list = list.filter(g => {
+    const gl = g.labels || [];
+    return activeLabels.exclude.every(l => !gl.some(lb => lb.toLowerCase() === l.toLowerCase()));
   });
   // Range filters
   RANGE_DEFS.forEach(def => {

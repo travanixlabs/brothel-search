@@ -46,8 +46,16 @@ const SITES = {
     rosterUrl: 'https://citybrothel.com.au/girls-roster/',
     jsonPath: 'profiles/kyoto206/kyoto206.json',
     imgPrefix: 'profiles/kyoto206',
-    siteType: 'wordpress', // different scraping logic
+    siteType: 'wordpress',
     rosterFormat: 'kyoto206',
+  },
+  sakura57: {
+    name: 'Sakura 57',
+    baseUrl: 'https://www.surryhillsbrothel.com.au',
+    girlsUrl: 'https://www.surryhillsbrothel.com.au/our-girls/',
+    jsonPath: 'profiles/sakura57/sakura57.json',
+    imgPrefix: 'profiles/sakura57',
+    siteType: 'wordpress',
   },
 };
 
@@ -332,7 +340,7 @@ async function scrapeGirlProfile(site, id) {
   return { val1, val2, val3, images, desc, profileHeight, profileType, profileLang, profileExp, earliestUpload };
 }
 
-/* ── WordPress (Kyoto 206) scraping ── */
+/* ── WordPress site scraping (Kyoto 206, Sakura 57, etc.) ── */
 
 const WP_COUNTRY_MAP = {
   japan: ['Japanese'], korea: ['Korean'], china: ['Chinese'],
@@ -354,7 +362,7 @@ function parseWpPageTitle(html) {
   if (!titleMatch) return { name: '', country: [], special: '' };
 
   let titleText = decodeHtmlEntities(titleMatch[1])
-    .replace(/\s*[–—|\-]\s*Kyoto\s*206.*$/i, '').trim();
+    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57).*$/i, '').trim();
 
   let special = '';
   const parenParts = [];
@@ -398,7 +406,8 @@ async function scrapeWpListing(site) {
   if (!resp.ok) throw new Error(`WP listing fetch failed: ${resp.status}`);
   const html = await resp.text();
 
-  const linkRe = /href="(https?:\/\/citybrothel\.com\.au\/project\/[^"]+)"/gi;
+  const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
+  const linkRe = new RegExp(`href="(https?://${domain}/project/[^"]+)"`, 'gi');
   const seen = new Set();
   const urls = [];
   let m;
@@ -439,10 +448,12 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   }
 
   // Images: filter to those matching girl's name, or fallback to non-portfolio images
-  const imgRe = /(https?:\/\/citybrothel\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
+  const mainHtml = html.split(/In Portfolios|class="portfolio|class="related|id="portfolio/i)[0] || html;
+  const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
+  const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp))`, 'gi');
   const allImages = [];
   let im;
-  while ((im = imgRe.exec(html)) !== null) allImages.push(im[1]);
+  while ((im = imgRe.exec(mainHtml)) !== null) allImages.push(im[1]);
 
   const nameLower = name.toLowerCase();
   const nameVariants = [nameLower];
@@ -517,7 +528,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
 
 /* ── Sync: Kyoto 206 Girls ── */
 
-async function syncKyoto206Girls(env, site) {
+async function syncWpGirls(env, site) {
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
   const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
@@ -1031,11 +1042,17 @@ export default {
 
     // Kyoto 206 endpoints
     if (url.pathname === '/sync-kyoto206-girls' && request.method === 'POST') {
-      try { return json(await syncKyoto206Girls(env, SITES.kyoto206)); }
+      try { return json(await syncWpGirls(env, SITES.kyoto206)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-kyoto206-calendar' && request.method === 'POST') {
       try { return json({ success: await syncCalendar(env, SITES.kyoto206) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
+    // Sakura 57 endpoints
+    if (url.pathname === '/sync-sakura57-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.sakura57)); }
       catch (e) { return json({ error: e.message }); }
     }
 
@@ -1054,7 +1071,10 @@ export default {
         syncGirls(env, SITES.club).catch(e => console.error('[Club] Girls sync error:', e))
       );
       ctx.waitUntil(
-        syncKyoto206Girls(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Girls sync error:', e))
+        syncWpGirls(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Girls sync error:', e))
+      );
+      ctx.waitUntil(
+        syncWpGirls(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Girls sync error:', e))
       );
     }
 

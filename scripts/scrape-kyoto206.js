@@ -241,12 +241,14 @@ async function scrapeProfile(profileUrl, girlNameHint) {
     }
   }
 
-  // Extract images from wp-content/uploads - ONLY those matching the girl's name
+  // Extract images - only from main profile section (before portfolio grid)
+  const mainHtml = html.split(/In Portfolios|class="portfolio|class="related|id="portfolio/i)[0] || html;
+
   const imgRe = /(https?:\/\/citybrothel\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
   const allImages = [];
   let im;
 
-  while ((im = imgRe.exec(html)) !== null) {
+  while ((im = imgRe.exec(mainHtml)) !== null) {
     allImages.push(im[1]);
   }
 

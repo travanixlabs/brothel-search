@@ -268,6 +268,44 @@ function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 
+const LABEL_RULES = [
+  { keywords: ['lesbian'], label: 'Double Lesbian' },
+  { keywords: ['shower together'], label: 'Shower Together' },
+  { keywords: ['pussy slide', 'pussy sliding'], label: 'Pussy Slide' },
+  { keywords: ['dfk'], label: 'DFK' },
+  { keywords: ['bbbj'], label: 'BBBJ' },
+  { keywords: ['69'], label: '69' },
+  { keywords: ['cim'], label: 'CIM' },
+  { keywords: ['rimming'], label: 'Rimming' },
+  { keywords: ['daty', 'dining'], label: 'DATY' },
+  { keywords: ['gfe'], label: 'GFE' },
+  { keywords: ['double'], label: 'Double' },
+  { keywords: ['boob slide', 'boobs slide'], label: 'Boob Slide' },
+  { keywords: ['couple'], label: 'Couple' },
+  { keywords: ['2 men', '2men', '2 man'], label: '2 Men' },
+  { keywords: ['outcall'], label: 'Outcall' },
+  { keywords: ['swallow'], label: 'Swallow' },
+  { keywords: ['an-al', 'anal'], label: 'Anal' },
+  { keywords: ['cof'], label: 'COF' },
+  { keywords: ['filming', 'filmming', 'video'], label: 'Filming' },
+  { keywords: ['pse'], label: 'PSE' },
+];
+
+function autoExtractLabels(girls) {
+  girls.forEach(g => {
+    const desc = (g.desc || '').toLowerCase();
+    if (!desc) return;
+    if (!g.labels) g.labels = [];
+    const existing = new Set(g.labels.map(l => l.toLowerCase()));
+    LABEL_RULES.forEach(rule => {
+      if (!existing.has(rule.label.toLowerCase()) && rule.keywords.some(kw => desc.includes(kw))) {
+        g.labels.push(rule.label);
+        existing.add(rule.label.toLowerCase());
+      }
+    });
+  });
+}
+
 async function loadProfiles() {
   const results = await Promise.allSettled(
     VENUES.map(async v => {
@@ -278,6 +316,7 @@ async function loadProfiles() {
     })
   );
   allGirls = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+  autoExtractLabels(allGirls);
   renderFilters();
   renderRangeFilters();
   renderGrid();

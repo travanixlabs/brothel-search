@@ -734,13 +734,12 @@ function renderRangeFilters() {
         const dateInput = document.createElement('input');
         dateInput.type = 'date';
         dateInput.className = 'range-date-input';
-        dateInput.readOnly = true;
         dateInput.value = fmt(rangeFilters[def.key]?.[handle] ?? (handle === 'min' ? dataMin : dataMax));
         dateInput.min = numToDate(dataMin);
         dateInput.max = numToDate(dataMax);
         dateInput.addEventListener('keydown', e => e.preventDefault());
         el.replaceWith(dateInput);
-        dateInput.showPicker();
+        try { dateInput.showPicker(); } catch { dateInput.focus(); }
         let committed = false;
         const commit = () => {
           if (committed) return;

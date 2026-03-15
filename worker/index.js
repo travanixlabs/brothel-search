@@ -81,6 +81,22 @@ const SITES = {
     listingSelector: 'listing_type',
     paginationParam: 'pg',
   },
+  city429: {
+    name: '429 City',
+    baseUrl: 'https://www.429city.com',
+    girlsUrl: 'https://www.429city.com/ladies/',
+    jsonPath: 'profiles/429city/429city.json',
+    imgPrefix: 'profiles/429city',
+    siteType: 'wordpress',
+    listingSelector: null,
+    customListingUrls: ['https://www.429city.com/ladies/', 'https://www.429city.com/roster/'],
+    excludeUrlPatterns: ['/ladies/', '/roster/', '/contact/', '/feed/', '/comments/', '/rate/', '/escort/', '/job/', '/page/', '/author/', '/wp-admin/', '/wp-login/'],
+    pricingByCountry: {
+      japanese: { val1: '210', val2: '260', val3: '320' },
+      western: { val1: '230', val2: '280', val3: '350' },
+      other: { val1: '170', val2: '240', val3: '300' },
+    },
+  },
 };
 
 /* ── GitHub helpers ── */
@@ -1318,6 +1334,12 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // 429 City endpoints
+    if (url.pathname === '/sync-429city-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.city429)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     // Fantasy Club 35 endpoints
     if (url.pathname === '/sync-fantasyclub35-girls' && request.method === 'POST') {
       try { return json(await syncWpGirls(env, SITES.fantasyclub35)); }
@@ -1353,6 +1375,7 @@ export default {
           syncAllGirls(syncWpGirls, SITES.sakura57),
           syncAllGirls(syncWpGirls, SITES.top127),
           syncAllGirls(syncWpGirls, SITES.fantasyclub35),
+          syncAllGirls(syncWpGirls, SITES.city429),
         ]);
 
         console.log('All girls syncs complete. Starting calendar syncs...');

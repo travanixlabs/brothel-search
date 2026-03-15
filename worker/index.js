@@ -69,6 +69,15 @@ const SITES = {
     siteType: 'wordpress',
     rosterFormat: 'top127',
   },
+  fantasyclub35: {
+    name: 'Fantasy Club 35',
+    baseUrl: 'https://fantasyclub35.com.au',
+    girlsUrl: 'https://fantasyclub35.com.au/',
+    jsonPath: 'profiles/fantasyclub35/fantasyclub35.json',
+    imgPrefix: 'profiles/fantasyclub35',
+    siteType: 'wordpress',
+    listingSelector: 'listing_type',
+  },
 };
 
 /* ── GitHub helpers ── */
@@ -419,7 +428,8 @@ async function scrapeWpListing(site) {
   const html = await resp.text();
 
   const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
-  const linkRe = new RegExp(`href="(https?://${domain}/project/[^"]+)"`, 'gi');
+  const pathType = site.listingSelector || 'project';
+  const linkRe = new RegExp(`href="(https?://${domain}/${pathType}/[^"]+)"`, 'gi');
   const seen = new Set();
   const urls = [];
   let m;
@@ -1128,6 +1138,12 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // Fantasy Club 35 endpoints
+    if (url.pathname === '/sync-fantasyclub35-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.fantasyclub35)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     return new Response('Not found', { status: 404 });
   },
 
@@ -1150,6 +1166,7 @@ export default {
       ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.kyoto206));
       ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.sakura57));
       ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.top127));
+      ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.fantasyclub35));
 
       // Calendar sync
       ctx.waitUntil(

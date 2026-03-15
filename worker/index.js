@@ -1074,8 +1074,8 @@ async function syncCalendar(env, site) {
 
   let changed = false;
 
-  // For sites with mismatched URL slugs: try to auto-create profiles for unmatched rostered names
-  if (site.rosterFormat === 'fantasyclub35' || site.autoCreateFromRoster) {
+  // Auto-create profiles for unmatched rostered names by scanning listing pages
+  {
     const unmatchedNames = new Set();
     for (const entries of Object.values(scraped)) {
       for (const { name } of entries) {
@@ -1084,46 +1084,102 @@ async function syncCalendar(env, site) {
     }
     if (unmatchedNames.size > 0) {
       console.log(`[${site.name}] Unmatched roster names: ${[...unmatchedNames].join(', ')}. Scanning listing pages...`);
-      const allUrls = await scrapeWpListing(site);
-      const knownUrls = new Set((data.girls || []).map(g => g.oldUrl).filter(Boolean));
-      const newUrls = allUrls.filter(u => !knownUrls.has(u));
 
-      for (const pUrl of newUrls) {
-        if (unmatchedNames.size === 0) break;
-        try {
-          await new Promise(r => setTimeout(r, 1000));
-          const profile = await scrapeWpProfile(site, pUrl, null);
-          const pName = profile.titleInfo.name;
-          if (!pName || !unmatchedNames.has(pName)) continue;
+      if (site.siteType === 'wordpress') {
+        // WordPress sites: scrape listing URLs, then check each profile page title
+        const allUrls = await scrapeWpListing(site);
+        const knownUrls = new Set((data.girls || []).map(g => g.oldUrl).filter(Boolean));
+        const newUrls = allUrls.filter(u => !knownUrls.has(u));
 
-          const now = new Date().toISOString();
-          const entry = {
-            name: pName,
-            country: profile.titleInfo.country.length ? profile.titleInfo.country : undefined,
-            age: profile.age || undefined, height: profile.height || undefined,
-            cup: profile.cup || undefined, val1: profile.val1 || undefined,
-            val2: profile.val2 || undefined, val3: profile.val3 || undefined,
-            startDate: profile.earliestUpload || now.split('T')[0], oldUrl: pUrl,
-            desc: '', lang: profile.titleInfo.country.length ? (LANG_FROM_COUNTRY[profile.titleInfo.country[0]] || '') : '',
-            labels: [], originalSite: 'Exists', lastModified: now, lastRostered: '', photos: [],
-          };
-          for (let i = 0; i < profile.images.length; i++) {
-            try {
-              const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-              const imgPath = `${site.imgPrefix}/${pName}/${pName}_${i + 1}.${ext}`;
-              const ghUrl = await uploadImage(env, profile.images[i], imgPath);
-              entry.photos.push(ghUrl);
-              await new Promise(r => setTimeout(r, 500));
-            } catch (e) { console.error(`[${site.name}] Image error ${pName}: ${e.message}`); }
-          }
-          for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
-          data.girls.push(entry);
-          validNames.add(pName);
-          unmatchedNames.delete(pName);
-          changed = true;
-          console.log(`[${site.name}] Auto-created from roster: ${pName} (${entry.photos.length} photos)`);
-        } catch (e) { console.error(`[${site.name}] Failed scanning ${pUrl}: ${e.message}`); }
+        for (const pUrl of newUrls) {
+          if (unmatchedNames.size === 0) break;
+          try {
+            await new Promise(r => setTimeout(r, 1000));
+            const profile = await scrapeWpProfile(site, pUrl, null);
+            const pName = profile.titleInfo.name;
+            if (!pName || !unmatchedNames.has(pName)) continue;
+
+            const now = new Date().toISOString();
+            const entry = {
+              name: pName,
+              country: profile.titleInfo.country.length ? profile.titleInfo.country : undefined,
+              age: profile.age || undefined, height: profile.height || undefined,
+              cup: profile.cup || undefined, val1: profile.val1 || undefined,
+              val2: profile.val2 || undefined, val3: profile.val3 || undefined,
+              startDate: profile.earliestUpload || now.split('T')[0], oldUrl: pUrl,
+              desc: '', lang: profile.titleInfo.country.length ? (LANG_FROM_COUNTRY[profile.titleInfo.country[0]] || '') : '',
+              labels: [], originalSite: 'Exists', lastModified: now, lastRostered: '', photos: [],
+            };
+            for (let i = 0; i < profile.images.length; i++) {
+              try {
+                const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                const imgPath = `${site.imgPrefix}/${pName}/${pName}_${i + 1}.${ext}`;
+                const ghUrl = await uploadImage(env, profile.images[i], imgPath);
+                entry.photos.push(ghUrl);
+                await new Promise(r => setTimeout(r, 500));
+              } catch (e) { console.error(`[${site.name}] Image error ${pName}: ${e.message}`); }
+            }
+            for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
+            data.girls.push(entry);
+            validNames.add(pName);
+            unmatchedNames.delete(pName);
+            changed = true;
+            console.log(`[${site.name}] Auto-created from roster: ${pName} (${entry.photos.length} photos)`);
+          } catch (e) { console.error(`[${site.name}] Failed scanning ${pUrl}: ${e.message}`); }
+        }
+      } else {
+        // Ginza sites: scrape listing cards, match by name
+        const cards = await scrapeGirlsListing(site);
+        const knownNames = new Set((data.girls || []).map(g => g.name));
+
+        for (const card of cards) {
+          if (unmatchedNames.size === 0) break;
+          if (!unmatchedNames.has(card.name)) continue;
+          try {
+            await new Promise(r => setTimeout(r, 1000));
+            const profile = await scrapeGirlProfile(site, card.id);
+            const now = new Date().toISOString();
+            const todayStr = now.split('T')[0];
+            const entry = {
+              name: card.name,
+              country: card.country.length ? card.country : undefined,
+              age: card.age || undefined, body: card.body || undefined,
+              height: card.height || profile.profileHeight || undefined,
+              cup: card.cup || undefined,
+              val1: profile.val1 || undefined, val2: profile.val2 || undefined, val3: profile.val3 || undefined,
+            };
+            if (card.special) entry.special = card.special;
+            entry.exp = profile.profileExp || 'Inexperienced';
+            entry.startDate = profile.earliestUpload || todayStr;
+            entry.lang = profile.profileLang || (card.country.length ? LANG_FROM_COUNTRY[card.country[0]] || '' : '');
+            entry.oldUrl = `${site.girlsUrl}/${card.id}`;
+            entry.type = profile.profileType || '';
+            entry.desc = profile.desc || '';
+            entry.originalSite = 'Exists';
+            const photos = [];
+            for (let i = 0; i < profile.images.length; i++) {
+              try {
+                const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                const imgPath = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
+                const ghUrl = await uploadImage(env, profile.images[i], imgPath);
+                photos.push(ghUrl);
+                await new Promise(r => setTimeout(r, 500));
+              } catch (e) { console.error(`[${site.name}] Image error ${card.name}: ${e.message}`); }
+            }
+            entry.photos = photos;
+            entry.labels = extractLabels(profile.desc);
+            entry.lastModified = now;
+            entry.lastRostered = '';
+            for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
+            data.girls.push(entry);
+            validNames.add(card.name);
+            unmatchedNames.delete(card.name);
+            changed = true;
+            console.log(`[${site.name}] Auto-created from roster: ${card.name} (${photos.length} photos)`);
+          } catch (e) { console.error(`[${site.name}] Failed creating ${card.name}: ${e.message}`); }
+        }
       }
+
       if (unmatchedNames.size > 0) {
         console.log(`[${site.name}] Still unmatched: ${[...unmatchedNames].join(', ')}`);
       }

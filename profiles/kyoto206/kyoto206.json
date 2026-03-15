@@ -8120,6 +8120,27 @@
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Miyuki/Miyuki_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Miyuki/Miyuki_2.jpg"
       ]
+    },
+    {
+      "name": "Ran",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-03-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/ran-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [],
+      "labels": [],
+      "lastModified": "2026-03-15T01:10:27.578Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -8332,6 +8353,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-14T05:51:41.857Z",
+  "lastGirlsSync": "2026-03-15T01:10:27.578Z",
   "lastCalendarSync": "2026-03-14T07:06:22.379Z"
 }

@@ -287,6 +287,7 @@ function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
+function imgProxy(url, w = 400) { if (!url) return ''; return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&output=webp&q=80`; }
 
 function fmt24to12(t) {
   const [h, m] = t.split(':').map(Number);
@@ -855,7 +856,7 @@ function renderGrid() {
     const el = document.createElement('div');
     el.className = 'girl-card';
     const img = g.photos && g.photos.length
-      ? `<img class="card-thumb" src="${g.photos[0]}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
+      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
@@ -899,13 +900,13 @@ function renderGrid() {
         hoverInterval = setInterval(() => {
           hoverIdx = (hoverIdx + 1) % g.photos.length;
           const img = thumb();
-          if (img) img.src = g.photos[hoverIdx];
+          if (img) img.src = imgProxy(g.photos[hoverIdx]);
         }, 2000);
       });
       el.addEventListener('mouseleave', () => {
         clearInterval(hoverInterval);
         const img = thumb();
-        if (img) img.src = g.photos[0];
+        if (img) img.src = imgProxy(g.photos[0]);
       });
     }
     grid.appendChild(el);
@@ -927,7 +928,7 @@ function showProfile(g) {
       <div class="profile-gallery">
         <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
         <div class="profile-thumbs">
-          ${photos.map((p, i) => `<img src="${p}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
+          ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
       </div>
       <div>

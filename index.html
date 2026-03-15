@@ -840,19 +840,12 @@ function getFiltered() {
   return list;
 }
 
-function renderGrid() {
-  const grid = document.getElementById('girlsGrid');
-  const filtered = getFiltered();
+const PAGE_SIZE = 24;
+let currentFiltered = [];
+let currentPage = 0;
+let loadingMore = false;
 
-  document.getElementById('resultCount').textContent = filtered.length + ' girl' + (filtered.length !== 1 ? 's' : '') + ' found';
-
-  if (!filtered.length) {
-    grid.innerHTML = '<div class="empty-msg">No girls match your filters.</div>';
-    return;
-  }
-
-  grid.innerHTML = '';
-  filtered.forEach((g, i) => {
+function renderCard(g, grid) {
     const el = document.createElement('div');
     el.className = 'girl-card';
     const img = g.photos && g.photos.length
@@ -861,7 +854,6 @@ function renderGrid() {
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
     const lastRostered = (() => {
-      // Always check calendar availability first (regardless of lastRostered)
       const avail = getAvailabilityText(g);
       if (avail && avail !== 'ended') return avail;
       if (!g.lastRostered) return '';
@@ -910,8 +902,40 @@ function renderGrid() {
       });
     }
     grid.appendChild(el);
-  });
 }
+
+function loadMore() {
+  if (loadingMore) return;
+  const grid = document.getElementById('girlsGrid');
+  const start = currentPage * PAGE_SIZE;
+  const end = Math.min(start + PAGE_SIZE, currentFiltered.length);
+  if (start >= currentFiltered.length) return;
+  loadingMore = true;
+  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
+  currentPage++;
+  loadingMore = false;
+}
+
+function renderGrid() {
+  const grid = document.getElementById('girlsGrid');
+  currentFiltered = getFiltered();
+  currentPage = 0;
+
+  document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
+
+  if (!currentFiltered.length) {
+    grid.innerHTML = '<div class="empty-msg">No girls match your filters.</div>';
+    return;
+  }
+
+  grid.innerHTML = '';
+  loadMore();
+}
+
+window.addEventListener('scroll', () => {
+  if (currentPage * PAGE_SIZE >= currentFiltered.length) return;
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400) loadMore();
+});
 
 function showProfile(g) {
   const overlay = document.getElementById('profileOverlay');

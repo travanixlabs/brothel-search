@@ -6722,6 +6722,29 @@
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/sakura57/Hana/Hana_1.jpg"
       ]
+    },
+    {
+      "name": "Ayane",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2025-09-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/ayane-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/sakura57/Ayane/Ayane_1.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-15T01:10:26.836Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -6870,6 +6893,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-14T08:04:37.678Z",
+  "lastGirlsSync": "2026-03-15T01:10:26.836Z",
   "lastCalendarSync": "2026-03-15T01:03:58.679Z"
 }

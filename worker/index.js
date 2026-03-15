@@ -1132,22 +1132,20 @@ export default {
 
     // 8:00 UTC (7pm AEDT) or 20:00 UTC (7am AEDT) — sync girls + calendar (all sites)
     if (hour === 8 || hour === 20) {
-      // Girls sync
-      ctx.waitUntil(
-        syncGirls(env, SITES.empire).catch(e => console.error('[Empire] Girls sync error:', e))
-      );
-      ctx.waitUntil(
-        syncGirls(env, SITES.club).catch(e => console.error('[Club] Girls sync error:', e))
-      );
-      ctx.waitUntil(
-        syncWpGirls(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Girls sync error:', e))
-      );
-      ctx.waitUntil(
-        syncWpGirls(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Girls sync error:', e))
-      );
-      ctx.waitUntil(
-        syncWpGirls(env, SITES.top127).catch(e => console.error('[Top 127] Girls sync error:', e))
-      );
+      // Girls sync — loop until no remaining for each site
+      async function syncAllGirls(fn, site) {
+        let result;
+        do {
+          result = await fn(env, site).catch(e => { console.error(`[${site.name}] Girls sync error:`, e); return { remaining: 0 }; });
+          console.log(`[${site.name}] Girls batch: added=${result.added || 0}, remaining=${result.remaining || 0}`);
+        } while (result.remaining > 0);
+      }
+
+      ctx.waitUntil(syncAllGirls(syncGirls, SITES.empire));
+      ctx.waitUntil(syncAllGirls(syncGirls, SITES.club));
+      ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.kyoto206));
+      ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.sakura57));
+      ctx.waitUntil(syncAllGirls(syncWpGirls, SITES.top127));
 
       // Calendar sync
       ctx.waitUntil(

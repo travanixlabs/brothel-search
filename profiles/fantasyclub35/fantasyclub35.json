@@ -19,7 +19,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:05.663Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Amy/Amy_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Amy/Amy_2.png",
@@ -97,7 +97,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:13.477Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Ashvey/Ashvey_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Ashvey/Ashvey_2.png",
@@ -305,7 +305,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:31.912Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Selena/Selena_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Selena/Selena_2.png",
@@ -331,7 +331,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:34.157Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Bobo/Bobo_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Bobo/Bobo_2.png",
@@ -461,7 +461,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:45.358Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Yui/Yui_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Yui/Yui_2.png",
@@ -1307,15 +1307,191 @@
   ],
   "calendar": {
     "_published": [
+      "2026-03-09",
+      "2026-03-10",
+      "2026-03-11",
+      "2026-03-12",
+      "2026-03-13",
+      "2026-03-14",
       "2026-03-15"
     ],
+    "Selena": {
+      "2026-03-15": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-10": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-11": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "05:00"
+      }
+    },
+    "Amy": {
+      "2026-03-15": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-11": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "05:00"
+      }
+    },
+    "Ashvey": {
+      "2026-03-15": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-10": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-11": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "17:00",
+        "end": "05:00"
+      }
+    },
+    "Yui": {
+      "2026-03-15": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-10": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-11": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "13:00",
+        "end": "05:00"
+      }
+    },
+    "Bobo": {
+      "2026-03-15": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-10": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-11": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "11:00",
+        "end": "05:00"
+      }
+    },
     "Coco": {
       "2026-03-15": {
         "start": "17:00",
         "end": "05:00"
+      },
+      "2026-03-09": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-03-10": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-03-11": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-03-12": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-03-13": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-03-14": {
+        "start": "17:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-15T02:45:50.512Z",
-  "lastCalendarSync": "2026-03-15T03:51:13.954Z"
+  "lastCalendarSync": "2026-03-15T03:51:52.017Z"
 }

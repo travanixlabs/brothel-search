@@ -73,6 +73,8 @@ const SITES = {
     name: 'Fantasy Club 35',
     baseUrl: 'https://fantasyclub35.com.au',
     girlsUrl: 'https://fantasyclub35.com.au/',
+    rosterUrl: 'https://fantasyclub35.com.au/roster/',
+    rosterFormat: 'fantasyclub35',
     jsonPath: 'profiles/fantasyclub35/fantasyclub35.json',
     imgPrefix: 'profiles/fantasyclub35',
     siteType: 'wordpress',
@@ -768,6 +770,58 @@ async function scrapeTop127Roster(site) {
   return result;
 }
 
+async function scrapeFantasyClub35Roster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Fantasy Club 35 roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  // Extract week range: "Week 09/3/2026 to 15/3/2026"
+  const weekMatch = html.match(/Week\s+(\d{1,2})\/(\d{1,2})\/(\d{4})\s+to\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
+  if (!weekMatch) return {};
+
+  const startDay = parseInt(weekMatch[1]);
+  const startMonth = parseInt(weekMatch[2]);
+  const startYear = parseInt(weekMatch[3]);
+
+  // Build date for each day: Mon=0, Tue=1, ..., Sun=6
+  const dayNames = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const dates = {};
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(startYear, startMonth - 1, startDay + i);
+    const dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    dates[dayNames[i]] = dateStr;
+  }
+
+  // Split HTML by day tabs/sections
+  const result = {};
+  for (const dayName of dayNames) {
+    // Find section for this day - look for tab content
+    const dayRe = new RegExp(dayName + '[\\s\\S]*?(?=' + (dayNames[dayNames.indexOf(dayName) + 1] || '$') + '|$)', 'i');
+    const section = html.match(dayRe);
+    if (!section) continue;
+
+    const dateStr = dates[dayName];
+    const entries = [];
+    // Match: "Name（XX）" or "Name(XX)" followed by time like "11am-5am"
+    const entryRe = /([A-Z][a-z]+)\s*[\(\uff08][^)\uff09]*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
+    let m;
+    while ((m = entryRe.exec(section[0])) !== null) {
+      const name = m[1].trim();
+      let startH = parseInt(m[2]);
+      const startAmPm = m[2].replace(/\d+/, '').toLowerCase();
+      let endH = parseInt(m[3]);
+      const endAmPm = m[3].replace(/\d+/, '').toLowerCase();
+      const start = (startAmPm === 'pm' && startH !== 12 ? startH + 12 : startAmPm === 'am' && startH === 12 ? 0 : startH);
+      const end = (endAmPm === 'pm' && endH !== 12 ? endH + 12 : endAmPm === 'am' && endH === 12 ? 0 : endH);
+      entries.push({ name, start: String(start).padStart(2, '0') + ':00', end: String(end).padStart(2, '0') + ':00' });
+    }
+
+    if (entries.length > 0) result[dateStr] = entries;
+  }
+
+  return result;
+}
+
 /* ── Image upload ── */
 
 function arrayBufferToBase64(buffer) {
@@ -1006,6 +1060,8 @@ async function syncCalendar(env, site) {
     ? await scrapeKyoto206Roster(site)
     : site.rosterFormat === 'top127'
     ? await scrapeTop127Roster(site)
+    : site.rosterFormat === 'fantasyclub35'
+    ? await scrapeFantasyClub35Roster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
@@ -1154,6 +1210,10 @@ export default {
       try { return json(await syncWpGirls(env, SITES.fantasyclub35)); }
       catch (e) { return json({ error: e.message }); }
     }
+    if (url.pathname === '/sync-fantasyclub35-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.fantasyclub35) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
 
     return new Response('Not found', { status: 404 });
   },
@@ -1194,6 +1254,9 @@ export default {
       );
       ctx.waitUntil(
         syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e))
+      );
+      ctx.waitUntil(
+        syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e))
       );
     }
   },

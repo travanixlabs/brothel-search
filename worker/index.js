@@ -53,9 +53,11 @@ const SITES = {
     name: 'Sakura 57',
     baseUrl: 'https://www.surryhillsbrothel.com.au',
     girlsUrl: 'https://www.surryhillsbrothel.com.au/our-girls/',
+    rosterUrl: 'https://www.surryhillsbrothel.com.au/girls-roster/',
     jsonPath: 'profiles/sakura57/sakura57.json',
     imgPrefix: 'profiles/sakura57',
     siteType: 'wordpress',
+    rosterFormat: 'kyoto206',
   },
   top127: {
     name: 'Top 127',
@@ -1105,6 +1107,10 @@ export default {
     // Sakura 57 endpoints
     if (url.pathname === '/sync-sakura57-girls' && request.method === 'POST') {
       try { return json(await syncWpGirls(env, SITES.sakura57)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-sakura57-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.sakura57) }); }
       catch (e) { return json({ error: e.message }); }
     }
 

@@ -543,6 +543,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
 async function syncWpGirls(env, site) {
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
+  const skippedUrls = new Set(data._skippedUrls || []);
   const knownUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
 
   const allUrls = await scrapeWpListing(site);
@@ -558,7 +559,7 @@ async function syncWpGirls(env, site) {
     }
   }
 
-  const newUrls = allUrls.filter(url => !knownUrls.has(url));
+  const newUrls = allUrls.filter(url => !knownUrls.has(url) && !skippedUrls.has(url));
 
   if (newUrls.length === 0) {
     if (siteChanged) {
@@ -587,6 +588,7 @@ async function syncWpGirls(env, site) {
 
       if (!titleInfo.name || knownNames.has(titleInfo.name)) {
         console.log(`[${site.name}] Skip ${profileUrl}: ${!titleInfo.name ? 'no name' : 'duplicate'}`);
+        skippedUrls.add(profileUrl);
         continue;
       }
 
@@ -639,11 +641,13 @@ async function syncWpGirls(env, site) {
     }
   }
 
-  if (addedNames.length > 0 || siteChanged) {
+  if (skippedUrls.size > 0) data._skippedUrls = [...skippedUrls];
+
+  if (addedNames.length > 0 || siteChanged || skippedUrls.size > (data._skippedUrls || []).length) {
     data.girls = existing;
     data.lastGirlsSync = now;
     await ghPut(env, site.jsonPath, data, sha,
-      `[${site.name}] Auto-sync new girls: ${addedNames.join(', ')}`);
+      `[${site.name}] Auto-sync new girls: ${addedNames.length ? addedNames.join(', ') : 'skipped duplicates'}`);
   }
 
   return { added: addedNames.length, remaining, names: addedNames };
@@ -864,7 +868,7 @@ async function loadData(env, site) {
 
 /* ── Sync: Girls ── */
 
-const MAX_NEW_PER_RUN = 2;
+const MAX_NEW_PER_RUN = 50;
 
 async function syncGirls(env, site) {
   const { data, sha } = await loadData(env, site);

@@ -968,7 +968,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Ada/Ada_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Ada/Ada_2.jpg",
@@ -8325,6 +8325,10 @@
       "2026-03-15": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-03-16": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Hiya": {
@@ -8383,5 +8387,5 @@
     }
   },
   "lastGirlsSync": "2026-03-15T01:10:27.578Z",
-  "lastCalendarSync": "2026-03-15T01:11:02.474Z"
+  "lastCalendarSync": "2026-03-15T01:41:08.231Z"
 }

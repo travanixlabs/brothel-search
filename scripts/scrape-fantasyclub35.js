@@ -94,13 +94,20 @@ function parseTitle(title) {
 }
 
 async function scrapeListingPage() {
-  const html = await fetchUrl(SITE + '/');
-  const re = /href="(https?:\/\/fantasyclub35\.com\.au\/listing_type\/[^"]+)"/gi;
   const urls = new Set();
-  let m;
-  while ((m = re.exec(html)) !== null) {
-    urls.add(m[1].replace(/\/$/, '/'));
+  let page = 1;
+  while (true) {
+    const pageUrl = page === 1 ? SITE + '/' : SITE + '/?pg=' + page;
+    console.log(`  Fetching page ${page}...`);
+    const html = await fetchUrl(pageUrl);
+    const re = /href="(https?:\/\/fantasyclub35\.com\.au\/listing_type\/[^"]+)"/gi;
+    let m, found = 0;
+    while ((m = re.exec(html)) !== null) { urls.add(m[1].replace(/\/$/, '/')); found++; }
+    if (found === 0) break;
+    page++;
+    await sleep(500);
   }
+  console.log(`  Found ${urls.size} profiles across ${page - 1} pages`);
   return [...urls];
 }
 

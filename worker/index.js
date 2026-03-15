@@ -77,6 +77,7 @@ const SITES = {
     imgPrefix: 'profiles/fantasyclub35',
     siteType: 'wordpress',
     listingSelector: 'listing_type',
+    paginationParam: 'pg',
   },
 };
 
@@ -423,19 +424,29 @@ function parseWpPageTitle(html) {
 }
 
 async function scrapeWpListing(site) {
-  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
-  if (!resp.ok) throw new Error(`WP listing fetch failed: ${resp.status}`);
-  const html = await resp.text();
-
   const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
   const pathType = site.listingSelector || 'project';
   const linkRe = new RegExp(`href="(https?://${domain}/${pathType}/[^"]+)"`, 'gi');
   const seen = new Set();
   const urls = [];
-  let m;
-  while ((m = linkRe.exec(html)) !== null) {
-    const url = m[1].replace(/\/$/, '') + '/';
-    if (!seen.has(url)) { seen.add(url); urls.push(url); }
+  const paginationParam = site.paginationParam || null;
+
+  let page = 1;
+  while (true) {
+    const pageUrl = paginationParam && page > 1
+      ? `${site.girlsUrl}?${paginationParam}=${page}`
+      : site.girlsUrl;
+    const resp = await fetch(pageUrl, { headers: { 'User-Agent': UA } });
+    if (!resp.ok) break;
+    const html = await resp.text();
+    let found = 0;
+    let m;
+    while ((m = linkRe.exec(html)) !== null) {
+      const url = m[1].replace(/\/$/, '') + '/';
+      if (!seen.has(url)) { seen.add(url); urls.push(url); found++; }
+    }
+    if (!paginationParam || found === 0) break;
+    page++;
   }
   return urls;
 }

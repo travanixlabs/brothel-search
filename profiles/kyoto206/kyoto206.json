@@ -290,7 +290,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Nagi/Nagi_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Nagi/Nagi_2.jpg",
@@ -529,7 +529,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-14",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Wendy/Wendy_1.jpeg"
       ]
@@ -676,7 +676,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Mango/Mango_1.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Mango/Mango_2.jpg",
@@ -726,7 +726,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Tsuki/Tsuki_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Tsuki/Tsuki_2.jpeg",
@@ -809,7 +809,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Kiwi/Kiwi_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Kiwi/Kiwi_2.jpeg",
@@ -1066,7 +1066,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Moca/Moca_1.jpeg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Moca/Moca_2.jpeg",
@@ -1651,7 +1651,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-15",
+      "lastRostered": "2026-03-16",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Alisa/Alisa_1.jpeg"
       ]
@@ -8146,7 +8146,8 @@
   "calendar": {
     "_published": [
       "2026-03-14",
-      "2026-03-15"
+      "2026-03-15",
+      "2026-03-16"
     ],
     "Muku": {
       "2026-03-14": {
@@ -8242,6 +8243,10 @@
       "2026-03-15": {
         "start": "10:00",
         "end": "19:00"
+      },
+      "2026-03-16": {
+        "start": "10:00",
+        "end": "19:00"
       }
     },
     "Kiwi": {
@@ -8252,6 +8257,10 @@
       "2026-03-15": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-03-16": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Tsuki": {
@@ -8260,6 +8269,10 @@
         "end": "01:00"
       },
       "2026-03-15": {
+        "start": "11:00",
+        "end": "01:00"
+      },
+      "2026-03-16": {
         "start": "11:00",
         "end": "01:00"
       }
@@ -8284,6 +8297,10 @@
       "2026-03-14": {
         "start": "14:00",
         "end": "02:00"
+      },
+      "2026-03-16": {
+        "start": "13:00",
+        "end": "01:00"
       }
     },
     "Moca": {
@@ -8292,6 +8309,10 @@
         "end": "23:00"
       },
       "2026-03-15": {
+        "start": "18:00",
+        "end": "23:00"
+      },
+      "2026-03-16": {
         "start": "18:00",
         "end": "23:00"
       }
@@ -8344,15 +8365,23 @@
       "2026-03-15": {
         "start": "21:00",
         "end": "02:00"
+      },
+      "2026-03-16": {
+        "start": "21:00",
+        "end": "03:00"
       }
     },
     "Nagi": {
       "2026-03-15": {
-        "start": "14:00",
-        "end": "03:00"
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-03-16": {
+        "start": "09:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-15T01:10:27.578Z",
-  "lastCalendarSync": "2026-03-14T07:06:22.379Z"
+  "lastCalendarSync": "2026-03-15T01:11:02.474Z"
 }

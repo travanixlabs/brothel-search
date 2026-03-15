@@ -489,6 +489,7 @@ function renderFilters() {
   // Venue options
   const venueOpts = [];
   VENUES.forEach(v => { venueOpts.push({ value: v.id, label: v.name, count: allGirls.filter(g => g.venue === v.id).length }) });
+  venueOpts.sort((a, b) => a.label.localeCompare(b.label));
   const venueSelected = activeVenue ? [activeVenue] : [];
 
   // Country options

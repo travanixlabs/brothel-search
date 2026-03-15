@@ -1303,6 +1303,30 @@
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Lisa%202/Lisa_2_2.jpg",
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Lisa%202/Lisa_2_3.jpg"
       ]
+    },
+    {
+      "name": "Chole",
+      "country": [
+        "Hong Konger"
+      ],
+      "age": "24",
+      "height": "156",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "300",
+      "startDate": "2025-07-01",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/kayla%ef%bc%88hongkong%ef%bc%89/",
+      "desc": "",
+      "lang": "Cantonese, English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-03-15T04:04:00.221Z",
+      "lastRostered": "2026-03-15",
+      "photos": [
+        "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Chole/Chole_1.jpg",
+        "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/fantasyclub35/Chole/Chole_2.jpg"
+      ]
     }
   ],
   "calendar": {
@@ -1489,6 +1513,24 @@
       "2026-03-14": {
         "start": "17:00",
         "end": "03:00"
+      }
+    },
+    "Chole": {
+      "2026-03-10": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-12": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-13": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-14": {
+        "start": "17:00",
+        "end": "05:00"
       }
     }
   },

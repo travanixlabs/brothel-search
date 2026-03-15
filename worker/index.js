@@ -7,8 +7,8 @@
  *   profiles/kyoto206/kyoto206.json        — from citybrothel.com.au
  *
  * Cron schedule:
- *   9:00 UTC  (7pm AEST) — sync girls (all sites)
- *   10:00 UTC (8pm AEST) — sync calendar (ginza sites)
+ *   8:00 UTC  (7pm AEDT) — sync girls + calendar (all sites)
+ *   20:00 UTC (7am AEDT) — sync girls + calendar (all sites)
  *
  * Secrets required (set via Cloudflare dashboard or `wrangler secret put`):
  *   GITHUB_TOKEN — GitHub personal access token (contents read/write scope)
@@ -1124,8 +1124,9 @@ export default {
   async scheduled(event, env, ctx) {
     const hour = new Date(event.scheduledTime).getUTCHours();
 
-    // 9:00 UTC = 7pm AEST — girls sync (all sites)
-    if (hour === 9) {
+    // 8:00 UTC (7pm AEDT) or 20:00 UTC (7am AEDT) — sync girls + calendar (all sites)
+    if (hour === 8 || hour === 20) {
+      // Girls sync
       ctx.waitUntil(
         syncGirls(env, SITES.empire).catch(e => console.error('[Empire] Girls sync error:', e))
       );
@@ -1141,10 +1142,8 @@ export default {
       ctx.waitUntil(
         syncWpGirls(env, SITES.top127).catch(e => console.error('[Top 127] Girls sync error:', e))
       );
-    }
 
-    // 10:00 UTC = 8pm AEST — calendar sync (all sites)
-    if (hour === 10) {
+      // Calendar sync
       ctx.waitUntil(
         syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e))
       );
@@ -1153,6 +1152,9 @@ export default {
       );
       ctx.waitUntil(
         syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e))
+      );
+      ctx.waitUntil(
+        syncCalendar(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Calendar sync error:', e))
       );
       ctx.waitUntil(
         syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e))

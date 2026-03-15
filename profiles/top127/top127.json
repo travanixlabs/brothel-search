@@ -310,7 +310,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-01-23",
+      "lastRostered": "2026-03-15",
       "photos": [
         "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/top127/Ella/Ella_1.jpg"
       ]
@@ -630,8 +630,14 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Ella": {
+      "2026-03-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-03-14T09:23:23.641Z",
-  "lastCalendarSync": "2026-03-14T09:41:26.998Z"
+  "lastCalendarSync": "2026-03-15T01:04:17.339Z"
 }

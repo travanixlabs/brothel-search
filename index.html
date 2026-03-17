@@ -593,7 +593,7 @@ function renderFilters() {
 
   // Venue options
   document.querySelectorAll('#ddVenue .filter-option').forEach(opt => {
-    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); if (rosterViewActive) renderRoster(); };
+    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); };
   });
 
   // Country options (+/- toggle)
@@ -967,6 +967,7 @@ function renderGrid() {
 
   grid.innerHTML = '';
   loadMore();
+  if (rosterViewActive) renderRoster();
 }
 
 window.addEventListener('scroll', () => {
@@ -1006,18 +1007,19 @@ function renderRoster() {
     dates.push({ str: ds, date: d });
   }
 
-  // Build per-date roster entries
-  const girlsByName = {};
-  allGirls.forEach(g => { girlsByName[(g.venue || '') + ':' + g.name] = g; });
+  // Build per-date roster entries, respecting all active filters
+  const girlsByKey = {};
+  allGirls.forEach(g => { girlsByKey[(g.venue || '') + ':' + g.name] = g; });
+  const filteredSet = new Set(getFiltered().map(g => (g.venue || '') + ':' + g.name));
 
   const rosterDays = [];
   for (const { str: dateStr, date } of dates) {
     const entries = [];
     for (const [key, cal] of Object.entries(calendarData)) {
       if (!cal[dateStr]) continue;
-      const g = girlsByName[key];
+      const g = girlsByKey[key];
       if (!g) continue;
-      if (activeVenue && g.venue !== activeVenue) continue;
+      if (!filteredSet.has(key)) continue;
       entries.push({ girl: g, slot: cal[dateStr] });
     }
     if (entries.length > 0) {

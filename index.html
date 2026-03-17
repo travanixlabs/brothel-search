@@ -249,7 +249,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 </div>
 </div>
 
-<div class="filter-sort-bar">
+<div class="filter-sort-bar" id="filterSortBar">
 <div class="filter-section">
 <div class="filter-section-title">Filter By</div>
 <div class="filter-row" id="filterRow"></div>
@@ -259,7 +259,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <div class="sort-row" id="sortRow"></div>
 </div>
 </div>
-<div class="more-filters-section">
+<div class="more-filters-section" id="moreFiltersSection">
 <button class="more-filters-toggle" id="moreFiltersToggle">More Filters <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
 <div class="more-filters-panel" id="moreFiltersPanel">
 <div class="text-filters-grid" id="moreFiltersDropdowns"></div>
@@ -983,16 +983,12 @@ function toggleRosterView() {
   const btn = document.getElementById('rosterToggle');
   const grid = document.getElementById('girlsGrid');
   const roster = document.getElementById('rosterView');
-  const filters = document.querySelector('.filter-sort-bar');
-  const moreFilters = document.querySelector('.more-filters-section');
-  const resultCount = document.getElementById('resultCount');
-
   btn.classList.toggle('active', rosterViewActive);
   grid.style.display = rosterViewActive ? 'none' : '';
   roster.classList.toggle('active', rosterViewActive);
-  if (filters) filters.style.display = rosterViewActive ? 'none' : '';
-  if (moreFilters) moreFilters.style.display = rosterViewActive ? 'none' : '';
-  if (resultCount) resultCount.style.display = rosterViewActive ? 'none' : '';
+  document.getElementById('filterSortBar').style.display = rosterViewActive ? 'none' : '';
+  document.getElementById('moreFiltersSection').style.display = rosterViewActive ? 'none' : '';
+  document.getElementById('resultCount').style.display = rosterViewActive ? 'none' : '';
 
   if (rosterViewActive) renderRoster();
 }

@@ -80,7 +80,7 @@ const SITES = {
     siteType: 'wordpress',
     listingSelector: 'listing_type',
     paginationParam: 'pg',
-    excludeUrls: [/trendy-wendy-products/i],
+    excludeUrls: ['trendy-wendy', 'shop-online', 'product'],
   },
   city429: {
     name: '429 City',
@@ -462,7 +462,7 @@ async function scrapeWpListing(site) {
     let m;
     while ((m = linkRe.exec(html)) !== null) {
       const url = m[1].replace(/\/$/, '') + '/';
-      if (!seen.has(url) && !(site.excludeUrls || []).some(re => re.test(url))) {
+      if (!seen.has(url) && !(site.excludeUrls || []).some(pat => url.toLowerCase().includes(pat))) {
         seen.add(url); urls.push(url); found++;
       }
     }

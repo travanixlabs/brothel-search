@@ -16,7 +16,7 @@
       "lang": "Japanese, Limited English",
       "desc": "AYANI (JAPAN) D - 30 minutes Age: 20 Height: 162cm Bust: D Service: Diamond 30mins $200 45mins $260 60mins $320",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:31:43.525Z",
       "lastRostered": "2026-01-01",
       "photos": [
@@ -138,7 +138,7 @@
       "lang": "English",
       "desc": "CARA (LATINA) D - 30 minutes Age: 21 Height: 162cm Bust: C Service: Diamond 30mins $180 45mins $250 60mins $310",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": [
@@ -375,7 +375,7 @@
       "lang": "Japanese, Limited English",
       "desc": "AMIRU (JAPAN) D - 30 minutes Age: 19 Height: 160cm Bust: DD Service: Diamond 30mins $190 45mins $250 60mins $310",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": [
@@ -503,7 +503,7 @@
       "lang": "Japanese, Limited English",
       "desc": "YUKIO (JAPAN) D - 30 minutes Age: 22 Height: 163cm Bust: D Service: Diamond 30mins $180 45mins $250 60mins $300",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": [
@@ -913,7 +913,7 @@
       "lang": "Japanese, Limited English",
       "desc": "ADO (JAPAN) D - 30 minutes Age: 20 Height: 163cm Bust: E Service: Diamond 30mins $170 45mins $230 60mins $290",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2025-11-01",
       "photos": [
@@ -939,7 +939,7 @@
       "lang": "Japanese, Limited English",
       "desc": "AYASE (JAPAN) D - 30 minutes Age: 23 Height: 170cm Bust: C Service: Diamond 30mins $190 45mins $250 60mins $320",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2025-02-01",
       "photos": [
@@ -1494,7 +1494,7 @@
       "lang": "Vietnamese, Limited English",
       "desc": "PATTY (VIETNAM) D - 30 minutes Age: 23 Height: 170cm Bust: C Service: Diamond 30mins $170 45mins $240 60mins $290",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": []
@@ -1698,7 +1698,7 @@
       "lang": "Mandarin, Limited English",
       "desc": "LISSA (CHINA) D - 30 minutes Age: 26 Height: 165cm Bust: E Service: Diamond 30mins $170 45mins $240 60mins $290",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": [
@@ -1721,7 +1721,7 @@
       "lang": "Japanese, Limited English",
       "desc": "SEKA (JAPAN) D - 30 minutes Age: 20 Height: 160cm Bust: B Service: Diamond 30mins $170 45mins $240 60mins $290",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2024-07-01",
       "photos": [
@@ -1877,7 +1877,7 @@
       "lang": "Vietnamese, Limited English",
       "desc": "KELLY (VIETNAM) D - 30 minutes Age: 26 Height: 162cm Bust: C Service: Diamond 30mins $170 45mins $240 60mins $290",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2026-01-01",
       "photos": []
@@ -6876,7 +6876,7 @@
       "lang": "Japanese, Limited English",
       "desc": "KIYOMI (JAPAN) D - 30 minutes Age: 19 Height: 160cm Bust: B Service: Diamond 30mins $210 45mins $270 60mins $340",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
       "lastRostered": "2023-10-01",
       "photos": [
@@ -8136,11 +8136,34 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://citybrothel.com.au/project/ran-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [],
       "labels": [],
       "lastModified": "2026-03-15T01:10:27.578Z",
       "lastRostered": "2026-03-01"
+    },
+    {
+      "name": "Sanni",
+      "country": [
+        "Japanese"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/sanni-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles/kyoto206/Sanni/Sanni_1.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-17T03:43:22.649Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -8386,6 +8409,36 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-15T01:10:27.578Z",
-  "lastCalendarSync": "2026-03-15T01:41:08.231Z"
+  "lastGirlsSync": "2026-03-17T03:43:22.649Z",
+  "lastCalendarSync": "2026-03-15T01:41:08.231Z",
+  "_skippedUrls": [
+    "https://citybrothel.com.au/project/mei-china/",
+    "https://citybrothel.com.au/project/cherry-china-2/",
+    "https://citybrothel.com.au/project/saki-japan-2/",
+    "https://citybrothel.com.au/project/cherry-china/",
+    "https://citybrothel.com.au/project/lili-vietnam/",
+    "https://citybrothel.com.au/project/marin-japan-2/",
+    "https://citybrothel.com.au/project/mika-japan/",
+    "https://citybrothel.com.au/project/kiki-vietnam/",
+    "https://citybrothel.com.au/project/satomi-japan-2/",
+    "https://citybrothel.com.au/project/coco-china/",
+    "https://citybrothel.com.au/project/asa-japan/",
+    "https://citybrothel.com.au/project/seka-japan/",
+    "https://citybrothel.com.au/project/akami-japan/",
+    "https://citybrothel.com.au/project/ada/",
+    "https://citybrothel.com.au/project/sayaka-japan-2/",
+    "https://citybrothel.com.au/project/soda-thailand/",
+    "https://citybrothel.com.au/project/cici-china-3/",
+    "https://citybrothel.com.au/project/kiyomi-japan-old/",
+    "https://citybrothel.com.au/project/vivian-china/",
+    "https://citybrothel.com.au/project/0moca-japan/",
+    "https://citybrothel.com.au/project/mina-china/",
+    "https://citybrothel.com.au/project/cherry-malaysia-2/",
+    "https://citybrothel.com.au/project/lexy-vietnam/",
+    "https://citybrothel.com.au/project/daisy-korea/",
+    "https://citybrothel.com.au/project/miki-thailand-2/",
+    "https://citybrothel.com.au/project/rei-japan/",
+    "https://citybrothel.com.au/project/dora-china/",
+    "https://citybrothel.com.au/project/lucky-china/"
+  ]
 }

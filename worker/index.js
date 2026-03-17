@@ -86,6 +86,8 @@ const SITES = {
     name: '429 City',
     baseUrl: 'https://www.429city.com',
     girlsUrl: 'https://www.429city.com/ladies/',
+    rosterUrl: 'https://www.429city.com/roster/',
+    rosterFormat: '429city',
     jsonPath: 'profiles/429city/429city.json',
     imgPrefix: 'profiles/429city',
     siteType: 'wordpress',
@@ -811,20 +813,23 @@ async function scrapeFantasyClub35Roster(site) {
     dates[dayNames[i]] = dateStr;
   }
 
-  // Split HTML by day tabs/sections
+  // Tabs use kt-inner-tab-1 through kt-inner-tab-7 (Mon=1, Sun=7)
   const result = {};
-  for (const dayName of dayNames) {
-    // Find section for this day - look for tab content
-    const dayRe = new RegExp(dayName + '[\\s\\S]*?(?=' + (dayNames[dayNames.indexOf(dayName) + 1] || '$') + '|$)', 'i');
-    const section = html.match(dayRe);
-    if (!section) continue;
+  for (let tabNum = 1; tabNum <= 7; tabNum++) {
+    const tabMarker = 'kt-inner-tab-' + tabNum;
+    const tabStart = html.indexOf(tabMarker);
+    if (tabStart === -1) continue;
+    const nextTab = html.indexOf('kt-inner-tab-' + (tabNum + 1), tabStart);
+    const section = html.substring(tabStart, nextTab > tabStart ? nextTab : tabStart + 5000);
+    const text = section.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 
-    const dateStr = dates[dayName];
+    const d = new Date(startYear, startMonth - 1, startDay + (tabNum - 1));
+    const dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+
     const entries = [];
-    // Match: "Name（XX）" or "Name(XX)" followed by time like "11am-5am"
-    const entryRe = /([A-Z][a-z]+)\s*[\(\uff08][^)\uff09]*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
+    const entryRe = /([A-Za-z]+)\s*[\(\uff08]\s*(?:HK|CN|JP|VN|TH|SG|TW)\s*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
     let m;
-    while ((m = entryRe.exec(section[0])) !== null) {
+    while ((m = entryRe.exec(text)) !== null) {
       const name = m[1].trim();
       let startH = parseInt(m[2]);
       const startAmPm = m[2].replace(/\d+/, '').toLowerCase();
@@ -839,6 +844,39 @@ async function scrapeFantasyClub35Roster(site) {
   }
 
   return result;
+}
+
+async function scrape429CityRoster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`429 City roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  // Get today's date in AEST
+  const now = new Date();
+  const aest = new Date(now.getTime() + 11 * 60 * 60 * 1000);
+  const today = aest.getFullYear() + '-' + String(aest.getMonth() + 1).padStart(2, '0') + '-' + String(aest.getDate()).padStart(2, '0');
+
+  // 429 City roster shows today's girls only, no times — default 10am-5am
+  const re = /href=["']?(https?:\/\/www\.429city\.com\/[a-z0-9%\-]+\/?)["']?/gi;
+  const links = new Set();
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const url = m[1].replace(/\/$/, '/');
+    const path = url.replace('https://www.429city.com/', '').replace(/\/$/, '');
+    if (path && !['ladies', 'roster', 'contact', 'rate', 'escort', 'work-for-us', 'wp-content', 'feed', 'comments', 'wp-includes', 'wp-json', 'xmlrpc', 'job'].some(x => path.includes(x))) {
+      links.add(url);
+    }
+  }
+
+  // Match links to profiles by oldUrl
+  const result = {};
+  result[today] = [];
+  // We return URLs instead of names — syncCalendar will match by oldUrl
+  for (const url of links) {
+    result[today].push({ url, start: '10:00', end: '05:00' });
+  }
+
+  return { _429cityUrls: true, ...result };
 }
 
 /* ── Image upload ── */
@@ -1081,6 +1119,8 @@ async function syncCalendar(env, site) {
     ? await scrapeTop127Roster(site)
     : site.rosterFormat === 'fantasyclub35'
     ? await scrapeFantasyClub35Roster(site)
+    : site.rosterFormat === '429city'
+    ? await scrape429CityRoster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
@@ -1206,17 +1246,34 @@ async function syncCalendar(env, site) {
   }
 
   const girlsByName = {};
-  for (const g of (data.girls || [])) girlsByName[g.name] = g;
+  const girlsByUrl = {};
+  for (const g of (data.girls || [])) {
+    girlsByName[g.name] = g;
+    if (g.oldUrl) girlsByUrl[g.oldUrl.replace(/\/$/, '/').toLowerCase()] = g;
+  }
+
+  const is429City = scraped._429cityUrls;
+  delete scraped._429cityUrls;
 
   for (const [dateStr, entries] of Object.entries(scraped)) {
-    for (const { name, start, end } of entries) {
-      if (!validNames.has(name)) continue;
+    if (dateStr.startsWith('_')) continue;
+    for (const entry of entries) {
+      let girl;
+      if (is429City && entry.url) {
+        // 429 City: match by URL
+        girl = girlsByUrl[entry.url.replace(/\/$/, '/').toLowerCase()];
+      } else {
+        // Other venues: match by name
+        girl = girlsByName[entry.name];
+      }
+      if (!girl) continue;
 
-      if (!calendar[name]) calendar[name] = {};
+      const { start, end } = entry;
+      if (!calendar[girl.name]) calendar[girl.name] = {};
 
-      const existing = calendar[name][dateStr];
+      const existing = calendar[girl.name][dateStr];
       if (!existing || existing.start !== start || existing.end !== end) {
-        calendar[name][dateStr] = { start, end };
+        calendar[girl.name][dateStr] = { start, end };
         changed = true;
       }
     }
@@ -1224,8 +1281,14 @@ async function syncCalendar(env, site) {
 
   // Update lastRostered on each girl profile
   for (const [dateStr, entries] of Object.entries(scraped)) {
-    for (const { name } of entries) {
-      const girl = girlsByName[name];
+    if (dateStr.startsWith('_')) continue;
+    for (const entry of entries) {
+      let girl;
+      if (is429City && entry.url) {
+        girl = girlsByUrl[entry.url.replace(/\/$/, '/').toLowerCase()];
+      } else {
+        girl = girlsByName[entry.name];
+      }
       if (girl && (!girl.lastRostered || dateStr > girl.lastRostered)) {
         girl.lastRostered = dateStr;
         changed = true;
@@ -1353,6 +1416,12 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // 429 City endpoints
+    if (url.pathname === '/sync-429city-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.city429) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     return new Response('Not found', { status: 404 });
   },
 
@@ -1391,6 +1460,7 @@ export default {
           syncCalendar(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Calendar sync error:', e)),
           syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e)),
           syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e)),
+          syncCalendar(env, SITES.city429).catch(e => console.error('[429 City] Calendar sync error:', e)),
         ]);
 
         console.log('All calendar syncs complete.');

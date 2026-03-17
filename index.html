@@ -593,7 +593,7 @@ function renderFilters() {
 
   // Venue options
   document.querySelectorAll('#ddVenue .filter-option').forEach(opt => {
-    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); };
+    opt.onclick = e => { e.stopPropagation(); const v = opt.dataset.value || null; activeVenue = (activeVenue === v) ? null : v; renderFilters(); renderGrid(); if (rosterViewActive) renderRoster(); };
   });
 
   // Country options (+/- toggle)
@@ -1017,7 +1017,7 @@ function renderRoster() {
       if (!cal[dateStr]) continue;
       const g = girlsByName[key];
       if (!g) continue;
-      if (rosterVenueFilter !== 'all' && g.venue !== rosterVenueFilter) continue;
+      if (activeVenue && g.venue !== activeVenue) continue;
       entries.push({ girl: g, slot: cal[dateStr] });
     }
     if (entries.length > 0) {
@@ -1026,19 +1026,7 @@ function renderRoster() {
     }
   }
 
-  // Venue filter buttons
-  const venuesWithRoster = new Set();
-  for (const [key, cal] of Object.entries(calendarData)) {
-    for (const { str } of dates) {
-      if (cal[str]) { const g = girlsByName[key]; if (g) venuesWithRoster.add(g.venue); }
-    }
-  }
-  const venueFilterHtml = `<div class="roster-venue-filter">
-    <button class="roster-venue-btn ${rosterVenueFilter === 'all' ? 'active' : ''}" onclick="setRosterVenue('all')">All</button>
-    ${VENUES.filter(v => venuesWithRoster.has(v.id)).sort((a,b) => a.name.localeCompare(b.name)).map(v =>
-      `<button class="roster-venue-btn ${rosterVenueFilter === v.id ? 'active' : ''}" onclick="setRosterVenue('${v.id}')">${v.name}</button>`
-    ).join('')}
-  </div>`;
+  const venueFilterHtml = '';
 
   if (!rosterDays.length) {
     container.innerHTML = venueFilterHtml + '<div class="empty-msg">No roster data available for the next 7 days.</div>';

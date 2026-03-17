@@ -986,9 +986,6 @@ function toggleRosterView() {
   btn.classList.toggle('active', rosterViewActive);
   grid.style.display = rosterViewActive ? 'none' : '';
   roster.classList.toggle('active', rosterViewActive);
-  document.getElementById('filterSortBar').style.display = rosterViewActive ? 'none' : '';
-  document.getElementById('moreFiltersSection').style.display = rosterViewActive ? 'none' : '';
-  document.getElementById('resultCount').style.display = rosterViewActive ? 'none' : '';
 
   if (rosterViewActive) renderRoster();
 }

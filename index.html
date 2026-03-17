@@ -137,6 +137,42 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-hover-line{position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .3s}
 .girl-card:hover .card-hover-line{width:100%}
 .card-last-rostered{font-size:11px;color:var(--text-dim);margin-top:4px}
+
+/* Calendar toggle */
+.view-toggle{cursor:pointer;padding:6px;border-radius:4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;transition:all .3s;margin-left:16px;vertical-align:middle}
+.view-toggle:hover{background:rgba(180,74,255,0.15);border-color:var(--accent)}
+.view-toggle.active{background:rgba(180,74,255,0.2);border-color:var(--accent)}
+.view-toggle svg{width:22px;height:22px;fill:var(--text-dim);transition:fill .3s}
+.view-toggle:hover svg,.view-toggle.active svg{fill:var(--accent)}
+
+/* Roster calendar view */
+.roster-view{display:none}
+.roster-view.active{display:block}
+.roster-day{margin-bottom:32px}
+.roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.roster-day-name{font-size:18px;font-weight:700;color:#fff}
+.roster-day-date{font-size:12px;color:var(--text-dim);letter-spacing:1px}
+.roster-day-count{font-size:11px;color:var(--text-dim);margin-left:auto}
+.roster-timeline{position:relative;padding:8px 0}
+.roster-timeline-header{display:grid;grid-template-columns:160px 1fr;gap:12px;margin-bottom:4px;padding:0 8px}
+.roster-timeline-hours{display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:1px}
+.roster-entry{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:background .2s}
+.roster-entry:hover{background:rgba(255,255,255,0.04)}
+.roster-entry-info{display:flex;align-items:center;gap:10px;min-width:0}
+.roster-entry-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.1)}
+.roster-entry-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.roster-entry-venue{font-size:10px;color:var(--text-dim);letter-spacing:1px}
+.roster-entry-bar-container{position:relative;height:28px;background:rgba(255,255,255,0.03);border-radius:3px;overflow:hidden}
+.roster-entry-bar{position:absolute;top:2px;bottom:2px;border-radius:2px;min-width:8px;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1px;color:#fff;font-weight:600;transition:opacity .2s}
+.roster-entry-bar.now{background:linear-gradient(90deg,rgba(0,200,100,0.6),rgba(0,200,100,0.4))}
+.roster-entry-bar.later{background:linear-gradient(90deg,rgba(180,74,255,0.5),rgba(180,74,255,0.3))}
+.roster-entry-bar.future{background:linear-gradient(90deg,rgba(201,149,44,0.4),rgba(201,149,44,0.25))}
+.roster-now-line{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,80,80,0.7);z-index:2;pointer-events:none}
+.roster-now-time{position:absolute;top:-14px;transform:translateX(-50%);font-size:9px;color:rgba(255,80,80,0.8);white-space:nowrap}
+.roster-venue-filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.roster-venue-btn{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--text-dim);cursor:pointer;transition:all .2s}
+.roster-venue-btn:hover{border-color:var(--gold);color:var(--gold)}
+.roster-venue-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(180,74,255,0.12)}
 .card-last-rostered.available-now{color:#00e676}
 .card-last-rostered.available-later{color:#ffab00}
 .available-now{color:#00e676}
@@ -209,7 +245,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <div class="section-line"></div>
 <div>
 <div class="section-tag">Browse</div>
-<div class="section-title">Profiles</div>
+<div class="section-title">Profiles <button class="view-toggle" id="rosterToggle" title="Roster Calendar View"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></button></div>
 </div>
 </div>
 
@@ -232,6 +268,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 </div>
 <div class="result-count" id="resultCount"></div>
 <div class="girls-grid" id="girlsGrid"><div class="loading">Loading profiles...</div></div>
+<div class="roster-view" id="rosterView"></div>
 </section>
 
 <div class="profile-overlay" id="profileOverlay">
@@ -936,6 +973,199 @@ window.addEventListener('scroll', () => {
   if (currentPage * PAGE_SIZE >= currentFiltered.length) return;
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400) loadMore();
 });
+
+/* Roster Calendar View */
+let rosterViewActive = false;
+let rosterVenueFilter = 'all';
+
+function toggleRosterView() {
+  rosterViewActive = !rosterViewActive;
+  const btn = document.getElementById('rosterToggle');
+  const grid = document.getElementById('girlsGrid');
+  const roster = document.getElementById('rosterView');
+  const filters = document.querySelector('.filter-sort-bar');
+  const moreFilters = document.querySelector('.more-filters-section');
+  const resultCount = document.getElementById('resultCount');
+
+  btn.classList.toggle('active', rosterViewActive);
+  grid.style.display = rosterViewActive ? 'none' : '';
+  roster.classList.toggle('active', rosterViewActive);
+  if (filters) filters.style.display = rosterViewActive ? 'none' : '';
+  if (moreFilters) moreFilters.style.display = rosterViewActive ? 'none' : '';
+  if (resultCount) resultCount.style.display = rosterViewActive ? 'none' : '';
+
+  if (rosterViewActive) renderRoster();
+}
+
+function renderRoster() {
+  const container = document.getElementById('rosterView');
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // Collect all dates with roster entries (today + next 7 days max)
+  const dates = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(now); d.setDate(d.getDate() + i);
+    const ds = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    dates.push({ str: ds, date: d });
+  }
+
+  // Build per-date roster entries
+  const girlsByName = {};
+  allGirls.forEach(g => { girlsByName[(g.venue || '') + ':' + g.name] = g; });
+
+  const rosterDays = [];
+  for (const { str: dateStr, date } of dates) {
+    const entries = [];
+    for (const [key, cal] of Object.entries(calendarData)) {
+      if (!cal[dateStr]) continue;
+      const g = girlsByName[key];
+      if (!g) continue;
+      if (rosterVenueFilter !== 'all' && g.venue !== rosterVenueFilter) continue;
+      entries.push({ girl: g, slot: cal[dateStr] });
+    }
+    if (entries.length > 0) {
+      entries.sort((a, b) => a.slot.start.localeCompare(b.slot.start));
+      rosterDays.push({ dateStr, date, entries });
+    }
+  }
+
+  // Venue filter buttons
+  const venuesWithRoster = new Set();
+  for (const [key, cal] of Object.entries(calendarData)) {
+    for (const { str } of dates) {
+      if (cal[str]) { const g = girlsByName[key]; if (g) venuesWithRoster.add(g.venue); }
+    }
+  }
+  const venueFilterHtml = `<div class="roster-venue-filter">
+    <button class="roster-venue-btn ${rosterVenueFilter === 'all' ? 'active' : ''}" onclick="setRosterVenue('all')">All</button>
+    ${VENUES.filter(v => venuesWithRoster.has(v.id)).sort((a,b) => a.name.localeCompare(b.name)).map(v =>
+      `<button class="roster-venue-btn ${rosterVenueFilter === v.id ? 'active' : ''}" onclick="setRosterVenue('${v.id}')">${v.name}</button>`
+    ).join('')}
+  </div>`;
+
+  if (!rosterDays.length) {
+    container.innerHTML = venueFilterHtml + '<div class="empty-msg">No roster data available for the next 7 days.</div>';
+    return;
+  }
+
+  // Timeline: 6am to 6am next day (24h range)
+  const TIMELINE_START = 6; // 6am
+  const TIMELINE_HOURS = 24;
+  const hours = [];
+  for (let i = 0; i <= TIMELINE_HOURS; i += 2) {
+    const h = (TIMELINE_START + i) % 24;
+    hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
+  }
+
+  let html = venueFilterHtml;
+
+  for (const day of rosterDays) {
+    const isToday = day.dateStr === todayStr;
+    const dayName = dayNames[day.date.getDay()];
+    const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
+
+    html += `<div class="roster-day">
+      <div class="roster-day-header">
+        <span class="roster-day-name">${isToday ? 'Today' : dayNamesShort[day.date.getDay()]}</span>
+        <span class="roster-day-date">${dateLabel}</span>
+        <span class="roster-day-count">${day.entries.length} girl${day.entries.length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="roster-timeline">
+        <div class="roster-timeline-header">
+          <div></div>
+          <div class="roster-timeline-hours">${hours.map(h => `<span>${h}</span>`).join('')}</div>
+        </div>`;
+
+    for (const { girl: g, slot } of day.entries) {
+      const thumb = g.photos && g.photos.length ? imgProxy(g.photos[0], 72) : '';
+      const [sh, sm] = slot.start.split(':').map(Number);
+      const [eh, em] = slot.end.split(':').map(Number);
+
+      // Convert to position within timeline (6am = 0%, 6am+24h = 100%)
+      let startOffset = (sh - TIMELINE_START) * 60 + sm;
+      if (startOffset < 0) startOffset += 24 * 60;
+      let endOffset = (eh - TIMELINE_START) * 60 + em;
+      if (endOffset < 0) endOffset += 24 * 60;
+      if (endOffset <= startOffset) endOffset += 24 * 60;
+
+      const totalMins = TIMELINE_HOURS * 60;
+      const leftPct = Math.max(0, (startOffset / totalMins) * 100);
+      const widthPct = Math.min(100 - leftPct, ((endOffset - startOffset) / totalMins) * 100);
+
+      // Determine bar state
+      let barClass = 'future';
+      if (isToday) {
+        const nowMins = now.getHours() * 60 + now.getMinutes();
+        let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+        if (nowOffset < 0) nowOffset += 24 * 60;
+        if (nowOffset >= startOffset && nowOffset < endOffset) barClass = 'now';
+        else if (nowOffset < startOffset) barClass = 'later';
+      }
+
+      const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
+
+      html += `<div class="roster-entry" onclick="showProfile(allGirls.find(g=>g.venue==='${g.venue}'&&g.name==='${g.name.replace(/'/g, "\\'")}'))">
+        <div class="roster-entry-info">
+          ${thumb ? `<img class="roster-entry-thumb" src="${thumb}" alt="">` : '<div class="roster-entry-thumb" style="background:rgba(255,255,255,0.06)"></div>'}
+          <div>
+            <div class="roster-entry-name">${g.name}</div>
+            <div class="roster-entry-venue">${g.venueName}</div>
+          </div>
+        </div>
+        <div class="roster-entry-bar-container">
+          <div class="roster-entry-bar ${barClass}" style="left:${leftPct}%;width:${widthPct}%" title="${timeStr}">
+            <span>${timeStr}</span>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    // Now line for today
+    if (isToday) {
+      let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+      if (nowOffset < 0) nowOffset += 24 * 60;
+      const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
+      if (nowPct >= 0 && nowPct <= 100) {
+        // Insert now line via JS after render
+      }
+    }
+
+    html += `</div></div>`;
+  }
+
+  container.innerHTML = html;
+
+  // Add now lines for today
+  if (rosterDays[0] && rosterDays[0].dateStr === todayStr) {
+    let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+    if (nowOffset < 0) nowOffset += 24 * 60;
+    const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
+    if (nowPct >= 0 && nowPct <= 100) {
+      const entries = container.querySelectorAll('.roster-day:first-child .roster-entry-bar-container');
+      entries.forEach(bc => {
+        const line = document.createElement('div');
+        line.className = 'roster-now-line';
+        line.style.left = nowPct + '%';
+        const timeLabel = document.createElement('div');
+        timeLabel.className = 'roster-now-time';
+        timeLabel.textContent = fmt24to12(String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0'));
+        line.appendChild(timeLabel);
+        bc.appendChild(line);
+      });
+    }
+  }
+}
+
+function setRosterVenue(venueId) {
+  rosterVenueFilter = venueId;
+  renderRoster();
+}
+
+document.getElementById('rosterToggle').addEventListener('click', toggleRosterView);
 
 function showProfile(g) {
   const overlay = document.getElementById('profileOverlay');

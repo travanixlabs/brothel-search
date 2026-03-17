@@ -170,36 +170,29 @@ async function scrapeProfile(url) {
     if (lang && lang !== 'English') lang += ', English';
   }
 
-  // Images - get all from wp-content/uploads in main content area
-  // First try to find the main content boundary (before portfolio/related section)
-  let contentArea = html;
-  const portfolioIdx = html.search(/<div[^>]*class="[^"]*(?:portfolio|related|navigation|nav-links)[^"]*"/i);
-  if (portfolioIdx > 0) contentArea = html.substring(0, portfolioIdx);
-
-  const imgRe = /(https?:\/\/fantasyclub35\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
-  const allImgs = [];
+  // Images - extract from Elementor gallery hrefs (most reliable)
+  const galleryRe = /e-gallery-item[^>]*href="([^"]+)"/gi;
+  const images = [];
   let im;
-  while ((im = imgRe.exec(contentArea)) !== null) allImgs.push(im[1]);
-
-  // Dedupe by base, prefer scaled > original > highest resolution
-  const groups = {};
-  for (const u of allImgs) {
-    const fn = u.split('/').pop().toLowerCase();
-    // Skip tiny thumbnails
-    if (/-\d+x\d+\./.test(u)) {
-      const r = u.match(/-(\d+)x(\d+)\./);
-      if (r && parseInt(r[1]) <= 300 && parseInt(r[2]) <= 300) continue;
-    }
-    const base = u.replace(/-scaled\.(jpe?g|png|webp)$/i, '.$1').replace(/-\d+x\d+\.(jpe?g|png|webp)$/i, '.$1');
-    if (!groups[base]) groups[base] = { scaled: null, res: null, orig: null, px: 0 };
-    if (/-scaled\./i.test(u)) groups[base].scaled = u;
-    else if (/-\d+x\d+\./i.test(u)) {
-      const r = u.match(/-(\d+)x(\d+)\./);
-      const px = r ? parseInt(r[1]) * parseInt(r[2]) : 0;
-      if (px > groups[base].px) { groups[base].res = u; groups[base].px = px; }
-    } else groups[base].orig = u;
+  while ((im = galleryRe.exec(html)) !== null) {
+    const u = im[1];
+    if (/\.(?:jpe?g|png|webp)$/i.test(u)) images.push(u);
   }
-  const images = Object.values(groups).map(g => g.scaled || g.orig || g.res).filter(Boolean);
+
+  // Fallback for pages without Elementor gallery
+  if (images.length === 0) {
+    const skipRe = /(?:icon|logo|bullet|diamond_bullet|out-0|florid|qr|wechat)/i;
+    const imgRe = /(https?:\/\/fantasyclub35\.com\.au\/wp-content\/uploads\/[^\s"']+\.(?:jpe?g|png|webp))/gi;
+    const seen = new Set();
+    while ((im = imgRe.exec(html)) !== null) {
+      const u = im[1];
+      const fn = decodeURIComponent(u.split('/').pop());
+      if (skipRe.test(fn)) continue;
+      if (/-\d+x\d+\./.test(u)) continue;
+      if (/-scaled\./i.test(u)) continue;
+      if (!seen.has(u)) { seen.add(u); images.push(u); }
+    }
+  }
 
   // Start date from upload path
   let earliest = null;
@@ -264,23 +257,9 @@ async function main() {
       const name = titleInfo.name;
       console.log(`  -> ${name} (${titleInfo.country.join(', ') || '?'})`);
 
-      // Download images
-      const photos = [];
-      const imgDir = path.join(IMG_DIR, name);
-      for (let j = 0; j < profile.images.length; j++) {
-        const ext = (profile.images[j].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-        const fname = `${name}_${j + 1}.${ext}`;
-        const localPath = path.join(imgDir, fname);
-        try {
-          await download(profile.images[j], localPath);
-          photos.push(`https://raw.githubusercontent.com/${REPO}/main/${IMG_DIR}/${name}/${fname}`);
-          process.stdout.write('.');
-          await sleep(300);
-        } catch (e) {
-          process.stdout.write('x');
-        }
-      }
-      console.log(` ${photos.length} images`);
+      // Use source URLs directly (no download needed)
+      const photos = [...profile.images];
+      console.log(`  ${photos.length} photos (embedded from source)`);
 
       const entry = {
         name,

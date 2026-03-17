@@ -81,6 +81,7 @@ const SITES = {
     listingSelector: 'listing_type',
     paginationParam: 'pg',
     excludeUrls: ['trendy-wendy', 'shop-online', 'product'],
+    embedPhotos: true,
   },
   city429: {
     name: '429 City',
@@ -503,79 +504,87 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     if (pb) { val1 = pb[1]; val2 = pb[2]; val3 = pb[3]; }
   }
 
-  // Images: filter to those matching girl's name, or fallback to non-portfolio images
-  const mainHtml = html.split(/In Portfolios|class="portfolio|class="related|id="portfolio/i)[0] || html;
-  const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
-  const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp))`, 'gi');
-  const allImages = [];
+  // Images: prefer Elementor gallery hrefs (Fantasy Club 35 uses these)
+  const galleryRe = /e-gallery-item[^>]*href="([^"]+)"/gi;
+  const galleryImages = [];
   let im;
-  while ((im = imgRe.exec(mainHtml)) !== null) allImages.push(im[1]);
+  while ((im = galleryRe.exec(html)) !== null) {
+    if (/\.(?:jpe?g|png|webp)$/i.test(im[1])) galleryImages.push(im[1]);
+  }
 
-  const nameLower = name.toLowerCase();
-  const nameVariants = [nameLower];
-  // Try name variants for fuzzy matching (e.g. Bela -> Bella)
-  for (let i = 1; i < nameLower.length; i++) {
-    if (!'aeiou'.includes(nameLower[i])) {
-      nameVariants.push(nameLower.slice(0, i + 1) + nameLower[i] + nameLower.slice(i + 1));
+  let images;
+  if (galleryImages.length > 0) {
+    images = galleryImages;
+  } else {
+    // Fallback: broad regex for other WP sites (Kyoto 206 etc.)
+    const mainHtml = html.split(/In Portfolios|class="portfolio|class="related|id="portfolio/i)[0] || html;
+    const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
+    const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp))`, 'gi');
+    const allImages = [];
+    while ((im = imgRe.exec(mainHtml)) !== null) allImages.push(im[1]);
+
+    const nameLower = name.toLowerCase();
+    const nameVariants = [nameLower];
+    for (let i = 1; i < nameLower.length; i++) {
+      if (!'aeiou'.includes(nameLower[i])) {
+        nameVariants.push(nameLower.slice(0, i + 1) + nameLower[i] + nameLower.slice(i + 1));
+      }
+    }
+    const slugMatch = profileUrl.match(/\/project\/([^/]+)/);
+    if (slugMatch) {
+      const slugName = decodeURIComponent(slugMatch[1]).split('-')[0].toLowerCase();
+      if (slugName && !nameVariants.includes(slugName)) nameVariants.push(slugName);
+    }
+
+    let girlImgs = allImages.filter(url => {
+      const filename = url.split('/').pop().toLowerCase();
+      return nameVariants.some(v => filename.includes(v));
+    });
+
+    if (girlImgs.length === 0) {
+      const portfolioNames = new Set();
+      allImages.forEach(url => {
+        const fn = url.split('/').pop();
+        const nameMatch = fn.match(/^([A-Z][a-z]+)-/);
+        if (nameMatch) portfolioNames.add(nameMatch[1].toLowerCase());
+      });
+      girlImgs = allImages.filter(url => {
+        const fn = url.split('/').pop().toLowerCase();
+        if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信')) return false;
+        if (/-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
+        const namePrefix = fn.match(/^([a-z]+)-/);
+        if (namePrefix && portfolioNames.has(namePrefix[1]) && !nameVariants.includes(namePrefix[1])) return false;
+        return true;
+      });
+    }
+
+    // Group by base, prefer -scaled, then highest resolution
+    const groups = {};
+    for (const imgUrl of girlImgs) {
+      const base = imgUrl.replace(/-scaled\.(jpe?g|png|webp)$/i, '.$1')
+                         .replace(/-\d+x\d+\.(jpe?g|png|webp)$/i, '.$1');
+      if (!groups[base]) groups[base] = { scaled: null, resolution: null, original: null, resPixels: 0 };
+      if (/-scaled\./i.test(imgUrl)) groups[base].scaled = imgUrl;
+      else if (/-\d+x\d+\./i.test(imgUrl)) {
+        const res = imgUrl.match(/-(\d+)x(\d+)\./);
+        const px = res ? parseInt(res[1]) * parseInt(res[2]) : 0;
+        if (px > groups[base].resPixels) { groups[base].resolution = imgUrl; groups[base].resPixels = px; }
+      } else groups[base].original = imgUrl;
+    }
+
+    images = [];
+    for (const g of Object.values(groups)) {
+      const pick = g.scaled || g.resolution || g.original;
+      if (pick) images.push(pick);
     }
   }
-  const slugMatch = profileUrl.match(/\/project\/([^/]+)/);
-  if (slugMatch) {
-    const slugName = decodeURIComponent(slugMatch[1]).split('-')[0].toLowerCase();
-    if (slugName && !nameVariants.includes(slugName)) nameVariants.push(slugName);
-  }
 
-  let girlImgs = allImages.filter(url => {
-    const filename = url.split('/').pop().toLowerCase();
-    return nameVariants.some(v => filename.includes(v));
-  });
-
-  // Fallback: if no name-matched images, grab non-portfolio images (hash filenames, not other girls)
-  // Portfolio thumbnails use -746x548 or -160x160 and belong to other profiles
-  if (girlImgs.length === 0) {
-    // Collect all known girl-name prefixes from portfolio thumbs to exclude them
-    const portfolioNames = new Set();
-    allImages.forEach(url => {
-      const fn = url.split('/').pop();
-      const nameMatch = fn.match(/^([A-Z][a-z]+)-/);
-      if (nameMatch) portfolioNames.add(nameMatch[1].toLowerCase());
-    });
-    girlImgs = allImages.filter(url => {
-      const fn = url.split('/').pop().toLowerCase();
-      if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信')) return false;
-      if (/-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
-      // Skip images with other girl names (portfolio images)
-      const namePrefix = fn.match(/^([a-z]+)-/);
-      if (namePrefix && portfolioNames.has(namePrefix[1]) && !nameVariants.includes(namePrefix[1])) return false;
-      return true;
-    });
-  }
-
-  // Group by base, prefer -scaled, then highest resolution
-  const groups = {};
-  for (const imgUrl of girlImgs) {
-    const base = imgUrl.replace(/-scaled\.(jpe?g|png|webp)$/i, '.$1')
-                       .replace(/-\d+x\d+\.(jpe?g|png|webp)$/i, '.$1');
-    if (!groups[base]) groups[base] = { scaled: null, resolution: null, original: null, resPixels: 0 };
-    if (/-scaled\./i.test(imgUrl)) groups[base].scaled = imgUrl;
-    else if (/-\d+x\d+\./i.test(imgUrl)) {
-      const res = imgUrl.match(/-(\d+)x(\d+)\./);
-      const px = res ? parseInt(res[1]) * parseInt(res[2]) : 0;
-      if (px > groups[base].resPixels) { groups[base].resolution = imgUrl; groups[base].resPixels = px; }
-    } else groups[base].original = imgUrl;
-  }
-
-  const images = [];
   let earliestUpload = null;
-  for (const g of Object.values(groups)) {
-    const pick = g.scaled || g.resolution || g.original;
-    if (pick) {
-      images.push(pick);
-      const dm = pick.match(/\/uploads\/(\d{4})\/(\d{2})\//);
-      if (dm) {
-        const d = `${dm[1]}-${dm[2]}-01`;
-        if (!earliestUpload || d < earliestUpload) earliestUpload = d;
-      }
+  for (const pick of images) {
+    const dm = pick.match(/\/uploads\/(\d{4})\/(\d{2})\//);
+    if (dm) {
+      const d = `${dm[1]}-${dm[2]}-01`;
+      if (!earliestUpload || d < earliestUpload) earliestUpload = d;
     }
   }
 
@@ -654,17 +663,21 @@ async function syncWpGirls(env, site) {
       entry.desc = '';
       entry.originalSite = 'Exists';
 
-      // Upload images
+      // Photos: embed source URLs directly or upload to GitHub
       const photos = [];
-      for (let i = 0; i < profile.images.length; i++) {
-        try {
-          const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-          const path = `${site.imgPrefix}/${name}/${name}_${i + 1}.${ext}`;
-          const ghUrl = await uploadImage(env, profile.images[i], path);
-          photos.push(ghUrl);
-          await new Promise(r => setTimeout(r, 500));
-        } catch (e) {
-          console.error(`[${site.name}] Image error ${name} #${i + 1}: ${e.message}`);
+      if (site.embedPhotos) {
+        photos.push(...profile.images);
+      } else {
+        for (let i = 0; i < profile.images.length; i++) {
+          try {
+            const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+            const path = `${site.imgPrefix}/${name}/${name}_${i + 1}.${ext}`;
+            const ghUrl = await uploadImage(env, profile.images[i], path);
+            photos.push(ghUrl);
+            await new Promise(r => setTimeout(r, 500));
+          } catch (e) {
+            console.error(`[${site.name}] Image error ${name} #${i + 1}: ${e.message}`);
+          }
         }
       }
       entry.photos = photos;
@@ -1169,14 +1182,18 @@ async function syncCalendar(env, site) {
               desc: '', lang: profile.titleInfo.country.length ? (LANG_FROM_COUNTRY[profile.titleInfo.country[0]] || '') : '',
               labels: [], originalSite: 'Exists', lastModified: now, lastRostered: '', photos: [],
             };
-            for (let i = 0; i < profile.images.length; i++) {
-              try {
-                const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-                const imgPath = `${site.imgPrefix}/${pName}/${pName}_${i + 1}.${ext}`;
-                const ghUrl = await uploadImage(env, profile.images[i], imgPath);
-                entry.photos.push(ghUrl);
-                await new Promise(r => setTimeout(r, 500));
-              } catch (e) { console.error(`[${site.name}] Image error ${pName}: ${e.message}`); }
+            if (site.embedPhotos) {
+              entry.photos = [...profile.images];
+            } else {
+              for (let i = 0; i < profile.images.length; i++) {
+                try {
+                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                  const imgPath = `${site.imgPrefix}/${pName}/${pName}_${i + 1}.${ext}`;
+                  const ghUrl = await uploadImage(env, profile.images[i], imgPath);
+                  entry.photos.push(ghUrl);
+                  await new Promise(r => setTimeout(r, 500));
+                } catch (e) { console.error(`[${site.name}] Image error ${pName}: ${e.message}`); }
+              }
             }
             for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
             data.girls.push(entry);

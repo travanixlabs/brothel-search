@@ -1007,23 +1007,23 @@ function renderRoster() {
     dates.push({ str: ds, date: d });
   }
 
-  // Build per-date roster entries, respecting all active filters
-  const girlsByKey = {};
-  allGirls.forEach(g => { girlsByKey[(g.venue || '') + ':' + g.name] = g; });
-  const filteredSet = new Set(getFiltered().map(g => (g.venue || '') + ':' + g.name));
+  // Build per-date roster entries, respecting all active filters + sort
+  const filtered = getFiltered();
+  const filteredOrder = new Map();
+  filtered.forEach((g, i) => { filteredOrder.set((g.venue || '') + ':' + g.name, i); });
 
   const rosterDays = [];
   for (const { str: dateStr, date } of dates) {
     const entries = [];
     for (const [key, cal] of Object.entries(calendarData)) {
       if (!cal[dateStr]) continue;
-      const g = girlsByKey[key];
+      if (!filteredOrder.has(key)) continue;
+      const g = filtered.find(g => (g.venue || '') + ':' + g.name === key);
       if (!g) continue;
-      if (!filteredSet.has(key)) continue;
-      entries.push({ girl: g, slot: cal[dateStr] });
+      entries.push({ girl: g, slot: cal[dateStr], order: filteredOrder.get(key) });
     }
     if (entries.length > 0) {
-      entries.sort((a, b) => a.slot.start.localeCompare(b.slot.start));
+      entries.sort((a, b) => a.order - b.order);
       rosterDays.push({ dateStr, date, entries });
     }
   }

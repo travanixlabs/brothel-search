@@ -1096,7 +1096,7 @@ function renderRoster() {
           ${thumb ? `<img class="roster-entry-thumb" src="${thumb}" alt="">` : '<div class="roster-entry-thumb" style="background:rgba(255,255,255,0.06)"></div>'}
           <div>
             <div class="roster-entry-name">${g.name}</div>
-            <div class="roster-entry-venue">${g.val1 && g.val2 && g.val3 ? `$${g.val1} / $${g.val2} / $${g.val3}` : g.val1 ? `$${g.val1}` : g.venueName}</div>
+            <div class="roster-entry-venue">${(g.val1 || g.val2 || g.val3) ? [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') : g.venueName}</div>
           </div>
         </div>
         <div class="roster-entry-bar-container">

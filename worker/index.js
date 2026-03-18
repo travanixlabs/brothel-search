@@ -29,6 +29,7 @@ const SITES = {
     jsonPath: 'profiles/ginzaempire/ginzaempire.json',
     imgPrefix: 'profiles/ginzaempire',
     rosterFormat: 'empire', // "Happy Thursday 13th of March"
+    embedPhotos: true,
   },
   club: {
     name: 'Ginza Club',
@@ -38,6 +39,7 @@ const SITES = {
     jsonPath: 'profiles/ginzaclub/ginzaclub.json',
     imgPrefix: 'profiles/ginzaclub',
     rosterFormat: 'club', // "Wow Friday 13/3/2026"
+    embedPhotos: true,
   },
   kyoto206: {
     name: 'Kyoto 206',
@@ -48,6 +50,7 @@ const SITES = {
     imgPrefix: 'profiles/kyoto206',
     siteType: 'wordpress',
     rosterFormat: 'kyoto206',
+    embedPhotos: true,
   },
   sakura57: {
     name: 'Sakura 57',
@@ -1099,17 +1102,21 @@ async function syncGirls(env, site) {
       entry.desc = profile.desc || '';
       entry.originalSite = 'Exists';
 
-      // Download & upload images
+      // Photos: embed source URLs directly or upload to GitHub
       const photos = [];
-      for (let i = 0; i < profile.images.length; i++) {
-        try {
-          const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-          const path = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
-          const ghUrl = await uploadImage(env, profile.images[i], path);
-          photos.push(ghUrl);
-          await new Promise(r => setTimeout(r, 500));
-        } catch (e) {
-          console.error(`[${site.name}] Image error ${card.name} #${i + 1}: ${e.message}`);
+      if (site.embedPhotos) {
+        photos.push(...profile.images);
+      } else {
+        for (let i = 0; i < profile.images.length; i++) {
+          try {
+            const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+            const path = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
+            const ghUrl = await uploadImage(env, profile.images[i], path);
+            photos.push(ghUrl);
+            await new Promise(r => setTimeout(r, 500));
+          } catch (e) {
+            console.error(`[${site.name}] Image error ${card.name} #${i + 1}: ${e.message}`);
+          }
         }
       }
       entry.photos = photos;
@@ -1248,14 +1255,18 @@ async function syncCalendar(env, site) {
             entry.desc = profile.desc || '';
             entry.originalSite = 'Exists';
             const photos = [];
-            for (let i = 0; i < profile.images.length; i++) {
-              try {
-                const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
-                const imgPath = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
-                const ghUrl = await uploadImage(env, profile.images[i], imgPath);
-                photos.push(ghUrl);
-                await new Promise(r => setTimeout(r, 500));
-              } catch (e) { console.error(`[${site.name}] Image error ${card.name}: ${e.message}`); }
+            if (site.embedPhotos) {
+              photos.push(...profile.images);
+            } else {
+              for (let i = 0; i < profile.images.length; i++) {
+                try {
+                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                  const imgPath = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
+                  const ghUrl = await uploadImage(env, profile.images[i], imgPath);
+                  photos.push(ghUrl);
+                  await new Promise(r => setTimeout(r, 500));
+                } catch (e) { console.error(`[${site.name}] Image error ${card.name}: ${e.message}`); }
+              }
             }
             entry.photos = photos;
             entry.labels = extractLabels(profile.desc);

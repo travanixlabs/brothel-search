@@ -52,6 +52,7 @@ const SITES = {
     imgPrefix: 'profiles/ginzaempire',
     rosterFormat: 'empire',
     siteType: 'ginza',
+    embedPhotos: true,
   },
   club: {
     name: 'Ginza Club',
@@ -62,6 +63,7 @@ const SITES = {
     imgPrefix: 'profiles/ginzaclub',
     rosterFormat: 'club',
     siteType: 'ginza',
+    embedPhotos: true,
   },
   kyoto206: {
     name: 'Kyoto 206',
@@ -72,6 +74,7 @@ const SITES = {
     imgPrefix: 'profiles/kyoto206',
     siteType: 'wordpress',
     rosterFormat: 'kyoto206',
+    embedPhotos: true,
   },
   sakura57: {
     name: 'Sakura 57',

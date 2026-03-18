@@ -5980,7 +5980,12 @@
       "originalSite": "",
       "lastModified": "2026-03-15T04:59:47.022Z",
       "lastRostered": "2019-08-01",
-      "photos": [],
+      "photos": [
+        "https://www.429city.com/wp-content/uploads/2019/08/Lulu-3-773x1030.jpg",
+        "https://www.429city.com/wp-content/uploads/2019/08/Lulu-2-773x1030.jpg",
+        "https://www.429city.com/wp-content/uploads/2019/08/Mickey-450x450.jpg",
+        "https://www.429city.com/wp-content/uploads/2019/09/Angel-1-450x450.jpg"
+      ],
       "country": [
         "Japanese"
       ]
@@ -6347,7 +6352,10 @@
       "originalSite": "",
       "lastModified": "2026-03-15T05:00:11.394Z",
       "lastRostered": "2026-03-15",
-      "photos": []
+      "photos": [
+        "https://www.429city.com/wp-content/uploads/2019/05/Yoko-1-450x450.jpg",
+        "https://www.429city.com/wp-content/uploads/2019/05/Emma-2-450x450.jpg"
+      ]
     },
     {
       "name": "Yoko 2",

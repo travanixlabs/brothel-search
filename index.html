@@ -916,7 +916,7 @@ function renderCard(g, grid) {
           ${g.height ? '<span>' + g.height + 'cm</span>' : ''}
           ${g.cup ? '<span>' + g.cup + ' cup</span>' : ''}
         </div>
-        ${(g.val1 || g.val2 || g.val3) ? '<div class="card-rates">' + [g.val1 ? '30m $'+g.val1 : '', g.val2 ? '45m $'+g.val2 : '', g.val3 ? '60m $'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>' : ''}
+        ${(g.val1 || g.val2 || g.val3) ? '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>' : ''}
         ${lastRostered ? '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : '') + '">' + lastRostered + '</div>' : ''}
         <div class="card-hover-line"></div>
       </div>`;

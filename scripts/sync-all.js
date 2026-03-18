@@ -127,6 +127,7 @@ const SITES = {
       western: { val1: '230', val2: '280', val3: '350' },
       other: { val1: '170', val2: '240', val3: '300' },
     },
+    embedPhotos: true,
   },
 };
 

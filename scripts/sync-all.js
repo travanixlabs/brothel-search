@@ -92,6 +92,7 @@ const SITES = {
     imgPrefix: 'profiles/top127',
     siteType: 'wordpress',
     rosterFormat: 'top127',
+    embedPhotos: true,
   },
   fantasyclub35: {
     name: 'Fantasy Club 35',

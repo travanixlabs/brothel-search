@@ -499,9 +499,9 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
 
   let val1 = '', val2 = '', val3 = '';
-  const p30 = html.match(/30\s*min\w*\s*\$?\s*(\d+)/i);
-  const p45 = html.match(/45\s*min\w*\s*\$?\s*(\d+)/i);
-  const p60 = html.match(/60\s*min\w*\s*\$?\s*(\d+)/i);
+  const p30 = html.match(/30\s*min\w*:?\s*\$?\s*(\d+)/i);
+  const p45 = html.match(/45\s*min\w*:?\s*\$?\s*(\d+)/i);
+  const p60 = html.match(/60\s*min\w*:?\s*\$?\s*(\d+)/i);
   if (p30) val1 = p30[1];
   if (p45) val2 = p45[1];
   if (p60) val3 = p60[1];

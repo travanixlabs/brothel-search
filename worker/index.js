@@ -591,7 +591,20 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   return { titleInfo, age, height, cup, val1, val2, val3, images, earliestUpload };
 }
 
-/* ── Sync: Kyoto 206 Girls ── */
+/* ── Name validation ── */
+
+function isValidGirlName(name) {
+  if (!name) return false;
+  // Reject names with special chars (|, &, !, =, etc.) — these are page titles, not real names
+  if (/[|&!=<>{}[\]@#$%^*]/.test(name)) return false;
+  // Reject names longer than 20 chars — real names are short
+  if (name.length > 20) return false;
+  // Reject names with more than 2 words
+  if (name.trim().split(/\s+/).length > 2) return false;
+  return true;
+}
+
+/* ── Sync: WordPress Girls ── */
 
 async function syncWpGirls(env, site) {
   const { data, sha } = await loadData(env, site);
@@ -639,8 +652,8 @@ async function syncWpGirls(env, site) {
       const profile = await scrapeWpProfile(site, profileUrl, null);
       const { titleInfo } = profile;
 
-      if (!titleInfo.name || knownNames.has(titleInfo.name)) {
-        console.log(`[${site.name}] Skip ${profileUrl}: ${!titleInfo.name ? 'no name' : 'duplicate'}`);
+      if (!titleInfo.name || knownNames.has(titleInfo.name) || !isValidGirlName(titleInfo.name)) {
+        console.log(`[${site.name}] Skip ${profileUrl}: ${!titleInfo.name ? 'no name' : !isValidGirlName(titleInfo.name) ? 'invalid name: ' + titleInfo.name : 'duplicate'}`);
         skippedUrls.add(profileUrl);
         continue;
       }
@@ -1169,7 +1182,7 @@ async function syncCalendar(env, site) {
             await new Promise(r => setTimeout(r, 1000));
             const profile = await scrapeWpProfile(site, pUrl, null);
             const pName = profile.titleInfo.name;
-            if (!pName || !unmatchedNames.has(pName)) continue;
+            if (!pName || !unmatchedNames.has(pName) || !isValidGirlName(pName)) continue;
 
             const now = new Date().toISOString();
             const entry = {

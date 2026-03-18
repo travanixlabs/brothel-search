@@ -339,6 +339,14 @@ async function scrapeGinzaProfile(site, id) {
   return { val1, val2, val3, images, desc, profileHeight, profileType, profileLang, profileExp, earliestUpload };
 }
 
+function isValidGirlName(name) {
+  if (!name) return false;
+  if (/[|&!=<>{}[\]@#$%^*]/.test(name)) return false;
+  if (name.length > 20) return false;
+  if (name.trim().split(/\s+/).length > 2) return false;
+  return true;
+}
+
 /* ── WordPress sites: girls listing ── */
 
 function decodeHtmlEntities(str) {
@@ -676,7 +684,7 @@ async function syncGirls(site) {
           await sleep(1000);
           const profile = await scrapeWpProfile(site, profileUrl);
           const { titleInfo } = profile;
-          if (!titleInfo.name || knownNames.has(titleInfo.name)) {
+          if (!titleInfo.name || knownNames.has(titleInfo.name) || !isValidGirlName(titleInfo.name)) {
             skippedUrls.add(profileUrl);
             continue;
           }

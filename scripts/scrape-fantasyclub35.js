@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE = 'https://fantasyclub35.com.au';
-const JSON_PATH = 'profiles/fantasyclub35/fantasyclub35.json';
+const JSON_PATH = 'profiles/fantasyclub35.json';
 const IMG_DIR = 'profiles/fantasyclub35';
 const REPO = 'travanixlabs/brothel-search';
 const SAVE_EVERY = 5;

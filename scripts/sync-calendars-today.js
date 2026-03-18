@@ -34,7 +34,7 @@ console.log('Today:', today);
 async function syncFC35() {
   console.log('\n=== Fantasy Club 35 ===');
   const html = await fetchUrl('https://fantasyclub35.com.au/roster/');
-  const d = JSON.parse(fs.readFileSync('profiles/fantasyclub35/fantasyclub35.json', 'utf8'));
+  const d = JSON.parse(fs.readFileSync('profiles/fantasyclub35.json', 'utf8'));
   const cal = d.calendar || { _published: [] };
   const validNames = new Set(d.girls.map(g => g.name));
   const girlsByName = {};
@@ -80,7 +80,7 @@ async function syncFC35() {
   cal._published.sort();
   d.calendar = cal;
   d.lastCalendarSync = new Date().toISOString();
-  fs.writeFileSync('profiles/fantasyclub35/fantasyclub35.json', JSON.stringify(d, null, 2));
+  fs.writeFileSync('profiles/fantasyclub35.json', JSON.stringify(d, null, 2));
 
   const todayCount = Object.keys(cal).filter(k => !k.startsWith('_') && cal[k][today]).length;
   console.log('Total rostered today: ' + todayCount);
@@ -89,7 +89,7 @@ async function syncFC35() {
 async function sync429() {
   console.log('\n=== 429 City ===');
   const html = await fetchUrl('https://www.429city.com/roster/');
-  const d = JSON.parse(fs.readFileSync('profiles/429city/429city.json', 'utf8'));
+  const d = JSON.parse(fs.readFileSync('profiles/429city.json', 'utf8'));
   const cal = d.calendar || { _published: [] };
   const validUrls = {};
   d.girls.forEach(g => { if (g.oldUrl) validUrls[g.oldUrl.replace(/\/$/, '/').toLowerCase()] = g.name; });
@@ -124,7 +124,7 @@ async function sync429() {
   cal._published.sort();
   d.calendar = cal;
   d.lastCalendarSync = new Date().toISOString();
-  fs.writeFileSync('profiles/429city/429city.json', JSON.stringify(d, null, 2));
+  fs.writeFileSync('profiles/429city.json', JSON.stringify(d, null, 2));
   console.log(matched + ' matched from ' + links.size + ' links');
   if (unmatched.length) console.log('Unmatched:', unmatched);
 }

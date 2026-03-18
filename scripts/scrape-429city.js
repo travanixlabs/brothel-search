@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE = 'https://www.429city.com';
-const JSON_PATH = 'profiles/429city/429city.json';
+const JSON_PATH = 'profiles/429city.json';
 const IMG_DIR = 'profiles/429city';
 const REPO = 'travanixlabs/brothel-search';
 const SAVE_EVERY = 5;

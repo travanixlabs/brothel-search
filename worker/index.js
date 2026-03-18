@@ -2,9 +2,9 @@
  * Cloudflare Worker — Brothel Search Data Sync
  *
  * Scrapes sites and maintains JSON files in the brothel-search repo:
- *   profiles/ginzaempire/ginzaempire.json  — from 479ginza.com.au
- *   profiles/ginzaclub/ginzaclub.json      — from www.ginzaclub.com.au
- *   profiles/kyoto206/kyoto206.json        — from citybrothel.com.au
+ *   profiles/ginzaempire.json  — from 479ginza.com.au
+ *   profiles/ginzaclub.json      — from www.ginzaclub.com.au
+ *   profiles/kyoto206.json        — from citybrothel.com.au
  *
  * Cron schedule:
  *   8:00 UTC  (7pm AEDT) — sync girls + calendar (all sites)
@@ -26,7 +26,7 @@ const SITES = {
     baseUrl: 'https://479ginza.com.au',
     girlsUrl: 'https://479ginza.com.au/Girls',
     rosterUrl: 'https://479ginza.com.au/Roster',
-    jsonPath: 'profiles/ginzaempire/ginzaempire.json',
+    jsonPath: 'profiles/ginzaempire.json',
     imgPrefix: 'profiles/ginzaempire',
     rosterFormat: 'empire', // "Happy Thursday 13th of March"
     embedPhotos: true,
@@ -36,7 +36,7 @@ const SITES = {
     baseUrl: 'https://www.ginzaclub.com.au',
     girlsUrl: 'https://www.ginzaclub.com.au/Girls',
     rosterUrl: 'https://www.ginzaclub.com.au/Roster',
-    jsonPath: 'profiles/ginzaclub/ginzaclub.json',
+    jsonPath: 'profiles/ginzaclub.json',
     imgPrefix: 'profiles/ginzaclub',
     rosterFormat: 'club', // "Wow Friday 13/3/2026"
     embedPhotos: true,
@@ -46,7 +46,7 @@ const SITES = {
     baseUrl: 'https://citybrothel.com.au',
     girlsUrl: 'https://citybrothel.com.au/our-girls/',
     rosterUrl: 'https://citybrothel.com.au/girls-roster/',
-    jsonPath: 'profiles/kyoto206/kyoto206.json',
+    jsonPath: 'profiles/kyoto206.json',
     imgPrefix: 'profiles/kyoto206',
     siteType: 'wordpress',
     rosterFormat: 'kyoto206',
@@ -57,7 +57,7 @@ const SITES = {
     baseUrl: 'https://www.surryhillsbrothel.com.au',
     girlsUrl: 'https://www.surryhillsbrothel.com.au/our-girls/',
     rosterUrl: 'https://www.surryhillsbrothel.com.au/girls-roster/',
-    jsonPath: 'profiles/sakura57/sakura57.json',
+    jsonPath: 'profiles/sakura57.json',
     imgPrefix: 'profiles/sakura57',
     siteType: 'wordpress',
     rosterFormat: 'kyoto206',
@@ -68,7 +68,7 @@ const SITES = {
     baseUrl: 'https://127city.com',
     girlsUrl: 'https://127city.com/ladies/',
     rosterUrl: 'https://127city.com/',
-    jsonPath: 'profiles/top127/top127.json',
+    jsonPath: 'profiles/top127.json',
     imgPrefix: 'profiles/top127',
     siteType: 'wordpress',
     rosterFormat: 'top127',
@@ -80,7 +80,7 @@ const SITES = {
     girlsUrl: 'https://fantasyclub35.com.au/',
     rosterUrl: 'https://fantasyclub35.com.au/roster/',
     rosterFormat: 'fantasyclub35',
-    jsonPath: 'profiles/fantasyclub35/fantasyclub35.json',
+    jsonPath: 'profiles/fantasyclub35.json',
     imgPrefix: 'profiles/fantasyclub35',
     siteType: 'wordpress',
     listingSelector: 'listing_type',
@@ -94,7 +94,7 @@ const SITES = {
     girlsUrl: 'https://www.429city.com/ladies/',
     rosterUrl: 'https://www.429city.com/roster/',
     rosterFormat: '429city',
-    jsonPath: 'profiles/429city/429city.json',
+    jsonPath: 'profiles/429city.json',
     imgPrefix: 'profiles/429city',
     siteType: 'wordpress',
     listingSelector: null,

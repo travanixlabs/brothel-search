@@ -1,27 +1,6 @@
 {
   "girls": [
     {
-      "name": "Misano",
-      "country": [
-        "Japanese"
-      ],
-      "age": "22",
-      "height": "163",
-      "cup": "C",
-      "val1": "200",
-      "val2": "260",
-      "val3": "320",
-      "startDate": "2019-05-01",
-      "oldUrl": "https://www.surryhillsbrothel.com.au/project/misano-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "MISANO (JAPAN) D - 30 minutes Age: 22 Height: 163cm Bust: C Service: Diamond 30mins $200 45mins $260 60mins $320",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2019-05-01",
-      "photos": []
-    },
-    {
       "name": "Mayo",
       "country": [
         "Japanese"
@@ -45,27 +24,6 @@
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2019/05/lllo.png",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/new57-297x300.jpeg"
       ]
-    },
-    {
-      "name": "Kiyume",
-      "country": [
-        "Japanese"
-      ],
-      "age": "22",
-      "height": "165",
-      "cup": "C",
-      "val1": "190",
-      "val2": "250",
-      "val3": "310",
-      "startDate": "2019-05-01",
-      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kiyume-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "KIYUME (JAPAN) D - 30 minutes Age: 22 Height: 165cm Bust: C Service: Diamond 30mins $190 45mins $250 60mins $310",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-03-16",
-      "photos": []
     },
     {
       "name": "Yilia",
@@ -6718,27 +6676,6 @@
       ]
     },
     {
-      "name": "Ayane",
-      "country": [
-        "Japanese"
-      ],
-      "age": "21",
-      "height": "163",
-      "cup": "C",
-      "val1": "200",
-      "val2": "260",
-      "val3": "320",
-      "startDate": "2025-09-01",
-      "lang": "Japanese, Limited English",
-      "oldUrl": "https://www.surryhillsbrothel.com.au/project/ayane-japan/",
-      "desc": "",
-      "originalSite": "",
-      "photos": [],
-      "labels": [],
-      "lastModified": "2026-03-15T01:10:26.836Z",
-      "lastRostered": "2026-03-19"
-    },
-    {
       "name": "Kiyomi",
       "country": [
         "Japanese"
@@ -6928,12 +6865,6 @@
         "end": "00:00"
       }
     },
-    "Kiyume": {
-      "2026-03-16": {
-        "start": "10:00",
-        "end": "00:00"
-      }
-    },
     "Miuu": {
       "2026-03-16": {
         "start": "10:00",
@@ -7030,20 +6961,6 @@
       "2026-03-17": {
         "start": "10:00",
         "end": "19:00"
-      }
-    },
-    "Ayane": {
-      "2026-03-17": {
-        "start": "14:00",
-        "end": "05:00"
-      },
-      "2026-03-18": {
-        "start": "14:00",
-        "end": "05:00"
-      },
-      "2026-03-19": {
-        "start": "14:00",
-        "end": "05:00"
       }
     },
     "Kiyomi": {

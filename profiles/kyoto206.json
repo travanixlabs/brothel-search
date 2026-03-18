@@ -1,27 +1,6 @@
 {
   "girls": [
     {
-      "name": "Ayani",
-      "country": [
-        "Japanese"
-      ],
-      "age": "20",
-      "height": "162",
-      "cup": "D",
-      "val1": "200",
-      "val2": "260",
-      "val3": "320",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/ayani-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "AYANI (JAPAN) D - 30 minutes Age: 20 Height: 162cm Bust: D Service: Diamond 30mins $200 45mins $260 60mins $320",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:31:43.525Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
-    },
-    {
       "name": "Bela",
       "country": [
         "Indonesian"
@@ -112,27 +91,6 @@
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/02/Masami-Jp-01.jpeg"
       ]
-    },
-    {
-      "name": "Cara",
-      "country": [
-        "Latina"
-      ],
-      "age": "21",
-      "height": "162",
-      "cup": "C",
-      "val1": "180",
-      "val2": "250",
-      "val3": "310",
-      "startDate": "2026-02-01",
-      "oldUrl": "https://citybrothel.com.au/project/cara%ef%bc%88latina%ef%bc%89/",
-      "lang": "English",
-      "desc": "CARA (LATINA) D - 30 minutes Age: 21 Height: 162cm Bust: C Service: Diamond 30mins $180 45mins $250 60mins $310",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
     },
     {
       "name": "Kurume",
@@ -325,27 +283,6 @@
       ]
     },
     {
-      "name": "Amiru",
-      "country": [
-        "Japanese"
-      ],
-      "age": "19",
-      "height": "160",
-      "cup": "",
-      "val1": "190",
-      "val2": "250",
-      "val3": "310",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/amiru-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "AMIRU (JAPAN) D - 30 minutes Age: 19 Height: 160cm Bust: DD Service: Diamond 30mins $190 45mins $250 60mins $310",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
-    },
-    {
       "name": "Kasume",
       "country": [
         "Japanese"
@@ -436,27 +373,6 @@
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Maki-Jp-07.jpeg"
       ]
-    },
-    {
-      "name": "Yukio",
-      "country": [
-        "Japanese"
-      ],
-      "age": "22",
-      "height": "163",
-      "cup": "D",
-      "val1": "180",
-      "val2": "250",
-      "val3": "300",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/yukio-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "YUKIO (JAPAN) D - 30 minutes Age: 22 Height: 163cm Bust: D Service: Diamond 30mins $180 45mins $250 60mins $300",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
     },
     {
       "name": "Wendy",
@@ -802,48 +718,6 @@
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Soca-Jp-09-scaled.jpeg"
       ]
-    },
-    {
-      "name": "Ado",
-      "country": [
-        "Japanese"
-      ],
-      "age": "20",
-      "height": "163",
-      "cup": "E",
-      "val1": "170",
-      "val2": "230",
-      "val3": "290",
-      "startDate": "2025-11-01",
-      "oldUrl": "https://citybrothel.com.au/project/ado-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "ADO (JAPAN) D - 30 minutes Age: 20 Height: 163cm Bust: E Service: Diamond 30mins $170 45mins $230 60mins $290",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2025-11-01",
-      "photos": []
-    },
-    {
-      "name": "Ayase",
-      "country": [
-        "Japanese"
-      ],
-      "age": "23",
-      "height": "170",
-      "cup": "C",
-      "val1": "190",
-      "val2": "250",
-      "val3": "320",
-      "startDate": "2025-02-01",
-      "oldUrl": "https://citybrothel.com.au/project/ayase-japan/",
-      "lang": "Japanese, Limited English",
-      "desc": "AYASE (JAPAN) D - 30 minutes Age: 23 Height: 170cm Bust: C Service: Diamond 30mins $190 45mins $250 60mins $320",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2025-02-01",
-      "photos": []
     },
     {
       "name": "Ada",
@@ -1329,27 +1203,6 @@
       ]
     },
     {
-      "name": "Patty",
-      "country": [
-        "Vietnamese"
-      ],
-      "age": "23",
-      "height": "170",
-      "cup": "C",
-      "val1": "170",
-      "val2": "240",
-      "val3": "290",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/patty-vietnam/",
-      "lang": "Vietnamese, Limited English",
-      "desc": "PATTY (VIETNAM) D - 30 minutes Age: 23 Height: 170cm Bust: C Service: Diamond 30mins $170 45mins $240 60mins $290",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
-    },
-    {
       "name": "Meiya",
       "country": [
         "Japanese"
@@ -1512,48 +1365,6 @@
       ]
     },
     {
-      "name": "Lissa",
-      "country": [
-        "Chinese"
-      ],
-      "age": "26",
-      "height": "165",
-      "cup": "E",
-      "val1": "170",
-      "val2": "240",
-      "val3": "290",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/lissa-china/",
-      "lang": "Mandarin, Limited English",
-      "desc": "LISSA (CHINA) D - 30 minutes Age: 26 Height: 165cm Bust: E Service: Diamond 30mins $170 45mins $240 60mins $290",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
-    },
-    {
-      "name": "Seka",
-      "country": [
-        "Japanese"
-      ],
-      "age": "20",
-      "height": "160",
-      "cup": "B",
-      "val1": "170",
-      "val2": "240",
-      "val3": "290",
-      "startDate": "2024-07-01",
-      "oldUrl": "https://citybrothel.com.au/project/seka-japan-2/",
-      "lang": "Japanese, Limited English",
-      "desc": "SEKA (JAPAN) D - 30 minutes Age: 20 Height: 160cm Bust: B Service: Diamond 30mins $170 45mins $240 60mins $290",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2024-07-01",
-      "photos": []
-    },
-    {
       "name": "Minami",
       "country": [
         "Japanese"
@@ -1667,27 +1478,6 @@
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Asa-Jp-02-scaled.jpeg"
       ]
-    },
-    {
-      "name": "Kelly",
-      "country": [
-        "Vietnamese"
-      ],
-      "age": "26",
-      "height": "162",
-      "cup": "C",
-      "val1": "170",
-      "val2": "240",
-      "val3": "290",
-      "startDate": "2026-01-01",
-      "oldUrl": "https://citybrothel.com.au/project/kelly-vietnam/",
-      "lang": "Vietnamese, Limited English",
-      "desc": "KELLY (VIETNAM) D - 30 minutes Age: 26 Height: 162cm Bust: C Service: Diamond 30mins $170 45mins $240 60mins $290",
-      "labels": [],
-      "originalSite": "",
-      "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-01-01",
-      "photos": []
     },
     {
       "name": "Soda",
@@ -7440,27 +7230,6 @@
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Miyuki-1-Jp.jpg"
       ]
-    },
-    {
-      "name": "Ran",
-      "country": [
-        "Japanese"
-      ],
-      "age": "22",
-      "height": "160",
-      "cup": "C",
-      "val1": "190",
-      "val2": "250",
-      "val3": "310",
-      "startDate": "2026-03-01",
-      "lang": "Japanese, Limited English",
-      "oldUrl": "https://citybrothel.com.au/project/ran-japan/",
-      "desc": "",
-      "originalSite": "",
-      "photos": [],
-      "labels": [],
-      "lastModified": "2026-03-15T01:10:27.578Z",
-      "lastRostered": "2026-03-01"
     },
     {
       "name": "Sanni",

@@ -82,6 +82,7 @@ const SITES = {
     imgPrefix: 'profiles/sakura57',
     siteType: 'wordpress',
     rosterFormat: 'kyoto206',
+    embedPhotos: true,
   },
   top127: {
     name: 'Top 127',

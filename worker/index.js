@@ -1169,12 +1169,17 @@ async function syncCalendar(env, site) {
 
   let changed = false;
 
+  const is429City = scraped._429cityUrls;
+  delete scraped._429cityUrls;
+
   // Auto-create profiles for unmatched rostered names by scanning listing pages
   {
     const unmatchedNames = new Set();
-    for (const entries of Object.values(scraped)) {
-      for (const { name } of entries) {
-        if (!validNames.has(name)) unmatchedNames.add(name);
+    if (!is429City) {
+      for (const entries of Object.values(scraped)) {
+        for (const { name } of entries) {
+          if (!validNames.has(name)) unmatchedNames.add(name);
+        }
       }
     }
     if (unmatchedNames.size > 0) {
@@ -1295,9 +1300,6 @@ async function syncCalendar(env, site) {
     girlsByName[g.name] = g;
     if (g.oldUrl) girlsByUrl[g.oldUrl.replace(/\/$/, '/').toLowerCase()] = g;
   }
-
-  const is429City = scraped._429cityUrls;
-  delete scraped._429cityUrls;
 
   for (const [dateStr, entries] of Object.entries(scraped)) {
     if (dateStr.startsWith('_')) continue;

@@ -6724,6 +6724,56 @@
       "labels": [],
       "lastModified": "2026-03-18T08:38:51.159Z",
       "lastRostered": "2026-03-19"
+    },
+    {
+      "name": "Zona",
+      "country": [
+        "Japanese"
+      ],
+      "age": "18",
+      "height": "150",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2019-05-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/zona-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/5905fb281d401f46bdc9d0ab0809bc3c.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2019/05/lllo.png",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/new57-297x300.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-19T08:00:18.662Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Veni",
+      "country": [
+        "Chinese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2019-05-01",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/veni-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/80201772269042_.pic_hd.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2019/05/lllo.png",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/new57-297x300.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-19T08:00:18.662Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -6984,7 +7034,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-18T08:38:52.144Z",
+  "lastGirlsSync": "2026-03-19T08:00:18.662Z",
   "lastCalendarSync": "2026-03-18T08:38:59.293Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

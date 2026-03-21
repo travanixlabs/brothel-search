@@ -912,6 +912,7 @@ function buildDropdown(id, label, options, selected) {
   const hasSel = selected.length > 0 && selected[0] !== '';
   let selLabel = label;
   if (hasSel) {
+    selLabel = label + ' (+' + selected.length + ')';
   }
   let html = `<div class="filter-dropdown" id="${id}">`;
   html += `<button class="filter-dropdown-btn${hasSel ? ' has-selection' : ''}">${selLabel}<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>`;
@@ -928,6 +929,10 @@ function buildLabelDropdown(id, label, options, includeList, excludeList) {
   const hasSel = includeList.length > 0 || excludeList.length > 0;
   let selLabel = label;
   if (hasSel) {
+    const parts = [];
+    if (includeList.length) parts.push('+' + includeList.length);
+    if (excludeList.length) parts.push('-' + excludeList.length);
+    selLabel = label + ' (' + parts.join(', ') + ')';
   }
   let html = `<div class="filter-dropdown" id="${id}">`;
   html += `<button class="filter-dropdown-btn${hasSel ? ' has-selection' : ''}">${selLabel}<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>`;

@@ -357,7 +357,7 @@ async function scrapeGirlProfile(site, id) {
   while ((im = imgRe.exec(html)) !== null) {
     const src = im[1];
     if (/s\.\w+$/i.test(src)) continue;
-    if (/\.(jpe?g|png|webp)$/i.test(src)) {
+    if (/\.(jpe?g|png|webp|gif)$/i.test(src)) {
       images.push(site.baseUrl + src);
       const dm = src.match(/\/data\/upload\/(\d{4})-(\d{2})\//);
       if (dm) {
@@ -515,7 +515,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   const galleryImages = [];
   let im;
   while ((im = galleryRe.exec(html)) !== null) {
-    if (/\.(?:jpe?g|png|webp)$/i.test(im[1])) galleryImages.push(im[1]);
+    if (/\.(?:jpe?g|png|webp|gif)$/i.test(im[1])) galleryImages.push(im[1]);
   }
 
   let images;
@@ -525,7 +525,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     // Fallback: broad regex for other WP sites (Kyoto 206 etc.)
     const mainHtml = html.split(/avia-post-nav|avia-related-posts|In Portfolios|class="portfolio|class="related|id="portfolio|class="post-navigation/i)[0] || html;
     const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
-    const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp))`, 'gi');
+    const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp|gif))`, 'gi');
     const allImages = [];
     while ((im = imgRe.exec(mainHtml)) !== null) allImages.push(im[1]);
 
@@ -567,8 +567,8 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     // Group by base, prefer -scaled, then highest resolution
     const groups = {};
     for (const imgUrl of girlImgs) {
-      const base = imgUrl.replace(/-scaled\.(jpe?g|png|webp)$/i, '.$1')
-                         .replace(/-\d+x\d+\.(jpe?g|png|webp)$/i, '.$1');
+      const base = imgUrl.replace(/-scaled\.(jpe?g|png|webp|gif)$/i, '.$1')
+                         .replace(/-\d+x\d+\.(jpe?g|png|webp|gif)$/i, '.$1');
       if (!groups[base]) groups[base] = { scaled: null, resolution: null, original: null, resPixels: 0 };
       if (/-scaled\./i.test(imgUrl)) groups[base].scaled = imgUrl;
       else if (/-\d+x\d+\./i.test(imgUrl)) {
@@ -689,7 +689,7 @@ async function syncWpGirls(env, site) {
       } else {
         for (let i = 0; i < profile.images.length; i++) {
           try {
-            const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+            const ext = (profile.images[i].match(/\.(jpe?g|png|webp|gif)$/i) || [])[1] || 'jpeg';
             const path = `${site.imgPrefix}/${name}/${name}_${i + 1}.${ext}`;
             const ghUrl = await uploadImage(env, profile.images[i], path);
             photos.push(ghUrl);
@@ -1110,7 +1110,7 @@ async function syncGirls(env, site) {
       } else {
         for (let i = 0; i < profile.images.length; i++) {
           try {
-            const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+            const ext = (profile.images[i].match(/\.(jpe?g|png|webp|gif)$/i) || [])[1] || 'jpeg';
             const path = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
             const ghUrl = await uploadImage(env, profile.images[i], path);
             photos.push(ghUrl);
@@ -1215,7 +1215,7 @@ async function syncCalendar(env, site) {
             } else {
               for (let i = 0; i < profile.images.length; i++) {
                 try {
-                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp|gif)$/i) || [])[1] || 'jpeg';
                   const imgPath = `${site.imgPrefix}/${pName}/${pName}_${i + 1}.${ext}`;
                   const ghUrl = await uploadImage(env, profile.images[i], imgPath);
                   entry.photos.push(ghUrl);
@@ -1266,7 +1266,7 @@ async function syncCalendar(env, site) {
             } else {
               for (let i = 0; i < profile.images.length; i++) {
                 try {
-                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpeg';
+                  const ext = (profile.images[i].match(/\.(jpe?g|png|webp|gif)$/i) || [])[1] || 'jpeg';
                   const imgPath = `${site.imgPrefix}/${card.name}/${card.name}_${i + 1}.${ext}`;
                   const ghUrl = await uploadImage(env, profile.images[i], imgPath);
                   photos.push(ghUrl);

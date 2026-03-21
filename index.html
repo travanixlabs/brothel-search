@@ -325,9 +325,7 @@ body.is-admin .admin-only{display:initial!important}
     <div class="settings-title">Profile Settings</div>
     <div class="settings-section">
       <div class="settings-label">Profile Name</div>
-      <input class="settings-input" id="settingsName" type="text" placeholder="Profile Name">
-      <button class="settings-btn" id="settingsNameBtn">Update Name</button>
-      <div class="settings-msg" id="settingsNameMsg"></div>
+      <div class="settings-value" id="settingsName"></div>
     </div>
     <div class="settings-section">
       <div class="settings-label">Email</div>
@@ -539,10 +537,9 @@ function toggleUserMenu() {
 
 function showProfileSettings() {
   document.getElementById('userMenuDropdown').classList.remove('open');
-  const user = sbClient.auth.getUser ? null : null;
   sbClient.auth.getUser().then(({ data }) => {
     if (data?.user) {
-      document.getElementById('settingsName').value = data.user.user_metadata?.display_name || '';
+      document.getElementById('settingsName').textContent = data.user.user_metadata?.display_name || '';
     }
   });
   document.getElementById('settingsEmail').textContent = document.getElementById('userMenuEmail').textContent;
@@ -550,7 +547,6 @@ function showProfileSettings() {
   document.getElementById('settingsConfirmPw').value = '';
   document.getElementById('settingsConfirmPw').style.borderColor = '';
   document.getElementById('settingsPwMsg').textContent = '';
-  document.getElementById('settingsNameMsg').textContent = '';
   document.getElementById('settingsOverlay').classList.add('open');
 }
 
@@ -628,17 +624,6 @@ document.getElementById('settingsConfirmPw').addEventListener('input', () => {
   el.style.borderColor = el.value === document.getElementById('settingsNewPw').value ? '#00c864' : '#ff4444';
 });
 document.getElementById('settingsConfirmPw').addEventListener('keydown', e => { if (e.key === 'Enter') changePassword(); });
-document.getElementById('settingsNameBtn').addEventListener('click', async () => {
-  const name = document.getElementById('settingsName').value.trim();
-  const msg = document.getElementById('settingsNameMsg');
-  msg.textContent = '';
-  if (!name) { msg.style.color = '#ff4444'; msg.textContent = 'Profile name is required'; return; }
-  document.getElementById('settingsNameBtn').disabled = true;
-  const { error } = await sbClient.auth.updateUser({ data: { display_name: name } });
-  document.getElementById('settingsNameBtn').disabled = false;
-  if (error) { msg.style.color = '#ff4444'; msg.textContent = error.message; }
-  else { msg.style.color = '#00c864'; msg.textContent = 'Name updated'; }
-});
 document.addEventListener('click', e => { if (!e.target.closest('.user-menu')) document.getElementById('userMenuDropdown').classList.remove('open'); });
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);

@@ -298,6 +298,7 @@ body.is-admin .admin-only{display:initial!important}
   <div class="auth-box">
     <h1>Brothel Search</h1>
     <p id="authSubtitle">Sign in to continue</p>
+    <input class="auth-input" id="authName" type="text" placeholder="Profile Name" autocomplete="name" style="display:none">
     <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
     <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
     <input class="auth-input" id="authPasswordConfirm" type="password" placeholder="Confirm Password" autocomplete="new-password" style="display:none">
@@ -322,6 +323,12 @@ body.is-admin .admin-only{display:initial!important}
   <div class="settings-container">
     <button class="settings-back" id="settingsBack"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> Back</button>
     <div class="settings-title">Profile Settings</div>
+    <div class="settings-section">
+      <div class="settings-label">Profile Name</div>
+      <input class="settings-input" id="settingsName" type="text" placeholder="Profile Name">
+      <button class="settings-btn" id="settingsNameBtn">Update Name</button>
+      <div class="settings-msg" id="settingsNameMsg"></div>
+    </div>
     <div class="settings-section">
       <div class="settings-label">Email</div>
       <div class="settings-value" id="settingsEmail"></div>
@@ -437,7 +444,9 @@ async function handleAuth() {
   const btn = document.getElementById('authBtn');
   errorEl.textContent = '';
 
+  const profileName = document.getElementById('authName').value.trim();
   if (!email || !password) { errorEl.textContent = 'Please enter email and password'; return; }
+  if (authMode === 'signup' && !profileName) { errorEl.textContent = 'Please enter a profile name'; return; }
   if (authMode === 'signup') {
     if (password.length < 8) { errorEl.textContent = 'Password must be at least 8 characters'; return; }
     if (!/[a-z]/.test(password)) { errorEl.textContent = 'Password must contain a lowercase letter'; return; }
@@ -455,7 +464,7 @@ async function handleAuth() {
   if (authMode === 'signin') {
     result = await sbClient.auth.signInWithPassword({ email, password });
   } else {
-    result = await sbClient.auth.signUp({ email, password });
+    result = await sbClient.auth.signUp({ email, password, options: { data: { display_name: profileName } } });
   }
 
   btn.disabled = false;
@@ -491,6 +500,8 @@ function toggleAuthMode() {
   document.getElementById('authBtn').style.background = isSignup ? 'linear-gradient(135deg,rgba(180,74,255,0.25),rgba(180,74,255,0.1))' : '';
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
+  document.getElementById('authName').style.display = isSignup ? '' : 'none';
+  document.getElementById('authName').value = '';
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
   document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password' : 'Password');
   document.getElementById('authPasswordConfirm').style.display = isSignup ? '' : 'none';
@@ -528,11 +539,18 @@ function toggleUserMenu() {
 
 function showProfileSettings() {
   document.getElementById('userMenuDropdown').classList.remove('open');
+  const user = sbClient.auth.getUser ? null : null;
+  sbClient.auth.getUser().then(({ data }) => {
+    if (data?.user) {
+      document.getElementById('settingsName').value = data.user.user_metadata?.display_name || '';
+    }
+  });
   document.getElementById('settingsEmail').textContent = document.getElementById('userMenuEmail').textContent;
   document.getElementById('settingsNewPw').value = '';
   document.getElementById('settingsConfirmPw').value = '';
   document.getElementById('settingsConfirmPw').style.borderColor = '';
   document.getElementById('settingsPwMsg').textContent = '';
+  document.getElementById('settingsNameMsg').textContent = '';
   document.getElementById('settingsOverlay').classList.add('open');
 }
 
@@ -610,14 +628,26 @@ document.getElementById('settingsConfirmPw').addEventListener('input', () => {
   el.style.borderColor = el.value === document.getElementById('settingsNewPw').value ? '#00c864' : '#ff4444';
 });
 document.getElementById('settingsConfirmPw').addEventListener('keydown', e => { if (e.key === 'Enter') changePassword(); });
+document.getElementById('settingsNameBtn').addEventListener('click', async () => {
+  const name = document.getElementById('settingsName').value.trim();
+  const msg = document.getElementById('settingsNameMsg');
+  msg.textContent = '';
+  if (!name) { msg.style.color = '#ff4444'; msg.textContent = 'Profile name is required'; return; }
+  document.getElementById('settingsNameBtn').disabled = true;
+  const { error } = await sbClient.auth.updateUser({ data: { display_name: name } });
+  document.getElementById('settingsNameBtn').disabled = false;
+  if (error) { msg.style.color = '#ff4444'; msg.textContent = error.message; }
+  else { msg.style.color = '#00c864'; msg.textContent = 'Name updated'; }
+});
 document.addEventListener('click', e => { if (!e.target.closest('.user-menu')) document.getElementById('userMenuDropdown').classList.remove('open'); });
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
 document.getElementById('authPassword').addEventListener('input', () => { checkPasswordReqs(); checkPasswordMatch(); });
 document.getElementById('authPasswordConfirm').addEventListener('input', checkPasswordMatch);
+document.getElementById('authName').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authEmail').focus(); });
+document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPassword').focus(); else document.getElementById('authPassword').focus(); } });
 document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPasswordConfirm').focus(); else handleAuth(); } });
 document.getElementById('authPasswordConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
-document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authPassword').focus(); });
 
 const PROFILES_BASE = 'https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles';
 const VENUES = [

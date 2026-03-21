@@ -193,8 +193,9 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-entry-bar{position:absolute;top:2px;bottom:2px;border-radius:2px;min-width:8px;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1px;color:#fff;font-weight:600;transition:opacity .2s}
 .roster-entry-bar.now{background:linear-gradient(90deg,rgba(0,200,100,0.6),rgba(0,200,100,0.3),rgba(0,255,120,0.5),rgba(0,200,100,0.3));background-size:300% 100%;animation:greenShimmer 3s ease infinite}
 @keyframes greenShimmer{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
-.roster-entry-bar.later{background:linear-gradient(90deg,rgba(180,74,255,0.5),rgba(180,74,255,0.3))}
-.roster-entry-bar.future{background:linear-gradient(90deg,rgba(201,149,44,0.4),rgba(201,149,44,0.25))}
+.roster-entry-bar.later{background:linear-gradient(90deg,rgba(60,120,255,0.5),rgba(60,120,255,0.25),rgba(100,160,255,0.4),rgba(60,120,255,0.25));background-size:300% 100%;animation:blueShimmer 3s ease infinite}
+.roster-entry-bar.future{background:linear-gradient(90deg,rgba(60,120,255,0.5),rgba(60,120,255,0.25),rgba(100,160,255,0.4),rgba(60,120,255,0.25));background-size:300% 100%;animation:blueShimmer 3s ease infinite}
+@keyframes blueShimmer{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
 .roster-timeline-line{position:absolute;top:0;bottom:0;width:2px;z-index:10;pointer-events:none}
 .roster-timeline-line.now{background:rgba(255,80,80,0.7)}
 .roster-timeline-line.filter{background:rgba(180,74,255,0.7)}

@@ -335,11 +335,11 @@ body.is-admin .admin-only{display:initial!important}
     <div id="authPasswordReqs" style="display:none;font-size:12px;margin:4px 0 12px;line-height:1.8">
       <div style="margin-bottom:4px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Password must contain:</div>
       <ul style="margin:0;padding-left:20px">
-        <li id="reqLen" style="color:var(--text-dim)">At least 8 characters</li>
-        <li id="reqUpper" style="color:var(--text-dim)">One uppercase letter (A-Z)</li>
-        <li id="reqLower" style="color:var(--text-dim)">One lowercase letter (a-z)</li>
-        <li id="reqNum" style="color:var(--text-dim)">One number (0-9)</li>
-        <li id="reqSpecial" style="color:var(--text-dim)">One special character (!@#$%&*)</li>
+        <li id="reqLen" style="color:#dbb550">At least 8 characters</li>
+        <li id="reqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
+        <li id="reqLower" style="color:#dbb550">One lowercase letter (a-z)</li>
+        <li id="reqNum" style="color:#dbb550">One number (0-9)</li>
+        <li id="reqSpecial" style="color:#dbb550">One special character (!@#$%&*)</li>
       </ul>
     </div>
     <button class="auth-btn" id="authBtn">Sign In</button>
@@ -368,11 +368,11 @@ body.is-admin .admin-only{display:initial!important}
       <div id="settingsPwReqs" style="font-size:12px;margin:0 0 12px;line-height:1.8">
         <div style="margin-bottom:4px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Password must contain:</div>
         <ul style="margin:0;padding-left:20px">
-          <li id="sReqLen" style="color:var(--text-dim)">At least 8 characters</li>
-          <li id="sReqUpper" style="color:var(--text-dim)">One uppercase letter (A-Z)</li>
-          <li id="sReqLower" style="color:var(--text-dim)">One lowercase letter (a-z)</li>
-          <li id="sReqNum" style="color:var(--text-dim)">One number (0-9)</li>
-          <li id="sReqSpecial" style="color:var(--text-dim)">One special character (!@#$%&*)</li>
+          <li id="sReqLen" style="color:#dbb550">At least 8 characters</li>
+          <li id="sReqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
+          <li id="sReqLower" style="color:#dbb550">One lowercase letter (a-z)</li>
+          <li id="sReqNum" style="color:#dbb550">One number (0-9)</li>
+          <li id="sReqSpecial" style="color:#dbb550">One special character (!@#$%&*)</li>
         </ul>
       </div>
       <button class="settings-btn" id="settingsChangePwBtn">Update Password</button>
@@ -571,7 +571,7 @@ function checkPasswordReqs() {
   ];
   checks.forEach(c => {
     const el = document.getElementById(c.id);
-    el.style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : 'var(--text-dim)';
+    el.style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : '#dbb550';
   });
 }
 
@@ -660,7 +660,7 @@ document.getElementById('settingsNewPw').addEventListener('input', () => {
     { id: 'sReqNum', pass: /[0-9]/.test(pw) },
     { id: 'sReqSpecial', pass: /[^a-zA-Z0-9]/.test(pw) },
   ];
-  checks.forEach(c => { document.getElementById(c.id).style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : 'var(--text-dim)'; });
+  checks.forEach(c => { document.getElementById(c.id).style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : '#dbb550'; });
   // Also update confirm match
   const confirm = document.getElementById('settingsConfirmPw');
   if (confirm.value) confirm.style.borderColor = pw === confirm.value ? '#00c864' : '#ff4444';

@@ -1123,7 +1123,7 @@ function renderFilters() {
   fr.innerHTML = buildLabelDropdown('ddVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)
     + buildLabelDropdown('ddCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
-    + buildLabelDropdown('ddAV', 'AV', ['Yes', 'No'], activeAV.include, activeAV.exclude)
+    + buildLabelDropdown('ddAV', 'AV', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>g.pornstar).length},{value:'No',label:'No',count:allGirls.filter(g=>!g.pornstar).length}], activeAV.include, activeAV.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');

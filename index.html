@@ -68,7 +68,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .dt-picker{display:flex;align-items:center;gap:4px;padding:0 8px;grid-column:span 2}
 .dt-picker select{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(255,255,255,0.04);color:var(--text-dim);border:1px solid rgba(255,255,255,0.12);padding:3px 4px;cursor:pointer;appearance:auto;-webkit-appearance:menulist}
 .dt-picker select:focus{outline:none;border-color:rgba(255,255,255,0.3)}
-.dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-right:2px}
+.dt-field{display:flex;flex-direction:column;align-items:center;gap:2px}
+.dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
 .dt-toggle-active,.dt-toggle-inactive{font-size:11px!important;padding:3px 4px!important;letter-spacing:1px;text-align:center!important;justify-content:center!important}
 .dt-toggle-active{background:rgba(160,80,255,0.2)!important;border-color:rgba(160,80,255,0.6)!important;color:#b060ff!important}
 .dt-toggle-inactive{background:rgba(220,180,50,0.15)!important;border-color:rgba(220,180,50,0.5)!important;color:#dcb432!important}
@@ -605,41 +606,23 @@ function buildDateTimePicker() {
 
   let html = '<div class="dt-picker">';
 
-  // Year dropdown
-  html += '<select id="dtYear">';
-  sortedYears.forEach(y => {
-    html += '<option value="' + y + '"' + (y === selYear ? ' selected' : '') + '>' + y + '</option>';
-  });
-  html += '</select>';
-
-  // Month dropdown
-  html += '<select id="dtMonth">';
-  sortedMonths.forEach(m => {
-    html += '<option value="' + m + '"' + (m === selMonth ? ' selected' : '') + '>' + monthNames[parseInt(m)] + '</option>';
-  });
-  html += '</select>';
-
-  // Day dropdown
-  html += '<select id="dtDay">';
-  sortedDays.forEach(d => {
-    html += '<option value="' + d + '"' + (d === selDay ? ' selected' : '') + '>' + parseInt(d) + '</option>';
-  });
-  html += '</select>';
-
-  // Hour dropdown (0-23)
-  html += '<select id="dtHour">';
-  for (let h = 0; h < 24; h++) {
-    const hStr = String(h).padStart(2, '0');
-    html += '<option value="' + hStr + '"' + (hStr === selHour ? ' selected' : '') + '>' + hStr + '</option>';
+  function dtField(label, id, options, selected) {
+    let h = '<div class="dt-field"><span class="dt-label">' + label + '</span><select id="' + id + '">';
+    options.forEach(o => {
+      h += '<option value="' + o.value + '"' + (o.value === selected ? ' selected' : '') + '>' + o.label + '</option>';
+    });
+    h += '</select></div>';
+    return h;
   }
-  html += '</select>';
 
-  // Minute dropdown (00, 30)
-  html += '<select id="dtMinute">';
-  ['00', '30'].forEach(m => {
-    html += '<option value="' + m + '"' + (m === selMin ? ' selected' : '') + '>' + m + '</option>';
-  });
-  html += '</select>';
+  html += dtField('Year', 'dtYear', sortedYears.map(y => ({ value: y, label: y })), selYear);
+  html += dtField('Month', 'dtMonth', sortedMonths.map(m => ({ value: m, label: monthNames[parseInt(m)] })), selMonth);
+  html += dtField('Day', 'dtDay', sortedDays.map(d => ({ value: d, label: String(parseInt(d)) })), selDay);
+
+  const hourOpts = [];
+  for (let h = 0; h < 24; h++) { const s = String(h).padStart(2, '0'); hourOpts.push({ value: s, label: s }); }
+  html += dtField('Hour', 'dtHour', hourOpts, selHour);
+  html += dtField('Min', 'dtMinute', [{ value: '00', label: '00' }, { value: '30', label: '30' }], selMin);
 
   // Toggle button
   const btnCls = dtEnabled ? 'filter-dropdown-btn has-selection dt-toggle-active' : 'filter-dropdown-btn dt-toggle-inactive';

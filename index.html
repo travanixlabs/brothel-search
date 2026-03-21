@@ -1132,13 +1132,13 @@ function renderFilters() {
   // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');
   const tfDefs = [
-    { key: 'name', placeholder: 'Name', maxlength: 20 },
+    { key: 'name', placeholder: 'Name', maxlength: 15 },
     { key: 'cup', placeholder: 'Cup', maxlength: 1 },
-    { key: 'exp', placeholder: 'Experience', maxlength: 20 },
-    { key: 'special', placeholder: 'Special', maxlength: 20 },
-    { key: 'lang', placeholder: 'Language', maxlength: 20 },
-    { key: 'type', placeholder: 'Type', maxlength: 20 },
-    { key: 'desc', placeholder: 'Description', maxlength: 20 }
+    { key: 'exp', placeholder: 'Experience', maxlength: 15 },
+    { key: 'special', placeholder: 'Special', maxlength: 15 },
+    { key: 'lang', placeholder: 'Language', maxlength: 15 },
+    { key: 'type', placeholder: 'Type', maxlength: 15 },
+    { key: 'desc', placeholder: 'Description', maxlength: 15 }
   ];
   mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off"' + (d.maxlength ? ' maxlength="' + d.maxlength + '"' : '') + (d.key === 'cup' ? ' style="text-transform:uppercase"' : '') + ' value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
   mfd.querySelectorAll('.search-input').forEach(inp => {

@@ -1658,7 +1658,7 @@ function renderRoster() {
   // Girl count above tabs
   let html = venueFilterHtml;
   const totalGirls = rosterDays[rosterSelectedDay].entries.length;
-  html += '<div class="roster-day-count">' + totalGirls + ' girl' + (totalGirls !== 1 ? 's' : '') + '</div>';
+  html += '<div class="roster-day-count">' + totalGirls + ' girl' + (totalGirls !== 1 ? 's' : '') + ' found</div>';
 
   // Day tabs (hidden when date/time filter locks to a specific day)
   if (!activeDateTime) {

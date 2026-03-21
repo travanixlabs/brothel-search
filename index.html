@@ -649,6 +649,7 @@ sbClient.auth.onAuthStateChange((event, session) => {
 // Enter key to submit
 document.getElementById('userMenuBtn').addEventListener('click', toggleUserMenu);
 document.getElementById('settingsBack').addEventListener('click', closeSettings);
+document.getElementById('settingsOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeSettings(); });
 document.getElementById('settingsChangePwBtn').addEventListener('click', changePassword);
 document.getElementById('settingsNewPw').addEventListener('input', () => {
   const pw = document.getElementById('settingsNewPw').value;

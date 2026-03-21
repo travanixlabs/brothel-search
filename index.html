@@ -65,7 +65,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .sort-dir-toggle.active-include{background:rgba(0,200,100,0.2);border-color:#00c864;color:#00c864}
 .sort-dir-toggle.active-exclude{background:rgba(255,60,60,0.2);border-color:#ff3c3c;color:#ff3c3c}
 .sort-dir-toggle:hover{background:rgba(255,255,255,0.08)}
-.dt-picker{display:flex;align-items:center;gap:4px;padding:0 8px;grid-column:span 2}
+.dt-picker{display:flex;align-items:center;gap:8px;padding:0}
 .dt-picker select{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(255,255,255,0.04);color:var(--text-dim);border:1px solid rgba(255,255,255,0.12);padding:3px 4px;cursor:pointer;appearance:auto;-webkit-appearance:menulist}
 .dt-picker select:focus{outline:none;border-color:rgba(255,255,255,0.3)}
 .dt-field{display:flex;flex-direction:column;align-items:center;gap:2px}
@@ -267,6 +267,7 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <div class="more-filters-section" id="moreFiltersSection">
 <button class="more-filters-toggle" id="moreFiltersToggle">More Filters <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
 <div class="more-filters-panel" id="moreFiltersPanel">
+<div id="dtPickerRow" style="margin-bottom:16px"></div>
 <div class="text-filters-grid" id="moreFiltersDropdowns"></div>
 <div class="range-filters-grid" id="rangeFiltersGrid"></div>
 </div>
@@ -712,8 +713,10 @@ function renderFilters() {
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
-    + buildDateTimePicker()
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
+
+  // Date-time picker in More Filters
+  document.getElementById('dtPickerRow').innerHTML = buildDateTimePicker();
 
   // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');

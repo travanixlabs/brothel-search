@@ -69,7 +69,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .dt-picker select{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(255,255,255,0.04);color:var(--text-dim);border:1px solid rgba(255,255,255,0.12);padding:3px 4px;cursor:pointer;appearance:auto;-webkit-appearance:menulist}
 .dt-picker select:focus{outline:none;border-color:rgba(255,255,255,0.3)}
 .dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-right:2px}
-.dt-picker .dt-year{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.3)}
+.dt-toggle-active{background:rgba(160,80,255,0.2)!important;border-color:rgba(160,80,255,0.6)!important;color:#b060ff!important;font-size:11px!important;padding:3px 10px!important;letter-spacing:2px}
+.dt-toggle-inactive{background:rgba(220,180,50,0.15)!important;border-color:rgba(220,180,50,0.5)!important;color:#dcb432!important;font-size:11px!important;padding:3px 10px!important;letter-spacing:2px}
 .filter-option.included{color:#00c864}
 .filter-option.included .filter-checkbox{border-color:#00c864;background:rgba(0,200,100,0.2)}
 .filter-option.included .filter-checkbox::after{content:'';width:8px;height:8px;background:#00c864}
@@ -308,6 +309,7 @@ let calendarData = {};
 let activeAvailability = { include: [], exclude: [] };
 let activePhotos = { include: [], exclude: [] };
 let activeDateTime = '';
+let dtEnabled = false;
 let dtPendingMonth = '';
 let dtPendingDay = '';
 const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
@@ -554,8 +556,17 @@ function buildDateTimePicker() {
   const rosteredDates = getRosteredDates();
   const todayStr = curYear + '-' + curMonth + '-' + curDay;
 
-  // Parse current selection (default to today)
-  let selYear = curYear, selMonth = curMonth, selDay = curDay, selHour = '', selMin = '';
+  // Default hour/minute to next 30-min slot
+  const mins = now.getMinutes();
+  let defHour, defMin;
+  if (mins < 30) { defHour = now.getHours(); defMin = 30; }
+  else { defHour = now.getHours() + 1; defMin = 0; }
+  if (defHour >= 24) { defHour = 0; }
+  const defHourStr = String(defHour).padStart(2, '0');
+  const defMinStr = String(defMin).padStart(2, '0');
+
+  // Parse current selection (default to today + next slot)
+  let selYear = curYear, selMonth = curMonth, selDay = curDay, selHour = defHourStr, selMin = defMinStr;
   if (activeDateTime) {
     const parts = activeDateTime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
     if (parts) { selYear = parts[1]; selMonth = parts[2]; selDay = parts[3]; selHour = parts[4]; selMin = parts[5]; }
@@ -615,7 +626,7 @@ function buildDateTimePicker() {
   html += '</select>';
 
   // Hour dropdown (0-23)
-  html += '<select id="dtHour"><option value="">Hr</option>';
+  html += '<select id="dtHour">';
   for (let h = 0; h < 24; h++) {
     const hStr = String(h).padStart(2, '0');
     html += '<option value="' + hStr + '"' + (hStr === selHour ? ' selected' : '') + '>' + hStr + '</option>';
@@ -623,11 +634,15 @@ function buildDateTimePicker() {
   html += '</select>';
 
   // Minute dropdown (00, 30)
-  html += '<select id="dtMinute"><option value="">Min</option>';
+  html += '<select id="dtMinute">';
   ['00', '30'].forEach(m => {
     html += '<option value="' + m + '"' + (m === selMin ? ' selected' : '') + '>' + m + '</option>';
   });
   html += '</select>';
+
+  // Toggle button
+  const btnCls = dtEnabled ? 'filter-dropdown-btn has-selection dt-toggle-active' : 'filter-dropdown-btn dt-toggle-inactive';
+  html += '<button class="' + btnCls + '" id="dtToggle">' + (dtEnabled ? 'ON' : 'OFF') + '</button>';
 
   html += '</div>';
   return html;
@@ -770,37 +785,36 @@ function renderFilters() {
   const dtDay = document.getElementById('dtDay');
   const dtHour = document.getElementById('dtHour');
   const dtMinute = document.getElementById('dtMinute');
-  function updateDateTime() {
-    if (dtYear && dtYear.value && dtMonth && dtMonth.value && dtDay && dtDay.value && dtHour && dtHour.value !== '' && dtMinute && dtMinute.value !== '') {
+  const dtToggle = document.getElementById('dtToggle');
+  function syncDateTime() {
+    if (dtEnabled && dtYear && dtMonth && dtDay && dtHour && dtMinute) {
       activeDateTime = dtYear.value + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
-      dtPendingMonth = ''; dtPendingDay = '';
     } else {
       activeDateTime = '';
     }
-    renderFilters(); renderGrid();
   }
+  function dtChanged() { syncDateTime(); renderFilters(); renderGrid(); }
   // Year/month changes cascade to update available months/days
   if (dtYear) dtYear.onchange = () => {
     dtPendingMonth = ''; dtPendingDay = '';
-    activeDateTime = '';
-    renderFilters(); renderGrid();
+    syncDateTime(); renderFilters(); renderGrid();
   };
   if (dtMonth) dtMonth.onchange = () => {
     dtPendingMonth = dtMonth.value; dtPendingDay = '';
-    activeDateTime = '';
-    renderFilters(); renderGrid();
+    syncDateTime(); renderFilters(); renderGrid();
   };
-  if (dtDay) dtDay.onchange = () => {
-    dtPendingDay = dtDay.value;
-    updateDateTime();
+  if (dtDay) dtDay.onchange = () => { dtPendingDay = dtDay.value; dtChanged(); };
+  if (dtHour) dtHour.onchange = dtChanged;
+  if (dtMinute) dtMinute.onchange = dtChanged;
+  if (dtToggle) dtToggle.onclick = () => {
+    dtEnabled = !dtEnabled;
+    syncDateTime(); renderFilters(); renderGrid();
   };
-  if (dtHour) dtHour.onchange = updateDateTime;
-  if (dtMinute) dtMinute.onchange = updateDateTime;
 
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)

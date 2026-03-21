@@ -1132,15 +1132,15 @@ function renderFilters() {
   // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');
   const tfDefs = [
-    { key: 'name', placeholder: 'Name' },
+    { key: 'name', placeholder: 'Name', maxlength: 20 },
     { key: 'cup', placeholder: 'Cup', maxlength: 1 },
-    { key: 'exp', placeholder: 'Experience' },
-    { key: 'special', placeholder: 'Special' },
-    { key: 'lang', placeholder: 'Language' },
-    { key: 'type', placeholder: 'Type' },
-    { key: 'desc', placeholder: 'Description' }
+    { key: 'exp', placeholder: 'Experience', maxlength: 20 },
+    { key: 'special', placeholder: 'Special', maxlength: 20 },
+    { key: 'lang', placeholder: 'Language', maxlength: 20 },
+    { key: 'type', placeholder: 'Type', maxlength: 20 },
+    { key: 'desc', placeholder: 'Description', maxlength: 20 }
   ];
-  mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off"' + (d.maxlength ? ' maxlength="' + d.maxlength + '" style="text-transform:uppercase"' : '') + ' value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
+  mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off"' + (d.maxlength ? ' maxlength="' + d.maxlength + '"' : '') + (d.key === 'cup' ? ' style="text-transform:uppercase"' : '') + ' value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
   mfd.querySelectorAll('.search-input').forEach(inp => {
     inp.addEventListener('input', e => {
       clearTimeout(searchTimer);

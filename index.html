@@ -731,14 +731,33 @@ function getAvailabilityText(g) {
   const cal = calendarData[(g.venue || '') + ':' + g.name];
   if (!cal) return null;
   const now = new Date();
+  const nowMins = now.getHours() * 60 + now.getMinutes();
   const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+
+  // Before 6am, check if yesterday's shift is still active (wraps past midnight)
+  if (now.getHours() < 6) {
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.getFullYear() + '-' + String(yesterday.getMonth() + 1).padStart(2, '0') + '-' + String(yesterday.getDate()).padStart(2, '0');
+    const ySlot = cal[yesterdayStr];
+    if (ySlot) {
+      const [ysh, ysm] = ySlot.start.split(':').map(Number);
+      const [yeh, yem] = ySlot.end.split(':').map(Number);
+      const yStartMins = ysh * 60 + ysm;
+      const yEndMins = yeh * 60 + yem;
+      // If end < start, shift wraps past midnight
+      if (yEndMins <= yStartMins && nowMins < yEndMins) {
+        const timeStr = fmt24to12(ySlot.start) + ' - ' + fmt24to12(ySlot.end);
+        return 'Available Now (' + timeStr + ')';
+      }
+    }
+  }
+
   const slot = cal[today];
   if (slot) {
     const [sh, sm] = slot.start.split(':').map(Number);
     const [eh, em] = slot.end.split(':').map(Number);
-    const nowMins = now.getHours() * 60 + now.getMinutes();
     const startMins = sh * 60 + sm;
-    // end time: if end < start it wraps past midnight (e.g. 04:00 = next day)
     const endMins = eh * 60 + em;
     const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
     const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);

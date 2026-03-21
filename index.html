@@ -1680,10 +1680,6 @@ function renderRoster() {
     const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
 
     html += `<div class="roster-day">
-      <div class="roster-day-header">
-        <span class="roster-day-name">${isToday ? 'Today' : dayNamesShort[day.date.getDay()]}</span>
-        <span class="roster-day-date">${dateLabel}</span>
-      </div>
       <div class="roster-timeline">
         <div class="roster-timeline-header">
           <div></div>

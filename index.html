@@ -70,7 +70,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .dt-picker select:focus{outline:none;border-color:rgba(255,255,255,0.3)}
 .dt-field{display:flex;flex-direction:column;align-items:center;gap:2px}
 .dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
-.dt-toggle-active,.dt-toggle-inactive{font-size:11px!important;padding:3px 4px!important;letter-spacing:1px;text-align:center!important;justify-content:center!important}
+.dt-toggle-active,.dt-toggle-inactive{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;cursor:pointer;border:1px solid;text-align:center}
 .dt-toggle-active{background:rgba(160,80,255,0.2)!important;border-color:rgba(160,80,255,0.6)!important;color:#b060ff!important}
 .dt-toggle-inactive{background:rgba(220,180,50,0.15)!important;border-color:rgba(220,180,50,0.5)!important;color:#dcb432!important}
 .filter-option.included{color:#00c864}
@@ -626,8 +626,8 @@ function buildDateTimePicker() {
   html += dtField('Min', 'dtMinute', [{ value: '00', label: '00' }, { value: '30', label: '30' }], selMin);
 
   // Toggle button
-  const btnCls = dtEnabled ? 'filter-dropdown-btn has-selection dt-toggle-active' : 'filter-dropdown-btn dt-toggle-inactive';
-  html += '<button class="' + btnCls + '" id="dtToggle">' + (dtEnabled ? 'ON' : 'OFF') + '</button>';
+  const btnCls = dtEnabled ? 'dt-toggle-active' : 'dt-toggle-inactive';
+  html += '<div class="dt-field"><span class="dt-label">&nbsp;</span><button class="' + btnCls + '" id="dtToggle">' + (dtEnabled ? 'ON' : 'OFF') + '</button></div>';
 
   html += '</div>';
   return html;

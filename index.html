@@ -1580,6 +1580,18 @@ function renderRoster() {
     return;
   }
 
+  // If date/time filter is active, only show the matching day
+  if (activeDateTime) {
+    const dt = new Date(activeDateTime);
+    const dtDateStr = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+    const matchIdx = rosterDays.findIndex(d => d.dateStr === dtDateStr);
+    if (matchIdx >= 0) rosterSelectedDay = matchIdx;
+    else {
+      container.innerHTML = '<div class="empty-msg">No roster data for ' + dtDateStr + '.</div>';
+      return;
+    }
+  }
+
   // Clamp selected day index
   if (rosterSelectedDay >= rosterDays.length) rosterSelectedDay = 0;
 
@@ -1592,15 +1604,18 @@ function renderRoster() {
     hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
   }
 
-  // Day tabs
-  let html = venueFilterHtml + '<div class="roster-day-tabs">';
-  rosterDays.forEach((day, i) => {
-    const isToday = day.dateStr === todayStr;
-    const label = isToday ? 'Today' : dayNamesShort[day.date.getDay()];
-    const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
-    html += `<button class="roster-day-tab${i === rosterSelectedDay ? ' active' : ''}" onclick="setRosterDay(${i})">${label} <span style="opacity:0.7">${dateLabel}</span><span class="tab-count">${day.entries.length}</span></button>`;
-  });
-  html += '</div>';
+  // Day tabs (hidden when date/time filter locks to a specific day)
+  let html = venueFilterHtml;
+  if (!activeDateTime) {
+    html += '<div class="roster-day-tabs">';
+    rosterDays.forEach((day, i) => {
+      const isToday = day.dateStr === todayStr;
+      const label = isToday ? 'Today' : dayNamesShort[day.date.getDay()];
+      const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
+      html += `<button class="roster-day-tab${i === rosterSelectedDay ? ' active' : ''}" onclick="setRosterDay(${i})">${label} <span style="opacity:0.7">${dateLabel}</span><span class="tab-count">${day.entries.length}</span></button>`;
+    });
+    html += '</div>';
+  }
 
   // Render only selected day
   const day = rosterDays[rosterSelectedDay];

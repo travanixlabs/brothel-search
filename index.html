@@ -708,7 +708,7 @@ const RANGE_DEFS = [
   { key: 'val2', label: '45 Min', field: 'val2', type: 'num', prefix: '$' },
   { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' },
   { key: 'startDate', label: 'Start Date', field: 'startDate', type: 'date' },
-  { key: 'lastRostered', label: 'Last Rostered', field: 'lastRostered', type: 'date' }
+  { key: 'lastRostered', label: 'Last Roster', field: 'lastRostered', type: 'date' }
 ];
 const CUP_ORDER = ['A','B','C','D','DD','E','F','G','H'];
 function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); return i >= 0 ? i : -1; }
@@ -1187,7 +1187,7 @@ function renderFilters() {
     { id: 'val2', label: '45 Min' },
     { id: 'val3', label: '60 Min' },
     { id: 'startDate', label: 'Start Date' },
-    { id: 'lastRostered', label: 'Last Rostered' }
+    { id: 'lastRostered', label: 'Last Roster' }
   ];
   const sortOpts = sorts.map(s => ({ value: s.id, label: s.label }));
   sr.innerHTML = buildSortDropdown('ddSort', sortOpts, activeSort, sortDir);
@@ -1786,7 +1786,7 @@ function showProfile(g) {
           ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
           ${detailRow('Start Date', g.startDate)}
-          ${detailRow('Last Rostered', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
+          ${detailRow('Last Roster', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
           ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : '') + '">' + avail + '</span></div>' : ''; })()}
           ${detailRow('Experience', g.exp)}
           ${detailRow('Special', g.special)}

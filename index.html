@@ -182,7 +182,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:baseline;gap:12px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
 .roster-day-name{font-size:18px;font-weight:700}
 .roster-day-date{font-size:12px;letter-spacing:1px}
-.roster-day-count{font-size:11px;margin-left:auto;font-family:'Orbitron',sans-serif;letter-spacing:2px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-day-count{font-size:11px;font-family:'Orbitron',sans-serif;letter-spacing:2px;margin-bottom:12px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
 .roster-timeline{position:relative;padding:8px 0}
 .roster-timeline-header{display:grid;grid-template-columns:160px 1fr;gap:12px;margin-bottom:4px;padding:0 8px}
 .roster-timeline-hours{display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:1px}
@@ -1655,8 +1655,12 @@ function renderRoster() {
     hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
   }
 
-  // Day tabs (hidden when date/time filter locks to a specific day)
+  // Girl count above tabs
   let html = venueFilterHtml;
+  const totalGirls = rosterDays[rosterSelectedDay].entries.length;
+  html += '<div class="roster-day-count">' + totalGirls + ' girl' + (totalGirls !== 1 ? 's' : '') + '</div>';
+
+  // Day tabs (hidden when date/time filter locks to a specific day)
   if (!activeDateTime) {
     html += '<div class="roster-day-tabs">';
     rosterDays.forEach((day, i) => {
@@ -1679,7 +1683,6 @@ function renderRoster() {
       <div class="roster-day-header">
         <span class="roster-day-name">${isToday ? 'Today' : dayNamesShort[day.date.getDay()]}</span>
         <span class="roster-day-date">${dateLabel}</span>
-        <span class="roster-day-count">${day.entries.length} girl${day.entries.length !== 1 ? 's' : ''}</span>
       </div>
       <div class="roster-timeline">
         <div class="roster-timeline-header">

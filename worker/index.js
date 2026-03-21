@@ -556,8 +556,8 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
       });
       girlImgs = allImages.filter(url => {
         const fn = url.split('/').pop().toLowerCase();
-        if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信')) return false;
-        if (/-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
+        if (fn.includes('logo') || fn.includes('qr') || fn.includes('微信') || fn.includes('二维码')) return false;
+        if (/-150x150\./.test(url) || /-160x160\./.test(url) || /-746x548\./.test(url) || /-300x300\./.test(url)) return false;
         const namePrefix = fn.match(/^([a-z]+)-/);
         if (namePrefix && portfolioNames.has(namePrefix[1]) && !nameVariants.includes(namePrefix[1])) return false;
         return true;

@@ -1817,8 +1817,8 @@ function showProfile(g) {
 
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
-    <div class="card-venue ${g.venue}" style="margin-bottom:12px">${g.venueName}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
-    <div class="profile-name">${g.name || ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
+    <div class="card-venue ${g.venue}" style="margin-bottom:12px">${g.venueName}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
+    <div class="profile-name">${g.name || ''}</div>
     <div class="profile-layout">
       <div class="profile-gallery">
         <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">

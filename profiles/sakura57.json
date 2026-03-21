@@ -6769,6 +6769,31 @@
       "labels": [],
       "lastModified": "2026-03-19T08:00:18.662Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Sagi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "166",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2019-05-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/sagi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/7ff740562c825625718d3fbb9da47a65.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2019/05/lllo.png",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/new57-297x300.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-21T08:00:20.950Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -7007,7 +7032,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-19T08:00:18.662Z",
+  "lastGirlsSync": "2026-03-21T08:00:20.950Z",
   "lastCalendarSync": "2026-03-21T02:28:51.134Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

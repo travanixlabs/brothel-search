@@ -112,7 +112,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .range-date-val:hover{border-bottom-color:var(--gold-light)}
 .range-filter-label .range-date-sep{background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
 .range-date-input{background:rgba(201,149,44,0.06);border:1px solid rgba(201,149,44,0.3);color:var(--gold);font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:1px;font-weight:400;padding:2px 6px;outline:none;width:130px;border-radius:6px;color-scheme:dark}
-.range-date-input::-webkit-calendar-picker-indicator{filter:sepia(1) saturate(3) hue-rotate(5deg) brightness(1.2);cursor:pointer}
+.range-date-input::-webkit-calendar-picker-indicator{opacity:0;cursor:pointer;position:relative;z-index:2}
+.range-date-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c9952c'%3E%3Cpath d='M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;background-size:14px;padding-right:24px}
 .range-slider{position:relative;height:36px;display:flex;align-items:center}
 .range-slider-track{position:absolute;left:0;right:0;height:3px;background:rgba(201,149,44,0.1);border-radius:2px}
 .range-slider-fill{position:absolute;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-light));border-radius:2px}

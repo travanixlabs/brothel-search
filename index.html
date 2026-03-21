@@ -261,6 +261,16 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 .sign-out-btn:hover{border-color:var(--accent);color:var(--accent)}
 .admin-only{display:none!important}
 body.is-admin .admin-only{display:initial!important}
+.user-menu{position:relative}
+.user-menu-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s}
+.user-menu-btn:hover{border-color:var(--gold);color:var(--gold)}
+.user-menu-dropdown{display:none;position:absolute;top:48px;right:0;min-width:220px;background:rgba(10,10,15,0.97);border:1px solid rgba(201,149,44,0.3);backdrop-filter:blur(20px);z-index:200;padding:8px 0}
+.user-menu-dropdown.open{display:block}
+.user-menu-email{padding:12px 16px 4px;font-size:13px;color:var(--text);letter-spacing:1px;word-break:break-all}
+.user-menu-role{padding:0 16px 8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.user-menu-divider{height:1px;background:rgba(255,255,255,0.08);margin:4px 0}
+.user-menu-item{display:block;width:100%;background:none;border:none;color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:10px 16px;cursor:pointer;text-align:left;transition:all .2s}
+.user-menu-item:hover{background:rgba(255,255,255,0.06);color:#fff}
 </style>
 </head>
 <body>
@@ -291,7 +301,16 @@ body.is-admin .admin-only{display:initial!important}
 
 <nav>
 <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Brothel Search</div>
-<button class="sign-out-btn" id="signOutBtn" style="display:none" onclick="signOut()">Sign Out</button>
+<div class="user-menu" id="userMenu" style="display:none">
+  <button class="user-menu-btn" id="userMenuBtn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></button>
+  <div class="user-menu-dropdown" id="userMenuDropdown">
+    <div class="user-menu-email" id="userMenuEmail"></div>
+    <div class="user-menu-role" id="userMenuRole"></div>
+    <div class="user-menu-divider"></div>
+    <button class="user-menu-item" onclick="showProfileSettings()">Profile Settings</button>
+    <button class="user-menu-item" onclick="signOut()">Log Out</button>
+  </div>
+</div>
 </nav>
 
 <section class="section">
@@ -345,18 +364,22 @@ async function fetchUserRole() {
   if (data) userRole = data.role;
   else userRole = 'member';
   document.body.classList.toggle('is-admin', userRole === 'admin');
+  // Update menu display
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (user) document.getElementById('userMenuEmail').textContent = user.email;
+  document.getElementById('userMenuRole').textContent = userRole;
 }
 
 async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
     document.getElementById('authOverlay').style.display = 'none';
-    document.getElementById('signOutBtn').style.display = '';
+    document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
     return true;
   }
   document.getElementById('authOverlay').style.display = 'flex';
-  document.getElementById('signOutBtn').style.display = 'none';
+  document.getElementById('userMenu').style.display = 'none';
   return false;
 }
 
@@ -408,7 +431,7 @@ async function handleAuth() {
   }
 
   document.getElementById('authOverlay').style.display = 'none';
-  document.getElementById('signOutBtn').style.display = '';
+  document.getElementById('userMenu').style.display = '';
   await fetchUserRole();
   loadProfiles();
 }
@@ -434,7 +457,7 @@ async function signOut() {
   userRole = 'member';
   document.body.classList.remove('is-admin');
   document.getElementById('authOverlay').style.display = 'flex';
-  document.getElementById('signOutBtn').style.display = 'none';
+  document.getElementById('userMenu').style.display = 'none';
 }
 
 function checkPasswordReqs() {
@@ -452,6 +475,16 @@ function checkPasswordReqs() {
   });
 }
 
+function toggleUserMenu() {
+  document.getElementById('userMenuDropdown').classList.toggle('open');
+}
+
+function showProfileSettings() {
+  document.getElementById('userMenuDropdown').classList.remove('open');
+  // TODO: open profile settings panel
+  alert('Profile settings coming soon');
+}
+
 function checkPasswordMatch() {
   const confirm = document.getElementById('authPasswordConfirm');
   if (authMode !== 'signup' || !confirm.value) { confirm.style.borderColor = ''; return; }
@@ -463,11 +496,13 @@ function checkPasswordMatch() {
 sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none';
-    document.getElementById('signOutBtn').style.display = '';
+    document.getElementById('userMenu').style.display = '';
   }
 });
 
 // Enter key to submit
+document.getElementById('userMenuBtn').addEventListener('click', toggleUserMenu);
+document.addEventListener('click', e => { if (!e.target.closest('.user-menu')) document.getElementById('userMenuDropdown').classList.remove('open'); });
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
 document.getElementById('authPassword').addEventListener('input', () => { checkPasswordReqs(); checkPasswordMatch(); });

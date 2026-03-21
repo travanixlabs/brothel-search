@@ -1598,7 +1598,9 @@ function renderRoster() {
         const slot = cal[dateStr];
         const [sh, sm] = slot.start.split(':').map(Number);
         const [eh, em] = slot.end.split(':').map(Number);
-        const nowMins = now.getHours() * 60 + now.getMinutes();
+        // If we're before 6am and todayStr is yesterday, add 24h to nowMins
+        let nowMins = now.getHours() * 60 + now.getMinutes();
+        if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
         const startMins = sh * 60 + sm;
         const endMins = eh * 60 + em;
         const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;

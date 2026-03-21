@@ -158,6 +158,11 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-view{display:none}
 .roster-view.active{display:block}
 .roster-day{margin-bottom:32px}
+.roster-day-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.roster-day-tab{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:transparent;border:1px solid rgba(201,149,44,0.2);color:var(--text-dim);cursor:pointer;transition:all 0.2s}
+.roster-day-tab:hover{border-color:rgba(201,149,44,0.4);color:var(--text)}
+.roster-day-tab.active{border-color:var(--gold);color:var(--gold);background:rgba(201,149,44,0.1)}
+.roster-day-tab .tab-count{font-size:10px;opacity:0.6;margin-left:6px}
 .roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
 .roster-day-name{font-size:18px;font-weight:700;color:#fff}
 .roster-day-date{font-size:12px;color:var(--text-dim);letter-spacing:1px}
@@ -1517,6 +1522,7 @@ window.addEventListener('scroll', () => {
 /* Roster Calendar View */
 let rosterViewActive = false;
 let rosterVenueFilter = 'all';
+let rosterSelectedDay = 0; // index into rosterDays
 
 function toggleRosterView() {
   rosterViewActive = !rosterViewActive;
@@ -1574,6 +1580,9 @@ function renderRoster() {
     return;
   }
 
+  // Clamp selected day index
+  if (rosterSelectedDay >= rosterDays.length) rosterSelectedDay = 0;
+
   // Timeline: 6am to 6am next day (24h range)
   const TIMELINE_START = 6; // 6am
   const TIMELINE_HOURS = 24;
@@ -1583,9 +1592,19 @@ function renderRoster() {
     hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
   }
 
-  let html = venueFilterHtml;
+  // Day tabs
+  let html = venueFilterHtml + '<div class="roster-day-tabs">';
+  rosterDays.forEach((day, i) => {
+    const isToday = day.dateStr === todayStr;
+    const label = isToday ? 'Today' : dayNamesShort[day.date.getDay()];
+    const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
+    html += `<button class="roster-day-tab${i === rosterSelectedDay ? ' active' : ''}" onclick="setRosterDay(${i})">${label} <span style="opacity:0.7">${dateLabel}</span><span class="tab-count">${day.entries.length}</span></button>`;
+  });
+  html += '</div>';
 
-  for (const day of rosterDays) {
+  // Render only selected day
+  const day = rosterDays[rosterSelectedDay];
+  {
     const isToday = day.dateStr === todayStr;
     const dayName = dayNames[day.date.getDay()];
     const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
@@ -1661,13 +1680,13 @@ function renderRoster() {
 
   container.innerHTML = html;
 
-  // Add now lines for today
-  if (rosterDays[0] && rosterDays[0].dateStr === todayStr) {
+  // Add now lines if selected day is today
+  if (day.dateStr === todayStr) {
     let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
     if (nowOffset < 0) nowOffset += 24 * 60;
     const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
     if (nowPct >= 0 && nowPct <= 100) {
-      const entries = container.querySelectorAll('.roster-day:first-child .roster-entry-bar-container');
+      const entries = container.querySelectorAll('.roster-entry-bar-container');
       entries.forEach(bc => {
         const line = document.createElement('div');
         line.className = 'roster-now-line';
@@ -1685,14 +1704,12 @@ function renderRoster() {
   if (activeDateTime) {
     const dt = new Date(activeDateTime);
     const dtDateStr = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
-    let filterOffset = (dt.getHours() - TIMELINE_START) * 60 + dt.getMinutes();
-    if (filterOffset < 0) filterOffset += 24 * 60;
-    const filterPct = (filterOffset / (TIMELINE_HOURS * 60)) * 100;
-    if (filterPct >= 0 && filterPct <= 100) {
-      const dayEls = container.querySelectorAll('.roster-day');
-      rosterDays.forEach((day, i) => {
-        if (day.dateStr !== dtDateStr || !dayEls[i]) return;
-        const entries = dayEls[i].querySelectorAll('.roster-entry-bar-container');
+    if (day.dateStr === dtDateStr) {
+      let filterOffset = (dt.getHours() - TIMELINE_START) * 60 + dt.getMinutes();
+      if (filterOffset < 0) filterOffset += 24 * 60;
+      const filterPct = (filterOffset / (TIMELINE_HOURS * 60)) * 100;
+      if (filterPct >= 0 && filterPct <= 100) {
+        const entries = container.querySelectorAll('.roster-entry-bar-container');
         entries.forEach(bc => {
           const line = document.createElement('div');
           line.className = 'roster-filter-line';
@@ -1703,9 +1720,14 @@ function renderRoster() {
           line.appendChild(timeLabel);
           bc.appendChild(line);
         });
-      });
+      }
     }
   }
+}
+
+function setRosterDay(index) {
+  rosterSelectedDay = index;
+  renderRoster();
 }
 
 function setRosterVenue(venueId) {

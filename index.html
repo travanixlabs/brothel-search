@@ -31,7 +31,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .search-input{background:none;border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;outline:none;transition:all .4s cubic-bezier(0.23,1,0.32,1);animation:goldColorShimmer 4s ease infinite}
 .search-input:focus{border-color:rgba(201,149,44,0.4);box-shadow:0 0 12px rgba(201,149,44,0.08)}
 .search-input:not(:placeholder-shown){border-color:rgba(201,149,44,0.4);box-shadow:0 0 12px rgba(201,149,44,0.08)}
-.search-input::placeholder{color:var(--gold);font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;animation:goldColorShimmer 4s ease infinite}
+.search-input:placeholder-shown{color:transparent;-webkit-text-fill-color:transparent;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;animation:goldShimmer 4s ease infinite}
+.search-input::placeholder{color:inherit;-webkit-text-fill-color:inherit}
 
 /* Section */
 .section{padding:100px 2.5%;padding-top:152px;max-width:95%;margin:0 auto;position:relative;z-index:1}

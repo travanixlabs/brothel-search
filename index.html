@@ -273,6 +273,7 @@ body.is-admin .admin-only{display:initial!important}
     <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
     <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
     <input class="auth-input" id="authPasswordConfirm" type="password" placeholder="Confirm Password" autocomplete="new-password" style="display:none">
+    <p id="authPasswordReqs" style="display:none;color:var(--text-dim);font-size:12px;margin:4px 0 12px;line-height:1.6">Min 8 characters, one uppercase, one lowercase, one number, one special character</p>
     <button class="auth-btn" id="authBtn">Sign In</button>
     <div class="auth-error" id="authError"></div>
     <div class="auth-link" id="authToggle">Don't have an account? Sign up</div>
@@ -412,8 +413,9 @@ function toggleAuthMode() {
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
-  document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password (min 8, upper, lower, number, special)' : 'Password');
+  document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password' : 'Password');
   document.getElementById('authPasswordConfirm').style.display = isSignup ? '' : 'none';
+  document.getElementById('authPasswordReqs').style.display = isSignup ? '' : 'none';
   document.getElementById('authPasswordConfirm').value = '';
   document.getElementById('authError').textContent = '';
 }

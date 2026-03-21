@@ -418,7 +418,7 @@ async function fetchUserRole() {
   document.body.classList.toggle('is-admin', userRole === 'admin');
   // Update menu display
   const { data: { user } } = await sbClient.auth.getUser();
-  if (user) document.getElementById('userMenuEmail').textContent = user.email;
+  if (user) document.getElementById('userMenuEmail').textContent = user.user_metadata?.display_name || user.email;
   document.getElementById('userMenuRole').textContent = userRole;
 }
 
@@ -554,9 +554,9 @@ function showProfileSettings() {
   sbClient.auth.getUser().then(({ data }) => {
     if (data?.user) {
       document.getElementById('settingsName').textContent = data.user.user_metadata?.display_name || '';
+      document.getElementById('settingsEmail').textContent = data.user.email;
     }
   });
-  document.getElementById('settingsEmail').textContent = document.getElementById('userMenuEmail').textContent;
   document.getElementById('settingsNewPw').value = '';
   document.getElementById('settingsConfirmPw').value = '';
   document.getElementById('settingsConfirmPw').style.borderColor = '';

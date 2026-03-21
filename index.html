@@ -395,6 +395,7 @@ async function handleAuth() {
 }
 
 function toggleAuthMode() {
+  console.log('toggleAuthMode called, switching to:', authMode === 'signin' ? 'signup' : 'signin');
   authMode = authMode === 'signin' ? 'signup' : 'signin';
   document.getElementById('authBtn').textContent = authMode === 'signin' ? 'Sign In' : 'Sign Up';
   document.getElementById('authSubtitle').textContent = authMode === 'signin' ? 'Sign in to continue' : 'Create an account';

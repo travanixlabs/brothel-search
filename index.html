@@ -1134,13 +1134,14 @@ function renderFilters() {
   const mfd = document.getElementById('moreFiltersDropdowns');
   const tfDefs = [
     { key: 'name', placeholder: 'Name' },
+    { key: 'cup', placeholder: 'Cup', maxlength: 1 },
     { key: 'exp', placeholder: 'Experience' },
     { key: 'special', placeholder: 'Special' },
     { key: 'lang', placeholder: 'Language' },
     { key: 'type', placeholder: 'Type' },
     { key: 'desc', placeholder: 'Description' }
   ];
-  mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off" value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
+  mfd.innerHTML = tfDefs.map(d => '<input type="text" class="search-input" data-tf="' + d.key + '" placeholder="' + d.placeholder + '..." autocomplete="off"' + (d.maxlength ? ' maxlength="' + d.maxlength + '" style="text-transform:uppercase"' : '') + ' value="' + (textFilters[d.key] || '').replace(/"/g, '&quot;') + '">').join('');
   mfd.querySelectorAll('.search-input').forEach(inp => {
     inp.addEventListener('input', e => {
       clearTimeout(searchTimer);
@@ -1446,7 +1447,7 @@ function getFiltered() {
     });
   });
   // Text filters
-  const tfMap = { name: 'name', exp: 'exp', special: 'special', lang: 'lang', type: 'type', desc: 'desc' };
+  const tfMap = { name: 'name', cup: 'cup', exp: 'exp', special: 'special', lang: 'lang', type: 'type', desc: 'desc' };
   Object.entries(tfMap).forEach(([key, field]) => {
     const q = (textFilters[key] || '').toLowerCase();
     if (!q) return;

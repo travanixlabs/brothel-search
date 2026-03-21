@@ -439,9 +439,6 @@ async function signOut() {
 
 function checkPasswordReqs() {
   const pw = document.getElementById('authPassword').value;
-  const reqs = document.getElementById('authPasswordReqs');
-  if (authMode !== 'signup' || !pw) { reqs.style.display = 'none'; return; }
-  reqs.style.display = '';
   const checks = [
     { id: 'reqLen', pass: pw.length >= 8 },
     { id: 'reqUpper', pass: /[A-Z]/.test(pw) },
@@ -449,13 +446,10 @@ function checkPasswordReqs() {
     { id: 'reqNum', pass: /[0-9]/.test(pw) },
     { id: 'reqSpecial', pass: /[^a-zA-Z0-9]/.test(pw) },
   ];
-  let allPass = true;
   checks.forEach(c => {
     const el = document.getElementById(c.id);
-    el.style.color = c.pass ? '#00c864' : '#ff4444';
-    if (!c.pass) allPass = false;
+    el.style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : 'var(--text-dim)';
   });
-  if (allPass) reqs.style.display = 'none';
 }
 
 function checkPasswordMatch() {

@@ -704,6 +704,7 @@ let activeSort = 'name';
 let sortDir = 'asc';
 let searchTimer;
 let calendarData = {};
+let activeAV = { include: [], exclude: [] };
 let activeAvailability = { include: [], exclude: [] };
 let activePhotos = { include: [], exclude: [] };
 let activeDateTime = '';
@@ -899,7 +900,7 @@ document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdow
 function hasAnyFilter() {
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
+  return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
 }
 
 function updateClearBtn() {
@@ -910,7 +911,7 @@ function updateClearBtn() {
     btn.className = 'clear-all-btn';
     btn.id = 'clearAllBtn';
     btn.textContent = 'Clear All';
-    btn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    btn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
     fr.appendChild(btn);
   } else if (!hasAnyFilter() && existing) {
     existing.remove();
@@ -1122,6 +1123,7 @@ function renderFilters() {
   fr.innerHTML = buildLabelDropdown('ddVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)
     + buildLabelDropdown('ddCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
+    + buildLabelDropdown('ddAV', 'AV', ['Yes', 'No'], activeAV.include, activeAV.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
@@ -1157,6 +1159,7 @@ function renderFilters() {
     { sel: '#ddVenue', state: activeVenue },
     { sel: '#ddCountry', state: activeCountry },
     { sel: '#ddLabels', state: activeLabels },
+    { sel: '#ddAV', state: activeAV },
     { sel: '#ddAvailability', state: activeAvailability },
     { sel: '#ddPhotos', state: activePhotos },
   ];
@@ -1207,7 +1210,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -1399,6 +1402,15 @@ function getFiltered() {
   if (activeLabels.exclude.length) list = list.filter(g => {
     const gl = g.labels || [];
     return activeLabels.exclude.every(l => !gl.some(lb => lb.toLowerCase() === l.toLowerCase()));
+  });
+  // AV filter
+  if (activeAV.include.length) list = list.filter(g => {
+    const isAV = g.pornstar ? 'Yes' : 'No';
+    return activeAV.include.includes(isAV);
+  });
+  if (activeAV.exclude.length) list = list.filter(g => {
+    const isAV = g.pornstar ? 'Yes' : 'No';
+    return !activeAV.exclude.includes(isAV);
   });
   // Availability filter
   if (activeAvailability.include.length) list = list.filter(g => activeAvailability.include.includes(getAvailabilityStatus(g)));

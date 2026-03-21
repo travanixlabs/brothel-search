@@ -7023,17 +7023,17 @@
     },
     "Rami": {
       "2026-03-21": {
-        "start": "14:00",
-        "end": "04:00"
+        "start": "10:00",
+        "end": "00:00"
       },
       "2026-03-22": {
-        "start": "14:00",
-        "end": "04:00"
+        "start": "10:00",
+        "end": "00:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-21T08:00:20.950Z",
-  "lastCalendarSync": "2026-03-21T02:28:51.134Z",
+  "lastCalendarSync": "2026-03-21T08:00:27.400Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

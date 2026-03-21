@@ -72,14 +72,14 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .sort-dir-toggle.active-exclude{background:rgba(255,60,60,0.2);border-color:#ff3c3c;color:#ff3c3c}
 .sort-dir-toggle:hover{background:rgba(255,255,255,0.08)}
 .dt-picker{display:flex;align-items:center;gap:8px;padding:0}
-.dt-picker select{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(201,149,44,0.25),rgba(201,149,44,0.1));color:#fff;border:1px solid rgba(201,149,44,0.4);padding:3px 4px;cursor:pointer;appearance:auto;-webkit-appearance:menulist;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
-.dt-picker select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 16px rgba(201,149,44,0.08)}
+.dt-picker select{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;background:none;color:var(--gold);border:1px solid rgba(201,149,44,0.12);border-radius:8px;padding:4px 6px;cursor:pointer;appearance:auto;-webkit-appearance:menulist;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
+.dt-picker select:focus{outline:none;border-color:rgba(201,149,44,0.4);box-shadow:0 0 16px rgba(201,149,44,0.08)}
 .dt-picker select option{background:#0e0e16;color:#fff}
 .dt-field{display:flex;flex-direction:column;align-items:center;gap:2px}
-.dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
-.dt-toggle-active,.dt-toggle-inactive{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;cursor:pointer;border:1px solid;text-align:center}
-.dt-toggle-active{background:rgba(160,80,255,0.2)!important;border-color:rgba(160,80,255,0.6)!important;color:#b060ff!important}
-.dt-toggle-inactive{background:rgba(220,180,50,0.15)!important;border-color:rgba(220,180,50,0.5)!important;color:#dcb432!important}
+.dt-picker .dt-label{font-family:'Orbitron',sans-serif;font-size:8px;font-weight:400;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.dt-toggle-active,.dt-toggle-inactive{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;padding:4px 8px;cursor:pointer;border:1px solid;border-radius:8px;text-align:center;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
+.dt-toggle-active{background:none!important;border-color:rgba(201,149,44,0.4)!important;box-shadow:0 0 16px rgba(201,149,44,0.08)!important;background-image:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c)!important;background-size:200% 200%!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;background-clip:text!important;animation:goldShimmer 4s ease infinite!important}
+.dt-toggle-inactive{background:none!important;border-color:rgba(201,149,44,0.12)!important;background-image:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c)!important;background-size:200% 200%!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;background-clip:text!important;animation:goldShimmer 4s ease infinite!important}
 .filter-option.included{color:#00c864}
 .filter-option.included .filter-checkbox{border-color:#00c864;background:rgba(0,200,100,0.2)}
 .filter-option.included .filter-checkbox::after{content:'';width:8px;height:8px;background:#00c864}

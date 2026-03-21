@@ -309,6 +309,7 @@ let activeAvailability = { include: [], exclude: [] };
 let activePhotos = { include: [], exclude: [] };
 let activeDateTime = '';
 let dtPendingMonth = '';
+let dtPendingDay = '';
 const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
 
 const RANGE_DEFS = [
@@ -547,51 +548,67 @@ function getRosteredDates() {
 
 function buildDateTimePicker() {
   const now = new Date();
-  const yr = now.getFullYear();
+  const curYear = String(now.getFullYear());
   const curMonth = String(now.getMonth() + 1).padStart(2, '0');
   const curDay = String(now.getDate()).padStart(2, '0');
   const rosteredDates = getRosteredDates();
-  const todayStr = yr + '-' + curMonth + '-' + curDay;
+  const todayStr = curYear + '-' + curMonth + '-' + curDay;
 
-  // Parse current activeDateTime
-  let selMonth = '', selDay = '', selHour = '', selMin = '';
+  // Parse current selection (default to today)
+  let selYear = curYear, selMonth = curMonth, selDay = curDay, selHour = '', selMin = '';
   if (activeDateTime) {
     const parts = activeDateTime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
-    if (parts) { selMonth = parts[2]; selDay = parts[3]; selHour = parts[4]; selMin = parts[5]; }
+    if (parts) { selYear = parts[1]; selMonth = parts[2]; selDay = parts[3]; selHour = parts[4]; selMin = parts[5]; }
   }
-  // Use pending month if no full activeDateTime
-  if (!selMonth && dtPendingMonth) selMonth = dtPendingMonth;
+  if (dtPendingMonth) selMonth = dtPendingMonth;
+  if (dtPendingDay) selDay = dtPendingDay;
 
-  // Available months: current + future months that have rostered dates
-  const months = new Set();
-  months.add(curMonth);
-  rosteredDates.forEach(d => { if (d >= todayStr) months.add(d.slice(5, 7)); });
   const monthNames = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const sortedMonths = [...months].sort();
 
-  // Available days: based on selected month (or current month)
-  const activeMonth = selMonth || curMonth;
-  const days = new Set();
-  const minDay = activeMonth === curMonth ? curDay : '01';
+  // Available years: current + any rostered years
+  const years = new Set([curYear]);
+  rosteredDates.forEach(d => years.add(d.slice(0, 4)));
+  const sortedYears = [...years].sort();
+
+  // Available months for selected year
+  const months = new Set();
+  if (selYear === curYear) months.add(curMonth);
   rosteredDates.forEach(d => {
-    if (d.slice(5, 7) === activeMonth && d.slice(8) >= minDay) days.add(d.slice(8));
+    if (d.slice(0, 4) === selYear && d >= todayStr) months.add(d.slice(5, 7));
   });
-  // Always include today if current month
-  if (activeMonth === curMonth) days.add(curDay);
+  const sortedMonths = [...months].sort();
+  // Clamp selMonth if not available
+  if (!sortedMonths.includes(selMonth) && sortedMonths.length) selMonth = sortedMonths[0];
+
+  // Available days for selected year+month
+  const days = new Set();
+  if (selYear === curYear && selMonth === curMonth) days.add(curDay);
+  const minDay = (selYear === curYear && selMonth === curMonth) ? curDay : '01';
+  rosteredDates.forEach(d => {
+    if (d.slice(0, 4) === selYear && d.slice(5, 7) === selMonth && d.slice(8) >= minDay) days.add(d.slice(8));
+  });
   const sortedDays = [...days].sort();
+  // Clamp selDay if not available
+  if (!sortedDays.includes(selDay) && sortedDays.length) selDay = sortedDays[0];
 
   let html = '<div class="dt-picker">';
-  html += '<span class="dt-year">' + yr + '</span>';
+
+  // Year dropdown
+  html += '<select id="dtYear">';
+  sortedYears.forEach(y => {
+    html += '<option value="' + y + '"' + (y === selYear ? ' selected' : '') + '>' + y + '</option>';
+  });
+  html += '</select>';
 
   // Month dropdown
-  html += '<select id="dtMonth"><option value="">Mon</option>';
+  html += '<select id="dtMonth">';
   sortedMonths.forEach(m => {
     html += '<option value="' + m + '"' + (m === selMonth ? ' selected' : '') + '>' + monthNames[parseInt(m)] + '</option>';
   });
   html += '</select>';
 
   // Day dropdown
-  html += '<select id="dtDay"><option value="">Day</option>';
+  html += '<select id="dtDay">';
   sortedDays.forEach(d => {
     html += '<option value="' + d + '"' + (d === selDay ? ' selected' : '') + '>' + parseInt(d) + '</option>';
   });
@@ -748,34 +765,42 @@ function renderFilters() {
   });
 
   // DateTime filter dropdowns
+  const dtYear = document.getElementById('dtYear');
   const dtMonth = document.getElementById('dtMonth');
   const dtDay = document.getElementById('dtDay');
   const dtHour = document.getElementById('dtHour');
   const dtMinute = document.getElementById('dtMinute');
   function updateDateTime() {
-    if (dtMonth.value && dtDay.value && dtHour.value !== '' && dtMinute.value !== '') {
-      const now = new Date();
-      activeDateTime = now.getFullYear() + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
-      dtPendingMonth = '';
+    if (dtYear && dtYear.value && dtMonth && dtMonth.value && dtDay && dtDay.value && dtHour && dtHour.value !== '' && dtMinute && dtMinute.value !== '') {
+      activeDateTime = dtYear.value + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
+      dtPendingMonth = ''; dtPendingDay = '';
     } else {
       activeDateTime = '';
     }
     renderFilters(); renderGrid();
   }
-  if (dtMonth) dtMonth.onchange = () => {
-    // Track pending month to seed day dropdown without activating filter
-    dtPendingMonth = dtMonth.value;
+  // Year/month changes cascade to update available months/days
+  if (dtYear) dtYear.onchange = () => {
+    dtPendingMonth = ''; dtPendingDay = '';
     activeDateTime = '';
     renderFilters(); renderGrid();
   };
-  if (dtDay) dtDay.onchange = updateDateTime;
+  if (dtMonth) dtMonth.onchange = () => {
+    dtPendingMonth = dtMonth.value; dtPendingDay = '';
+    activeDateTime = '';
+    renderFilters(); renderGrid();
+  };
+  if (dtDay) dtDay.onchange = () => {
+    dtPendingDay = dtDay.value;
+    updateDateTime();
+  };
   if (dtHour) dtHour.onchange = updateDateTime;
   if (dtMinute) dtMinute.onchange = updateDateTime;
 
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtPendingMonth = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)

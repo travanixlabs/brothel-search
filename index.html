@@ -1593,6 +1593,17 @@ function renderRoster() {
       if (!filteredOrder.has(key)) continue;
       const g = filtered.find(g => (g.venue || '') + ':' + g.name === key);
       if (!g) continue;
+      // For today, skip entries whose shift has ended
+      if (dateStr === todayStr) {
+        const slot = cal[dateStr];
+        const [sh, sm] = slot.start.split(':').map(Number);
+        const [eh, em] = slot.end.split(':').map(Number);
+        const nowMins = now.getHours() * 60 + now.getMinutes();
+        const startMins = sh * 60 + sm;
+        const endMins = eh * 60 + em;
+        const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+        if (nowMins >= effectiveEnd) continue;
+      }
       entries.push({ girl: g, slot: cal[dateStr], order: filteredOrder.get(key) });
     }
     if (entries.length > 0) {

@@ -308,6 +308,7 @@ let calendarData = {};
 let activeAvailability = { include: [], exclude: [] };
 let activePhotos = { include: [], exclude: [] };
 let activeDateTime = '';
+let dtPendingMonth = '';
 const textFilters = { name: '', exp: '', special: '', lang: '', type: '', desc: '' };
 
 const RANGE_DEFS = [
@@ -558,6 +559,8 @@ function buildDateTimePicker() {
     const parts = activeDateTime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
     if (parts) { selMonth = parts[2]; selDay = parts[3]; selHour = parts[4]; selMin = parts[5]; }
   }
+  // Use pending month if no full activeDateTime
+  if (!selMonth && dtPendingMonth) selMonth = dtPendingMonth;
 
   // Available months: current + future months that have rostered dates
   const months = new Set();
@@ -753,20 +756,16 @@ function renderFilters() {
     if (dtMonth.value && dtDay.value && dtHour.value !== '' && dtMinute.value !== '') {
       const now = new Date();
       activeDateTime = now.getFullYear() + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
+      dtPendingMonth = '';
     } else {
       activeDateTime = '';
     }
     renderFilters(); renderGrid();
   }
   if (dtMonth) dtMonth.onchange = () => {
-    // Re-render to update day options for new month, then apply
-    const prevDay = dtDay.value;
-    activeDateTime = ''; // clear so buildDateTimePicker re-renders with new month
-    if (dtMonth.value) {
-      const now = new Date();
-      // Temporarily set activeDateTime with month to seed day dropdown
-      activeDateTime = now.getFullYear() + '-' + dtMonth.value + '-01T00:00';
-    }
+    // Track pending month to seed day dropdown without activating filter
+    dtPendingMonth = dtMonth.value;
+    activeDateTime = '';
     renderFilters(); renderGrid();
   };
   if (dtDay) dtDay.onchange = updateDateTime;
@@ -776,7 +775,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtPendingMonth = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)

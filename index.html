@@ -273,9 +273,9 @@ body.is-admin .admin-only{display:initial!important}
     <p id="authSubtitle">Sign in to continue</p>
     <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
     <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
-    <button class="auth-btn" id="authBtn" onclick="handleAuth()">Sign In</button>
+    <button class="auth-btn" id="authBtn">Sign In</button>
     <div class="auth-error" id="authError"></div>
-    <div class="auth-link" id="authToggle" onclick="toggleAuthMode()">Don't have an account? Sign up</div>
+    <div class="auth-link" id="authToggle">Don't have an account? Sign up</div>
   </div>
 </div>
 
@@ -419,6 +419,8 @@ supabase.auth.onAuthStateChange((event, session) => {
 });
 
 // Enter key to submit
+document.getElementById('authBtn').addEventListener('click', handleAuth);
+document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
 document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
 document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authPassword').focus(); });
 

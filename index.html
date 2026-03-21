@@ -172,9 +172,9 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-view.active{display:block}
 .roster-day{margin-bottom:32px}
 .roster-day-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.roster-day-tab{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:radial-gradient(80% 80% at 50% 50%,rgba(201,149,44,0.03),transparent);border:1px solid rgba(201,149,44,0.08);border-radius:8px;color:var(--text-dim);cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
-.roster-day-tab:hover{border-color:rgba(201,149,44,0.2);color:var(--text);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
-.roster-day-tab.active{border-color:rgba(201,149,44,0.3);color:var(--gold);background:radial-gradient(80% 80% at 50% 50%,rgba(201,149,44,0.08),transparent);box-shadow:0 4px 20px rgba(0,0,0,0.3),0 0 12px rgba(201,149,44,0.04)}
+.roster-day-tab{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:none;border:1px solid rgba(201,149,44,0.08);border-radius:8px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);background-image:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-day-tab:hover{border-color:rgba(201,149,44,0.2);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.roster-day-tab.active{border-color:rgba(201,149,44,0.4);box-shadow:0 4px 20px rgba(0,0,0,0.3),0 0 12px rgba(201,149,44,0.08)}
 .roster-day-tab .tab-count{font-size:10px;opacity:0.6;margin-left:6px}
 .roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
 .roster-day-name{font-size:18px;font-weight:700;color:#fff}

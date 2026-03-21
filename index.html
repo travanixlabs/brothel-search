@@ -541,8 +541,6 @@ function toggleAuthMode() {
   authMode = authMode === 'signin' ? 'signup' : 'signin';
   const isSignup = authMode === 'signup';
   document.getElementById('authBtn').textContent = isSignup ? 'Create Account' : 'Sign In';
-  document.getElementById('authBtn').style.borderColor = isSignup ? 'rgba(180,74,255,0.5)' : '';
-  document.getElementById('authBtn').style.background = isSignup ? 'linear-gradient(135deg,rgba(180,74,255,0.25),rgba(180,74,255,0.1))' : '';
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
   document.getElementById('authName').style.display = isSignup ? '' : 'none';

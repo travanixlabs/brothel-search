@@ -443,15 +443,29 @@ async function handleAuth() {
   errorEl.textContent = '';
 
   const profileName = document.getElementById('authName').value.trim();
-  if (!email || !password) { errorEl.textContent = 'Please enter email and password'; return; }
-  if (authMode === 'signup' && !profileName) { errorEl.textContent = 'Please enter a profile name'; return; }
+  const confirmPassword = authMode === 'signup' ? document.getElementById('authPasswordConfirm').value : '';
+
+  // Clear previous red borders
+  ['authName', 'authEmail', 'authPassword', 'authPasswordConfirm'].forEach(id => document.getElementById(id).style.borderColor = '');
+
+  // Check empty fields
+  const missing = [];
+  if (authMode === 'signup' && !profileName) missing.push('authName');
+  if (!email) missing.push('authEmail');
+  if (!password) missing.push('authPassword');
+  if (authMode === 'signup' && !confirmPassword) missing.push('authPasswordConfirm');
+  if (missing.length) {
+    missing.forEach(id => document.getElementById(id).style.borderColor = '#ff4444');
+    errorEl.textContent = 'Please fill in the highlighted fields';
+    return;
+  }
+
   if (authMode === 'signup') {
     if (password.length < 8) { errorEl.textContent = 'Password must be at least 8 characters'; return; }
     if (!/[a-z]/.test(password)) { errorEl.textContent = 'Password must contain a lowercase letter'; return; }
     if (!/[A-Z]/.test(password)) { errorEl.textContent = 'Password must contain an uppercase letter'; return; }
     if (!/[0-9]/.test(password)) { errorEl.textContent = 'Password must contain a number'; return; }
     if (!/[^a-zA-Z0-9]/.test(password)) { errorEl.textContent = 'Password must contain a special character'; return; }
-    const confirmPassword = document.getElementById('authPasswordConfirm').value;
     if (password !== confirmPassword) { errorEl.textContent = 'Passwords do not match'; return; }
   }
 

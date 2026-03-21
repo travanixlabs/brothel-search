@@ -272,6 +272,7 @@ body.is-admin .admin-only{display:initial!important}
     <p id="authSubtitle">Sign in to continue</p>
     <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
     <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
+    <input class="auth-input" id="authPasswordConfirm" type="password" placeholder="Confirm Password" autocomplete="new-password" style="display:none">
     <button class="auth-btn" id="authBtn">Sign In</button>
     <div class="auth-error" id="authError"></div>
     <div class="auth-link" id="authToggle">Don't have an account? Sign up</div>
@@ -363,6 +364,8 @@ async function handleAuth() {
     if (!/[A-Z]/.test(password)) { errorEl.textContent = 'Password must contain an uppercase letter'; return; }
     if (!/[0-9]/.test(password)) { errorEl.textContent = 'Password must contain a number'; return; }
     if (!/[^a-zA-Z0-9]/.test(password)) { errorEl.textContent = 'Password must contain a special character'; return; }
+    const confirmPassword = document.getElementById('authPasswordConfirm').value;
+    if (password !== confirmPassword) { errorEl.textContent = 'Passwords do not match'; return; }
   }
 
   btn.disabled = true;
@@ -410,6 +413,8 @@ function toggleAuthMode() {
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
   document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password (min 8, upper, lower, number, special)' : 'Password');
+  document.getElementById('authPasswordConfirm').style.display = isSignup ? '' : 'none';
+  document.getElementById('authPasswordConfirm').value = '';
   document.getElementById('authError').textContent = '';
 }
 
@@ -432,7 +437,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
 // Enter key to submit
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
-document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
+document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPasswordConfirm').focus(); else handleAuth(); } });
+document.getElementById('authPasswordConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
 document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authPassword').focus(); });
 
 const PROFILES_BASE = 'https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles';

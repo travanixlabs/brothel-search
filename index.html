@@ -259,6 +259,8 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 .auth-link:hover{text-decoration:underline}
 .sign-out-btn{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;cursor:pointer;transition:all .3s}
 .sign-out-btn:hover{border-color:var(--accent);color:var(--accent)}
+.admin-only{display:none!important}
+body.is-admin .admin-only{display:initial!important}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
@@ -325,12 +327,21 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let authMode = 'signin'; // 'signin' or 'signup'
+let userRole = 'member'; // 'admin' or 'member'
+
+async function fetchUserRole() {
+  const { data, error } = await supabase.from('user_roles').select('role').single();
+  if (data) userRole = data.role;
+  else userRole = 'member';
+  document.body.classList.toggle('is-admin', userRole === 'admin');
+}
 
 async function checkAuth() {
   const { data: { session } } = await supabase.auth.getSession();
   if (session) {
     document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('signOutBtn').style.display = '';
+    await fetchUserRole();
     return true;
   }
   document.getElementById('authOverlay').style.display = 'flex';
@@ -379,6 +390,7 @@ async function handleAuth() {
 
   document.getElementById('authOverlay').style.display = 'none';
   document.getElementById('signOutBtn').style.display = '';
+  await fetchUserRole();
   loadProfiles();
 }
 
@@ -392,6 +404,8 @@ function toggleAuthMode() {
 
 async function signOut() {
   await supabase.auth.signOut();
+  userRole = 'member';
+  document.body.classList.remove('is-admin');
   document.getElementById('authOverlay').style.display = 'flex';
   document.getElementById('signOutBtn').style.display = 'none';
 }

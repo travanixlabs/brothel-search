@@ -201,10 +201,11 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-entry-bar.future{background:linear-gradient(90deg,rgba(60,120,255,0.5),rgba(60,120,255,0.25),rgba(100,160,255,0.4),rgba(60,120,255,0.25));background-size:300% 100%;animation:blueShimmer 3s ease infinite}
 @keyframes blueShimmer{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
 .roster-timeline-line{position:absolute;top:0;bottom:0;width:2px;z-index:10;pointer-events:none}
-.roster-timeline-line.now{background:linear-gradient(180deg,#c9952c,#f5d78e,#c9952c);background-size:100% 300%;animation:goldShimmerVert 3s ease-in-out infinite}
+.roster-timeline-line.now{background:rgba(255,80,80,0.7)}
 .roster-timeline-line.filter{background:linear-gradient(180deg,#c9952c,#f5d78e,#c9952c);background-size:100% 300%;animation:goldShimmerVert 3s ease-in-out infinite}
 @keyframes goldShimmerVert{0%,100%{background-position:0 0%}50%{background-position:0 100%}}
 .roster-timeline-line-label{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:9px;white-space:nowrap;letter-spacing:1px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite}
+.roster-timeline-line.now .roster-timeline-line-label{background:none;-webkit-background-clip:unset;-webkit-text-fill-color:rgba(255,80,80,0.9);background-clip:unset;animation:none;color:rgba(255,80,80,0.9)}
 .roster-venue-filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .roster-venue-btn{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--text-dim);cursor:pointer;transition:all .2s}
 .roster-venue-btn:hover{border-color:var(--gold);color:var(--gold)}

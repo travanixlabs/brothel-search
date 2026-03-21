@@ -395,11 +395,15 @@ async function handleAuth() {
 }
 
 function toggleAuthMode() {
-  console.log('toggleAuthMode called, switching to:', authMode === 'signin' ? 'signup' : 'signin');
   authMode = authMode === 'signin' ? 'signup' : 'signin';
-  document.getElementById('authBtn').textContent = authMode === 'signin' ? 'Sign In' : 'Sign Up';
-  document.getElementById('authSubtitle').textContent = authMode === 'signin' ? 'Sign in to continue' : 'Create an account';
-  document.getElementById('authToggle').textContent = authMode === 'signin' ? "Don't have an account? Sign up" : 'Already have an account? Sign in';
+  const isSignup = authMode === 'signup';
+  document.getElementById('authBtn').textContent = isSignup ? 'Create Account' : 'Sign In';
+  document.getElementById('authBtn').style.borderColor = isSignup ? 'rgba(180,74,255,0.5)' : '';
+  document.getElementById('authBtn').style.background = isSignup ? 'linear-gradient(135deg,rgba(180,74,255,0.25),rgba(180,74,255,0.1))' : '';
+  document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
+  document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
+  document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
+  document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password (min 6 characters)' : 'Password');
   document.getElementById('authError').textContent = '';
 }
 

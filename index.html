@@ -357,7 +357,13 @@ async function handleAuth() {
   errorEl.textContent = '';
 
   if (!email || !password) { errorEl.textContent = 'Please enter email and password'; return; }
-  if (password.length < 6) { errorEl.textContent = 'Password must be at least 6 characters'; return; }
+  if (authMode === 'signup') {
+    if (password.length < 8) { errorEl.textContent = 'Password must be at least 8 characters'; return; }
+    if (!/[a-z]/.test(password)) { errorEl.textContent = 'Password must contain a lowercase letter'; return; }
+    if (!/[A-Z]/.test(password)) { errorEl.textContent = 'Password must contain an uppercase letter'; return; }
+    if (!/[0-9]/.test(password)) { errorEl.textContent = 'Password must contain a number'; return; }
+    if (!/[^a-zA-Z0-9]/.test(password)) { errorEl.textContent = 'Password must contain a special character'; return; }
+  }
 
   btn.disabled = true;
   btn.textContent = authMode === 'signin' ? 'Signing in...' : 'Signing up...';
@@ -403,7 +409,7 @@ function toggleAuthMode() {
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
-  document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password (min 6 characters)' : 'Password');
+  document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password (min 8, upper, lower, number, special)' : 'Password');
   document.getElementById('authError').textContent = '';
 }
 

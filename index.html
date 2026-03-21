@@ -330,6 +330,16 @@ body.is-admin .admin-only{display:initial!important}
       <div class="settings-label">Change Password</div>
       <input class="settings-input" id="settingsNewPw" type="password" placeholder="New Password">
       <input class="settings-input" id="settingsConfirmPw" type="password" placeholder="Confirm New Password">
+      <div id="settingsPwReqs" style="font-size:12px;margin:0 0 12px;line-height:1.8">
+        <div style="margin-bottom:4px;color:var(--text-dim)">Password must contain:</div>
+        <ul style="margin:0;padding-left:20px">
+          <li id="sReqLen" style="color:var(--text-dim)">At least 8 characters</li>
+          <li id="sReqUpper" style="color:var(--text-dim)">One uppercase letter (A-Z)</li>
+          <li id="sReqLower" style="color:var(--text-dim)">One lowercase letter (a-z)</li>
+          <li id="sReqNum" style="color:var(--text-dim)">One number (0-9)</li>
+          <li id="sReqSpecial" style="color:var(--text-dim)">One special character (!@#$%&*)</li>
+        </ul>
+      </div>
       <button class="settings-btn" id="settingsChangePwBtn">Update Password</button>
       <div class="settings-msg" id="settingsPwMsg"></div>
     </div>
@@ -580,6 +590,20 @@ sbClient.auth.onAuthStateChange((event, session) => {
 document.getElementById('userMenuBtn').addEventListener('click', toggleUserMenu);
 document.getElementById('settingsBack').addEventListener('click', closeSettings);
 document.getElementById('settingsChangePwBtn').addEventListener('click', changePassword);
+document.getElementById('settingsNewPw').addEventListener('input', () => {
+  const pw = document.getElementById('settingsNewPw').value;
+  const checks = [
+    { id: 'sReqLen', pass: pw.length >= 8 },
+    { id: 'sReqUpper', pass: /[A-Z]/.test(pw) },
+    { id: 'sReqLower', pass: /[a-z]/.test(pw) },
+    { id: 'sReqNum', pass: /[0-9]/.test(pw) },
+    { id: 'sReqSpecial', pass: /[^a-zA-Z0-9]/.test(pw) },
+  ];
+  checks.forEach(c => { document.getElementById(c.id).style.color = pw ? (c.pass ? '#00c864' : '#ff4444') : 'var(--text-dim)'; });
+  // Also update confirm match
+  const confirm = document.getElementById('settingsConfirmPw');
+  if (confirm.value) confirm.style.borderColor = pw === confirm.value ? '#00c864' : '#ff4444';
+});
 document.getElementById('settingsConfirmPw').addEventListener('input', () => {
   const el = document.getElementById('settingsConfirmPw');
   if (!el.value) { el.style.borderColor = ''; return; }

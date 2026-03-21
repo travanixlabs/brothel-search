@@ -324,20 +324,20 @@ body.is-admin .admin-only{display:initial!important}
 // Supabase Auth
 const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 
 async function fetchUserRole() {
-  const { data, error } = await supabase.from('user_roles').select('role').single();
+  const { data, error } = await sbClient.from('user_roles').select('role').single();
   if (data) userRole = data.role;
   else userRole = 'member';
   document.body.classList.toggle('is-admin', userRole === 'admin');
 }
 
 async function checkAuth() {
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
     document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('signOutBtn').style.display = '';
@@ -364,9 +364,9 @@ async function handleAuth() {
 
   let result;
   if (authMode === 'signin') {
-    result = await supabase.auth.signInWithPassword({ email, password });
+    result = await sbClient.auth.signInWithPassword({ email, password });
   } else {
-    result = await supabase.auth.signUp({ email, password });
+    result = await sbClient.auth.signUp({ email, password });
   }
 
   btn.disabled = false;
@@ -403,7 +403,7 @@ function toggleAuthMode() {
 }
 
 async function signOut() {
-  await supabase.auth.signOut();
+  await sbClient.auth.signOut();
   userRole = 'member';
   document.body.classList.remove('is-admin');
   document.getElementById('authOverlay').style.display = 'flex';
@@ -411,7 +411,7 @@ async function signOut() {
 }
 
 // Listen for auth state changes (e.g. email confirmation redirect)
-supabase.auth.onAuthStateChange((event, session) => {
+sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('signOutBtn').style.display = '';

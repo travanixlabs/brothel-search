@@ -243,12 +243,43 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
   .card-info{padding:10px}
   .card-name{font-size:12px}
 }
+/* Auth overlay */
+.auth-overlay{position:fixed;inset:0;z-index:1000;background:var(--bg-dark);display:flex;align-items:center;justify-content:center}
+.auth-box{width:360px;padding:40px;border:1px solid rgba(201,149,44,0.3);background:rgba(10,10,15,0.95)}
+.auth-box h1{font-family:'Orbitron',sans-serif;font-size:22px;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;text-align:center}
+.auth-box p{color:var(--text-dim);font-size:14px;text-align:center;margin-bottom:24px}
+.auth-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:#fff;font-family:'Rajdhani',sans-serif;font-size:15px;padding:12px 16px;margin-bottom:12px;outline:none;transition:border-color .3s}
+.auth-input:focus{border-color:var(--gold)}
+.auth-input::placeholder{color:var(--text-dim)}
+.auth-btn{width:100%;padding:12px;border:1px solid rgba(201,149,44,0.5);background:linear-gradient(135deg,rgba(201,149,44,0.25),rgba(201,149,44,0.1));color:#fff;font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:8px}
+.auth-btn:hover{background:linear-gradient(135deg,rgba(201,149,44,0.35),rgba(201,149,44,0.15));border-color:var(--gold)}
+.auth-btn:disabled{opacity:0.5;cursor:not-allowed}
+.auth-error{color:#ff4444;font-size:13px;text-align:center;margin-top:12px;min-height:18px}
+.auth-link{color:var(--gold);font-size:13px;text-align:center;margin-top:16px;cursor:pointer}
+.auth-link:hover{text-decoration:underline}
+.sign-out-btn{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;cursor:pointer;transition:all .3s}
+.sign-out-btn:hover{border-color:var(--accent);color:var(--accent)}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
 
+<!-- Auth overlay -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <h1>Brothel Search</h1>
+    <p id="authSubtitle">Sign in to continue</p>
+    <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
+    <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="auth-btn" id="authBtn" onclick="handleAuth()">Sign In</button>
+    <div class="auth-error" id="authError"></div>
+    <div class="auth-link" id="authToggle" onclick="toggleAuthMode()">Don't have an account? Sign up</div>
+  </div>
+</div>
+
 <nav>
 <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Brothel Search</div>
+<button class="sign-out-btn" id="signOutBtn" style="display:none" onclick="signOut()">Sign Out</button>
 </nav>
 
 <section class="section">
@@ -288,6 +319,95 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 <footer>Brothel Search &copy; 2026</footer>
 
 <script>
+// Supabase Auth
+const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let authMode = 'signin'; // 'signin' or 'signup'
+
+async function checkAuth() {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) {
+    document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('signOutBtn').style.display = '';
+    return true;
+  }
+  document.getElementById('authOverlay').style.display = 'flex';
+  document.getElementById('signOutBtn').style.display = 'none';
+  return false;
+}
+
+async function handleAuth() {
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value;
+  const errorEl = document.getElementById('authError');
+  const btn = document.getElementById('authBtn');
+  errorEl.textContent = '';
+
+  if (!email || !password) { errorEl.textContent = 'Please enter email and password'; return; }
+  if (password.length < 6) { errorEl.textContent = 'Password must be at least 6 characters'; return; }
+
+  btn.disabled = true;
+  btn.textContent = authMode === 'signin' ? 'Signing in...' : 'Signing up...';
+
+  let result;
+  if (authMode === 'signin') {
+    result = await supabase.auth.signInWithPassword({ email, password });
+  } else {
+    result = await supabase.auth.signUp({ email, password });
+  }
+
+  btn.disabled = false;
+  btn.textContent = authMode === 'signin' ? 'Sign In' : 'Sign Up';
+
+  if (result.error) {
+    errorEl.textContent = result.error.message;
+    return;
+  }
+
+  if (authMode === 'signup' && result.data?.user?.identities?.length === 0) {
+    errorEl.textContent = 'An account with this email already exists';
+    return;
+  }
+
+  if (authMode === 'signup' && !result.data.session) {
+    errorEl.style.color = '#00c864';
+    errorEl.textContent = 'Check your email to confirm your account';
+    return;
+  }
+
+  document.getElementById('authOverlay').style.display = 'none';
+  document.getElementById('signOutBtn').style.display = '';
+  loadProfiles();
+}
+
+function toggleAuthMode() {
+  authMode = authMode === 'signin' ? 'signup' : 'signin';
+  document.getElementById('authBtn').textContent = authMode === 'signin' ? 'Sign In' : 'Sign Up';
+  document.getElementById('authSubtitle').textContent = authMode === 'signin' ? 'Sign in to continue' : 'Create an account';
+  document.getElementById('authToggle').textContent = authMode === 'signin' ? "Don't have an account? Sign up" : 'Already have an account? Sign in';
+  document.getElementById('authError').textContent = '';
+}
+
+async function signOut() {
+  await supabase.auth.signOut();
+  document.getElementById('authOverlay').style.display = 'flex';
+  document.getElementById('signOutBtn').style.display = 'none';
+}
+
+// Listen for auth state changes (e.g. email confirmation redirect)
+supabase.auth.onAuthStateChange((event, session) => {
+  if (session) {
+    document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('signOutBtn').style.display = '';
+  }
+});
+
+// Enter key to submit
+document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
+document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authPassword').focus(); });
+
 const PROFILES_BASE = 'https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles';
 const VENUES = [
   { id: 'ginzaempire', name: 'Ginza Empire', file: 'ginzaempire.json' },
@@ -1452,8 +1572,8 @@ document.getElementById('moreFiltersToggle').onclick = function() {
   document.getElementById('moreFiltersPanel').classList.toggle('open');
 };
 
-// Init
-loadProfiles();
+// Init - gate behind auth
+checkAuth().then(authed => { if (authed) loadProfiles(); });
 </script>
 </body>
 </html>

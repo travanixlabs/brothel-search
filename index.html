@@ -181,10 +181,12 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-entry-bar.now{background:linear-gradient(90deg,rgba(0,200,100,0.6),rgba(0,200,100,0.4))}
 .roster-entry-bar.later{background:linear-gradient(90deg,rgba(180,74,255,0.5),rgba(180,74,255,0.3))}
 .roster-entry-bar.future{background:linear-gradient(90deg,rgba(201,149,44,0.4),rgba(201,149,44,0.25))}
-.roster-now-line{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,80,80,0.7);z-index:2;pointer-events:none}
-.roster-filter-line{position:absolute;top:0;bottom:0;width:2px;background:rgba(180,74,255,0.7);z-index:2;pointer-events:none}
-.roster-filter-time{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:#b44aff;white-space:nowrap;letter-spacing:1px}
-.roster-now-time{position:absolute;top:-14px;transform:translateX(-50%);font-size:9px;color:rgba(255,80,80,0.8);white-space:nowrap}
+.roster-timeline-line{position:absolute;top:0;bottom:0;width:2px;z-index:10;pointer-events:none}
+.roster-timeline-line.now{background:rgba(255,80,80,0.7)}
+.roster-timeline-line.filter{background:rgba(180,74,255,0.7)}
+.roster-timeline-line-label{position:absolute;top:4px;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:9px;white-space:nowrap;letter-spacing:1px}
+.roster-timeline-line.now .roster-timeline-line-label{color:rgba(255,80,80,0.9)}
+.roster-timeline-line.filter .roster-timeline-line-label{color:rgba(180,74,255,0.9)}
 .roster-venue-filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .roster-venue-btn{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--text-dim);cursor:pointer;transition:all .2s}
 .roster-venue-btn:hover{border-color:var(--gold);color:var(--gold)}
@@ -1695,46 +1697,46 @@ function renderRoster() {
 
   container.innerHTML = html;
 
-  // Add now lines if selected day is today
-  if (day.dateStr === todayStr) {
-    let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
-    if (nowOffset < 0) nowOffset += 24 * 60;
-    const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
-    if (nowPct >= 0 && nowPct <= 100) {
-      const entries = container.querySelectorAll('.roster-entry-bar-container');
-      entries.forEach(bc => {
-        const line = document.createElement('div');
-        line.className = 'roster-now-line';
-        line.style.left = nowPct + '%';
-        const timeLabel = document.createElement('div');
-        timeLabel.className = 'roster-now-time';
-        timeLabel.textContent = fmt24to12(String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0'));
-        line.appendChild(timeLabel);
-        bc.appendChild(line);
-      });
-    }
-  }
+  // Add vertical indicator lines to the timeline
+  const timeline = container.querySelector('.roster-timeline');
+  if (timeline) {
+    const nameColWidth = 180; // 160px col + 12px gap + 8px padding
 
-  // Green filter line for activeDateTime
-  if (activeDateTime) {
-    const dt = new Date(activeDateTime);
-    const dtDateStr = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
-    if (day.dateStr === dtDateStr) {
-      let filterOffset = (dt.getHours() - TIMELINE_START) * 60 + dt.getMinutes();
-      if (filterOffset < 0) filterOffset += 24 * 60;
-      const filterPct = (filterOffset / (TIMELINE_HOURS * 60)) * 100;
-      if (filterPct >= 0 && filterPct <= 100) {
-        const entries = container.querySelectorAll('.roster-entry-bar-container');
-        entries.forEach(bc => {
+    // Now line (red) if selected day is today
+    if (day.dateStr === todayStr) {
+      let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+      if (nowOffset < 0) nowOffset += 24 * 60;
+      const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
+      if (nowPct >= 0 && nowPct <= 100) {
+        const line = document.createElement('div');
+        line.className = 'roster-timeline-line now';
+        line.style.left = `calc(${nameColWidth}px + (100% - ${nameColWidth}px) * ${nowPct / 100})`;
+        const label = document.createElement('div');
+        label.className = 'roster-timeline-line-label';
+        label.textContent = 'Now';
+        line.appendChild(label);
+        timeline.appendChild(line);
+      }
+    }
+
+    // Filter line (purple) for activeDateTime
+    if (activeDateTime) {
+      const dt = new Date(activeDateTime);
+      const dtDateStr = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+      if (day.dateStr === dtDateStr) {
+        let filterOffset = (dt.getHours() - TIMELINE_START) * 60 + dt.getMinutes();
+        if (filterOffset < 0) filterOffset += 24 * 60;
+        const filterPct = (filterOffset / (TIMELINE_HOURS * 60)) * 100;
+        if (filterPct >= 0 && filterPct <= 100) {
           const line = document.createElement('div');
-          line.className = 'roster-filter-line';
-          line.style.left = filterPct + '%';
-          const timeLabel = document.createElement('div');
-          timeLabel.className = 'roster-filter-time';
-          timeLabel.textContent = fmt24to12(String(dt.getHours()).padStart(2, '0') + ':' + String(dt.getMinutes()).padStart(2, '0'));
-          line.appendChild(timeLabel);
-          bc.appendChild(line);
-        });
+          line.className = 'roster-timeline-line filter';
+          line.style.left = `calc(${nameColWidth}px + (100% - ${nameColWidth}px) * ${filterPct / 100})`;
+          const label = document.createElement('div');
+          label.className = 'roster-timeline-line-label';
+          label.textContent = 'Selected';
+          line.appendChild(label);
+          timeline.appendChild(line);
+        }
       }
     }
   }

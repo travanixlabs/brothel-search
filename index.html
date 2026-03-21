@@ -558,12 +558,12 @@ function buildDateTimePicker() {
   const rosteredDates = getRosteredDates();
   const todayStr = curYear + '-' + curMonth + '-' + curDay;
 
-  // Default hour/minute to next 30-min slot
-  const mins = now.getMinutes();
-  let defHour, defMin;
-  if (mins < 30) { defHour = now.getHours(); defMin = 30; }
-  else { defHour = now.getHours() + 1; defMin = 0; }
-  if (defHour >= 24) { defHour = 0; }
+  // Default: round up to next 30-min boundary, then add 30 mins
+  // e.g. 12:01-12:30 -> 13:00, 12:31-13:00 -> 13:30
+  const totalMins = now.getHours() * 60 + now.getMinutes();
+  const nextBoundary = Math.ceil(totalMins / 30) * 30 + 30;
+  let defHour = Math.floor(nextBoundary / 60) % 24;
+  let defMin = nextBoundary % 60;
   const defHourStr = String(defHour).padStart(2, '0');
   const defMinStr = String(defMin).padStart(2, '0');
 

@@ -458,6 +458,13 @@ function checkPasswordReqs() {
   if (allPass) reqs.style.display = 'none';
 }
 
+function checkPasswordMatch() {
+  const confirm = document.getElementById('authPasswordConfirm');
+  if (authMode !== 'signup' || !confirm.value) { confirm.style.borderColor = ''; return; }
+  const match = document.getElementById('authPassword').value === confirm.value;
+  confirm.style.borderColor = match ? '#00c864' : '#ff4444';
+}
+
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
@@ -469,7 +476,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
 // Enter key to submit
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
-document.getElementById('authPassword').addEventListener('input', checkPasswordReqs);
+document.getElementById('authPassword').addEventListener('input', () => { checkPasswordReqs(); checkPasswordMatch(); });
+document.getElementById('authPasswordConfirm').addEventListener('input', checkPasswordMatch);
 document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPasswordConfirm').focus(); else handleAuth(); } });
 document.getElementById('authPasswordConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
 document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('authPassword').focus(); });

@@ -1545,7 +1545,10 @@ function toggleRosterView() {
 function renderRoster() {
   const container = document.getElementById('rosterView');
   const now = new Date();
-  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  // Before 6am, the roster "today" is still yesterday (timeline runs 6am-6am)
+  const rosterNow = new Date(now);
+  if (rosterNow.getHours() < 6) rosterNow.setDate(rosterNow.getDate() - 1);
+  const todayStr = rosterNow.getFullYear() + '-' + String(rosterNow.getMonth() + 1).padStart(2, '0') + '-' + String(rosterNow.getDate()).padStart(2, '0');
   const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const dayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -1553,7 +1556,7 @@ function renderRoster() {
   // Collect all dates with roster entries (today + next 7 days max)
   const dates = [];
   for (let i = 0; i < 7; i++) {
-    const d = new Date(now); d.setDate(d.getDate() + i);
+    const d = new Date(rosterNow); d.setDate(d.getDate() + i);
     const ds = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
     dates.push({ str: ds, date: d });
   }

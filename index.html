@@ -991,9 +991,8 @@ function buildDateTimePicker() {
     return h;
   }
 
-  html += dtField('Year', 'dtYear', sortedYears.map(y => ({ value: y, label: y })), selYear);
-  html += dtField('Month', 'dtMonth', sortedMonths.map(m => ({ value: m, label: monthNames[parseInt(m)] })), selMonth);
-  html += dtField('Day', 'dtDay', sortedDays.map(d => ({ value: d, label: String(parseInt(d)) })), selDay);
+  const selDate = selYear + '-' + selMonth + '-' + selDay;
+  html += '<div class="dt-field"><span class="dt-label">Date</span><input type="date" id="dtDate" class="range-date-input" value="' + selDate + '"></div>';
 
   const hourOpts = [];
   for (let h = 0; h < 24; h++) { const s = String(h).padStart(2, '0'); hourOpts.push({ value: s, label: s }); }
@@ -1142,30 +1141,25 @@ function renderFilters() {
   });
 
   // DateTime filter dropdowns
-  const dtYear = document.getElementById('dtYear');
-  const dtMonth = document.getElementById('dtMonth');
-  const dtDay = document.getElementById('dtDay');
+  const dtDate = document.getElementById('dtDate');
   const dtHour = document.getElementById('dtHour');
   const dtMinute = document.getElementById('dtMinute');
   const dtToggle = document.getElementById('dtToggle');
   function syncDateTime() {
-    if (dtEnabled && dtYear && dtMonth && dtDay && dtHour && dtMinute) {
-      activeDateTime = dtYear.value + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
+    if (dtEnabled && dtDate && dtHour && dtMinute && dtDate.value) {
+      activeDateTime = dtDate.value + 'T' + dtHour.value + ':' + dtMinute.value;
     } else {
       activeDateTime = '';
     }
   }
   function dtChanged() { syncDateTime(); renderFilters(); renderGrid(); }
-  // Year/month changes cascade to update available months/days
-  if (dtYear) dtYear.onchange = () => {
-    dtPendingMonth = ''; dtPendingDay = '';
-    syncDateTime(); renderFilters(); renderGrid();
+  if (dtDate) dtDate.onchange = () => {
+    if (dtDate.value) {
+      const parts = dtDate.value.split('-');
+      dtPendingMonth = parts[1]; dtPendingDay = parts[2];
+    }
+    dtChanged();
   };
-  if (dtMonth) dtMonth.onchange = () => {
-    dtPendingMonth = dtMonth.value; dtPendingDay = '';
-    syncDateTime(); renderFilters(); renderGrid();
-  };
-  if (dtDay) dtDay.onchange = () => { dtPendingDay = dtDay.value; dtChanged(); };
   if (dtHour) dtHour.onchange = dtChanged;
   if (dtMinute) dtMinute.onchange = dtChanged;
   if (dtToggle) dtToggle.onclick = () => {

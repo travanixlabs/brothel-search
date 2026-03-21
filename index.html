@@ -65,8 +65,11 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .sort-dir-toggle.active-include{background:rgba(0,200,100,0.2);border-color:#00c864;color:#00c864}
 .sort-dir-toggle.active-exclude{background:rgba(255,60,60,0.2);border-color:#ff3c3c;color:#ff3c3c}
 .sort-dir-toggle:hover{background:rgba(255,255,255,0.08)}
-.datetime-filter{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color-scheme:dark}
-.datetime-filter::-webkit-calendar-picker-indicator{filter:invert(1);cursor:pointer}
+.dt-picker{display:flex;align-items:center;gap:4px;padding:0 8px}
+.dt-picker select{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(255,255,255,0.04);color:var(--text-dim);border:1px solid rgba(255,255,255,0.12);padding:3px 4px;cursor:pointer;appearance:auto;-webkit-appearance:menulist}
+.dt-picker select:focus{outline:none;border-color:rgba(255,255,255,0.3)}
+.dt-picker .dt-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-right:2px}
+.dt-picker .dt-year{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.3)}
 .filter-option.included{color:#00c864}
 .filter-option.included .filter-checkbox{border-color:#00c864;background:rgba(0,200,100,0.2)}
 .filter-option.included .filter-checkbox::after{content:'';width:8px;height:8px;background:#00c864}
@@ -533,6 +536,83 @@ function buildLabelDropdown(id, label, options, includeList, excludeList) {
   return html;
 }
 
+function getRosteredDates() {
+  const dates = new Set();
+  Object.values(calendarData).forEach(cal => {
+    Object.keys(cal).forEach(k => { if (/^\d{4}-\d{2}-\d{2}$/.test(k)) dates.add(k); });
+  });
+  return [...dates].sort();
+}
+
+function buildDateTimePicker() {
+  const now = new Date();
+  const yr = now.getFullYear();
+  const curMonth = String(now.getMonth() + 1).padStart(2, '0');
+  const curDay = String(now.getDate()).padStart(2, '0');
+  const rosteredDates = getRosteredDates();
+  const todayStr = yr + '-' + curMonth + '-' + curDay;
+
+  // Parse current activeDateTime
+  let selMonth = '', selDay = '', selHour = '', selMin = '';
+  if (activeDateTime) {
+    const parts = activeDateTime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if (parts) { selMonth = parts[2]; selDay = parts[3]; selHour = parts[4]; selMin = parts[5]; }
+  }
+
+  // Available months: current + future months that have rostered dates
+  const months = new Set();
+  months.add(curMonth);
+  rosteredDates.forEach(d => { if (d >= todayStr) months.add(d.slice(5, 7)); });
+  const monthNames = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const sortedMonths = [...months].sort();
+
+  // Available days: based on selected month (or current month)
+  const activeMonth = selMonth || curMonth;
+  const days = new Set();
+  const minDay = activeMonth === curMonth ? curDay : '01';
+  rosteredDates.forEach(d => {
+    if (d.slice(5, 7) === activeMonth && d.slice(8) >= minDay) days.add(d.slice(8));
+  });
+  // Always include today if current month
+  if (activeMonth === curMonth) days.add(curDay);
+  const sortedDays = [...days].sort();
+
+  let html = '<div class="dt-picker">';
+  html += '<span class="dt-year">' + yr + '</span>';
+
+  // Month dropdown
+  html += '<select id="dtMonth"><option value="">Mon</option>';
+  sortedMonths.forEach(m => {
+    html += '<option value="' + m + '"' + (m === selMonth ? ' selected' : '') + '>' + monthNames[parseInt(m)] + '</option>';
+  });
+  html += '</select>';
+
+  // Day dropdown
+  html += '<select id="dtDay"><option value="">Day</option>';
+  sortedDays.forEach(d => {
+    html += '<option value="' + d + '"' + (d === selDay ? ' selected' : '') + '>' + parseInt(d) + '</option>';
+  });
+  html += '</select>';
+
+  // Hour dropdown (0-23)
+  html += '<select id="dtHour"><option value="">Hr</option>';
+  for (let h = 0; h < 24; h++) {
+    const hStr = String(h).padStart(2, '0');
+    html += '<option value="' + hStr + '"' + (hStr === selHour ? ' selected' : '') + '>' + hStr + '</option>';
+  }
+  html += '</select>';
+
+  // Minute dropdown (00, 30)
+  html += '<select id="dtMinute"><option value="">Min</option>';
+  ['00', '30'].forEach(m => {
+    html += '<option value="' + m + '"' + (m === selMin ? ' selected' : '') + '>' + m + '</option>';
+  });
+  html += '</select>';
+
+  html += '</div>';
+  return html;
+}
+
 function buildSortDropdown(id, options, activeField, activeDir) {
   const active = options.find(o => o.value === activeField);
   const dirIcon = activeDir === 'asc' ? '&#x25B2;' : '&#x25BC;';
@@ -613,7 +693,7 @@ function renderFilters() {
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
-    + `<div class="filter-dropdown"><input type="datetime-local" class="filter-dropdown-btn datetime-filter" id="dateTimeFilter" value="${activeDateTime}" title="Search available at date/time"></div>`
+    + buildDateTimePicker()
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Text filter inputs in More Filters panel
@@ -664,11 +744,34 @@ function renderFilters() {
     });
   });
 
-  // DateTime filter
-  const dtInput = document.getElementById('dateTimeFilter');
-  if (dtInput) {
-    dtInput.onchange = () => { activeDateTime = dtInput.value; renderFilters(); renderGrid(); };
+  // DateTime filter dropdowns
+  const dtMonth = document.getElementById('dtMonth');
+  const dtDay = document.getElementById('dtDay');
+  const dtHour = document.getElementById('dtHour');
+  const dtMinute = document.getElementById('dtMinute');
+  function updateDateTime() {
+    if (dtMonth.value && dtDay.value && dtHour.value !== '' && dtMinute.value !== '') {
+      const now = new Date();
+      activeDateTime = now.getFullYear() + '-' + dtMonth.value + '-' + dtDay.value + 'T' + dtHour.value + ':' + dtMinute.value;
+    } else {
+      activeDateTime = '';
+    }
+    renderFilters(); renderGrid();
   }
+  if (dtMonth) dtMonth.onchange = () => {
+    // Re-render to update day options for new month, then apply
+    const prevDay = dtDay.value;
+    activeDateTime = ''; // clear so buildDateTimePicker re-renders with new month
+    if (dtMonth.value) {
+      const now = new Date();
+      // Temporarily set activeDateTime with month to seed day dropdown
+      activeDateTime = now.getFullYear() + '-' + dtMonth.value + '-01T00:00';
+    }
+    renderFilters(); renderGrid();
+  };
+  if (dtDay) dtDay.onchange = updateDateTime;
+  if (dtHour) dtHour.onchange = updateDateTime;
+  if (dtMinute) dtMinute.onchange = updateDateTime;
 
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');

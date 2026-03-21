@@ -150,6 +150,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .new-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--bg-dark);-webkit-text-fill-color:var(--bg-dark);background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;padding:1px 6px;border-radius:3px;margin-left:8px;vertical-align:middle;text-transform:uppercase;animation:goldShimmer 4s ease infinite}
 @keyframes newPulse{0%,100%{opacity:1}50%{opacity:.7}}
 .card-venue{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;padding:2px 8px;display:inline-block;border:1px solid rgba(201,149,44,0.3);border-radius:4px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;box-shadow:0 0 8px rgba(201,149,44,0.06)}
+.card-pornstar{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;padding:2px 8px;display:inline-block;border:1px solid rgba(200,50,80,0.4);border-radius:4px;background:linear-gradient(135deg,#c83250,#f5a0b0,#c83250,#e17090,#f5a0b0,#c83250);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;box-shadow:0 0 8px rgba(200,50,80,0.08);margin-left:6px}
 .card-country{font-size:13px;color:var(--text-dim);letter-spacing:1px;margin-bottom:4px}
 .card-special{font-size:12px;color:var(--accent2);letter-spacing:1px;margin-bottom:4px}
 .card-stats{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--text-dim);letter-spacing:.5px;margin-top:6px}
@@ -1491,7 +1492,7 @@ function renderCard(g, grid) {
       <div class="card-img">${img}</div>
       <div class="card-info">
         <div class="card-name">${g.name || ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
-        <div class="card-venue ${g.venue}">${g.venueName}</div>
+        <div class="card-venue ${g.venue}">${g.venueName}</div>${g.pornstar ? '<div class="card-pornstar">Pornstar</div>' : ''}
         <div class="card-country">${countries}</div>
         <div class="card-stats">
           ${g.age ? '<span>Age ' + g.age + '</span>' : ''}
@@ -1816,7 +1817,7 @@ function showProfile(g) {
 
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
-    <div class="card-venue ${g.venue}" style="margin-bottom:12px">${g.venueName}</div>
+    <div style="margin-bottom:12px"><span class="card-venue ${g.venue}">${g.venueName}</span>${g.pornstar ? '<span class="card-pornstar">Pornstar</span>' : ''}</div>
     <div class="profile-name">${g.name || ''}${isNewProfile(g) ? '<span class="new-badge">New!</span>' : ''}</div>
     <div class="profile-layout">
       <div class="profile-gallery">

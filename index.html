@@ -455,12 +455,12 @@ async function fetchUserRole() {
 async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
     return true;
   }
-  document.getElementById('authOverlay').style.display = 'flex';
+  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
   return false;
 }
@@ -528,7 +528,7 @@ async function handleAuth() {
     return;
   }
 
-  document.getElementById('authOverlay').style.display = 'none';
+  document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
   document.getElementById('userMenu').style.display = '';
   await fetchUserRole();
   loadProfiles();
@@ -556,7 +556,7 @@ async function signOut() {
   await sbClient.auth.signOut();
   userRole = 'member';
   document.body.classList.remove('is-admin');
-  document.getElementById('authOverlay').style.display = 'flex';
+  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
 }
 
@@ -592,10 +592,12 @@ function showProfileSettings() {
   document.getElementById('settingsConfirmPw').style.borderColor = '';
   document.getElementById('settingsPwMsg').textContent = '';
   document.getElementById('settingsOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeSettings() {
   document.getElementById('settingsOverlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 async function changePassword() {
@@ -639,7 +641,7 @@ function checkPasswordMatch() {
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
   }
 });

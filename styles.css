@@ -355,12 +355,13 @@ body.is-admin .admin-only{display:initial!important}
 .pref-select{flex:1;background:transparent;border:1px solid rgba(201,149,44,0.25);border-radius:8px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none;cursor:pointer;-webkit-text-fill-color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite}
 .pref-select option{background:#0d0a10;color:var(--gold)}
 .pref-checkboxes{display:flex;flex-wrap:wrap;gap:8px;max-height:180px;overflow-y:auto}
-.pref-cb{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(201,149,44,0.15);border-radius:6px;cursor:pointer;transition:all .3s;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--text-dim)}
-.pref-cb:hover{border-color:rgba(201,149,44,0.35);background:rgba(201,149,44,0.04)}
+.pref-cb{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(201,149,44,0.15);border-radius:6px;cursor:pointer;transition:all .3s;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px}
+.pref-cb span{background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite}
+.pref-cb:hover{border-color:rgba(201,149,44,0.5);background:rgba(201,149,44,0.06);animation:goldBorderShimmer 3s ease-in-out infinite}
 .pref-cb input[type=checkbox]{-webkit-appearance:none;appearance:none;width:14px;height:14px;border:1px solid rgba(201,149,44,0.3);border-radius:3px;background:rgba(201,149,44,0.04);cursor:pointer;position:relative;flex-shrink:0;transition:all .2s}
 .pref-cb input[type=checkbox]:checked{border-color:var(--gold);background:rgba(201,149,44,0.2)}
 .pref-cb input[type=checkbox]:checked::after{content:'';position:absolute;left:3px;top:1px;width:5px;height:8px;border:solid var(--gold);border-width:0 2px 2px 0;transform:rotate(45deg)}
-.pref-cb input[type=checkbox]:checked+span{color:var(--gold)}
+.pref-cb:has(input:checked){border-color:rgba(201,149,44,0.5);animation:goldBorderShimmer 3s ease-in-out infinite}
 .pref-clear-link{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;transition:opacity .3s;cursor:pointer}
 .pref-clear-link:hover{opacity:0.7}
 

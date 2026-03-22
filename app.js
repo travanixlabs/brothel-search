@@ -677,7 +677,7 @@ let activeCountry = { include: [], exclude: [] };
 let activeLabels = { include: [], exclude: [] };
 let rangeFilters = {};
 let rangeDefaults = {};
-let activeSort = 'name';
+let activeSort = 'preference';
 let sortDir = 'asc';
 let searchTimer;
 let calendarData = {};

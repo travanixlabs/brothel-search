@@ -154,12 +154,6 @@ function showProfileSettings() {
   document.getElementById('settingsConfirmPw').value = '';
   document.getElementById('settingsConfirmPw').style.borderColor = '';
   document.getElementById('settingsPwMsg').textContent = '';
-  document.getElementById('prefMsg').textContent = '';
-  // Populate dynamic checkboxes and init sliders
-  populatePrefCheckboxes();
-  initPrefSliders();
-  clearPrefsForm();
-  loadPreferences();
   document.getElementById('settingsOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -171,9 +165,13 @@ function closeSettings() {
 
 function showPreferences() {
   document.getElementById('userMenuDropdown').classList.remove('open');
+  document.getElementById('prefMsg').textContent = '';
+  populatePrefCheckboxes();
+  initPrefSliders();
+  clearPrefsForm();
+  loadPreferences();
   document.getElementById('preferencesOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-  loadPreferences();
 }
 
 function closePreferences() {

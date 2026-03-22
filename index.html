@@ -1923,8 +1923,34 @@ function buildProfileCalendar(g) {
 
     html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
     html += '<div style="min-width:70px;font-size:11px;letter-spacing:1px;color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite">' + label + ' <span style="opacity:0.6">' + dateLabel + '</span></div>';
-    html += '<div style="flex:1;position:relative;height:22px;background:rgba(255,255,255,0.03);border-radius:4px;overflow:hidden">';
+    html += '<div style="flex:1;position:relative;height:22px;background:rgba(255,255,255,0.03);border-radius:4px;overflow:visible">';
     html += '<div class="roster-entry-bar ' + barClass + '" style="position:absolute;top:0;bottom:0;left:' + leftPct + '%;width:' + widthPct + '%;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1px"><span>' + timeStr + '</span></div>';
+
+    // Now line (red) for today
+    if (day.isToday) {
+      let nowMinsLine = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+      if (nowMinsLine < 0) nowMinsLine += 24 * 60;
+      if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMinsLine += 24 * 60;
+      const nowPct = (nowMinsLine / totalMins) * 100;
+      if (nowPct >= 0 && nowPct <= 100) {
+        html += '<div class="roster-timeline-line now" style="position:absolute;top:0;bottom:0;left:' + nowPct + '%"><div class="roster-timeline-line-label">Now</div></div>';
+      }
+    }
+
+    // Selected line (gold) for activeDateTime
+    if (activeDateTime) {
+      const dt = new Date(activeDateTime);
+      const dtDateStr = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+      if (day.dateStr === dtDateStr) {
+        let filterOffset = (dt.getHours() - TIMELINE_START) * 60 + dt.getMinutes();
+        if (filterOffset < 0) filterOffset += 24 * 60;
+        const filterPct = (filterOffset / totalMins) * 100;
+        if (filterPct >= 0 && filterPct <= 100) {
+          html += '<div class="roster-timeline-line filter" style="position:absolute;top:0;bottom:0;left:' + filterPct + '%"><div class="roster-timeline-line-label">Selected</div></div>';
+        }
+      }
+    }
+
     html += '</div></div>';
   }
 

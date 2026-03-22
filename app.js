@@ -1482,7 +1482,7 @@ function renderCard(g, grid) {
 
     const girlKey = g.venue + ':' + g.name;
     const girlScore = matchScores.get(girlKey) || 0;
-    const showBadge = userPreferences && matchThreshold > 0 && girlScore >= matchThreshold && girlScore > 0;
+    const showBadge = userPreferences && girlScore > 0;
 
     el.innerHTML = `
       ${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}

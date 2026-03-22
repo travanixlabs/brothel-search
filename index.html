@@ -1864,6 +1864,74 @@ function setRosterVenue(venueId) {
 
 document.getElementById('rosterToggle').addEventListener('click', toggleRosterView);
 
+function buildProfileCalendar(g) {
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
+  if (!cal) return '';
+  const now = new Date();
+  const rosterNow = new Date(now);
+  if (rosterNow.getHours() < 6) rosterNow.setDate(rosterNow.getDate() - 1);
+  const todayStr = rosterNow.getFullYear() + '-' + String(rosterNow.getMonth() + 1).padStart(2, '0') + '-' + String(rosterNow.getDate()).padStart(2, '0');
+  const TIMELINE_START = 6, TIMELINE_HOURS = 24;
+  const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // Collect upcoming days with slots
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(rosterNow); d.setDate(d.getDate() + i);
+    const ds = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const slot = cal[ds];
+    if (slot && slot.start && slot.end) {
+      days.push({ date: d, dateStr: ds, slot, isToday: ds === todayStr });
+    }
+  }
+  if (!days.length) return '';
+
+  const hours = [];
+  for (let i = 0; i <= TIMELINE_HOURS; i += 3) {
+    const h = (TIMELINE_START + i) % 24;
+    hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
+  }
+
+  let html = '<div class="profile-calendar" style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
+  html += '<div style="font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Schedule</div>';
+
+  for (const day of days) {
+    const [sh, sm] = day.slot.start.split(':').map(Number);
+    const [eh, em] = day.slot.end.split(':').map(Number);
+    let startOffset = (sh - TIMELINE_START) * 60 + sm;
+    if (startOffset < 0) startOffset += 24 * 60;
+    let endOffset = (eh - TIMELINE_START) * 60 + em;
+    if (endOffset < 0) endOffset += 24 * 60;
+    if (endOffset <= startOffset) endOffset += 24 * 60;
+    const totalMins = TIMELINE_HOURS * 60;
+    const leftPct = Math.max(0, (startOffset / totalMins) * 100);
+    const widthPct = Math.min(100 - leftPct, ((endOffset - startOffset) / totalMins) * 100);
+    const timeStr = fmt24to12(day.slot.start) + ' - ' + fmt24to12(day.slot.end);
+    const label = day.isToday ? 'Today' : dayNames[day.date.getDay()];
+    const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
+
+    // Bar class
+    let barClass = 'future';
+    if (day.isToday) {
+      let nowMins = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+      if (nowMins < 0) nowMins += 24 * 60;
+      if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
+      if (nowMins >= startOffset && nowMins < endOffset) barClass = 'now';
+      else if (nowMins < startOffset) barClass = 'later';
+    }
+
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
+    html += '<div style="min-width:70px;font-size:11px;letter-spacing:1px;color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite">' + label + ' <span style="opacity:0.6">' + dateLabel + '</span></div>';
+    html += '<div style="flex:1;position:relative;height:22px;background:rgba(255,255,255,0.03);border-radius:4px;overflow:hidden">';
+    html += '<div class="roster-entry-bar ' + barClass + '" style="position:absolute;top:0;bottom:0;left:' + leftPct + '%;width:' + widthPct + '%;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1px"><span>' + timeStr + '</span></div>';
+    html += '</div></div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function showProfile(g) {
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');
@@ -1904,7 +1972,8 @@ function showProfile(g) {
         ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
         ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
       </div>
-    </div>`;
+    </div>
+    ${buildProfileCalendar(g)}`;
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 

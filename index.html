@@ -80,10 +80,16 @@
       <div class="settings-msg" id="settingsPwMsg"></div>
     </div>
 
-    <!-- My Preferences -->
-    <div class="settings-section">
-      <div class="settings-title" style="font-size:16px;margin-bottom:20px">My Preferences</div>
+  </div>
+</div>
 
+<!-- Preferences Overlay -->
+<div class="settings-overlay" id="preferencesOverlay">
+  <div class="settings-container">
+    <button class="profile-close" id="prefBack">&times;</button>
+    <div class="settings-title">Preferences</div>
+
+    <div class="settings-section">
       <div class="pref-group">
         <div class="pref-label">Age Range</div>
         <div class="pref-range-slider" id="prefAge">
@@ -259,6 +265,7 @@
     <div class="user-menu-role" id="userMenuRole"></div>
     <div class="user-menu-divider"></div>
     <button class="user-menu-item" onclick="showProfileSettings()">Profile Settings</button>
+    <button class="user-menu-item" onclick="showPreferences()">Preferences</button>
     <button class="user-menu-item" onclick="signOut()">Log Out</button>
   </div>
 </div>

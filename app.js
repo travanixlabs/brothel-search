@@ -169,6 +169,18 @@ function closeSettings() {
   document.body.style.overflow = '';
 }
 
+function showPreferences() {
+  closeUserMenu();
+  document.getElementById('preferencesOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  loadPreferences();
+}
+
+function closePreferences() {
+  document.getElementById('preferencesOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 async function changePassword() {
   const newPw = document.getElementById('settingsNewPw').value;
   const confirmPw = document.getElementById('settingsConfirmPw').value;
@@ -219,6 +231,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
 document.getElementById('userMenuBtn').addEventListener('click', toggleUserMenu);
 document.getElementById('settingsBack').addEventListener('click', closeSettings);
 document.getElementById('settingsOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeSettings(); });
+document.getElementById('prefBack').addEventListener('click', closePreferences);
+document.getElementById('preferencesOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closePreferences(); });
 document.getElementById('settingsChangePwBtn').addEventListener('click', changePassword);
 document.getElementById('settingsNewPw').addEventListener('input', () => {
   const pw = document.getElementById('settingsNewPw').value;

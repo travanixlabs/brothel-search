@@ -170,7 +170,7 @@ function closeSettings() {
 }
 
 function showPreferences() {
-  closeUserMenu();
+  document.getElementById('userMenuDropdown').classList.remove('open');
   document.getElementById('preferencesOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   loadPreferences();

@@ -1204,7 +1204,8 @@ function renderFilters() {
     { id: 'val2', label: '45 Min' },
     { id: 'val3', label: '60 Min' },
     { id: 'startDate', label: 'Start Date' },
-    { id: 'lastRostered', label: 'Last Roster' }
+    { id: 'lastRostered', label: 'Last Roster' },
+    { id: 'preference', label: 'Preference' }
   ];
   const sortOpts = sorts.map(s => ({ value: s.id, label: s.label }));
   sr.innerHTML = buildSortDropdown('ddSort', sortOpts, activeSort, sortDir);
@@ -1448,6 +1449,11 @@ function getFiltered() {
   else if (activeSort === 'val3') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.val3) || 999) - (parseFloat(b.val3) || 999)));
   else if (activeSort === 'startDate') list.sort((a, b) => emptyLast(a, b, () => (a.startDate || '').localeCompare(b.startDate || '')));
   else if (activeSort === 'lastRostered') list.sort((a, b) => emptyLast(a, b, () => (a.lastRostered || '').localeCompare(b.lastRostered || '')));
+  else if (activeSort === 'preference') list.sort((a, b) => {
+    const sa = matchScores.get(a.venue + ':' + a.name) || 0;
+    const sb = matchScores.get(b.venue + ':' + b.name) || 0;
+    return sb - sa;
+  });
   else list.sort((a, b) => emptyLast(a, b, () => (a.name || '').toLowerCase().localeCompare((b.name || '').toLowerCase())));
   return list;
 }

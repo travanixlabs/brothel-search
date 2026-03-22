@@ -523,7 +523,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
     images = galleryImages;
   } else {
     // Fallback: broad regex for other WP sites (Kyoto 206 etc.)
-    const mainHtml = html.split(/avia-post-nav|avia-related-posts|In Portfolios|class="portfolio|class="related|id="portfolio|class="post-navigation/i)[0] || html;
+    const mainHtml = html.split(/avia-post-nav|avia-related-posts|In Portfolios|class="related-projects|id="portfolio-grid|class="post-navigation/i)[0] || html;
     const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
     const imgRe = new RegExp(`(https?://${domain}/wp-content/uploads/[^\\s"']+\\.(?:jpe?g|png|webp|gif))`, 'gi');
     const dataSrcRe = new RegExp(`data-(?:src|lazy-src)="(https?://${domain}/wp-content/uploads/[^"]+\\.(?:jpe?g|png|webp|gif))"`, 'gi');

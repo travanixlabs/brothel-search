@@ -222,6 +222,10 @@ sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
+    fetchUserRole();
+    loadPreferences().then(() => {
+      if (userPreferences) { computeMatchScores(); renderGrid(); }
+    });
   }
 });
 

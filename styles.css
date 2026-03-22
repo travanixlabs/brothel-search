@@ -352,7 +352,9 @@ body.is-admin .admin-only{display:initial!important}
 .pref-range-values{display:flex;justify-content:center;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;margin-top:4px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
 .pref-cup-row{display:flex;align-items:center;gap:10px}
 .pref-cup-sep{background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;font-size:14px}
-.pref-select{flex:1;background:transparent;border:1px solid rgba(201,149,44,0.25);border-radius:8px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none;cursor:pointer;-webkit-text-fill-color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite}
+.pref-select{flex:1;background:transparent;border:1px solid rgba(201,149,44,0.25);border-radius:8px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none;cursor:pointer;-webkit-text-fill-color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite;transition:border-color .3s}
+.pref-select:hover{border-color:rgba(201,149,44,0.5);animation:goldColorShimmer 3s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
+.pref-select:focus,.pref-select:not([value=""]){border-color:rgba(201,149,44,0.5);animation:goldColorShimmer 3s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
 .pref-select option{background:#0d0a10;color:var(--gold)}
 .pref-checkboxes{display:flex;flex-wrap:wrap;gap:8px;max-height:180px;overflow-y:auto}
 .pref-cb{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(201,149,44,0.15);border-radius:6px;cursor:pointer;transition:all .3s;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px}

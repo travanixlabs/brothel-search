@@ -313,7 +313,9 @@ async function scrapeGirlsListing(site) {
 
     const age    = (cardHtml.match(/Age:(\d+)/)        || [])[1] || '';
     const body   = (cardHtml.match(/Body Size:(\d+)/)   || [])[1] || '';
-    const cup    = (cardHtml.match(/Cup Size:([\w\-+]+)/) || [])[1] || '';
+    const cupRaw = (cardHtml.match(/Cup Size:([^<]+?)(?:More|Height|$)/) || [])[1] || '';
+    const cupLetter = (cupRaw.match(/([A-H](?:[A-H])?[+\-]?)/) || [])[1] || cupRaw.trim();
+    const cup = cupLetter;
     const height = (cardHtml.match(/Height:(\d+)/)       || [])[1] || '';
 
     cards.push({ id, ...parsed, age, body, cup, height });

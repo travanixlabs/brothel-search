@@ -636,19 +636,11 @@ async function savePreferences() {
   }
 }
 
-async function clearPreferences() {
-  const msg = document.getElementById('prefMsg');
-  const { data: { user } } = await sbClient.auth.getUser();
-  if (!user) return;
-
+function clearPreferences() {
   clearPrefsForm();
-  await sbClient.from('user_preferences').delete().eq('id', user.id);
-  userPreferences = null;
-  matchScores.clear();
-  matchThreshold = 0;
-  renderGrid();
-  msg.style.color = '#00c864';
-  msg.textContent = 'Preferences cleared';
+  const msg = document.getElementById('prefMsg');
+  msg.style.color = '#dbb550';
+  msg.textContent = 'Preferences cleared — press Save to apply';
 }
 
 document.getElementById('prefSaveBtn').addEventListener('click', savePreferences);

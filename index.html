@@ -79,6 +79,174 @@
       <button class="settings-btn" id="settingsChangePwBtn">Update Password</button>
       <div class="settings-msg" id="settingsPwMsg"></div>
     </div>
+
+    <!-- My Preferences -->
+    <div class="settings-section">
+      <div class="settings-title" style="font-size:16px;margin-bottom:20px">My Preferences</div>
+
+      <div class="pref-group">
+        <div class="pref-label">Age Range</div>
+        <div class="pref-range-slider" id="prefAge">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="18" max="60" value="18" data-handle="min">
+            <input type="range" min="18" max="60" value="60" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">18</span> &ndash; <span class="pref-range-max">60</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Body Range</div>
+        <div class="pref-range-slider" id="prefBody">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="4" max="22" value="4" data-handle="min">
+            <input type="range" min="4" max="22" value="22" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">4</span> &ndash; <span class="pref-range-max">22</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Height Range (cm)</div>
+        <div class="pref-range-slider" id="prefHeight">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="140" max="190" value="140" data-handle="min">
+            <input type="range" min="140" max="190" value="190" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">140</span> &ndash; <span class="pref-range-max">190</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Cup Range</div>
+        <div class="pref-cup-row">
+          <select class="settings-input pref-select" id="prefCupMin">
+            <option value="">Min</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option>
+            <option value="D">D</option><option value="DD">DD</option><option value="E">E</option>
+            <option value="F">F</option><option value="G">G</option>
+          </select>
+          <span class="pref-cup-sep">&ndash;</span>
+          <select class="settings-input pref-select" id="prefCupMax">
+            <option value="">Max</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option>
+            <option value="D">D</option><option value="DD">DD</option><option value="E">E</option>
+            <option value="F">F</option><option value="G">G</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Country</div>
+        <div class="pref-checkboxes" id="prefCountries"></div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Services</div>
+        <div class="pref-checkboxes" id="prefServices"></div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Experience</div>
+        <div class="pref-checkboxes" id="prefExperience">
+          <label class="pref-cb"><input type="checkbox" value="Experienced"><span>Experienced</span></label>
+          <label class="pref-cb"><input type="checkbox" value="Inexperienced"><span>Inexperienced</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Unspecified)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Language</div>
+        <div class="pref-checkboxes" id="prefLanguage">
+          <label class="pref-cb"><input type="checkbox" value="English"><span>English</span></label>
+          <label class="pref-cb"><input type="checkbox" value="Limited English"><span>Limited English</span></label>
+          <label class="pref-cb"><input type="checkbox" value="No English"><span>No English</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Unspecified)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">AV / Pornstar</div>
+        <div class="pref-checkboxes" id="prefAV">
+          <label class="pref-cb"><input type="checkbox" value="Pornstar"><span>Pornstar</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Non-AV)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">30 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice30">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="1500" step="10" value="0" data-handle="min">
+            <input type="range" min="0" max="1500" step="10" value="1500" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">0</span> &ndash; $<span class="pref-range-max">1500</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">45 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice45">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="2000" step="10" value="0" data-handle="min">
+            <input type="range" min="0" max="2000" step="10" value="2000" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">0</span> &ndash; $<span class="pref-range-max">2000</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">60 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice60">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="3000" step="10" value="0" data-handle="min">
+            <input type="range" min="0" max="3000" step="10" value="3000" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">0</span> &ndash; $<span class="pref-range-max">3000</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Photos Shared Range</div>
+        <div class="pref-range-slider" id="prefPhotos">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="50" value="0" data-handle="min">
+            <input type="range" min="0" max="50" value="50" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">0</span> &ndash; <span class="pref-range-max">50</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Last Rostered Within (days)</div>
+        <input class="settings-input" id="prefLastRosterDays" type="number" min="0" placeholder="e.g. 30">
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Date Started Within (days)</div>
+        <input class="settings-input" id="prefDateStartedDays" type="number" min="0" placeholder="e.g. 90">
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:20px">
+        <button class="settings-btn" id="prefSaveBtn">Save Preferences</button>
+        <a href="#" class="pref-clear-link" id="prefClearBtn">Clear Preferences</a>
+      </div>
+      <div class="settings-msg" id="prefMsg"></div>
+    </div>
   </div>
 </div>
 

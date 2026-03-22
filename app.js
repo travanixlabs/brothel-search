@@ -154,6 +154,12 @@ function showProfileSettings() {
   document.getElementById('settingsConfirmPw').value = '';
   document.getElementById('settingsConfirmPw').style.borderColor = '';
   document.getElementById('settingsPwMsg').textContent = '';
+  document.getElementById('prefMsg').textContent = '';
+  // Populate dynamic checkboxes and init sliders
+  populatePrefCheckboxes();
+  initPrefSliders();
+  clearPrefsForm();
+  loadPreferences();
   document.getElementById('settingsOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -244,6 +250,392 @@ document.getElementById('authEmail').addEventListener('keydown', e => { if (e.ke
 document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPasswordConfirm').focus(); else handleAuth(); } });
 document.getElementById('authPasswordConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
 
+// ── Preferences & Scoring Engine ──
+
+const CUP_MAP = { A:1, B:2, C:3, D:4, DD:5, E:6, F:7, G:8 };
+
+function parseCup(cupStr) {
+  if (!cupStr) return null;
+  const s = cupStr.toUpperCase().replace(/[^A-Z]/g, '');
+  // handle DD specifically
+  if (s.includes('DD')) return 5;
+  // try each cup letter
+  const vals = [];
+  for (const [k,v] of Object.entries(CUP_MAP)) {
+    if (s.includes(k) && k !== 'DD') vals.push(v);
+  }
+  if (s.includes('DD')) vals.push(5);
+  if (!vals.length) return null;
+  return vals;
+}
+
+function cupInRange(cupStr, minCup, maxCup) {
+  if (!minCup && !maxCup) return null; // not set
+  const minVal = CUP_MAP[minCup] || 0;
+  const maxVal = CUP_MAP[maxCup] || 99;
+  const parsed = parseCup(cupStr);
+  if (!parsed) return null; // no data
+  const arr = Array.isArray(parsed) ? parsed : [parsed];
+  return arr.some(v => v >= minVal && v <= maxVal);
+}
+
+const PREF_WEIGHTS = {
+  age: 10, body: 10, height: 2, cup: 2,
+  countries: 15, services: 12, experience: 10, language: 10, av: 5,
+  price30: 2, price45: 2, price60: 5,
+  photos: 5, lastRosterDays: 5, dateStartedDays: 5
+};
+
+function scoreGirl(girl, prefs) {
+  if (!prefs) return 0;
+  let totalWeight = 0;
+  let weightedScore = 0;
+
+  function addScore(key, score) {
+    // score is 0 or 100, or null to skip
+    if (score === null) return;
+    totalWeight += PREF_WEIGHTS[key];
+    weightedScore += PREF_WEIGHTS[key] * score;
+  }
+
+  // Age
+  if (prefs.age_min != null && prefs.age_max != null && (prefs.age_min !== 18 || prefs.age_max !== 60)) {
+    if (girl.age) addScore('age', (girl.age >= prefs.age_min && girl.age <= prefs.age_max) ? 100 : 0);
+    else addScore('age', null);
+  }
+
+  // Body
+  if (prefs.body_min != null && prefs.body_max != null && (prefs.body_min !== 4 || prefs.body_max !== 22)) {
+    if (girl.body) addScore('body', (girl.body >= prefs.body_min && girl.body <= prefs.body_max) ? 100 : 0);
+    else addScore('body', null);
+  }
+
+  // Height
+  if (prefs.height_min != null && prefs.height_max != null && (prefs.height_min !== 140 || prefs.height_max !== 190)) {
+    if (girl.height) addScore('height', (girl.height >= prefs.height_min && girl.height <= prefs.height_max) ? 100 : 0);
+    else addScore('height', null);
+  }
+
+  // Cup
+  if (prefs.cup_min || prefs.cup_max) {
+    const result = cupInRange(girl.cup, prefs.cup_min, prefs.cup_max);
+    addScore('cup', result === null ? null : (result ? 100 : 0));
+  }
+
+  // Countries (multi-select)
+  if (prefs.countries && prefs.countries.length > 0) {
+    const gc = Array.isArray(girl.country) ? girl.country : (girl.country ? [girl.country] : []);
+    addScore('countries', gc.some(c => prefs.countries.includes(c)) ? 100 : 0);
+  }
+
+  // Services (multi-select)
+  if (prefs.services && prefs.services.length > 0) {
+    const gl = Array.isArray(girl.labels) ? girl.labels : [];
+    addScore('services', gl.some(l => prefs.services.includes(l)) ? 100 : 0);
+  }
+
+  // Experience
+  if (prefs.experience && prefs.experience.length > 0) {
+    const gExp = girl.experienceLevel || '';
+    addScore('experience', prefs.experience.includes(gExp) ? 100 : 0);
+  }
+
+  // Language
+  if (prefs.language && prefs.language.length > 0) {
+    const gLang = girl.englishLevel || '';
+    addScore('language', prefs.language.includes(gLang) ? 100 : 0);
+  }
+
+  // AV/Pornstar
+  if (prefs.av && prefs.av.length > 0) {
+    const gAV = girl.pornstar ? 'Pornstar' : '';
+    addScore('av', prefs.av.includes(gAV) ? 100 : 0);
+  }
+
+  // Price ranges
+  if (prefs.price30_min != null && prefs.price30_max != null && (prefs.price30_min !== 0 || prefs.price30_max !== 1500)) {
+    if (girl.val1) addScore('price30', (girl.val1 >= prefs.price30_min && girl.val1 <= prefs.price30_max) ? 100 : 0);
+    else addScore('price30', null);
+  }
+  if (prefs.price45_min != null && prefs.price45_max != null && (prefs.price45_min !== 0 || prefs.price45_max !== 2000)) {
+    if (girl.val2) addScore('price45', (girl.val2 >= prefs.price45_min && girl.val2 <= prefs.price45_max) ? 100 : 0);
+    else addScore('price45', null);
+  }
+  if (prefs.price60_min != null && prefs.price60_max != null && (prefs.price60_min !== 0 || prefs.price60_max !== 3000)) {
+    if (girl.val3) addScore('price60', (girl.val3 >= prefs.price60_min && girl.val3 <= prefs.price60_max) ? 100 : 0);
+    else addScore('price60', null);
+  }
+
+  // Photos
+  if (prefs.photos_min != null && prefs.photos_max != null && (prefs.photos_min !== 0 || prefs.photos_max !== 50)) {
+    const pc = (girl.photos && girl.photos.length) || 0;
+    addScore('photos', (pc >= prefs.photos_min && pc <= prefs.photos_max) ? 100 : 0);
+  }
+
+  // Last Roster Days
+  if (prefs.last_roster_days != null && prefs.last_roster_days > 0) {
+    if (girl.lastRostered) {
+      const today = new Date(); today.setHours(0,0,0,0);
+      const rd = new Date(girl.lastRostered + 'T00:00:00');
+      const diff = Math.round((today - rd) / 86400000);
+      addScore('lastRosterDays', diff <= prefs.last_roster_days ? 100 : 0);
+    } else {
+      addScore('lastRosterDays', 0);
+    }
+  }
+
+  // Date Started Days
+  if (prefs.date_started_days != null && prefs.date_started_days > 0) {
+    if (girl.startDate) {
+      const today = new Date(); today.setHours(0,0,0,0);
+      const sd = new Date(girl.startDate + 'T00:00:00');
+      const diff = Math.round((today - sd) / 86400000);
+      addScore('dateStartedDays', diff <= prefs.date_started_days ? 100 : 0);
+    } else {
+      addScore('dateStartedDays', 0);
+    }
+  }
+
+  if (totalWeight === 0) return 0;
+  return Math.round(weightedScore / totalWeight);
+}
+
+function computeMatchScores() {
+  matchScores.clear();
+  matchThreshold = 0;
+  if (!userPreferences || !allGirls.length) return;
+
+  const scores = [];
+  allGirls.forEach(g => {
+    const key = g.venue + ':' + g.name;
+    const s = scoreGirl(g, userPreferences);
+    matchScores.set(key, s);
+    if (s > 0) scores.push(s);
+  });
+
+  if (!scores.length) return;
+  scores.sort((a, b) => b - a);
+  const top20idx = Math.max(0, Math.floor(scores.length * 0.2) - 1);
+  matchThreshold = scores[top20idx] || 0;
+  // Ensure threshold is at least 1 so we don't show 0% badges
+  if (matchThreshold < 1) matchThreshold = 1;
+}
+
+function initPrefSliders() {
+  document.querySelectorAll('.pref-range-slider').forEach(container => {
+    const inputs = container.querySelectorAll('input[type=range]');
+    const fill = container.querySelector('.range-slider-fill');
+    const minSpan = container.querySelector('.pref-range-min');
+    const maxSpan = container.querySelector('.pref-range-max');
+    const minInput = container.querySelector('[data-handle=min]');
+    const maxInput = container.querySelector('[data-handle=max]');
+
+    function update() {
+      const lo = parseInt(minInput.value);
+      const hi = parseInt(maxInput.value);
+      const rangeMin = parseInt(minInput.min);
+      const rangeMax = parseInt(minInput.max);
+      const pctL = ((lo - rangeMin) / (rangeMax - rangeMin)) * 100;
+      const pctR = 100 - ((hi - rangeMin) / (rangeMax - rangeMin)) * 100;
+      fill.style.left = pctL + '%';
+      fill.style.right = pctR + '%';
+      minSpan.textContent = lo;
+      maxSpan.textContent = hi;
+    }
+
+    minInput.addEventListener('input', () => {
+      if (parseInt(minInput.value) > parseInt(maxInput.value)) minInput.value = maxInput.value;
+      update();
+    });
+    maxInput.addEventListener('input', () => {
+      if (parseInt(maxInput.value) < parseInt(minInput.value)) maxInput.value = minInput.value;
+      update();
+    });
+    update();
+  });
+}
+
+function populatePrefCheckboxes() {
+  // Countries
+  const countriesSet = new Set();
+  allGirls.forEach(g => {
+    (Array.isArray(g.country) ? g.country : (g.country ? [g.country] : [])).forEach(c => { if (c) countriesSet.add(c); });
+  });
+  const countriesEl = document.getElementById('prefCountries');
+  countriesEl.innerHTML = [...countriesSet].sort().map(c =>
+    `<label class="pref-cb"><input type="checkbox" value="${c.replace(/"/g, '&quot;')}"><span>${c}</span></label>`
+  ).join('');
+
+  // Services / Labels
+  const labelsSet = new Set();
+  allGirls.forEach(g => {
+    (Array.isArray(g.labels) ? g.labels : []).forEach(l => { if (l) labelsSet.add(l); });
+  });
+  const servicesEl = document.getElementById('prefServices');
+  servicesEl.innerHTML = [...labelsSet].sort().map(l =>
+    `<label class="pref-cb"><input type="checkbox" value="${l.replace(/"/g, '&quot;')}"><span>${l}</span></label>`
+  ).join('');
+}
+
+function readPrefsFromForm() {
+  const getSlider = (id) => {
+    const c = document.getElementById(id);
+    return {
+      min: parseInt(c.querySelector('[data-handle=min]').value),
+      max: parseInt(c.querySelector('[data-handle=max]').value)
+    };
+  };
+  const getChecked = (id) => {
+    return [...document.querySelectorAll('#' + id + ' input[type=checkbox]:checked')].map(cb => cb.value);
+  };
+
+  const age = getSlider('prefAge');
+  const body = getSlider('prefBody');
+  const height = getSlider('prefHeight');
+  const p30 = getSlider('prefPrice30');
+  const p45 = getSlider('prefPrice45');
+  const p60 = getSlider('prefPrice60');
+  const photos = getSlider('prefPhotos');
+
+  return {
+    age_min: age.min, age_max: age.max,
+    body_min: body.min, body_max: body.max,
+    height_min: height.min, height_max: height.max,
+    cup_min: document.getElementById('prefCupMin').value || null,
+    cup_max: document.getElementById('prefCupMax').value || null,
+    countries: getChecked('prefCountries'),
+    services: getChecked('prefServices'),
+    experience: getChecked('prefExperience'),
+    language: getChecked('prefLanguage'),
+    av: getChecked('prefAV'),
+    price30_min: p30.min, price30_max: p30.max,
+    price45_min: p45.min, price45_max: p45.max,
+    price60_min: p60.min, price60_max: p60.max,
+    photos_min: photos.min, photos_max: photos.max,
+    last_roster_days: parseInt(document.getElementById('prefLastRosterDays').value) || null,
+    date_started_days: parseInt(document.getElementById('prefDateStartedDays').value) || null
+  };
+}
+
+function writePrefsToForm(p) {
+  if (!p) return;
+  const setSlider = (id, min, max) => {
+    const c = document.getElementById(id);
+    const minI = c.querySelector('[data-handle=min]');
+    const maxI = c.querySelector('[data-handle=max]');
+    if (min != null) minI.value = min;
+    if (max != null) maxI.value = max;
+    // trigger update
+    minI.dispatchEvent(new Event('input'));
+  };
+  const setChecked = (id, vals) => {
+    if (!vals || !vals.length) return;
+    document.querySelectorAll('#' + id + ' input[type=checkbox]').forEach(cb => {
+      cb.checked = vals.includes(cb.value);
+    });
+  };
+
+  setSlider('prefAge', p.age_min, p.age_max);
+  setSlider('prefBody', p.body_min, p.body_max);
+  setSlider('prefHeight', p.height_min, p.height_max);
+  setSlider('prefPrice30', p.price30_min, p.price30_max);
+  setSlider('prefPrice45', p.price45_min, p.price45_max);
+  setSlider('prefPrice60', p.price60_min, p.price60_max);
+  setSlider('prefPhotos', p.photos_min, p.photos_max);
+
+  if (p.cup_min) document.getElementById('prefCupMin').value = p.cup_min;
+  if (p.cup_max) document.getElementById('prefCupMax').value = p.cup_max;
+
+  setChecked('prefCountries', p.countries);
+  setChecked('prefServices', p.services);
+  setChecked('prefExperience', p.experience);
+  setChecked('prefLanguage', p.language);
+  setChecked('prefAV', p.av);
+
+  if (p.last_roster_days) document.getElementById('prefLastRosterDays').value = p.last_roster_days;
+  if (p.date_started_days) document.getElementById('prefDateStartedDays').value = p.date_started_days;
+}
+
+function clearPrefsForm() {
+  document.querySelectorAll('.pref-range-slider').forEach(c => {
+    const minI = c.querySelector('[data-handle=min]');
+    const maxI = c.querySelector('[data-handle=max]');
+    maxI.value = maxI.max;
+    minI.value = minI.min;
+    minI.dispatchEvent(new Event('input'));
+  });
+  document.getElementById('prefCupMin').value = '';
+  document.getElementById('prefCupMax').value = '';
+  document.querySelectorAll('#settingsOverlay .pref-checkboxes input[type=checkbox]').forEach(cb => cb.checked = false);
+  document.getElementById('prefLastRosterDays').value = '';
+  document.getElementById('prefDateStartedDays').value = '';
+}
+
+async function loadPreferences() {
+  try {
+    const { data: { user } } = await sbClient.auth.getUser();
+    if (!user) return;
+    const { data, error } = await sbClient.from('user_preferences').select('*').eq('id', user.id).single();
+    if (data && !error) {
+      userPreferences = data;
+      writePrefsToForm(data);
+    }
+  } catch (e) { /* no prefs yet */ }
+}
+
+async function savePreferences() {
+  const msg = document.getElementById('prefMsg');
+  const btn = document.getElementById('prefSaveBtn');
+  msg.textContent = '';
+  msg.style.color = '';
+
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) { msg.style.color = '#ff4444'; msg.textContent = 'Not logged in'; return; }
+
+  const prefs = readPrefsFromForm();
+  prefs.id = user.id;
+  prefs.updated_at = new Date().toISOString();
+
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  const { error } = await sbClient.from('user_preferences').upsert(prefs, { onConflict: 'id' });
+
+  btn.disabled = false;
+  btn.textContent = 'Save Preferences';
+
+  if (error) {
+    msg.style.color = '#ff4444';
+    msg.textContent = error.message;
+  } else {
+    msg.style.color = '#00c864';
+    msg.textContent = 'Preferences saved';
+    userPreferences = prefs;
+    computeMatchScores();
+    renderGrid();
+  }
+}
+
+async function clearPreferences() {
+  const msg = document.getElementById('prefMsg');
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+
+  clearPrefsForm();
+  await sbClient.from('user_preferences').delete().eq('id', user.id);
+  userPreferences = null;
+  matchScores.clear();
+  matchThreshold = 0;
+  renderGrid();
+  msg.style.color = '#00c864';
+  msg.textContent = 'Preferences cleared';
+}
+
+document.getElementById('prefSaveBtn').addEventListener('click', savePreferences);
+document.getElementById('prefClearBtn').addEventListener('click', e => { e.preventDefault(); clearPreferences(); });
+
+// ── End Preferences ──
+
 const PROFILES_BASE = 'https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles';
 const VENUES = [
   { id: 'ginzaempire', name: 'Ginza Empire', file: 'ginzaempire.json' },
@@ -256,6 +648,10 @@ const VENUES = [
 ];
 
 let allGirls = [];
+let userPreferences = null;
+let matchScores = new Map(); // girl key -> score 0-100
+let matchThreshold = 0; // top 20% cutoff
+
 let activeVenue = { include: [], exclude: [] };
 let activeCountry = { include: [], exclude: [] };
 let activeLabels = { include: [], exclude: [] };
@@ -446,6 +842,7 @@ async function loadProfiles() {
     }
   });
   autoExtractLabels(allGirls);
+  computeMatchScores();
   renderFilters();
   renderRangeFilters();
   renderGrid();
@@ -1061,7 +1458,12 @@ function renderCard(g, grid) {
       return 'Last rostered: ' + diff + ' days ago';
     })();
 
+    const girlKey = g.venue + ':' + g.name;
+    const girlScore = matchScores.get(girlKey) || 0;
+    const showBadge = userPreferences && matchThreshold > 0 && girlScore >= matchThreshold && girlScore > 0;
+
     el.innerHTML = `
+      ${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}
       <div class="card-img">${img}</div>
       <div class="card-info">
         <div class="card-name">${g.name || ''}</div>
@@ -1575,7 +1977,11 @@ document.getElementById('moreFiltersToggle').onclick = function() {
 
 // Init - always load profiles for background preview, gate interactions behind auth
 loadProfiles();
-checkAuth();
+checkAuth().then(() => {
+  loadPreferences().then(() => {
+    if (userPreferences) { computeMatchScores(); renderGrid(); }
+  });
+});
 
 // Background particles
 (function(){

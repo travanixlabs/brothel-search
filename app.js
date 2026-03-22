@@ -300,116 +300,124 @@ const PREF_WEIGHTS = {
 
 function scoreGirl(girl, prefs) {
   if (!prefs) return 0;
-  let totalWeight = 0;
-  let weightedScore = 0;
+  let score = 0;
+  let activeWeight = 0;
 
-  function addScore(key, score) {
-    // score is 0 or 100, or null to skip
-    if (score === null) return;
-    totalWeight += PREF_WEIGHTS[key];
-    weightedScore += PREF_WEIGHTS[key] * score;
+  // Age (10%) - in range = 10%, else 0%
+  if (prefs.age_min != null && prefs.age_max != null && (prefs.age_min !== 18 || prefs.age_max !== 33)) {
+    activeWeight += 10;
+    if (girl.age && parseInt(girl.age) >= prefs.age_min && parseInt(girl.age) <= prefs.age_max) score += 10;
   }
 
-  // Age
-  if (prefs.age_min != null && prefs.age_max != null && (prefs.age_min !== 18 || prefs.age_max !== 60)) {
-    if (girl.age) addScore('age', (girl.age >= prefs.age_min && girl.age <= prefs.age_max) ? 100 : 0);
-    else addScore('age', null);
+  // Body (10%) - in range = 10%, else 0%
+  if (prefs.body_min != null && prefs.body_max != null && (prefs.body_min !== 4 || prefs.body_max !== 10)) {
+    activeWeight += 10;
+    if (girl.body && parseInt(girl.body) >= prefs.body_min && parseInt(girl.body) <= prefs.body_max) score += 10;
   }
 
-  // Body
-  if (prefs.body_min != null && prefs.body_max != null && (prefs.body_min !== 4 || prefs.body_max !== 22)) {
-    if (girl.body) addScore('body', (girl.body >= prefs.body_min && girl.body <= prefs.body_max) ? 100 : 0);
-    else addScore('body', null);
+  // Height (2%) - in range = 2%, else 0%
+  if (prefs.height_min != null && prefs.height_max != null && (prefs.height_min !== 150 || prefs.height_max !== 175)) {
+    activeWeight += 2;
+    if (girl.height && parseInt(girl.height) >= prefs.height_min && parseInt(girl.height) <= prefs.height_max) score += 2;
   }
 
-  // Height
-  if (prefs.height_min != null && prefs.height_max != null && (prefs.height_min !== 140 || prefs.height_max !== 190)) {
-    if (girl.height) addScore('height', (girl.height >= prefs.height_min && girl.height <= prefs.height_max) ? 100 : 0);
-    else addScore('height', null);
-  }
-
-  // Cup
+  // Cup (2%) - in range = 2%, else 0%
   if (prefs.cup_min || prefs.cup_max) {
+    activeWeight += 2;
     const result = cupInRange(girl.cup, prefs.cup_min, prefs.cup_max);
-    addScore('cup', result === null ? null : (result ? 100 : 0));
+    if (result) score += 2;
   }
 
-  // Countries (multi-select)
+  // Country (15%) - proportional by how many of girl's countries match
   if (prefs.countries && prefs.countries.length > 0) {
+    activeWeight += 15;
     const gc = Array.isArray(girl.country) ? girl.country : (girl.country ? [girl.country] : []);
-    addScore('countries', gc.some(c => prefs.countries.includes(c)) ? 100 : 0);
+    if (gc.length > 0) {
+      const matched = gc.filter(c => prefs.countries.includes(c)).length;
+      score += (matched / gc.length) * 15;
+    }
   }
 
-  // Services (multi-select)
+  // Services (12%) - proportional by how many selected labels the girl has
   if (prefs.services && prefs.services.length > 0) {
+    activeWeight += 12;
     const gl = Array.isArray(girl.labels) ? girl.labels : [];
-    addScore('services', gl.some(l => prefs.services.includes(l)) ? 100 : 0);
+    const matched = prefs.services.filter(s => gl.includes(s)).length;
+    score += (matched / prefs.services.length) * 12;
   }
 
-  // Experience
+  // Experience (10%) - at least one match = 10%, else 0%
   if (prefs.experience && prefs.experience.length > 0) {
+    activeWeight += 10;
     const gExp = girl.experienceLevel || '';
-    addScore('experience', prefs.experience.includes(gExp) ? 100 : 0);
+    if (prefs.experience.includes(gExp)) score += 10;
   }
 
-  // Language
+  // Language (10%) - at least one match = 10%, else 0%
   if (prefs.language && prefs.language.length > 0) {
+    activeWeight += 10;
     const gLang = girl.englishLevel || '';
-    addScore('language', prefs.language.includes(gLang) ? 100 : 0);
+    if (prefs.language.includes(gLang)) score += 10;
   }
 
-  // AV/Pornstar
+  // AV/Pornstar (5%) - at least one match = 5%, else 0%
   if (prefs.av && prefs.av.length > 0) {
+    activeWeight += 5;
     const gAV = girl.pornstar ? 'Pornstar' : '';
-    addScore('av', prefs.av.includes(gAV) ? 100 : 0);
+    if (prefs.av.includes(gAV)) score += 5;
   }
 
-  // Price ranges
-  if (prefs.price30_min != null && prefs.price30_max != null && (prefs.price30_min !== 0 || prefs.price30_max !== 1500)) {
-    if (girl.val1) addScore('price30', (girl.val1 >= prefs.price30_min && girl.val1 <= prefs.price30_max) ? 100 : 0);
-    else addScore('price30', null);
-  }
-  if (prefs.price45_min != null && prefs.price45_max != null && (prefs.price45_min !== 0 || prefs.price45_max !== 2000)) {
-    if (girl.val2) addScore('price45', (girl.val2 >= prefs.price45_min && girl.val2 <= prefs.price45_max) ? 100 : 0);
-    else addScore('price45', null);
-  }
-  if (prefs.price60_min != null && prefs.price60_max != null && (prefs.price60_min !== 0 || prefs.price60_max !== 3000)) {
-    if (girl.val3) addScore('price60', (girl.val3 >= prefs.price60_min && girl.val3 <= prefs.price60_max) ? 100 : 0);
-    else addScore('price60', null);
+  // 30 Min Price (2%) - in range = 2%, else 0%
+  if (prefs.price30_min != null && prefs.price30_max != null && (prefs.price30_min !== 150 || prefs.price30_max !== 250)) {
+    activeWeight += 2;
+    if (girl.val1 && parseInt(girl.val1) >= prefs.price30_min && parseInt(girl.val1) <= prefs.price30_max) score += 2;
   }
 
-  // Photos
-  if (prefs.photos_min != null && prefs.photos_max != null && (prefs.photos_min !== 0 || prefs.photos_max !== 50)) {
+  // 45 Min Price (2%) - in range = 2%, else 0%
+  if (prefs.price45_min != null && prefs.price45_max != null && (prefs.price45_min !== 200 || prefs.price45_max !== 310)) {
+    activeWeight += 2;
+    if (girl.val2 && parseInt(girl.val2) >= prefs.price45_min && parseInt(girl.val2) <= prefs.price45_max) score += 2;
+  }
+
+  // 60 Min Price (5%) - in range = 5%, else 0%
+  if (prefs.price60_min != null && prefs.price60_max != null && (prefs.price60_min !== 250 || prefs.price60_max !== 380)) {
+    activeWeight += 5;
+    if (girl.val3 && parseInt(girl.val3) >= prefs.price60_min && parseInt(girl.val3) <= prefs.price60_max) score += 5;
+  }
+
+  // Photos (5%) - in range = 5%, else 0%
+  if (prefs.photos_min != null && prefs.photos_max != null && (prefs.photos_min !== 0 || prefs.photos_max !== 13)) {
+    activeWeight += 5;
     const pc = (girl.photos && girl.photos.length) || 0;
-    addScore('photos', (pc >= prefs.photos_min && pc <= prefs.photos_max) ? 100 : 0);
+    if (pc >= prefs.photos_min && pc <= prefs.photos_max) score += 5;
   }
 
-  // Last Roster Days
+  // Last Roster Days (5%) - within days = 5%, else 0%
   if (prefs.last_roster_days != null && prefs.last_roster_days > 0) {
+    activeWeight += 5;
     if (girl.lastRostered) {
       const today = new Date(); today.setHours(0,0,0,0);
       const rd = new Date(girl.lastRostered + 'T00:00:00');
       const diff = Math.round((today - rd) / 86400000);
-      addScore('lastRosterDays', diff <= prefs.last_roster_days ? 100 : 0);
-    } else {
-      addScore('lastRosterDays', 0);
+      if (diff <= prefs.last_roster_days) score += 5;
     }
   }
 
-  // Date Started Days
+  // Date Started Days (5%) - within days = 5%, else 0%
   if (prefs.date_started_days != null && prefs.date_started_days > 0) {
+    activeWeight += 5;
     if (girl.startDate) {
       const today = new Date(); today.setHours(0,0,0,0);
       const sd = new Date(girl.startDate + 'T00:00:00');
       const diff = Math.round((today - sd) / 86400000);
-      addScore('dateStartedDays', diff <= prefs.date_started_days ? 100 : 0);
-    } else {
-      addScore('dateStartedDays', 0);
+      if (diff <= prefs.date_started_days) score += 5;
     }
   }
 
-  if (totalWeight === 0) return 0;
-  return Math.round(weightedScore / totalWeight);
+  // No active preferences = 0
+  if (activeWeight === 0) return 0;
+  // Normalize: score is out of activeWeight, scale to 100
+  return Math.round((score / activeWeight) * 100);
 }
 
 function computeMatchScores() {

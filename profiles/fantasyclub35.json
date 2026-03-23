@@ -19,7 +19,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:05.663Z",
-      "lastRostered": "2026-03-22",
+      "lastRostered": "2026-03-26",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/AMY521.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/AMY523.jpg"
@@ -99,7 +99,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:13.477Z",
-      "lastRostered": "2026-03-22",
+      "lastRostered": "2026-03-29",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2026/02/Ashvey1-scaled.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2026/02/Ashvey2-scaled.jpg"
@@ -318,7 +318,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:31.912Z",
-      "lastRostered": "2026-03-22",
+      "lastRostered": "2026-03-29",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/Selena.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/Selena1.jpg"
@@ -345,7 +345,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:34.157Z",
-      "lastRostered": "2026-03-22",
+      "lastRostered": "2026-03-29",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/05/Bobo.jpg"
       ],
@@ -698,7 +698,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:45:01.474Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-03-29",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/02/YukiHK.3jpg.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/02/Kaori-1JP.jpg"
@@ -1410,7 +1410,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:04:00.221Z",
-      "lastRostered": "2026-03-22",
+      "lastRostered": "2026-03-24",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/Kayla-1.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/Kayla1-1.jpg"
@@ -1422,15 +1422,45 @@
   ],
   "calendar": {
     "_published": [
-      "2026-03-21",
-      "2026-03-22"
+      "2026-03-22",
+      "2026-03-23",
+      "2026-03-24",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-03-27",
+      "2026-03-28",
+      "2026-03-29"
     ],
     "Selena": {
       "2026-03-22": {
         "start": "11:00",
         "end": "05:00"
       },
-      "2026-03-21": {
+      "2026-03-23": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-24": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-25": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-26": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-27": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-28": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-29": {
         "start": "11:00",
         "end": "05:00"
       }
@@ -1440,7 +1470,15 @@
         "start": "11:00",
         "end": "05:00"
       },
-      "2026-03-21": {
+      "2026-03-23": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-25": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-26": {
         "start": "11:00",
         "end": "05:00"
       }
@@ -1450,17 +1488,37 @@
         "start": "17:00",
         "end": "05:00"
       },
-      "2026-03-21": {
+      "2026-03-23": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-24": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-25": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-26": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-27": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-28": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-03-29": {
         "start": "17:00",
         "end": "05:00"
       }
     },
     "Yui": {
       "2026-03-22": {
-        "start": "13:00",
-        "end": "05:00"
-      },
-      "2026-03-21": {
         "start": "13:00",
         "end": "05:00"
       }
@@ -1470,7 +1528,31 @@
         "start": "11:00",
         "end": "05:00"
       },
-      "2026-03-21": {
+      "2026-03-23": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-24": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-25": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-26": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-27": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-28": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-03-29": {
         "start": "11:00",
         "end": "05:00"
       }
@@ -1480,21 +1562,35 @@
       "2026-03-22": {
         "start": "17:00",
         "end": "05:00"
+      },
+      "2026-03-24": {
+        "start": "17:00",
+        "end": "05:00"
       }
     },
     "Sakura": {
       "2026-03-22": {
         "start": "18:00",
         "end": "04:00"
+      }
+    },
+    "Yuki": {
+      "2026-03-27": {
+        "start": "15:00",
+        "end": "05:00"
       },
-      "2026-03-21": {
-        "start": "18:00",
-        "end": "04:00"
+      "2026-03-28": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-03-29": {
+        "start": "15:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-18T20:00:57.801Z",
-  "lastCalendarSync": "2026-03-22T20:00:30.311Z",
+  "lastCalendarSync": "2026-03-23T19:30:31.768Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/"
   ]

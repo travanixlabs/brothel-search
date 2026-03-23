@@ -2184,9 +2184,37 @@ function showProfile(g) {
       const img = document.getElementById('profileMainImg');
       if (img) img.src = photos[window._profilePhotoIdx];
       document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === window._profilePhotoIdx));
-    }, 2000);
+    }, 5000);
   }
 }
+
+// Arrow key navigation for profile photos
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('profileOverlay')?.style.display ||
+      document.getElementById('profileOverlay').style.display === 'none') return;
+  if (!window._profilePhotos || window._profilePhotos.length <= 1) return;
+
+  let newIdx = null;
+  if (e.key === 'ArrowRight') {
+    newIdx = (window._profilePhotoIdx + 1) % window._profilePhotos.length;
+  } else if (e.key === 'ArrowLeft') {
+    newIdx = (window._profilePhotoIdx - 1 + window._profilePhotos.length) % window._profilePhotos.length;
+  }
+  if (newIdx !== null) {
+    window._profilePhotoIdx = newIdx;
+    const img = document.getElementById('profileMainImg');
+    if (img) img.src = window._profilePhotos[newIdx];
+    document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === newIdx));
+    // Reset auto-rotate timer
+    clearInterval(window._profileRotate);
+    window._profileRotate = setInterval(() => {
+      window._profilePhotoIdx = (window._profilePhotoIdx + 1) % window._profilePhotos.length;
+      const img = document.getElementById('profileMainImg');
+      if (img) img.src = window._profilePhotos[window._profilePhotoIdx];
+      document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === window._profilePhotoIdx));
+    }, 5000);
+  }
+});
 
 function detailRow(label, value) {
   if (!value) return '';

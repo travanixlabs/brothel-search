@@ -235,7 +235,7 @@ function showFavorites() {
     grid.innerHTML = '';
     favGirls.forEach(g => {
       const el = document.createElement('div');
-      el.className = 'card favorited';
+      el.className = 'girl-card favorited';
       const img = g.photos && g.photos.length ? '<img class="card-thumb" src="' + imgProxy(g.photos[0], 400) + '" alt="" loading="lazy">' : '<div class="card-thumb" style="background:rgba(255,255,255,0.04)"></div>';
       const girlKey = g.venue + ':' + g.name;
       const girlScore = matchScores.get(girlKey) || 0;

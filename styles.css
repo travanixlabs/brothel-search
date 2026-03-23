@@ -368,10 +368,11 @@ body.is-admin .admin-only{display:initial!important}
 .pref-clear-link:hover{opacity:0.7}
 
 /* Favorite heart on cards */
-.fav-heart{position:absolute;top:8px;left:8px;z-index:5;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(0,0,0,0.5);transition:all .3s ease}
-.fav-heart svg{width:18px;height:18px;stroke-width:2;transition:all .3s ease}
-.fav-heart svg path{stroke:url(#logoGold,#c9952c);fill:none;animation:goldColorShimmer 4s ease infinite}
-.fav-heart:hover svg path,.fav-heart.active svg path{fill:#c9952c;stroke:#c9952c;filter:drop-shadow(0 0 6px rgba(201,149,44,0.5));animation:goldColorShimmer 4s ease infinite}
+.fav-heart{position:absolute;top:8px;left:8px;z-index:5;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:none;transition:all .3s ease}
+.fav-heart svg{width:20px;height:20px;stroke-width:2;transition:all .3s ease;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.6))}
+.fav-heart svg path{stroke:#c9952c;fill:none;animation:goldColorShimmer 4s ease infinite}
+.fav-heart:hover svg path{fill:rgba(201,149,44,0.3);animation:goldColorShimmer 4s ease infinite}
+.fav-heart.active svg path{fill:#c9952c;stroke:#c9952c;filter:drop-shadow(0 0 6px rgba(201,149,44,0.5));animation:goldColorShimmer 4s ease infinite}
 .girl-card.favorited{animation:favGlow 2s ease-in-out infinite}
 @keyframes favGlow{0%,100%{box-shadow:0 0 10px rgba(201,149,44,0.15),0 0 20px rgba(201,149,44,0.1)}50%{box-shadow:0 0 25px rgba(201,149,44,0.4),0 0 50px rgba(201,149,44,0.2)}}
 /* Match badge on cards */

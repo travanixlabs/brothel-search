@@ -8780,6 +8780,29 @@
       "lastRostered": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Saiki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "166",
+      "cup": "B",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-03-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/saiki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/5ce23b645f5954ddb0549c55d94e2fad.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-23T08:00:32.119Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9066,7 +9089,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-22T08:00:12.892Z",
+  "lastGirlsSync": "2026-03-23T08:00:32.119Z",
   "lastCalendarSync": "2026-03-21T02:28:46.039Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

@@ -83,6 +83,17 @@
   </div>
 </div>
 
+<!-- Favorites Overlay -->
+<div class="settings-overlay" id="favoritesOverlay">
+  <div class="settings-container" style="max-width:95%;width:95%">
+    <button class="profile-close" id="favBack">&times;</button>
+    <div class="settings-title">Favorites</div>
+    <div class="settings-subtitle" id="favCount" style="margin-bottom:16px"></div>
+    <div id="favGrid" class="grid" style="padding:0"></div>
+    <div id="favEmpty" style="text-align:center;padding:40px 0;color:var(--text-dim);display:none">No favorites yet. Click the heart icon on a profile to add one.</div>
+  </div>
+</div>
+
 <!-- Preferences Overlay -->
 <div class="settings-overlay" id="preferencesOverlay">
   <div class="settings-container">
@@ -266,6 +277,7 @@
     <div class="user-menu-divider"></div>
     <button class="user-menu-item" onclick="showProfileSettings()">Profile Settings</button>
     <button class="user-menu-item" onclick="showPreferences()">Preferences</button>
+    <button class="user-menu-item" onclick="showFavorites()">Favorites</button>
     <button class="user-menu-item" onclick="signOut()">Log Out</button>
   </div>
 </div>

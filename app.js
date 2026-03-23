@@ -5,6 +5,8 @@ const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
+let userFavorites = []; // array of oldUrl strings
+const MAX_FAVORITES = 10;
 
 async function fetchUserRole() {
   const { data, error } = await sbClient.from('user_roles').select('role').single();
@@ -23,6 +25,7 @@ async function checkAuth() {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
+    await loadFavorites();
     return true;
   }
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
@@ -96,6 +99,7 @@ async function handleAuth() {
   document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
   document.getElementById('userMenu').style.display = '';
   await fetchUserRole();
+  await loadFavorites();
   loadProfiles();
 }
 
@@ -179,6 +183,84 @@ function closePreferences() {
   document.body.style.overflow = '';
 }
 
+// Favorites
+async function loadFavorites() {
+  const { data } = await sbClient.from('user_favorites').select('old_url');
+  userFavorites = data ? data.map(r => r.old_url) : [];
+}
+
+async function toggleFavorite(oldUrl, e) {
+  if (e) e.stopPropagation();
+  if (!oldUrl) return;
+  const idx = userFavorites.indexOf(oldUrl);
+  if (idx > -1) {
+    // Remove
+    userFavorites.splice(idx, 1);
+    await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
+  } else {
+    if (userFavorites.length >= MAX_FAVORITES) {
+      alert('Maximum ' + MAX_FAVORITES + ' favorites. Remove one first.');
+      return;
+    }
+    userFavorites.push(oldUrl);
+    const { data: { user } } = await sbClient.auth.getUser();
+    await sbClient.from('user_favorites').insert({ user_id: user.id, old_url: oldUrl });
+  }
+  renderGrid();
+  // Update heart in profile detail if open
+  const detailHeart = document.getElementById('profileFavHeart');
+  if (detailHeart) detailHeart.classList.toggle('active', userFavorites.includes(oldUrl));
+}
+
+function isFavorite(g) {
+  return g.oldUrl && userFavorites.includes(g.oldUrl);
+}
+
+function showFavorites() {
+  document.getElementById('userMenuDropdown').classList.remove('open');
+  const overlay = document.getElementById('favoritesOverlay');
+  const grid = document.getElementById('favGrid');
+  const empty = document.getElementById('favEmpty');
+  const count = document.getElementById('favCount');
+
+  const favGirls = allGirls.filter(g => isFavorite(g));
+  count.textContent = favGirls.length + ' / ' + MAX_FAVORITES + ' favorites';
+
+  if (favGirls.length === 0) {
+    grid.style.display = 'none';
+    empty.style.display = '';
+  } else {
+    grid.style.display = '';
+    empty.style.display = 'none';
+    grid.innerHTML = '';
+    favGirls.forEach(g => {
+      const el = document.createElement('div');
+      el.className = 'card favorited';
+      const img = g.photos && g.photos.length ? '<img class="card-thumb" src="' + imgProxy(g.photos[0], 400) + '" alt="" loading="lazy">' : '<div class="card-thumb" style="background:rgba(255,255,255,0.04)"></div>';
+      const girlKey = g.venue + ':' + g.name;
+      const girlScore = matchScores.get(girlKey) || 0;
+      const showBadge = userPreferences && girlScore > 0;
+      const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+      el.innerHTML = '<div class="fav-heart active">' + heartSvg + '</div>' +
+        (showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : '') +
+        '<div class="card-img">' + img + '</div><div class="card-info"><div class="card-name">' + g.name + '</div><div class="card-venue ' + g.venue + '">' + g.venueName + '</div></div>';
+      el.querySelector('.fav-heart').addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFavorite(g.oldUrl, e).then(() => showFavorites());
+      });
+      el.onclick = () => showProfile(g);
+      grid.appendChild(el);
+    });
+  }
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFavorites() {
+  document.getElementById('favoritesOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 async function changePassword() {
   const newPw = document.getElementById('settingsNewPw').value;
   const confirmPw = document.getElementById('settingsConfirmPw').value;
@@ -235,6 +317,8 @@ document.getElementById('settingsBack').addEventListener('click', closeSettings)
 document.getElementById('settingsOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeSettings(); });
 document.getElementById('prefBack').addEventListener('click', closePreferences);
 document.getElementById('preferencesOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closePreferences(); });
+document.getElementById('favBack').addEventListener('click', closeFavorites);
+document.getElementById('favoritesOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeFavorites(); });
 document.getElementById('settingsChangePwBtn').addEventListener('click', changePassword);
 document.getElementById('settingsNewPw').addEventListener('input', () => {
   const pw = document.getElementById('settingsNewPw').value;
@@ -1461,7 +1545,7 @@ let loadingMore = false;
 
 function renderCard(g, grid) {
     const el = document.createElement('div');
-    el.className = 'girl-card';
+    el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
     const img = g.photos && g.photos.length
       ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
       : '<div class="silhouette"></div>';
@@ -1484,7 +1568,11 @@ function renderCard(g, grid) {
     const girlScore = matchScores.get(girlKey) || 0;
     const showBadge = userPreferences && girlScore > 0;
 
+    const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+    const favActive = isFavorite(g) ? ' active' : '';
+
     el.innerHTML = `
+      <div class="fav-heart${favActive}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
       ${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}
       <div class="card-img">${img}</div>
       <div class="card-info">
@@ -1501,6 +1589,7 @@ function renderCard(g, grid) {
         ${lastRostered ? '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : lastRostered.startsWith('Available Future') ? ' available-future' : '') + '">' + lastRostered + '</div>' : ''}
         <div class="card-hover-line"></div>
       </div>`;
+    el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.onclick = () => showProfile(g);
     if (g.photos && g.photos.length > 1) {
       let hoverInterval = null, hoverIdx = 0;
@@ -1908,7 +1997,10 @@ function showProfile(g) {
 
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
-    <div class="card-venue ${g.venue}" style="margin-bottom:12px">${g.venueName}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <div class="card-venue ${g.venue}">${g.venueName}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}</div>
+      <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+    </div>
     <div class="profile-name">${g.name || ''}</div>
     <div class="profile-layout">
       <div class="profile-gallery">

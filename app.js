@@ -749,6 +749,7 @@ let calendarData = {};
 let activeAV = { include: [], exclude: [] };
 let activeAvailability = { include: [], exclude: [] };
 let activePhotos = { include: [], exclude: [] };
+let activeFavFilter = { include: [], exclude: [] };
 let activeDateTime = '';
 let dtEnabled = false;
 let dtPendingMonth = '';
@@ -942,7 +943,7 @@ document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdow
 function hasAnyFilter() {
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
+  return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeFavFilter.include.length || activeFavFilter.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
 }
 
 function updateClearBtn() {
@@ -953,7 +954,7 @@ function updateClearBtn() {
     btn.className = 'clear-all-btn';
     btn.id = 'clearAllBtn';
     btn.textContent = 'Clear All';
-    btn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    btn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
     fr.appendChild(btn);
   } else if (!hasAnyFilter() && existing) {
     existing.remove();
@@ -1167,6 +1168,7 @@ function renderFilters() {
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildLabelDropdown('ddAV', 'AV', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>g.pornstar).length},{value:'No',label:'No',count:allGirls.filter(g=>!g.pornstar).length}], activeAV.include, activeAV.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
+    + buildLabelDropdown('ddFav', 'Favourites', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>isFavorite(g)).length},{value:'No',label:'No',count:allGirls.filter(g=>!isFavorite(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
@@ -1205,6 +1207,7 @@ function renderFilters() {
     { sel: '#ddAV', state: activeAV },
     { sel: '#ddAvailability', state: activeAvailability },
     { sel: '#ddPhotos', state: activePhotos },
+    { sel: '#ddFav', state: activeFavFilter },
   ];
   toggleMappings.forEach(({ sel, state }) => {
     document.querySelectorAll(sel + ' .label-toggle-btn').forEach(btn => {
@@ -1253,7 +1256,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -1467,6 +1470,15 @@ function getFiltered() {
   if (activePhotos.exclude.length) list = list.filter(g => {
     const hasPhotos = g.photos && g.photos.length > 0;
     return !activePhotos.exclude.includes(hasPhotos ? 'Yes' : 'No');
+  });
+  // Favourites filter
+  if (activeFavFilter.include.length) list = list.filter(g => {
+    const fav = isFavorite(g) ? 'Yes' : 'No';
+    return activeFavFilter.include.includes(fav);
+  });
+  if (activeFavFilter.exclude.length) list = list.filter(g => {
+    const fav = isFavorite(g) ? 'Yes' : 'No';
+    return !activeFavFilter.exclude.includes(fav);
   });
   // DateTime filter
   if (activeDateTime) {

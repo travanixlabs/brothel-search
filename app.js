@@ -223,7 +223,11 @@ function showFavorites() {
   const empty = document.getElementById('favEmpty');
   const count = document.getElementById('favCount');
 
-  const favGirls = allGirls.filter(g => isFavorite(g));
+  const favGirls = allGirls.filter(g => isFavorite(g)).sort((a, b) => {
+    const sa = matchScores.get(a.venue + ':' + a.name) || 0;
+    const sb = matchScores.get(b.venue + ':' + b.name) || 0;
+    return sb - sa;
+  });
   count.textContent = favGirls.length + ' / ' + MAX_FAVORITES + ' favorites';
 
   if (favGirls.length === 0) {

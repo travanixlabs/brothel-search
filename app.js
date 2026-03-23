@@ -1158,8 +1158,8 @@ function renderFilters() {
 
   // Photos options
   const photosOpts = [
-    { value: 'Yes', label: 'Has Photos', count: base.filter(g => g.photos && g.photos.length > 0).length },
-    { value: 'No', label: 'No Photos', count: base.filter(g => !g.photos || g.photos.length === 0).length }
+    { value: 'Yes', label: 'Yes', count: base.filter(g => g.photos && g.photos.length > 0).length },
+    { value: 'No', label: 'No', count: base.filter(g => !g.photos || g.photos.length === 0).length }
   ];
 
   fr.innerHTML = buildLabelDropdown('ddVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)

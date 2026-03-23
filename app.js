@@ -6,7 +6,7 @@ const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
-const MAX_FAVORITES = 10;
+const MAX_FAVORITES = 20;
 
 async function fetchUserRole() {
   const { data, error } = await sbClient.from('user_roles').select('role').single();

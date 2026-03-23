@@ -234,22 +234,7 @@ function showFavorites() {
     empty.style.display = 'none';
     grid.innerHTML = '';
     favGirls.forEach(g => {
-      const el = document.createElement('div');
-      el.className = 'girl-card favorited';
-      const img = g.photos && g.photos.length ? '<img class="card-thumb" src="' + imgProxy(g.photos[0], 400) + '" alt="" loading="lazy">' : '<div class="card-thumb" style="background:rgba(255,255,255,0.04)"></div>';
-      const girlKey = g.venue + ':' + g.name;
-      const girlScore = matchScores.get(girlKey) || 0;
-      const showBadge = userPreferences && girlScore > 0;
-      const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-      el.innerHTML = '<div class="fav-heart active">' + heartSvg + '</div>' +
-        (showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : '') +
-        '<div class="card-img">' + img + '</div><div class="card-info"><div class="card-name">' + g.name + '</div><div class="card-venue ' + g.venue + '">' + g.venueName + '</div></div>';
-      el.querySelector('.fav-heart').addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleFavorite(g.oldUrl, e).then(() => showFavorites());
-      });
-      el.onclick = () => showProfile(g);
-      grid.appendChild(el);
+      renderCard(g, grid);
     });
   }
   overlay.classList.add('open');

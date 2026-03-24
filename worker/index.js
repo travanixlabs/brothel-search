@@ -14,6 +14,19 @@
  *   GITHUB_TOKEN — GitHub personal access token (contents read/write scope)
  */
 
+/* ── Stripe webhook signature verification ── */
+async function verifyStripeSignature(payload, sigHeader, secret) {
+  const parts = Object.fromEntries(sigHeader.split(',').map(p => { const [k, v] = p.split('='); return [k, v]; }));
+  const timestamp = parts.t;
+  const signature = parts.v1;
+  if (!timestamp || !signature) return false;
+  const signedPayload = `${timestamp}.${payload}`;
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(signedPayload));
+  const expected = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
+  return expected === signature;
+}
+
 const REPO = 'travanixlabs/brothel-search';
 const GH_API = 'https://api.github.com';
 const UA = 'Mozilla/5.0 (compatible; BrothelSearchBot/1.0)';
@@ -1470,6 +1483,248 @@ export default {
     if (url.pathname === '/sync-429city-calendar' && request.method === 'POST') {
       try { return json({ success: await syncCalendar(env, SITES.city429) }); }
       catch (e) { return json({ error: e.message }); }
+    }
+
+    // ── Stripe / Subscription endpoints ──
+
+    const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
+    const STRIPE_API = 'https://api.stripe.com/v1';
+    const PRICE_IDS = {
+      trial: 'price_1TDfH1Hn68lZzkHWhHNBUT7n',
+      recurring: 'price_1TDfG0Hn68lZzkHWGz5sKCpG',
+      'one-time': 'price_1TDfF1Hn68lZzkHWFDWT7WyV',
+    };
+
+    const cors = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+    };
+
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { headers: cors });
+    }
+
+    // Create Stripe Checkout Session
+    if (url.pathname === '/create-checkout' && request.method === 'POST') {
+      try {
+        const { plan, userId, email, returnUrl } = await request.json();
+        if (!PRICE_IDS[plan]) return new Response(JSON.stringify({ error: 'Invalid plan' }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        // Check trial eligibility
+        if (plan === 'trial') {
+          const subRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}&select=trial_used`, {
+            headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` },
+          });
+          const subs = await subRes.json();
+          if (subs.length && subs[0].trial_used) {
+            return new Response(JSON.stringify({ error: 'Trial already used' }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+          }
+        }
+
+        // Create Stripe Checkout Session
+        const isRecurring = plan === 'recurring';
+        const body = new URLSearchParams({
+          'line_items[0][price]': PRICE_IDS[plan],
+          'line_items[0][quantity]': '1',
+          mode: isRecurring ? 'subscription' : 'payment',
+          success_url: returnUrl || 'https://travanixlabs.github.io/brothel-search/?payment=success',
+          cancel_url: returnUrl || 'https://travanixlabs.github.io/brothel-search/?payment=cancelled',
+          customer_email: email,
+          'metadata[user_id]': userId,
+          'metadata[plan]': plan,
+        });
+
+        const stripeRes = await fetch(`${STRIPE_API}/checkout/sessions`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Basic ${btoa(env.STRIPE_SECRET_KEY + ':')}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: body.toString(),
+        });
+        const session = await stripeRes.json();
+        if (session.error) return new Response(JSON.stringify({ error: session.error.message }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        return new Response(JSON.stringify({ sessionUrl: session.url, sessionId: session.id }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
+    }
+
+    // Stripe Webhook
+    if (url.pathname === '/stripe-webhook' && request.method === 'POST') {
+      try {
+        const body = await request.text();
+        const sig = request.headers.get('stripe-signature');
+
+        // Verify webhook signature
+        if (env.STRIPE_WEBHOOK_SECRET && sig) {
+          const verified = await verifyStripeSignature(body, sig, env.STRIPE_WEBHOOK_SECRET);
+          if (!verified) return new Response('Invalid signature', { status: 400 });
+        }
+
+        const event = JSON.parse(body);
+        const supabaseHeaders = {
+          apikey: env.SUPABASE_SERVICE_KEY,
+          Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`,
+          'Content-Type': 'application/json',
+          Prefer: 'resolution=merge-duplicates',
+        };
+
+        if (event.type === 'checkout.session.completed') {
+          const session = event.data.object;
+          const userId = session.metadata?.user_id;
+          const plan = session.metadata?.plan;
+          if (!userId) return new Response('No user_id', { status: 400 });
+
+          const now = new Date();
+          let periodEnd;
+          if (plan === 'trial') {
+            periodEnd = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000); // 3 days
+          } else {
+            periodEnd = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000); // ~1 month
+          }
+
+          const upsertData = {
+            user_id: userId,
+            stripe_customer_id: session.customer || null,
+            stripe_subscription_id: session.subscription || null,
+            plan: plan,
+            status: 'active',
+            trial_used: plan === 'trial' ? true : undefined,
+            current_period_start: now.toISOString(),
+            current_period_end: periodEnd.toISOString(),
+            updated_at: now.toISOString(),
+          };
+          // Remove undefined
+          Object.keys(upsertData).forEach(k => upsertData[k] === undefined && delete upsertData[k]);
+
+          // Upsert into user_subscriptions
+          await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions`, {
+            method: 'POST',
+            headers: { ...supabaseHeaders, Prefer: 'resolution=merge-duplicates' },
+            body: JSON.stringify(upsertData),
+          });
+
+          // If trial, mark trial_used even if upgrading later
+          if (plan === 'trial') {
+            await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {
+              method: 'PATCH',
+              headers: supabaseHeaders,
+              body: JSON.stringify({ trial_used: true }),
+            });
+          }
+        }
+
+        if (event.type === 'invoice.paid') {
+          const invoice = event.data.object;
+          const subId = invoice.subscription;
+          if (subId) {
+            // Fetch subscription from Stripe to get current_period_end
+            const subRes = await fetch(`${STRIPE_API}/subscriptions/${subId}`, {
+              headers: { Authorization: `Basic ${btoa(env.STRIPE_SECRET_KEY + ':')}` },
+            });
+            const sub = await subRes.json();
+            const userId = sub.metadata?.user_id;
+            if (userId) {
+              await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {
+                method: 'PATCH',
+                headers: supabaseHeaders,
+                body: JSON.stringify({
+                  status: 'active',
+                  current_period_end: new Date(sub.current_period_end * 1000).toISOString(),
+                  updated_at: new Date().toISOString(),
+                }),
+              });
+            }
+          }
+        }
+
+        if (event.type === 'customer.subscription.deleted') {
+          const sub = event.data.object;
+          const userId = sub.metadata?.user_id;
+          if (userId) {
+            await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {
+              method: 'PATCH',
+              headers: supabaseHeaders,
+              body: JSON.stringify({ status: 'inactive', updated_at: new Date().toISOString() }),
+            });
+          }
+        }
+
+        if (event.type === 'invoice.payment_failed') {
+          const invoice = event.data.object;
+          const subId = invoice.subscription;
+          if (subId) {
+            const subRes = await fetch(`${STRIPE_API}/subscriptions/${subId}`, {
+              headers: { Authorization: `Basic ${btoa(env.STRIPE_SECRET_KEY + ':')}` },
+            });
+            const sub = await subRes.json();
+            const userId = sub.metadata?.user_id;
+            if (userId) {
+              await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {
+                method: 'PATCH',
+                headers: supabaseHeaders,
+                body: JSON.stringify({ status: 'past_due', updated_at: new Date().toISOString() }),
+              });
+            }
+          }
+        }
+
+        return new Response('ok', { status: 200 });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
+      }
+    }
+
+    // Subscription status check
+    if (url.pathname === '/subscription-status' && request.method === 'GET') {
+      try {
+        const authHeader = request.headers.get('Authorization');
+        if (!authHeader) return new Response(JSON.stringify({ error: 'No auth' }), { status: 401, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        // Verify JWT and get user
+        const userRes = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+          headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: authHeader },
+        });
+        const user = await userRes.json();
+        if (!user.id) return new Response(JSON.stringify({ error: 'Invalid token' }), { status: 401, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        // Check role
+        const roleRes = await fetch(`${SUPABASE_URL}/rest/v1/user_roles?id=eq.${user.id}&select=role`, {
+          headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` },
+        });
+        const roles = await roleRes.json();
+        const isAdmin = roles.length && roles[0].role === 'admin';
+
+        if (isAdmin) {
+          return new Response(JSON.stringify({ status: 'active', plan: 'admin', expiresAt: null, trialUsed: false, isAdmin: true }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+
+        // Get subscription
+        const subRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${user.id}&select=*`, {
+          headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` },
+        });
+        const subs = await subRes.json();
+        const sub = subs[0];
+
+        if (!sub) {
+          return new Response(JSON.stringify({ status: 'none', plan: 'none', expiresAt: null, trialUsed: false }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+
+        // Check if expired
+        const isActive = sub.status === 'active' && sub.current_period_end && new Date(sub.current_period_end) > new Date();
+
+        return new Response(JSON.stringify({
+          status: isActive ? 'active' : 'expired',
+          plan: sub.plan,
+          expiresAt: sub.current_period_end,
+          trialUsed: sub.trial_used || false,
+        }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
     }
 
     return new Response('Not found', { status: 404 });

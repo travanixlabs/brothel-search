@@ -77,19 +77,17 @@ async function selectPlan(plan) {
 async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('authOverlay').style.display = 'none';
+    document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     fetchUserRole().then(() => {
       loadFavorites();
-      if (userRole === 'admin') return;
-      // Non-blocking subscription check
-      checkSubscription().then(sub => {
-        if (!sub || sub.status !== 'active') showPaywall();
-      });
+      loadPreferences();
     });
     return true;
   }
-  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
+  document.getElementById('authOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
   return false;
 }

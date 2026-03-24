@@ -1054,9 +1054,38 @@ const MAX_PHOTO_CHECKS_PER_RUN = 20;
 async function checkBrokenPhotos(env, site) {
   const { data, sha } = await loadData(env, site);
   const girls = data.girls || [];
-  const girlsWithPhotos = girls.filter(g => g.photos && g.photos.length > 0 && g.oldUrl);
-  if (girlsWithPhotos.length === 0) return { checked: 0, fixed: 0 };
+  const calendar = data.calendar || {};
 
+  // Find currently rostered girl names
+  const rosteredNames = new Set();
+  for (const [name, slots] of Object.entries(calendar)) {
+    if (name === '_published') continue;
+    if (slots && typeof slots === 'object') rosteredNames.add(name);
+  }
+
+  // Step 1: Remove dead profiles — no photos, oldUrl is 404, not rostered
+  const deadGirls = girls.filter(g => g.oldUrl && (!g.photos || g.photos.length === 0) && !rosteredNames.has(g.name) && g.originalSite !== 'Exists');
+  let removed = 0;
+  const removedNames = [];
+  for (const g of deadGirls) {
+    try {
+      const resp = await fetch(g.oldUrl, { method: 'HEAD', headers: { 'User-Agent': UA }, redirect: 'follow' });
+      if (resp.status === 404) {
+        removedNames.push(g.name);
+        removed++;
+        console.log(`[${site.name}] Removing dead profile: ${g.name} (404, no photos, not rostered)`);
+      }
+      await new Promise(r => setTimeout(r, 300));
+    } catch (e) { /* keep on error */ }
+  }
+  if (removed > 0) {
+    data.girls = girls.filter(g => !removedNames.includes(g.name));
+    // Also clean calendar entries
+    for (const name of removedNames) delete calendar[name];
+  }
+
+  // Step 2: Check broken photos on girls that have photos
+  const girlsWithPhotos = data.girls.filter(g => g.photos && g.photos.length > 0 && g.oldUrl);
   let checked = 0, fixed = 0;
   // Shuffle to check different girls each run
   for (let i = girlsWithPhotos.length - 1; i > 0; i--) {
@@ -1067,25 +1096,21 @@ async function checkBrokenPhotos(env, site) {
 
   for (const g of toCheck) {
     try {
-      // HEAD check first photo
       const resp = await fetch(g.photos[0], { method: 'HEAD', headers: { 'User-Agent': UA }, redirect: 'follow' });
       checked++;
-      if (resp.ok) continue; // photo is fine
+      if (resp.ok) continue;
 
-      // Photo is broken — re-scrape
       console.log(`[${site.name}] Broken photo for ${g.name}: ${resp.status}`);
       await new Promise(r => setTimeout(r, 500));
 
       let newPhotos = [];
       if (site.rosterFormat === 'empire' || site.rosterFormat === 'club') {
-        // Ginza site — extract ID from oldUrl
         const idMatch = g.oldUrl.match(/\/Girls\/(\d+)/);
         if (idMatch) {
           const profile = await scrapeGirlProfile(site, idMatch[1]);
           newPhotos = profile.images || [];
         }
       } else {
-        // WordPress site
         const profile = await scrapeWpProfile(site, g.oldUrl, g.name);
         newPhotos = profile.images || [];
       }
@@ -1100,14 +1125,15 @@ async function checkBrokenPhotos(env, site) {
     }
   }
 
-  if (fixed > 0) {
-    data.girls = girls;
-    await ghPut(env, site.jsonPath, data, sha,
-      `[${site.name}] Fix ${fixed} broken photo link${fixed > 1 ? 's' : ''}`);
+  if (fixed > 0 || removed > 0) {
+    const parts = [];
+    if (removed > 0) parts.push(`Remove ${removed} dead profile${removed > 1 ? 's' : ''}`);
+    if (fixed > 0) parts.push(`Fix ${fixed} broken photo${fixed > 1 ? 's' : ''}`);
+    await ghPut(env, site.jsonPath, data, sha, `[${site.name}] ${parts.join(', ')}`);
   }
 
-  console.log(`[${site.name}] Photo check: ${checked} checked, ${fixed} fixed`);
-  return { checked, fixed };
+  console.log(`[${site.name}] Photo check: ${checked} checked, ${fixed} fixed, ${removed} removed`);
+  return { checked, fixed, removed };
 }
 
 /* ── Sync: Girls ── */

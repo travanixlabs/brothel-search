@@ -77,18 +77,23 @@ async function selectPlan(plan) {
 async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
     await loadFavorites();
 
-    // Check subscription (admins bypass)
-    if (userRole !== 'admin') {
-      const sub = await checkSubscription();
-      if (!sub || (sub.status !== 'active' && !sub.isAdmin)) {
-        showPaywall();
-        return true;
-      }
+    // Admins bypass paywall
+    if (userRole === 'admin') {
+      hidePaywall();
+      document.body.style.overflow = '';
+      return true;
+    }
+
+    // Non-admin: show paywall immediately, only hide after confirmed active
+    showPaywall();
+    const sub = await checkSubscription();
+    if (sub && sub.status === 'active') {
+      hidePaywall();
     }
     return true;
   }
@@ -492,17 +497,24 @@ function checkPasswordMatch() {
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange(async (event, session) => {
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
-    if (userRole !== 'admin') {
-      const sub = await checkSubscription();
-      if (!sub || (sub.status !== 'active' && !sub.isAdmin)) { showPaywall(); return; }
+    if (userRole === 'admin') {
+      hidePaywall();
+      loadPreferences().then(() => {
+        if (userPreferences) { computeMatchScores(); renderGrid(); }
+      });
+      return;
     }
-    hidePaywall();
-    loadPreferences().then(() => {
-      if (userPreferences) { computeMatchScores(); renderGrid(); }
-    });
+    showPaywall();
+    const sub = await checkSubscription();
+    if (sub && sub.status === 'active') {
+      hidePaywall();
+      loadPreferences().then(() => {
+        if (userPreferences) { computeMatchScores(); renderGrid(); }
+      });
+    }
   }
 });
 

@@ -79,17 +79,14 @@ async function checkAuth() {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
-    await fetchUserRole();
-    await loadFavorites();
-
-    // Admins bypass paywall
-    if (userRole === 'admin') return true;
-
-    // Members: check subscription
-    const sub = await checkSubscription();
-    if (!sub || sub.status !== 'active') {
-      showPaywall();
-    }
+    fetchUserRole().then(() => {
+      loadFavorites();
+      if (userRole === 'admin') return;
+      // Non-blocking subscription check
+      checkSubscription().then(sub => {
+        if (!sub || sub.status !== 'active') showPaywall();
+      });
+    });
     return true;
   }
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';

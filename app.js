@@ -2306,6 +2306,17 @@ checkAuth().then(() => {
   });
 });
 
+// Delayed paywall check — runs 3 seconds after page load, never blocks anything
+setTimeout(async () => {
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) return; // not logged in, auth overlay handles this
+    if (userRole === 'admin') return; // admins exempt
+    const sub = await checkSubscription();
+    if (!sub || sub.status !== 'active') showPaywall();
+  } catch(e) { console.error('Paywall check:', e); }
+}, 3000);
+
 // Background particles
 (function(){
   const tpl = document.getElementById('bgMiniLogo').content;

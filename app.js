@@ -178,6 +178,7 @@ async function signOut() {
   await sbClient.auth.signOut();
   userRole = 'member';
   document.body.classList.remove('is-admin');
+  hidePaywall();
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
 }

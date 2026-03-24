@@ -1729,23 +1729,6 @@ function renderCard(g, grid) {
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.onclick = () => showProfile(g);
-    if (g.photos && g.photos.length > 1) {
-      let hoverInterval = null, hoverIdx = 0;
-      const thumb = () => el.querySelector('.card-thumb');
-      el.addEventListener('mouseenter', () => {
-        hoverIdx = 0;
-        hoverInterval = setInterval(() => {
-          hoverIdx = (hoverIdx + 1) % g.photos.length;
-          const img = thumb();
-          if (img) img.src = imgProxy(g.photos[hoverIdx]);
-        }, 2000);
-      });
-      el.addEventListener('mouseleave', () => {
-        clearInterval(hoverInterval);
-        const img = thumb();
-        if (img) img.src = imgProxy(g.photos[0]);
-      });
-    }
     grid.appendChild(el);
 }
 

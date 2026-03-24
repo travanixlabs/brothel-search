@@ -487,15 +487,11 @@ function checkPasswordMatch() {
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange(async (event, session) => {
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('authOverlay').style.display = 'none';
+    document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
     await loadFavorites();
-    if (userRole !== 'admin') {
-      const sub = await checkSubscription();
-      if (!sub || sub.status !== 'active') { showPaywall(); return; }
-    }
-    hidePaywall();
     loadPreferences().then(() => {
       if (userPreferences) { computeMatchScores(); renderGrid(); }
     });

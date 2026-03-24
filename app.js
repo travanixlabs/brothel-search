@@ -75,31 +75,40 @@ async function selectPlan(plan) {
 }
 
 async function checkAuth() {
-  const { data: { session } } = await sbClient.auth.getSession();
-  if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
-    document.getElementById('userMenu').style.display = '';
-    await fetchUserRole();
-    await loadFavorites();
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (session) {
+      document.getElementById('authOverlay').style.display = 'none';
+      document.getElementById('userMenu').style.display = '';
 
-    // Admins bypass paywall
-    if (userRole === 'admin') {
-      hidePaywall();
-      document.body.style.overflow = '';
+      try { await fetchUserRole(); } catch(e) { console.error('fetchUserRole error:', e); }
+      try { await loadFavorites(); } catch(e) { console.error('loadFavorites error:', e); }
+
+      // Admins bypass paywall
+      if (userRole === 'admin') {
+        hidePaywall();
+        document.body.style.overflow = '';
+        return true;
+      }
+
+      // Non-admin: show paywall immediately, only hide after confirmed active
+      showPaywall();
+      try {
+        const sub = await checkSubscription();
+        if (sub && sub.status === 'active') {
+          hidePaywall();
+        }
+      } catch(e) { console.error('checkSubscription error:', e); }
       return true;
     }
-
-    // Non-admin: show paywall immediately, only hide after confirmed active
-    showPaywall();
-    const sub = await checkSubscription();
-    if (sub && sub.status === 'active') {
-      hidePaywall();
-    }
-    return true;
+    document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
+    document.getElementById('userMenu').style.display = 'none';
+    return false;
+  } catch(e) {
+    console.error('checkAuth error:', e);
+    document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
+    return false;
   }
-  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
-  document.getElementById('userMenu').style.display = 'none';
-  return false;
 }
 
 async function handleAuth() {

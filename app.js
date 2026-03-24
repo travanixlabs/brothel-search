@@ -3,12 +3,6 @@ const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
 const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// If paywall was showing when user refreshed, sign them out
-if (sessionStorage.getItem('paywall_active')) {
-  sessionStorage.removeItem('paywall_active');
-  sbClient.auth.signOut();
-}
-
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
@@ -45,7 +39,6 @@ async function checkSubscription() {
 function showPaywall() {
   document.getElementById('paywallOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  sessionStorage.setItem('paywall_active', '1');
   const trialBtn = document.getElementById('paywallTrialBtn');
   if (subscriptionStatus && subscriptionStatus.trialUsed) {
     trialBtn.style.opacity = '0.4';
@@ -57,7 +50,6 @@ function showPaywall() {
 function hidePaywall() {
   document.getElementById('paywallOverlay').style.display = 'none';
   document.body.style.overflow = '';
-  sessionStorage.removeItem('paywall_active');
 }
 
 async function selectPlan(plan) {
@@ -83,40 +75,26 @@ async function selectPlan(plan) {
 }
 
 async function checkAuth() {
-  try {
-    const { data: { session } } = await sbClient.auth.getSession();
-    if (session) {
-      document.getElementById('authOverlay').style.display = 'none';
-      document.getElementById('userMenu').style.display = '';
+  const { data: { session } } = await sbClient.auth.getSession();
+  if (session) {
+    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('userMenu').style.display = '';
+    await fetchUserRole();
+    await loadFavorites();
 
-      try { await fetchUserRole(); } catch(e) { console.error('fetchUserRole error:', e); }
-      try { await loadFavorites(); } catch(e) { console.error('loadFavorites error:', e); }
+    // Admins bypass paywall
+    if (userRole === 'admin') return true;
 
-      // Admins bypass paywall
-      if (userRole === 'admin') {
-        hidePaywall();
-        document.body.style.overflow = '';
-        return true;
-      }
-
-      // Non-admin: show paywall immediately, only hide after confirmed active
+    // Members: check subscription
+    const sub = await checkSubscription();
+    if (!sub || sub.status !== 'active') {
       showPaywall();
-      try {
-        const sub = await checkSubscription();
-        if (sub && sub.status === 'active') {
-          hidePaywall();
-        }
-      } catch(e) { console.error('checkSubscription error:', e); }
-      return true;
     }
-    document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
-    document.getElementById('userMenu').style.display = 'none';
-    return false;
-  } catch(e) {
-    console.error('checkAuth error:', e);
-    document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
-    return false;
+    return true;
   }
+  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
+  document.getElementById('userMenu').style.display = 'none';
+  return false;
 }
 
 async function handleAuth() {
@@ -514,24 +492,18 @@ function checkPasswordMatch() {
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange(async (event, session) => {
   if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
-    if (userRole === 'admin') {
-      hidePaywall();
-      loadPreferences().then(() => {
-        if (userPreferences) { computeMatchScores(); renderGrid(); }
-      });
-      return;
+    await loadFavorites();
+    if (userRole !== 'admin') {
+      const sub = await checkSubscription();
+      if (!sub || sub.status !== 'active') { showPaywall(); return; }
     }
-    showPaywall();
-    const sub = await checkSubscription();
-    if (sub && sub.status === 'active') {
-      hidePaywall();
-      loadPreferences().then(() => {
-        if (userPreferences) { computeMatchScores(); renderGrid(); }
-      });
-    }
+    hidePaywall();
+    loadPreferences().then(() => {
+      if (userPreferences) { computeMatchScores(); renderGrid(); }
+    });
   }
 });
 

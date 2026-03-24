@@ -2314,6 +2314,11 @@ checkAuth().then(() => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }
   });
+  // If URL has #subscribe, show paywall immediately
+  if (window.location.hash === '#subscribe') {
+    document.getElementById('paywallOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
 });
 
 // Delayed paywall check — runs 3 seconds after page load, never blocks anything

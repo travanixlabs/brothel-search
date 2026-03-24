@@ -19,6 +19,61 @@ async function fetchUserRole() {
   document.getElementById('userMenuRole').textContent = userRole;
 }
 
+let subscriptionStatus = null;
+const WORKER_URL = 'https://brothel-search-sync.travanixlabs.workers.dev';
+const STRIPE_PK = 'pk_test_51TDeqBHn68lZzkHWFu0CfjzwjgnfhBWVB1LSf5R7q5JcQLXHJ6euyTI1sZjePJeml0dsMddMyfLFVmFFHwoqpwmL00jd1XcTrc';
+
+async function checkSubscription() {
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) return null;
+    const res = await fetch(`${WORKER_URL}/subscription-status`, {
+      headers: { Authorization: `Bearer ${session.access_token}` },
+    });
+    const data = await res.json();
+    subscriptionStatus = data;
+    return data;
+  } catch (e) { console.error('Subscription check failed:', e); return null; }
+}
+
+function showPaywall() {
+  document.getElementById('paywallOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  const trialBtn = document.getElementById('paywallTrialBtn');
+  if (subscriptionStatus && subscriptionStatus.trialUsed) {
+    trialBtn.style.opacity = '0.4';
+    trialBtn.style.pointerEvents = 'none';
+    trialBtn.querySelector('.paywall-plan-note').textContent = 'Already used';
+  }
+}
+
+function hidePaywall() {
+  document.getElementById('paywallOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+async function selectPlan(plan) {
+  const { data: { session } } = await sbClient.auth.getSession();
+  if (!session) return;
+  const btn = document.querySelector(`[data-plan="${plan}"]`);
+  if (btn) btn.textContent = 'Redirecting...';
+  try {
+    const res = await fetch(`${WORKER_URL}/create-checkout`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        plan,
+        userId: session.user.id,
+        email: session.user.email,
+        returnUrl: window.location.origin + window.location.pathname,
+      }),
+    });
+    const data = await res.json();
+    if (data.error) { alert(data.error); if (btn) btn.textContent = 'Select'; return; }
+    if (data.sessionUrl) window.location.href = data.sessionUrl;
+  } catch (e) { alert('Payment error: ' + e.message); if (btn) btn.textContent = 'Select'; }
+}
+
 async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
@@ -26,6 +81,15 @@ async function checkAuth() {
     document.getElementById('userMenu').style.display = '';
     await fetchUserRole();
     await loadFavorites();
+
+    // Check subscription (admins bypass)
+    if (userRole !== 'admin') {
+      const sub = await checkSubscription();
+      if (!sub || (sub.status !== 'active' && !sub.isAdmin)) {
+        showPaywall();
+        return true;
+      }
+    }
     return true;
   }
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
@@ -426,11 +490,16 @@ function checkPasswordMatch() {
 }
 
 // Listen for auth state changes (e.g. email confirmation redirect)
-sbClient.auth.onAuthStateChange((event, session) => {
+sbClient.auth.onAuthStateChange(async (event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
-    fetchUserRole();
+    await fetchUserRole();
+    if (userRole !== 'admin') {
+      const sub = await checkSubscription();
+      if (!sub || (sub.status !== 'active' && !sub.isAdmin)) { showPaywall(); return; }
+    }
+    hidePaywall();
     loadPreferences().then(() => {
       if (userPreferences) { computeMatchScores(); renderGrid(); }
     });
@@ -2237,6 +2306,11 @@ document.getElementById('moreFiltersToggle').onclick = function() {
   this.classList.toggle('open');
   document.getElementById('moreFiltersPanel').classList.toggle('open');
 };
+
+// Handle payment return
+if (new URLSearchParams(window.location.search).get('payment') === 'success') {
+  window.history.replaceState({}, '', window.location.pathname);
+}
 
 // Init - always load profiles for background preview, gate interactions behind auth
 loadProfiles();

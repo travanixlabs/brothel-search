@@ -312,6 +312,12 @@ footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);lette
 .auth-error{color:#ff4444;font-size:13px;text-align:center;margin-top:12px;min-height:18px}
 .auth-link{font-size:13px;text-align:center;margin-top:16px;cursor:pointer;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite}
 .auth-link:hover{text-decoration:underline}
+.paywall-plan{flex:1;min-width:180px;max-width:220px;padding:24px 20px;border:1px solid rgba(201,149,44,0.2);border-radius:15px;background:radial-gradient(60% 60% at 50% 10%,rgba(201,149,44,0.04),rgba(8,8,14,0.95));backdrop-filter:blur(24px);text-align:center;cursor:pointer;transition:all .3s ease}
+.paywall-plan:hover{border-color:rgba(201,149,44,0.5);box-shadow:0 0 30px rgba(201,149,44,0.1);animation:goldBorderShimmer 3s ease-in-out infinite}
+.paywall-plan-name{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;margin-bottom:12px}
+.paywall-plan-price{font-size:28px;font-weight:700;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite;margin-bottom:4px}
+.paywall-plan-price span{font-size:12px;font-weight:400}
+.paywall-plan-note{font-size:12px;color:var(--text-dim);animation:goldColorShimmer 4s ease infinite}
 .sign-out-btn{background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;cursor:pointer;transition:all .3s}
 .sign-out-btn:hover{border-color:var(--accent);color:var(--accent)}
 /* Profile Settings */

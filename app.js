@@ -39,6 +39,7 @@ async function checkSubscription() {
 function showPaywall() {
   document.getElementById('paywallOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  if (window.location.hash !== '#subscribe') window.history.replaceState(null, '', '#subscribe');
   const trialBtn = document.getElementById('paywallTrialBtn');
   if (subscriptionStatus && subscriptionStatus.trialUsed) {
     trialBtn.style.opacity = '0.4';
@@ -50,6 +51,7 @@ function showPaywall() {
 function hidePaywall() {
   document.getElementById('paywallOverlay').style.display = 'none';
   document.body.style.overflow = '';
+  if (window.location.hash === '#subscribe') window.history.replaceState(null, '', window.location.pathname);
 }
 
 async function selectPlan(plan) {
@@ -2311,12 +2313,23 @@ checkAuth().then(() => {
 setTimeout(async () => {
   try {
     const { data: { session } } = await sbClient.auth.getSession();
-    if (!session) return; // not logged in, auth overlay handles this
-    if (userRole === 'admin') return; // admins exempt
+    if (!session) return;
+    if (userRole === 'admin') return;
+    // Show paywall if unsubscribed OR if URL has #subscribe
     const sub = await checkSubscription();
     if (!sub || sub.status !== 'active') showPaywall();
+    else if (window.location.hash === '#subscribe') hidePaywall(); // subscribed user visiting #subscribe
   } catch(e) { console.error('Paywall check:', e); }
 }, 3000);
+
+// Handle direct navigation to #subscribe
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#subscribe') {
+    if (userRole !== 'admin') showPaywall();
+  } else {
+    hidePaywall();
+  }
+});
 
 // Background particles
 (function(){

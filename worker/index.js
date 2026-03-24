@@ -1047,6 +1047,69 @@ async function loadData(env, site) {
   }
 }
 
+/* ── Photo health check ── */
+
+const MAX_PHOTO_CHECKS_PER_RUN = 20;
+
+async function checkBrokenPhotos(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const girls = data.girls || [];
+  const girlsWithPhotos = girls.filter(g => g.photos && g.photos.length > 0 && g.oldUrl);
+  if (girlsWithPhotos.length === 0) return { checked: 0, fixed: 0 };
+
+  let checked = 0, fixed = 0;
+  // Shuffle to check different girls each run
+  for (let i = girlsWithPhotos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [girlsWithPhotos[i], girlsWithPhotos[j]] = [girlsWithPhotos[j], girlsWithPhotos[i]];
+  }
+  const toCheck = girlsWithPhotos.slice(0, MAX_PHOTO_CHECKS_PER_RUN);
+
+  for (const g of toCheck) {
+    try {
+      // HEAD check first photo
+      const resp = await fetch(g.photos[0], { method: 'HEAD', headers: { 'User-Agent': UA }, redirect: 'follow' });
+      checked++;
+      if (resp.ok) continue; // photo is fine
+
+      // Photo is broken — re-scrape
+      console.log(`[${site.name}] Broken photo for ${g.name}: ${resp.status}`);
+      await new Promise(r => setTimeout(r, 500));
+
+      let newPhotos = [];
+      if (site.rosterFormat === 'empire' || site.rosterFormat === 'club') {
+        // Ginza site — extract ID from oldUrl
+        const idMatch = g.oldUrl.match(/\/Girls\/(\d+)/);
+        if (idMatch) {
+          const profile = await scrapeGirlProfile(site, idMatch[1]);
+          newPhotos = profile.images || [];
+        }
+      } else {
+        // WordPress site
+        const profile = await scrapeWpProfile(site, g.oldUrl, g.name);
+        newPhotos = profile.images || [];
+      }
+
+      if (newPhotos.length > 0) {
+        g.photos = newPhotos;
+        fixed++;
+        console.log(`[${site.name}] Fixed ${g.name}: ${newPhotos.length} photos`);
+      }
+    } catch (e) {
+      console.error(`[${site.name}] Photo check error for ${g.name}:`, e.message);
+    }
+  }
+
+  if (fixed > 0) {
+    data.girls = girls;
+    await ghPut(env, site.jsonPath, data, sha,
+      `[${site.name}] Fix ${fixed} broken photo link${fixed > 1 ? 's' : ''}`);
+  }
+
+  console.log(`[${site.name}] Photo check: ${checked} checked, ${fixed} fixed`);
+  return { checked, fixed };
+}
+
 /* ── Sync: Girls ── */
 
 const MAX_NEW_PER_RUN = 50;
@@ -1485,6 +1548,19 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
 
+    // ── Photo health check endpoints ──
+    if (url.pathname === '/check-photos' && request.method === 'POST') {
+      try {
+        const results = await Promise.all([
+          checkBrokenPhotos(env, SITES.empire), checkBrokenPhotos(env, SITES.club),
+          checkBrokenPhotos(env, SITES.kyoto206), checkBrokenPhotos(env, SITES.sakura57),
+          checkBrokenPhotos(env, SITES.top127), checkBrokenPhotos(env, SITES.fantasyclub35),
+          checkBrokenPhotos(env, SITES.city429),
+        ]);
+        return json({ results });
+      } catch (e) { return json({ error: e.message }); }
+    }
+
     // ── Stripe / Subscription endpoints ──
 
     const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
@@ -1755,9 +1831,22 @@ export default {
           syncAllGirls(syncWpGirls, SITES.city429),
         ]);
 
-        console.log('All girls syncs complete. Starting calendar syncs...');
+        console.log('All girls syncs complete. Checking for broken photos...');
 
-        // Step 2: Calendar sync — all venues in parallel, runs after girls sync
+        // Step 2: Photo health check — all venues in parallel
+        await Promise.all([
+          checkBrokenPhotos(env, SITES.empire).catch(e => console.error('[Empire] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.club).catch(e => console.error('[Club] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.top127).catch(e => console.error('[Top 127] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.city429).catch(e => console.error('[429 City] Photo check error:', e)),
+        ]);
+
+        console.log('Photo checks complete. Starting calendar syncs...');
+
+        // Step 3: Calendar sync — all venues in parallel, runs after girls sync
         await Promise.all([
           syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e)),
           syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e)),

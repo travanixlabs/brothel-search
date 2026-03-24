@@ -488,9 +488,16 @@ sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
-    fetchUserRole();
-    loadPreferences().then(() => {
-      if (userPreferences) { computeMatchScores(); renderGrid(); }
+    fetchUserRole().then(() => {
+      loadPreferences().then(() => {
+        if (userPreferences) { computeMatchScores(); renderGrid(); }
+      });
+      // Paywall check 2s after login
+      setTimeout(async () => {
+        if (userRole === 'admin') return;
+        const sub = await checkSubscription();
+        if (!sub || sub.status !== 'active') showPaywall();
+      }, 2000);
     });
   }
 });

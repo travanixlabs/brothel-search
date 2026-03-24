@@ -3,6 +3,12 @@ const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
 const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// If paywall was showing when user refreshed, sign them out
+if (sessionStorage.getItem('paywall_active')) {
+  sessionStorage.removeItem('paywall_active');
+  sbClient.auth.signOut();
+}
+
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
@@ -39,6 +45,7 @@ async function checkSubscription() {
 function showPaywall() {
   document.getElementById('paywallOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  sessionStorage.setItem('paywall_active', '1');
   const trialBtn = document.getElementById('paywallTrialBtn');
   if (subscriptionStatus && subscriptionStatus.trialUsed) {
     trialBtn.style.opacity = '0.4';
@@ -50,7 +57,7 @@ function showPaywall() {
 function hidePaywall() {
   document.getElementById('paywallOverlay').style.display = 'none';
   document.body.style.overflow = '';
-  document.body.classList.remove('access-locked');
+  sessionStorage.removeItem('paywall_active');
 }
 
 async function selectPlan(plan) {

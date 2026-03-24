@@ -50,6 +50,7 @@ function showPaywall() {
 function hidePaywall() {
   document.getElementById('paywallOverlay').style.display = 'none';
   document.body.style.overflow = '';
+  document.body.classList.remove('access-locked');
 }
 
 async function selectPlan(plan) {

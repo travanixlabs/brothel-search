@@ -2320,7 +2320,7 @@ setTimeout(async () => {
     if (!sub || sub.status !== 'active') showPaywall();
     else if (window.location.hash === '#subscribe') hidePaywall(); // subscribed user visiting #subscribe
   } catch(e) { console.error('Paywall check:', e); }
-}, 3000);
+}, 2000);
 
 // Handle direct navigation to #subscribe
 window.addEventListener('hashchange', () => {

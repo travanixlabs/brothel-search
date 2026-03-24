@@ -75,21 +75,27 @@ async function selectPlan(plan) {
 }
 
 async function checkAuth() {
-  const { data: { session } } = await sbClient.auth.getSession();
-  if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-    document.getElementById('userMenu').style.display = '';
-    fetchUserRole().then(() => {
-      loadFavorites();
-      loadPreferences();
-    });
-    return true;
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (session) {
+      document.getElementById('authOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+      document.getElementById('userMenu').style.display = '';
+      try { await fetchUserRole(); } catch(e) { console.error('fetchUserRole error:', e); }
+      try { await loadFavorites(); } catch(e) { console.error('loadFavorites error:', e); }
+      try { await loadPreferences(); } catch(e) { console.error('loadPreferences error:', e); }
+      return true;
+    }
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('userMenu').style.display = 'none';
+    return false;
+  } catch(e) {
+    console.error('checkAuth error:', e);
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    return false;
   }
-  document.getElementById('authOverlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  document.getElementById('userMenu').style.display = 'none';
-  return false;
 }
 
 async function handleAuth() {
@@ -486,16 +492,19 @@ function checkPasswordMatch() {
 
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange(async (event, session) => {
-  if (session) {
-    document.getElementById('authOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-    document.getElementById('userMenu').style.display = '';
-    await fetchUserRole();
-    await loadFavorites();
-    loadPreferences().then(() => {
-      if (userPreferences) { computeMatchScores(); renderGrid(); }
-    });
-  }
+  try {
+    if (session) {
+      document.getElementById('authOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+      document.getElementById('userMenu').style.display = '';
+      try { await fetchUserRole(); } catch(e) { console.error('onAuth fetchUserRole:', e); }
+      try { await loadFavorites(); } catch(e) { console.error('onAuth loadFavorites:', e); }
+      try {
+        await loadPreferences();
+        if (userPreferences) { computeMatchScores(); renderGrid(); }
+      } catch(e) { console.error('onAuth loadPreferences:', e); }
+    }
+  } catch(e) { console.error('onAuthStateChange error:', e); }
 });
 
 // Enter key to submit

@@ -174,6 +174,7 @@ function toggleAuthMode() {
   document.getElementById('authPasswordReqs').style.display = isSignup ? '' : 'none';
   document.getElementById('authPasswordConfirm').value = '';
   document.getElementById('authError').textContent = '';
+  document.getElementById('authResetPw').style.display = isSignup ? 'none' : '';
 }
 
 async function signOut() {
@@ -183,6 +184,26 @@ async function signOut() {
   hidePaywall();
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
+}
+
+async function resetPassword() {
+  const email = document.getElementById('authEmail').value.trim();
+  const errorEl = document.getElementById('authError');
+  if (!email) {
+    errorEl.textContent = 'Please enter your email address';
+    errorEl.style.color = '#ff4444';
+    return;
+  }
+  const { error } = await sbClient.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + window.location.pathname
+  });
+  if (error) {
+    errorEl.textContent = error.message;
+    errorEl.style.color = '#ff4444';
+  } else {
+    errorEl.textContent = 'Password reset link sent to your email';
+    errorEl.style.color = '#00c864';
+  }
 }
 
 function checkPasswordReqs() {

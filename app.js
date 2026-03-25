@@ -544,6 +544,17 @@ function checkPasswordMatch() {
 
 // Listen for auth state changes (e.g. email confirmation redirect)
 sbClient.auth.onAuthStateChange((event, session) => {
+  if (event === 'PASSWORD_RECOVERY') {
+    document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
+    document.getElementById('userMenu').style.display = '';
+    fetchUserRole();
+    setTimeout(() => {
+      document.getElementById('settingsOverlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.getElementById('settingsNewPw').focus();
+    }, 500);
+    return;
+  }
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';

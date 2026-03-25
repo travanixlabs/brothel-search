@@ -1678,6 +1678,38 @@ export default {
       }
     }
 
+    // Stripe Customer Portal
+    if (url.pathname === '/create-portal-session' && request.method === 'POST') {
+      try {
+        const { userId } = await request.json();
+        // Get stripe_customer_id from Supabase
+        const subRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}&select=stripe_customer_id`, {
+          headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` },
+        });
+        const subs = await subRes.json();
+        if (!subs.length || !subs[0].stripe_customer_id) {
+          return new Response(JSON.stringify({ error: 'No subscription found' }), { status: 404, headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+        const body = new URLSearchParams({
+          customer: subs[0].stripe_customer_id,
+          return_url: 'https://travanixlabs.github.io/brothel-search/',
+        });
+        const portalRes = await fetch(`${STRIPE_API}/billing_portal/sessions`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Basic ${btoa(env.STRIPE_SECRET_KEY + ':')}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: body.toString(),
+        });
+        const session = await portalRes.json();
+        if (session.error) return new Response(JSON.stringify({ error: session.error.message }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+        return new Response(JSON.stringify({ portalUrl: session.url }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
+    }
+
     // Stripe Webhook
     if (url.pathname === '/stripe-webhook' && request.method === 'POST') {
       try {

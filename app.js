@@ -218,11 +218,49 @@ function showProfileSettings() {
   document.getElementById('settingsPwMsg').textContent = '';
   document.getElementById('settingsOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  loadSubscriptionInfo();
 }
 
 function closeSettings() {
   document.getElementById('settingsOverlay').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+async function loadSubscriptionInfo() {
+  const info = document.getElementById('subscriptionInfo');
+  const btn = document.getElementById('manageSubscriptionBtn');
+  if (!info) return;
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) { info.textContent = 'Not signed in'; btn.style.display = 'none'; return; }
+    const res = await fetch(WORKER_URL + '/subscription-status', { headers: { Authorization: 'Bearer ' + session.access_token } });
+    const sub = await res.json();
+    if (sub.status === 'active' && sub.expiresAt) {
+      const days = Math.ceil((new Date(sub.expiresAt) - new Date()) / (1000 * 60 * 60 * 24));
+      info.textContent = sub.plan.charAt(0).toUpperCase() + sub.plan.slice(1) + ' plan — ' + days + ' days remaining';
+      btn.style.display = '';
+    } else {
+      info.textContent = 'No active subscription';
+      btn.style.display = 'none';
+    }
+  } catch (e) { info.textContent = 'Unable to load subscription info'; btn.style.display = 'none'; }
+}
+
+async function openPortal() {
+  const { data: { session } } = await sbClient.auth.getSession();
+  if (!session) return;
+  const btn = document.getElementById('manageSubscriptionBtn');
+  btn.textContent = 'Loading...';
+  try {
+    const res = await fetch(WORKER_URL + '/create-portal-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId: session.user.id }),
+    });
+    const data = await res.json();
+    if (data.portalUrl) window.location.href = data.portalUrl;
+    else { btn.textContent = 'Manage Subscription'; alert(data.error || 'Failed to open portal'); }
+  } catch (e) { btn.textContent = 'Manage Subscription'; alert('Error: ' + e.message); }
 }
 
 function showPreferences() {

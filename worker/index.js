@@ -616,6 +616,28 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
 
 /* ── Name validation ── */
 
+function classifyGirl(entry) {
+  const text = [entry.desc || '', entry.type || '', entry.exp || '', entry.lang || '', entry.name || '', ...(entry.labels || [])].join(' ');
+  // AV/Pornstar detection
+  const avRe = /\b(pornstar|porn\s*star|porn\s*actress|AV\s*(actress|star|idol)|JAV\s*(actress|star|idol)?)\b/i;
+  entry.pornstar = avRe.test(text) ? 'Pornstar' : '';
+  // English level
+  const langText = ((entry.lang || '') + ' ' + (entry.desc || '')).toLowerCase();
+  if (/no english/i.test(langText)) entry.englishLevel = 'No English';
+  else if (/limited english|basic english/i.test(langText)) entry.englishLevel = 'Limited English';
+  else if (/english/i.test(langText)) entry.englishLevel = 'English';
+  else entry.englishLevel = '';
+  // Experience level
+  const expText = ((entry.exp || '') + ' ' + (entry.desc || '')).toLowerCase();
+  if (/inexperienced|very new|brand new|first time|green apple/i.test(expText)) entry.experienceLevel = 'Inexperienced';
+  else if (/experienced/i.test(expText)) entry.experienceLevel = 'Experienced';
+  else entry.experienceLevel = '';
+  // Country from name (JAV = Japanese)
+  if (!entry.country || !entry.country.length) {
+    if (/\bJAV\b/i.test(entry.name || '')) entry.country = ['Japanese'];
+  }
+}
+
 function isValidGirlName(name) {
   if (!name) return false;
   // Reject names with special chars (|, &, !, =, etc.) — these are page titles, not real names
@@ -1329,6 +1351,7 @@ async function syncCalendar(env, site) {
                 } catch (e) { console.error(`[${site.name}] Image error ${pName}: ${e.message}`); }
               }
             }
+            classifyGirl(entry);
             for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
             data.girls.push(entry);
             validNames.add(pName);
@@ -1384,6 +1407,7 @@ async function syncCalendar(env, site) {
             entry.labels = extractLabels(profile.desc);
             entry.lastModified = now;
             entry.lastRostered = '';
+            classifyGirl(entry);
             for (const k of Object.keys(entry)) { if (entry[k] === undefined) delete entry[k]; }
             data.girls.push(entry);
             validNames.add(card.name);

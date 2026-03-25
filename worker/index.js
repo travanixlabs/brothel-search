@@ -1650,13 +1650,26 @@ export default {
 
         // Create Stripe Checkout Session
         const isRecurring = plan === 'recurring';
+        // Create or find Stripe customer
+        const stripeAuth = { Authorization: `Basic ${btoa(env.STRIPE_SECRET_KEY + ':')}`, 'Content-Type': 'application/x-www-form-urlencoded' };
+        let customerId;
+        const custSearch = await fetch(`${STRIPE_API}/customers?email=${encodeURIComponent(email)}&limit=1`, { headers: stripeAuth });
+        const custData = await custSearch.json();
+        if (custData.data && custData.data.length > 0) {
+          customerId = custData.data[0].id;
+        } else {
+          const custCreate = await fetch(`${STRIPE_API}/customers`, { method: 'POST', headers: stripeAuth, body: new URLSearchParams({ email, 'metadata[user_id]': userId }).toString() });
+          const newCust = await custCreate.json();
+          customerId = newCust.id;
+        }
+
         const body = new URLSearchParams({
           'line_items[0][price]': PRICE_IDS[plan],
           'line_items[0][quantity]': '1',
           mode: isRecurring ? 'subscription' : 'payment',
           success_url: returnUrl || 'https://travanixlabs.github.io/brothel-search/?payment=success',
           cancel_url: returnUrl || 'https://travanixlabs.github.io/brothel-search/?payment=cancelled',
-          customer_email: email,
+          customer: customerId,
           'metadata[user_id]': userId,
           'metadata[plan]': plan,
         });

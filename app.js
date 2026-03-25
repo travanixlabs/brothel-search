@@ -556,19 +556,25 @@ function handleRoute() {
   // Close all overlays first
   ['settingsOverlay', 'preferencesOverlay', 'favoritesOverlay'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+    if (el) el.classList.remove('open');
   });
   document.body.style.overflow = '';
 
   if (hash === 'profile/settings') { showProfileSettings(); return true; }
   if (hash === 'profile/preferences') { showPreferences(); return true; }
   if (hash === 'profile/favourites') { showFavorites(); return true; }
-  if (hash === 'subscribe') { return true; } // handled by paywall logic
+  if (hash === 'subscribe') { return true; }
   return false;
 }
 
 window.addEventListener('hashchange', () => {
-  handleRoute();
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'subscribe') {
+    if (userRole !== 'admin') showPaywall();
+  } else {
+    hidePaywall();
+    handleRoute();
+  }
 });
 
 sbClient.auth.onAuthStateChange((event, session) => {
@@ -2433,14 +2439,7 @@ setTimeout(async () => {
   } catch(e) { console.error('Paywall check:', e); }
 }, 2000);
 
-// Handle direct navigation to #subscribe
-window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#subscribe') {
-    if (userRole !== 'admin') showPaywall();
-  } else {
-    hidePaywall();
-  }
-});
+// hashchange handled above in unified listener
 
 // Background particles
 (function(){

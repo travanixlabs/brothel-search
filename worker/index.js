@@ -1835,31 +1835,45 @@ export default {
   async scheduled(event, env, ctx) {
     const hour = new Date(event.scheduledTime).getUTCHours();
 
-    // 8:00 UTC (7pm AEDT) or 20:00 UTC (7am AEDT) — sync girls first, then calendar
-    if (hour === 8 || hour === 20) {
-      ctx.waitUntil((async () => {
-        // Step 1: Girls sync — all venues in parallel, each loops until no remaining
-        async function syncAllGirls(fn, site) {
-          let result;
-          do {
-            result = await fn(env, site).catch(e => { console.error(`[${site.name}] Girls sync error:`, e); return { remaining: 0 }; });
-            console.log(`[${site.name}] Girls batch: added=${result.added || 0}, remaining=${result.remaining || 0}`);
-          } while (result.remaining > 0);
-        }
+    // 22:00 UTC (9am AEDT), 7:00 UTC (6pm AEDT), 10:00 UTC (9pm AEDT)
+    ctx.waitUntil((async () => {
+      // Step 1: Girls sync — all venues in parallel
+      async function syncAllGirls(fn, site) {
+        let result;
+        do {
+          result = await fn(env, site).catch(e => { console.error(`[${site.name}] Girls sync error:`, e); return { remaining: 0 }; });
+          console.log(`[${site.name}] Girls batch: added=${result.added || 0}, remaining=${result.remaining || 0}`);
+        } while (result.remaining > 0);
+      }
 
-        await Promise.all([
-          syncAllGirls(syncGirls, SITES.empire),
-          syncAllGirls(syncGirls, SITES.club),
-          syncAllGirls(syncWpGirls, SITES.kyoto206),
-          syncAllGirls(syncWpGirls, SITES.sakura57),
-          syncAllGirls(syncWpGirls, SITES.top127),
-          syncAllGirls(syncWpGirls, SITES.fantasyclub35),
-          syncAllGirls(syncWpGirls, SITES.city429),
-        ]);
+      await Promise.all([
+        syncAllGirls(syncGirls, SITES.empire),
+        syncAllGirls(syncGirls, SITES.club),
+        syncAllGirls(syncWpGirls, SITES.kyoto206),
+        syncAllGirls(syncWpGirls, SITES.sakura57),
+        syncAllGirls(syncWpGirls, SITES.top127),
+        syncAllGirls(syncWpGirls, SITES.fantasyclub35),
+        syncAllGirls(syncWpGirls, SITES.city429),
+      ]);
 
-        console.log('All girls syncs complete. Checking for broken photos...');
+      console.log('All girls syncs complete.');
 
-        // Step 2: Photo health check — all venues in parallel
+      // Step 2: Calendar sync — all venues in parallel
+      await Promise.all([
+        syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e)),
+        syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e)),
+        syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e)),
+        syncCalendar(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Calendar sync error:', e)),
+        syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e)),
+        syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e)),
+        syncCalendar(env, SITES.city429).catch(e => console.error('[429 City] Calendar sync error:', e)),
+      ]);
+
+      console.log('All calendar syncs complete.');
+
+      // Step 3: Photo health check — only on 9am AEDT run (22:00 UTC)
+      if (hour === 22) {
+        console.log('9am run — checking for broken photos...');
         await Promise.all([
           checkBrokenPhotos(env, SITES.empire).catch(e => console.error('[Empire] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.club).catch(e => console.error('[Club] Photo check error:', e)),
@@ -1869,22 +1883,8 @@ export default {
           checkBrokenPhotos(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.city429).catch(e => console.error('[429 City] Photo check error:', e)),
         ]);
-
-        console.log('Photo checks complete. Starting calendar syncs...');
-
-        // Step 3: Calendar sync — all venues in parallel, runs after girls sync
-        await Promise.all([
-          syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e)),
-          syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e)),
-          syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e)),
-          syncCalendar(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Calendar sync error:', e)),
-          syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e)),
-          syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e)),
-          syncCalendar(env, SITES.city429).catch(e => console.error('[429 City] Calendar sync error:', e)),
-        ]);
-
-        console.log('All calendar syncs complete.');
-      })());
-    }
+        console.log('Photo checks complete.');
+      }
+    })());
   },
 };

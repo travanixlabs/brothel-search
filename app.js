@@ -245,6 +245,7 @@ function showProfileSettings() {
 function closeSettings() {
   document.getElementById('settingsOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  if (window.location.hash.includes('profile/')) history.replaceState(null, '', window.location.pathname);
 }
 
 async function loadSubscriptionInfo() {
@@ -298,6 +299,7 @@ function showPreferences() {
 function closePreferences() {
   document.getElementById('preferencesOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  if (window.location.hash.includes('profile/')) history.replaceState(null, '', window.location.pathname);
 }
 
 // Favorites
@@ -502,6 +504,7 @@ function renderFavRoster(favGirls) {
 function closeFavorites() {
   document.getElementById('favoritesOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  if (window.location.hash.includes('profile/')) history.replaceState(null, '', window.location.pathname);
 }
 
 async function changePassword() {
@@ -543,15 +546,38 @@ function checkPasswordMatch() {
 }
 
 // Listen for auth state changes (e.g. email confirmation redirect)
+// Hash routing
+function navigateTo(route) {
+  window.location.hash = route;
+}
+
+function handleRoute() {
+  const hash = window.location.hash.replace('#', '');
+  // Close all overlays first
+  ['settingsOverlay', 'preferencesOverlay', 'favoritesOverlay'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  document.body.style.overflow = '';
+
+  if (hash === 'profile/settings') { showProfileSettings(); return true; }
+  if (hash === 'profile/preferences') { showPreferences(); return true; }
+  if (hash === 'profile/favourites') { showFavorites(); return true; }
+  if (hash === 'subscribe') { return true; } // handled by paywall logic
+  return false;
+}
+
+window.addEventListener('hashchange', () => {
+  handleRoute();
+});
+
 sbClient.auth.onAuthStateChange((event, session) => {
   if (event === 'PASSWORD_RECOVERY') {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     fetchUserRole();
     setTimeout(() => {
-      document.getElementById('settingsOverlay').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      document.getElementById('settingsNewPw').focus();
+      navigateTo('profile/settings');
     }, 500);
     return;
   }
@@ -2384,10 +2410,13 @@ checkAuth().then(() => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }
   });
-  // If URL has #subscribe, show paywall immediately
-  if (window.location.hash === '#subscribe') {
+  // Handle hash routes on page load
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'subscribe') {
     document.getElementById('paywallOverlay').style.display = 'flex';
     document.body.style.overflow = 'hidden';
+  } else if (hash.startsWith('profile/')) {
+    handleRoute();
   }
 });
 

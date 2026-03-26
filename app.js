@@ -458,7 +458,7 @@ function renderFavRoster(favGirls) {
     }
     const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
     const priceStr = (g.val1 || g.val2 || g.val3) ? [g.val1 ? '$' + g.val1 : '', g.val2 ? '$' + g.val2 : '', g.val3 ? '$' + g.val3 : ''].filter(Boolean).join(' / ') : g.venueName;
-    html += '<div class="roster-entry" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + g.name.replace(/'/g, "\\'") + '\'))">' +
+    html += '<div class="roster-entry" onclick="closeFavorites();showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + g.name.replace(/'/g, "\\'") + '\'))">' +
       '<div class="roster-entry-info">' +
       (thumb ? '<img class="roster-entry-thumb" src="' + thumb + '" alt="">' : '<div class="roster-entry-thumb" style="background:rgba(255,255,255,0.06)"></div>') +
       '<div><div class="roster-entry-name">' + g.name + '</div><div class="roster-entry-venue">' + priceStr + '</div></div></div>' +
@@ -1896,7 +1896,7 @@ function renderCard(g, grid) {
         <div class="card-hover-line"></div>
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
-    el.onclick = () => showProfile(g);
+    el.onclick = () => { closeFavorites(); showProfile(g); };
     grid.appendChild(el);
 }
 

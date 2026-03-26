@@ -8803,6 +8803,29 @@
       "labels": [],
       "lastModified": "2026-03-23T08:00:32.119Z",
       "lastRostered": "2026-03-26"
+    },
+    {
+      "name": "Babi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "C",
+      "val1": "170",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-03-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/babi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/f1079294835cf9632d420f0c63d33583.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-26T07:00:30.227Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9070,7 +9093,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-23T08:00:32.119Z",
+  "lastGirlsSync": "2026-03-26T07:00:30.227Z",
   "lastCalendarSync": "2026-03-25T09:22:30.202Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

@@ -385,7 +385,7 @@ async function scrapeGirlProfile(site, id) {
   let desc = '';
   const descPatterns = [
     /<div class="(?:about|description|text|info-text|detail)"[^>]*>([\s\S]*?)<\/div>/i,
-    /<div class="row"><label>(?:Description|About|Info):<\/label>\s*([\s\S]*?)<\/div>/i,
+    /<div class="row"><label>(?:Holder Description|Description|About|Info):<\/label>\s*([\s\S]*?)<\/div>/i,
   ];
   for (const re of descPatterns) {
     const dm = html.match(re);

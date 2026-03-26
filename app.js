@@ -6,7 +6,7 @@ const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
-const MAX_FAVORITES = 20;
+function getMaxFavorites() { return userRole === 'admin' ? Infinity : 10; }
 
 async function fetchUserRole() {
   const { data, error } = await sbClient.from('user_roles').select('role').single();
@@ -317,8 +317,8 @@ async function toggleFavorite(oldUrl, e) {
     userFavorites.splice(idx, 1);
     await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
   } else {
-    if (userFavorites.length >= MAX_FAVORITES) {
-      alert('Maximum ' + MAX_FAVORITES + ' favorites. Remove one first.');
+    if (userFavorites.length >= getMaxFavorites()) {
+      alert('Maximum ' + getMaxFavorites() + ' favourites. Remove one first.');
       return;
     }
     userFavorites.push(oldUrl);
@@ -347,7 +347,8 @@ function showFavorites() {
     const sb = matchScores.get(b.venue + ':' + b.name) || 0;
     return sb - sa;
   });
-  count.textContent = favGirls.length + ' / ' + MAX_FAVORITES + ' favorites';
+  const max = getMaxFavorites();
+  count.textContent = favGirls.length + (max === Infinity ? '' : ' / ' + max) + ' favourites';
 
   if (favGirls.length === 0) {
     grid.style.display = 'none';

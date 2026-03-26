@@ -3,7 +3,7 @@ main = "index.js"
 compatibility_date = "2024-01-01"
 
 [triggers]
-crons = ["0 22 * * *", "0 7 * * *", "0 10 * * *"]  # 9am, 6pm, 9pm AEDT
+crons = ["0 6 * * *", "0 7 * * *", "0 10 * * *"]  # 5pm AEDT (girls), 6pm AEDT (roster), 9pm AEDT (roster)
 
 # Secrets (set via dashboard or `wrangler secret put`):
 #   GITHUB_TOKEN  - GitHub personal access token (contents read/write scope)

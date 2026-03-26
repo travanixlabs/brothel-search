@@ -857,7 +857,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-03-26",
+      "lastRostered": "2026-03-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/Lori-Cn-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/09/Lori-Cn-05.jpeg"
@@ -3017,7 +3017,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-03-25",
+      "lastRostered": "2026-03-26",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/03/Jolin-Vn-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/03/Jolin-Vn-02.jpeg",
@@ -8549,6 +8549,10 @@
       "2026-03-26": {
         "start": "10:00",
         "end": "20:00"
+      },
+      "2026-03-27": {
+        "start": "10:00",
+        "end": "20:00"
       }
     },
     "Izumi": {},
@@ -8558,8 +8562,8 @@
         "end": "17:00"
       },
       "2026-03-26": {
-        "start": "15:00",
-        "end": "19:00"
+        "start": "16:00",
+        "end": "20:00"
       },
       "2026-03-27": {
         "start": "11:00",
@@ -8673,11 +8677,15 @@
       "2026-03-25": {
         "start": "13:00",
         "end": "22:00"
+      },
+      "2026-03-26": {
+        "start": "12:00",
+        "end": "22:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-23T08:00:32.858Z",
-  "lastCalendarSync": "2026-03-25T22:01:10.170Z",
+  "lastCalendarSync": "2026-03-26T07:00:36.379Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

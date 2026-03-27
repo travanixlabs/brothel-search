@@ -1880,9 +1880,9 @@ function renderCard(g, grid, lazy) {
       const rd = new Date(g.lastRostered + 'T00:00:00');
       if (rd > today) return '';
       const diff = Math.round((today - rd) / 86400000);
-      if (diff === 0) return 'Last rostered: Today';
-      if (diff === 1) return 'Last rostered: Yesterday';
-      return 'Last rostered: ' + diff + ' days ago';
+      if (diff === 0) return 'Last available: Today';
+      if (diff === 1) return 'Last available: Yesterday';
+      return 'Last available: ' + diff + ' days ago';
     })();
 
     const girlKey = g.venue + ':' + g.name;
@@ -2398,7 +2398,7 @@ function showProfile(g) {
           ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
           ${detailRow('Start Date', g.startDate)}
-          ${detailRow('Last Roster', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
+          ${detailRow('Last Available', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
           ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
           ${detailRow('Experience', g.exp)}
           ${detailRow('Special', g.special)}

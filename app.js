@@ -1079,7 +1079,9 @@ const RANGE_DEFS = [
   { key: 'cup', label: 'Cup', field: 'cup', type: 'cup' },
   { key: 'val1', label: '30 Min', field: 'val1', type: 'num', prefix: '$' },
   { key: 'val2', label: '45 Min', field: 'val2', type: 'num', prefix: '$' },
-  { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' }
+  { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' },
+  { key: 'startDate', label: 'Start Date', field: 'startDate', type: 'date' },
+  { key: 'lastRostered', label: 'Last Available', field: 'lastRostered', type: 'date' }
 ];
 const CUP_ORDER = ['A','B','C','D','DD','E','F','G','H'];
 function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); return i >= 0 ? i : -1; }

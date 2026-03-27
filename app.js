@@ -1081,7 +1081,7 @@ function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
-function imgProxy(url, w = 200) { if (!url) return ''; return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&output=webp&q=80`; }
+function imgProxy(url, w = 300) { if (!url) return ''; return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&output=webp&q=80`; }
 
 function fmt24to12(t) {
   const [h, m] = t.split(':').map(Number);
@@ -1849,11 +1849,11 @@ let currentFiltered = [];
 let currentPage = 0;
 let loadingMore = false;
 
-function renderCard(g, grid) {
+function renderCard(g, grid, lazy) {
     const el = document.createElement('div');
     el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
     const img = g.photos && g.photos.length
-      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
+      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}"${lazy ? ' loading="lazy"' : ''}>`
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
@@ -1907,9 +1907,25 @@ function loadMore() {
   const end = Math.min(start + PAGE_SIZE, currentFiltered.length);
   if (start >= currentFiltered.length) return;
   loadingMore = true;
-  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
+  const lazy = currentPage > 0;
+  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid, lazy);
   currentPage++;
   loadingMore = false;
+}
+
+function preloadCardImages(girls, count) {
+  document.querySelectorAll('link[data-preload-card]').forEach(l => l.remove());
+  const n = Math.min(count, girls.length);
+  for (let i = 0; i < n; i++) {
+    const g = girls[i];
+    if (!g.photos || !g.photos.length) continue;
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = imgProxy(g.photos[0]);
+    link.setAttribute('data-preload-card', '');
+    document.head.appendChild(link);
+  }
 }
 
 function renderGrid() {
@@ -1924,6 +1940,7 @@ function renderGrid() {
     return;
   }
 
+  preloadCardImages(currentFiltered, PAGE_SIZE);
   grid.innerHTML = '';
   loadMore();
   if (rosterViewActive) renderRoster();

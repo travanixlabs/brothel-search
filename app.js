@@ -1920,7 +1920,11 @@ const cardObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const el = entry.target;
       const delay = Array.from(el.parentElement.children).indexOf(el) % PAGE_SIZE * 40;
-      setTimeout(() => el.classList.add('card-visible'), delay);
+      setTimeout(() => {
+        el.classList.add('card-visible');
+        // After entrance animation, switch to settled state so tab-switch doesn't replay
+        setTimeout(() => { el.classList.remove('card-visible'); el.classList.add('card-settled'); }, 600);
+      }, delay);
       cardObserver.unobserve(el);
     }
   });

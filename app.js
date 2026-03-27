@@ -1999,7 +1999,16 @@ function renderGrid() {
 
   grid.innerHTML = '';
   loadMore();
+  fillViewport();
   if (rosterViewActive) renderRoster();
+}
+
+function fillViewport() {
+  requestAnimationFrame(() => {
+    while (currentPage * PAGE_SIZE < currentFiltered.length && document.body.offsetHeight <= window.innerHeight + 400) {
+      loadMore();
+    }
+  });
 }
 
 window.addEventListener('scroll', () => {

@@ -34,7 +34,7 @@
     <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
     <input class="auth-input" id="authPasswordConfirm" type="password" placeholder="Confirm Password" autocomplete="new-password" style="display:none">
     <div id="authPasswordReqs" style="display:none;font-size:12px;margin:4px 0 12px;line-height:1.8">
-      <div style="margin-bottom:4px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Password must contain:</div>
+      <div style="margin-bottom:4px;color:var(--gold)">Password must contain:</div>
       <ul class="pw-reqs" style="margin:0;padding-left:20px">
         <li id="reqLen" style="color:#dbb550">At least 8 characters</li>
         <li id="reqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
@@ -68,7 +68,7 @@
       <input class="settings-input" id="settingsNewPw" type="password" placeholder="New Password">
       <input class="settings-input" id="settingsConfirmPw" type="password" placeholder="Confirm New Password">
       <div id="settingsPwReqs" style="font-size:12px;margin:0 0 12px;line-height:1.8">
-        <div style="margin-bottom:4px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Password must contain:</div>
+        <div style="margin-bottom:4px;color:var(--gold)">Password must contain:</div>
         <ul class="pw-reqs" style="margin:0;padding-left:20px">
           <li id="sReqLen" style="color:#dbb550">At least 8 characters</li>
           <li id="sReqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
@@ -83,7 +83,7 @@
 
     <div class="settings-section">
       <h3 class="settings-label gold-shimmer-text">Subscription</h3>
-      <div id="subscriptionInfo" style="margin-bottom:12px;animation:goldColorShimmer 4s ease infinite"></div>
+      <div id="subscriptionInfo" style="margin-bottom:12px;color:var(--gold)"></div>
       <button class="settings-btn" id="manageSubscriptionBtn" onclick="openPortal()">Manage Subscription</button>
     </div>
 

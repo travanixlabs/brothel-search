@@ -1071,9 +1071,7 @@ const RANGE_DEFS = [
   { key: 'height', label: 'Height', field: 'height', type: 'num', suffix: 'cm' },
   { key: 'val1', label: '30 Min', field: 'val1', type: 'num', prefix: '$' },
   { key: 'val2', label: '45 Min', field: 'val2', type: 'num', prefix: '$' },
-  { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' },
-  { key: 'startDate', label: 'Start Date', field: 'startDate', type: 'date' },
-  { key: 'lastRostered', label: 'Last Roster', field: 'lastRostered', type: 'date' }
+  { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' }
 ];
 const CUP_ORDER = ['A','B','C','D','DD','E','F','G','H'];
 function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); return i >= 0 ? i : -1; }
@@ -1494,8 +1492,8 @@ function renderFilters() {
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
-  // Date-time picker in More Filters
-  document.getElementById('dtPickerRow').innerHTML = buildDateTimePicker();
+  // Date-time picker hidden
+  document.getElementById('dtPickerRow').innerHTML = '';
 
   // Text filter inputs in More Filters panel
   const mfd = document.getElementById('moreFiltersDropdowns');
@@ -1593,8 +1591,6 @@ function renderFilters() {
     { id: 'val1', label: '30 Min' },
     { id: 'val2', label: '45 Min' },
     { id: 'val3', label: '60 Min' },
-    { id: 'startDate', label: 'Start Date' },
-    { id: 'lastRostered', label: 'Last Roster' },
     { id: 'preference', label: 'Preference' }
   ];
   const sortOpts = sorts.map(s => ({ value: s.id, label: s.label }));

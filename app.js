@@ -1074,6 +1074,7 @@ const RANGE_DEFS = [
   { key: 'age', label: 'Age', field: 'age', type: 'num' },
   { key: 'body', label: 'Body', field: 'body', type: 'num' },
   { key: 'height', label: 'Height', field: 'height', type: 'num', suffix: 'cm' },
+  { key: 'cup', label: 'Cup', field: 'cup', type: 'cup' },
   { key: 'val1', label: '30 Min', field: 'val1', type: 'num', prefix: '$' },
   { key: 'val2', label: '45 Min', field: 'val2', type: 'num', prefix: '$' },
   { key: 'val3', label: '60 Min', field: 'val3', type: 'num', prefix: '$' }

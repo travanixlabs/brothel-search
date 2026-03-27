@@ -1639,8 +1639,8 @@ function renderRangeFilters() {
     const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
     if (dataMin === dataMax) return;
     rangeDefaults[def.key] = { min: dataMin, max: dataMax };
-    const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-    const defaultMin = def.key === 'lastRostered' ? Math.max(dataMin, thirtyDaysAgo.getTime()) : dataMin;
+    const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const defaultMin = def.key === 'lastRostered' ? Math.max(dataMin, sevenDaysAgo.getTime()) : dataMin;
     if (!rangeFilters[def.key] && defaultMin > dataMin) rangeFilters[def.key] = { min: defaultMin, max: dataMax };
     const rf = rangeFilters[def.key] || { min: defaultMin, max: dataMax };
     if (rf.min < dataMin) rf.min = dataMin;

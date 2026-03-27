@@ -2607,8 +2607,6 @@ setTimeout(async () => {
     var span = document.createElement('span');
     span.style.left = p.l + '%';
     span.style.top = p.t + '%';
-    span.style.animationDelay = p.d + 's';
-    span.style.animationDuration = p.dur + 's';
     span.appendChild(tpl.cloneNode(true));
     container.appendChild(span);
   });

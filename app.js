@@ -2380,6 +2380,7 @@ function showProfile(g) {
       <div class="profile-gallery">
         <div class="profile-main-wrap">
           <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
+          ${photos.length > 1 ? '<div class="photo-counter" id="photoCounter">1 / ' + photos.length + '</div>' : ''}
         </div>
         <div class="profile-thumbs">
           ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
@@ -2456,6 +2457,8 @@ function crossfadeProfilePhoto(idx) {
     next.style.inset = '';
   }, 550);
   document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === idx));
+  const counter = document.getElementById('photoCounter');
+  if (counter) counter.textContent = (idx + 1) + ' / ' + photos.length;
 }
 
 // Arrow key navigation for profile photos

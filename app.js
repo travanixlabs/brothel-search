@@ -2559,18 +2559,22 @@ window.addEventListener('pageshow', (e) => {
   }
 });
 
-// visibilitychange: refresh roster data if tab was hidden for too long
+// visibilitychange: pause animations when hidden, refresh stale data when visible
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible' && profilesLoaded) {
-    const hiddenFor = Date.now() - lastVisibleTime;
-    if (hiddenFor > STALE_THRESHOLD) {
-      console.log(`Tab hidden for ${Math.round(hiddenFor / 60000)}m — refreshing profiles`);
-      loadProfiles().then(() => { lastVisibleTime = Date.now(); });
-    } else {
-      lastVisibleTime = Date.now();
+  if (document.visibilityState === 'visible') {
+    document.documentElement.style.animationPlayState = '';
+    if (profilesLoaded) {
+      const hiddenFor = Date.now() - lastVisibleTime;
+      if (hiddenFor > STALE_THRESHOLD) {
+        console.log(`Tab hidden for ${Math.round(hiddenFor / 60000)}m — refreshing profiles`);
+        loadProfiles().then(() => { lastVisibleTime = Date.now(); });
+      } else {
+        lastVisibleTime = Date.now();
+      }
     }
   } else if (document.visibilityState === 'hidden') {
     lastVisibleTime = Date.now();
+    document.documentElement.style.animationPlayState = 'paused';
   }
 });
 

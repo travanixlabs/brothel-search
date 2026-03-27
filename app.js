@@ -2379,6 +2379,7 @@ function showProfile(g) {
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
       <div class="card-venue ${g.venue}">${g.venueName}</div>
+      ${countries ? '<span class="country-badge">' + countries + '</span>' : ''}
       ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
       ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}
       ${g.pornstar ? '<span class="av-badge">AV</span>' : ''}
@@ -2397,7 +2398,6 @@ function showProfile(g) {
       </div>
       <div>
         <div class="profile-detail">
-          ${detailRow('Country', countries)}
           ${detailRow('Age', g.age)}
           ${detailRow('Body', g.body)}
           ${detailRow('Height', g.height ? g.height + ' cm' : '')}

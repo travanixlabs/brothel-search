@@ -128,7 +128,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .more-filters-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);margin:0 0 16px;color:var(--gold);-webkit-text-fill-color:unset;animation:goldColorShimmer 4s ease infinite}
 .more-filters-toggle:hover{}
 .more-filters-toggle svg{width:14px;height:14px;fill:currentColor;transition:transform .2s}
-.more-filters-toggle.open{border-color:rgba(201,149,44,0.4);box-shadow:0 0 16px rgba(201,149,44,0.08)}
+.more-filters-toggle.open{animation:filterSelectedGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite,goldColorShimmer 4s ease infinite}
 .more-filters-toggle.open svg{transform:rotate(180deg)}
 .more-filters-panel{display:none}
 .more-filters-panel.open{display:block}

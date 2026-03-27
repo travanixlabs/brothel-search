@@ -201,14 +201,14 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-view.active{display:block}
 .roster-day{margin-bottom:32px}
 .roster-day-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.roster-day-tab{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:none;border:1px solid rgba(201,149,44,0.08);border-radius:8px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);background-image:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-day-tab{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:none;border:1px solid rgba(201,149,44,0.08);border-radius:8px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);color:var(--gold)}
 .roster-day-tab:hover{border-color:rgba(201,149,44,0.2);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
 .roster-day-tab.active{border-color:rgba(201,149,44,0.4);box-shadow:0 4px 20px rgba(0,0,0,0.3),0 0 12px rgba(201,149,44,0.08)}
 .roster-day-tab .tab-count{font-size:10px;opacity:0.6;margin-left:6px}
-.roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:baseline;gap:12px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-day-header{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:baseline;gap:12px;color:var(--gold)}
 .roster-day-name{font-size:18px;font-weight:700}
 .roster-day-date{font-size:12px;letter-spacing:1px}
-.roster-day-count{font-size:11px;font-family:'Orbitron',sans-serif;letter-spacing:2px;margin-bottom:12px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-day-count{font-size:11px;font-family:'Orbitron',sans-serif;letter-spacing:2px;margin-bottom:12px;color:var(--gold)}
 .roster-timeline{position:relative;padding:8px 0}
 .roster-timeline-header{display:grid;grid-template-columns:160px 1fr;gap:12px;margin-bottom:4px;padding:0 8px}
 .roster-timeline-hours{display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:1px}
@@ -216,20 +216,20 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-entry:hover{background:rgba(255,255,255,0.04)}
 .roster-entry-info{display:flex;align-items:center;gap:10px;min-width:0}
 .roster-entry-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.1)}
-.roster-entry-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s ease infinite}
+.roster-entry-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--gold)}
 .roster-entry-venue{font-size:10px;color:var(--text-dim);letter-spacing:1px}
 .roster-entry-bar-container{position:relative;height:28px;background:rgba(255,255,255,0.03);border-radius:3px;overflow:hidden}
 .roster-entry-bar{position:absolute;top:2px;bottom:2px;border-radius:2px;min-width:8px;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1px;color:#fff;font-weight:600;transition:opacity .2s}
-.roster-entry-bar.now{background:linear-gradient(90deg,rgba(0,200,100,0.6),rgba(0,200,100,0.3),rgba(0,255,120,0.5),rgba(0,200,100,0.3));background-size:300% 100%;animation:greenShimmer 3s ease infinite}
+.roster-entry-bar.now{background:rgba(0,200,100,0.4)}
 @keyframes greenShimmer{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
-.roster-entry-bar.later{background:linear-gradient(90deg,rgba(60,120,255,0.5),rgba(60,120,255,0.25),rgba(100,160,255,0.4),rgba(60,120,255,0.25));background-size:300% 100%;animation:blueShimmer 3s ease infinite}
-.roster-entry-bar.future{background:linear-gradient(90deg,rgba(60,120,255,0.5),rgba(60,120,255,0.25),rgba(100,160,255,0.4),rgba(60,120,255,0.25));background-size:300% 100%;animation:blueShimmer 3s ease infinite}
+.roster-entry-bar.later{background:rgba(60,120,255,0.35)}
+.roster-entry-bar.future{background:rgba(60,120,255,0.35)}
 @keyframes blueShimmer{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
 .roster-timeline-line{position:absolute;top:0;bottom:0;width:2px;z-index:10;pointer-events:none}
 .roster-timeline-line.now{background:rgba(255,80,80,0.7)}
-.roster-timeline-line.filter{background:linear-gradient(180deg,#c9952c,#f5d78e,#c9952c);background-size:100% 300%;animation:goldShimmerVert 3s ease-in-out infinite}
+.roster-timeline-line.filter{background:var(--gold)}
 @keyframes goldShimmerVert{0%,100%{background-position:0 0%}50%{background-position:0 100%}}
-.roster-timeline-line-label{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:9px;white-space:nowrap;letter-spacing:1px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite}
+.roster-timeline-line-label{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:9px;white-space:nowrap;letter-spacing:1px;color:var(--gold)}
 .roster-timeline-line.now .roster-timeline-line-label{background:none;-webkit-background-clip:unset;-webkit-text-fill-color:rgba(255,80,80,0.9);background-clip:unset;animation:none;color:rgba(255,80,80,0.9)}
 .roster-venue-filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .roster-venue-btn{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--text-dim);cursor:pointer;transition:all .2s}

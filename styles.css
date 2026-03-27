@@ -168,7 +168,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-img{position:relative;background:linear-gradient(135deg,rgba(201,149,44,0.04),rgba(180,74,255,0.02))}
 .card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(6,6,12,0.85) 100%);pointer-events:none;z-index:1}
 .card-thumb{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s cubic-bezier(0.23,1,0.32,1),opacity .4s;border-radius:16px 16px 0 0}
-.card-info{padding:22px 20px 18px;line-height:1.5}
+.card-info{padding:22px 20px 18px;line-height:1.5;background:rgba(16,16,24,0.6)}
 .card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;color:var(--gold)}
 .new-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);-webkit-text-fill-color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15);text-transform:uppercase}
 @keyframes newPulse{0%,100%{opacity:1}50%{opacity:.7}}
@@ -231,9 +231,11 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .roster-venue-btn{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--text-dim);cursor:pointer;transition:all .2s}
 .roster-venue-btn:hover{border-color:var(--gold);color:var(--gold)}
 .roster-venue-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(180,74,255,0.12)}
-.card-last-rostered.available-now{color:#00c864}
-.card-last-rostered.available-later{color:#3c78ff}
-.card-last-rostered.available-future{color:#3c78ff}
+.card-last-rostered.available-now,.card-last-rostered.available-later,.card-last-rostered.available-future{color:var(--text-dim);display:flex;align-items:center;gap:6px}
+.card-last-rostered.available-now::before,.card-last-rostered.available-later::before,.card-last-rostered.available-future::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.card-last-rostered.available-now::before{background:#00c864;box-shadow:0 0 6px rgba(0,200,100,0.4)}
+.card-last-rostered.available-later::before{background:#3c78ff;box-shadow:0 0 6px rgba(60,120,255,0.4)}
+.card-last-rostered.available-future::before{background:#3c78ff;box-shadow:0 0 6px rgba(60,120,255,0.4)}
 .available-now{color:#00c864}
 .available-later{color:#3c78ff}
 .available-future{color:#3c78ff}

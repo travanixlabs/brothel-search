@@ -326,9 +326,11 @@ async function toggleFavorite(oldUrl, e) {
     await sbClient.from('user_favorites').insert({ user_id: user.id, old_url: oldUrl });
   }
   renderGrid();
-  // Update heart in profile detail if open
+  // Update heart and panel glow in profile detail if open
   const detailHeart = document.getElementById('profileFavHeart');
   if (detailHeart) detailHeart.classList.toggle('active', userFavorites.includes(oldUrl));
+  const panel = document.getElementById('profilePanel');
+  if (panel && detailHeart) panel.classList.toggle('favorited', userFavorites.includes(oldUrl));
 }
 
 function isFavorite(g) {
@@ -2368,6 +2370,7 @@ function showProfile(g) {
   const photos = g.photos || [];
   const mainImg = photos.length ? photos[0] : '';
 
+  panel.classList.toggle('favorited', isFavorite(g));
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">

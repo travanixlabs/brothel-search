@@ -401,10 +401,8 @@ body.is-admin .admin-only{display:initial!important}
 .fav-heart svg path{animation:goldStrokeShimmer 4s ease infinite}
 .fav-heart:hover svg path{animation:goldFillShimmer 4s ease infinite;filter:drop-shadow(0 0 4px rgba(201,149,44,0.4))}
 .fav-heart.active svg path{animation:goldFillShimmer 4s ease infinite;filter:drop-shadow(0 0 6px rgba(201,149,44,0.5))}
-.girl-card.favorited{animation:favGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
-.profile-panel.favorited{animation:profileFavGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
-#favoritesOverlay .settings-container{animation:profileFavGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
-@keyframes profileFavGlow{0%,100%{box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 20px rgba(201,149,44,0.15)}50%{box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 40px rgba(201,149,44,0.3),0 0 80px rgba(201,149,44,0.1)}}
-@keyframes favGlow{0%,100%{box-shadow:0 0 10px rgba(201,149,44,0.15),0 0 20px rgba(201,149,44,0.1)}50%{box-shadow:0 0 25px rgba(201,149,44,0.4),0 0 50px rgba(201,149,44,0.2)}}
+.girl-card.favorited{animation:goldBorderShimmer 3s ease-in-out infinite}
+.profile-panel.favorited{animation:goldBorderShimmer 3s ease-in-out infinite}
+#favoritesOverlay .settings-container{animation:goldBorderShimmer 3s ease-in-out infinite}
 /* Match badge on cards */
 .match-badge{position:absolute;top:8px;right:8px;z-index:5;padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--bg-dark);-webkit-text-fill-color:var(--bg-dark);background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c,#e1b97e,#f5e6a3,#c9952c);background-size:200% 200%;animation:goldShimmer 4s ease infinite;box-shadow:0 2px 10px rgba(201,149,44,0.4);pointer-events:none}

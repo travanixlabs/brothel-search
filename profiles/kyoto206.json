@@ -8826,6 +8826,32 @@
       "labels": [],
       "lastModified": "2026-03-26T07:00:30.227Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Otoha",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "166",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-03-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/otoha-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/c5aa6a4028d8d8933e2f498a106d7d63.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/b9f09aa4f25137874ca7a624a8ffeca9.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/5dfb55cd4b8453bf67f29a58c1462da9.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/03/d70a4f3e09dee87c7a2df149743aca19.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-27T06:00:38.021Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9093,7 +9119,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-26T07:00:30.227Z",
+  "lastGirlsSync": "2026-03-27T06:00:38.021Z",
   "lastCalendarSync": "2026-03-25T09:22:30.202Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

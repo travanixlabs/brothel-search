@@ -1862,16 +1862,16 @@ function getFiltered() {
   return list;
 }
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
 let currentFiltered = [];
 let currentPage = 0;
 let loadingMore = false;
 
-function renderCard(g, grid, lazy) {
+function renderCard(g, grid) {
     const el = document.createElement('div');
     el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
     const img = g.photos && g.photos.length
-      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}"${lazy ? ' loading="lazy"' : ''}>`
+      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
@@ -1979,26 +1979,11 @@ function loadMore() {
   const end = Math.min(start + PAGE_SIZE, currentFiltered.length);
   if (start >= currentFiltered.length) return;
   loadingMore = true;
-  const lazy = currentPage > 0;
-  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid, lazy);
+  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
   currentPage++;
   loadingMore = false;
 }
 
-function preloadCardImages(girls, count) {
-  document.querySelectorAll('link[data-preload-card]').forEach(l => l.remove());
-  const n = Math.min(count, girls.length);
-  for (let i = 0; i < n; i++) {
-    const g = girls[i];
-    if (!g.photos || !g.photos.length) continue;
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = imgProxy(g.photos[0]);
-    link.setAttribute('data-preload-card', '');
-    document.head.appendChild(link);
-  }
-}
 
 function renderGrid() {
   const grid = document.getElementById('girlsGrid');
@@ -2012,7 +1997,6 @@ function renderGrid() {
     return;
   }
 
-  preloadCardImages(currentFiltered, PAGE_SIZE);
   grid.innerHTML = '';
   loadMore();
   if (rosterViewActive) renderRoster();

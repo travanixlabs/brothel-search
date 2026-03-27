@@ -832,6 +832,7 @@ function initPrefSliders() {
     const minInput = container.querySelector('[data-handle=min]');
     const maxInput = container.querySelector('[data-handle=max]');
 
+    const isCup = container.hasAttribute('data-cup');
     function update() {
       const lo = parseInt(minInput.value);
       const hi = parseInt(maxInput.value);
@@ -841,8 +842,8 @@ function initPrefSliders() {
       const pctR = 100 - ((hi - rangeMin) / (rangeMax - rangeMin)) * 100;
       fill.style.left = pctL + '%';
       fill.style.right = pctR + '%';
-      minSpan.textContent = lo;
-      maxSpan.textContent = hi;
+      minSpan.textContent = isCup ? (CUP_ORDER[lo] || lo) : lo;
+      maxSpan.textContent = isCup ? (CUP_ORDER[hi] || hi) : hi;
     }
 
     minInput.addEventListener('input', () => {
@@ -903,8 +904,8 @@ function readPrefsFromForm() {
     age_min: age.min, age_max: age.max,
     body_min: body.min, body_max: body.max,
     height_min: height.min, height_max: height.max,
-    cup_min: document.getElementById('prefCupMin').value || null,
-    cup_max: document.getElementById('prefCupMax').value || null,
+    cup_min: CUP_ORDER[parseInt(document.getElementById('prefCup').querySelector('[data-handle=min]').value)] || null,
+    cup_max: CUP_ORDER[parseInt(document.getElementById('prefCup').querySelector('[data-handle=max]').value)] || null,
     countries: getChecked('prefCountries'),
     services: getChecked('prefServices'),
     experience: getChecked('prefExperience'),
@@ -945,8 +946,14 @@ function writePrefsToForm(p) {
   setSlider('prefPrice60', p.price60_min, p.price60_max);
   setSlider('prefPhotos', p.photos_min, p.photos_max);
 
-  if (p.cup_min) document.getElementById('prefCupMin').value = p.cup_min;
-  if (p.cup_max) document.getElementById('prefCupMax').value = p.cup_max;
+  if (p.cup_min || p.cup_max) {
+    const cupC = document.getElementById('prefCup');
+    const cupMinI = cupC.querySelector('[data-handle=min]');
+    const cupMaxI = cupC.querySelector('[data-handle=max]');
+    if (p.cup_min) cupMinI.value = cupToNum(p.cup_min);
+    if (p.cup_max) cupMaxI.value = cupToNum(p.cup_max);
+    cupMinI.dispatchEvent(new Event('input'));
+  }
 
   setChecked('prefCountries', p.countries);
   setChecked('prefServices', p.services);
@@ -966,8 +973,6 @@ function clearPrefsForm() {
     minI.value = minI.min;
     minI.dispatchEvent(new Event('input'));
   });
-  document.getElementById('prefCupMin').value = '';
-  document.getElementById('prefCupMax').value = '';
   document.querySelectorAll('#settingsOverlay .pref-checkboxes input[type=checkbox]').forEach(cb => cb.checked = false);
   document.getElementById('prefLastRosterDays').value = '';
   document.getElementById('prefDateStartedDays').value = '';

@@ -2295,7 +2295,7 @@ function buildProfileCalendar(g) {
   }
 
   let html = '<div class="profile-calendar" style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
-  html += '<div style="font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;background:linear-gradient(135deg,#c9952c,#f5d78e,#c9952c,#f5d78e);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease-in-out infinite">Schedule</div>';
+  html += '<div style="font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;color:var(--gold)">Schedule</div>';
 
   for (const day of days) {
     const [sh, sm] = day.slot.start.split(':').map(Number);
@@ -2323,7 +2323,7 @@ function buildProfileCalendar(g) {
     }
 
     html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
-    html += '<div style="min-width:70px;font-size:11px;letter-spacing:1px;color:var(--gold);animation:goldColorShimmer 3s ease-in-out infinite">' + label + ' <span style="opacity:0.6">' + dateLabel + '</span></div>';
+    html += '<div style="min-width:70px;font-size:11px;letter-spacing:1px;color:var(--gold)">' + label + ' <span style="opacity:0.6">' + dateLabel + '</span></div>';
     html += '<div style="flex:1;position:relative;height:22px;background:rgba(255,255,255,0.03);border-radius:4px;overflow:visible">';
     html += '<div class="roster-entry-bar ' + barClass + '" style="position:absolute;top:0;bottom:0;left:' + leftPct + '%;width:' + widthPct + '%;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1px"><span>' + timeStr + '</span></div>';
 

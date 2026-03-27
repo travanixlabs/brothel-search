@@ -404,6 +404,7 @@ body.is-admin .admin-only{display:initial!important}
 .fav-heart.active svg path{animation:goldFillShimmer 4s ease infinite;filter:drop-shadow(0 0 6px rgba(201,149,44,0.5))}
 .girl-card.favorited{animation:favGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
 .profile-panel.favorited{animation:profileFavGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
+#favoritesOverlay .settings-container{animation:profileFavGlow 2s ease-in-out infinite,goldBorderShimmer 3s ease-in-out infinite}
 @keyframes profileFavGlow{0%,100%{box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 20px rgba(201,149,44,0.15)}50%{box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 40px rgba(201,149,44,0.3),0 0 80px rgba(201,149,44,0.1)}}
 @keyframes favGlow{0%,100%{box-shadow:0 0 10px rgba(201,149,44,0.15),0 0 20px rgba(201,149,44,0.1)}50%{box-shadow:0 0 25px rgba(201,149,44,0.4),0 0 50px rgba(201,149,44,0.2)}}
 /* Match badge on cards */

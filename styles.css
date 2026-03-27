@@ -401,4 +401,5 @@ body.is-admin .admin-only{display:initial!important}
 #favoritesOverlay .settings-container{border-color:rgba(201,149,44,0.4);box-shadow:0 0 20px rgba(201,149,44,0.2),0 0 40px rgba(201,149,44,0.1)}
 /* Match badge on cards */
 .card-badges{position:absolute;top:8px;right:8px;z-index:5;display:flex;flex-direction:column;gap:4px;align-items:flex-end;pointer-events:none}
+.country-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15)}
 .match-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--bg-dark);-webkit-text-fill-color:var(--bg-dark);background:var(--gold);box-shadow:0 2px 10px rgba(201,149,44,0.4)}

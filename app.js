@@ -1897,7 +1897,7 @@ function renderCard(g, grid) {
 
     el.innerHTML = `
       <div class="fav-heart${favActive}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
-      <div class="card-badges">${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
+      <div class="card-badges">${countries ? '<span class="country-badge">' + countries + '</span>' : ''}${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-info">
         <div class="card-name">${g.name || ''}</div>

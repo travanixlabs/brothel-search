@@ -1277,6 +1277,14 @@ function hasAnyFilter() {
   return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeFavFilter.include.length || activeFavFilter.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
 }
 
+function updateMoreFiltersCount() {
+  const count = Object.values(textFilters).filter(v => v).length +
+    Object.keys(rangeFilters).filter(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); }).length +
+    (activeDateTime ? 1 : 0);
+  const badge = document.getElementById('moreFiltersBadge');
+  if (badge) { badge.textContent = count || ''; badge.style.display = count ? 'inline-flex' : 'none'; }
+}
+
 function updateClearBtn() {
   const fr = document.getElementById('filterRow');
   const existing = document.getElementById('clearAllBtn');
@@ -1990,9 +1998,10 @@ function renderGrid() {
   currentPage = 0;
 
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
+  updateMoreFiltersCount();
 
   if (!currentFiltered.length) {
-    grid.innerHTML = '<div class="empty-msg">No girls match your filters.</div>';
+    grid.innerHTML = '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls match your filters</div></div>';
     return;
   }
 

@@ -1862,7 +1862,7 @@ function getFiltered() {
   return list;
 }
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 10;
 let currentFiltered = [];
 let currentPage = 0;
 let loadingMore = false;

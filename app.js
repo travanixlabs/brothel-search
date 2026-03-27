@@ -2369,8 +2369,11 @@ function showProfile(g) {
   panel.classList.toggle('favorited', isFavorite(g));
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-      <div class="card-venue ${g.venue}">${g.venueName}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}</div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+      <div class="card-venue ${g.venue}">${g.venueName}</div>
+      ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
+      ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}
+      ${g.pornstar ? '<span class="av-badge">AV</span>' : ''}
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
     </div>
     <div class="profile-name">${g.name || ''}</div>

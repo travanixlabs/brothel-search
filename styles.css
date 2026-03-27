@@ -168,7 +168,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .girl-card{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .5s cubic-bezier(0.23,1,0.32,1);clip-path:none;position:relative;box-shadow:none;opacity:0;transform:translateY(30px)}
 .girl-card.card-visible{opacity:1;transform:translateY(0);transition:opacity .5s cubic-bezier(0.23,1,0.32,1),transform .5s cubic-bezier(0.23,1,0.32,1)}
 .girl-card.card-settled{opacity:1;transform:none;transition:border-color .5s,background .5s,box-shadow .5s,transform .5s cubic-bezier(0.23,1,0.32,1)}
-.girl-card:hover,.girl-card.card-visible:hover,.girl-card.card-settled:hover{border-color:rgba(201,149,44,0.3);background:rgba(12,12,20,0.6);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.5),0 0 24px rgba(201,149,44,0.06)}
+.girl-card:hover,.girl-card.card-visible:hover,.girl-card.card-settled:hover{border-color:rgba(201,149,44,0.3);background:rgba(12,12,20,0.6)}
 .card-img{position:relative;background:linear-gradient(135deg,rgba(201,149,44,0.04),rgba(180,74,255,0.02))}
 .card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(6,6,12,0.85) 100%);pointer-events:none;z-index:1}
 .card-thumb{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s cubic-bezier(0.23,1,0.32,1),opacity .4s}

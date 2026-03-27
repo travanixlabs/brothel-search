@@ -1213,7 +1213,20 @@ function autoExtractLabels(girls) {
   });
 }
 
+function showSkeletonGrid() {
+  const grid = document.getElementById('girlsGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < PAGE_SIZE; i++) {
+    const el = document.createElement('div');
+    el.className = 'skeleton-card';
+    el.style.animationDelay = (i * 0.05) + 's';
+    el.innerHTML = '<div class="skeleton-img"></div><div class="skeleton-info"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div>';
+    grid.appendChild(el);
+  }
+}
+
 async function loadProfiles() {
+  showSkeletonGrid();
   const results = await Promise.allSettled(
     VENUES.map(async v => {
       const r = await fetch(`${PROFILES_BASE}/${v.file}`);
@@ -1896,8 +1909,58 @@ function renderCard(g, grid, lazy) {
         <div class="card-hover-line"></div>
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
-    el.onclick = () => { closeFavorites(); showProfile(g); };
+    el.onclick = (e) => { closeFavorites(); spawnParticles(e); showProfile(g); };
     grid.appendChild(el);
+    cardObserver.observe(el);
+}
+
+// Staggered card entrance via IntersectionObserver
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = Array.from(el.parentElement.children).indexOf(el) % PAGE_SIZE * 40;
+      setTimeout(() => el.classList.add('card-visible'), delay);
+      cardObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.05 });
+
+// Gold particle burst on card click
+function spawnParticles(e) {
+  let canvas = document.querySelector('.particle-canvas');
+  if (!canvas) {
+    canvas = document.createElement('canvas');
+    canvas.className = 'particle-canvas';
+    document.body.appendChild(canvas);
+  }
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+  const cx = e.clientX, cy = e.clientY;
+  const particles = [];
+  for (let i = 0; i < 28; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1.5 + Math.random() * 4;
+    particles.push({ x: cx, y: cy, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1, size: 1.5 + Math.random() * 2.5, color: ['#c9952c','#f5e6a3','#e1b97e','#f5d78e'][Math.floor(Math.random()*4)] });
+  }
+  function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.life -= 0.02;
+      if (p.life <= 0) continue;
+      alive = true;
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (alive) requestAnimationFrame(tick);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  requestAnimationFrame(tick);
 }
 
 function loadMore() {
@@ -2310,7 +2373,9 @@ function showProfile(g) {
     <div class="profile-name">${g.name || ''}</div>
     <div class="profile-layout">
       <div class="profile-gallery">
-        <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
+        <div class="profile-main-wrap">
+          <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
+        </div>
         <div class="profile-thumbs">
           ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
@@ -2339,21 +2404,53 @@ function showProfile(g) {
       </div>
     </div>
     ${buildProfileCalendar(g)}`;
-  overlay.classList.add('active');
+  // Cinematic open: show overlay then trigger transition
+  overlay.style.display = 'flex';
+  requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('active')));
   document.body.style.overflow = 'hidden';
 
-  // Auto-rotate profile photos
+  // Auto-rotate profile photos with crossfade
   clearInterval(window._profileRotate);
   window._profilePhotos = photos;
   window._profilePhotoIdx = 0;
   if (photos.length > 1) {
     window._profileRotate = setInterval(() => {
-      window._profilePhotoIdx = (window._profilePhotoIdx + 1) % photos.length;
-      const img = document.getElementById('profileMainImg');
-      if (img) img.src = photos[window._profilePhotoIdx];
-      document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === window._profilePhotoIdx));
+      const nextIdx = (window._profilePhotoIdx + 1) % photos.length;
+      crossfadeProfilePhoto(nextIdx);
     }, 5000);
   }
+}
+
+function crossfadeProfilePhoto(idx) {
+  const photos = window._profilePhotos || [];
+  if (!photos[idx]) return;
+  window._profilePhotoIdx = idx;
+  const wrap = document.querySelector('.profile-main-wrap');
+  const current = document.getElementById('profileMainImg');
+  if (!wrap || !current) return;
+  const next = document.createElement('img');
+  next.src = photos[idx];
+  next.alt = current.alt;
+  next.id = 'profileMainImg';
+  next.style.opacity = '0';
+  next.style.transition = 'opacity .5s ease';
+  next.style.position = 'absolute';
+  next.style.inset = '0';
+  next.style.width = '100%';
+  next.style.aspectRatio = '3/4';
+  next.style.objectFit = 'cover';
+  wrap.style.position = 'relative';
+  wrap.appendChild(next);
+  requestAnimationFrame(() => {
+    next.style.opacity = '1';
+    current.style.opacity = '0';
+  });
+  setTimeout(() => {
+    current.remove();
+    next.style.position = '';
+    next.style.inset = '';
+  }, 550);
+  document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === idx));
 }
 
 // Arrow key navigation for profile photos
@@ -2369,17 +2466,12 @@ document.addEventListener('keydown', function(e) {
     newIdx = (window._profilePhotoIdx - 1 + window._profilePhotos.length) % window._profilePhotos.length;
   }
   if (newIdx !== null) {
-    window._profilePhotoIdx = newIdx;
-    const img = document.getElementById('profileMainImg');
-    if (img) img.src = window._profilePhotos[newIdx];
-    document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === newIdx));
+    crossfadeProfilePhoto(newIdx);
     // Reset auto-rotate timer
     clearInterval(window._profileRotate);
     window._profileRotate = setInterval(() => {
-      window._profilePhotoIdx = (window._profilePhotoIdx + 1) % window._profilePhotos.length;
-      const img = document.getElementById('profileMainImg');
-      if (img) img.src = window._profilePhotos[window._profilePhotoIdx];
-      document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === window._profilePhotoIdx));
+      const nextIdx = (window._profilePhotoIdx + 1) % window._profilePhotos.length;
+      crossfadeProfilePhoto(nextIdx);
     }, 5000);
   }
 });
@@ -2390,17 +2482,23 @@ function detailRow(label, value) {
 }
 
 function selectProfilePhoto(idx) {
-  window._profilePhotoIdx = idx;
-  const photos = window._profilePhotos || [];
-  const img = document.getElementById('profileMainImg');
-  if (img && photos[idx]) img.src = photos[idx];
-  document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === idx));
+  crossfadeProfilePhoto(idx);
+  // Reset auto-rotate timer
+  clearInterval(window._profileRotate);
+  if (window._profilePhotos && window._profilePhotos.length > 1) {
+    window._profileRotate = setInterval(() => {
+      const nextIdx = (window._profilePhotoIdx + 1) % window._profilePhotos.length;
+      crossfadeProfilePhoto(nextIdx);
+    }, 5000);
+  }
 }
 
 function closeProfile() {
   clearInterval(window._profileRotate);
-  document.getElementById('profileOverlay').classList.remove('active');
+  const overlay = document.getElementById('profileOverlay');
+  overlay.classList.remove('active');
   document.body.style.overflow = '';
+  setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
 }
 
 // Close profile on Escape
@@ -2429,7 +2527,11 @@ if (new URLSearchParams(window.location.search).get('payment') === 'success') {
 }
 
 // Init - always load profiles for background preview, gate interactions behind auth
-loadProfiles();
+let profilesLoaded = false;
+let lastVisibleTime = Date.now();
+const STALE_THRESHOLD = 10 * 60 * 1000; // 10 minutes
+
+loadProfiles().then(() => { profilesLoaded = true; lastVisibleTime = Date.now(); });
 checkAuth().then(() => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }
@@ -2441,6 +2543,30 @@ checkAuth().then(() => {
     document.body.style.overflow = 'hidden';
   } else if (hash.startsWith('profile/')) {
     handleRoute();
+  }
+});
+
+// pageshow: skip re-init when restored from bfcache
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted && profilesLoaded) {
+    // Page restored from bfcache — data is already in memory, no reload needed
+    lastVisibleTime = Date.now();
+    return;
+  }
+});
+
+// visibilitychange: refresh roster data if tab was hidden for too long
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && profilesLoaded) {
+    const hiddenFor = Date.now() - lastVisibleTime;
+    if (hiddenFor > STALE_THRESHOLD) {
+      console.log(`Tab hidden for ${Math.round(hiddenFor / 60000)}m — refreshing profiles`);
+      loadProfiles().then(() => { lastVisibleTime = Date.now(); });
+    } else {
+      lastVisibleTime = Date.now();
+    }
+  } else if (document.visibilityState === 'hidden') {
+    lastVisibleTime = Date.now();
   }
 });
 

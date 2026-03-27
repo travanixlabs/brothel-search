@@ -1088,6 +1088,7 @@ function cupToNum(c) { const i = CUP_ORDER.indexOf((c||'').toUpperCase()); retur
 function numToCup(n) { return CUP_ORDER[n] || ''; }
 function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
+function numToDateShort(n) { const d = new Date(n); return d.toISOString().slice(2,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
 function imgProxy(url, w = 300) { if (!url) return ''; return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&output=webp&q=80`; }
 
@@ -1647,7 +1648,7 @@ function renderRangeFilters() {
 
     const fmt = v => {
       if (def.type === 'cup') return numToCup(v);
-      if (def.type === 'date') return numToDate(v);
+      if (def.type === 'date') return numToDateShort(v);
       return (def.prefix || '') + Math.round(v) + (def.suffix || '');
     };
 

@@ -1902,7 +1902,6 @@ function renderCard(g, grid) {
       <div class="card-info">
         <div class="card-name">${g.name || ''}</div>
         <div class="card-venue ${g.venue}">${g.venueName}</div>
-        <div class="card-country">${countries}</div>
         <div class="card-stats">
           ${g.age ? '<span>Age ' + g.age + '</span>' : ''}
           ${g.body ? '<span>Body ' + g.body + '</span>' : ''}

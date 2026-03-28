@@ -2790,42 +2790,10 @@ function renderCityPage() {
 
 function initVenueMap() {
   const mapEl = document.getElementById('venueMap');
-  if (!mapEl || typeof L === 'undefined') return;
-  if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
-
-  const map = L.map('venueMap', { zoomControl: true, scrollWheelZoom: true }).setView([-33.882, 151.200], 14);
-  window._venueMap = map;
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    maxZoom: 19,
-  }).addTo(map);
-
-  const clusters = L.markerClusterGroup({
-    maxClusterRadius: 60,
-    iconCreateFunction: function(cluster) {
-      const count = cluster.getChildCount();
-      return L.divIcon({ html: '<div class="venue-cluster">' + count + '</div>', className: 'venue-cluster-icon', iconSize: [44, 44] });
-    },
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false,
-  });
-
-  for (const [id, v] of Object.entries(VENUE_DATA)) {
-    const count = venueGirlCount(id);
-    const marker = L.marker([v.lat, v.lng], {
-      icon: L.divIcon({ html: '<div class="venue-marker">' + v.name + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [0, 20] }),
-    });
-    marker.bindPopup(
-      '<div class="venue-popup"><strong>' + v.name + '</strong><br><span>' + v.address + '</span><br><span>' + count + ' girls</span><br>' +
-      '<a href="/sydney/' + v.suburbSlug + '/' + id + '/" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">View venue \u2192</a></div>'
-    );
-    clusters.addLayer(marker);
-  }
-
-  map.addLayer(clusters);
-  const bounds = L.latLngBounds(Object.values(VENUE_DATA).map(v => [v.lat, v.lng]));
-  map.fitBounds(bounds.pad(0.3));
+  if (!mapEl) return;
+  const addresses = Object.values(VENUE_DATA).map(v => v.address).join(' | ');
+  const q = encodeURIComponent(addresses);
+  mapEl.innerHTML = '<iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=' + q + '&z=14&output=embed"></iframe>';
 }
 
 function renderSuburbPage(suburbSlug) {

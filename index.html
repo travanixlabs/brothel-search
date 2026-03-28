@@ -12,9 +12,25 @@
 <meta property="og:title" content="Brothel Search – Girls, Rosters & Profiles">
 <meta property="og:description" content="Browse profiles, rosters and availability across Sydney's top brothels.">
 <meta property="og:url" content="https://brothelsearch.com/">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Brothel Search – Girls, Rosters & Profiles">
 <meta name="twitter:description" content="Browse profiles, rosters and availability across Sydney's top brothels.">
+<meta property="og:image" content="https://brothelsearch.com/og-preview.png">
+<meta name="twitter:image" content="https://brothelsearch.com/og-preview.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Brothel Search",
+  "url": "https://brothelsearch.com/",
+  "description": "Browse profiles, rosters and availability across Sydney's top brothels.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://brothelsearch.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -327,6 +343,7 @@
 </div>
 </nav>
 
+<main>
 <section class="section">
 <div class="section-header">
 <div class="section-line"></div>
@@ -350,13 +367,14 @@
 </div>
 <hr class="gold-divider">
 <div class="result-count" id="resultCount"></div>
-<div class="girls-grid" id="girlsGrid"><div class="loading">Loading profiles...</div></div>
+<article class="girls-grid" id="girlsGrid"><div class="loading">Loading profiles...</div></article>
 <div class="roster-view" id="rosterView"></div>
 <hr class="gold-divider">
 </section>
 
+</main>
 <div class="profile-overlay" id="profileOverlay">
-<div class="profile-panel" id="profilePanel"></div>
+<article class="profile-panel" id="profilePanel"></article>
 </div>
 
 <button class="back-to-top" id="backToTop" title="Back to top">

@@ -2389,11 +2389,39 @@ function findGirlByPath(path) {
   return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
 }
 
+function updateMeta(title, desc, image, url, jsonLd) {
+  document.title = title;
+  const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+  set('meta[name="description"]', desc);
+  set('meta[property="og:title"]', title);
+  set('meta[property="og:description"]', desc);
+  set('meta[property="og:url"]', url);
+  if (image) { set('meta[property="og:image"]', image); set('meta[name="twitter:image"]', image); }
+  set('meta[name="twitter:title"]', title);
+  set('meta[name="twitter:description"]', desc);
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute('href', url);
+  // Update JSON-LD structured data
+  let ld = document.getElementById('profileJsonLd');
+  if (jsonLd) {
+    if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'profileJsonLd'; document.head.appendChild(ld); }
+    ld.textContent = JSON.stringify(jsonLd);
+  } else if (ld) { ld.remove(); }
+}
+
 function showProfile(g) {
   if (!g) return;
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
-  document.title = (g.name || '') + ' – ' + (g.venueName || '') + ' Sydney | Brothel Search';
+  const title = (g.name || '') + ' \u2013 ' + (g.venueName || '') + ' Sydney | Brothel Search';
+  const desc = (g.name || '') + ' at ' + (g.venueName || '') + '. ' + [g.age ? 'Age ' + g.age : '', g.country ? (Array.isArray(g.country) ? g.country.join(', ') : g.country) : ''].filter(Boolean).join(', ') + '. Browse profile, photos and availability.';
+  const image = g.photos && g.photos[0] ? g.photos[0] : '';
+  updateMeta(title, desc, image, 'https://brothelsearch.com' + path, {
+    '@context': 'https://schema.org', '@type': 'Person',
+    name: g.name || '', description: desc, url: 'https://brothelsearch.com' + path,
+    image: image || undefined,
+    worksFor: { '@type': 'LocalBusiness', name: g.venueName || '' }
+  });
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');
   const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
@@ -2543,7 +2571,7 @@ function closeProfile() {
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
-  document.title = 'Brothel Search \u2013 Girls, Rosters & Profiles';
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
 }
 
 // Close profile on Escape
@@ -2558,7 +2586,7 @@ window.addEventListener('popstate', () => {
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
-    document.title = 'Brothel Search \u2013 Girls, Rosters & Profiles';
+    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
   } else {
     const g = findGirlByPath(path);
     if (g) showProfile(g);

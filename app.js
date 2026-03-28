@@ -2770,7 +2770,6 @@ function renderCityPage() {
 
   let html = '<div class="landing-map-container"><div id="venueMap"></div></div>';
   html += '<div class="landing-page">';
-  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <span>Sydney</span></div>';
   html += '<h1 class="landing-title">Brothels in Sydney</h1>';
   html += '<p class="landing-desc">' + totalVenues + ' venues across ' + suburbs.length + ' suburbs with ' + totalGirls + '+ girls available.</p>';
   html += '<div class="landing-grid">';
@@ -2846,7 +2845,6 @@ function renderSuburbPage(suburbSlug) {
 
   let html = '<div class="landing-map-container"><div id="venueMap" data-suburb="' + suburbSlug + '"></div></div>';
   html += '<div class="landing-page">';
-  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <a href="/sydney/" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')">Sydney</a> / <span>' + suburb.name + '</span></div>';
   html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
   html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + girlCount + ' girls in ' + suburb.name + ', Sydney.</p>';
   html += '<div class="landing-grid">';
@@ -2883,7 +2881,6 @@ function renderVenuePage(suburbSlug, venueId) {
   );
 
   let html = '<div class="landing-page">';
-  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <a href="/sydney/" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')">Sydney</a> / <a href="/sydney/' + suburbSlug + '/" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburbSlug + '/\')">' + v.suburb + '</a> / <span>' + v.name + '</span></div>';
   html += '<h1 class="landing-title">' + v.name + '</h1>';
   html += '<div class="landing-venue-meta">';
   html += '<div class="landing-card-address">' + v.address + '</div>';

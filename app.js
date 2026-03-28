@@ -2381,25 +2381,34 @@ const VENUE_SUBURBS = {
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket'
 };
 
+function slugify(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, ''); }
+
 function profilePath(g) {
-  const name = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+  const name = slugify(g.name);
   const suburb = VENUE_SUBURBS[g.venue] || 'sydney';
-  return '/sydney/' + suburb + '/' + g.venue + '/' + name;
+  const country = slugify(Array.isArray(g.country) ? g.country[0] : g.country) || 'other';
+  return '/sydney/' + suburb + '/' + g.venue + '/' + country + '/' + name;
 }
 
 function findGirlByPath(path) {
   const parts = path.replace(/^\//, '').split('/');
-  // Support new format: /sydney/{suburb}/{venue}/{name}
+  // New format: /sydney/{suburb}/{venue}/{country}/{name}
+  if (parts.length === 5 && parts[0] === 'sydney') {
+    const venue = parts[2];
+    const slug = parts[4];
+    return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
+  }
+  // Previous format: /sydney/{suburb}/{venue}/{name}
   if (parts.length === 4 && parts[0] === 'sydney') {
     const venue = parts[2];
     const slug = parts[3];
-    return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+    return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
   }
   // Legacy format: /{venue}/{name}
   if (parts.length === 2) {
     const venue = parts[0];
     const slug = parts[1];
-    return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+    return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
   }
   return null;
 }

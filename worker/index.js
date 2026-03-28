@@ -1098,8 +1098,9 @@ async function regenerateSitemap(env) {
         const venueId = Object.keys(SITES).find(k => SITES[k] === site);
         const id = venueId === 'city429' ? '429city' : venueId;
         const suburb = VENUE_SUBURBS[id] || 'sydney';
+        const country = (Array.isArray(g.country) ? g.country[0] : g.country || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
         const lastmod = g.lastRostered || g.startDate || today;
-        urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${id}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
+        urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${id}/${country || 'other'}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
       }
     } catch (e) { console.error(`[Sitemap] Error loading ${site.name}:`, e); }
   }
@@ -1592,8 +1593,10 @@ const VENUE_SUBURBS = {
 async function serveBotMeta(env, pathname) {
   const parts = pathname.replace(/^\//, '').split('/');
   let venueId, slug;
-  // New format: /sydney/{suburb}/{venue}/{name}
-  if (parts.length === 4 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[3]; }
+  // New format: /sydney/{suburb}/{venue}/{country}/{name}
+  if (parts.length === 5 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[4]; }
+  // Previous format: /sydney/{suburb}/{venue}/{name}
+  else if (parts.length === 4 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[3]; }
   // Legacy format: /{venue}/{name}
   else if (parts.length === 2) { venueId = parts[0]; slug = parts[1]; }
   else return null;
@@ -1614,7 +1617,9 @@ async function serveBotMeta(env, pathname) {
     const countries = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
     const desc = `${name} at ${venue}. ${[girl.age ? 'Age ' + girl.age : '', countries].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
     const suburb = VENUE_SUBURBS[venueId] || 'sydney';
-    const pageUrl = `https://brothelsearch.com/sydney/${suburb}/${venueId}/${slug}`;
+    const countries = Array.isArray(girl.country) ? girl.country[0] : (girl.country || 'other');
+    const countrySlug = countries.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
+    const pageUrl = `https://brothelsearch.com/sydney/${suburb}/${venueId}/${countrySlug}/${slug}`;
     const title = `${name} – ${venue} Sydney | Brothel Search`;
 
     const html = `<!DOCTYPE html>

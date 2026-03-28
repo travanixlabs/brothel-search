@@ -1888,7 +1888,7 @@ function renderCard(g, grid) {
     const el = document.createElement('div');
     el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
     const img = g.photos && g.photos.length
-      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')}" loading="lazy">`
+      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')} – ${(g.venueName || '').replace(/"/g, '&quot;')} Sydney" loading="lazy">`
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
@@ -2393,6 +2393,7 @@ function showProfile(g) {
   if (!g) return;
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
+  document.title = (g.name || '') + ' – ' + (g.venueName || '') + ' Sydney | Brothel Search';
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');
   const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
@@ -2542,6 +2543,7 @@ function closeProfile() {
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
+  document.title = 'Brothel Search Sydney \u2013 Girls, Rosters & Profiles';
 }
 
 // Close profile on Escape
@@ -2556,6 +2558,7 @@ window.addEventListener('popstate', () => {
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
+    document.title = 'Brothel Search Sydney \u2013 Girls, Rosters & Profiles';
   } else {
     const g = findGirlByPath(path);
     if (g) showProfile(g);

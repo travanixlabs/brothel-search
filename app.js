@@ -1,3 +1,12 @@
+// SPA redirect from 404.html — restore original path
+(function() {
+  const redirect = sessionStorage.getItem('spa-redirect');
+  if (redirect) {
+    sessionStorage.removeItem('spa-redirect');
+    history.replaceState(null, '', redirect);
+  }
+})();
+
 // Supabase Auth
 const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
@@ -2367,7 +2376,23 @@ function buildProfileCalendar(g) {
   return html;
 }
 
+function profilePath(g) {
+  const name = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+  return '/' + g.venue + '/' + name;
+}
+
+function findGirlByPath(path) {
+  const parts = path.replace(/^\//, '').split('/');
+  if (parts.length !== 2) return null;
+  const venue = parts[0];
+  const slug = parts[1];
+  return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+}
+
 function showProfile(g) {
+  if (!g) return;
+  const path = profilePath(g);
+  if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');
   const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
@@ -2516,10 +2541,26 @@ function closeProfile() {
   overlay.classList.remove('active');
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
+  if (window.location.pathname !== '/') history.pushState(null, '', '/');
 }
 
 // Close profile on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile() });
+
+// Browser back/forward navigation
+window.addEventListener('popstate', () => {
+  const path = window.location.pathname;
+  if (path === '/' || path === '/index.html') {
+    clearInterval(window._profileRotate);
+    const overlay = document.getElementById('profileOverlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
+  } else {
+    const g = findGirlByPath(path);
+    if (g) showProfile(g);
+  }
+});
 document.getElementById('profileOverlay').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeProfile();
 });
@@ -2548,7 +2589,16 @@ let profilesLoaded = false;
 let lastVisibleTime = Date.now();
 const STALE_THRESHOLD = 10 * 60 * 1000; // 10 minutes
 
-loadProfiles().then(() => { profilesLoaded = true; lastVisibleTime = Date.now(); });
+loadProfiles().then(() => {
+  profilesLoaded = true;
+  lastVisibleTime = Date.now();
+  // Open profile if URL path matches a girl
+  const path = window.location.pathname;
+  if (path !== '/' && path !== '/index.html') {
+    const g = findGirlByPath(path);
+    if (g) showProfile(g);
+  }
+});
 checkAuth().then(() => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }

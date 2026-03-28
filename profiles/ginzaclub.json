@@ -2,6 +2,7 @@
   "venue": "Ginza Club",
   "venueURL": "https://www.ginzaclub.com.au/",
   "venueLocation": "10 Cleveland St, Surry Hills NSW 2010",
+  "venueLocationCoordinates": "-33.88993022667204, 151.20912609962915",
   "girls": [
     {
       "name": "Mugi",

@@ -2,6 +2,7 @@
   "venue": "Fantasy Club 35",
   "venueURL": "https://fantasyclub35.com.au/",
   "venueLocation": "33/35 Parramatta Rd, Annandale NSW 2038",
+  "venueLocationCoordinates": "-33.88719005098213, 151.1706113116501",
   "girls": [
     {
       "name": "Amy",

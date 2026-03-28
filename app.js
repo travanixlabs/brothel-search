@@ -2909,6 +2909,8 @@ function renderVenuePage(suburbSlug, venueId) {
 }
 
 function navigateToLanding(path) {
+  const dd = document.getElementById('navBrothelsDropdown');
+  if (dd) dd.classList.remove('open');
   history.pushState({ landing: true }, '', path);
   handleLandingRoute(path);
 }
@@ -2960,7 +2962,13 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
 
 document.getElementById('navBrothels').addEventListener('click', function(e) {
   e.preventDefault();
-  navigateToLanding('/sydney/');
+  e.stopPropagation();
+  document.getElementById('navBrothelsDropdown').classList.toggle('open');
+});
+
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('navBrothelsDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
 });
 
 // Background particles

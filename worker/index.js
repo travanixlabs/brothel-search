@@ -1614,13 +1614,16 @@ async function serveBotMeta(env, pathname) {
     const name = girl.name || '';
     const venue = site.name || '';
     const photo = (girl.photos && girl.photos[0]) || '';
-    const countries = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
-    const desc = `${name} at ${venue}. ${[girl.age ? 'Age ' + girl.age : '', countries].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
+    const countriesDisplay = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
     const suburb = VENUE_SUBURBS[venueId] || 'sydney';
-    const countries = Array.isArray(girl.country) ? girl.country[0] : (girl.country || 'other');
-    const countrySlug = countries.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
+    const suburbNames = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket' };
+    const suburbName = suburbNames[suburb] || 'Sydney';
+    const location = `${suburbName}, Sydney`;
+    const firstCountry = Array.isArray(girl.country) ? girl.country[0] : (girl.country || 'other');
+    const countrySlug = firstCountry.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
     const pageUrl = `https://brothelsearch.com/sydney/${suburb}/${venueId}/${countrySlug}/${slug}`;
-    const title = `${name} – ${venue} Sydney | Brothel Search`;
+    const title = `${name} – ${venue} ${location} | Brothel Search`;
+    const desc = `${name} at ${venue}, ${location}. ${[girl.age ? 'Age ' + girl.age : '', countriesDisplay].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
 
     const html = `<!DOCTYPE html>
 <html><head>
@@ -1637,7 +1640,7 @@ ${photo ? `<meta property="og:image" content="${photo}">` : ''}
 <meta name="twitter:description" content="${desc}">
 ${photo ? `<meta name="twitter:image" content="${photo}">` : ''}
 <script type="application/ld+json">
-${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, description: desc, url: pageUrl, image: photo || undefined, worksFor: { '@type': 'LocalBusiness', name: venue } })}
+${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, description: desc, url: pageUrl, image: photo || undefined, worksFor: { '@type': 'LocalBusiness', name: venue, address: { '@type': 'PostalAddress', addressLocality: suburbName, addressRegion: 'NSW', addressCountry: 'AU' } } })}
 </script>
 <meta http-equiv="refresh" content="0;url=${pageUrl}">
 </head><body></body></html>`;

@@ -1888,7 +1888,7 @@ function renderCard(g, grid) {
     const el = document.createElement('div');
     el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
     const img = g.photos && g.photos.length
-      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')} – ${(g.venueName || '').replace(/"/g, '&quot;')} Sydney" loading="lazy">`
+      ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')} – ${(g.venueName || '').replace(/"/g, '&quot;')} ${(VENUE_SUBURB_NAMES[g.venue] || '').replace(/"/g, '&quot;')}, Sydney" loading="lazy">`
       : '<div class="silhouette"></div>';
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
 
@@ -2380,6 +2380,10 @@ const VENUE_SUBURBS = {
   ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket'
 };
+const VENUE_SUBURB_NAMES = {
+  ginzaempire: 'Surry Hills', ginzaclub: 'Surry Hills', kyoto206: 'Surry Hills',
+  sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket'
+};
 
 function slugify(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, ''); }
 
@@ -2437,14 +2441,16 @@ function showProfile(g) {
   if (!g) return;
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
-  const title = (g.name || '') + ' \u2013 ' + (g.venueName || '') + ' Sydney | Brothel Search';
-  const desc = (g.name || '') + ' at ' + (g.venueName || '') + '. ' + [g.age ? 'Age ' + g.age : '', g.country ? (Array.isArray(g.country) ? g.country.join(', ') : g.country) : ''].filter(Boolean).join(', ') + '. Browse profile, photos and availability.';
+  const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
+  const location = suburbName ? suburbName + ', Sydney' : 'Sydney';
+  const title = (g.name || '') + ' \u2013 ' + (g.venueName || '') + ' ' + location + ' | Brothel Search';
+  const desc = (g.name || '') + ' at ' + (g.venueName || '') + ', ' + location + '. ' + [g.age ? 'Age ' + g.age : '', g.country ? (Array.isArray(g.country) ? g.country.join(', ') : g.country) : ''].filter(Boolean).join(', ') + '. Browse profile, photos and availability.';
   const image = g.photos && g.photos[0] ? g.photos[0] : '';
   updateMeta(title, desc, image, 'https://brothelsearch.com' + path, {
     '@context': 'https://schema.org', '@type': 'Person',
     name: g.name || '', description: desc, url: 'https://brothelsearch.com' + path,
     image: image || undefined,
-    worksFor: { '@type': 'LocalBusiness', name: g.venueName || '' }
+    worksFor: { '@type': 'LocalBusiness', name: g.venueName || '', address: { '@type': 'PostalAddress', addressLocality: suburbName, addressRegion: 'NSW', addressCountry: 'AU' } }
   });
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');

@@ -2725,13 +2725,13 @@ setTimeout(async () => {
 // ── Landing Pages (City / Suburb / Venue) ──
 
 const VENUE_DATA = {
-  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010', lat: -33.8795, lng: 151.2085 },
-  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010', lat: -33.8838, lng: 151.2100 },
-  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.8830, lng: 151.2090 },
-  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.8815, lng: 151.2108 },
-  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.8850, lng: 151.2005 },
-  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.8835, lng: 151.1700 },
-  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.8795, lng: 151.2075 },
+  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010', lat: -33.8800, lng: 151.2090 },
+  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010', lat: -33.8910, lng: 151.2107 },
+  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.8833, lng: 151.2103 },
+  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.8814, lng: 151.2122 },
+  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.8881, lng: 151.2013 },
+  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.8882, lng: 151.1631 },
+  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.8789, lng: 151.2070 },
 };
 
 function getSuburbs() {

@@ -336,7 +336,15 @@
   <div class="nav-dropdown" id="navBrothelsDropdown">
     <button class="nav-link" id="navBrothels">Brothels <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" style="margin-left:4px;vertical-align:middle"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
     <div class="nav-dropdown-panel" id="navBrothelsPanel">
-      <a href="/sydney/" class="nav-dropdown-item" onclick="event.preventDefault();navigateToLanding('/sydney/')">Sydney</a>
+      <div class="nav-dropdown-group">
+        <a href="/sydney/" class="nav-dropdown-item nav-dropdown-city" onclick="event.preventDefault();navigateToLanding('/sydney/')">Sydney</a>
+        <div class="nav-dropdown-suburbs">
+          <a href="/sydney/surryhills/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/surryhills/')">Surry Hills</a>
+          <a href="/sydney/chippendale/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/chippendale/')">Chippendale</a>
+          <a href="/sydney/haymarket/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/haymarket/')">Haymarket</a>
+          <a href="/sydney/annandale/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/annandale/')">Annandale</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

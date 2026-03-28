@@ -2793,6 +2793,8 @@ function initVenueMap() {
   if (!mapEl || typeof L === 'undefined') return;
   if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
 
+  const filterSuburb = mapEl.dataset.suburb || null;
+
   const map = L.map('venueMap', { zoomControl: true, scrollWheelZoom: true }).setView([-33.883, 151.207], 14);
   window._venueMap = map;
 
@@ -2810,7 +2812,9 @@ function initVenueMap() {
     showCoverageOnHover: false,
   });
 
-  for (const [id, v] of Object.entries(VENUE_DATA)) {
+  const venues = Object.entries(VENUE_DATA).filter(([id, v]) => !filterSuburb || v.suburbSlug === filterSuburb);
+
+  for (const [id, v] of venues) {
     const count = venueGirlCount(id);
     const marker = L.marker([v.lat, v.lng], {
       icon: L.divIcon({ html: '<div class="venue-marker">' + v.name + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
@@ -2821,8 +2825,8 @@ function initVenueMap() {
   }
 
   map.addLayer(clusters);
-  const bounds = L.latLngBounds(Object.values(VENUE_DATA).map(v => [v.lat, v.lng]));
-  map.fitBounds(bounds.pad(0.3));
+  const bounds = L.latLngBounds(venues.map(([id, v]) => [v.lat, v.lng]));
+  map.fitBounds(bounds.pad(filterSuburb ? 0.5 : 0.3));
 }
 
 function renderSuburbPage(suburbSlug) {
@@ -2840,7 +2844,8 @@ function renderSuburbPage(suburbSlug) {
     { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburb.name + ', Sydney', numberOfItems: suburb.venues.length }
   );
 
-  let html = '<div class="landing-page">';
+  let html = '<div class="landing-map-container"><div id="venueMap" data-suburb="' + suburbSlug + '"></div></div>';
+  html += '<div class="landing-page">';
   html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <a href="/sydney/" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')">Sydney</a> / <span>' + suburb.name + '</span></div>';
   html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
   html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + girlCount + ' girls in ' + suburb.name + ', Sydney.</p>';
@@ -2854,7 +2859,7 @@ function renderSuburbPage(suburbSlug) {
     html += '<div class="landing-card-address">' + v.address + '</div>';
     html += '<div class="landing-card-stat">' + count + ' girls</div>';
     if (priceRange) html += '<div class="landing-card-stat">From ' + priceRange + ' (30min)</div>';
-    html += '<div class="landing-card-link">View profiles →</div>';
+    html += '<div class="landing-card-link">View profiles \u2192</div>';
     html += '</a>';
   }
 

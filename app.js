@@ -2543,7 +2543,7 @@ function closeProfile() {
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
-  document.title = 'Brothel Search Sydney \u2013 Girls, Rosters & Profiles';
+  document.title = 'Brothel Search \u2013 Girls, Rosters & Profiles';
 }
 
 // Close profile on Escape
@@ -2558,7 +2558,7 @@ window.addEventListener('popstate', () => {
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
-    document.title = 'Brothel Search Sydney \u2013 Girls, Rosters & Profiles';
+    document.title = 'Brothel Search \u2013 Girls, Rosters & Profiles';
   } else {
     const g = findGirlByPath(path);
     if (g) showProfile(g);

@@ -1573,10 +1573,77 @@ async function syncCalendar(env, site) {
 
 /* ── Export ── */
 
+/* ── Social bot pre-rendering ── */
+
+const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|pinterest|snapchat/i;
+
+const VENUE_MAP = {
+  ginzaempire: SITES.empire, ginzaclub: SITES.club, kyoto206: SITES.kyoto206,
+  sakura57: SITES.sakura57, top127: SITES.top127, fantasyclub35: SITES.fantasyclub35,
+  '429city': SITES.city429,
+};
+
+async function serveBotMeta(env, pathname) {
+  const parts = pathname.replace(/^\//, '').split('/');
+  if (parts.length !== 2) return null;
+  const [venueId, slug] = parts;
+  const site = VENUE_MAP[venueId];
+  if (!site) return null;
+
+  try {
+    const { data } = await loadData(env, site);
+    const girl = (data.girls || []).find(g => {
+      const s = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+      return s === slug;
+    });
+    if (!girl) return null;
+
+    const name = girl.name || '';
+    const venue = site.name || '';
+    const photo = (girl.photos && girl.photos[0]) || '';
+    const countries = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
+    const desc = `${name} at ${venue}. ${[girl.age ? 'Age ' + girl.age : '', countries].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
+    const pageUrl = `https://brothelsearch.com/${venueId}/${slug}`;
+    const title = `${name} – ${venue} Sydney | Brothel Search`;
+
+    const html = `<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>${title}</title>
+<meta name="description" content="${desc}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:url" content="${pageUrl}">
+${photo ? `<meta property="og:image" content="${photo}">` : ''}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">
+${photo ? `<meta name="twitter:image" content="${photo}">` : ''}
+<script type="application/ld+json">
+${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, description: desc, url: pageUrl, image: photo || undefined, worksFor: { '@type': 'LocalBusiness', name: venue } })}
+</script>
+<meta http-equiv="refresh" content="0;url=${pageUrl}">
+</head><body></body></html>`;
+
+    return new Response(html, { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  } catch (e) {
+    console.error('[Bot meta] Error:', e);
+    return null;
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const json = h => new Response(JSON.stringify(h), { headers: { 'Content-Type': 'application/json' } });
+
+    // Social bot pre-rendering — serve meta tags for crawlers
+    const ua = request.headers.get('user-agent') || '';
+    if (BOT_UA.test(ua) && url.pathname !== '/' && !url.pathname.startsWith('/sync') && !url.pathname.startsWith('/check') && !url.pathname.startsWith('/regenerate')) {
+      const botResponse = await serveBotMeta(env, url.pathname);
+      if (botResponse) return botResponse;
+    }
 
     // Empire endpoints
     if (url.pathname === '/sync-girls' && request.method === 'POST') {

@@ -41,6 +41,10 @@ body{background:var(--bg-dark);color:var(--text);font-family:'Rajdhani',sans-ser
 /* Nav */
 nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px;background:rgba(6,6,12,0.92);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(201,149,44,0.3)}
 nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(201,149,44,0.2) 15%,rgba(201,149,44,0.5) 50%,rgba(201,149,44,0.2) 85%,transparent 100%)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-link{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:8px 16px;border-radius:8px;transition:background .3s,border-color .3s;border:1px solid transparent}
+.nav-link:hover{border-color:rgba(201,149,44,0.2);background:rgba(201,149,44,0.06)}
+.nav-link.active{border-color:rgba(201,149,44,0.3);background:rgba(201,149,44,0.08)}
 .logo{font-family:'Orbitron',sans-serif;font-weight:700;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);cursor:pointer;display:flex;align-items:center;gap:10px}
 .logo svg{flex-shrink:0;filter:drop-shadow(0 0 6px rgba(201,149,44,0.3))}
 @keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -409,3 +413,19 @@ body.is-admin .admin-only{display:initial!important}
 .card-badges{position:absolute;top:8px;right:8px;z-index:5;display:flex;flex-direction:column;gap:4px;align-items:flex-end;pointer-events:none}
 .country-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15)}
 .match-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);-webkit-text-fill-color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15)}
+.landing-page{padding:0 40px;max-width:1200px;margin:0 auto}
+.landing-breadcrumb{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;color:var(--text-dim)}
+.landing-breadcrumb a{color:var(--gold);text-decoration:none}
+.landing-breadcrumb a:hover{text-decoration:underline}
+.landing-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.landing-desc{font-size:16px;color:var(--text-dim);line-height:1.6;margin-bottom:32px;max-width:600px}
+.landing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.landing-card{background:linear-gradient(180deg,rgba(12,12,20,0.4) 0%,rgba(8,8,16,0.7) 100%);border:1px solid rgba(201,149,44,0.12);border-radius:16px;padding:28px 24px;text-decoration:none;transition:border-color .3s;box-shadow:inset 0 0 0 1px rgba(201,149,44,0.06);display:block}
+.landing-card:hover{border-color:rgba(201,149,44,0.3)}
+.landing-card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:12px;letter-spacing:1px}
+.landing-card-address{font-size:13px;color:var(--text-dim);margin-bottom:8px}
+.landing-card-stat{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:1px;color:var(--text);margin-bottom:4px}
+.landing-card-link{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:12px}
+.landing-venue-meta{margin-bottom:16px}
+.landing-venue-link{font-size:13px;color:var(--gold);text-decoration:none;display:inline-block;margin-top:4px}
+.landing-venue-link:hover{text-decoration:underline}

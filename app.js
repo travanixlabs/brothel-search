@@ -2476,7 +2476,7 @@ function showProfile(g) {
           ${photos.length > 1 ? '<div class="photo-counter" id="photoCounter">1 / ' + photos.length + '</div>' : ''}
         </div>
         <div class="profile-thumbs">
-          ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
+          ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="${(g.name || '')} photo ${i + 1} of ${photos.length}" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
       </div>
       <div>
@@ -2616,7 +2616,11 @@ window.addEventListener('popstate', () => {
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
+    showMainSection();
     updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+  } else if (path.match(/^\/sydney\/([\w]+\/?){0,2}$/) && !findGirlByPath(path)) {
+    closeProfile();
+    handleLandingRoute(path);
   } else {
     const g = findGirlByPath(path);
     if (g) showProfile(g);
@@ -2653,11 +2657,12 @@ const STALE_THRESHOLD = 10 * 60 * 1000; // 10 minutes
 loadProfiles().then(() => {
   profilesLoaded = true;
   lastVisibleTime = Date.now();
-  // Open profile if URL path matches a girl
+  // Handle URL path on load
   const path = window.location.pathname;
   if (path !== '/' && path !== '/index.html') {
     const g = findGirlByPath(path);
-    if (g) showProfile(g);
+    if (g) { showProfile(g); }
+    else if (path.startsWith('/sydney')) { handleLandingRoute(path); }
   }
 });
 checkAuth().then(() => {
@@ -2716,6 +2721,204 @@ setTimeout(async () => {
 }, 2000);
 
 // hashchange handled above in unified listener
+
+// ── Landing Pages (City / Suburb / Venue) ──
+
+const VENUE_DATA = {
+  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010' },
+  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010' },
+  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010' },
+  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010' },
+  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008' },
+  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038' },
+  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000' },
+};
+
+function getSuburbs() {
+  const map = {};
+  for (const [id, v] of Object.entries(VENUE_DATA)) {
+    if (!map[v.suburbSlug]) map[v.suburbSlug] = { name: v.suburb, slug: v.suburbSlug, venues: [] };
+    map[v.suburbSlug].venues.push({ id, ...v });
+  }
+  return Object.values(map);
+}
+
+function venueGirlCount(venueId) {
+  return allGirls.filter(g => g.venue === venueId).length;
+}
+
+function venuePriceRange(venueId) {
+  const girls = allGirls.filter(g => g.venue === venueId && g.val1);
+  if (!girls.length) return '';
+  const prices = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
+  if (!prices.length) return '';
+  return '$' + Math.min(...prices) + ' – $' + Math.max(...prices);
+}
+
+function renderCityPage() {
+  const suburbs = getSuburbs();
+  const totalVenues = Object.keys(VENUE_DATA).length;
+  const totalGirls = allGirls.length;
+
+  updateMeta(
+    'Brothels in Sydney \u2013 Browse All Venues | Brothel Search',
+    'Browse ' + totalVenues + ' brothels across Sydney with ' + totalGirls + '+ girls. Compare venues in Surry Hills, Chippendale, Haymarket and Annandale.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/sydney/',
+    { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in Sydney', numberOfItems: totalVenues, itemListElement: suburbs.flatMap(s => s.venues.map((v, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'LocalBusiness', name: v.name, address: v.address } }))) }
+  );
+
+  let html = '<div class="landing-page">';
+  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <span>Sydney</span></div>';
+  html += '<h1 class="landing-title">Brothels in Sydney</h1>';
+  html += '<p class="landing-desc">' + totalVenues + ' venues across ' + suburbs.length + ' suburbs with ' + totalGirls + '+ girls available.</p>';
+  html += '<div class="landing-grid">';
+
+  for (const suburb of suburbs) {
+    const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
+    html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
+    html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
+    html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
+    html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
+    html += '</a>';
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function renderSuburbPage(suburbSlug) {
+  const suburbs = getSuburbs();
+  const suburb = suburbs.find(s => s.slug === suburbSlug);
+  if (!suburb) return null;
+
+  const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
+
+  updateMeta(
+    'Brothels in ' + suburb.name + ', Sydney | Brothel Search',
+    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney. ' + girlCount + ' girls available. Compare venues, pricing and profiles.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/sydney/' + suburbSlug + '/',
+    { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburb.name + ', Sydney', numberOfItems: suburb.venues.length }
+  );
+
+  let html = '<div class="landing-page">';
+  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <a href="/sydney/" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')">Sydney</a> / <span>' + suburb.name + '</span></div>';
+  html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
+  html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + girlCount + ' girls in ' + suburb.name + ', Sydney.</p>';
+  html += '<div class="landing-grid">';
+
+  for (const v of suburb.venues) {
+    const count = venueGirlCount(v.id);
+    const priceRange = venuePriceRange(v.id);
+    html += '<a href="/sydney/' + suburbSlug + '/' + v.id + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburbSlug + '/' + v.id + '/\')">';
+    html += '<h2 class="landing-card-title">' + v.name + '</h2>';
+    html += '<div class="landing-card-address">' + v.address + '</div>';
+    html += '<div class="landing-card-stat">' + count + ' girls</div>';
+    if (priceRange) html += '<div class="landing-card-stat">From ' + priceRange + ' (30min)</div>';
+    html += '<div class="landing-card-link">View profiles →</div>';
+    html += '</a>';
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function renderVenuePage(suburbSlug, venueId) {
+  const v = VENUE_DATA[venueId];
+  if (!v || v.suburbSlug !== suburbSlug) return null;
+
+  const girls = allGirls.filter(g => g.venue === venueId);
+  const priceRange = venuePriceRange(venueId);
+
+  updateMeta(
+    v.name + ' \u2013 ' + v.suburb + ', Sydney | Brothel Search',
+    v.name + ' at ' + v.address + '. ' + girls.length + ' girls available.' + (priceRange ? ' Prices from ' + priceRange + '.' : '') + ' Browse profiles, photos and rosters.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/sydney/' + suburbSlug + '/' + venueId + '/',
+    { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: v.name, url: v.url, address: { '@type': 'PostalAddress', streetAddress: v.address.split(',')[0], addressLocality: v.suburb, addressRegion: 'NSW', addressCountry: 'AU' } }
+  );
+
+  let html = '<div class="landing-page">';
+  html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <a href="/sydney/" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')">Sydney</a> / <a href="/sydney/' + suburbSlug + '/" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburbSlug + '/\')">' + v.suburb + '</a> / <span>' + v.name + '</span></div>';
+  html += '<h1 class="landing-title">' + v.name + '</h1>';
+  html += '<div class="landing-venue-meta">';
+  html += '<div class="landing-card-address">' + v.address + '</div>';
+  html += '<a href="' + v.url + '" target="_blank" rel="noopener" class="landing-venue-link">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a>';
+  html += '</div>';
+  html += '<p class="landing-desc">' + girls.length + ' girls available.' + (priceRange ? ' Prices from ' + priceRange + ' for 30 minutes.' : '') + '</p>';
+  html += '<hr class="gold-divider">';
+  html += '<div class="girls-grid" style="margin-top:16px">';
+
+  for (const g of girls) {
+    const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+    const img = g.photos && g.photos.length
+      ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + ' \u2013 ' + v.name + ' ' + v.suburb + ', Sydney" loading="lazy">'
+      : '<div class="silhouette"></div>';
+    html += '<div class="girl-card card-settled" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + venueId + '\'&&gg.name===\'' + (g.name || '').replace(/'/g, "\\'") + '\'))">';
+    html += '<div class="card-img">' + img + '</div>';
+    html += '<div class="card-info">';
+    html += '<div class="card-name">' + (g.name || '') + '</div>';
+    html += '<div class="card-country">' + countries + '</div>';
+    html += '</div></div>';
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function navigateToLanding(path) {
+  history.pushState({ landing: true }, '', path);
+  handleLandingRoute(path);
+}
+
+function handleLandingRoute(path) {
+  const parts = path.replace(/^\//, '').replace(/\/$/, '').split('/');
+  const landingEl = document.getElementById('landingPage');
+  const mainSection = document.querySelector('section.section');
+
+  let html = null;
+
+  if (parts.length === 1 && parts[0] === 'sydney') {
+    html = renderCityPage();
+  } else if (parts.length === 2 && parts[0] === 'sydney') {
+    html = renderSuburbPage(parts[1]);
+  } else if (parts.length === 3 && parts[0] === 'sydney') {
+    html = renderVenuePage(parts[1], parts[2]);
+  }
+
+  if (html) {
+    landingEl.innerHTML = html;
+    landingEl.style.display = '';
+    mainSection.style.display = 'none';
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navBrothels'));
+    window.scrollTo({ top: 0 });
+    return true;
+  }
+  return false;
+}
+
+function showMainSection() {
+  const landingEl = document.getElementById('landingPage');
+  const mainSection = document.querySelector('section.section');
+  landingEl.style.display = 'none';
+  landingEl.innerHTML = '';
+  mainSection.style.display = '';
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navProfiles'));
+}
+
+// Nav link click handlers
+document.getElementById('navProfiles').addEventListener('click', function(e) {
+  e.preventDefault();
+  history.pushState(null, '', '/');
+  showMainSection();
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+});
+
+document.getElementById('navBrothels').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/sydney/');
+});
 
 // Background particles
 (function(){

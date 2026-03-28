@@ -2924,7 +2924,7 @@ function renderVenuePage(suburbSlug, venueId) {
       ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + ' \u2013 ' + v.name + ' ' + v.suburb + ', Sydney" loading="lazy">'
       : '<div class="silhouette"></div>';
     const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-    html += '<div class="girl-card card-settled">';
+    html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '">';
     html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '">' + heartSvg + '</div>';
     html += '<div class="card-badges">' + '<span class="country-badge">' + v.name + '</span>';
     if (showBadge) html += '<div class="match-badge">' + girlScore + '%</div>';

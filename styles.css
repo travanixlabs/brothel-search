@@ -423,7 +423,7 @@ body.is-admin .admin-only{display:initial!important}
 .card-badges{position:absolute;top:8px;right:8px;z-index:5;display:flex;flex-direction:column;gap:4px;align-items:flex-end;pointer-events:none}
 .country-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15)}
 .match-badge{padding:3px 7px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--text);-webkit-text-fill-color:var(--text);background:rgba(12,12,20,0.7);border:1px solid rgba(255,255,255,0.15)}
-.landing-page{padding:0 40px;max-width:1200px;margin:0 auto}
+.landing-page{padding:0 2.5%;max-width:95%;margin:0 auto}
 .landing-breadcrumb{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;color:var(--text-dim)}
 .landing-breadcrumb a{color:var(--gold);text-decoration:none}
 .landing-breadcrumb a:hover{text-decoration:underline}

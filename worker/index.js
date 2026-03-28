@@ -1089,6 +1089,22 @@ async function regenerateSitemap(env) {
 
   let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
 
+  // City page
+  urls.push(`<url><loc>https://brothelsearch.com/sydney/</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`);
+
+  // Suburb pages
+  const suburbsSeen = new Set();
+  for (const s of Object.values(VENUE_SUBURBS)) {
+    if (!suburbsSeen.has(s)) { suburbsSeen.add(s); urls.push(`<url><loc>https://brothelsearch.com/sydney/${s}/</loc><lastmod>${today}</lastmod><priority>0.85</priority></url>`); }
+  }
+
+  // Venue pages
+  for (const [venueId, site] of Object.entries(VENUE_MAP)) {
+    const suburb = VENUE_SUBURBS[venueId] || 'sydney';
+    urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${venueId}/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`);
+  }
+
+  // Girl profiles
   for (const site of siteList) {
     try {
       const { data } = await loadData(env, site);
@@ -1590,6 +1606,68 @@ const VENUE_SUBURBS = {
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket',
 };
 
+const VENUE_NAMES = {
+  ginzaempire: 'Ginza Empire', ginzaclub: 'Ginza Club', kyoto206: 'Kyoto 206',
+  sakura57: 'Sakura 57', top127: 'Top 127', fantasyclub35: 'Fantasy Club 35', '429city': '429 City',
+};
+const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket' };
+
+function botHtml(title, desc, url, jsonLd) {
+  return `<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>${title}</title>
+<meta name="description" content="${desc}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:url" content="${url}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">
+<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<meta http-equiv="refresh" content="0;url=${url}">
+</head><body></body></html>`;
+}
+
+async function serveBotLanding(env, pathname) {
+  const parts = pathname.replace(/^\//, '').replace(/\/$/, '').split('/');
+
+  // /sydney — city page
+  if (parts.length === 1 && parts[0] === 'sydney') {
+    const title = 'Brothels in Sydney \u2013 Browse All Venues | Brothel Search';
+    const desc = 'Browse 7 brothels across Sydney. Compare venues in Surry Hills, Chippendale, Haymarket and Annandale.';
+    const url = 'https://brothelsearch.com/sydney/';
+    return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in Sydney', numberOfItems: 7 }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
+  // /sydney/{suburb} — suburb page
+  if (parts.length === 2 && parts[0] === 'sydney' && SUBURB_NAMES[parts[1]]) {
+    const suburbName = SUBURB_NAMES[parts[1]];
+    const venueCount = Object.entries(VENUE_SUBURBS).filter(([k, v]) => v === parts[1]).length;
+    const title = 'Brothels in ' + suburbName + ', Sydney | Brothel Search';
+    const desc = 'Browse ' + venueCount + ' brothels in ' + suburbName + ', Sydney. Compare venues, pricing and profiles.';
+    const url = 'https://brothelsearch.com/sydney/' + parts[1] + '/';
+    return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburbName + ', Sydney', numberOfItems: venueCount }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
+  // /sydney/{suburb}/{venue} — venue page
+  if (parts.length === 3 && parts[0] === 'sydney' && VENUE_NAMES[parts[2]]) {
+    const venueId = parts[2];
+    const venueName = VENUE_NAMES[venueId];
+    const suburbName = SUBURB_NAMES[parts[1]] || parts[1];
+    const site = VENUE_MAP[venueId];
+    let girlCount = 0;
+    try { const { data } = await loadData(env, site); girlCount = (data.girls || []).length; } catch {}
+    const title = venueName + ' \u2013 ' + suburbName + ', Sydney | Brothel Search';
+    const desc = venueName + ' in ' + suburbName + ', Sydney. ' + girlCount + ' girls available. Browse profiles, photos and rosters.';
+    const url = 'https://brothelsearch.com/sydney/' + parts[1] + '/' + venueId + '/';
+    return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: venueName, address: { '@type': 'PostalAddress', addressLocality: suburbName, addressRegion: 'NSW', addressCountry: 'AU' } }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
+  return null;
+}
+
 async function serveBotMeta(env, pathname) {
   const parts = pathname.replace(/^\//, '').split('/');
   let venueId, slug;
@@ -1660,6 +1738,8 @@ export default {
     // Social bot pre-rendering — serve meta tags for crawlers
     const ua = request.headers.get('user-agent') || '';
     if (BOT_UA.test(ua) && url.pathname !== '/' && !url.pathname.startsWith('/sync') && !url.pathname.startsWith('/check') && !url.pathname.startsWith('/regenerate')) {
+      const landingResponse = await serveBotLanding(env, url.pathname);
+      if (landingResponse) return landingResponse;
       const botResponse = await serveBotMeta(env, url.pathname);
       if (botResponse) return botResponse;
     }

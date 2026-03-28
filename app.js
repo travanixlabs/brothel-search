@@ -2725,13 +2725,13 @@ setTimeout(async () => {
 // ── Landing Pages (City / Suburb / Venue) ──
 
 const VENUE_DATA = {
-  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010' },
-  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010' },
-  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010' },
-  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010' },
-  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008' },
-  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038' },
-  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000' },
+  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010', lat: -33.8795, lng: 151.2085 },
+  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010', lat: -33.8838, lng: 151.2100 },
+  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.8830, lng: 151.2090 },
+  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.8815, lng: 151.2108 },
+  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.8850, lng: 151.2005 },
+  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.8835, lng: 151.1700 },
+  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.8795, lng: 151.2075 },
 };
 
 function getSuburbs() {
@@ -2768,7 +2768,8 @@ function renderCityPage() {
     { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in Sydney', numberOfItems: totalVenues, itemListElement: suburbs.flatMap(s => s.venues.map((v, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'LocalBusiness', name: v.name, address: v.address } }))) }
   );
 
-  let html = '<div class="landing-page">';
+  let html = '<div class="landing-map-container"><div id="venueMap"></div></div>';
+  html += '<div class="landing-page">';
   html += '<div class="landing-breadcrumb"><a href="/">Home</a> / <span>Sydney</span></div>';
   html += '<h1 class="landing-title">Brothels in Sydney</h1>';
   html += '<p class="landing-desc">' + totalVenues + ' venues across ' + suburbs.length + ' suburbs with ' + totalGirls + '+ girls available.</p>';
@@ -2785,6 +2786,46 @@ function renderCityPage() {
 
   html += '</div></div>';
   return html;
+}
+
+function initVenueMap() {
+  const mapEl = document.getElementById('venueMap');
+  if (!mapEl || typeof L === 'undefined') return;
+  if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
+
+  const map = L.map('venueMap', { zoomControl: true, scrollWheelZoom: true }).setView([-33.882, 151.200], 14);
+  window._venueMap = map;
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  const clusters = L.markerClusterGroup({
+    maxClusterRadius: 60,
+    iconCreateFunction: function(cluster) {
+      const count = cluster.getChildCount();
+      return L.divIcon({ html: '<div class="venue-cluster">' + count + '</div>', className: 'venue-cluster-icon', iconSize: [44, 44] });
+    },
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+  });
+
+  for (const [id, v] of Object.entries(VENUE_DATA)) {
+    const count = venueGirlCount(id);
+    const marker = L.marker([v.lat, v.lng], {
+      icon: L.divIcon({ html: '<div class="venue-marker">' + v.name + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [0, 20] }),
+    });
+    marker.bindPopup(
+      '<div class="venue-popup"><strong>' + v.name + '</strong><br><span>' + v.address + '</span><br><span>' + count + ' girls</span><br>' +
+      '<a href="/sydney/' + v.suburbSlug + '/' + id + '/" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">View venue \u2192</a></div>'
+    );
+    clusters.addLayer(marker);
+  }
+
+  map.addLayer(clusters);
+  const bounds = L.latLngBounds(Object.values(VENUE_DATA).map(v => [v.lat, v.lng]));
+  map.fitBounds(bounds.pad(0.3));
 }
 
 function renderSuburbPage(suburbSlug) {
@@ -2893,6 +2934,8 @@ function handleLandingRoute(path) {
     mainSection.style.display = 'none';
     document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navBrothels'));
     window.scrollTo({ top: 0 });
+    // Init map if on city page
+    if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
     return true;
   }
   return false;

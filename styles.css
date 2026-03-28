@@ -439,4 +439,15 @@ body.is-admin .admin-only{display:initial!important}
 #landingPage{padding-top:70px;position:relative;z-index:1}
 .landing-map-container{width:100%;height:calc(100vh - 70px);min-height:400px;margin-bottom:32px;overflow:hidden}
 #venueMap{width:100%;height:100%}
-#venueMap iframe{width:100%;height:100%;border:0}
+#venueMap{width:100%;height:100%}
+.venue-cluster-icon{background:none!important;border:none!important}
+.venue-cluster{width:44px;height:44px;border-radius:50%;background:rgba(201,149,44,0.9);color:var(--bg-dark);font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(201,149,44,0.4);border:2px solid rgba(245,230,163,0.6);cursor:pointer}
+.venue-marker-icon{background:none!important;border:none!important}
+.venue-marker{background:rgba(12,12,20,0.9);color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;padding:6px 12px;border-radius:8px;border:1px solid rgba(201,149,44,0.4);white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,0.5);cursor:pointer}
+.venue-marker::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid rgba(201,149,44,0.4)}
+.venue-tooltip{background:rgba(12,12,20,0.95)!important;color:#e0d6c8!important;border:1px solid rgba(201,149,44,0.3)!important;border-radius:10px!important;padding:10px 14px!important;font-family:'Rajdhani',sans-serif!important;font-size:13px!important;box-shadow:0 8px 32px rgba(0,0,0,0.6)!important}
+.venue-tooltip strong{font-family:'Playfair Display',serif;color:#c9952c}
+.leaflet-tooltip-top:before{border-top-color:rgba(201,149,44,0.3)!important}
+.leaflet-control-zoom a{background:rgba(12,12,20,0.85)!important;color:var(--gold)!important;border-color:rgba(201,149,44,0.3)!important}
+.leaflet-control-attribution{background:rgba(12,12,20,0.7)!important;color:rgba(201,149,44,0.5)!important;font-size:9px!important}
+.leaflet-control-attribution a{color:rgba(201,149,44,0.6)!important}

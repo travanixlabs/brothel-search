@@ -2725,13 +2725,13 @@ setTimeout(async () => {
 // ── Landing Pages (City / Suburb / Venue) ──
 
 const VENUE_DATA = {
-  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010', lat: -33.87970, lng: 151.20880 },
-  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010', lat: -33.88430, lng: 151.21080 },
-  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.88290, lng: 151.21000 },
-  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.88100, lng: 151.21190 },
-  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.88670, lng: 151.20040 },
-  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.88270, lng: 151.17030 },
-  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.87950, lng: 151.20690 },
+  ginzaempire: { name: 'Ginza Empire', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://479ginza.com.au/', address: '479 Elizabeth St, Surry Hills NSW 2010', lat: -33.880047, lng: 151.208990 },
+  ginzaclub: { name: 'Ginza Club', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.ginzaclub.com.au/', address: '10 Cleveland St, Surry Hills NSW 2010', lat: -33.884200, lng: 151.211000 },
+  kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.883342, lng: 151.210345 },
+  sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.881362, lng: 151.212209 },
+  top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.888084, lng: 151.201308 },
+  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.887211, lng: 151.174576 },
+  '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.878890, lng: 151.206978 },
 };
 
 function getSuburbs() {
@@ -2790,10 +2790,39 @@ function renderCityPage() {
 
 function initVenueMap() {
   const mapEl = document.getElementById('venueMap');
-  if (!mapEl) return;
-  const addresses = Object.values(VENUE_DATA).map(v => v.address).join(' | ');
-  const q = encodeURIComponent(addresses);
-  mapEl.innerHTML = '<iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=' + q + '&z=14&output=embed"></iframe>';
+  if (!mapEl || typeof L === 'undefined') return;
+  if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
+
+  const map = L.map('venueMap', { zoomControl: true, scrollWheelZoom: true }).setView([-33.883, 151.207], 14);
+  window._venueMap = map;
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  const clusters = L.markerClusterGroup({
+    maxClusterRadius: 60,
+    iconCreateFunction: function(cluster) {
+      return L.divIcon({ html: '<div class="venue-cluster">' + cluster.getChildCount() + '</div>', className: 'venue-cluster-icon', iconSize: [44, 44] });
+    },
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+  });
+
+  for (const [id, v] of Object.entries(VENUE_DATA)) {
+    const count = venueGirlCount(id);
+    const marker = L.marker([v.lat, v.lng], {
+      icon: L.divIcon({ html: '<div class="venue-marker">' + v.name + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
+    });
+    marker.on('click', function() { navigateToLanding('/sydney/' + v.suburbSlug + '/' + id + '/'); });
+    marker.bindTooltip('<strong>' + v.name + '</strong><br>' + v.address + '<br>' + count + ' girls', { className: 'venue-tooltip', direction: 'top', offset: [0, -20] });
+    clusters.addLayer(marker);
+  }
+
+  map.addLayer(clusters);
+  const bounds = L.latLngBounds(Object.values(VENUE_DATA).map(v => [v.lat, v.lng]));
+  map.fitBounds(bounds.pad(0.3));
 }
 
 function renderSuburbPage(suburbSlug) {

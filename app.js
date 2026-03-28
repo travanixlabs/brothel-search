@@ -2747,12 +2747,17 @@ function venueGirlCount(venueId) {
   return allGirls.filter(g => g.venue === venueId).length;
 }
 
-function venuePriceRange(venueId) {
-  const girls = allGirls.filter(g => g.venue === venueId && g.val1);
+function venuePriceRange(venueId, field) {
+  field = field || 'val1';
+  const girls = allGirls.filter(g => g.venue === venueId && g[field]);
   if (!girls.length) return '';
-  const prices = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
+  const prices = girls.map(g => parseInt(g[field])).filter(p => p > 0);
   if (!prices.length) return '';
-  return '$' + Math.min(...prices) + ' – $' + Math.max(...prices);
+  return '$' + Math.min(...prices) + ' \u2013 $' + Math.max(...prices);
+}
+
+function venueRosteredCount(venueId) {
+  return allGirls.filter(g => g.venue === venueId && getAvailabilityText(g) && getAvailabilityText(g) !== 'ended').length;
 }
 
 function renderCityPage() {
@@ -2886,24 +2891,77 @@ function renderVenuePage(suburbSlug, venueId) {
   html += '<div class="landing-card-address">' + v.address + '</div>';
   html += '<a href="' + v.url + '" target="_blank" rel="noopener" class="landing-venue-link">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a>';
   html += '</div>';
-  html += '<p class="landing-desc">' + girls.length + ' girls available.' + (priceRange ? ' Prices from ' + priceRange + ' for 30 minutes.' : '') + '</p>';
+  const rostered = venueRosteredCount(venueId);
+  const p30 = venuePriceRange(venueId, 'val1');
+  const p45 = venuePriceRange(venueId, 'val2');
+  const p60 = venuePriceRange(venueId, 'val3');
+  html += '<p class="landing-desc">' + rostered + '/' + girls.length + ' girls available.';
+  if (p30) html += ' ' + p30 + ' for 30 min.';
+  if (p45) html += ' ' + p45 + ' for 45 min.';
+  if (p60) html += ' ' + p60 + ' for 60 min.';
+  html += '</p>';
   html += '<hr class="gold-divider">';
   html += '<div class="girls-grid" style="margin-top:16px">';
 
   for (const g of girls) {
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+    const girlKey = g.venue + ':' + g.name;
+    const girlScore = matchScores.get(girlKey) || 0;
+    const showBadge = userPreferences && girlScore > 0;
+    const lastRostered = (() => {
+      const avail = getAvailabilityText(g);
+      if (avail && avail !== 'ended') return avail;
+      if (!g.lastRostered) return '';
+      const today = new Date(); today.setHours(0,0,0,0);
+      const rd = new Date(g.lastRostered + 'T00:00:00');
+      if (rd > today) return '';
+      const diff = Math.round((today - rd) / 86400000);
+      if (diff === 0) return 'Last rostered: Today';
+      if (diff === 1) return 'Last rostered: Yesterday';
+      return 'Last rostered: ' + diff + ' days ago';
+    })();
     const img = g.photos && g.photos.length
       ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + ' \u2013 ' + v.name + ' ' + v.suburb + ', Sydney" loading="lazy">'
       : '<div class="silhouette"></div>';
-    html += '<div class="girl-card card-settled" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + venueId + '\'&&gg.name===\'' + (g.name || '').replace(/'/g, "\\'") + '\'))">';
+    const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+    html += '<div class="girl-card card-settled">';
+    html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '">' + heartSvg + '</div>';
+    html += '<div class="card-badges">' + '<span class="country-badge">' + v.name + '</span>';
+    if (showBadge) html += '<div class="match-badge">' + girlScore + '%</div>';
+    if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
+    if (g.pornstar) html += '<span class="av-badge">AV</span>';
+    html += '</div>';
     html += '<div class="card-img">' + img + '</div>';
     html += '<div class="card-info">';
     html += '<div class="card-name">' + (g.name || '') + '</div>';
     html += '<div class="card-country">' + countries + '</div>';
+    html += '<div class="card-stats">';
+    if (g.age) html += '<span>Age ' + g.age + '</span>';
+    if (g.body) html += '<span>Body ' + g.body + '</span>';
+    if (g.height) html += '<span>' + g.height + 'cm</span>';
+    if (g.cup) html += '<span>' + g.cup + ' cup</span>';
+    html += '</div>';
+    if (g.val1 || g.val2 || g.val3) html += '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>';
+    if (lastRostered) html += '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : lastRostered.startsWith('Available Future') ? ' available-future' : '') + '">' + lastRostered + '</div>';
     html += '</div></div>';
   }
 
   html += '</div></div>';
+
+  // Attach click handlers after render
+  setTimeout(() => {
+    const grid = document.querySelector('#landingPage .girls-grid');
+    if (!grid) return;
+    grid.querySelectorAll('.girl-card').forEach((card, i) => {
+      const g = girls[i];
+      if (!g) return;
+      card.style.cursor = 'pointer';
+      card.onclick = (e) => { if (!e.target.closest('.fav-heart')) showProfile(g); };
+      const heart = card.querySelector('.fav-heart');
+      if (heart) heart.addEventListener('click', (e) => { e.stopPropagation(); toggleFavorite(g.oldUrl, e); });
+    });
+  }, 50);
+
   return html;
 }
 

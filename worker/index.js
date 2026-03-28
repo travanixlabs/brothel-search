@@ -163,6 +163,18 @@ async function ghPut(env, path, content, sha, message) {
   return r.json();
 }
 
+async function ghPutRaw(env, path, text, sha, message) {
+  const body = { message, content: btoa(unescape(encodeURIComponent(text))) };
+  if (sha) body.sha = sha;
+  const r = await fetch(`${GH_API}/repos/${REPO}/contents/${path}`, {
+    method: 'PUT',
+    headers: ghHeaders(env),
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`GitHub PUT ${r.status} ${path}`);
+  return r.json();
+}
+
 /* ── Date / time helpers ── */
 
 function getAEDTDate() {
@@ -1069,6 +1081,42 @@ async function loadData(env, site) {
   }
 }
 
+/* ── SEO: Regenerate sitemap.xml ── */
+
+async function regenerateSitemap(env) {
+  const today = new Date().toISOString().split('T')[0];
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429];
+
+  let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
+
+  for (const site of siteList) {
+    try {
+      const { data } = await loadData(env, site);
+      for (const g of data.girls || []) {
+        const slug = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+        if (!slug) continue;
+        const venueId = Object.keys(SITES).find(k => SITES[k] === site);
+        const id = venueId === 'city429' ? '429city' : venueId;
+        const lastmod = g.lastRostered || g.startDate || today;
+        urls.push(`<url><loc>https://brothelsearch.com/${id}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
+      }
+    } catch (e) { console.error(`[Sitemap] Error loading ${site.name}:`, e); }
+  }
+
+  const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls.join('\n') + '\n</urlset>';
+
+  // Load existing sitemap to get SHA
+  let sha = null;
+  try {
+    const r = await fetch(`${GH_API}/repos/${REPO}/contents/sitemap.xml`, { headers: ghHeaders(env) });
+    if (r.ok) { const d = await r.json(); sha = d.sha; }
+  } catch {}
+
+  await ghPutRaw(env, 'sitemap.xml', xml, sha, `[SEO] Auto-update sitemap.xml (${urls.length} URLs)`);
+  console.log(`Sitemap updated: ${urls.length} URLs`);
+  return urls.length;
+}
+
 /* ── Photo health check ── */
 
 const MAX_PHOTO_CHECKS_PER_RUN = 20;
@@ -1615,6 +1663,12 @@ export default {
       } catch (e) { return json({ error: e.message }); }
     }
 
+    // ── SEO endpoints ──
+    if (url.pathname === '/regenerate-sitemap' && request.method === 'POST') {
+      try { const count = await regenerateSitemap(env); return json({ success: true, urls: count }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     // ── Stripe / Subscription endpoints ──
 
     const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
@@ -1942,6 +1996,9 @@ export default {
           checkBrokenPhotos(env, SITES.city429).catch(e => console.error('[429 City] Photo check error:', e)),
         ]);
         console.log('Photo checks complete.');
+
+        // Regenerate sitemap after girls sync
+        await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
       }
 
       // 7:00 UTC (6pm AEDT) and 10:00 UTC (9pm AEDT) — Roster sync only

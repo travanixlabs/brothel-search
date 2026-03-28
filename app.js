@@ -2376,17 +2376,32 @@ function buildProfileCalendar(g) {
   return html;
 }
 
+const VENUE_SUBURBS = {
+  ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
+  sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket'
+};
+
 function profilePath(g) {
   const name = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
-  return '/' + g.venue + '/' + name;
+  const suburb = VENUE_SUBURBS[g.venue] || 'sydney';
+  return '/sydney/' + suburb + '/' + g.venue + '/' + name;
 }
 
 function findGirlByPath(path) {
   const parts = path.replace(/^\//, '').split('/');
-  if (parts.length !== 2) return null;
-  const venue = parts[0];
-  const slug = parts[1];
-  return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+  // Support new format: /sydney/{suburb}/{venue}/{name}
+  if (parts.length === 4 && parts[0] === 'sydney') {
+    const venue = parts[2];
+    const slug = parts[3];
+    return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+  }
+  // Legacy format: /{venue}/{name}
+  if (parts.length === 2) {
+    const venue = parts[0];
+    const slug = parts[1];
+    return allGirls.find(g => g.venue === venue && (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === slug);
+  }
+  return null;
 }
 
 function updateMeta(title, desc, image, url, jsonLd) {

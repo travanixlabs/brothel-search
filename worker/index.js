@@ -1097,8 +1097,9 @@ async function regenerateSitemap(env) {
         if (!slug) continue;
         const venueId = Object.keys(SITES).find(k => SITES[k] === site);
         const id = venueId === 'city429' ? '429city' : venueId;
+        const suburb = VENUE_SUBURBS[id] || 'sydney';
         const lastmod = g.lastRostered || g.startDate || today;
-        urls.push(`<url><loc>https://brothelsearch.com/${id}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
+        urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${id}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
       }
     } catch (e) { console.error(`[Sitemap] Error loading ${site.name}:`, e); }
   }
@@ -1583,10 +1584,19 @@ const VENUE_MAP = {
   '429city': SITES.city429,
 };
 
+const VENUE_SUBURBS = {
+  ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
+  sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket',
+};
+
 async function serveBotMeta(env, pathname) {
   const parts = pathname.replace(/^\//, '').split('/');
-  if (parts.length !== 2) return null;
-  const [venueId, slug] = parts;
+  let venueId, slug;
+  // New format: /sydney/{suburb}/{venue}/{name}
+  if (parts.length === 4 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[3]; }
+  // Legacy format: /{venue}/{name}
+  else if (parts.length === 2) { venueId = parts[0]; slug = parts[1]; }
+  else return null;
   const site = VENUE_MAP[venueId];
   if (!site) return null;
 
@@ -1603,7 +1613,8 @@ async function serveBotMeta(env, pathname) {
     const photo = (girl.photos && girl.photos[0]) || '';
     const countries = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
     const desc = `${name} at ${venue}. ${[girl.age ? 'Age ' + girl.age : '', countries].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
-    const pageUrl = `https://brothelsearch.com/${venueId}/${slug}`;
+    const suburb = VENUE_SUBURBS[venueId] || 'sydney';
+    const pageUrl = `https://brothelsearch.com/sydney/${suburb}/${venueId}/${slug}`;
     const title = `${name} – ${venue} Sydney | Brothel Search`;
 
     const html = `<!DOCTYPE html>

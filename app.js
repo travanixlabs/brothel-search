@@ -637,11 +637,13 @@ sbClient.auth.onAuthStateChange((event, session) => {
           if (p === '/' || p === '/index.html') handleLandingRoute('/');
         }
       });
-      // Paywall check 2s after login
+      // Paywall check 2s after login — skip on home page
       setTimeout(async () => {
-        if (userRole === 'admin') return;
+        if (userRole === 'admin') { isSubscribed = true; return; }
         const sub = await checkSubscription();
-        if (!sub || sub.status !== 'active') showPaywall();
+        isSubscribed = sub && sub.status === 'active';
+        const path = window.location.pathname;
+        if (!isSubscribed && path !== '/' && path !== '/index.html') showPaywall();
       }, 2000);
     });
   }

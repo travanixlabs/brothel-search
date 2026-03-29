@@ -1751,24 +1751,34 @@ function scoreGirlWorker(girl, prefs) {
   return Math.round((score / activeWeight) * 100);
 }
 
+function girlProfileUrl(g) {
+  const suburb = VENUE_SUBURBS[g.venue] || 'sydney';
+  const country = (Array.isArray(g.country) ? g.country[0] : g.country || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
+  const slug = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+  return `https://brothelsearch.com/sydney/${suburb}/${g.venue}/${country}/${slug}`;
+}
+
 function girlCardHtml(g, statusColor, statusText, extra) {
   const photo = g.photos && g.photos[0] ? `https://wsrv.nl/?url=${encodeURIComponent(g.photos[0])}&w=80&h=106&fit=cover&output=webp&q=80` : '';
   const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
   const rates = [g.val1 ? '$' + g.val1 : '', g.val2 ? '$' + g.val2 : '', g.val3 ? '$' + g.val3 : ''].filter(Boolean).join(' / ');
-  const stats = [g.age ? 'Age ' + g.age : '', g.height ? g.height + 'cm' : '', g.cup ? g.cup + ' cup' : ''].filter(Boolean).join(' · ');
+  const stats = [g.age ? 'Age ' + g.age : '', g.height ? g.height + 'cm' : '', g.cup ? g.cup + ' cup' : ''].filter(Boolean).join(' \u00b7 ');
+  const profileLink = girlProfileUrl(g);
 
   return `<tr><td style="padding:8px 0;border-bottom:1px solid #1a1a2e">
+    <a href="${profileLink}" style="text-decoration:none;color:inherit;display:block">
     <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
       ${photo ? `<td width="80" valign="top" style="padding-right:12px"><img src="${photo}" width="80" height="106" style="border-radius:8px;display:block;object-fit:cover" alt="${g.name || ''}"></td>` : ''}
       <td valign="top">
         <div style="font-size:16px;font-weight:700;color:#c9952c;margin-bottom:2px">${g.name || ''}</div>
-        <div style="font-size:12px;color:#999;margin-bottom:4px">${g.venueName || ''}${countries ? ' · ' + countries : ''}</div>
+        <div style="font-size:12px;color:#999;margin-bottom:4px">${g.venueName || ''}${countries ? ' \u00b7 ' + countries : ''}</div>
         ${stats ? `<div style="font-size:11px;color:#777;margin-bottom:4px">${stats}</div>` : ''}
         ${rates ? `<div style="font-size:12px;color:#c9952c;margin-bottom:4px">${rates}</div>` : ''}
         <div style="display:inline-block;font-size:10px;font-weight:700;color:${statusColor};background:${statusColor}15;border:1px solid ${statusColor}40;padding:2px 8px;border-radius:4px;letter-spacing:1px">${statusText}</div>
         ${extra || ''}
       </td>
     </tr></table>
+    </a>
   </td></tr>`;
 }
 

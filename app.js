@@ -3128,9 +3128,11 @@ function renderAnalyticsPage() {
 
   const venueIds = Object.keys(VENUE_DATA);
 
-  // ── Price Analysis ──
+  // ── Price Analysis (rostered within 30 days) ──
+  const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const thirtyDayStr = thirtyDaysAgo.toISOString().split('T')[0];
   const priceData = venueIds.map(id => {
-    const girls = allGirls.filter(g => g.venue === id);
+    const girls = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStr);
     const p30 = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
     const p45 = girls.map(g => parseInt(g.val2)).filter(p => p > 0);
     const p60 = girls.map(g => parseInt(g.val3)).filter(p => p > 0);
@@ -3177,7 +3179,7 @@ function renderAnalyticsPage() {
   html += '<p class="landing-desc">Data insights across ' + allGirls.length + ' girls and ' + venueIds.length + ' venues.</p>';
 
   // Average Prices
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Average Prices by Venue</h2>';
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Average Prices by Venue (rostered within 30 days)</h2>';
   html += '<div class="analytics-grid">';
   for (const p of priceData) {
     html += '<div class="analytics-card"><div class="analytics-card-title">' + p.name + '</div>';

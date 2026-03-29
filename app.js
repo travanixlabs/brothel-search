@@ -3012,7 +3012,7 @@ window.addEventListener('popstate', () => {
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
     updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
-  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now') && !findGirlByPath(path)) {
+  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare') && !findGirlByPath(path)) {
     closeProfile();
     handleLandingRoute(path);
   } else {
@@ -3056,7 +3056,7 @@ loadProfiles().then(() => {
   if (path !== '/' && path !== '/index.html') {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
-    else if (path.startsWith('/sydney') || path === '/working-now') { handleLandingRoute(path); }
+    else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare') { handleLandingRoute(path); }
   }
 });
 checkAuth().then(() => {
@@ -3115,6 +3115,112 @@ setTimeout(async () => {
 }, 2000);
 
 // hashchange handled above in unified listener
+
+// ── Venue Comparison ──
+
+function renderComparePage() {
+  const venueIds = Object.keys(VENUE_DATA);
+
+  updateMeta(
+    'Compare Brothels in Sydney | Brothel Search',
+    'Side-by-side comparison of ' + venueIds.length + ' Sydney brothels. Compare girls, pricing, location and availability.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/compare',
+    null
+  );
+
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += '<h1 class="landing-title">Compare Venues</h1>';
+  html += '<p class="landing-desc">Side-by-side comparison of all ' + venueIds.length + ' venues across Sydney.</p>';
+
+  // Build comparison table
+  html += '<div class="compare-table-wrap"><table class="compare-table">';
+
+  // Header row — venue names
+  html += '<thead><tr><th class="compare-label"></th>';
+  for (const id of venueIds) {
+    const v = VENUE_DATA[id];
+    html += '<th class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">' + v.name + '</th>';
+  }
+  html += '</tr></thead><tbody>';
+
+  // Suburb
+  html += '<tr><td class="compare-label">Suburb</td>';
+  for (const id of venueIds) html += '<td>' + VENUE_DATA[id].suburb + '</td>';
+  html += '</tr>';
+
+  // Address
+  html += '<tr><td class="compare-label">Address</td>';
+  for (const id of venueIds) html += '<td style="font-size:12px">' + VENUE_DATA[id].address + '</td>';
+  html += '</tr>';
+
+  // Total girls
+  html += '<tr><td class="compare-label">Total Girls</td>';
+  for (const id of venueIds) html += '<td>' + venueGirlCount(id) + '</td>';
+  html += '</tr>';
+
+  // Working today
+  html += '<tr><td class="compare-label">Working Today</td>';
+  for (const id of venueIds) html += '<td>' + venueRosteredCount(id) + '</td>';
+  html += '</tr>';
+
+  // Price 30 min
+  html += '<tr><td class="compare-label">30 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val1') || '\u2014') + '</td>';
+  html += '</tr>';
+
+  // Price 45 min
+  html += '<tr><td class="compare-label">45 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val2') || '\u2014') + '</td>';
+  html += '</tr>';
+
+  // Price 60 min
+  html += '<tr><td class="compare-label">60 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val3') || '\u2014') + '</td>';
+  html += '</tr>';
+
+  // Top countries
+  html += '<tr><td class="compare-label">Top Countries</td>';
+  for (const id of venueIds) {
+    const girls = allGirls.filter(g => g.venue === id);
+    const countryCounts = {};
+    girls.forEach(g => {
+      const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
+      cs.forEach(c => { if (c) countryCounts[c] = (countryCounts[c] || 0) + 1; });
+    });
+    const top = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
+    html += '<td style="font-size:12px">' + (top || '\u2014') + '</td>';
+  }
+  html += '</tr>';
+
+  // New this week
+  html += '<tr><td class="compare-label">New This Week</td>';
+  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  for (const id of venueIds) {
+    const count = allGirls.filter(g => g.venue === id && g.startDate && new Date(g.startDate + 'T00:00:00') >= sevenDaysAgo).length;
+    html += '<td>' + count + '</td>';
+  }
+  html += '</tr>';
+
+  // Website
+  html += '<tr><td class="compare-label">Website</td>';
+  for (const id of venueIds) {
+    const v = VENUE_DATA[id];
+    html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
+  }
+  html += '</tr>';
+
+  // Google Maps
+  html += '<tr><td class="compare-label">Directions</td>';
+  for (const id of venueIds) {
+    html += '<td><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(VENUE_DATA[id].address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">Google Maps</a></td>';
+  }
+  html += '</tr>';
+
+  html += '</tbody></table></div>';
+  html += '</div>';
+  return html;
+}
 
 // ── Working Now ──
 
@@ -3483,6 +3589,8 @@ function handleLandingRoute(path) {
 
   if (path.replace(/^\//, '').replace(/\/$/, '') === 'working-now') {
     html = renderWorkingNow();
+  } else if (path.replace(/^\//, '').replace(/\/$/, '') === 'compare') {
+    html = renderComparePage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
@@ -3495,7 +3603,7 @@ function handleLandingRoute(path) {
     landingEl.innerHTML = html;
     landingEl.style.display = '';
     mainSection.style.display = 'none';
-    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : 'navBrothels';
+    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : 'navBrothels';
     document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === activeLinkId));
     window.scrollTo({ top: 0 });
     // Init map if on city page
@@ -3543,6 +3651,11 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
 document.getElementById('navWorkingNow').addEventListener('click', function(e) {
   e.preventDefault();
   navigateToLanding('/working-now');
+});
+
+document.getElementById('navCompare').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/compare');
 });
 
 document.getElementById('navBrothels').addEventListener('click', function(e) {

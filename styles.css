@@ -488,3 +488,21 @@ body.is-admin .admin-only{display:initial!important}
 .review-card-rating span{text-transform:capitalize}
 .review-card-rating .review-star{font-size:12px}
 .review-card-comment{font-size:14px;color:var(--text);line-height:1.6;margin-top:8px}
+.notif-bell{position:relative;display:flex;align-items:center}
+.notif-bell-btn{background:none;border:none;color:var(--gold);cursor:pointer;position:relative;padding:6px}
+.notif-badge{position:absolute;top:0;right:0;min-width:16px;height:16px;border-radius:8px;background:#ff4444;color:#fff;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.notif-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:8px;width:340px;max-height:400px;background:rgba(12,12,20,0.95);border:1px solid rgba(201,149,44,0.25);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:200;overflow:hidden}
+.notif-bell.open .notif-dropdown{display:block}
+.notif-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(201,149,44,0.12)}
+.notif-header span{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.notif-mark-read{background:none;border:none;color:var(--text-dim);font-size:11px;cursor:pointer;font-family:'Rajdhani',sans-serif}
+.notif-mark-read:hover{color:var(--gold)}
+.notif-list{overflow-y:auto;max-height:340px}
+.notif-empty{text-align:center;padding:32px 16px;color:var(--text-dim);font-size:13px}
+.notif-item{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:background .2s}
+.notif-item:hover{background:rgba(201,149,44,0.04)}
+.notif-item.unread{background:rgba(201,149,44,0.06)}
+.notif-item-title{font-size:13px;color:var(--text);font-weight:600;margin-bottom:4px}
+.notif-item-body{font-size:12px;color:var(--text-dim);line-height:1.4}
+.notif-item-time{font-size:10px;color:var(--text-dim);margin-top:4px}
+.notif-item-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;flex-shrink:0}

@@ -90,6 +90,8 @@ async function checkAuth() {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
+    document.getElementById('notifBell').style.display = 'flex';
+    loadNotifications();
     await fetchUserRole();
     await loadFavorites();
     return true;
@@ -164,6 +166,8 @@ async function handleAuth() {
 
   document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
   document.getElementById('userMenu').style.display = '';
+  document.getElementById('notifBell').style.display = 'flex';
+  loadNotifications();
   await fetchUserRole();
   await loadFavorites();
   loadProfiles();
@@ -193,6 +197,7 @@ async function signOut() {
   hidePaywall();
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
+  document.getElementById('notifBell').style.display = 'none';
 }
 
 async function resetPassword() {
@@ -593,6 +598,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
   if (event === 'PASSWORD_RECOVERY') {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
+    document.getElementById('notifBell').style.display = 'flex';
+    loadNotifications();
     fetchUserRole();
     setTimeout(() => {
       navigateTo('profile/settings');
@@ -602,6 +609,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
+    document.getElementById('notifBell').style.display = 'flex';
+    loadNotifications();
     fetchUserRole().then(() => {
       loadPreferences().then(() => {
         if (userPreferences) { computeMatchScores(); renderGrid(); }
@@ -618,6 +627,19 @@ sbClient.auth.onAuthStateChange((event, session) => {
 
 // Enter key to submit
 document.getElementById('userMenuBtn').addEventListener('click', toggleUserMenu);
+
+// Notification bell toggle
+document.getElementById('notifBellBtn').addEventListener('click', function(e) {
+  e.stopPropagation();
+  document.getElementById('notifBell').classList.toggle('open');
+  document.getElementById('userMenuDropdown').classList.remove('open');
+});
+
+document.getElementById('notifMarkAllRead').addEventListener('click', function(e) {
+  e.stopPropagation();
+  markAllNotificationsRead();
+});
+
 document.getElementById('settingsBack').addEventListener('click', closeSettings);
 document.getElementById('settingsOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeSettings(); });
 document.getElementById('prefBack').addEventListener('click', closePreferences);
@@ -645,7 +667,11 @@ document.getElementById('settingsConfirmPw').addEventListener('input', () => {
   el.style.borderColor = el.value === document.getElementById('settingsNewPw').value ? '#00c864' : '#ff4444';
 });
 document.getElementById('settingsConfirmPw').addEventListener('keydown', e => { if (e.key === 'Enter') changePassword(); });
-document.addEventListener('click', e => { if (!e.target.closest('.user-menu')) document.getElementById('userMenuDropdown').classList.remove('open'); });
+document.addEventListener('click', e => {
+  if (!e.target.closest('.user-menu')) document.getElementById('userMenuDropdown').classList.remove('open');
+  const bell = document.getElementById('notifBell');
+  if (bell && !bell.contains(e.target)) bell.classList.remove('open');
+});
 document.getElementById('authBtn').addEventListener('click', handleAuth);
 document.getElementById('authToggle').addEventListener('click', toggleAuthMode);
 document.getElementById('authPassword').addEventListener('input', () => { checkPasswordReqs(); checkPasswordMatch(); });
@@ -2281,6 +2307,84 @@ function setRosterVenue(venueId) {
 }
 
 document.getElementById('rosterToggle').addEventListener('click', toggleRosterView);
+
+// ── Notifications ──
+
+let notifCache = [];
+
+async function loadNotifications() {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+  const { data, error } = await sbClient.from('notifications').select('*').eq('user_id', user.id).order('created_at', { ascending: false }).limit(50);
+  if (error) { console.error('Load notifications error:', error); return; }
+  notifCache = data || [];
+  renderNotifications();
+}
+
+function renderNotifications() {
+  const bell = document.getElementById('notifBell');
+  const badge = document.getElementById('notifBadge');
+  const list = document.getElementById('notifList');
+  if (!bell || !list) return;
+
+  const unread = notifCache.filter(n => !n.read).length;
+  badge.textContent = unread;
+  badge.style.display = unread > 0 ? 'flex' : 'none';
+
+  if (!notifCache.length) {
+    list.innerHTML = '<div class="notif-empty">No notifications</div>';
+    return;
+  }
+
+  list.innerHTML = notifCache.map(n => {
+    const time = timeAgo(new Date(n.created_at));
+    return '<div class="notif-item' + (!n.read ? ' unread' : '') + '" data-notif-id="' + n.id + '" data-venue="' + (n.venue || '') + '" data-girl="' + (n.girl_name || '') + '">' +
+      (!n.read ? '<span class="notif-item-dot"></span>' : '') +
+      '<div class="notif-item-title">' + n.title + '</div>' +
+      '<div class="notif-item-body">' + n.body + '</div>' +
+      '<div class="notif-item-time">' + time + '</div>' +
+      '</div>';
+  }).join('');
+
+  // Click handlers
+  list.querySelectorAll('.notif-item').forEach(el => {
+    el.addEventListener('click', async function() {
+      const id = this.dataset.notifId;
+      const venue = this.dataset.venue;
+      const girl = this.dataset.girl;
+      // Mark as read
+      await sbClient.from('notifications').update({ read: true }).eq('id', id);
+      const n = notifCache.find(x => x.id === id);
+      if (n) n.read = true;
+      renderNotifications();
+      // Navigate to girl profile if available
+      if (venue && girl) {
+        const g = allGirls.find(gg => gg.venue === venue && gg.name === girl);
+        if (g) { document.getElementById('notifBell').classList.remove('open'); showProfile(g); }
+      }
+    });
+  });
+}
+
+function timeAgo(date) {
+  const seconds = Math.floor((new Date() - date) / 1000);
+  if (seconds < 60) return 'Just now';
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return minutes + 'm ago';
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return hours + 'h ago';
+  const days = Math.floor(hours / 24);
+  if (days < 7) return days + 'd ago';
+  return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+}
+
+async function markAllNotificationsRead() {
+  const unread = notifCache.filter(n => !n.read);
+  if (!unread.length) return;
+  await sbClient.from('notifications').update({ read: true }).in('id', unread.map(n => n.id));
+  notifCache.forEach(n => n.read = true);
+  renderNotifications();
+}
 
 // ── Reviews ──
 

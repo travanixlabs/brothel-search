@@ -3334,14 +3334,15 @@ function renderComparePage() {
 // ── Working Now ──
 
 function renderWorkingNow() {
+  const sortByMatch = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
   const now = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
     return avail && avail.startsWith('Available Now');
-  });
+  }).sort(sortByMatch);
   const later = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
     return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-  });
+  }).sort(sortByMatch);
 
   updateMeta(
     'Who\'s Working Now \u2013 Live Roster | Brothel Search',

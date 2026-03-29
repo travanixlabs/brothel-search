@@ -1651,10 +1651,10 @@ async function sendDailyDigest(env) {
     } catch {}
   }
 
-  // New girls (startDate in last 24 hours)
-  const threeDaysAgo = new Date();
-  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-  const cutoffStr = threeDaysAgo.toISOString().split('T')[0];
+  // New girls (startDate in last 7 days)
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const cutoffStr = weekAgo.toISOString().split('T')[0];
   const newGirls = allGirls.filter(g => g.startDate && g.startDate >= cutoffStr);
 
   // Process each user
@@ -1663,55 +1663,55 @@ async function sendDailyDigest(env) {
     const userInfo = userEmails[userId];
     if (!userInfo) continue;
 
-    // Check favourite girls rostered today
-    const favGirls = allGirls.filter(g => g.oldUrl && favUrls.includes(g.oldUrl) && g.rosteredToday);
-    for (const g of favGirls) {
-      notifications.push({
-        user_id: userId, type: 'favourite_rostered',
-        title: g.name + ' is working today',
-        body: g.name + ' at ' + g.venueName + ' is on the roster today.',
-        venue: g.venue, girl_name: g.name,
-      });
-    }
+    // All favourite girls for this user
+    const allFavGirls = allGirls.filter(g => g.oldUrl && favUrls.includes(g.oldUrl));
+    const favWorking = allFavGirls.filter(g => g.rosteredToday);
+    const favNotWorking = allFavGirls.filter(g => !g.rosteredToday);
 
-    // Check new girls matching >= 90%
+    // New girls matching >= 90%
     const prefs = prefsMap[userId];
+    const matchesWorking = [];
+    const matchesNotWorking = [];
     if (prefs && newGirls.length) {
       for (const g of newGirls) {
         const score = scoreGirlWorker(g, prefs);
         if (score >= 90) {
-          notifications.push({
-            user_id: userId, type: 'new_match',
-            title: 'New ' + score + '% match: ' + g.name,
-            body: g.name + ' just joined ' + g.venueName + ' and matches your preferences.',
-            venue: g.venue, girl_name: g.name,
-          });
+          const entry = { ...g, matchScore: score };
+          if (g.rosteredToday) matchesWorking.push(entry);
+          else matchesNotWorking.push(entry);
         }
       }
     }
 
-    if (!notifications.length) continue;
+    // Build notifications for bell UI
+    for (const g of favWorking) {
+      notifications.push({ user_id: userId, type: 'favourite_rostered', title: g.name + ' is working today', body: g.name + ' at ' + g.venueName + ' is on the roster today.', venue: g.venue, girl_name: g.name });
+    }
+    for (const g of [...matchesWorking, ...matchesNotWorking]) {
+      notifications.push({ user_id: userId, type: 'new_match', title: 'New ' + g.matchScore + '% match: ' + g.name, body: g.name + ' just joined ' + g.venueName + ' and matches your preferences.', venue: g.venue, girl_name: g.name });
+    }
 
-    // Insert notifications into Supabase
-    await fetch(`${SB_URL}/rest/v1/notifications`, {
-      method: 'POST', headers, body: JSON.stringify(notifications),
-    });
+    if (!notifications.length && !allFavGirls.length) continue;
 
-    // Send email via Resend
-    if (env.RESEND_API_KEY) {
-      const emailHtml = buildDigestEmail(userInfo.name, notifications);
+    // Insert notifications into Supabase (only actual alerts)
+    if (notifications.length) {
+      await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify(notifications) });
+    }
+
+    // Send email via Resend (always send if user has favourites)
+    if (env.RESEND_API_KEY && (favWorking.length || favNotWorking.length || matchesWorking.length || matchesNotWorking.length)) {
+      const emailHtml = buildDigestEmail(userInfo.name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking });
+      const workingCount = favWorking.length + matchesWorking.length;
+      const subject = workingCount > 0
+        ? 'Daily Digest — ' + workingCount + ' working today'
+        : 'Daily Digest — Your favourites update';
       try {
         await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            from: 'Brothel Search <info@travanixlabs.com>',
-            to: userInfo.email,
-            subject: 'Your Daily Digest — ' + notifications.length + ' update' + (notifications.length !== 1 ? 's' : ''),
-            html: emailHtml,
-          }),
+          body: JSON.stringify({ from: 'Brothel Search <info@travanixlabs.com>', to: userInfo.email, subject, html: emailHtml }),
         });
-        console.log(`[Digest] Email sent to ${userInfo.email}: ${notifications.length} notifications`);
+        console.log(`[Digest] Email sent to ${userInfo.email}`);
       } catch (e) { console.error(`[Digest] Email error for ${userInfo.email}:`, e); }
     }
   }
@@ -1751,31 +1751,63 @@ function scoreGirlWorker(girl, prefs) {
   return Math.round((score / activeWeight) * 100);
 }
 
-function buildDigestEmail(name, notifications) {
-  const favItems = notifications.filter(n => n.type === 'favourite_rostered');
-  const matchItems = notifications.filter(n => n.type === 'new_match');
+function girlCardHtml(g, statusColor, statusText, extra) {
+  const photo = g.photos && g.photos[0] ? `https://wsrv.nl/?url=${encodeURIComponent(g.photos[0])}&w=80&h=106&fit=cover&output=webp&q=80` : '';
+  const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+  const rates = [g.val1 ? '$' + g.val1 : '', g.val2 ? '$' + g.val2 : '', g.val3 ? '$' + g.val3 : ''].filter(Boolean).join(' / ');
+  const stats = [g.age ? 'Age ' + g.age : '', g.height ? g.height + 'cm' : '', g.cup ? g.cup + ' cup' : ''].filter(Boolean).join(' · ');
+
+  return `<tr><td style="padding:8px 0;border-bottom:1px solid #1a1a2e">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+      ${photo ? `<td width="80" valign="top" style="padding-right:12px"><img src="${photo}" width="80" height="106" style="border-radius:8px;display:block;object-fit:cover" alt="${g.name || ''}"></td>` : ''}
+      <td valign="top">
+        <div style="font-size:16px;font-weight:700;color:#c9952c;margin-bottom:2px">${g.name || ''}</div>
+        <div style="font-size:12px;color:#999;margin-bottom:4px">${g.venueName || ''}${countries ? ' · ' + countries : ''}</div>
+        ${stats ? `<div style="font-size:11px;color:#777;margin-bottom:4px">${stats}</div>` : ''}
+        ${rates ? `<div style="font-size:12px;color:#c9952c;margin-bottom:4px">${rates}</div>` : ''}
+        <div style="display:inline-block;font-size:10px;font-weight:700;color:${statusColor};background:${statusColor}15;border:1px solid ${statusColor}40;padding:2px 8px;border-radius:4px;letter-spacing:1px">${statusText}</div>
+        ${extra || ''}
+      </td>
+    </tr></table>
+  </td></tr>`;
+}
+
+function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking }) {
   let html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0e0e16;color:#e0d6c8;padding:32px;border-radius:12px">`;
   html += `<div style="text-align:center;margin-bottom:24px"><span style="font-size:24px;font-weight:700;color:#c9952c;letter-spacing:2px">BROTHEL SEARCH</span></div>`;
-  html += `<p style="font-size:16px;margin-bottom:20px">Hi ${name},</p>`;
+  html += `<p style="font-size:16px;margin-bottom:24px">Hi ${name},</p>`;
 
-  if (favItems.length) {
-    html += `<div style="margin-bottom:20px"><div style="font-size:14px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Your Favourites — Working Today</div>`;
-    for (const n of favItems) {
-      html += `<div style="padding:10px 14px;margin-bottom:8px;background:rgba(201,149,44,0.08);border-left:3px solid #c9952c;border-radius:4px"><strong>${n.title}</strong><br><span style="font-size:13px;color:#999">${n.body}</span></div>`;
+  const hasWorking = favWorking.length || matchesWorking.length;
+  const hasNotWorking = favNotWorking.length || matchesNotWorking.length;
+
+  // ── WORKING TODAY ──
+  if (hasWorking) {
+    html += `<div style="font-size:13px;font-weight:700;color:#00c864;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">&#9679; Working Today</div>`;
+    html += `<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px">`;
+    for (const g of favWorking) {
+      html += girlCardHtml(g, '#c9952c', 'FAVOURITE');
     }
-    html += `</div>`;
+    for (const g of matchesWorking) {
+      html += girlCardHtml(g, '#00c864', g.matchScore + '% MATCH', `<span style="font-size:10px;color:#00c864;margin-left:6px">NEW</span>`);
+    }
+    html += `</table>`;
   }
 
-  if (matchItems.length) {
-    html += `<div style="margin-bottom:20px"><div style="font-size:14px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">New Matches</div>`;
-    for (const n of matchItems) {
-      html += `<div style="padding:10px 14px;margin-bottom:8px;background:rgba(0,200,100,0.08);border-left:3px solid #00c864;border-radius:4px"><strong>${n.title}</strong><br><span style="font-size:13px;color:#999">${n.body}</span></div>`;
+  // ── NOT WORKING TODAY ──
+  if (hasNotWorking) {
+    html += `<div style="font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">Not Working Today</div>`;
+    html += `<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px">`;
+    for (const g of favNotWorking) {
+      html += girlCardHtml(g, '#555', 'FAVOURITE');
     }
-    html += `</div>`;
+    for (const g of matchesNotWorking) {
+      html += girlCardHtml(g, '#3c78ff', g.matchScore + '% MATCH', `<span style="font-size:10px;color:#3c78ff;margin-left:6px">NEW</span>`);
+    }
+    html += `</table>`;
   }
 
-  html += `<div style="text-align:center;margin-top:24px"><a href="https://brothelsearch.com" style="display:inline-block;padding:10px 28px;background:#c9952c;color:#0e0e16;text-decoration:none;border-radius:8px;font-weight:700;letter-spacing:1px">Browse Now</a></div>`;
-  html += `<p style="font-size:11px;color:#666;margin-top:24px;text-align:center">You're receiving this because you have favourites on Brothel Search.</p>`;
+  html += `<div style="text-align:center;margin-top:24px"><a href="https://brothelsearch.com/working-now" style="display:inline-block;padding:12px 32px;background:#c9952c;color:#0e0e16;text-decoration:none;border-radius:8px;font-weight:700;letter-spacing:1px;font-size:14px">See Who's Working Now</a></div>`;
+  html += `<p style="font-size:11px;color:#555;margin-top:24px;text-align:center">You're receiving this because you have favourites on Brothel Search.</p>`;
   html += `</div>`;
   return html;
 }

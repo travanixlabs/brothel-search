@@ -1095,6 +1095,11 @@ async function regenerateSitemap(env) {
 
   let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
 
+  // Feature pages
+  urls.push(`<url><loc>https://brothelsearch.com/working-now</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`);
+  urls.push(`<url><loc>https://brothelsearch.com/compare</loc><lastmod>${today}</lastmod><priority>0.85</priority></url>`);
+  urls.push(`<url><loc>https://brothelsearch.com/analytics</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`);
+
   // City page
   urls.push(`<url><loc>https://brothelsearch.com/sydney/</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`);
 
@@ -1863,6 +1868,27 @@ function botHtml(title, desc, url, jsonLd) {
 
 async function serveBotLanding(env, pathname) {
   const parts = pathname.replace(/^\//, '').replace(/\/$/, '').split('/');
+
+  // /working-now
+  if (parts.length === 1 && parts[0] === 'working-now') {
+    const title = 'Who\u2019s Working Now \u2013 Live Roster | Brothel Search';
+    const desc = 'See which girls are available right now across Sydney brothels. Live roster updated daily.';
+    return new Response(botHtml(title, desc, 'https://brothelsearch.com/working-now', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
+  // /compare
+  if (parts.length === 1 && parts[0] === 'compare') {
+    const title = 'Compare Brothels in Sydney | Brothel Search';
+    const desc = 'Side-by-side comparison of 7 Sydney brothels. Compare girls, pricing, location and availability.';
+    return new Response(botHtml(title, desc, 'https://brothelsearch.com/compare', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
+  // /analytics
+  if (parts.length === 1 && parts[0] === 'analytics') {
+    const title = 'Analytics \u2013 Data Insights | Brothel Search';
+    const desc = 'Price trends, busiest days, girl retention and country breakdown across Sydney brothels.';
+    return new Response(botHtml(title, desc, 'https://brothelsearch.com/analytics', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
 
   // /sydney — city page
   if (parts.length === 1 && parts[0] === 'sydney') {

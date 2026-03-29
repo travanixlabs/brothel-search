@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /sync-*
+Disallow: /check-*
+Disallow: /regenerate-*
+Disallow: /send-digest
+
 Sitemap: https://brothelsearch.com/sitemap.xml

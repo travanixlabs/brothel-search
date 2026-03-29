@@ -455,3 +455,36 @@ body.is-admin .admin-only{display:initial!important}
 .leaflet-control-zoom a{background:rgba(12,12,20,0.85)!important;color:var(--gold)!important;border-color:rgba(201,149,44,0.3)!important}
 .leaflet-control-attribution{background:rgba(12,12,20,0.7)!important;color:rgba(201,149,44,0.5)!important;font-size:9px!important}
 .leaflet-control-attribution a{color:rgba(201,149,44,0.6)!important}
+.review-section{max-width:100%}
+.review-summary{display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;padding:16px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px}
+.review-avg-score{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1;min-width:60px;text-align:center}
+.review-avg-detail{flex:1}
+.review-avg-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);margin-bottom:4px}
+.review-avg-row span:first-child{width:90px;text-transform:capitalize}
+.review-avg-row span:last-child{width:24px;text-align:right;color:var(--gold)}
+.review-bar{flex:1;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.review-bar-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.review-form{padding:16px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;margin:16px 0}
+.review-form-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.review-form-row label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);width:100px}
+.review-stars{display:flex;gap:2px}
+.review-star{font-size:18px;color:rgba(255,255,255,0.15);transition:color .2s}
+.review-star.active{color:var(--gold)}
+.review-stars-interactive .review-star{cursor:pointer}
+.review-stars-interactive .review-star:hover,.review-stars-interactive .review-star:hover~.review-star{color:rgba(201,149,44,0.5)}
+.review-textarea{width:100%;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:12px;margin:12px 0;resize:vertical;min-height:60px;max-height:150px;outline:none}
+.review-textarea:focus{border-color:rgba(201,149,44,0.3)}
+.review-submit{padding:8px 20px;background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.3);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.review-submit:hover{background:rgba(201,149,44,0.2)}
+.review-submit:disabled{opacity:0.5;cursor:not-allowed}
+.review-delete{padding:8px 16px;background:rgba(255,68,68,0.1);border:1px solid rgba(255,68,68,0.3);border-radius:8px;color:#ff4444;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.review-delete:hover{background:rgba(255,68,68,0.2)}
+.review-card{padding:16px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:8px}
+.review-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.review-card-user{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:1px;color:var(--gold)}
+.review-card-date{font-size:11px;color:var(--text-dim)}
+.review-card-ratings{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+.review-card-rating{font-size:10px;color:var(--text-dim);display:flex;align-items:center;gap:4px}
+.review-card-rating span{text-transform:capitalize}
+.review-card-rating .review-star{font-size:12px}
+.review-card-comment{font-size:14px;color:var(--text);line-height:1.6;margin-top:8px}

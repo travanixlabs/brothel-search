@@ -2282,6 +2282,201 @@ function setRosterVenue(venueId) {
 
 document.getElementById('rosterToggle').addEventListener('click', toggleRosterView);
 
+// ── Reviews ──
+
+async function loadReviews(venue, girlName) {
+  const { data, error } = await sbClient.from('reviews').select('*').eq('venue', venue).eq('girl_name', girlName).order('created_at', { ascending: false });
+  if (error) { console.error('Load reviews error:', error); return []; }
+  return data || [];
+}
+
+async function submitReview(venue, girlName, ratings, comment) {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return { error: 'Not logged in' };
+  const userName = user.user_metadata?.name || user.email.split('@')[0];
+  const { data, error } = await sbClient.from('reviews').upsert({
+    user_id: user.id, user_name: userName, venue, girl_name: girlName,
+    overall: ratings.overall, service: ratings.service, friendliness: ratings.friendliness,
+    appearance: ratings.appearance, hygiene: ratings.hygiene, value: ratings.value,
+    comment: comment.substring(0, 500),
+  }, { onConflict: 'user_id,venue,girl_name' }).select();
+  if (error) { console.error('Submit review error:', error); return { error: error.message }; }
+  return { data };
+}
+
+async function deleteReview(reviewId) {
+  const { error } = await sbClient.from('reviews').delete().eq('id', reviewId);
+  if (error) { console.error('Delete review error:', error); return { error: error.message }; }
+  return { success: true };
+}
+
+function renderStars(rating, interactive, category) {
+  let html = '<div class="review-stars' + (interactive ? ' review-stars-interactive' : '') + '"' + (category ? ' data-category="' + category + '"' : '') + '>';
+  for (let i = 1; i <= 5; i++) {
+    html += '<span class="review-star' + (i <= rating ? ' active' : '') + '" data-value="' + i + '">\u2605</span>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function averageRatings(reviews) {
+  if (!reviews.length) return null;
+  const fields = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  const avg = {};
+  for (const f of fields) {
+    avg[f] = (reviews.reduce((sum, r) => sum + r[f], 0) / reviews.length).toFixed(1);
+  }
+  avg.count = reviews.length;
+  return avg;
+}
+
+function buildReviewSection(g, reviews) {
+  const avg = averageRatings(reviews);
+  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+
+  let html = '<div class="review-section" style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
+  html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:16px">Reviews</div>';
+
+  // Average ratings summary
+  if (avg) {
+    html += '<div class="review-summary">';
+    html += '<div class="review-avg-score">' + avg.overall + '</div>';
+    html += '<div class="review-avg-detail">';
+    html += '<div style="font-size:14px;color:var(--text);margin-bottom:4px">' + avg.count + ' review' + (avg.count !== 1 ? 's' : '') + '</div>';
+    for (const cat of categories) {
+      html += '<div class="review-avg-row"><span>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</span><div class="review-bar"><div class="review-bar-fill" style="width:' + (avg[cat] / 5 * 100) + '%"></div></div><span>' + avg[cat] + '</span></div>';
+    }
+    html += '</div></div>';
+  } else {
+    html += '<div style="color:var(--text-dim);font-size:14px;margin-bottom:16px">No reviews yet. Be the first to review!</div>';
+  }
+
+  // Review form (only for logged-in users)
+  html += '<div id="reviewFormContainer"></div>';
+
+  // Review list
+  html += '<div id="reviewList">';
+  for (const r of reviews) {
+    html += renderReviewCard(r);
+  }
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
+function renderReviewCard(r) {
+  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  let html = '<div class="review-card" data-review-id="' + r.id + '">';
+  html += '<div class="review-card-header">';
+  html += '<div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
+  html += '<div class="review-card-date">' + new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) + '</div>';
+  html += '</div>';
+  html += '<div class="review-card-ratings">';
+  for (const cat of categories) {
+    html += '<div class="review-card-rating"><span>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</span>' + renderStars(r[cat], false) + '</div>';
+  }
+  html += '</div>';
+  if (r.comment) html += '<div class="review-card-comment">' + r.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+  html += '</div>';
+  return html;
+}
+
+async function initReviewSection(g) {
+  const reviews = await loadReviews(g.venue, g.name);
+  const container = document.querySelector('.review-section');
+  if (!container) return;
+
+  // Populate review list
+  const listEl = document.getElementById('reviewList');
+  if (listEl) listEl.innerHTML = reviews.map(r => renderReviewCard(r)).join('');
+
+  // Show review form for logged-in users
+  const formContainer = document.getElementById('reviewFormContainer');
+  if (!formContainer) return;
+
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) {
+    formContainer.innerHTML = '<div style="color:var(--text-dim);font-size:13px;margin:16px 0">Log in to leave a review.</div>';
+    return;
+  }
+
+  const existingReview = reviews.find(r => r.user_id === user.id);
+  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+
+  let formHtml = '<div class="review-form">';
+  formHtml += '<div style="font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">' + (existingReview ? 'Update Your Review' : 'Leave a Review') + '</div>';
+
+  for (const cat of categories) {
+    const val = existingReview ? existingReview[cat] : 0;
+    formHtml += '<div class="review-form-row"><label>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</label>' + renderStars(val, true, cat) + '</div>';
+  }
+
+  formHtml += '<textarea id="reviewComment" class="review-textarea" placeholder="Share your experience (optional, max 500 chars)" maxlength="500">' + (existingReview ? (existingReview.comment || '') : '') + '</textarea>';
+  formHtml += '<div style="display:flex;gap:8px;align-items:center">';
+  formHtml += '<button class="review-submit" id="reviewSubmitBtn">' + (existingReview ? 'Update Review' : 'Submit Review') + '</button>';
+  if (existingReview) formHtml += '<button class="review-delete" id="reviewDeleteBtn">Delete</button>';
+  formHtml += '<span id="reviewMsg" style="font-size:12px;color:var(--gold)"></span>';
+  formHtml += '</div></div>';
+
+  formContainer.innerHTML = formHtml;
+
+  // Star click handlers
+  formContainer.querySelectorAll('.review-stars-interactive').forEach(starsEl => {
+    starsEl.querySelectorAll('.review-star').forEach(star => {
+      star.addEventListener('click', function() {
+        const val = parseInt(this.dataset.value);
+        starsEl.querySelectorAll('.review-star').forEach((s, i) => s.classList.toggle('active', i < val));
+      });
+    });
+  });
+
+  // Submit handler
+  document.getElementById('reviewSubmitBtn').addEventListener('click', async function() {
+    const ratings = {};
+    let allRated = true;
+    formContainer.querySelectorAll('.review-stars-interactive').forEach(starsEl => {
+      const cat = starsEl.dataset.category;
+      const val = starsEl.querySelectorAll('.review-star.active').length;
+      ratings[cat] = val;
+      if (val === 0) allRated = false;
+    });
+
+    if (!allRated) { document.getElementById('reviewMsg').textContent = 'Please rate all categories'; return; }
+
+    const comment = document.getElementById('reviewComment').value.trim();
+    this.disabled = true;
+    this.textContent = 'Saving...';
+
+    const result = await submitReview(g.venue, g.name, ratings, comment);
+    if (result.error) {
+      document.getElementById('reviewMsg').textContent = result.error;
+      this.disabled = false;
+      this.textContent = existingReview ? 'Update Review' : 'Submit Review';
+    } else {
+      // Refresh the whole review section
+      const freshReviews = await loadReviews(g.venue, g.name);
+      const section = document.querySelector('.review-section');
+      if (section) section.outerHTML = buildReviewSection(g, freshReviews);
+      initReviewSection(g);
+    }
+  });
+
+  // Delete handler
+  const deleteBtn = document.getElementById('reviewDeleteBtn');
+  if (deleteBtn && existingReview) {
+    deleteBtn.addEventListener('click', async function() {
+      if (!confirm('Delete your review?')) return;
+      this.disabled = true;
+      await deleteReview(existingReview.id);
+      const freshReviews = await loadReviews(g.venue, g.name);
+      const section = document.querySelector('.review-section');
+      if (section) section.outerHTML = buildReviewSection(g, freshReviews);
+      initReviewSection(g);
+    });
+  }
+}
+
 function buildProfileCalendar(g) {
   const cal = calendarData[(g.venue || '') + ':' + g.name];
   if (!cal) return '';
@@ -2502,10 +2697,13 @@ function showProfile(g) {
         ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
       </div>
     </div>
-    ${buildProfileCalendar(g)}`;
+    ${buildProfileCalendar(g)}
+    ${buildReviewSection(g, [])}`;
   // Cinematic open: show overlay then trigger transition
   overlay.style.display = 'flex';
   requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('active')));
+  // Load and init reviews
+  initReviewSection(g);
   document.body.style.overflow = 'hidden';
 
   // Auto-rotate profile photos with crossfade

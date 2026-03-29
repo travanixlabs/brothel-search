@@ -7,6 +7,23 @@
   }
 })();
 
+// Country flag emoji mapping
+const COUNTRY_FLAGS = {
+  'Japanese': '\ud83c\uddef\ud83c\uddf5', 'Korean': '\ud83c\uddf0\ud83c\uddf7', 'Chinese': '\ud83c\udde8\ud83c\uddf3',
+  'Thai': '\ud83c\uddf9\ud83c\udded', 'Vietnamese': '\ud83c\uddfb\ud83c\uddf3', 'Taiwanese': '\ud83c\uddf9\ud83c\uddfc',
+  'Filipino': '\ud83c\uddf5\ud83c\udded', 'Malaysian': '\ud83c\uddf2\ud83c\uddfe', 'Indonesian': '\ud83c\uddee\ud83c\udde9',
+  'Indian': '\ud83c\uddee\ud83c\uddf3', 'Singaporean': '\ud83c\uddf8\ud83c\uddec', 'Hong Kong': '\ud83c\udded\ud83c\uddf0',
+  'Australian': '\ud83c\udde6\ud83c\uddfa', 'European': '\ud83c\uddea\ud83c\uddfa', 'Brazilian': '\ud83c\udde7\ud83c\uddf7',
+  'Colombian': '\ud83c\udde8\ud83c\uddf4', 'Russian': '\ud83c\uddf7\ud83c\uddfa', 'African': '\ud83c\udf0d',
+  'Mongolian': '\ud83c\uddf2\ud83c\uddf3', 'Cambodian': '\ud83c\uddf0\ud83c\udded', 'Nepalese': '\ud83c\uddf3\ud83c\uddf5',
+  'Myanmar': '\ud83c\uddf2\ud83c\uddf2', 'Laos': '\ud83c\uddf1\ud83c\udde6',
+};
+function countryFlag(country) { return COUNTRY_FLAGS[country] || ''; }
+function countriesWithFlags(countries) {
+  const cs = Array.isArray(countries) ? countries : [countries || ''];
+  return cs.map(c => (countryFlag(c) ? countryFlag(c) + ' ' : '') + c).join(', ');
+}
+
 // Supabase Auth
 const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJsaHdla3VpZGtzeGlhaWNrZWNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMzMxODEsImV4cCI6MjA4OTYwOTE4MX0.dx8_2UHRJqCJ5aOf2O9ogSYDHY3hUKyGPRJjJiT4ghE';
@@ -1929,7 +1946,7 @@ function renderCard(g, grid) {
     const img = g.photos && g.photos.length
       ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')} – ${(g.venueName || '').replace(/"/g, '&quot;')} ${(VENUE_SUBURB_NAMES[g.venue] || '').replace(/"/g, '&quot;')}, Sydney" loading="lazy">`
       : '<div class="silhouette"></div>';
-    const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+    const countries = countriesWithFlags(g.country);
 
     const lastRostered = (() => {
       const avail = getAvailabilityText(g);
@@ -2797,13 +2814,14 @@ function showProfile(g) {
   });
   const overlay = document.getElementById('profileOverlay');
   const panel = document.getElementById('profilePanel');
-  const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+  const countries = countriesWithFlags(g.country);
   const photos = g.photos || [];
   const mainImg = photos.length ? photos[0] : '';
 
   panel.classList.toggle('favorited', isFavorite(g));
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
+    <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="country-badge">${g.venueName}</div>
@@ -2832,6 +2850,15 @@ function showProfile(g) {
           ${(g.val1 || g.val2 || g.val3) ? '<div class="profile-price-table"><div class="profile-price-header">Rates</div><div class="profile-price-grid">' + (g.val1 ? '<div class="profile-price-item"><span class="profile-price-duration">30 min</span><span class="profile-price-amount">$' + g.val1 + '</span></div>' : '') + (g.val2 ? '<div class="profile-price-item"><span class="profile-price-duration">45 min</span><span class="profile-price-amount">$' + g.val2 + '</span></div>' : '') + (g.val3 ? '<div class="profile-price-item"><span class="profile-price-duration">60 min</span><span class="profile-price-amount">$' + g.val3 + '</span></div>' : '') + '</div></div>' : ''}
           ${detailRow('Start Date', g.startDate)}
           ${detailRow('Last Available', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
+          ${(() => {
+            if (!g.lastRostered) return '';
+            const rd = new Date(g.lastRostered + 'T00:00:00');
+            const today = new Date(); today.setHours(0,0,0,0);
+            const diff = Math.round((today - rd) / 86400000);
+            const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
+            const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
+            return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
+          })()}
           ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
           ${detailRow('Experience', g.exp)}
           ${detailRow('Special', g.special)}
@@ -3055,6 +3082,10 @@ const STALE_THRESHOLD = 10 * 60 * 1000; // 10 minutes
 loadProfiles().then(() => {
   profilesLoaded = true;
   lastVisibleTime = Date.now();
+  // Update Working Now nav count
+  const wnCount = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  const wnLink = document.getElementById('navWorkingNow');
+  if (wnLink && wnCount > 0) wnLink.textContent = 'Working Now (' + wnCount + ')';
   // Handle URL path on load
   const path = window.location.pathname;
   if (path === '/' || path === '/index.html') {
@@ -3365,7 +3396,7 @@ function renderWorkingNow() {
 }
 
 function renderWorkingNowCard(g) {
-  const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+  const countries = countriesWithFlags(g.country);
   const girlKey = g.venue + ':' + g.name;
   const girlScore = matchScores.get(girlKey) || 0;
   const showBadge = userPreferences && girlScore > 0;
@@ -3614,7 +3645,7 @@ function renderVenuePage(suburbSlug, venueId) {
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
   for (const g of girls) {
-    const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+    const countries = countriesWithFlags(g.country);
     const girlKey = g.venue + ':' + g.name;
     const girlScore = matchScores.get(girlKey) || 0;
     const showBadge = userPreferences && girlScore > 0;

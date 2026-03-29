@@ -270,6 +270,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .profile-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-dim);font-size:28px;cursor:pointer;transition:color .3s}
 .profile-close:hover{color:#fff}
+.profile-share{position:absolute;top:16px;right:56px;background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.25);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;cursor:pointer;z-index:5;transition:background .3s}
+.profile-share:hover{background:rgba(201,149,44,0.2)}
 .profile-layout{display:grid;grid-template-columns:3fr 2fr;gap:40px;margin-top:20px}
 .profile-gallery{position:relative}
 .profile-gallery .profile-main-wrap{position:relative;overflow:hidden;border-radius:12px}

@@ -3138,8 +3138,8 @@ function renderHomePage() {
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += sectionHeader('Home');
-  html += '<p class="hero-tagline" style="margin-bottom:32px">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
+  html += '<div class="section-header centered"><div><div class="section-tag">Brothel Search</div><h1 class="section-title">Home</h1></div></div>';
+  html += '<p class="hero-tagline" style="margin-bottom:32px;text-align:center">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
 
   // Editor's Picks — top matches available now
   const picks = allGirls.filter(g => {
@@ -3150,7 +3150,7 @@ function renderHomePage() {
 
   if (picks.length) {
     html += '<div class="venue-divider"><span>\u2014 TOP MATCHES AVAILABLE NOW \u2014</span></div>';
-    html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px">';
+    html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
     for (const g of picks) {
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
       const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
@@ -3161,7 +3161,7 @@ function renderHomePage() {
 
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
-  html += '<div class="landing-grid" style="margin-top:20px">';
+  html += '<div class="landing-grid" style="margin-top:20px;justify-content:center">';
   html += '<a href="/profiles" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/profiles\')"><h2 class="landing-card-title">Browse All Profiles</h2><div class="landing-card-stat">' + allGirls.length + ' girls across ' + Object.keys(VENUE_DATA).length + ' venues</div><div class="landing-card-link">View profiles \u2192</div></a>';
   html += '<a href="/working-now" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/working-now\')"><h2 class="landing-card-title">Who\u2019s Working Now</h2><div class="landing-card-stat">Live roster across all venues</div><div class="landing-card-link">See who\u2019s available \u2192</div></a>';
   html += '<a href="/compare" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/compare\')"><h2 class="landing-card-title">Compare Venues</h2><div class="landing-card-stat">Side-by-side comparison</div><div class="landing-card-link">Compare now \u2192</div></a>';

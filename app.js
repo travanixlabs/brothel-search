@@ -3016,7 +3016,7 @@ window.addEventListener('popstate', () => {
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
-    updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+    updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
   } else if (path === '/' || path === '/index.html') {
     closeProfile();
     handleLandingRoute(path);
@@ -3772,7 +3772,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
   history.pushState(null, '', '/profiles');
   showMainSection();
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+  updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
 });
 
 document.getElementById('navWorkingNow').addEventListener('click', function(e) {

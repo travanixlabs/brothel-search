@@ -3256,7 +3256,16 @@ function renderAnalyticsPage() {
 // ── Venue Comparison ──
 
 function renderComparePage() {
-  const venueIds = Object.keys(VENUE_DATA);
+  const venueIds = Object.keys(VENUE_DATA).slice().sort((a, b) => {
+    if (userPreferences) {
+      const sa = allGirls.filter(g => g.venue === a).map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
+      const sb = allGirls.filter(g => g.venue === b).map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
+      const avgA = sa.length ? sa.reduce((x,y) => x+y, 0) / sa.length : 0;
+      const avgB = sb.length ? sb.reduce((x,y) => x+y, 0) / sb.length : 0;
+      return avgB - avgA;
+    }
+    return allGirls.filter(g => g.venue === b && g.lastRostered).length - allGirls.filter(g => g.venue === a && g.lastRostered).length;
+  });
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',

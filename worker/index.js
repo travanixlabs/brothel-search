@@ -1931,6 +1931,13 @@ async function serveBotLanding(env, pathname) {
     return new Response(botHtml(title, desc, 'https://brothelsearch.com/analytics', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
+  // /roadmap
+  if (parts.length === 1 && parts[0] === 'roadmap') {
+    const title = 'Roadmap \u2013 Development Timeline | Brothel Search';
+    const desc = 'Upcoming features, fixes and improvements. Track the development progress of Brothel Search.';
+    return new Response(botHtml(title, desc, 'https://brothelsearch.com/roadmap', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
+
   // /sydney — city page
   if (parts.length === 1 && parts[0] === 'sydney') {
     const title = 'Brothels in Sydney \u2013 Browse All Venues | Brothel Search';

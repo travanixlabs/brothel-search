@@ -601,3 +601,21 @@ body.is-admin .admin-only{display:initial!important}
 .home-search-item span{font-size:11px;color:var(--text-dim)}
 .venue-hero{width:100%;height:200px;background-size:cover;background-position:center 30%;position:relative;margin-top:-152px;padding-top:152px}
 .venue-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,12,0.3) 0%,rgba(6,6,12,0.95) 100%)}
+.roadmap-add-btn{padding:8px 20px;background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.3);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.roadmap-add-btn:hover{background:rgba(201,149,44,0.2)}
+.roadmap-form,.roadmap-edit-form{padding:16px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;display:flex;flex-direction:column;gap:10px}
+.roadmap-input{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none}
+.roadmap-input:focus,.roadmap-textarea:focus,.roadmap-select:focus{border-color:rgba(201,149,44,0.3)}
+.roadmap-textarea{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none;resize:vertical;min-height:60px}
+.roadmap-select{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;padding:8px 12px;outline:none;cursor:pointer}
+.roadmap-submit{padding:8px 20px;background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.3);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+.roadmap-submit:hover{background:rgba(201,149,44,0.2)}
+.roadmap-cancel{padding:8px 16px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text-dim);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+.roadmap-badge{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;display:inline-block}
+.roadmap-title-cell{max-width:300px}
+.roadmap-title-text{font-size:14px;color:var(--text)}
+.roadmap-desc{font-size:13px;color:var(--text-dim);line-height:1.5;margin-top:8px;padding:8px 0;border-top:1px solid rgba(255,255,255,0.04)}
+.roadmap-action-btn{background:none;border:1px solid rgba(201,149,44,0.2);border-radius:6px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:1px;padding:4px 10px;cursor:pointer;margin-right:4px;transition:background .2s}
+.roadmap-action-btn:hover{background:rgba(201,149,44,0.1)}
+.roadmap-delete-btn{border-color:rgba(255,68,68,0.2);color:#ff4444}
+.roadmap-delete-btn:hover{background:rgba(255,68,68,0.1)}

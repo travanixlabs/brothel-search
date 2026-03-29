@@ -3169,7 +3169,7 @@ window.addEventListener('popstate', () => {
   } else if (path === '/' || path === '/index.html') {
     closeProfile();
     handleLandingRoute(path);
-  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics') && !findGirlByPath(path)) {
+  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') && !findGirlByPath(path)) {
     closeProfile();
     handleLandingRoute(path);
   } else {
@@ -3215,7 +3215,7 @@ loadProfiles().then(() => {
   } else if (path !== '/profiles') {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
-    else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics') { handleLandingRoute(path); }
+    else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') { handleLandingRoute(path); }
     else if (path === '/profiles') { /* already showing main section */ }
   }
 });
@@ -3509,6 +3509,192 @@ function renderComparePage() {
   html += '</div>';
   return html;
 }
+
+// ── Roadmap ──
+
+async function loadRoadmapItems() {
+  const { data, error } = await sbClient.from('roadmap').select('*').order('created_at', { ascending: false });
+  if (error) { console.error('Load roadmap error:', error); return []; }
+  return data || [];
+}
+
+async function createRoadmapItem(item) {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return { error: 'Not logged in' };
+
+  // Check member limit (3 active items)
+  if (userRole !== 'admin') {
+    const { data: existing } = await sbClient.from('roadmap').select('id').eq('creator_id', user.id).neq('status', 'completed');
+    if (existing && existing.length >= 3) return { error: 'Members can only have 3 active items' };
+  }
+
+  const { data, error } = await sbClient.from('roadmap').insert({
+    creator_id: user.id,
+    initiator: userRole === 'admin' ? 'Admin' : 'Member',
+    status: 'review',
+    category: 'review',
+    title: item.title.substring(0, 25),
+    description: item.description.substring(0, 250),
+  }).select();
+  if (error) return { error: error.message };
+  return { data };
+}
+
+async function updateRoadmapItem(id, fields) {
+  const { error } = await sbClient.from('roadmap').update(fields).eq('id', id);
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+async function deleteRoadmapItem(id) {
+  const { error } = await sbClient.from('roadmap').delete().eq('id', id);
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+function renderRoadmapPage() {
+  updateMeta(
+    'Roadmap \u2013 Development Timeline | Brothel Search',
+    'Upcoming features, fixes and improvements. Track the development progress of Brothel Search.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/roadmap',
+    null
+  );
+
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += sectionHeader('Roadmap');
+  html += '<p class="landing-desc">Development timeline of upcoming changes, new features, and fixes.</p>';
+
+  // New item form
+  html += '<div id="roadmapFormWrap" style="margin-bottom:24px">';
+  html += '<button class="roadmap-add-btn" id="roadmapAddBtn">+ New Item</button>';
+  html += '<div id="roadmapForm" style="display:none" class="roadmap-form">';
+  html += '<input type="text" id="roadmapTitle" class="roadmap-input" placeholder="Title (max 25 chars)" maxlength="25">';
+  html += '<textarea id="roadmapDesc" class="roadmap-textarea" placeholder="Description (max 250 chars)" maxlength="250"></textarea>';
+  html += '<div style="display:flex;gap:8px;align-items:center"><button class="roadmap-submit" id="roadmapSubmitBtn">Submit</button><button class="roadmap-cancel" id="roadmapCancelBtn">Cancel</button><span id="roadmapMsg" style="font-size:12px;color:var(--gold)"></span></div>';
+  html += '</div></div>';
+
+  // Table
+  html += '<div class="compare-table-wrap"><table class="compare-table" id="roadmapTable">';
+  html += '<thead><tr>';
+  html += '<th class="compare-label">Date</th>';
+  html += '<th class="compare-label">Initiator</th>';
+  html += '<th class="compare-label">Status</th>';
+  html += '<th class="compare-label">Category</th>';
+  html += '<th class="compare-label">Title</th>';
+  html += '<th class="compare-label">Actions</th>';
+  html += '</tr></thead>';
+  html += '<tbody id="roadmapBody"><tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-dim)">Loading...</td></tr></tbody>';
+  html += '</table></div>';
+
+  html += '</div>';
+  return html;
+}
+
+function renderRoadmapRow(item) {
+  const isAdmin = userRole === 'admin';
+  const isOwner = window._currentUserId && item.creator_id === window._currentUserId;
+  const canEdit = isAdmin || isOwner;
+  const date = new Date(item.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+
+  const statusColors = { review: 'var(--text-dim)', planned: '#3c78ff', 'in progress': '#f5e6a3', completed: '#00c864' };
+  const categoryColors = { review: 'var(--text-dim)', feature: '#3c78ff', fix: '#ff4444', improvement: '#f5e6a3', content: '#c9952c' };
+
+  let html = '<tr class="roadmap-row" data-id="' + item.id + '">';
+  html += '<td style="font-size:12px;white-space:nowrap">' + date + '</td>';
+  html += '<td><span class="roadmap-badge" style="background:' + (item.initiator === 'Admin' ? 'rgba(201,149,44,0.15);color:var(--gold)' : 'rgba(60,120,255,0.15);color:#3c78ff') + '">' + item.initiator + '</span></td>';
+  html += '<td><span class="roadmap-badge" style="color:' + (statusColors[item.status] || 'var(--text)') + '">' + item.status + '</span></td>';
+  html += '<td><span class="roadmap-badge" style="color:' + (categoryColors[item.category] || 'var(--text)') + '">' + item.category + '</span></td>';
+  html += '<td class="roadmap-title-cell"><div class="roadmap-title-text" style="cursor:pointer" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'none\'?\'\':\'none\'">' + item.title.replace(/</g, '&lt;') + ' <span style="font-size:10px;color:var(--text-dim)">\u25BC</span></div><div class="roadmap-desc" style="display:none">' + item.description.replace(/</g, '&lt;') + '</div></td>';
+  html += '<td style="white-space:nowrap">';
+  if (canEdit) html += '<button class="roadmap-action-btn" onclick="editRoadmapItem(\'' + item.id + '\')">Edit</button>';
+  if (isAdmin) html += '<button class="roadmap-action-btn roadmap-delete-btn" onclick="deleteRoadmapItemUI(\'' + item.id + '\')">Delete</button>';
+  html += '</td>';
+  html += '</tr>';
+  return html;
+}
+
+async function initRoadmapPage() {
+  // Get current user ID
+  const { data: { user } } = await sbClient.auth.getUser();
+  window._currentUserId = user ? user.id : null;
+
+  const items = await loadRoadmapItems();
+  const body = document.getElementById('roadmapBody');
+  if (!body) return;
+
+  if (!items.length) {
+    body.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-dim)">No roadmap items yet.</td></tr>';
+  } else {
+    body.innerHTML = items.map(i => renderRoadmapRow(i)).join('');
+  }
+
+  // Add button
+  const addBtn = document.getElementById('roadmapAddBtn');
+  const form = document.getElementById('roadmapForm');
+  if (addBtn && form) {
+    addBtn.onclick = () => { form.style.display = ''; addBtn.style.display = 'none'; };
+    document.getElementById('roadmapCancelBtn').onclick = () => { form.style.display = 'none'; addBtn.style.display = ''; };
+    document.getElementById('roadmapSubmitBtn').onclick = async () => {
+      const title = document.getElementById('roadmapTitle').value.trim();
+      const desc = document.getElementById('roadmapDesc').value.trim();
+      const msg = document.getElementById('roadmapMsg');
+      if (!title) { msg.textContent = 'Title required'; return; }
+      if (!desc) { msg.textContent = 'Description required'; return; }
+      msg.textContent = 'Submitting...';
+      const result = await createRoadmapItem({ title, description: desc });
+      if (result.error) { msg.textContent = result.error; return; }
+      msg.textContent = '';
+      document.getElementById('roadmapTitle').value = '';
+      document.getElementById('roadmapDesc').value = '';
+      form.style.display = 'none';
+      addBtn.style.display = '';
+      initRoadmapPage();
+    };
+  }
+}
+
+window.editRoadmapItem = async function(id) {
+  const { data: items } = await sbClient.from('roadmap').select('*').eq('id', id).single();
+  if (!items) return;
+  const item = items;
+  const isAdmin = userRole === 'admin';
+
+  let formHtml = '<div class="roadmap-edit-form" id="editForm_' + id + '">';
+  if (isAdmin) {
+    formHtml += '<select id="editStatus_' + id + '" class="roadmap-select"><option value="review"' + (item.status === 'review' ? ' selected' : '') + '>review</option><option value="planned"' + (item.status === 'planned' ? ' selected' : '') + '>planned</option><option value="in progress"' + (item.status === 'in progress' ? ' selected' : '') + '>in progress</option><option value="completed"' + (item.status === 'completed' ? ' selected' : '') + '>completed</option></select>';
+    formHtml += '<select id="editCategory_' + id + '" class="roadmap-select"><option value="review"' + (item.category === 'review' ? ' selected' : '') + '>review</option><option value="feature"' + (item.category === 'feature' ? ' selected' : '') + '>feature</option><option value="fix"' + (item.category === 'fix' ? ' selected' : '') + '>fix</option><option value="improvement"' + (item.category === 'improvement' ? ' selected' : '') + '>improvement</option><option value="content"' + (item.category === 'content' ? ' selected' : '') + '>content</option></select>';
+  }
+  formHtml += '<input type="text" id="editTitle_' + id + '" class="roadmap-input" value="' + item.title.replace(/"/g, '&quot;') + '" maxlength="25">';
+  formHtml += '<textarea id="editDesc_' + id + '" class="roadmap-textarea" maxlength="250">' + item.description + '</textarea>';
+  formHtml += '<div style="display:flex;gap:8px"><button class="roadmap-submit" onclick="saveRoadmapEdit(\'' + id + '\')">Save</button><button class="roadmap-cancel" onclick="initRoadmapPage()">Cancel</button></div>';
+  formHtml += '</div>';
+
+  const row = document.querySelector('tr[data-id="' + id + '"]');
+  if (row) {
+    row.innerHTML = '<td colspan="6">' + formHtml + '</td>';
+  }
+};
+
+window.saveRoadmapEdit = async function(id) {
+  const isAdmin = userRole === 'admin';
+  const fields = {
+    title: document.getElementById('editTitle_' + id).value.trim().substring(0, 25),
+    description: document.getElementById('editDesc_' + id).value.trim().substring(0, 250),
+  };
+  if (isAdmin) {
+    fields.status = document.getElementById('editStatus_' + id).value;
+    fields.category = document.getElementById('editCategory_' + id).value;
+  }
+  await updateRoadmapItem(id, fields);
+  initRoadmapPage();
+};
+
+window.deleteRoadmapItemUI = async function(id) {
+  if (!confirm('Delete this roadmap item?')) return;
+  await deleteRoadmapItem(id);
+  initRoadmapPage();
+};
 
 // ── Working Now ──
 
@@ -3936,6 +4122,8 @@ function handleLandingRoute(path) {
     html = renderComparePage();
   } else if (cleanPath === 'analytics') {
     html = renderAnalyticsPage();
+  } else if (cleanPath === 'roadmap') {
+    html = renderRoadmapPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
@@ -3953,7 +4141,7 @@ function handleLandingRoute(path) {
     landingEl.innerHTML = html;
     landingEl.style.display = '';
     mainSection.style.display = 'none';
-    const activeLinkId = cleanPath === '' || cleanPath === 'index.html' ? 'navHome' : path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : path.includes('analytics') ? 'navAnalytics' : 'navBrothels';
+    const activeLinkId = cleanPath === '' || cleanPath === 'index.html' ? 'navHome' : path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : path.includes('analytics') ? 'navAnalytics' : path.includes('roadmap') ? 'navRoadmap' : 'navBrothels';
     document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === activeLinkId));
     window.scrollTo({ top: 0 });
     // Init map if on city page
@@ -3971,6 +4159,8 @@ function handleLandingRoute(path) {
       }
       requestAnimationFrame(tick);
     });
+    // Init roadmap
+    if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {
@@ -4058,6 +4248,11 @@ document.getElementById('navCompare').addEventListener('click', function(e) {
 document.getElementById('navAnalytics').addEventListener('click', function(e) {
   e.preventDefault();
   navigateToLanding('/analytics');
+});
+
+document.getElementById('navRoadmap').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/roadmap');
 });
 
 document.getElementById('navBrothels').addEventListener('click', function(e) {

@@ -3329,7 +3329,7 @@ function renderHomePage() {
   html += '<div class="venue-carousel">';
   for (const [id, v] of Object.entries(VENUE_DATA)) {
     const count = allGirls.filter(g => g.venue === id && g.lastRostered).length;
-    const topGirl = allGirls.find(g => g.venue === id && g.photos && g.photos.length);
+    const topGirl = allGirls.filter(g => g.venue === id && g.photos && g.photos.length).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0))[0];
     const thumb = topGirl ? imgProxy(topGirl.photos[0]) : '';
     html += '<div class="venue-carousel-item" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">';
     if (thumb) html += '<img src="' + thumb + '" alt="' + v.name + '">';

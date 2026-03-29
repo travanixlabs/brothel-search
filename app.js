@@ -2798,6 +2798,11 @@ const VENUE_SUBURB_NAMES = {
   ginzaempire: 'Surry Hills', ginzaclub: 'Surry Hills', kyoto206: 'Surry Hills',
   sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket'
 };
+const SUBURB_REGIONS = {
+  surryhills: 'CBD & Central', chippendale: 'CBD & Central', haymarket: 'CBD & Central',
+  annandale: 'Inner West',
+};
+const REGION_ORDER = ['CBD & Central', 'Inner West', 'Eastern Suburbs', 'North Shore', 'Northern Beaches', 'North West', 'Western Suburbs', 'South Western Suburbs', 'Southern Suburbs'];
 
 function slugify(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, ''); }
 
@@ -3618,18 +3623,45 @@ function renderCityPage() {
   html += '<div class="landing-page">';
   html += '<h1 class="landing-title">Brothels in Sydney</h1>';
   html += '<p class="landing-desc">' + totalVenues + ' venues across ' + suburbs.length + ' suburbs with ' + totalGirls + '+ girls available.</p>';
-  html += '<div class="landing-grid">';
-
+  // Group suburbs by region
+  const regionGroups = {};
   for (const suburb of suburbs) {
-    const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
-    html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
-    html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
-    html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
-    html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
-    html += '</a>';
+    const region = SUBURB_REGIONS[suburb.slug] || 'Other';
+    if (!regionGroups[region]) regionGroups[region] = [];
+    regionGroups[region].push(suburb);
   }
 
-  html += '</div></div>';
+  // Render by region in order
+  for (const region of REGION_ORDER) {
+    if (!regionGroups[region] || !regionGroups[region].length) continue;
+    html += '<div class="venue-divider"><span>\u2014 ' + region.toUpperCase() + ' \u2014</span></div>';
+    html += '<div class="landing-grid">';
+    for (const suburb of regionGroups[region]) {
+      const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
+      html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
+      html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
+      html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
+      html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
+      html += '</a>';
+    }
+    html += '</div>';
+  }
+  // Any suburbs without a region
+  if (regionGroups['Other'] && regionGroups['Other'].length) {
+    html += '<div class="venue-divider"><span>\u2014 OTHER \u2014</span></div>';
+    html += '<div class="landing-grid">';
+    for (const suburb of regionGroups['Other']) {
+      const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
+      html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
+      html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
+      html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
+      html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
+      html += '</a>';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
   return html;
 }
 
@@ -3716,8 +3748,9 @@ function renderSuburbPage(suburbSlug) {
 
   let html = '<div class="landing-map-container"><div id="venueMap" data-suburb="' + suburbSlug + '"></div></div>';
   html += '<div class="landing-page">';
+  const suburbRegion = SUBURB_REGIONS[suburbSlug] || '';
   html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
-  html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + activeCount + ' girls active in ' + suburb.name + ', Sydney.</p>';
+  html += '<p class="landing-desc">' + (suburbRegion ? suburbRegion + ' \u00b7 ' : '') + suburb.venues.length + ' venues with ' + activeCount + ' girls active in ' + suburb.name + ', Sydney.</p>';
   html += '<div class="landing-grid">';
 
   for (const v of suburb.venues) {

@@ -1121,6 +1121,7 @@ async function regenerateSitemap(env) {
   let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
 
   // Feature pages
+  urls.push(`<url><loc>https://brothelsearch.com/profiles</loc><lastmod>${today}</lastmod><priority>0.95</priority></url>`);
   urls.push(`<url><loc>https://brothelsearch.com/working-now</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`);
   urls.push(`<url><loc>https://brothelsearch.com/compare</loc><lastmod>${today}</lastmod><priority>0.85</priority></url>`);
   urls.push(`<url><loc>https://brothelsearch.com/analytics</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`);
@@ -1893,6 +1894,13 @@ function botHtml(title, desc, url, jsonLd) {
 
 async function serveBotLanding(env, pathname) {
   const parts = pathname.replace(/^\//, '').replace(/\/$/, '').split('/');
+
+  // /profiles
+  if (parts.length === 1 && parts[0] === 'profiles') {
+    const title = 'Browse All Profiles \u2013 Girls & Rosters | Brothel Search';
+    const desc = 'Browse profiles, rosters and availability across Sydney\'s top brothels. Filter by venue, country, availability and more.';
+    return new Response(botHtml(title, desc, 'https://brothelsearch.com/profiles', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+  }
 
   // /working-now
   if (parts.length === 1 && parts[0] === 'working-now') {

@@ -3332,30 +3332,6 @@ function renderHomePage() {
   }
   html += '</div>';
 
-  // Popular now — most frequently rostered
-  const rosterCounts = {};
-  const sevenDaysAgoHome = new Date(); sevenDaysAgoHome.setDate(sevenDaysAgoHome.getDate() - 7);
-  const sevenDayStrHome = sevenDaysAgoHome.toISOString().split('T')[0];
-  for (const [key, cal] of Object.entries(calendarData)) {
-    const recentDays = Object.keys(cal).filter(d => d >= sevenDayStrHome).length;
-    if (recentDays > 0) rosterCounts[key] = recentDays;
-  }
-  const popular = Object.entries(rosterCounts).sort((a,b) => b[1] - a[1]).slice(0, 8).map(([key]) => {
-    const [venue, ...nameParts] = key.split(':');
-    const name = nameParts.join(':');
-    return allGirls.find(g => g.venue === venue && g.name === name);
-  }).filter(Boolean);
-
-  if (popular.length) {
-    html += '<div class="venue-divider"><span>\u2014 POPULAR THIS WEEK \u2014</span></div>';
-    html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
-    for (const g of popular) {
-      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div></div>';
-    }
-    html += '</div>';
-  }
-
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
   html += '<div class="landing-grid" style="margin-top:20px;justify-content:center">';

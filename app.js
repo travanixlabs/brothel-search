@@ -3352,7 +3352,7 @@ function renderWorkingNow() {
   );
 
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += sectionHeader('Who\\\'s Working Now');
+  html += sectionHeader('Who\u2019s Working Now');
   html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later today.</p>';
 
   if (now.length) {

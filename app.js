@@ -3235,7 +3235,7 @@ function renderAnalyticsPage() {
     html += '<tr>';
     html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
     html += '<td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
-    html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">' + v.address + '</a></td>';
+    html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
     html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
     html += '<td style="font-size:12px">' + (topCountries || '\u2014') + '</td>';
     html += '<td>' + r.newCount + '</td>';
@@ -3298,7 +3298,7 @@ function renderComparePage() {
   // Row labels column + venue columns
   const rows = [
     { label: 'Rank', render: id => { const idx = venueIds.indexOf(id); const sorted = venueIds.slice().sort((a,b) => userPreferences ? venueStats[b].avgMatch - venueStats[a].avgMatch : venueStats[b].active - venueStats[a].active); return '<td style="color:var(--gold);font-weight:700">#' + (sorted.indexOf(id) + 1) + '</td>'; } },
-    { label: 'Address', render: id => '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(VENUE_DATA[id].address) + '" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">' + VENUE_DATA[id].address + '</a></td>' },
+    { label: 'Address', render: id => '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(VENUE_DATA[id].address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + VENUE_DATA[id].address + '</a></td>' },
     { label: 'Website', render: id => '<td><a href="' + VENUE_DATA[id].url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + VENUE_DATA[id].url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>' },
     { label: 'Top Countries', render: id => '<td style="font-size:12px">' + (venueStats[id].topCountries || '\u2014') + '</td>' },
     { label: 'New (30 days)', render: id => '<td>' + venueStats[id].newCount + '</td>' },

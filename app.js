@@ -3210,21 +3210,6 @@ function renderAnalyticsPage() {
   const topCountries = Object.entries(countryTotals).sort((a,b) => b[1] - a[1]).slice(0, 10);
   const maxCountry = topCountries.length ? topCountries[0][1] : 1;
 
-  // ── Venue Ranking (by user preferences) ──
-  const rankings = venueIds.map(id => {
-    const v = VENUE_DATA[id];
-    const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStr);
-    const rostered = active.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
-    const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
-    const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStr).length;
-    let avgMatch = 0;
-    if (userPreferences && active.length) {
-      const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
-      avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
-    }
-    return { id, name: v.name, suburb: v.suburb, rostered, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), newCount, avgMatch, activeCount: active.length };
-  }).sort((a,b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
-
   // ── Build HTML ──
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Analytics');
@@ -3262,37 +3247,6 @@ function renderAnalyticsPage() {
   html += '</div></div>';
 
 
-  // Venue Rankings
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Venue Rankings' + (userPreferences ? ' (based on your preferences & rostered within 30 days)' : ' (rostered within 30 days)') + '</h2>';
-  if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
-  html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
-  html += '<th class="compare-label">Venue</th><th class="compare-label">Rank</th><th class="compare-label">Address</th><th class="compare-label">Website</th><th class="compare-label">Top Countries</th><th class="compare-label">New</th><th class="compare-label">Active Girls</th><th class="compare-label">Working Today</th>';
-  if (userPreferences) html += '<th class="compare-label">Avg Match</th>';
-  html += '<th class="compare-label">Avg 30min</th><th class="compare-label">Avg 45min</th><th class="compare-label">Avg 60min</th>';
-  html += '</tr></thead><tbody>';
-  rankings.forEach((r, i) => {
-    const v = VENUE_DATA[r.id];
-    const active = allGirls.filter(g => g.venue === r.id && g.lastRostered && g.lastRostered >= thirtyDayStr);
-    const countryCounts = {};
-    active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c && c !== 'N/A') countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
-    const topCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
-    html += '<tr>';
-    html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
-    html += '<td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
-    html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
-    html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
-    html += '<td style="font-size:12px">' + (topCountries || '\u2014') + '</td>';
-    html += '<td>' + r.newCount + '</td>';
-    html += '<td>' + r.activeCount + '</td>';
-    html += '<td>' + r.rostered + '</td>';
-    if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? 'var(--gold)' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
-    html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
-    html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
-    html += '<td>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';
-    html += '</tr>';
-  });
-  html += '</tbody></table></div></div>';
-
   html += '</div>';
   return html;
 }
@@ -3300,7 +3254,7 @@ function renderAnalyticsPage() {
 // ── Venue Comparison ──
 
 function renderComparePage() {
-  let venueIds = Object.keys(VENUE_DATA);
+  const venueIds = Object.keys(VENUE_DATA);
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',
@@ -3313,13 +3267,13 @@ function renderComparePage() {
   const thirtyDaysAgoCmp = new Date(); thirtyDaysAgoCmp.setDate(thirtyDaysAgoCmp.getDate() - 30);
   const thirtyDayStrCmp = thirtyDaysAgoCmp.toISOString().split('T')[0];
 
-  // Pre-compute per venue
-  const venueStats = {};
-  for (const id of venueIds) {
+  const rankings = venueIds.map(id => {
+    const v = VENUE_DATA[id];
     const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrCmp);
+    const rostered = active.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
     const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
     const countryCounts = {};
-    active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c) countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
+    active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c && c !== 'N/A') countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
     const topCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
     const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStrCmp).length;
     let avgMatch = 0;
@@ -3327,52 +3281,36 @@ function renderComparePage() {
       const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
       avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
     }
-    venueStats[id] = { active: active.length, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch };
-  }
-
-  // Sort venue columns by rank (same logic as rank row)
-  venueIds = venueIds.slice().sort((a, b) => userPreferences ? venueStats[b].avgMatch - venueStats[a].avgMatch : venueStats[b].active - venueStats[a].active);
+    return { id, name: v.name, suburb: v.suburb, rostered, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch, activeCount: active.length };
+  }).sort((a,b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Compare Venues');
-  html += '<p class="landing-desc">Side-by-side comparison of all ' + venueIds.length + ' venues (rostered within 30 days).</p>';
+  html += '<p class="landing-desc">' + (userPreferences ? 'Ranked by your preferences' : 'Ranked by active girl count') + ' (rostered within 30 days).</p>';
+  if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
 
-  html += '<div class="compare-table-wrap"><table class="compare-table">';
-
-  // Row labels column + venue columns
-  const rows = [
-    { label: 'Rank', render: id => { const idx = venueIds.indexOf(id); const sorted = venueIds.slice().sort((a,b) => userPreferences ? venueStats[b].avgMatch - venueStats[a].avgMatch : venueStats[b].active - venueStats[a].active); return '<td style="color:var(--gold);font-weight:700">#' + (sorted.indexOf(id) + 1) + '</td>'; } },
-    { label: 'Address', render: id => '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(VENUE_DATA[id].address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + VENUE_DATA[id].address + '</a></td>' },
-    { label: 'Website', render: id => '<td><a href="' + VENUE_DATA[id].url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + VENUE_DATA[id].url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>' },
-    { label: 'Top Countries', render: id => '<td style="font-size:12px">' + (venueStats[id].topCountries || '\u2014') + '</td>' },
-    { label: 'New (30 days)', render: id => '<td>' + venueStats[id].newCount + '</td>' },
-    { label: 'Active Girls', render: id => '<td>' + venueStats[id].active + '</td>' },
-    { label: 'Working Today', render: id => '<td>' + venueRosteredCount(id) + '</td>' },
-  ];
-  if (userPreferences) {
-    rows.push({ label: 'Avg Match', render: id => { const m = venueStats[id].avgMatch; return '<td style="color:' + (m >= 90 ? 'var(--gold)' : m >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + m + '%</td>'; } });
-  }
-  rows.push(
-    { label: 'Avg 30 Min', render: id => '<td>' + (venueStats[id].avg30 ? '$' + venueStats[id].avg30 : '\u2014') + '</td>' },
-    { label: 'Avg 45 Min', render: id => '<td>' + (venueStats[id].avg45 ? '$' + venueStats[id].avg45 : '\u2014') + '</td>' },
-    { label: 'Avg 60 Min', render: id => '<td>' + (venueStats[id].avg60 ? '$' + venueStats[id].avg60 : '\u2014') + '</td>' },
-  );
-
-  // Header row — venue names
-  html += '<thead><tr><th class="compare-label"></th>';
-  for (const id of venueIds) {
-    const v = VENUE_DATA[id];
-    html += '<th class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">' + v.name + '</th>';
-  }
+  html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
+  html += '<th class="compare-label">Venue</th><th class="compare-label">Rank</th><th class="compare-label">Address</th><th class="compare-label">Website</th><th class="compare-label">Top Countries</th><th class="compare-label">New</th><th class="compare-label">Active Girls</th><th class="compare-label">Working Today</th>';
+  if (userPreferences) html += '<th class="compare-label">Avg Match</th>';
+  html += '<th class="compare-label">Avg 30min</th><th class="compare-label">Avg 45min</th><th class="compare-label">Avg 60min</th>';
   html += '</tr></thead><tbody>';
-
-  // Data rows
-  for (const row of rows) {
-    html += '<tr><td class="compare-label">' + row.label + '</td>';
-    for (const id of venueIds) html += row.render(id);
+  rankings.forEach((r, i) => {
+    const v = VENUE_DATA[r.id];
+    html += '<tr>';
+    html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
+    html += '<td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
+    html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
+    html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
+    html += '<td style="font-size:12px">' + (r.topCountries || '\u2014') + '</td>';
+    html += '<td>' + r.newCount + '</td>';
+    html += '<td>' + r.activeCount + '</td>';
+    html += '<td>' + r.rostered + '</td>';
+    if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? 'var(--gold)' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
+    html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
+    html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
+    html += '<td>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';
     html += '</tr>';
-  }
-
+  });
   html += '</tbody></table></div>';
   html += '</div>';
   return html;

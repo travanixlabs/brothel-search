@@ -2865,6 +2865,7 @@ function updateMeta(title, desc, image, url, jsonLd) {
 
 function showProfile(g) {
   if (!g) return;
+  if (!requireSubscription()) return;
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
@@ -3255,17 +3256,30 @@ document.addEventListener('visibilitychange', () => {
 });
 
 // Delayed paywall check — runs 3 seconds after page load, never blocks anything
+// Track subscription status for navigation gating
+let isSubscribed = null;
+
 setTimeout(async () => {
   try {
     const { data: { session } } = await sbClient.auth.getSession();
-    if (!session) return;
-    if (userRole === 'admin') return;
-    // Show paywall if unsubscribed OR if URL has #subscribe
+    if (!session) { isSubscribed = false; return; }
+    if (userRole === 'admin') { isSubscribed = true; return; }
     const sub = await checkSubscription();
-    if (!sub || sub.status !== 'active') showPaywall();
-    else if (window.location.hash === '#subscribe') hidePaywall(); // subscribed user visiting #subscribe
-  } catch(e) { console.error('Paywall check:', e); }
+    isSubscribed = sub && sub.status === 'active';
+    // Only show paywall on non-home pages
+    const path = window.location.pathname;
+    if (!isSubscribed && path !== '/' && path !== '/index.html') showPaywall();
+    else if (isSubscribed && window.location.hash === '#subscribe') hidePaywall();
+  } catch(e) { console.error('Paywall check:', e); isSubscribed = false; }
 }, 2000);
+
+// Gate navigation for unsubscribed users
+function requireSubscription() {
+  if (isSubscribed === true || userRole === 'admin') return true;
+  if (isSubscribed === false) { showPaywall(); return false; }
+  // Still loading — allow for now
+  return true;
+}
 
 // hashchange handled above in unified listener
 
@@ -3879,6 +3893,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
 }
 
 function navigateToLanding(path) {
+  // Allow home page without subscription, gate everything else
+  if (path !== '/' && path !== '/index.html' && !requireSubscription()) return;
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd) dd.classList.remove('open');
   const landing = document.getElementById('landingPage');
@@ -4017,6 +4033,7 @@ document.getElementById('navHome').addEventListener('click', function(e) {
 
 document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
+  if (!requireSubscription()) return;
   history.pushState(null, '', '/profiles');
   showMainSection();
   updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);

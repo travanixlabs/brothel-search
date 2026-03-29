@@ -2417,8 +2417,8 @@ async function submitReview(venue, girlName, ratings, comment) {
   const userName = user.user_metadata?.display_name || user.user_metadata?.name || user.email.split('@')[0];
   const { data, error } = await sbClient.from('reviews').upsert({
     user_id: user.id, user_name: userName, venue, girl_name: girlName,
-    overall: ratings.overall, service: ratings.service, friendliness: ratings.friendliness,
-    appearance: ratings.appearance, hygiene: ratings.hygiene, value: ratings.value,
+    overall: ratings.overall, professionalism: ratings.professionalism, experience: ratings.experience,
+    presentation: ratings.presentation, safety: ratings.safety, transparency: ratings.transparency,
     comment: comment.substring(0, 500),
   }, { onConflict: 'user_id,venue,girl_name' }).select();
   if (error) { console.error('Submit review error:', error); return { error: error.message }; }
@@ -2431,6 +2431,8 @@ async function deleteReview(reviewId) {
   return { success: true };
 }
 
+const REVIEW_LABELS = { overall: 'Overall', professionalism: 'Professionalism & Communication', experience: 'Experience Quality', presentation: 'Appearance & Presentation', safety: 'Safety & Respect', transparency: 'Value & Transparency' };
+
 function renderStars(rating, interactive, category) {
   let html = '<div class="review-stars' + (interactive ? ' review-stars-interactive' : '') + '"' + (category ? ' data-category="' + category + '"' : '') + '>';
   for (let i = 1; i <= 5; i++) {
@@ -2442,7 +2444,7 @@ function renderStars(rating, interactive, category) {
 
 function averageRatings(reviews) {
   if (!reviews.length) return null;
-  const fields = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  const fields = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
   const avg = {};
   for (const f of fields) {
     avg[f] = (reviews.reduce((sum, r) => sum + r[f], 0) / reviews.length).toFixed(1);
@@ -2481,7 +2483,7 @@ function buildSimilarGirls(g) {
 
 function buildReviewSection(g, reviews) {
   const avg = averageRatings(reviews);
-  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
 
   let html = '<div class="review-section" style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
   html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:16px">Reviews</div>';
@@ -2493,7 +2495,7 @@ function buildReviewSection(g, reviews) {
     html += '<div class="review-avg-detail">';
     html += '<div style="font-size:14px;color:var(--text);margin-bottom:4px">' + avg.count + ' review' + (avg.count !== 1 ? 's' : '') + '</div>';
     for (const cat of categories) {
-      html += '<div class="review-avg-row"><span>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</span><div class="review-bar"><div class="review-bar-fill" style="width:' + (avg[cat] / 5 * 100) + '%"></div></div><span>' + avg[cat] + '</span></div>';
+      html += '<div class="review-avg-row"><span>' + (REVIEW_LABELS[cat] || cat) + '</span><div class="review-bar"><div class="review-bar-fill" style="width:' + (avg[cat] / 5 * 100) + '%"></div></div><span>' + avg[cat] + '</span></div>';
     }
     html += '</div></div>';
   } else {
@@ -2515,7 +2517,7 @@ function buildReviewSection(g, reviews) {
 }
 
 function renderReviewCard(r) {
-  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
   let html = '<div class="review-card" data-review-id="' + r.id + '">';
   html += '<div class="review-card-header">';
   html += '<div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
@@ -2523,7 +2525,7 @@ function renderReviewCard(r) {
   html += '</div>';
   html += '<div class="review-card-ratings">';
   for (const cat of categories) {
-    html += '<div class="review-card-rating"><span>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</span>' + renderStars(r[cat], false) + '</div>';
+    html += '<div class="review-card-rating"><span>' + (REVIEW_LABELS[cat] || cat) + '</span>' + renderStars(r[cat], false) + '</div>';
   }
   html += '</div>';
   if (r.comment) html += '<div class="review-card-comment">' + r.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
@@ -2551,14 +2553,14 @@ async function initReviewSection(g) {
   }
 
   const existingReview = reviews.find(r => r.user_id === user.id);
-  const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
 
   let formHtml = '<div class="review-form">';
   formHtml += '<div style="font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">' + (existingReview ? 'Update Your Review' : 'Leave a Review') + '</div>';
 
   for (const cat of categories) {
     const val = existingReview ? existingReview[cat] : 0;
-    formHtml += '<div class="review-form-row"><label>' + cat.charAt(0).toUpperCase() + cat.slice(1) + '</label>' + renderStars(val, true, cat) + '</div>';
+    formHtml += '<div class="review-form-row"><label>' + (REVIEW_LABELS[cat] || cat) + '</label>' + renderStars(val, true, cat) + '</div>';
   }
 
   formHtml += '<textarea id="reviewComment" class="review-textarea" placeholder="Share your experience (optional, max 500 chars)" maxlength="500">' + (existingReview ? (existingReview.comment || '') : '') + '</textarea>';

@@ -3119,10 +3119,14 @@ setTimeout(async () => {
 
 // hashchange handled above in unified listener
 
+function sectionHeader(title) {
+  return '<div class="section-header"><div class="section-line"></div><div><div class="section-tag">Brothel Search</div><h1 class="section-title">' + title + '</h1></div></div>';
+}
+
 // ── Analytics (Members Only) ──
 
 function renderAnalyticsPage() {
-  if (!userRole) return '<div class="landing-page" style="padding-top:20px"><h1 class="landing-title">Analytics</h1><p class="landing-desc">Log in to view analytics.</p></div>';
+  if (!userRole) return '<div class="landing-page" style="padding-top:20px">' + sectionHeader('Analytics') + '<p class="landing-desc">Log in to view analytics.</p></div>';
 
   updateMeta('Analytics \u2013 Data Insights | Brothel Search', 'Price trends, busiest days, girl retention and country breakdown across Sydney brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/analytics', null);
 
@@ -3179,7 +3183,7 @@ function renderAnalyticsPage() {
 
   // ── Build HTML ──
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += '<h1 class="landing-title">Analytics</h1>';
+  html += sectionHeader('Analytics');
   html += '<p class="landing-desc">Data insights across ' + allGirls.length + ' girls and ' + venueIds.length + ' venues.</p>';
 
   // Average Prices
@@ -3283,7 +3287,7 @@ function renderComparePage() {
   }
 
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += '<h1 class="landing-title">Compare Venues</h1>';
+  html += sectionHeader('Compare Venues');
   html += '<p class="landing-desc">Side-by-side comparison of all ' + venueIds.length + ' venues (rostered within 30 days).</p>';
 
   html += '<div class="compare-table-wrap"><table class="compare-table">';
@@ -3348,7 +3352,7 @@ function renderWorkingNow() {
   );
 
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += '<h1 class="landing-title">Who\'s Working Now</h1>';
+  html += sectionHeader('Who\\\'s Working Now');
   html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later today.</p>';
 
   if (now.length) {

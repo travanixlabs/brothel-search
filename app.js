@@ -2790,44 +2790,51 @@ function buildProfileCalendar(g) {
   return html;
 }
 
-const VENUE_SUBURBS = {
-  ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
-  sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket'
+const VENUE_REGIONS = {
+  ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
+  sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral'
 };
 const VENUE_SUBURB_NAMES = {
   ginzaempire: 'Surry Hills', ginzaclub: 'Surry Hills', kyoto206: 'Surry Hills',
   sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket'
 };
-const SUBURB_REGIONS = {
-  surryhills: 'CBD & Central', chippendale: 'CBD & Central', haymarket: 'CBD & Central',
-  annandale: 'Inner West',
-};
-const REGION_ORDER = ['CBD & Central', 'Inner West', 'Eastern Suburbs', 'North Shore', 'Northern Beaches', 'North West', 'Western Suburbs', 'South Western Suburbs', 'Southern Suburbs'];
+const REGION_NAMES = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West', easternsuburbs: 'Eastern Suburbs', northshore: 'North Shore', northernbeaches: 'Northern Beaches', northwest: 'North West', westernsuburbs: 'Western Suburbs', southwesternsuburbs: 'South Western Suburbs', southernsuburbs: 'Southern Suburbs' };
+const REGION_ORDER = ['cbdandcentral', 'innerwest', 'easternsuburbs', 'northshore', 'northernbeaches', 'northwest', 'westernsuburbs', 'southwesternsuburbs', 'southernsuburbs'];
+// Backwards compat aliases
+const VENUE_SUBURBS = VENUE_REGIONS;
+const SUBURB_REGIONS = {}; for (const [k, v] of Object.entries(REGION_NAMES)) SUBURB_REGIONS[k] = v;
 
 function slugify(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, ''); }
 
 function profilePath(g) {
   const name = slugify(g.name);
-  const suburb = VENUE_SUBURBS[g.venue] || 'sydney';
+  const region = VENUE_REGIONS[g.venue] || 'other';
+  const suburb = VENUE_DATA[g.venue] ? VENUE_DATA[g.venue].suburbSlug : 'other';
   const country = slugify(Array.isArray(g.country) ? g.country[0] : g.country) || 'other';
-  return '/sydney/' + suburb + '/' + g.venue + '/' + country + '/' + name;
+  return '/sydney/' + region + '/' + suburb + '/' + g.venue + '/' + country + '/' + name;
 }
 
 function findGirlByPath(path) {
   const parts = path.replace(/^\//, '').split('/');
-  // New format: /sydney/{suburb}/{venue}/{country}/{name}
+  // New format: /sydney/{region}/{suburb}/{venue}/{country}/{name}
+  if (parts.length === 6 && parts[0] === 'sydney') {
+    const venue = parts[3];
+    const slug = parts[5];
+    return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
+  }
+  // Previous format: /sydney/{suburb}/{venue}/{country}/{name}
   if (parts.length === 5 && parts[0] === 'sydney') {
     const venue = parts[2];
     const slug = parts[4];
     return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
   }
-  // Previous format: /sydney/{suburb}/{venue}/{name}
+  // Older format: /sydney/{suburb}/{venue}/{name}
   if (parts.length === 4 && parts[0] === 'sydney') {
     const venue = parts[2];
     const slug = parts[3];
     return allGirls.find(g => g.venue === venue && slugify(g.name) === slug);
   }
-  // Legacy format: /{venue}/{name}
+  // Legacy: /{venue}/{name}
   if (parts.length === 2) {
     const venue = parts[0];
     const slug = parts[1];
@@ -3576,7 +3583,7 @@ const VENUE_DATA = {
   kyoto206: { name: 'Kyoto 206', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://citybrothel.com.au/', address: '206 Commonwealth St, Surry Hills NSW 2010', lat: -33.88317474375967, lng: 151.2108589818634, desc: 'Just two minutes from Central Station, Kyoto 206 is one of Sydney\u2019s most accessible venues. Known for young, beautiful Asian girls and a welcoming atmosphere in the heart of the CBD.' },
   sakura57: { name: 'Sakura 57', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.surryhillsbrothel.com.au/', address: '2/57 Reservoir St, Surry Hills NSW 2010', lat: -33.8812693750108, lng: 151.21102289535847, desc: 'A well-established Surry Hills venue offering day and night shifts with a diverse selection of ladies. Conveniently located in the heart of the suburb with a welcoming and professional environment.' },
   top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.887895846811354, lng: 151.20126815545416, desc: 'Located on Regent Street in Chippendale, Top 127 offers a selection of beautiful girls with competitive rates and a friendly, no-pressure atmosphere close to the city centre.' },
-  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'annandale', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.88719005098213, lng: 151.1706113116501, desc: 'An upmarket Sydney brothel boasting a wide range of beauties. Highly reputable for many years, offering sophisticated full-service Asian girls in well-appointed rooms along Parramatta Road.' },
+  fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'innerwest', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.88719005098213, lng: 151.1706113116501, desc: 'An upmarket Sydney brothel boasting a wide range of beauties. Highly reputable for many years, offering sophisticated full-service Asian girls in well-appointed rooms along Parramatta Road.' },
   '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.87874734224782, lng: 151.20694241127885, desc: 'Sydney\u2019s Haymarket venue on Pitt Street, featuring a diverse roster of beauties from across Asia. Known for friendly service and a central CBD location just steps from Chinatown.' },
 };
 
@@ -3623,45 +3630,29 @@ function renderCityPage() {
   html += '<div class="landing-page">';
   html += '<h1 class="landing-title">Brothels in Sydney</h1>';
   html += '<p class="landing-desc">' + totalVenues + ' venues across ' + suburbs.length + ' suburbs with ' + totalGirls + '+ girls available.</p>';
-  // Group suburbs by region
+  // Group venues by region
   const regionGroups = {};
-  for (const suburb of suburbs) {
-    const region = SUBURB_REGIONS[suburb.slug] || 'Other';
-    if (!regionGroups[region]) regionGroups[region] = [];
-    regionGroups[region].push(suburb);
+  for (const [id, v] of Object.entries(VENUE_DATA)) {
+    const region = VENUE_REGIONS[id] || 'other';
+    if (!regionGroups[region]) regionGroups[region] = { venues: [], girlCount: 0 };
+    regionGroups[region].venues.push({ id, ...v });
+    regionGroups[region].girlCount += venueGirlCount(id);
   }
 
-  // Render by region in order
-  for (const region of REGION_ORDER) {
-    if (!regionGroups[region] || !regionGroups[region].length) continue;
-    html += '<div class="venue-divider"><span>\u2014 ' + region.toUpperCase() + ' \u2014</span></div>';
-    html += '<div class="landing-grid">';
-    for (const suburb of regionGroups[region]) {
-      const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
-      html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
-      html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
-      html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
-      html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
-      html += '</a>';
-    }
-    html += '</div>';
+  html += '<div class="landing-grid">';
+  for (const regionSlug of REGION_ORDER) {
+    const group = regionGroups[regionSlug];
+    if (!group || !group.venues.length) continue;
+    const regionName = REGION_NAMES[regionSlug];
+    html += '<a href="/sydney/' + regionSlug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + regionSlug + '/\')">';
+    html += '<h2 class="landing-card-title">' + regionName + '</h2>';
+    html += '<div class="landing-card-stat">' + group.venues.length + ' venue' + (group.venues.length !== 1 ? 's' : '') + '</div>';
+    html += '<div class="landing-card-stat">' + group.girlCount + ' girls</div>';
+    html += '<div style="font-size:11px;color:var(--text-dim);margin-top:4px">' + group.venues.map(v => v.suburb).filter((v,i,a) => a.indexOf(v) === i).join(', ') + '</div>';
+    html += '<div class="landing-card-link">Browse region \u2192</div>';
+    html += '</a>';
   }
-  // Any suburbs without a region
-  if (regionGroups['Other'] && regionGroups['Other'].length) {
-    html += '<div class="venue-divider"><span>\u2014 OTHER \u2014</span></div>';
-    html += '<div class="landing-grid">';
-    for (const suburb of regionGroups['Other']) {
-      const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
-      html += '<a href="/sydney/' + suburb.slug + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburb.slug + '/\')">';
-      html += '<h2 class="landing-card-title">' + suburb.name + '</h2>';
-      html += '<div class="landing-card-stat">' + suburb.venues.length + ' venue' + (suburb.venues.length !== 1 ? 's' : '') + '</div>';
-      html += '<div class="landing-card-stat">' + girlCount + ' girls</div>';
-      html += '</a>';
-    }
-    html += '</div>';
-  }
-
-  html += '</div>';
+  html += '</div></div>';
   return html;
 }
 
@@ -3679,6 +3670,7 @@ async function initVenueMap() {
   if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
 
   const filterSuburb = mapEl.dataset.suburb || null;
+  const filterRegion = mapEl.dataset.region || null;
 
   const map = L.map('venueMap', { zoomControl: true, scrollWheelZoom: true }).setView([-33.883, 151.207], 14);
   window._venueMap = map;
@@ -3697,7 +3689,11 @@ async function initVenueMap() {
     showCoverageOnHover: false,
   });
 
-  const venues = Object.entries(VENUE_DATA).filter(([id, v]) => !filterSuburb || v.suburbSlug === filterSuburb);
+  const venues = Object.entries(VENUE_DATA).filter(([id, v]) => {
+    if (filterRegion) return VENUE_REGIONS[id] === filterRegion;
+    if (filterSuburb) return v.suburbSlug === filterSuburb;
+    return true;
+  });
 
   // Get user location for distance labels
   let userLat = null, userLng = null;
@@ -3719,7 +3715,7 @@ async function initVenueMap() {
     const marker = L.marker([v.lat, v.lng], {
       icon: L.divIcon({ html: '<div class="venue-marker">' + label + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
     });
-    marker.on('click', function() { navigateToLanding('/sydney/' + v.suburbSlug + '/' + id + '/'); });
+    marker.on('click', function() { navigateToLanding('/sydney/' + (VENUE_REGIONS[id] || 'other') + '/' + v.suburbSlug + '/' + id + '/'); });
     marker.bindTooltip('<strong>' + v.name + '</strong><br>' + v.address + '<br>' + count + ' girls', { className: 'venue-tooltip', direction: 'top', offset: [0, -20] });
     clusters.addLayer(marker);
   }
@@ -3729,34 +3725,37 @@ async function initVenueMap() {
   map.fitBounds(bounds.pad(filterSuburb ? 0.5 : 0.3));
 }
 
-function renderSuburbPage(suburbSlug) {
-  const suburbs = getSuburbs();
-  const suburb = suburbs.find(s => s.slug === suburbSlug);
-  if (!suburb) return null;
+function renderRegionPage(regionSlug) {
+  const regionName = REGION_NAMES[regionSlug];
+  if (!regionName) return null;
+
+  const venueIds = Object.keys(VENUE_DATA).filter(id => VENUE_REGIONS[id] === regionSlug);
+  if (!venueIds.length) return null;
+  const venues = venueIds.map(id => ({ id, ...VENUE_DATA[id] }));
 
   const sevenDaysAgoSub = new Date(); sevenDaysAgoSub.setDate(sevenDaysAgoSub.getDate() - 7);
   const sevenDayStrSub = sevenDaysAgoSub.toISOString().split('T')[0];
-  const activeCount = suburb.venues.reduce((sum, v) => sum + allGirls.filter(g => g.venue === v.id && g.lastRostered && g.lastRostered >= sevenDayStrSub).length, 0);
+  const activeCount = venueIds.reduce((sum, id) => sum + allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= sevenDayStrSub).length, 0);
 
   updateMeta(
-    'Brothels in ' + suburb.name + ', Sydney | Brothel Search',
-    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney: ' + suburb.venues.map(v => v.name).join(', ') + '. ' + activeCount + ' girls active.',
+    'Brothels in ' + regionName + ', Sydney | Brothel Search',
+    'Browse ' + venues.length + ' brothels in ' + regionName + ', Sydney: ' + venues.map(v => v.name).join(', ') + '. ' + activeCount + ' girls active.',
     'https://brothelsearch.com/og-preview.png',
-    'https://brothelsearch.com/sydney/' + suburbSlug + '/',
-    { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburb.name + ', Sydney', numberOfItems: suburb.venues.length }
+    'https://brothelsearch.com/sydney/' + regionSlug + '/',
+    { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + regionName + ', Sydney', numberOfItems: venues.length }
   );
 
-  let html = '<div class="landing-map-container"><div id="venueMap" data-suburb="' + suburbSlug + '"></div></div>';
+  let html = '<div class="landing-map-container"><div id="venueMap" data-region="' + regionSlug + '"></div></div>';
   html += '<div class="landing-page">';
-  const suburbRegion = SUBURB_REGIONS[suburbSlug] || '';
-  html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
-  html += '<p class="landing-desc">' + (suburbRegion ? suburbRegion + ' \u00b7 ' : '') + suburb.venues.length + ' venues with ' + activeCount + ' girls active in ' + suburb.name + ', Sydney.</p>';
+  const suburbRegion = regionName;
+  html += sectionHeader('Brothels in ' + regionName);
+  html += '<p class="landing-desc">' + suburbRegion + ' \u00b7 ' + venues.length + ' venues with ' + activeCount + ' girls active in ' + regionName + ', Sydney.</p>';
   html += '<div class="landing-grid">';
 
-  for (const v of suburb.venues) {
+  for (const v of venues) {
     const count = venueGirlCount(v.id);
     const priceRange = venuePriceRange(v.id);
-    html += '<a href="/sydney/' + suburbSlug + '/' + v.id + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + suburbSlug + '/' + v.id + '/\')">';
+    html += '<a href="/sydney/' + regionSlug + '/' + v.suburbSlug + '/' + v.id + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + regionSlug + '/' + v.suburbSlug + '/' + v.id + '/\')">';
     html += '<h2 class="landing-card-title">' + v.name + '</h2>';
     html += '<div class="landing-card-address">' + v.address + '</div>';
     html += '<div class="landing-card-stat">' + count + ' girls</div>';
@@ -3769,9 +3768,9 @@ function renderSuburbPage(suburbSlug) {
   return html;
 }
 
-function renderVenuePage(suburbSlug, venueId) {
+function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const v = VENUE_DATA[venueId];
-  if (!v || v.suburbSlug !== suburbSlug) return null;
+  if (!v) return null;
 
   const girls = allGirls.filter(g => g.venue === venueId);
   const priceRange = venuePriceRange(venueId);
@@ -3783,7 +3782,7 @@ function renderVenuePage(suburbSlug, venueId) {
     v.name + ' \u2013 ' + v.suburb + ', Sydney | Brothel Search',
     v.name + ' at ' + v.address + '. ' + venueActiveCount + ' girls active.' + (priceRange ? ' Prices from ' + priceRange + '.' : '') + ' Browse profiles, photos and rosters.',
     'https://brothelsearch.com/og-preview.png',
-    'https://brothelsearch.com/sydney/' + suburbSlug + '/' + venueId + '/',
+    'https://brothelsearch.com/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId + '/',
     { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: v.name, url: v.url, address: { '@type': 'PostalAddress', streetAddress: v.address.split(',')[0], addressLocality: v.suburb, addressRegion: 'NSW', addressCountry: 'AU' } }
   );
 
@@ -3918,9 +3917,14 @@ function handleLandingRoute(path) {
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
-    html = renderSuburbPage(parts[1]);
+    // /sydney/{region} — region page
+    html = renderRegionPage(parts[1]);
   } else if (parts.length === 3 && parts[0] === 'sydney') {
-    html = renderVenuePage(parts[1], parts[2]);
+    // /sydney/{region}/{venue} — venue page (suburb-less legacy or venue directly under region)
+    html = renderVenuePage(parts[1], null, parts[2]);
+  } else if (parts.length === 4 && parts[0] === 'sydney') {
+    // /sydney/{region}/{suburb}/{venue} — venue page with suburb
+    html = renderVenuePage(parts[1], parts[2], parts[3]);
   }
 
   if (html) {

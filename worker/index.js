@@ -1129,16 +1129,17 @@ async function regenerateSitemap(env) {
   // City page
   urls.push(`<url><loc>https://brothelsearch.com/sydney/</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`);
 
-  // Suburb pages
-  const suburbsSeen = new Set();
-  for (const s of Object.values(VENUE_SUBURBS)) {
-    if (!suburbsSeen.has(s)) { suburbsSeen.add(s); urls.push(`<url><loc>https://brothelsearch.com/sydney/${s}/</loc><lastmod>${today}</lastmod><priority>0.85</priority></url>`); }
+  // Region pages
+  const regionsSeen = new Set();
+  for (const r of Object.values(VENUE_REGION_SLUGS)) {
+    if (!regionsSeen.has(r)) { regionsSeen.add(r); urls.push(`<url><loc>https://brothelsearch.com/sydney/${r}/</loc><lastmod>${today}</lastmod><priority>0.85</priority></url>`); }
   }
 
   // Venue pages
   for (const [venueId, site] of Object.entries(VENUE_MAP)) {
+    const region = VENUE_REGION_SLUGS[venueId] || 'other';
     const suburb = VENUE_SUBURBS[venueId] || 'sydney';
-    urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${venueId}/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`);
+    urls.push(`<url><loc>https://brothelsearch.com/sydney/${region}/${suburb}/${venueId}/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`);
   }
 
   // Girl profiles
@@ -1150,10 +1151,11 @@ async function regenerateSitemap(env) {
         if (!slug) continue;
         const venueId = Object.keys(SITES).find(k => SITES[k] === site);
         const id = venueId === 'city429' ? '429city' : venueId;
+        const region = VENUE_REGION_SLUGS[id] || 'other';
         const suburb = VENUE_SUBURBS[id] || 'sydney';
         const country = (Array.isArray(g.country) ? g.country[0] : g.country || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
         const lastmod = g.lastRostered || g.startDate || today;
-        urls.push(`<url><loc>https://brothelsearch.com/sydney/${suburb}/${id}/${country || 'other'}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
+        urls.push(`<url><loc>https://brothelsearch.com/sydney/${region}/${suburb}/${id}/${country || 'other'}/${slug}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
       }
     } catch (e) { console.error(`[Sitemap] Error loading ${site.name}:`, e); }
   }
@@ -1783,10 +1785,11 @@ function scoreGirlWorker(girl, prefs) {
 }
 
 function girlProfileUrl(g) {
+  const region = VENUE_REGION_SLUGS[g.venue] || 'other';
   const suburb = VENUE_SUBURBS[g.venue] || 'sydney';
   const country = (Array.isArray(g.country) ? g.country[0] : g.country || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
   const slug = (g.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
-  return `https://brothelsearch.com/sydney/${suburb}/${g.venue}/${country}/${slug}`;
+  return `https://brothelsearch.com/sydney/${region}/${suburb}/${g.venue}/${country}/${slug}`;
 }
 
 function girlCardHtml(g, statusColor, statusText, extra) {
@@ -1867,12 +1870,17 @@ const VENUE_SUBURBS = {
   ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket',
 };
+const VENUE_REGION_SLUGS = {
+  ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
+  sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral',
+};
 
 const VENUE_NAMES = {
   ginzaempire: 'Ginza Empire', ginzaclub: 'Ginza Club', kyoto206: 'Kyoto 206',
   sakura57: 'Sakura 57', top127: 'Top 127', fantasyclub35: 'Fantasy Club 35', '429city': '429 City',
 };
 const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket' };
+const REGION_NAMES_WORKER = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West' };
 
 function botHtml(title, desc, url, jsonLd) {
   return `<!DOCTYPE html>
@@ -1931,27 +1939,27 @@ async function serveBotLanding(env, pathname) {
     return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in Sydney', numberOfItems: 7 }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
-  // /sydney/{suburb} — suburb page
-  if (parts.length === 2 && parts[0] === 'sydney' && SUBURB_NAMES[parts[1]]) {
-    const suburbName = SUBURB_NAMES[parts[1]];
-    const venueCount = Object.entries(VENUE_SUBURBS).filter(([k, v]) => v === parts[1]).length;
-    const title = 'Brothels in ' + suburbName + ', Sydney | Brothel Search';
-    const desc = 'Browse ' + venueCount + ' brothels in ' + suburbName + ', Sydney. Compare venues, pricing and profiles.';
+  // /sydney/{region} — region page
+  if (parts.length === 2 && parts[0] === 'sydney' && REGION_NAMES_WORKER[parts[1]]) {
+    const regionName = REGION_NAMES_WORKER[parts[1]];
+    const venueCount = Object.entries(VENUE_REGION_SLUGS).filter(([k, v]) => v === parts[1]).length;
+    const title = 'Brothels in ' + regionName + ', Sydney | Brothel Search';
+    const desc = 'Browse ' + venueCount + ' brothels in ' + regionName + ', Sydney. Compare venues, pricing and profiles.';
     const url = 'https://brothelsearch.com/sydney/' + parts[1] + '/';
-    return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburbName + ', Sydney', numberOfItems: venueCount }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+    return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + regionName + ', Sydney', numberOfItems: venueCount }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
-  // /sydney/{suburb}/{venue} — venue page
-  if (parts.length === 3 && parts[0] === 'sydney' && VENUE_NAMES[parts[2]]) {
-    const venueId = parts[2];
+  // /sydney/{region}/{suburb}/{venue} — venue page
+  if (parts.length === 4 && parts[0] === 'sydney' && VENUE_NAMES[parts[3]]) {
+    const venueId = parts[3];
     const venueName = VENUE_NAMES[venueId];
-    const suburbName = SUBURB_NAMES[parts[1]] || parts[1];
+    const suburbName = SUBURB_NAMES[parts[2]] || parts[2];
     const site = VENUE_MAP[venueId];
     let girlCount = 0;
     try { const { data } = await loadData(env, site); girlCount = (data.girls || []).length; } catch {}
     const title = venueName + ' \u2013 ' + suburbName + ', Sydney | Brothel Search';
     const desc = venueName + ' in ' + suburbName + ', Sydney. ' + girlCount + ' girls available. Browse profiles, photos and rosters.';
-    const url = 'https://brothelsearch.com/sydney/' + parts[1] + '/' + venueId + '/';
+    const url = 'https://brothelsearch.com/sydney/' + parts[1] + '/' + parts[2] + '/' + venueId + '/';
     return new Response(botHtml(title, desc, url, { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: venueName, address: { '@type': 'PostalAddress', addressLocality: suburbName, addressRegion: 'NSW', addressCountry: 'AU' } }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
@@ -1961,8 +1969,10 @@ async function serveBotLanding(env, pathname) {
 async function serveBotMeta(env, pathname) {
   const parts = pathname.replace(/^\//, '').split('/');
   let venueId, slug;
-  // New format: /sydney/{suburb}/{venue}/{country}/{name}
-  if (parts.length === 5 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[4]; }
+  // New format: /sydney/{region}/{suburb}/{venue}/{country}/{name}
+  if (parts.length === 6 && parts[0] === 'sydney') { venueId = parts[3]; slug = parts[5]; }
+  // Previous format: /sydney/{suburb}/{venue}/{country}/{name}
+  else if (parts.length === 5 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[4]; }
   // Previous format: /sydney/{suburb}/{venue}/{name}
   else if (parts.length === 4 && parts[0] === 'sydney') { venueId = parts[2]; slug = parts[3]; }
   // Legacy format: /{venue}/{name}
@@ -1983,13 +1993,14 @@ async function serveBotMeta(env, pathname) {
     const venue = site.name || '';
     const photo = (girl.photos && girl.photos[0]) || '';
     const countriesDisplay = Array.isArray(girl.country) ? girl.country.join(', ') : (girl.country || '');
+    const region = VENUE_REGION_SLUGS[venueId] || 'other';
     const suburb = VENUE_SUBURBS[venueId] || 'sydney';
     const suburbNames = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket' };
     const suburbName = suburbNames[suburb] || 'Sydney';
     const location = `${suburbName}, Sydney`;
     const firstCountry = Array.isArray(girl.country) ? girl.country[0] : (girl.country || 'other');
     const countrySlug = firstCountry.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '') || 'other';
-    const pageUrl = `https://brothelsearch.com/sydney/${suburb}/${venueId}/${countrySlug}/${slug}`;
+    const pageUrl = `https://brothelsearch.com/sydney/${region}/${suburb}/${venueId}/${countrySlug}/${slug}`;
     const title = `${name} – ${venue} ${location} | Brothel Search`;
     const desc = `${name} at ${venue}, ${location}. ${[girl.age ? 'Age ' + girl.age : '', countriesDisplay].filter(Boolean).join(', ')}. Browse profile, photos and availability.`;
 

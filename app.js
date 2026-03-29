@@ -3537,11 +3537,13 @@ function renderSuburbPage(suburbSlug) {
   const suburb = suburbs.find(s => s.slug === suburbSlug);
   if (!suburb) return null;
 
-  const girlCount = suburb.venues.reduce((sum, v) => sum + venueGirlCount(v.id), 0);
+  const sevenDaysAgoSub = new Date(); sevenDaysAgoSub.setDate(sevenDaysAgoSub.getDate() - 7);
+  const sevenDayStrSub = sevenDaysAgoSub.toISOString().split('T')[0];
+  const activeCount = suburb.venues.reduce((sum, v) => sum + allGirls.filter(g => g.venue === v.id && g.lastRostered && g.lastRostered >= sevenDayStrSub).length, 0);
 
   updateMeta(
     'Brothels in ' + suburb.name + ', Sydney | Brothel Search',
-    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney: ' + suburb.venues.map(v => v.name).join(', ') + '. ' + girlCount + ' girls available.',
+    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney: ' + suburb.venues.map(v => v.name).join(', ') + '. ' + activeCount + ' girls active.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/sydney/' + suburbSlug + '/',
     { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburb.name + ', Sydney', numberOfItems: suburb.venues.length }
@@ -3575,10 +3577,13 @@ function renderVenuePage(suburbSlug, venueId) {
 
   const girls = allGirls.filter(g => g.venue === venueId);
   const priceRange = venuePriceRange(venueId);
+  const sevenDaysAgoVen = new Date(); sevenDaysAgoVen.setDate(sevenDaysAgoVen.getDate() - 7);
+  const sevenDayStrVen = sevenDaysAgoVen.toISOString().split('T')[0];
+  const venueActiveCount = girls.filter(g => g.lastRostered && g.lastRostered >= sevenDayStrVen).length;
 
   updateMeta(
     v.name + ' \u2013 ' + v.suburb + ', Sydney | Brothel Search',
-    v.name + ' at ' + v.address + '. ' + girls.length + ' girls available.' + (priceRange ? ' Prices from ' + priceRange + '.' : '') + ' Browse profiles, photos and rosters.',
+    v.name + ' at ' + v.address + '. ' + venueActiveCount + ' girls active.' + (priceRange ? ' Prices from ' + priceRange + '.' : '') + ' Browse profiles, photos and rosters.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/sydney/' + suburbSlug + '/' + venueId + '/',
     { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: v.name, url: v.url, address: { '@type': 'PostalAddress', streetAddress: v.address.split(',')[0], addressLocality: v.suburb, addressRegion: 'NSW', addressCountry: 'AU' } }

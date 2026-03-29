@@ -3163,14 +3163,12 @@ function renderAnalyticsPage() {
   const maxCountry = topCountries.length ? topCountries[0][1] : 1;
 
   // ── Venue Ranking (by user preferences) ──
-  const sevenDaysAgo2 = new Date(); sevenDaysAgo2.setDate(sevenDaysAgo2.getDate() - 7);
-  const sevenDayStr2 = sevenDaysAgo2.toISOString().split('T')[0];
   const rankings = venueIds.map(id => {
     const v = VENUE_DATA[id];
     const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStr);
     const rostered = active.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
     const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
-    const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= sevenDayStr2).length;
+    const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStr).length;
     let avgMatch = 0;
     if (userPreferences && active.length) {
       const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);

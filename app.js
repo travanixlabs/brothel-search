@@ -2485,11 +2485,18 @@ function buildSimilarGirls(g) {
 
   let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
   html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:12px">Similar Girls</div>';
-  html += '<div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px">';
+  html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px">';
   for (const s of scored) {
     const gg = s.girl;
-    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:80px;height:106px;object-fit:cover;border-radius:8px;display:block">' : '';
-    html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">' + img + '<div style="font-size:11px;color:var(--gold);margin-top:4px">' + (gg.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div></div>';
+    const countries = countriesWithFlags(gg.country);
+    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:120px;height:160px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+    html += '<div style="flex-shrink:0;cursor:pointer;width:120px" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">';
+    html += img;
+    html += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (gg.name||'') + '</div>';
+    html += '<div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div>';
+    html += '<div style="font-size:9px;color:var(--text-dim)">' + countries + '</div>';
+    if (gg.val1) html += '<div style="font-size:9px;color:rgba(201,149,44,0.7)">$' + gg.val1 + '</div>';
+    html += '</div>';
   }
   html += '</div></div>';
   return html;
@@ -2512,6 +2519,10 @@ function buildReviewSection(g, reviews) {
       html += '<div class="review-avg-row"><span>' + (REVIEW_LABELS[cat] || cat) + '</span><div class="review-bar"><div class="review-bar-fill" style="width:' + (avg[cat] / 5 * 100) + '%"></div></div><span>' + avg[cat] + '</span></div>';
     }
     html += '</div></div>';
+    const topComment = reviews.find(r => r.comment && r.comment.length > 20);
+    if (topComment) {
+      html += '<div class="review-highlight"><span class="review-highlight-star">\u2605</span> "' + topComment.comment.replace(/</g, '&lt;').substring(0, 150) + (topComment.comment.length > 150 ? '...' : '') + '" <span class="review-highlight-author">\u2014 ' + topComment.user_name + '</span></div>';
+    }
   } else {
     html += '<div class="empty-msg" style="padding:32px 20px;margin-bottom:16px"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom:12px"><circle cx="30" cy="30" r="28" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><text x="30" y="36" text-anchor="middle" font-size="24" fill="rgba(201,149,44,0.3)">\u2605</text></svg><div>No reviews yet. Be the first to review!</div></div>';
   }
@@ -2549,6 +2560,8 @@ function renderReviewCard(r) {
 
 async function initReviewSection(g) {
   const reviews = await loadReviews(g.venue, g.name);
+  const rcEl = document.getElementById('profileReviewCount');
+  if (rcEl) rcEl.textContent = reviews.length + ' review' + (reviews.length !== 1 ? 's' : '');
   const container = document.querySelector('.review-section');
   if (!container) return;
 
@@ -2830,6 +2843,13 @@ function showProfile(g) {
       ${g.pornstar ? '<span class="av-badge">AV</span>' : ''}
     </div>
     <div class="profile-name">${g.name || ''}</div>
+    <div class="profile-quick-stats">
+      <span>${(g.photos || []).length} photos</span>
+      <span class="pqs-dot">\u00b7</span>
+      <span id="profileReviewCount">0 reviews</span>
+      <span class="pqs-dot">\u00b7</span>
+      <span>${g.startDate ? Math.round((Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000) + ' days' : 'N/A'}</span>
+    </div>
     <div class="profile-layout">
       <div class="profile-gallery">
         <div class="profile-main-wrap">
@@ -3620,7 +3640,13 @@ function renderVenuePage(suburbSlug, venueId) {
     { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: v.name, url: v.url, address: { '@type': 'PostalAddress', streetAddress: v.address.split(',')[0], addressLocality: v.suburb, addressRegion: 'NSW', addressCountry: 'AU' } }
   );
 
-  let html = '<div class="landing-page">';
+  const topGirl = girls.find(g => g.photos && g.photos.length);
+  const heroImg = topGirl ? imgProxy(topGirl.photos[0], 1200) : '';
+  let html = '';
+  if (heroImg) {
+    html += '<div class="venue-hero" style="background-image:url(' + heroImg + ')"><div class="venue-hero-overlay"></div></div>';
+  }
+  html += '<div class="landing-page">';
   html += '<h1 class="landing-title">' + v.name + '</h1>';
   html += '<div class="landing-venue-meta">';
   html += '<div class="landing-card-address">' + v.address + '</div>';

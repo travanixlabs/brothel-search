@@ -3012,7 +3012,7 @@ window.addEventListener('popstate', () => {
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
     updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
-  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare') && !findGirlByPath(path)) {
+  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics') && !findGirlByPath(path)) {
     closeProfile();
     handleLandingRoute(path);
   } else {
@@ -3056,7 +3056,7 @@ loadProfiles().then(() => {
   if (path !== '/' && path !== '/index.html') {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
-    else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare') { handleLandingRoute(path); }
+    else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics') { handleLandingRoute(path); }
   }
 });
 checkAuth().then(() => {
@@ -3115,6 +3115,131 @@ setTimeout(async () => {
 }, 2000);
 
 // hashchange handled above in unified listener
+
+// ── Analytics (Members Only) ──
+
+function renderAnalyticsPage() {
+  if (!userRole) return '<div class="landing-page" style="padding-top:20px"><h1 class="landing-title">Analytics</h1><p class="landing-desc">Log in to view analytics.</p></div>';
+
+  updateMeta('Analytics \u2013 Data Insights | Brothel Search', 'Price trends, busiest days, girl retention and country breakdown across Sydney brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/analytics', null);
+
+  const venueIds = Object.keys(VENUE_DATA);
+
+  // ── Price Analysis ──
+  const priceData = venueIds.map(id => {
+    const girls = allGirls.filter(g => g.venue === id);
+    const p30 = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
+    const p45 = girls.map(g => parseInt(g.val2)).filter(p => p > 0);
+    const p60 = girls.map(g => parseInt(g.val3)).filter(p => p > 0);
+    const avg = arr => arr.length ? Math.round(arr.reduce((a,b) => a+b, 0) / arr.length) : 0;
+    return { name: VENUE_DATA[id].name, avg30: avg(p30), avg45: avg(p45), avg60: avg(p60), count: girls.length };
+  });
+
+  // ── Busiest Days ──
+  const dayCounts = [0,0,0,0,0,0,0]; // Sun-Sat
+  const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  for (const [key, cal] of Object.entries(calendarData)) {
+    if (key.startsWith('_')) continue;
+    for (const dateStr of Object.keys(cal)) {
+      const d = new Date(dateStr + 'T00:00:00');
+      if (!isNaN(d)) dayCounts[d.getDay()]++;
+    }
+  }
+  const maxDay = Math.max(...dayCounts, 1);
+
+  // ── Girl Retention ──
+  const retentionData = venueIds.map(id => {
+    const girls = allGirls.filter(g => g.venue === id && g.startDate);
+    if (!girls.length) return { name: VENUE_DATA[id].name, avgDays: 0, active: 0 };
+    const now = Date.now();
+    const days = girls.map(g => Math.round((now - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000));
+    const avg = Math.round(days.reduce((a,b) => a+b, 0) / days.length);
+    return { name: VENUE_DATA[id].name, avgDays: avg, active: girls.length };
+  });
+
+  // ── Country Breakdown ──
+  const countryTotals = {};
+  allGirls.forEach(g => {
+    const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
+    cs.forEach(c => { if (c) countryTotals[c] = (countryTotals[c] || 0) + 1; });
+  });
+  const topCountries = Object.entries(countryTotals).sort((a,b) => b[1] - a[1]).slice(0, 10);
+  const maxCountry = topCountries.length ? topCountries[0][1] : 1;
+
+  // ── Venue Ranking ──
+  const rankings = venueIds.map(id => {
+    const v = VENUE_DATA[id];
+    const girls = allGirls.filter(g => g.venue === id);
+    const rostered = girls.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
+    const p30 = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
+    const avgPrice = p30.length ? Math.round(p30.reduce((a,b) => a+b, 0) / p30.length) : 999;
+    const newCount = girls.filter(g => isNewProfile(g)).length;
+    return { id, name: v.name, suburb: v.suburb, total: girls.length, rostered, avgPrice, newCount };
+  }).sort((a,b) => b.total - a.total);
+
+  // ── Build HTML ──
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += '<h1 class="landing-title">Analytics</h1>';
+  html += '<p class="landing-desc">Data insights across ' + allGirls.length + ' girls and ' + venueIds.length + ' venues.</p>';
+
+  // Average Prices
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Average Prices by Venue</h2>';
+  html += '<div class="analytics-grid">';
+  for (const p of priceData) {
+    html += '<div class="analytics-card"><div class="analytics-card-title">' + p.name + '</div>';
+    html += '<div class="analytics-stat"><span>30 min</span><span class="analytics-val">$' + p.avg30 + '</span></div>';
+    html += '<div class="analytics-stat"><span>45 min</span><span class="analytics-val">$' + p.avg45 + '</span></div>';
+    html += '<div class="analytics-stat"><span>60 min</span><span class="analytics-val">$' + p.avg60 + '</span></div>';
+    html += '<div class="analytics-stat" style="color:var(--text-dim);font-size:11px"><span>' + p.count + ' girls</span></div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+
+  // Busiest Days
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Busiest Days (Roster Frequency)</h2>';
+  html += '<div class="analytics-bars">';
+  for (let i = 0; i < 7; i++) {
+    const pct = (dayCounts[i] / maxDay * 100).toFixed(0);
+    html += '<div class="analytics-bar-row"><span class="analytics-bar-label">' + dayNames[i] + '</span><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:' + pct + '%"></div></div><span class="analytics-bar-val">' + dayCounts[i] + '</span></div>';
+  }
+  html += '</div></div>';
+
+  // Country Breakdown
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Country Breakdown</h2>';
+  html += '<div class="analytics-bars">';
+  for (const [country, count] of topCountries) {
+    const pct = (count / maxCountry * 100).toFixed(0);
+    html += '<div class="analytics-bar-row"><span class="analytics-bar-label">' + country + '</span><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:' + pct + '%"></div></div><span class="analytics-bar-val">' + count + '</span></div>';
+  }
+  html += '</div></div>';
+
+  // Girl Retention
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Girl Retention (Avg Days Since Start)</h2>';
+  html += '<div class="analytics-grid">';
+  for (const r of retentionData) {
+    html += '<div class="analytics-card"><div class="analytics-card-title">' + r.name + '</div>';
+    html += '<div class="analytics-big-num">' + r.avgDays + '<span style="font-size:14px;color:var(--text-dim)"> days</span></div>';
+    html += '<div style="font-size:11px;color:var(--text-dim)">' + r.active + ' girls with start date</div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+
+  // Venue Rankings
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Venue Rankings</h2>';
+  html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
+  html += '<th class="compare-label">Rank</th><th class="compare-label">Venue</th><th class="compare-label">Suburb</th><th class="compare-label">Total</th><th class="compare-label">Working Today</th><th class="compare-label">Avg 30min</th><th class="compare-label">New</th>';
+  html += '</tr></thead><tbody>';
+  rankings.forEach((r, i) => {
+    html += '<tr><td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
+    html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + VENUE_DATA[r.id].suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
+    html += '<td>' + r.suburb + '</td><td>' + r.total + '</td><td>' + r.rostered + '</td>';
+    html += '<td>$' + r.avgPrice + '</td><td>' + r.newCount + '</td></tr>';
+  });
+  html += '</tbody></table></div></div>';
+
+  html += '</div>';
+  return html;
+}
 
 // ── Venue Comparison ──
 
@@ -3591,6 +3716,8 @@ function handleLandingRoute(path) {
     html = renderWorkingNow();
   } else if (path.replace(/^\//, '').replace(/\/$/, '') === 'compare') {
     html = renderComparePage();
+  } else if (path.replace(/^\//, '').replace(/\/$/, '') === 'analytics') {
+    html = renderAnalyticsPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
@@ -3603,7 +3730,7 @@ function handleLandingRoute(path) {
     landingEl.innerHTML = html;
     landingEl.style.display = '';
     mainSection.style.display = 'none';
-    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : 'navBrothels';
+    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : path.includes('analytics') ? 'navAnalytics' : 'navBrothels';
     document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === activeLinkId));
     window.scrollTo({ top: 0 });
     // Init map if on city page
@@ -3656,6 +3783,11 @@ document.getElementById('navWorkingNow').addEventListener('click', function(e) {
 document.getElementById('navCompare').addEventListener('click', function(e) {
   e.preventDefault();
   navigateToLanding('/compare');
+});
+
+document.getElementById('navAnalytics').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/analytics');
 });
 
 document.getElementById('navBrothels').addEventListener('click', function(e) {

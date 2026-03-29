@@ -940,31 +940,56 @@ async function scrape429CityRoster(site) {
   if (!resp.ok) throw new Error(`429 City roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
-  // Get today's date in AEST
-  const now = new Date();
-  const aest = new Date(now.getTime() + 11 * 60 * 60 * 1000);
-  const today = aest.getFullYear() + '-' + String(aest.getMonth() + 1).padStart(2, '0') + '-' + String(aest.getDate()).padStart(2, '0');
+  // Get current week's dates starting from today (AEDT)
+  const aest = getAEDTDate();
+  const dayMap = { sun: 0, mon: 1, tue: 2, wed: 3, thur: 4, fri: 5, sat: 6 };
+  const currentDayOfWeek = aest.getDay(); // 0=Sun
 
-  // 429 City roster shows today's girls only, no times — default 10am-5am
-  const re = /href=["']?(https?:\/\/www\.429city\.com\/[a-z0-9%\-]+\/?)["']?/gi;
-  const links = new Set();
-  let m;
-  while ((m = re.exec(html)) !== null) {
-    const url = m[1].replace(/\/$/, '/');
-    const path = url.replace('https://www.429city.com/', '').replace(/\/$/, '');
-    if (path && !['ladies', 'roster', 'contact', 'rate', 'escort', 'work-for-us', 'wp-content', 'feed', 'comments', 'wp-includes', 'wp-json', 'xmlrpc', 'job'].some(x => path.includes(x))) {
-      links.add(url);
+  const result = {};
+  const excludePaths = ['ladies', 'roster', 'contact', 'rate', 'escort', 'work-for-us', 'wp-content', 'feed', 'comments', 'wp-includes', 'wp-json', 'xmlrpc', 'job'];
+
+  // Split HTML by day sections
+  const sectionRe = /id='(\w+)_sort_button'/g;
+  const sections = [];
+  let sm;
+  while ((sm = sectionRe.exec(html)) !== null) {
+    sections.push({ day: sm[1], start: sm.index });
+  }
+
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const sectionHtml = html.substring(section.start, i + 1 < sections.length ? sections[i + 1].start : html.length);
+
+    // Calculate date for this day of week
+    const targetDow = dayMap[section.day];
+    if (targetDow === undefined) continue;
+    let dayOffset = targetDow - currentDayOfWeek;
+    if (dayOffset < 0) dayOffset += 7;
+    const targetDate = new Date(aest);
+    targetDate.setDate(targetDate.getDate() + dayOffset);
+    const dateStr = fmtDate(targetDate);
+
+    // Extract girl profile links from this section
+    const re = /href=['"]?(https?:\/\/www\.429city\.com\/[a-z0-9%\-]+\/?)['"]?/gi;
+    const links = new Set();
+    let lm;
+    while ((lm = re.exec(sectionHtml)) !== null) {
+      const url = lm[1].replace(/\/$/, '/');
+      const path = url.replace('https://www.429city.com/', '').replace(/\/$/, '');
+      if (path && !excludePaths.some(x => path.includes(x))) {
+        links.add(url);
+      }
+    }
+
+    if (links.size) {
+      result[dateStr] = [];
+      for (const url of links) {
+        result[dateStr].push({ url, start: '10:00', end: '05:00' });
+      }
     }
   }
 
-  // Match links to profiles by oldUrl
-  const result = {};
-  result[today] = [];
-  // We return URLs instead of names — syncCalendar will match by oldUrl
-  for (const url of links) {
-    result[today].push({ url, start: '10:00', end: '05:00' });
-  }
-
+  console.log(`[429 City] Roster scraped: ${Object.keys(result).length} days, ${Object.values(result).reduce((s, e) => s + e.length, 0)} entries`);
   return { _429cityUrls: true, ...result };
 }
 

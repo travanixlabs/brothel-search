@@ -3141,15 +3141,25 @@ function renderHomePage() {
   html += '<div class="section-header centered"><div><div class="section-tag">Brothel Search</div><h1 class="section-title">Home</h1></div></div>';
   html += '<p class="hero-tagline" style="margin-bottom:32px;text-align:center">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
 
-  // Editor's Picks — top matches available now
-  const picks = allGirls.filter(g => {
+  // Editor's Picks — top matches available now, fallback to available soon
+  let picks = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
     const score = matchScores.get(g.venue + ':' + g.name) || 0;
     return avail && avail.startsWith('Available Now') && score >= 70;
   }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 12);
 
+  let picksLabel = 'TOP MATCHES AVAILABLE NOW';
+  if (!picks.length) {
+    picks = allGirls.filter(g => {
+      const avail = getAvailabilityText(g);
+      const score = matchScores.get(g.venue + ':' + g.name) || 0;
+      return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 70;
+    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 12);
+    picksLabel = 'TOP MATCHES AVAILABLE SOON';
+  }
+
   if (picks.length) {
-    html += '<div class="venue-divider"><span>\u2014 TOP MATCHES AVAILABLE NOW \u2014</span></div>';
+    html += '<div class="venue-divider"><span>\u2014 ' + picksLabel + ' \u2014</span></div>';
     html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
     for (const g of picks) {
       const score = matchScores.get(g.venue + ':' + g.name) || 0;

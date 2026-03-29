@@ -3153,9 +3153,9 @@ function renderAnalyticsPage() {
   const maxDay = Math.max(...dayCounts, 1);
 
 
-  // ── Country Breakdown ──
+  // ── Country Breakdown (rostered within 30 days) ──
   const countryTotals = {};
-  allGirls.forEach(g => {
+  allGirls.filter(g => g.lastRostered && g.lastRostered >= thirtyDayStr).forEach(g => {
     const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
     cs.forEach(c => { if (c) countryTotals[c] = (countryTotals[c] || 0) + 1; });
   });
@@ -3201,7 +3201,7 @@ function renderAnalyticsPage() {
   html += '</div></div>';
 
   // Country Breakdown
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Country Breakdown</h2>';
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Country Breakdown (rostered within 30 days)</h2>';
   html += '<div class="analytics-bars">';
   for (const [country, count] of topCountries) {
     const pct = (count / maxCountry * 100).toFixed(0);

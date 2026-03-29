@@ -440,8 +440,8 @@ body.is-admin .admin-only{display:initial!important}
 .landing-venue-meta{margin-bottom:16px}
 .landing-venue-link{font-size:13px;color:var(--gold);text-decoration:none;display:inline-block;margin-top:4px}
 .landing-venue-link:hover{text-decoration:underline}
-#landingPage{padding-top:70px;position:relative;z-index:1}
-.landing-map-container{width:100%;height:calc(100vh - 70px);min-height:400px;margin-bottom:32px;overflow:hidden}
+#landingPage{padding-top:152px;position:relative;z-index:1}
+.landing-map-container{width:100%;height:calc(100vh - 152px);min-height:400px;margin-bottom:32px;overflow:hidden}
 #venueMap{width:100%;height:100%}
 #venueMap{width:100%;height:100%}
 .venue-cluster-icon{background:none!important;border:none!important}

@@ -3592,11 +3592,13 @@ function renderVenuePage(suburbSlug, venueId) {
   html += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" class="landing-venue-link" style="margin-left:16px">Open in Google Maps \u2192</a>';
   html += '</div>';
   if (v.desc) html += '<blockquote class="venue-pullquote">' + v.desc + '</blockquote>';
-  const rostered = venueRosteredCount(venueId);
+  const thirtyDaysAgoV = new Date(); thirtyDaysAgoV.setDate(thirtyDaysAgoV.getDate() - 30);
+  const thirtyDayStrV = thirtyDaysAgoV.toISOString().split('T')[0];
+  const activeCount = girls.filter(g => g.lastRostered && g.lastRostered >= thirtyDayStrV).length;
   const p30 = venuePriceRange(venueId, 'val1');
   const p45 = venuePriceRange(venueId, 'val2');
   const p60 = venuePriceRange(venueId, 'val3');
-  html += '<p class="landing-desc">' + rostered + '/' + girls.length + ' girls active in past month.';
+  html += '<p class="landing-desc">' + activeCount + '/' + girls.length + ' girls active in past month.';
   if (p30) html += ' ' + p30 + ' for 30 min.';
   if (p45) html += ' ' + p45 + ' for 45 min.';
   if (p60) html += ' ' + p60 + ' for 60 min.';

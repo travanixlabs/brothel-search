@@ -3353,7 +3353,7 @@ function renderWorkingNow() {
 
   updateMeta(
     'Who\'s Working Now \u2013 Live Roster | Brothel Search',
-    now.length + ' girls available now across Sydney brothels. ' + later.length + ' more starting later today.',
+    now.length + ' girls available now across Sydney brothels. ' + later.length + ' more starting later.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/working-now',
     null
@@ -3364,7 +3364,7 @@ function renderWorkingNow() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   html += '<p class="landing-desc" style="font-family:Playfair Display,serif;font-style:italic;font-size:18px;color:var(--text);margin-bottom:8px">' + greeting + '</p>';
-  html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later today.</p>';
+  html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later.</p>';
 
   if (now.length) {
     html += '<div class="venue-divider"><span>\u2014 AVAILABLE NOW \u2014</span></div>';

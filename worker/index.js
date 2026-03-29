@@ -1998,6 +1998,12 @@ export default {
       } catch (e) { return json({ error: e.message }); }
     }
 
+    // ── Digest endpoint ──
+    if (url.pathname === '/send-digest' && request.method === 'POST') {
+      try { await sendDailyDigest(env); return json({ success: true }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
     // ── SEO endpoints ──
     if (url.pathname === '/regenerate-sitemap' && request.method === 'POST') {
       try { const count = await regenerateSitemap(env); return json({ success: true, urls: count }); }

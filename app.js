@@ -3250,14 +3250,33 @@ function renderComparePage() {
     null
   );
 
+  const thirtyDaysAgoCmp = new Date(); thirtyDaysAgoCmp.setDate(thirtyDaysAgoCmp.getDate() - 30);
+  const thirtyDayStrCmp = thirtyDaysAgoCmp.toISOString().split('T')[0];
+
+  // Pre-compute per venue
+  const venueStats = {};
+  for (const id of venueIds) {
+    const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrCmp);
+    const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
+    const countryCounts = {};
+    active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c) countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
+    const topCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
+    const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStrCmp).length;
+    let avgMatch = 0;
+    if (userPreferences && active.length) {
+      const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
+      avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
+    }
+    venueStats[id] = { active: active.length, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch };
+  }
+
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += '<h1 class="landing-title">Compare Venues</h1>';
-  html += '<p class="landing-desc">Side-by-side comparison of all ' + venueIds.length + ' venues across Sydney.</p>';
+  html += '<p class="landing-desc">Side-by-side comparison of all ' + venueIds.length + ' venues (rostered within 30 days).</p>';
 
-  // Build comparison table
   html += '<div class="compare-table-wrap"><table class="compare-table">';
 
-  // Header row — venue names
+  // Header
   html += '<thead><tr><th class="compare-label"></th>';
   for (const id of venueIds) {
     const v = VENUE_DATA[id];
@@ -3275,9 +3294,9 @@ function renderComparePage() {
   for (const id of venueIds) html += '<td style="font-size:12px">' + VENUE_DATA[id].address + '</td>';
   html += '</tr>';
 
-  // Total girls
-  html += '<tr><td class="compare-label">Total Girls</td>';
-  for (const id of venueIds) html += '<td>' + venueGirlCount(id) + '</td>';
+  // Active girls (30 days)
+  html += '<tr><td class="compare-label">Active Girls</td>';
+  for (const id of venueIds) html += '<td>' + venueStats[id].active + '</td>';
   html += '</tr>';
 
   // Working today
@@ -3285,42 +3304,35 @@ function renderComparePage() {
   for (const id of venueIds) html += '<td>' + venueRosteredCount(id) + '</td>';
   html += '</tr>';
 
-  // Price 30 min
-  html += '<tr><td class="compare-label">30 Min</td>';
-  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val1') || '\u2014') + '</td>';
-  html += '</tr>';
+  // Avg Match (if preferences set)
+  if (userPreferences) {
+    html += '<tr><td class="compare-label">Avg Match</td>';
+    for (const id of venueIds) {
+      const m = venueStats[id].avgMatch;
+      html += '<td style="color:' + (m >= 90 ? 'var(--gold)' : m >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + m + '%</td>';
+    }
+    html += '</tr>';
+  }
 
-  // Price 45 min
-  html += '<tr><td class="compare-label">45 Min</td>';
-  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val2') || '\u2014') + '</td>';
+  // Avg prices
+  html += '<tr><td class="compare-label">Avg 30 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venueStats[id].avg30 ? '$' + venueStats[id].avg30 : '\u2014') + '</td>';
   html += '</tr>';
-
-  // Price 60 min
-  html += '<tr><td class="compare-label">60 Min</td>';
-  for (const id of venueIds) html += '<td>' + (venuePriceRange(id, 'val3') || '\u2014') + '</td>';
+  html += '<tr><td class="compare-label">Avg 45 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venueStats[id].avg45 ? '$' + venueStats[id].avg45 : '\u2014') + '</td>';
+  html += '</tr>';
+  html += '<tr><td class="compare-label">Avg 60 Min</td>';
+  for (const id of venueIds) html += '<td>' + (venueStats[id].avg60 ? '$' + venueStats[id].avg60 : '\u2014') + '</td>';
   html += '</tr>';
 
   // Top countries
   html += '<tr><td class="compare-label">Top Countries</td>';
-  for (const id of venueIds) {
-    const girls = allGirls.filter(g => g.venue === id);
-    const countryCounts = {};
-    girls.forEach(g => {
-      const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
-      cs.forEach(c => { if (c) countryCounts[c] = (countryCounts[c] || 0) + 1; });
-    });
-    const top = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
-    html += '<td style="font-size:12px">' + (top || '\u2014') + '</td>';
-  }
+  for (const id of venueIds) html += '<td style="font-size:12px">' + (venueStats[id].topCountries || '\u2014') + '</td>';
   html += '</tr>';
 
-  // New this week
-  html += '<tr><td class="compare-label">New This Week</td>';
-  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-  for (const id of venueIds) {
-    const count = allGirls.filter(g => g.venue === id && g.startDate && new Date(g.startDate + 'T00:00:00') >= sevenDaysAgo).length;
-    html += '<td>' + count + '</td>';
-  }
+  // New (30 days)
+  html += '<tr><td class="compare-label">New (30 days)</td>';
+  for (const id of venueIds) html += '<td>' + venueStats[id].newCount + '</td>';
   html += '</tr>';
 
   // Website

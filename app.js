@@ -2414,7 +2414,7 @@ async function loadReviews(venue, girlName) {
 async function submitReview(venue, girlName, ratings, comment) {
   const { data: { user } } = await sbClient.auth.getUser();
   if (!user) return { error: 'Not logged in' };
-  const userName = user.user_metadata?.name || user.email.split('@')[0];
+  const userName = user.user_metadata?.display_name || user.user_metadata?.name || user.email.split('@')[0];
   const { data, error } = await sbClient.from('reviews').upsert({
     user_id: user.id, user_name: userName, venue, girl_name: girlName,
     overall: ratings.overall, service: ratings.service, friendliness: ratings.friendliness,

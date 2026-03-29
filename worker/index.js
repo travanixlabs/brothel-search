@@ -1627,7 +1627,7 @@ async function sendDailyDigest(env) {
     try {
       const res = await fetch(`${SB_URL}/auth/v1/admin/users/${uid}`, { headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` } });
       const u = await res.json();
-      if (u.email) userEmails[uid] = { email: u.email, name: u.user_metadata?.name || u.email.split('@')[0] };
+      if (u.email) userEmails[uid] = { email: u.email, name: u.user_metadata?.display_name || u.user_metadata?.name || u.email.split('@')[0] };
     } catch {}
   }
 

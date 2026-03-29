@@ -613,7 +613,12 @@ sbClient.auth.onAuthStateChange((event, session) => {
     loadNotifications();
     fetchUserRole().then(() => {
       loadPreferences().then(() => {
-        if (userPreferences) { computeMatchScores(); renderGrid(); }
+        if (userPreferences) {
+          computeMatchScores(); renderGrid();
+          // Re-render home page if currently showing it
+          const p = window.location.pathname;
+          if (p === '/' || p === '/index.html') handleLandingRoute('/');
+        }
       });
       // Paywall check 2s after login
       setTimeout(async () => {

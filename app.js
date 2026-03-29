@@ -2035,22 +2035,6 @@ function renderGrid() {
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
   updateMoreFiltersCount();
 
-  // New This Week banner
-  const newThisWeekEl = document.getElementById('newThisWeek');
-  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-  const newThisWeek = allGirls.filter(g => g.startDate && new Date(g.startDate + 'T00:00:00') >= sevenDaysAgo);
-  if (newThisWeek.length > 0 && newThisWeekEl) {
-    newThisWeekEl.style.display = '';
-    newThisWeekEl.innerHTML = '<div style="font-family:Playfair Display,serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:12px">' + newThisWeek.length + ' New This Week</div>' +
-      '<div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px">' +
-      newThisWeek.slice(0, 10).map(g => {
-        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:80px;height:106px;object-fit:cover;border-radius:8px;display:block">' : '';
-        return '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g, "\\'") + '\'))">' + img + '<div style="font-size:11px;color:var(--gold);margin-top:4px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div></div>';
-      }).join('') +
-      '</div>';
-  } else if (newThisWeekEl) {
-    newThisWeekEl.style.display = 'none';
-  }
 
   if (!currentFiltered.length) {
     grid.innerHTML = '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls match your filters</div></div>';

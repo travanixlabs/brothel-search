@@ -2954,7 +2954,7 @@ function closeProfile() {
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
 }
 
 // Close profile on Escape
@@ -2964,7 +2964,7 @@ document.addEventListener('keydown', e => {
     const overlay = document.getElementById('profileOverlay');
     if (overlay && overlay.classList.contains('active')) { closeProfile(); return; }
     const landing = document.getElementById('landingPage');
-    if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
+    if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
   }
 
   // Don't handle shortcuts when typing in inputs
@@ -3016,7 +3016,7 @@ window.addEventListener('popstate', () => {
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
-    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
   } else if (path === '/' || path === '/index.html') {
     closeProfile();
     handleLandingRoute(path);
@@ -3132,7 +3132,7 @@ function sectionHeader(title) {
 function renderHomePage() {
   updateMeta(
     'Brothel Search \u2013 Girls, Rosters & Profiles',
-    'Browse profiles, rosters and availability across Sydney\'s top brothels. Compare girls from Ginza Empire, Ginza Club, Kyoto 206, Sakura 57, Top 127, Fantasy Club 35 and 429 City.',
+    'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability. Compare venues, pricing and reviews.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/',
     null
@@ -3767,7 +3767,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
   history.pushState(null, '', '/profiles');
   showMainSection();
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
 });
 
 document.getElementById('navWorkingNow').addEventListener('click', function(e) {

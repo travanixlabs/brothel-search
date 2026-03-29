@@ -47,7 +47,7 @@ async function fetchUserRole() {
 
 let subscriptionStatus = null;
 const WORKER_URL = 'https://brothel-search-sync.travanixlabs.workers.dev';
-const STRIPE_PK = 'pk_test_51TDeqBHn68lZzkHWFu0CfjzwjgnfhBWVB1LSf5R7q5JcQLXHJ6euyTI1sZjePJeml0dsMddMyfLFVmFFHwoqpwmL00jd1XcTrc';
+const STRIPE_PK = 'pk_live_51TDepzQjtcp0NkpMMSRDq1MrNlo6HvR72TSbZjHKtjga9xHFzsKFvAtrPyrHioNispZd6DCNO8kvUePXlffB4b4s006XsKxD0X';
 
 async function checkSubscription() {
   try {

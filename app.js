@@ -3150,7 +3150,7 @@ function renderHomePage() {
     const avail = getAvailabilityText(g);
     const score = matchScores.get(g.venue + ':' + g.name) || 0;
     return avail && avail.startsWith('Available Now') && score >= 70;
-  }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 12);
+  }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
 
   let picksLabel = 'TOP MATCHES AVAILABLE NOW';
   if (!picks.length) {
@@ -3158,7 +3158,7 @@ function renderHomePage() {
       const avail = getAvailabilityText(g);
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
       return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 70;
-    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 12);
+    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
     picksLabel = 'TOP MATCHES AVAILABLE SOON';
   }
 

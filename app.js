@@ -2035,6 +2035,23 @@ function renderGrid() {
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
   updateMoreFiltersCount();
 
+  // New This Week banner
+  const newThisWeekEl = document.getElementById('newThisWeek');
+  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  const newThisWeek = allGirls.filter(g => g.startDate && new Date(g.startDate + 'T00:00:00') >= sevenDaysAgo);
+  if (newThisWeek.length > 0 && newThisWeekEl) {
+    newThisWeekEl.style.display = '';
+    newThisWeekEl.innerHTML = '<div style="font-family:Playfair Display,serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:12px">' + newThisWeek.length + ' New This Week</div>' +
+      '<div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px">' +
+      newThisWeek.slice(0, 10).map(g => {
+        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:80px;height:106px;object-fit:cover;border-radius:8px;display:block">' : '';
+        return '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g, "\\'") + '\'))">' + img + '<div style="font-size:11px;color:var(--gold);margin-top:4px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div></div>';
+      }).join('') +
+      '</div>';
+  } else if (newThisWeekEl) {
+    newThisWeekEl.style.display = 'none';
+  }
+
   if (!currentFiltered.length) {
     grid.innerHTML = '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls match your filters</div></div>';
     return;
@@ -2434,6 +2451,34 @@ function averageRatings(reviews) {
   return avg;
 }
 
+function buildSimilarGirls(g) {
+  const scored = allGirls.filter(gg => gg !== g && gg.venue + gg.name !== g.venue + g.name).map(gg => {
+    let score = 0;
+    const gc = Array.isArray(g.country) ? g.country : [g.country || ''];
+    const ggc = Array.isArray(gg.country) ? gg.country : [gg.country || ''];
+    if (gc.some(c => ggc.includes(c))) score += 30;
+    if (g.age && gg.age && Math.abs(parseInt(g.age) - parseInt(gg.age)) <= 3) score += 20;
+    if (g.body && gg.body && Math.abs(parseInt(g.body) - parseInt(gg.body)) <= 1) score += 15;
+    if (g.height && gg.height && Math.abs(parseInt(g.height) - parseInt(gg.height)) <= 5) score += 10;
+    if (g.cup && gg.cup && g.cup.toUpperCase() === gg.cup.toUpperCase()) score += 10;
+    if (g.val1 && gg.val1 && Math.abs(parseInt(g.val1) - parseInt(gg.val1)) <= 30) score += 15;
+    return { girl: gg, score };
+  }).filter(s => s.score >= 30).sort((a, b) => b.score - a.score).slice(0, 6);
+
+  if (!scored.length) return '';
+
+  let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
+  html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:12px">Similar Girls</div>';
+  html += '<div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px">';
+  for (const s of scored) {
+    const gg = s.girl;
+    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:80px;height:106px;object-fit:cover;border-radius:8px;display:block">' : '';
+    html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">' + img + '<div style="font-size:11px;color:var(--gold);margin-top:4px">' + (gg.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div></div>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
 function buildReviewSection(g, reviews) {
   const avg = averageRatings(reviews);
   const categories = ['overall', 'service', 'friendliness', 'appearance', 'hygiene', 'value'];
@@ -2802,7 +2847,8 @@ function showProfile(g) {
       </div>
     </div>
     ${buildProfileCalendar(g)}
-    ${buildReviewSection(g, [])}`;
+    ${buildReviewSection(g, [])}
+    ${buildSimilarGirls(g)}`;
   // Cinematic open: show overlay then trigger transition
   overlay.style.display = 'flex';
   requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('active')));
@@ -2907,7 +2953,53 @@ function closeProfile() {
 }
 
 // Close profile on Escape
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile() });
+document.addEventListener('keydown', e => {
+  // Escape — close profile or go back
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('profileOverlay');
+    if (overlay && overlay.classList.contains('active')) { closeProfile(); return; }
+    const landing = document.getElementById('landingPage');
+    if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
+  }
+
+  // Don't handle shortcuts when typing in inputs
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+
+  const overlay = document.getElementById('profileOverlay');
+  const profileOpen = overlay && overlay.classList.contains('active');
+
+  // Profile photo navigation
+  if (profileOpen) {
+    if (e.key === 'ArrowLeft') { const idx = ((window._profilePhotoIdx || 0) - 1 + (window._profilePhotos || []).length) % (window._profilePhotos || []).length; selectProfilePhoto(idx); return; }
+    if (e.key === 'ArrowRight') { const idx = ((window._profilePhotoIdx || 0) + 1) % (window._profilePhotos || []).length; selectProfilePhoto(idx); return; }
+    return;
+  }
+
+  // Grid navigation
+  const cards = document.querySelectorAll('#girlsGrid .girl-card');
+  if (!cards.length) return;
+
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'j') {
+    e.preventDefault();
+    const focused = document.querySelector('.girl-card.kb-focus');
+    const idx = focused ? Array.from(cards).indexOf(focused) : -1;
+    const next = cards[Math.min(idx + 1, cards.length - 1)];
+    if (focused) focused.classList.remove('kb-focus');
+    next.classList.add('kb-focus');
+    next.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'k') {
+    e.preventDefault();
+    const focused = document.querySelector('.girl-card.kb-focus');
+    const idx = focused ? Array.from(cards).indexOf(focused) : 1;
+    const prev = cards[Math.max(idx - 1, 0)];
+    if (focused) focused.classList.remove('kb-focus');
+    prev.classList.add('kb-focus');
+    prev.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  } else if (e.key === 'Enter') {
+    const focused = document.querySelector('.girl-card.kb-focus');
+    if (focused) focused.click();
+  }
+});
 
 // Browser back/forward navigation
 window.addEventListener('popstate', () => {
@@ -3178,7 +3270,15 @@ function renderCityPage() {
   return html;
 }
 
-function initVenueMap() {
+function haversine(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+async function initVenueMap() {
   const mapEl = document.getElementById('venueMap');
   if (!mapEl || typeof L === 'undefined') return;
   if (window._venueMap) { window._venueMap.remove(); window._venueMap = null; }
@@ -3204,10 +3304,25 @@ function initVenueMap() {
 
   const venues = Object.entries(VENUE_DATA).filter(([id, v]) => !filterSuburb || v.suburbSlug === filterSuburb);
 
+  // Get user location for distance labels
+  let userLat = null, userLng = null;
+  if (navigator.geolocation) {
+    try {
+      const pos = await new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 }));
+      userLat = pos.coords.latitude;
+      userLng = pos.coords.longitude;
+    } catch {}
+  }
+
   for (const [id, v] of venues) {
     const count = venueGirlCount(id);
+    let label = v.name;
+    if (userLat !== null) {
+      const dist = haversine(userLat, userLng, v.lat, v.lng);
+      label += ' <span style="opacity:0.6;font-size:9px">' + dist.toFixed(1) + 'km</span>';
+    }
     const marker = L.marker([v.lat, v.lng], {
-      icon: L.divIcon({ html: '<div class="venue-marker">' + v.name + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
+      icon: L.divIcon({ html: '<div class="venue-marker">' + label + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
     });
     marker.on('click', function() { navigateToLanding('/sydney/' + v.suburbSlug + '/' + id + '/'); });
     marker.bindTooltip('<strong>' + v.name + '</strong><br>' + v.address + '<br>' + count + ' girls', { className: 'venue-tooltip', direction: 'top', offset: [0, -20] });
@@ -3276,6 +3391,7 @@ function renderVenuePage(suburbSlug, venueId) {
   html += '<div class="landing-venue-meta">';
   html += '<div class="landing-card-address">' + v.address + '</div>';
   html += '<a href="' + v.url + '" target="_blank" rel="noopener" class="landing-venue-link">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a>';
+  html += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" class="landing-venue-link" style="margin-left:16px">Open in Google Maps \u2192</a>';
   html += '</div>';
   const rostered = venueRosteredCount(venueId);
   const p30 = venuePriceRange(venueId, 'val1');

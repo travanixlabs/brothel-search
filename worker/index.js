@@ -1626,10 +1626,24 @@ async function sendDailyDigest(env) {
   const prefsMap = {};
   for (const p of allPrefs) prefsMap[p.id] = p;
 
-  // Load user emails
+  // Load user roles
+  const rolesRes = await fetch(`${SB_URL}/rest/v1/user_roles?select=id,role`, { headers });
+  const allRoles = await rolesRes.json();
+  const roleMap = {};
+  for (const r of allRoles) roleMap[r.id] = r.role;
+
+  // Load active subscriptions
+  const subsRes = await fetch(`${SB_URL}/rest/v1/user_subscriptions?status=eq.active&select=user_id`, { headers });
+  const allSubs = await subsRes.json();
+  const activeSubs = new Set((allSubs || []).map(s => s.user_id));
+
+  // Load user emails — only for admins and subscribed members
   const userIds = Object.keys(userFavs);
   const userEmails = {};
   for (const uid of userIds) {
+    const isAdmin = roleMap[uid] === 'admin';
+    const isSubscribed = activeSubs.has(uid);
+    if (!isAdmin && !isSubscribed) continue; // skip unsubscribed members
     try {
       const res = await fetch(`${SB_URL}/auth/v1/admin/users/${uid}`, { headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` } });
       const u = await res.json();

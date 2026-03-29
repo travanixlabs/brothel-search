@@ -1914,7 +1914,7 @@ function renderCard(g, grid) {
 
     el.innerHTML = `
       <div class="fav-heart${favActive}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
-      <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
+      <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-info">
         <div class="card-name">${g.name || ''}</div>
@@ -2464,7 +2464,7 @@ function showProfile(g) {
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="country-badge">${g.venueName}</div>
-      ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
+      ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge' + (s >= 90 ? ' match-gold' : '') + '" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
       ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}
       ${g.pornstar ? '<span class="av-badge">AV</span>' : ''}
     </div>
@@ -2927,7 +2927,7 @@ function renderVenuePage(suburbSlug, venueId) {
     html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '">';
     html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '">' + heartSvg + '</div>';
     html += '<div class="card-badges">' + '<span class="country-badge">' + v.name + '</span>';
-    if (showBadge) html += '<div class="match-badge">' + girlScore + '%</div>';
+    if (showBadge) html += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
     if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
     if (g.pornstar) html += '<span class="av-badge">AV</span>';
     html += '</div>';

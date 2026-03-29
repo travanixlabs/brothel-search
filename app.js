@@ -3133,7 +3133,7 @@ function renderHomePage() {
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
   let html = '<div class="landing-page" style="padding-top:20px">';
-  html += sectionHeader('Brothel Search');
+  html += sectionHeader('Home');
   html += '<p class="hero-tagline" style="margin-bottom:32px">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
 
   // Editor's Picks — top matches available now

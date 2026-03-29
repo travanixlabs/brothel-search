@@ -2954,7 +2954,7 @@ function closeProfile() {
   document.body.style.overflow = '';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
 }
 
 // Close profile on Escape
@@ -2964,7 +2964,7 @@ document.addEventListener('keydown', e => {
     const overlay = document.getElementById('profileOverlay');
     if (overlay && overlay.classList.contains('active')) { closeProfile(); return; }
     const landing = document.getElementById('landingPage');
-    if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
+    if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
   }
 
   // Don't handle shortcuts when typing in inputs
@@ -3016,7 +3016,7 @@ window.addEventListener('popstate', () => {
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
-    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+    updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
   } else if (path === '/' || path === '/index.html') {
     closeProfile();
     handleLandingRoute(path);
@@ -3131,7 +3131,7 @@ function sectionHeader(title) {
 
 function renderHomePage() {
   updateMeta(
-    'Brothel Search \u2013 Girls, Rosters & Profiles',
+    'Brothel Search \u2013 Girls, Rosters & Venues',
     'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability. Compare venues, pricing and reviews.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/',
@@ -3191,7 +3191,7 @@ function renderHomePage() {
 function renderAnalyticsPage() {
   if (!userRole) return '<div class="landing-page" style="padding-top:20px">' + sectionHeader('Analytics') + '<p class="landing-desc">Log in to view analytics.</p></div>';
 
-  updateMeta('Analytics \u2013 Data Insights | Brothel Search', 'Price trends, busiest days, girl retention and country breakdown across Sydney brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/analytics', null);
+  updateMeta('Analytics \u2013 Data Insights | Brothel Search', 'Data insights across Sydney brothels. Busiest days, country breakdown and roster trends. Members-only analytics.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/analytics', null);
 
   const venueIds = Object.keys(VENUE_DATA);
 
@@ -3255,7 +3255,7 @@ function renderComparePage() {
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',
-    'Side-by-side comparison of ' + venueIds.length + ' Sydney brothels. Compare girls, pricing, location and availability.',
+    'Compare ' + venueIds.length + ' Sydney brothels side-by-side. Rankings by preference match, pricing, girl count, countries and availability. ' + venueIds.map(id => VENUE_DATA[id].name).join(', ') + '.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/compare',
     null
@@ -3772,7 +3772,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
   history.pushState(null, '', '/profiles');
   showMainSection();
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
 });
 
 document.getElementById('navWorkingNow').addEventListener('click', function(e) {

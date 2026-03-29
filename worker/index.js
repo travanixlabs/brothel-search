@@ -1897,8 +1897,8 @@ async function serveBotLanding(env, pathname) {
 
   // /profiles
   if (parts.length === 1 && parts[0] === 'profiles') {
-    const title = 'Browse All Profiles \u2013 Girls & Rosters | Brothel Search';
-    const desc = 'Browse profiles, rosters and availability across Sydney\'s top brothels. Filter by venue, country, availability and more.';
+    const title = 'Browse All Profiles \u2013 Rosters Included | Brothel Search';
+    const desc = 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.';
     return new Response(botHtml(title, desc, 'https://brothelsearch.com/profiles', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
@@ -1912,14 +1912,14 @@ async function serveBotLanding(env, pathname) {
   // /compare
   if (parts.length === 1 && parts[0] === 'compare') {
     const title = 'Compare Brothels in Sydney | Brothel Search';
-    const desc = 'Side-by-side comparison of 7 Sydney brothels. Compare girls, pricing, location and availability.';
+    const desc = 'Compare 7 Sydney brothels side-by-side. Rankings by preference match, pricing, girl count, countries and availability. Ginza Empire, Ginza Club, Kyoto 206, Sakura 57, Top 127, Fantasy Club 35, 429 City.';
     return new Response(botHtml(title, desc, 'https://brothelsearch.com/compare', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 
   // /analytics
   if (parts.length === 1 && parts[0] === 'analytics') {
     const title = 'Analytics \u2013 Data Insights | Brothel Search';
-    const desc = 'Price trends, busiest days, girl retention and country breakdown across Sydney brothels.';
+    const desc = 'Data insights across Sydney brothels. Busiest days, country breakdown and roster trends. Members-only analytics.';
     return new Response(botHtml(title, desc, 'https://brothelsearch.com/analytics', { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description: desc }), { headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
   }
 

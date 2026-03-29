@@ -388,7 +388,10 @@ async function scrapeGirlProfile(site, id) {
       images.push(site.baseUrl + src);
       const dm = src.match(/\/data\/upload\/(\d{4})-(\d{2})\//);
       if (dm) {
-        const d = `${dm[1]}-${dm[2]}-01`;
+        const now = new Date();
+        const uploadMonth = `${dm[1]}-${dm[2]}`;
+        const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+        const d = uploadMonth === currentMonth ? fmtDate(now) : `${dm[1]}-${dm[2]}-01`;
         if (!earliestUpload || d < earliestUpload) earliestUpload = d;
       }
     }
@@ -618,7 +621,10 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   for (const pick of images) {
     const dm = pick.match(/\/uploads\/(\d{4})\/(\d{2})\//);
     if (dm) {
-      const d = `${dm[1]}-${dm[2]}-01`;
+      const now = new Date();
+      const uploadMonth = `${dm[1]}-${dm[2]}`;
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const d = uploadMonth === currentMonth ? fmtDate(now) : `${dm[1]}-${dm[2]}-01`;
       if (!earliestUpload || d < earliestUpload) earliestUpload = d;
     }
   }
@@ -1632,10 +1638,10 @@ async function sendDailyDigest(env) {
   }
 
   // New girls (startDate in last 24 hours)
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayStr = yesterday.toISOString().split('T')[0];
-  const newGirls = allGirls.filter(g => g.startDate && g.startDate >= yesterdayStr);
+  const threeDaysAgo = new Date();
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+  const cutoffStr = threeDaysAgo.toISOString().split('T')[0];
+  const newGirls = allGirls.filter(g => g.startDate && g.startDate >= cutoffStr);
 
   // Process each user
   for (const [userId, favUrls] of Object.entries(userFavs)) {

@@ -2147,9 +2147,9 @@ export default {
     const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
     const STRIPE_API = 'https://api.stripe.com/v1';
     const PRICE_IDS = {
-      trial: 'price_1TDfH1Hn68lZzkHWhHNBUT7n',
-      recurring: 'price_1TDfG0Hn68lZzkHWGz5sKCpG',
-      'one-time': 'price_1TDfF1Hn68lZzkHWFDWT7WyV',
+      trial: 'price_1TGIVSQjtcp0NkpMvkCpbeK7',
+      recurring: 'price_1TGITsQjtcp0NkpMQAXCH9mE',
+      'one-time': 'price_1TGISrQjtcp0NkpMCSTjTFFJ',
     };
 
     const cors = {

@@ -2483,7 +2483,7 @@ function buildReviewSection(g, reviews) {
     }
     html += '</div></div>';
   } else {
-    html += '<div style="color:var(--text-dim);font-size:14px;margin-bottom:16px">No reviews yet. Be the first to review!</div>';
+    html += '<div class="empty-msg" style="padding:32px 20px;margin-bottom:16px"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom:12px"><circle cx="30" cy="30" r="28" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><text x="30" y="36" text-anchor="middle" font-size="24" fill="rgba(201,149,44,0.3)">\u2605</text></svg><div>No reviews yet. Be the first to review!</div></div>';
   }
 
   // Review form (only for logged-in users)
@@ -3341,10 +3341,13 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  html += '<p class="landing-desc" style="font-family:Playfair Display,serif;font-style:italic;font-size:18px;color:var(--text);margin-bottom:8px">' + greeting + '</p>';
   html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later today.</p>';
 
   if (now.length) {
-    html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#00c864;margin:24px 0 16px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#00c864;box-shadow:0 0 8px rgba(0,200,100,0.5)"></span> Available Now</div>';
+    html += '<div class="venue-divider"><span>\u2014 AVAILABLE NOW \u2014</span></div>';
     html += '<div class="girls-grid">';
     for (const g of now) {
       html += renderWorkingNowCard(g);
@@ -3353,7 +3356,7 @@ function renderWorkingNow() {
   }
 
   if (later.length) {
-    html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#3c78ff;margin:24px 0 16px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#3c78ff;box-shadow:0 0 8px rgba(60,120,255,0.5)"></span> Starting Later</div>';
+    html += '<div class="venue-divider"><span>\u2014 STARTING LATER \u2014</span></div>';
     html += '<div class="girls-grid">';
     for (const g of later) {
       html += renderWorkingNowCard(g);

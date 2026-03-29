@@ -2853,6 +2853,7 @@ function showProfile(g) {
     ${buildSimilarGirls(g)}`;
   // Cinematic open: show overlay then trigger transition
   overlay.style.display = 'flex';
+  overlay.scrollTop = 0;
   requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('active')));
   // Load and init reviews
   initReviewSection(g);

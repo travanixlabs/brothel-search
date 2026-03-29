@@ -259,7 +259,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .silhouette{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,rgba(180,74,255,0.08),rgba(255,111,0,0.04));display:flex;align-items:center;justify-content:center}
 
 /* Profile overlay */
-.profile-overlay{display:none;position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,149,44,0.04),rgba(8,8,14,0.97) 70%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200;overflow-y:auto;padding:40px;align-items:center;justify-content:center;opacity:0;transition:opacity .4s ease}
+.profile-overlay{display:none;position:fixed;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,149,44,0.04),rgba(8,8,14,0.97) 70%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200;overflow-y:auto;padding:40px;align-items:flex-start;justify-content:center;opacity:0;transition:opacity .4s ease}
 .profile-overlay.active{display:flex;opacity:1}
 .profile-panel{max-width:900px;width:100%;margin:0 auto;background:radial-gradient(60% 50% at 50% 10%,rgba(201,149,44,0.04),rgba(8,8,14,0.95));border:1px solid rgba(201,149,44,0.25);border-radius:15px;padding:40px;position:relative;backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:0 24px 80px rgba(0,0,0,0.6),0 0 40px rgba(201,149,44,0.06),inset 0 0 60px rgba(201,149,44,0.02);transform:scale(0.85) translateY(40px);opacity:0;transition:transform .5s cubic-bezier(0.23,1,0.32,1),opacity .4s ease}
 .profile-overlay.active .profile-panel{transform:scale(1) translateY(0);opacity:1}

@@ -63,9 +63,14 @@ async function checkSubscription() {
 }
 
 function showPaywall() {
+  // Redirect to home first if not already there
+  const path = window.location.pathname;
+  if (path !== '/' && path !== '/index.html') {
+    history.replaceState(null, '', '/');
+    handleLandingRoute('/');
+  }
   document.getElementById('paywallOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  if (window.location.hash !== '#subscribe') window.history.replaceState(null, '', '#subscribe');
   const trialBtn = document.getElementById('paywallTrialBtn');
   if (subscriptionStatus && subscriptionStatus.trialUsed) {
     trialBtn.style.opacity = '0.4';
@@ -77,7 +82,6 @@ function showPaywall() {
 function hidePaywall() {
   document.getElementById('paywallOverlay').style.display = 'none';
   document.body.style.overflow = '';
-  if (window.location.hash === '#subscribe') window.history.replaceState(null, '', window.location.pathname);
 }
 
 async function selectPlan(plan) {

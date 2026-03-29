@@ -136,7 +136,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 
 /* More filters */
 .more-filters-section{margin-bottom:24px}
-.more-filters-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:10px 24px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);margin:0 0 16px;color:var(--gold);-webkit-text-fill-color:unset}
+.more-filters-toggle{display:flex;align-items:center;justify-content:flex-start;gap:8px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);margin:0;color:var(--gold);-webkit-text-fill-color:unset}
 .more-filters-toggle:hover{}
 .more-filters-badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:9px;background:var(--gold);color:var(--bg-dark);-webkit-text-fill-color:var(--bg-dark);font-size:10px;font-weight:700;letter-spacing:0;padding:0 5px}
 .more-filters-toggle svg{width:14px;height:14px;fill:currentColor;transition:transform .2s}

@@ -3281,13 +3281,19 @@ function renderHomePage() {
 
   html += '<div class="home-search-wrap"><input type="text" class="home-search" id="homeSearch" placeholder="Search by name, country or venue..." autocomplete="off"></div>';
 
-  const totalGirls = allGirls.length;
   const totalVenues = Object.keys(VENUE_DATA).length;
-  const workingNow = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  const sevenDaysAgoStats = new Date(); sevenDaysAgoStats.setDate(sevenDaysAgoStats.getDate() - 7);
+  const sevenDayStrStats = sevenDaysAgoStats.toISOString().split('T')[0];
+  const thirtyDaysAgoStats = new Date(); thirtyDaysAgoStats.setDate(thirtyDaysAgoStats.getDate() - 30);
+  const thirtyDayStrStats = thirtyDaysAgoStats.toISOString().split('T')[0];
+  const newCount = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrStats).length;
+  const activeGirls = allGirls.filter(g => g.lastRostered && g.lastRostered >= sevenDayStrStats).length;
+  const workingToday = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
   html += '<div class="home-stats">';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalGirls + '">0</span><span class="home-stat-label">Girls</span></div>';
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalVenues + '">0</span><span class="home-stat-label">Venues</span></div>';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingNow + '">0</span><span class="home-stat-label">Working Now</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + newCount + '">0</span><span class="home-stat-label">New</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + activeGirls + '">0</span><span class="home-stat-label">Active Girls</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingToday + '">0</span><span class="home-stat-label">Working Today</span></div>';
   html += '</div>';
 
   // Editor's Picks — top matches available now, fallback to available soon

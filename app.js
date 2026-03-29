@@ -3147,27 +3147,11 @@ function renderHomePage() {
 
   if (picks.length) {
     html += '<div class="venue-divider"><span>\u2014 TOP MATCHES AVAILABLE NOW \u2014</span></div>';
-    html += '<div class="girls-grid" style="margin-top:16px;margin-bottom:40px">';
+    html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px">';
     for (const g of picks) {
-      const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
-      const showBadge = userPreferences && score > 0;
-      const img = g.photos && g.photos.length
-        ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '') + '" loading="lazy">'
-        : '<div class="silhouette"></div>';
-      const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-      html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
-      html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '">' + heartSvg + '</div>';
-      html += '<div class="card-badges"><span class="country-badge">' + (g.venueName || '') + '</span>';
-      if (showBadge) html += '<div class="match-badge' + (score >= 90 ? ' match-gold' : '') + '">' + score + '%</div>';
-      if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
-      if (g.pornstar) html += '<span class="av-badge">AV</span>';
-      html += '</div>';
-      html += '<div class="card-img">' + img + '</div>';
-      html += '<div class="card-info">';
-      html += '<div class="card-name">' + (g.name || '') + '</div>';
-      html += '<div class="card-country">' + countries + '</div>';
-      html += '</div></div>';
+      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:' + (score >= 90 ? 'var(--gold)' : 'var(--text-dim)') + '">' + score + '% match</div></div>';
     }
     html += '</div>';
   }
@@ -3816,6 +3800,14 @@ function handleLandingRoute(path) {
         const url = heart.dataset.url;
         if (url) toggleFavorite(url, e);
       });
+    });
+    // Attach click handlers for compact pick cards (Home page)
+    landingEl.querySelectorAll('[data-venue][data-name]:not(.girl-card)').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.onclick = () => {
+        const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name);
+        if (g) showProfile(g);
+      };
     });
     return true;
   }

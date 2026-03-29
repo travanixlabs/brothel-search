@@ -607,7 +607,8 @@ body.is-admin .admin-only{display:initial!important}
 .roadmap-input{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none}
 .roadmap-input:focus,.roadmap-textarea:focus,.roadmap-select:focus{border-color:rgba(201,149,44,0.3)}
 .roadmap-textarea{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 14px;outline:none;resize:vertical;min-height:60px}
-.roadmap-select{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;padding:8px 12px;outline:none;cursor:pointer}
+.roadmap-select{background:#0e0e16;border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;padding:8px 12px;outline:none;cursor:pointer}
+.roadmap-select option{background:#0e0e16;color:var(--gold)}
 .roadmap-submit{padding:8px 20px;background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.3);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
 .roadmap-submit:hover{background:rgba(201,149,44,0.2)}
 .roadmap-cancel{padding:8px 16px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text-dim);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}

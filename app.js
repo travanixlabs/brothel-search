@@ -3169,15 +3169,14 @@ function renderAnalyticsPage() {
     const v = VENUE_DATA[id];
     const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStr);
     const rostered = active.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
-    const p30 = active.map(g => parseInt(g.val1)).filter(p => p > 0);
-    const avgPrice = p30.length ? Math.round(p30.reduce((a,b) => a+b, 0) / p30.length) : 0;
+    const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
     const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= sevenDayStr2).length;
     let avgMatch = 0;
     if (userPreferences && active.length) {
       const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
       avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
     }
-    return { id, name: v.name, suburb: v.suburb, rostered, avgPrice, newCount, avgMatch, activeCount: active.length };
+    return { id, name: v.name, suburb: v.suburb, rostered, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), newCount, avgMatch, activeCount: active.length };
   }).sort((a,b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
 
   // ── Build HTML ──
@@ -3218,10 +3217,10 @@ function renderAnalyticsPage() {
 
 
   // Venue Rankings
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Venue Rankings' + (userPreferences ? ' (based on your preferences)' : '') + '</h2>';
+  html += '<div class="analytics-section"><h2 class="analytics-heading">Venue Rankings' + (userPreferences ? ' (based on your preferences & rostered within 30 days)' : '') + '</h2>';
   if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
   html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
-  html += '<th class="compare-label">Rank</th><th class="compare-label">Venue</th><th class="compare-label">Suburb</th>' + (userPreferences ? '<th class="compare-label">Avg Match</th>' : '') + '<th class="compare-label">Working Today</th><th class="compare-label">Avg 30min</th><th class="compare-label">New</th>';
+  html += '<th class="compare-label">Rank</th><th class="compare-label">Venue</th><th class="compare-label">Suburb</th>' + (userPreferences ? '<th class="compare-label">Avg Match</th>' : '') + '<th class="compare-label">Working Today</th><th class="compare-label">Avg 30min</th><th class="compare-label">Avg 45min</th><th class="compare-label">Avg 60min</th><th class="compare-label">New</th>';
   html += '</tr></thead><tbody>';
   rankings.forEach((r, i) => {
     html += '<tr><td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
@@ -3229,7 +3228,10 @@ function renderAnalyticsPage() {
     html += '<td>' + r.suburb + '</td>';
     if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? 'var(--gold)' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
     html += '<td>' + r.rostered + '</td>';
-    html += '<td>' + (r.avgPrice ? '$' + r.avgPrice : '\u2014') + '</td><td>' + r.newCount + '</td></tr>';
+    html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
+    html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
+    html += '<td>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';
+    html += '<td>' + r.newCount + '</td></tr>';
   });
   html += '</tbody></table></div></div>';
 

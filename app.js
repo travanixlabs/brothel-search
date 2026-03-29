@@ -2035,26 +2035,6 @@ function renderGrid() {
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
   updateMoreFiltersCount();
 
-  // Editor's Picks — top matches available now
-  const picksEl = document.getElementById('editorPicks');
-  if (picksEl && userPreferences) {
-    const picks = allGirls.filter(g => {
-      const avail = getAvailabilityText(g);
-      const score = matchScores.get(g.venue + ':' + g.name) || 0;
-      return avail && avail.startsWith('Available Now') && score >= 70;
-    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 8);
-    if (picks.length) {
-      picksEl.style.display = '';
-      picksEl.innerHTML = '<div class="venue-divider"><span>\u2014 EDITOR\u2019S PICKS \u2014</span></div>' +
-        '<p style="text-align:center;font-family:Playfair Display,serif;font-style:italic;font-size:14px;color:var(--text-dim);margin-bottom:16px">Top matches available right now</p>' +
-        '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:24px">' +
-        picks.map(g => {
-          const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-          const score = matchScores.get(g.venue + ':' + g.name) || 0;
-          return '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g, "\\'") + '\'))">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:' + (score >= 90 ? 'var(--gold)' : 'var(--text-dim)') + '">' + score + '% match</div></div>';
-        }).join('') + '</div>';
-    } else { picksEl.style.display = 'none'; }
-  } else if (picksEl) { picksEl.style.display = 'none'; }
 
   if (!currentFiltered.length) {
     grid.innerHTML = '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls match your filters</div></div>';
@@ -3018,14 +2998,17 @@ document.addEventListener('keydown', e => {
 // Browser back/forward navigation
 window.addEventListener('popstate', () => {
   const path = window.location.pathname;
-  if (path === '/' || path === '/index.html') {
+  if (path === '/profiles') {
     clearInterval(window._profileRotate);
     const overlay = document.getElementById('profileOverlay');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
-    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+    updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
+  } else if (path === '/' || path === '/index.html') {
+    closeProfile();
+    handleLandingRoute(path);
   } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics') && !findGirlByPath(path)) {
     closeProfile();
     handleLandingRoute(path);
@@ -3067,10 +3050,13 @@ loadProfiles().then(() => {
   lastVisibleTime = Date.now();
   // Handle URL path on load
   const path = window.location.pathname;
-  if (path !== '/' && path !== '/index.html') {
+  if (path === '/' || path === '/index.html') {
+    handleLandingRoute('/');
+  } else if (path !== '/profiles') {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
     else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics') { handleLandingRoute(path); }
+    else if (path === '/profiles') { /* already showing main section */ }
   }
 });
 checkAuth().then(() => {
@@ -3132,6 +3118,71 @@ setTimeout(async () => {
 
 function sectionHeader(title) {
   return '<div class="section-header"><div class="section-line"></div><div><div class="section-tag">Brothel Search</div><h1 class="section-title">' + title + '</h1></div></div>';
+}
+
+// ── Home Page ──
+
+function renderHomePage() {
+  updateMeta(
+    'Brothel Search \u2013 Girls, Rosters & Profiles',
+    'Browse profiles, rosters and availability across Sydney\'s top brothels. Compare girls from Ginza Empire, Ginza Club, Kyoto 206, Sakura 57, Top 127, Fantasy Club 35 and 429 City.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/',
+    null
+  );
+
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += sectionHeader('Brothel Search');
+  html += '<p class="hero-tagline" style="margin-bottom:32px">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
+
+  // Editor's Picks — top matches available now
+  const picks = allGirls.filter(g => {
+    const avail = getAvailabilityText(g);
+    const score = matchScores.get(g.venue + ':' + g.name) || 0;
+    return avail && avail.startsWith('Available Now') && score >= 70;
+  }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 12);
+
+  if (picks.length) {
+    html += '<div class="venue-divider"><span>\u2014 TOP MATCHES AVAILABLE NOW \u2014</span></div>';
+    html += '<div class="girls-grid" style="margin-top:16px;margin-bottom:40px">';
+    for (const g of picks) {
+      const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+      const score = matchScores.get(g.venue + ':' + g.name) || 0;
+      const showBadge = userPreferences && score > 0;
+      const img = g.photos && g.photos.length
+        ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '') + '" loading="lazy">'
+        : '<div class="silhouette"></div>';
+      const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+      html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
+      html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '">' + heartSvg + '</div>';
+      html += '<div class="card-badges"><span class="country-badge">' + (g.venueName || '') + '</span>';
+      if (showBadge) html += '<div class="match-badge' + (score >= 90 ? ' match-gold' : '') + '">' + score + '%</div>';
+      if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
+      if (g.pornstar) html += '<span class="av-badge">AV</span>';
+      html += '</div>';
+      html += '<div class="card-img">' + img + '</div>';
+      html += '<div class="card-info">';
+      html += '<div class="card-name">' + (g.name || '') + '</div>';
+      html += '<div class="card-country">' + countries + '</div>';
+      html += '</div></div>';
+    }
+    html += '</div>';
+  }
+
+  // Quick links
+  html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
+  html += '<div class="landing-grid" style="margin-top:20px">';
+  html += '<a href="/profiles" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/profiles\')"><h2 class="landing-card-title">Browse All Profiles</h2><div class="landing-card-stat">' + allGirls.length + ' girls across ' + Object.keys(VENUE_DATA).length + ' venues</div><div class="landing-card-link">View profiles \u2192</div></a>';
+  html += '<a href="/working-now" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/working-now\')"><h2 class="landing-card-title">Who\u2019s Working Now</h2><div class="landing-card-stat">Live roster across all venues</div><div class="landing-card-link">See who\u2019s available \u2192</div></a>';
+  html += '<a href="/compare" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/compare\')"><h2 class="landing-card-title">Compare Venues</h2><div class="landing-card-stat">Side-by-side comparison</div><div class="landing-card-link">Compare now \u2192</div></a>';
+  html += '<a href="/sydney/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')"><h2 class="landing-card-title">Browse by Location</h2><div class="landing-card-stat">Interactive map of Sydney</div><div class="landing-card-link">View map \u2192</div></a>';
+  html += '</div>';
+
+  html += '</div>';
+  return html;
 }
 
 // ── Analytics (Members Only) ──
@@ -3714,12 +3765,22 @@ function handleLandingRoute(path) {
   const mainSection = document.querySelector('section.section');
 
   let html = null;
+  const cleanPath = path.replace(/^\//, '').replace(/\/$/, '');
 
-  if (path.replace(/^\//, '').replace(/\/$/, '') === 'working-now') {
+  if (cleanPath === '' || cleanPath === 'index.html') {
+    html = renderHomePage();
+  } else if (cleanPath === 'profiles') {
+    // Show the main profiles section instead
+    landingEl.style.display = 'none';
+    mainSection.style.display = '';
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navProfiles'));
+    window.scrollTo({ top: 0 });
+    return true;
+  } else if (cleanPath === 'working-now') {
     html = renderWorkingNow();
-  } else if (path.replace(/^\//, '').replace(/\/$/, '') === 'compare') {
+  } else if (cleanPath === 'compare') {
     html = renderComparePage();
-  } else if (path.replace(/^\//, '').replace(/\/$/, '') === 'analytics') {
+  } else if (cleanPath === 'analytics') {
     html = renderAnalyticsPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
@@ -3733,7 +3794,7 @@ function handleLandingRoute(path) {
     landingEl.innerHTML = html;
     landingEl.style.display = '';
     mainSection.style.display = 'none';
-    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : path.includes('analytics') ? 'navAnalytics' : 'navBrothels';
+    const activeLinkId = cleanPath === '' || cleanPath === 'index.html' ? 'navHome' : path.includes('working-now') ? 'navWorkingNow' : path.includes('compare') ? 'navCompare' : path.includes('analytics') ? 'navAnalytics' : 'navBrothels';
     document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === activeLinkId));
     window.scrollTo({ top: 0 });
     // Init map if on city page
@@ -3771,11 +3832,16 @@ function showMainSection() {
 }
 
 // Nav link click handlers
+document.getElementById('navHome').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/');
+});
+
 document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
-  history.pushState(null, '', '/');
+  history.pushState(null, '', '/profiles');
   showMainSection();
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+  updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
 });
 
 document.getElementById('navWorkingNow').addEventListener('click', function(e) {

@@ -3176,17 +3176,8 @@ function renderAnalyticsPage() {
 
   const venueIds = Object.keys(VENUE_DATA);
 
-  // ── Price Analysis (rostered within 30 days) ──
   const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   const thirtyDayStr = thirtyDaysAgo.toISOString().split('T')[0];
-  const priceData = venueIds.map(id => {
-    const girls = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStr);
-    const p30 = girls.map(g => parseInt(g.val1)).filter(p => p > 0);
-    const p45 = girls.map(g => parseInt(g.val2)).filter(p => p > 0);
-    const p60 = girls.map(g => parseInt(g.val3)).filter(p => p > 0);
-    const avg = arr => arr.length ? Math.round(arr.reduce((a,b) => a+b, 0) / arr.length) : 0;
-    return { name: VENUE_DATA[id].name, avg30: avg(p30), avg45: avg(p45), avg60: avg(p60), count: girls.length };
-  });
 
   // ── Busiest Days ──
   const dayCounts = [0,0,0,0,0,0,0]; // Sun-Sat
@@ -3214,19 +3205,6 @@ function renderAnalyticsPage() {
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Analytics');
   html += '<p class="landing-desc">Data insights across ' + allGirls.length + ' girls and ' + venueIds.length + ' venues.</p>';
-
-  // Average Prices
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Average Prices by Venue (rostered within 30 days)</h2>';
-  html += '<div class="analytics-grid">';
-  for (const p of priceData) {
-    html += '<div class="analytics-card"><div class="analytics-card-title">' + p.name + '</div>';
-    html += '<div class="analytics-stat"><span>30 min</span><span class="analytics-val">$' + p.avg30 + '</span></div>';
-    html += '<div class="analytics-stat"><span>45 min</span><span class="analytics-val">$' + p.avg45 + '</span></div>';
-    html += '<div class="analytics-stat"><span>60 min</span><span class="analytics-val">$' + p.avg60 + '</span></div>';
-    html += '<div class="analytics-stat" style="color:var(--text-dim);font-size:11px"><span>' + p.count + ' girls</span></div>';
-    html += '</div>';
-  }
-  html += '</div></div>';
 
   // Busiest Days
   html += '<div class="analytics-section"><h2 class="analytics-heading">Busiest Days (Roster Frequency)</h2>';

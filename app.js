@@ -2882,10 +2882,12 @@ function crossfadeProfilePhoto(idx) {
   const wrap = document.querySelector('.profile-main-wrap');
   const current = document.getElementById('profileMainImg');
   if (!wrap || !current) return;
+  // Clean up any stale images from previous crossfades
+  wrap.querySelectorAll('img:not(#profileMainImg)').forEach(el => el.remove());
   const next = document.createElement('img');
   next.src = photos[idx];
   next.alt = current.alt;
-  next.id = 'profileMainImg';
+  next.id = '';
   next.style.opacity = '0';
   next.style.transition = 'opacity .5s ease';
   next.style.position = 'absolute';
@@ -2893,7 +2895,7 @@ function crossfadeProfilePhoto(idx) {
   next.style.width = '100%';
   next.style.aspectRatio = '3/4';
   next.style.objectFit = 'cover';
-  wrap.style.position = 'relative';
+  next.style.zIndex = '2';
   wrap.appendChild(next);
   requestAnimationFrame(() => {
     next.style.opacity = '1';
@@ -2901,8 +2903,13 @@ function crossfadeProfilePhoto(idx) {
   });
   setTimeout(() => {
     current.remove();
+    next.id = 'profileMainImg';
     next.style.position = '';
     next.style.inset = '';
+    next.style.width = '';
+    next.style.aspectRatio = '';
+    next.style.objectFit = '';
+    next.style.zIndex = '';
   }, 550);
   document.querySelectorAll('.profile-thumbs img').forEach((t, i) => t.classList.toggle('active', i === idx));
   const counter = document.getElementById('photoCounter');

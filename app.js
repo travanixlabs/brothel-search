@@ -3717,7 +3717,7 @@ function renderSuburbPage(suburbSlug) {
   let html = '<div class="landing-map-container"><div id="venueMap" data-suburb="' + suburbSlug + '"></div></div>';
   html += '<div class="landing-page">';
   html += '<h1 class="landing-title">Brothels in ' + suburb.name + '</h1>';
-  html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + girlCount + ' girls in ' + suburb.name + ', Sydney.</p>';
+  html += '<p class="landing-desc">' + suburb.venues.length + ' venues with ' + activeCount + ' girls active in ' + suburb.name + ', Sydney.</p>';
   html += '<div class="landing-grid">';
 
   for (const v of suburb.venues) {

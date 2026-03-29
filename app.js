@@ -2910,7 +2910,6 @@ function showProfile(g) {
           ${detailRow('Cup', g.cup)}
           ${(g.val1 || g.val2 || g.val3) ? '<div class="profile-price-table"><div class="profile-price-header">Rates</div><div class="profile-price-grid">' + (g.val1 ? '<div class="profile-price-item"><span class="profile-price-duration">30 min</span><span class="profile-price-amount">$' + g.val1 + '</span></div>' : '') + (g.val2 ? '<div class="profile-price-item"><span class="profile-price-duration">45 min</span><span class="profile-price-amount">$' + g.val2 + '</span></div>' : '') + (g.val3 ? '<div class="profile-price-item"><span class="profile-price-duration">60 min</span><span class="profile-price-amount">$' + g.val3 + '</span></div>' : '') + '</div></div>' : ''}
           ${detailRow('Start Date', g.startDate)}
-          ${detailRow('Last Available', g.lastRostered && new Date(g.lastRostered + 'T00:00:00') <= new Date(new Date().toDateString()) ? g.lastRostered : '')}
           ${(() => {
             if (!g.lastRostered) return '';
             const rd = new Date(g.lastRostered + 'T00:00:00');

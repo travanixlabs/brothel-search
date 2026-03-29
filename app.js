@@ -2915,6 +2915,7 @@ function showProfile(g) {
             const rd = new Date(g.lastRostered + 'T00:00:00');
             const today = new Date(); today.setHours(0,0,0,0);
             const diff = Math.round((today - rd) / 86400000);
+            if (diff < 0) return '';
             const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
             const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
             return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';

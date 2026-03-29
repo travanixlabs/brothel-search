@@ -3150,15 +3150,6 @@ function renderAnalyticsPage() {
   }
   const maxDay = Math.max(...dayCounts, 1);
 
-  // ── Girl Retention ──
-  const retentionData = venueIds.map(id => {
-    const girls = allGirls.filter(g => g.venue === id && g.startDate);
-    if (!girls.length) return { name: VENUE_DATA[id].name, avgDays: 0, active: 0 };
-    const now = Date.now();
-    const days = girls.map(g => Math.round((now - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000));
-    const avg = Math.round(days.reduce((a,b) => a+b, 0) / days.length);
-    return { name: VENUE_DATA[id].name, avgDays: avg, active: girls.length };
-  });
 
   // ── Country Breakdown ──
   const countryTotals = {};
@@ -3216,16 +3207,6 @@ function renderAnalyticsPage() {
   }
   html += '</div></div>';
 
-  // Girl Retention
-  html += '<div class="analytics-section"><h2 class="analytics-heading">Girl Retention (Avg Days Since Start)</h2>';
-  html += '<div class="analytics-grid">';
-  for (const r of retentionData) {
-    html += '<div class="analytics-card"><div class="analytics-card-title">' + r.name + '</div>';
-    html += '<div class="analytics-big-num">' + r.avgDays + '<span style="font-size:14px;color:var(--text-dim)"> days</span></div>';
-    html += '<div style="font-size:11px;color:var(--text-dim)">' + r.active + ' girls with start date</div>';
-    html += '</div>';
-  }
-  html += '</div></div>';
 
   // Venue Rankings
   html += '<div class="analytics-section"><h2 class="analytics-heading">Venue Rankings</h2>';

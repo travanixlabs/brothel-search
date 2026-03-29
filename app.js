@@ -3541,7 +3541,7 @@ function renderSuburbPage(suburbSlug) {
 
   updateMeta(
     'Brothels in ' + suburb.name + ', Sydney | Brothel Search',
-    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney. ' + girlCount + ' girls available. Compare venues, pricing and profiles.',
+    'Browse ' + suburb.venues.length + ' brothels in ' + suburb.name + ', Sydney: ' + suburb.venues.map(v => v.name).join(', ') + '. ' + girlCount + ' girls available.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/sydney/' + suburbSlug + '/',
     { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Brothels in ' + suburb.name + ', Sydney', numberOfItems: suburb.venues.length }

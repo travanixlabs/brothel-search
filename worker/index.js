@@ -1572,6 +1572,194 @@ async function syncCalendar(env, site) {
 
 /* ── Export ── */
 
+/* ── Daily Digest Notifications ── */
+
+const SB_URL = 'https://blhwekuidksxiaickeck.supabase.co';
+
+function sbHeaders(env) {
+  return { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`, 'Content-Type': 'application/json' };
+}
+
+async function sendDailyDigest(env) {
+  const headers = sbHeaders(env);
+
+  // Load all users with favourites
+  const favRes = await fetch(`${SB_URL}/rest/v1/user_favorites?select=user_id,old_url`, { headers });
+  const allFavs = await favRes.json();
+  if (!allFavs.length) { console.log('[Digest] No favourites found'); return; }
+
+  // Group favourites by user
+  const userFavs = {};
+  for (const f of allFavs) {
+    if (!userFavs[f.user_id]) userFavs[f.user_id] = [];
+    userFavs[f.user_id].push(f.old_url);
+  }
+
+  // Load all venue data + today's roster
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429];
+  const venueIds = ['ginzaempire', 'ginzaclub', 'kyoto206', 'sakura57', 'top127', 'fantasyclub35', '429city'];
+  const allGirls = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (let i = 0; i < siteList.length; i++) {
+    try {
+      const { data } = await loadData(env, siteList[i]);
+      const calendar = data.calendar || {};
+      for (const g of data.girls || []) {
+        g.venue = venueIds[i];
+        g.venueName = siteList[i].name;
+        g.rosteredToday = !!(calendar[g.name] && calendar[g.name][todayStr]);
+        allGirls.push(g);
+      }
+    } catch (e) { console.error(`[Digest] Error loading ${siteList[i].name}:`, e); }
+  }
+
+  // Load user preferences for match scoring
+  const prefsRes = await fetch(`${SB_URL}/rest/v1/user_preferences?select=*`, { headers });
+  const allPrefs = await prefsRes.json();
+  const prefsMap = {};
+  for (const p of allPrefs) prefsMap[p.id] = p;
+
+  // Load user emails
+  const userIds = Object.keys(userFavs);
+  const userEmails = {};
+  for (const uid of userIds) {
+    try {
+      const res = await fetch(`${SB_URL}/auth/v1/admin/users/${uid}`, { headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` } });
+      const u = await res.json();
+      if (u.email) userEmails[uid] = { email: u.email, name: u.user_metadata?.name || u.email.split('@')[0] };
+    } catch {}
+  }
+
+  // New girls (startDate in last 24 hours)
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = yesterday.toISOString().split('T')[0];
+  const newGirls = allGirls.filter(g => g.startDate && g.startDate >= yesterdayStr);
+
+  // Process each user
+  for (const [userId, favUrls] of Object.entries(userFavs)) {
+    const notifications = [];
+    const userInfo = userEmails[userId];
+    if (!userInfo) continue;
+
+    // Check favourite girls rostered today
+    const favGirls = allGirls.filter(g => g.oldUrl && favUrls.includes(g.oldUrl) && g.rosteredToday);
+    for (const g of favGirls) {
+      notifications.push({
+        user_id: userId, type: 'favourite_rostered',
+        title: g.name + ' is working today',
+        body: g.name + ' at ' + g.venueName + ' is on the roster today.',
+        venue: g.venue, girl_name: g.name,
+      });
+    }
+
+    // Check new girls matching >= 90%
+    const prefs = prefsMap[userId];
+    if (prefs && newGirls.length) {
+      for (const g of newGirls) {
+        const score = scoreGirlWorker(g, prefs);
+        if (score >= 90) {
+          notifications.push({
+            user_id: userId, type: 'new_match',
+            title: 'New ' + score + '% match: ' + g.name,
+            body: g.name + ' just joined ' + g.venueName + ' and matches your preferences.',
+            venue: g.venue, girl_name: g.name,
+          });
+        }
+      }
+    }
+
+    if (!notifications.length) continue;
+
+    // Insert notifications into Supabase
+    await fetch(`${SB_URL}/rest/v1/notifications`, {
+      method: 'POST', headers, body: JSON.stringify(notifications),
+    });
+
+    // Send email via Resend
+    if (env.RESEND_API_KEY) {
+      const emailHtml = buildDigestEmail(userInfo.name, notifications);
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: 'Brothel Search <info@travanixlabs.com>',
+            to: userInfo.email,
+            subject: 'Your Daily Digest — ' + notifications.length + ' update' + (notifications.length !== 1 ? 's' : ''),
+            html: emailHtml,
+          }),
+        });
+        console.log(`[Digest] Email sent to ${userInfo.email}: ${notifications.length} notifications`);
+      } catch (e) { console.error(`[Digest] Email error for ${userInfo.email}:`, e); }
+    }
+  }
+
+  console.log(`[Digest] Processed ${userIds.length} users`);
+}
+
+function scoreGirlWorker(girl, prefs) {
+  if (!prefs) return 0;
+  let score = 0, activeWeight = 0;
+  if (prefs.age_min != null && prefs.age_max != null && (prefs.age_min !== 18 || prefs.age_max !== 33)) {
+    activeWeight += 10;
+    if (girl.age && parseInt(girl.age) >= prefs.age_min && parseInt(girl.age) <= prefs.age_max) score += 10;
+  }
+  if (prefs.body_min != null && prefs.body_max != null && (prefs.body_min !== 4 || prefs.body_max !== 10)) {
+    activeWeight += 10;
+    if (girl.body && parseInt(girl.body) >= prefs.body_min && parseInt(girl.body) <= prefs.body_max) score += 10;
+  }
+  if (prefs.height_min != null && prefs.height_max != null && (prefs.height_min !== 150 || prefs.height_max !== 175)) {
+    activeWeight += 2;
+    if (girl.height && parseInt(girl.height) >= prefs.height_min && parseInt(girl.height) <= prefs.height_max) score += 2;
+  }
+  if (prefs.cup_min || prefs.cup_max) {
+    activeWeight += 2;
+    const CUP_ORDER = ['A','B','C','D','DD','E','F','G','H'];
+    const ci = CUP_ORDER.indexOf((girl.cup||'').toUpperCase());
+    const mi = CUP_ORDER.indexOf((prefs.cup_min||'').toUpperCase());
+    const xi = CUP_ORDER.indexOf((prefs.cup_max||'').toUpperCase());
+    if (ci >= 0 && (mi < 0 || ci >= mi) && (xi < 0 || ci <= xi)) score += 2;
+  }
+  if (prefs.countries && prefs.countries.length > 0) {
+    activeWeight += 15;
+    const gc = Array.isArray(girl.country) ? girl.country : (girl.country ? [girl.country] : []);
+    if (gc.length > 0) { const matched = gc.filter(c => prefs.countries.includes(c)).length; score += (matched / gc.length) * 15; }
+  }
+  if (activeWeight === 0) return 0;
+  return Math.round((score / activeWeight) * 100);
+}
+
+function buildDigestEmail(name, notifications) {
+  const favItems = notifications.filter(n => n.type === 'favourite_rostered');
+  const matchItems = notifications.filter(n => n.type === 'new_match');
+  let html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0e0e16;color:#e0d6c8;padding:32px;border-radius:12px">`;
+  html += `<div style="text-align:center;margin-bottom:24px"><span style="font-size:24px;font-weight:700;color:#c9952c;letter-spacing:2px">BROTHEL SEARCH</span></div>`;
+  html += `<p style="font-size:16px;margin-bottom:20px">Hi ${name},</p>`;
+
+  if (favItems.length) {
+    html += `<div style="margin-bottom:20px"><div style="font-size:14px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Your Favourites — Working Today</div>`;
+    for (const n of favItems) {
+      html += `<div style="padding:10px 14px;margin-bottom:8px;background:rgba(201,149,44,0.08);border-left:3px solid #c9952c;border-radius:4px"><strong>${n.title}</strong><br><span style="font-size:13px;color:#999">${n.body}</span></div>`;
+    }
+    html += `</div>`;
+  }
+
+  if (matchItems.length) {
+    html += `<div style="margin-bottom:20px"><div style="font-size:14px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">New Matches</div>`;
+    for (const n of matchItems) {
+      html += `<div style="padding:10px 14px;margin-bottom:8px;background:rgba(0,200,100,0.08);border-left:3px solid #00c864;border-radius:4px"><strong>${n.title}</strong><br><span style="font-size:13px;color:#999">${n.body}</span></div>`;
+    }
+    html += `</div>`;
+  }
+
+  html += `<div style="text-align:center;margin-top:24px"><a href="https://brothelsearch.com" style="display:inline-block;padding:10px 28px;background:#c9952c;color:#0e0e16;text-decoration:none;border-radius:8px;font-weight:700;letter-spacing:1px">Browse Now</a></div>`;
+  html += `<p style="font-size:11px;color:#666;margin-top:24px;text-align:center">You're receiving this because you have favourites on Brothel Search.</p>`;
+  html += `</div>`;
+  return html;
+}
+
 /* ── Social bot pre-rendering ── */
 
 const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|pinterest|snapchat/i;
@@ -2146,6 +2334,12 @@ export default {
 
         // Regenerate sitemap after girls sync
         await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
+      }
+
+      // 21:00 UTC (8am AEDT) — Daily digest notifications
+      if (hour === 21) {
+        console.log('8am AEDT — Daily digest');
+        await sendDailyDigest(env).catch(e => console.error('[Digest] Error:', e));
       }
 
       // 7:00 UTC (6pm AEDT) and 10:00 UTC (9pm AEDT) — Roster sync only

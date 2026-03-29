@@ -2051,8 +2051,15 @@ function loadMore() {
   const end = Math.min(start + PAGE_SIZE, currentFiltered.length);
   if (start >= currentFiltered.length) return;
   loadingMore = true;
+    const loader = document.createElement('div');
+    loader.className = 'scroll-loader';
+    loader.id = 'scrollLoader';
+    loader.innerHTML = '<span></span><span></span><span></span>';
+    document.getElementById('girlsGrid').appendChild(loader);
   for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
   currentPage++;
+    const sl = document.getElementById('scrollLoader');
+    if (sl) sl.remove();
   loadingMore = false;
 }
 
@@ -2065,6 +2072,40 @@ function renderGrid() {
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
   updateMoreFiltersCount();
 
+  // Filter chips
+  const chipsEl = document.getElementById('filterChips');
+  if (chipsEl) {
+    const chips = [];
+    activeVenue.include.forEach(v => chips.push({ label: v, type: 'venue', action: 'include' }));
+    activeVenue.exclude.forEach(v => chips.push({ label: v, type: 'venue', action: 'exclude' }));
+    activeCountry.include.forEach(v => chips.push({ label: v, type: 'country', action: 'include' }));
+    activeCountry.exclude.forEach(v => chips.push({ label: v, type: 'country', action: 'exclude' }));
+    activeLabels.include.forEach(v => chips.push({ label: v, type: 'labels', action: 'include' }));
+    activeLabels.exclude.forEach(v => chips.push({ label: v, type: 'labels', action: 'exclude' }));
+    activeAvailability.include.forEach(v => chips.push({ label: v, type: 'availability', action: 'include' }));
+    Object.entries(textFilters).forEach(([k, v]) => { if (v) chips.push({ label: k + ': ' + v, type: 'text', key: k }); });
+
+    if (chips.length) {
+      chipsEl.style.display = 'flex';
+      chipsEl.innerHTML = chips.map(c => '<span class="filter-chip' + (c.action === 'exclude' ? ' filter-chip-exclude' : '') + '" data-type="' + c.type + '" data-label="' + (c.label || '').replace(/"/g, '&quot;') + '"' + (c.key ? ' data-key="' + c.key + '"' : '') + '>' + (c.action === 'exclude' ? '\u2013 ' : '') + c.label + ' <button>&times;</button></span>').join('');
+      chipsEl.querySelectorAll('.filter-chip button').forEach(btn => {
+        btn.onclick = function() {
+          const chip = this.parentElement;
+          const type = chip.dataset.type;
+          const label = chip.dataset.label;
+          if (type === 'text') { textFilters[chip.dataset.key] = ''; }
+          else {
+            const states = { venue: activeVenue, country: activeCountry, labels: activeLabels, availability: activeAvailability };
+            const state = states[type];
+            if (state) { state.include = state.include.filter(v => v !== label); state.exclude = state.exclude.filter(v => v !== label); }
+          }
+          renderFilters(); renderGrid();
+        };
+      });
+    } else {
+      chipsEl.style.display = 'none';
+    }
+  }
 
   if (!currentFiltered.length) {
     grid.innerHTML = '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls match your filters</div></div>';
@@ -2853,7 +2894,7 @@ function showProfile(g) {
     <div class="profile-layout">
       <div class="profile-gallery">
         <div class="profile-main-wrap">
-          <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : ''}">
+          <img id="profileMainImg" src="${mainImg}" alt="${(g.name || '').replace(/"/g, '&quot;')}" style="${!mainImg ? 'display:none' : 'cursor:pointer'}" onclick="openLightbox(window._profilePhotoIdx || 0)">
           ${photos.length > 1 ? '<div class="photo-counter" id="photoCounter">1 / ' + photos.length + '</div>' : ''}
         </div>
         <div class="profile-thumbs">
@@ -2994,6 +3035,40 @@ function selectProfilePhoto(idx) {
   }
 }
 
+// ── Photo Lightbox ──
+function openLightbox(idx) {
+  const photos = window._profilePhotos || [];
+  if (!photos.length) return;
+  window._lightboxIdx = idx || 0;
+  let overlay = document.getElementById('lightboxOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'lightboxOverlay';
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-close" onclick="closeLightbox()">&times;</button><button class="lightbox-prev" onclick="lightboxNav(-1)">&lsaquo;</button><img class="lightbox-img" id="lightboxImg"><button class="lightbox-next" onclick="lightboxNav(1)">&rsaquo;</button><div class="lightbox-counter" id="lightboxCounter"></div>';
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLightbox(); });
+  }
+  document.getElementById('lightboxImg').src = photos[window._lightboxIdx];
+  document.getElementById('lightboxCounter').textContent = (window._lightboxIdx + 1) + ' / ' + photos.length;
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById('lightboxOverlay');
+  if (overlay) overlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function lightboxNav(dir) {
+  const photos = window._profilePhotos || [];
+  if (!photos.length) return;
+  window._lightboxIdx = (window._lightboxIdx + dir + photos.length) % photos.length;
+  document.getElementById('lightboxImg').src = photos[window._lightboxIdx];
+  document.getElementById('lightboxCounter').textContent = (window._lightboxIdx + 1) + ' / ' + photos.length;
+}
+
 function closeProfile() {
   clearInterval(window._profileRotate);
   const overlay = document.getElementById('profileOverlay');
@@ -3019,6 +3094,14 @@ document.addEventListener('keydown', e => {
 
   const overlay = document.getElementById('profileOverlay');
   const profileOpen = overlay && overlay.classList.contains('active');
+
+  // Lightbox navigation
+  const lbOverlay = document.getElementById('lightboxOverlay');
+  if (lbOverlay && lbOverlay.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') { lightboxNav(-1); return; }
+    if (e.key === 'ArrowRight') { lightboxNav(1); return; }
+    if (e.key === 'Escape') { closeLightbox(); return; }
+  }
 
   // Profile photo navigation
   if (profileOpen) {
@@ -3735,8 +3818,14 @@ function renderVenuePage(suburbSlug, venueId) {
 function navigateToLanding(path) {
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd) dd.classList.remove('open');
-  history.pushState({ landing: true }, '', path);
-  handleLandingRoute(path);
+  const landing = document.getElementById('landingPage');
+  if (landing && landing.style.display !== 'none') {
+    landing.classList.add('fading');
+    setTimeout(() => { history.pushState({ landing: true }, '', path); handleLandingRoute(path); landing.classList.remove('fading'); }, 150);
+  } else {
+    history.pushState({ landing: true }, '', path);
+    handleLandingRoute(path);
+  }
 }
 
 function handleLandingRoute(path) {

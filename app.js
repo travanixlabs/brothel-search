@@ -3606,6 +3606,8 @@ function renderVenuePage(suburbSlug, venueId) {
   html += '<hr class="gold-divider">';
   html += '<div class="girls-grid" style="margin-top:16px">';
 
+  girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
+
   for (const g of girls) {
     const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
     const girlKey = g.venue + ':' + g.name;

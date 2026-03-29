@@ -2920,7 +2920,7 @@ window.addEventListener('popstate', () => {
     setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
     showMainSection();
     updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
-  } else if (path.match(/^\/sydney\/([\w]+\/?){0,2}$/) && !findGirlByPath(path)) {
+  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now') && !findGirlByPath(path)) {
     closeProfile();
     handleLandingRoute(path);
   } else {
@@ -2964,7 +2964,7 @@ loadProfiles().then(() => {
   if (path !== '/' && path !== '/index.html') {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
-    else if (path.startsWith('/sydney')) { handleLandingRoute(path); }
+    else if (path.startsWith('/sydney') || path === '/working-now') { handleLandingRoute(path); }
   }
 });
 checkAuth().then(() => {
@@ -3023,6 +3023,90 @@ setTimeout(async () => {
 }, 2000);
 
 // hashchange handled above in unified listener
+
+// ── Working Now ──
+
+function renderWorkingNow() {
+  const now = allGirls.filter(g => {
+    const avail = getAvailabilityText(g);
+    return avail && avail.startsWith('Available Now');
+  });
+  const later = allGirls.filter(g => {
+    const avail = getAvailabilityText(g);
+    return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future'));
+  });
+
+  updateMeta(
+    'Who\'s Working Now \u2013 Live Roster | Brothel Search',
+    now.length + ' girls available now across Sydney brothels. ' + later.length + ' more starting later today.',
+    'https://brothelsearch.com/og-preview.png',
+    'https://brothelsearch.com/working-now',
+    null
+  );
+
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += '<h1 class="landing-title">Who\'s Working Now</h1>';
+  html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later today.</p>';
+
+  if (now.length) {
+    html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#00c864;margin:24px 0 16px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#00c864;box-shadow:0 0 8px rgba(0,200,100,0.5)"></span> Available Now</div>';
+    html += '<div class="girls-grid">';
+    for (const g of now) {
+      html += renderWorkingNowCard(g);
+    }
+    html += '</div>';
+  }
+
+  if (later.length) {
+    html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#3c78ff;margin:24px 0 16px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#3c78ff;box-shadow:0 0 8px rgba(60,120,255,0.5)"></span> Starting Later</div>';
+    html += '<div class="girls-grid">';
+    for (const g of later) {
+      html += renderWorkingNowCard(g);
+    }
+    html += '</div>';
+  }
+
+  if (!now.length && !later.length) {
+    html += '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls rostered right now. Check back later!</div></div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function renderWorkingNowCard(g) {
+  const countries = Array.isArray(g.country) ? g.country.join(', ') : (g.country || '');
+  const girlKey = g.venue + ':' + g.name;
+  const girlScore = matchScores.get(girlKey) || 0;
+  const showBadge = userPreferences && girlScore > 0;
+  const avail = getAvailabilityText(g);
+  const img = g.photos && g.photos.length
+    ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + ' \u2013 ' + (g.venueName || '') + '" loading="lazy">'
+    : '<div class="silhouette"></div>';
+  const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+
+  let html = '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
+  html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g, '&quot;') + '">' + heartSvg + '</div>';
+  html += '<div class="card-badges"><span class="country-badge">' + (g.venueName || '') + '</span>';
+  if (showBadge) html += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
+  if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
+  if (g.pornstar) html += '<span class="av-badge">AV</span>';
+  html += '</div>';
+  html += '<div class="card-img">' + img + '</div>';
+  html += '<div class="card-info">';
+  html += '<div class="card-name">' + (g.name || '') + '</div>';
+  html += '<div class="card-country">' + countries + '</div>';
+  html += '<div class="card-stats">';
+  if (g.age) html += '<span>Age ' + g.age + '</span>';
+  if (g.body) html += '<span>Body ' + g.body + '</span>';
+  if (g.height) html += '<span>' + g.height + 'cm</span>';
+  if (g.cup) html += '<span>' + g.cup + ' cup</span>';
+  html += '</div>';
+  if (g.val1 || g.val2 || g.val3) html += '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>';
+  if (avail) html += '<div class="card-last-rostered' + (avail.startsWith('Available Now') ? ' available-now' : ' available-later') + '">' + avail + '</div>';
+  html += '</div></div>';
+  return html;
+}
 
 // ── Landing Pages (City / Suburb / Venue) ──
 
@@ -3281,7 +3365,9 @@ function handleLandingRoute(path) {
 
   let html = null;
 
-  if (parts.length === 1 && parts[0] === 'sydney') {
+  if (path.replace(/^\//, '').replace(/\/$/, '') === 'working-now') {
+    html = renderWorkingNow();
+  } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
     html = renderSuburbPage(parts[1]);
@@ -3293,10 +3379,29 @@ function handleLandingRoute(path) {
     landingEl.innerHTML = html;
     landingEl.style.display = '';
     mainSection.style.display = 'none';
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navBrothels'));
+    const activeLinkId = path.includes('working-now') ? 'navWorkingNow' : 'navBrothels';
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === activeLinkId));
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
+    // Attach click handlers for Working Now cards
+    const wnGrid = landingEl.querySelectorAll('.girls-grid .girl-card');
+    wnGrid.forEach(card => {
+      card.style.cursor = 'pointer';
+      const venue = card.dataset.venue;
+      const name = card.dataset.name;
+      card.onclick = (e) => {
+        if (e.target.closest('.fav-heart')) return;
+        const g = allGirls.find(gg => gg.venue === venue && gg.name === name);
+        if (g) showProfile(g);
+      };
+      const heart = card.querySelector('.fav-heart');
+      if (heart) heart.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const url = heart.dataset.url;
+        if (url) toggleFavorite(url, e);
+      });
+    });
     return true;
   }
   return false;
@@ -3317,6 +3422,11 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
   history.pushState(null, '', '/');
   showMainSection();
   updateMeta('Brothel Search \u2013 Girls, Rosters & Profiles', 'Browse profiles, rosters and availability across Sydney\'s top brothels.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+});
+
+document.getElementById('navWorkingNow').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/working-now');
 });
 
 document.getElementById('navBrothels').addEventListener('click', function(e) {

@@ -3279,6 +3279,17 @@ function renderHomePage() {
   html += '<div class="section-header centered"><div><div class="section-tag">Brothel Search</div><h1 class="section-title">Home</h1></div></div>';
   html += '<p class="hero-tagline" style="margin-bottom:32px;text-align:center">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
 
+  html += '<div class="home-search-wrap"><input type="text" class="home-search" id="homeSearch" placeholder="Search by name, country or venue..." autocomplete="off"></div>';
+
+  const totalGirls = allGirls.length;
+  const totalVenues = Object.keys(VENUE_DATA).length;
+  const workingNow = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  html += '<div class="home-stats">';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalGirls + '">0</span><span class="home-stat-label">Girls</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalVenues + '">0</span><span class="home-stat-label">Venues</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingNow + '">0</span><span class="home-stat-label">Working Now</span></div>';
+  html += '</div>';
+
   // Editor's Picks — top matches available now, fallback to available soon
   let picks = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
@@ -3303,6 +3314,44 @@ function renderHomePage() {
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
       const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
       html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:' + (score >= 90 ? 'var(--gold)' : 'var(--text-dim)') + '">' + score + '% match</div></div>';
+    }
+    html += '</div>';
+  }
+
+  // Venue showcase
+  html += '<div class="venue-divider"><span>\u2014 VENUES \u2014</span></div>';
+  html += '<div class="venue-carousel">';
+  for (const [id, v] of Object.entries(VENUE_DATA)) {
+    const count = allGirls.filter(g => g.venue === id && g.lastRostered).length;
+    const topGirl = allGirls.find(g => g.venue === id && g.photos && g.photos.length);
+    const thumb = topGirl ? imgProxy(topGirl.photos[0]) : '';
+    html += '<div class="venue-carousel-item" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + id + '/\')">';
+    if (thumb) html += '<img src="' + thumb + '" alt="' + v.name + '">';
+    html += '<div class="venue-carousel-info"><div class="venue-carousel-name">' + v.name + '</div><div class="venue-carousel-meta">' + v.suburb + ' \u00b7 ' + count + ' girls</div></div>';
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Popular now — most frequently rostered
+  const rosterCounts = {};
+  const sevenDaysAgoHome = new Date(); sevenDaysAgoHome.setDate(sevenDaysAgoHome.getDate() - 7);
+  const sevenDayStrHome = sevenDaysAgoHome.toISOString().split('T')[0];
+  for (const [key, cal] of Object.entries(calendarData)) {
+    const recentDays = Object.keys(cal).filter(d => d >= sevenDayStrHome).length;
+    if (recentDays > 0) rosterCounts[key] = recentDays;
+  }
+  const popular = Object.entries(rosterCounts).sort((a,b) => b[1] - a[1]).slice(0, 8).map(([key]) => {
+    const [venue, ...nameParts] = key.split(':');
+    const name = nameParts.join(':');
+    return allGirls.find(g => g.venue === venue && g.name === name);
+  }).filter(Boolean);
+
+  if (popular.length) {
+    html += '<div class="venue-divider"><span>\u2014 POPULAR THIS WEEK \u2014</span></div>';
+    html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
+    for (const g of popular) {
+      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div></div>';
     }
     html += '</div>';
   }
@@ -3868,6 +3917,39 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
+    // Animate count-up numbers
+    landingEl.querySelectorAll('.home-stat-num').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+    // Home search
+    const homeSearch = document.getElementById('homeSearch');
+    if (homeSearch) {
+      homeSearch.addEventListener('input', function() {
+        const q = this.value.trim().toLowerCase();
+        if (q.length >= 2) {
+          const results = allGirls.filter(g => (g.name || '').toLowerCase().includes(q) || (Array.isArray(g.country) ? g.country.join(' ') : g.country || '').toLowerCase().includes(q) || (g.venueName || '').toLowerCase().includes(q)).slice(0, 5);
+          let dropdown = document.getElementById('homeSearchResults');
+          if (!dropdown) { dropdown = document.createElement('div'); dropdown.id = 'homeSearchResults'; dropdown.className = 'home-search-results'; homeSearch.parentElement.appendChild(dropdown); }
+          if (results.length) {
+            dropdown.innerHTML = results.map(g => '<div class="home-search-item" data-venue="' + g.venue + '" data-name="' + (g.name||'').replace(/"/g,'&quot;') + '">' + (g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 40) + '">' : '') + '<div><strong>' + (g.name||'') + '</strong><br><span>' + (g.venueName||'') + ' \u00b7 ' + countriesWithFlags(g.country) + '</span></div></div>').join('');
+            dropdown.style.display = 'block';
+            dropdown.querySelectorAll('.home-search-item').forEach(el => { el.onclick = () => { const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name); if (g) showProfile(g); }; });
+          } else { dropdown.innerHTML = '<div class="home-search-item"><span>No results</span></div>'; dropdown.style.display = 'block'; }
+        } else {
+          const dd = document.getElementById('homeSearchResults');
+          if (dd) dd.style.display = 'none';
+        }
+      });
+    }
     // Attach click handlers for Working Now cards
     const wnGrid = landingEl.querySelectorAll('.girls-grid .girl-card');
     wnGrid.forEach(card => {

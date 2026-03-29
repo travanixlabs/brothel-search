@@ -446,7 +446,7 @@ body.is-admin .admin-only{display:initial!important}
 .landing-breadcrumb a{color:var(--gold);text-decoration:none}
 .landing-breadcrumb a:hover{text-decoration:underline}
 .landing-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.landing-desc{font-size:16px;color:var(--text-dim);line-height:1.6;margin-bottom:32px;max-width:600px}
+.landing-desc{font-size:16px;color:var(--text-dim);line-height:1.6;margin-bottom:32px}
 .landing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin-left:auto;margin-right:auto}
 .landing-card{background:linear-gradient(180deg,rgba(12,12,20,0.4) 0%,rgba(8,8,16,0.7) 100%);border:1px solid rgba(201,149,44,0.12);border-radius:16px;padding:28px 24px;text-decoration:none;transition:border-color .3s;box-shadow:inset 0 0 0 1px rgba(201,149,44,0.06);display:block}
 .landing-card:hover{border-color:rgba(201,149,44,0.3)}

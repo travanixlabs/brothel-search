@@ -3596,7 +3596,7 @@ function renderVenuePage(suburbSlug, venueId) {
   const p30 = venuePriceRange(venueId, 'val1');
   const p45 = venuePriceRange(venueId, 'val2');
   const p60 = venuePriceRange(venueId, 'val3');
-  html += '<p class="landing-desc">' + rostered + '/' + girls.length + ' girls available.';
+  html += '<p class="landing-desc">' + rostered + '/' + girls.length + ' girls active in past month.';
   if (p30) html += ' ' + p30 + ' for 30 min.';
   if (p45) html += ' ' + p45 + ' for 45 min.';
   if (p60) html += ' ' + p60 + ' for 60 min.';

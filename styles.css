@@ -317,9 +317,10 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .empty-msg{text-align:center;padding:80px 40px;color:var(--text-dim);font-size:14px;font-family:'Playfair Display',serif;letter-spacing:2px;display:flex;flex-direction:column;align-items:center;gap:8px}
 
 /* Venue section dividers */
-.venue-divider{text-align:center;margin:32px 0 20px;position:relative}
-.venue-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,149,44,0.2) 20%,rgba(201,149,44,0.2) 80%,transparent)}
-.venue-divider span{position:relative;background:var(--bg-dark);padding:0 20px;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:4px;color:var(--gold)}
+.venue-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:32px 0 20px}
+.venue-divider::before,.venue-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,149,44,0.2))}
+.venue-divider::after{background:linear-gradient(90deg,rgba(201,149,44,0.2),transparent)}
+.venue-divider span{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:4px;color:var(--gold);white-space:nowrap}
 
 /* Back to top */
 .back-to-top{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 24px;display:none;align-items:center;justify-content:center;gap:8px;cursor:pointer;z-index:90;transition:all .4s cubic-bezier(0.23,1,0.32,1);border-radius:24px;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:0}

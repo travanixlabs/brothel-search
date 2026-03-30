@@ -647,7 +647,7 @@ sbClient.auth.onAuthStateChange((event, session) => {
         const sub = await checkSubscription();
         isSubscribed = sub && sub.status === 'active';
         const path = window.location.pathname;
-        if (!isSubscribed && path !== '/' && path !== '/index.html') showPaywall();
+        if (!isSubscribed && path !== '/' && path !== '/index.html' && path !== '/roadmap') showPaywall();
       }, 2000);
     });
   }
@@ -3274,7 +3274,7 @@ setTimeout(async () => {
     isSubscribed = sub && sub.status === 'active';
     // Only show paywall on non-home pages
     const path = window.location.pathname;
-    if (!isSubscribed && path !== '/' && path !== '/index.html') showPaywall();
+    if (!isSubscribed && path !== '/' && path !== '/index.html' && path !== '/roadmap') showPaywall();
     else if (isSubscribed && window.location.hash === '#subscribe') hidePaywall();
   } catch(e) { console.error('Paywall check:', e); isSubscribed = false; }
 }, 2000);
@@ -4086,7 +4086,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
 
 function navigateToLanding(path) {
   // Allow home page without subscription, gate everything else
-  if (path !== '/' && path !== '/index.html' && !requireSubscription()) return;
+  if (path !== '/' && path !== '/index.html' && path !== '/roadmap' && !requireSubscription()) return;
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd) dd.classList.remove('open');
   const landing = document.getElementById('landingPage');

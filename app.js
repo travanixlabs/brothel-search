@@ -3575,16 +3575,16 @@ function renderRoadmapPage() {
   html += '</div></div>';
 
   // Table
-  html += '<div class="compare-table-wrap"><table class="compare-table" id="roadmapTable">';
+  html += '<div class="roadmap-table-wrap"><table class="roadmap-table" id="roadmapTable">';
   html += '<thead><tr>';
-  html += '<th class="compare-label">Date</th>';
-  html += '<th class="compare-label">Initiator</th>';
-  html += '<th class="compare-label">Status</th>';
-  html += '<th class="compare-label">Category</th>';
-  html += '<th class="compare-label">Title</th>';
-  html += '<th class="compare-label">Actions</th>';
+  html += '<th style="width:50px">Type</th>';
+  html += '<th>Summary</th>';
+  html += '<th style="width:100px">Status</th>';
+  html += '<th style="width:80px">Initiator</th>';
+  html += '<th style="width:90px">Created</th>';
+  html += '<th style="width:80px"></th>';
   html += '</tr></thead>';
-  html += '<tbody id="roadmapBody"><tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-dim)">Loading...</td></tr></tbody>';
+  html += '<tbody id="roadmapBody"><tr><td colspan="6" class="roadmap-empty">Loading...</td></tr></tbody>';
   html += '</table></div>';
 
   html += '</div>';
@@ -3595,21 +3595,22 @@ function renderRoadmapRow(item) {
   const isAdmin = userRole === 'admin';
   const isOwner = window._currentUserId && item.creator_id === window._currentUserId;
   const canEdit = isAdmin || isOwner;
-  const date = new Date(item.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+  const date = new Date(item.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
 
-  const statusColors = { review: 'var(--text-dim)', planned: '#3c78ff', 'in progress': '#f5e6a3', completed: '#00c864' };
-  const categoryColors = { review: 'var(--text-dim)', feature: '#3c78ff', fix: '#ff4444', improvement: '#f5e6a3', content: '#c9952c' };
+  const statusClass = { review: 'review', planned: 'planned', 'in progress': 'inprogress', completed: 'completed' };
+  const catClass = { review: 'review', feature: 'feature', fix: 'fix', improvement: 'improvement', content: 'content' };
+  const catIcons = { review: '\ud83d\udcdd', feature: '\u2728', fix: '\ud83d\udd27', improvement: '\u26a1', content: '\ud83d\udcc4' };
 
   let html = '<tr class="roadmap-row" data-id="' + item.id + '">';
-  html += '<td style="font-size:12px;white-space:nowrap">' + date + '</td>';
-  html += '<td><span class="roadmap-badge" style="background:' + (item.initiator === 'Admin' ? 'rgba(201,149,44,0.15);color:var(--gold)' : 'rgba(60,120,255,0.15);color:#3c78ff') + '">' + item.initiator + '</span></td>';
-  html += '<td><span class="roadmap-badge" style="color:' + (statusColors[item.status] || 'var(--text)') + '">' + item.status + '</span></td>';
-  html += '<td><span class="roadmap-badge" style="color:' + (categoryColors[item.category] || 'var(--text)') + '">' + item.category + '</span></td>';
-  html += '<td class="roadmap-title-cell"><div class="roadmap-title-text" style="cursor:pointer" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'none\'?\'\':\'none\'">' + item.title.replace(/</g, '&lt;') + ' <span style="font-size:10px;color:var(--text-dim)">\u25BC</span></div><div class="roadmap-desc" style="display:none">' + item.description.replace(/</g, '&lt;') + '</div></td>';
-  html += '<td style="white-space:nowrap">';
-  if (canEdit) html += '<button class="roadmap-action-btn" onclick="editRoadmapItem(\'' + item.id + '\')">Edit</button>';
-  if (isAdmin) html += '<button class="roadmap-action-btn roadmap-delete-btn" onclick="deleteRoadmapItemUI(\'' + item.id + '\')">Delete</button>';
-  html += '</td>';
+  html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (catClass[item.category] || 'review') + '">' + (catIcons[item.category] || '') + ' ' + item.category + '</span></td>';
+  html += '<td><div class="roadmap-title-text" onclick="var d=this.nextElementSibling;var i=this.querySelector(\'.roadmap-expand-icon\');if(d.style.display===\'none\'){d.style.display=\'\';i.classList.add(\'open\')}else{d.style.display=\'none\';i.classList.remove(\'open\')}">' + item.title.replace(/</g, '&lt;') + '<span class="roadmap-expand-icon">\u25B6</span></div><div class="roadmap-desc" style="display:none">' + item.description.replace(/</g, '&lt;') + '</div></td>';
+  html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '">' + item.status + '</span></td>';
+  html += '<td><span class="roadmap-initiator-' + item.initiator.toLowerCase() + '">' + item.initiator + '</span></td>';
+  html += '<td class="roadmap-key">' + date + '</td>';
+  html += '<td><div class="roadmap-actions">';
+  if (canEdit) html += '<button class="roadmap-action-btn" onclick="editRoadmapItem(\'' + item.id + '\')" title="Edit">\u270E</button>';
+  if (isAdmin) html += '<button class="roadmap-action-btn roadmap-delete-btn" onclick="deleteRoadmapItemUI(\'' + item.id + '\')" title="Delete">\ud83d\uddd1</button>';
+  html += '</div></td>';
   html += '</tr>';
   return html;
 }

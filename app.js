@@ -23,9 +23,12 @@ function applyPendingReferral() {
   // Switch to signup mode if in login mode
   const nameField = document.getElementById('authName');
   if (nameField && nameField.style.display === 'none') toggleAuthMode();
-  // Fill the referral code
+  // Fill the referral code and trigger validation
   const refInput = document.getElementById('authReferralCode');
-  if (refInput) refInput.value = pendingRef;
+  if (refInput) {
+    refInput.value = pendingRef;
+    refInput.dispatchEvent(new Event('input'));
+  }
 }
 
 // Country flag emoji mapping
@@ -770,6 +773,19 @@ document.getElementById('authName').addEventListener('keydown', e => { if (e.key
 document.getElementById('authEmail').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPassword').focus(); else document.getElementById('authPassword').focus(); } });
 document.getElementById('authPassword').addEventListener('keydown', e => { if (e.key === 'Enter') { if (authMode === 'signup') document.getElementById('authPasswordConfirm').focus(); else handleAuth(); } });
 document.getElementById('authPasswordConfirm').addEventListener('keydown', e => { if (e.key === 'Enter') handleAuth(); });
+
+// Referral code validation
+let refValidateTimer;
+document.getElementById('authReferralCode').addEventListener('input', function() {
+  const input = this;
+  const code = input.value.trim().toUpperCase();
+  clearTimeout(refValidateTimer);
+  if (!code) { input.style.borderColor = ''; return; }
+  refValidateTimer = setTimeout(async () => {
+    const valid = await validateReferralCode(code);
+    input.style.borderColor = valid ? '#00c864' : '#ff4444';
+  }, 500);
+});
 
 // ── Preferences & Scoring Engine ──
 

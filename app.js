@@ -3714,7 +3714,7 @@ async function initRoadmapPage() {
   const addBtn = document.getElementById('roadmapAddBtn');
   const form = document.getElementById('roadmapForm');
   if (addBtn && form) {
-    if (!isLoggedIn) {
+    if (!isLoggedIn || (!isSubscribed && userRole !== 'admin')) {
       addBtn.style.display = 'none';
     } else {
       addBtn.onclick = () => { form.style.display = ''; addBtn.style.display = 'none'; };

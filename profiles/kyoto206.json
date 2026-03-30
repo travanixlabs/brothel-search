@@ -8879,6 +8879,30 @@
       "labels": [],
       "lastModified": "2026-03-29T06:01:05.082Z",
       "lastRostered": "2026-03-30"
+    },
+    {
+      "name": "Ayani",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "D",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-01-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/ayani-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/01/Ayani-Jp-07-scaled.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/01/Ayani-Jp-08-scaled.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-03-30T06:00:33.585Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9208,7 +9232,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-29T06:01:05.082Z",
+  "lastGirlsSync": "2026-03-30T06:00:33.585Z",
   "lastCalendarSync": "2026-03-29T07:01:03.765Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

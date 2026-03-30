@@ -7,6 +7,16 @@
   }
 })();
 
+// Capture referral code from URL param
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('ref');
+  if (ref) {
+    sessionStorage.setItem('pending-referral', ref.toUpperCase());
+    history.replaceState(null, '', window.location.pathname);
+  }
+})();
+
 // Country flag emoji mapping
 const COUNTRY_FLAGS = {
   'Japanese': '\ud83c\uddef\ud83c\uddf5', 'Korean': '\ud83c\uddf0\ud83c\uddf7', 'Chinese': '\ud83c\udde8\ud83c\uddf3',
@@ -220,6 +230,10 @@ function toggleAuthMode() {
   document.getElementById('authName').style.display = isSignup ? '' : 'none';
   document.getElementById('authReferralHint').style.display = isSignup ? '' : 'none';
   document.getElementById('authReferralCode').style.display = isSignup ? '' : 'none';
+  if (isSignup) {
+    const pendingRef = sessionStorage.getItem('pending-referral');
+    if (pendingRef) document.getElementById('authReferralCode').value = pendingRef;
+  }
   document.getElementById('authName').value = '';
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
   document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password' : 'Password');
@@ -299,8 +313,12 @@ function showProfileSettings() {
     const refEl = document.getElementById('settingsReferral');
     if (refEl && code) {
       getReferralStats().then(stats => {
+        const refLink = 'https://brothelsearch.com/?ref=' + code;
         refEl.innerHTML = '<div class="settings-subtitle" style="margin-top:24px">Referral Program</div>' +
+          '<div class="referral-code-label">Your referral code</div>' +
           '<div class="referral-code-box" style="margin-bottom:12px"><span>' + code + '</span><button onclick="navigator.clipboard.writeText(\'' + code + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>' +
+          '<div class="referral-code-label">Or share this link</div>' +
+          '<div class="referral-code-box" style="margin-bottom:12px"><span style="font-size:11px;letter-spacing:1px">' + refLink + '</span><button onclick="navigator.clipboard.writeText(\'' + refLink + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>' +
           '<div style="font-size:13px;color:var(--text-dim)">' + stats.completed + ' successful referral' + (stats.completed !== 1 ? 's' : '') + ' \u00b7 ' + stats.daysEarned + ' bonus days earned</div>';
       });
     }
@@ -4267,7 +4285,9 @@ function handleLandingRoute(path) {
       getOrCreateReferralCode().then(code => {
         if (code) {
           refCodeEl.style.display = '';
-          refCodeEl.innerHTML = '<div class="referral-code-label">Your referral code</div><div class="referral-code-box"><span>' + code + '</span><button onclick="navigator.clipboard.writeText(\'' + code + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>';
+          const refLink = 'https://brothelsearch.com/?ref=' + code;
+          refCodeEl.innerHTML = '<div class="referral-code-label">Your referral code</div><div class="referral-code-box"><span>' + code + '</span><button onclick="navigator.clipboard.writeText(\'' + code + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>' +
+            '<div class="referral-code-label" style="margin-top:12px">Or share this link</div><div class="referral-code-box"><span style="font-size:11px;letter-spacing:1px">' + refLink + '</span><button onclick="navigator.clipboard.writeText(\'' + refLink + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>';
         }
       });
     }

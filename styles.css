@@ -646,3 +646,15 @@ body.is-admin .admin-only{display:initial!important}
 .roadmap-inline-input{width:100%;background:rgba(255,255,255,0.06);border:2px solid rgba(201,149,44,0.4);border-radius:3px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:13px;padding:4px 8px;outline:none;resize:vertical}
 .roadmap-inline-select{border:none;cursor:pointer;appearance:auto;-webkit-appearance:menulist;padding-right:16px}
 .roadmap-inline-select option{background:#0e0e16}
+.referral-promo{margin:32px 0;padding:32px;background:linear-gradient(135deg,rgba(201,149,44,0.06),rgba(201,149,44,0.02));border:1px solid rgba(201,149,44,0.15);border-radius:16px;text-align:center}
+.referral-promo-inner{max-width:500px;margin:0 auto}
+.referral-promo-icon{font-size:40px;margin-bottom:12px}
+.referral-promo-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.referral-promo-text{font-size:14px;color:var(--text-dim);line-height:1.6;margin-bottom:16px}
+.referral-promo-text strong{color:var(--gold)}
+.referral-code-wrap{margin-top:12px}
+.referral-code-label{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px}
+.referral-code-box{display:inline-flex;align-items:center;gap:8px;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.25);border-radius:8px;padding:8px 12px}
+.referral-code-box span{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:3px;color:var(--gold)}
+.referral-code-box button{background:rgba(201,149,44,0.1);border:1px solid rgba(201,149,44,0.3);border-radius:4px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:1px;padding:4px 10px;cursor:pointer;transition:background .2s}
+.referral-code-box button:hover{background:rgba(201,149,44,0.2)}

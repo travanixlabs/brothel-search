@@ -176,7 +176,8 @@ async function handleAuth() {
   if (authMode === 'signin') {
     result = await sbClient.auth.signInWithPassword({ email, password });
   } else {
-    result = await sbClient.auth.signUp({ email, password, options: { data: { display_name: profileName } } });
+    const refCode = document.getElementById('authReferralCode').value.trim().toUpperCase();
+    result = await sbClient.auth.signUp({ email, password, options: { data: { display_name: profileName, referral_code: refCode || undefined } } });
   }
 
   btn.disabled = false;
@@ -217,6 +218,7 @@ function toggleAuthMode() {
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
   document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
   document.getElementById('authName').style.display = isSignup ? '' : 'none';
+  document.getElementById('authReferralCode').style.display = isSignup ? '' : 'none';
   document.getElementById('authName').value = '';
   document.getElementById('authPassword').setAttribute('autocomplete', isSignup ? 'new-password' : 'current-password');
   document.getElementById('authPassword').setAttribute('placeholder', isSignup ? 'Password' : 'Password');
@@ -291,6 +293,17 @@ function showProfileSettings() {
   document.getElementById('settingsOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   loadSubscriptionInfo();
+  // Load referral info
+  getOrCreateReferralCode().then(code => {
+    const refEl = document.getElementById('settingsReferral');
+    if (refEl && code) {
+      getReferralStats().then(stats => {
+        refEl.innerHTML = '<div class="settings-subtitle" style="margin-top:24px">Referral Program</div>' +
+          '<div class="referral-code-box" style="margin-bottom:12px"><span>' + code + '</span><button onclick="navigator.clipboard.writeText(\'' + code + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>' +
+          '<div style="font-size:13px;color:var(--text-dim)">' + stats.completed + ' successful referral' + (stats.completed !== 1 ? 's' : '') + ' \u00b7 ' + stats.daysEarned + ' bonus days earned</div>';
+      });
+    }
+  });
 }
 
 function closeSettings() {
@@ -2403,6 +2416,35 @@ function setRosterVenue(venueId) {
 
 document.getElementById('rosterToggle').addEventListener('click', toggleRosterView);
 
+// ── Referrals ──
+
+async function getOrCreateReferralCode() {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return null;
+  // Check existing
+  const { data } = await sbClient.from('user_referral_codes').select('code').eq('user_id', user.id).single();
+  if (data) return data.code;
+  // Generate new
+  const code = 'REF-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+  await sbClient.from('user_referral_codes').insert({ user_id: user.id, code });
+  return code;
+}
+
+async function getReferralStats() {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return { total: 0, completed: 0, daysEarned: 0 };
+  const { data } = await sbClient.from('referrals').select('status').eq('referrer_id', user.id);
+  if (!data) return { total: 0, completed: 0, daysEarned: 0 };
+  const completed = data.filter(r => r.status === 'completed').length;
+  return { total: data.length, completed, daysEarned: completed * 7 };
+}
+
+async function validateReferralCode(code) {
+  if (!code) return false;
+  const { data } = await sbClient.from('user_referral_codes').select('user_id').eq('code', code.trim().toUpperCase()).single();
+  return !!data;
+}
+
 // ── Notifications ──
 
 let notifCache = [];
@@ -3389,6 +3431,15 @@ function renderHomePage() {
   }
   html += '</div>';
 
+  // Referral promo
+  html += '<div class="referral-promo">';
+  html += '<div class="referral-promo-inner">';
+  html += '<div class="referral-promo-icon">\ud83c\udf81</div>';
+  html += '<h3 class="referral-promo-title">Invite Friends, Earn Free Days</h3>';
+  html += '<p class="referral-promo-text">Share your referral code with friends. When they subscribe, you get <strong>7 free days</strong> added to your membership. They get <strong>5 bonus days</strong> on top of their plan.</p>';
+  html += '<div id="homeReferralCode" class="referral-code-wrap" style="display:none"></div>';
+  html += '</div></div>';
+
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
   html += '<div class="landing-grid" style="margin-top:20px;justify-content:center">';
@@ -4209,6 +4260,16 @@ function handleLandingRoute(path) {
       }
       requestAnimationFrame(tick);
     });
+    // Load referral code for home page
+    const refCodeEl = document.getElementById('homeReferralCode');
+    if (refCodeEl) {
+      getOrCreateReferralCode().then(code => {
+        if (code) {
+          refCodeEl.style.display = '';
+          refCodeEl.innerHTML = '<div class="referral-code-label">Your referral code</div><div class="referral-code-box"><span>' + code + '</span><button onclick="navigator.clipboard.writeText(\'' + code + '\').then(()=>{this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',1500)})">Copy</button></div>';
+        }
+      });
+    }
     // Init roadmap
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Home search

@@ -2309,6 +2309,65 @@ export default {
             body: JSON.stringify(upsertData),
           });
 
+          // Process referral reward
+          try {
+            // Get referee's referral code from user metadata
+            const userRes = await fetch(`${SUPABASE_URL}/auth/v1/admin/users/${userId}`, {
+              headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` }
+            });
+            const userData = await userRes.json();
+            const refCode = userData.user_metadata?.referral_code;
+            if (refCode) {
+              // Find referrer
+              const codeRes = await fetch(`${SUPABASE_URL}/rest/v1/user_referral_codes?code=eq.${encodeURIComponent(refCode)}&select=user_id`, {
+                headers: supabaseHeaders
+              });
+              const codeData = await codeRes.json();
+              if (codeData.length && codeData[0].user_id !== userId) {
+                const referrerId = codeData[0].user_id;
+                // Check if referral already completed for this referee
+                const existingRes = await fetch(`${SUPABASE_URL}/rest/v1/referrals?referee_id=eq.${userId}&status=eq.completed&select=id`, {
+                  headers: supabaseHeaders
+                });
+                const existing = await existingRes.json();
+                if (!existing.length) {
+                  // Record referral
+                  await fetch(`${SUPABASE_URL}/rest/v1/referrals`, {
+                    method: 'POST', headers: supabaseHeaders,
+                    body: JSON.stringify({ referrer_id: referrerId, referee_id: userId, code: refCode, status: 'completed', completed_at: new Date().toISOString() })
+                  });
+                  // Add 7 days to referrer's subscription
+                  const refSubRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${referrerId}&select=current_period_end`, {
+                    headers: supabaseHeaders
+                  });
+                  const refSub = await refSubRes.json();
+                  if (refSub.length) {
+                    const currentEnd = new Date(refSub[0].current_period_end);
+                    currentEnd.setDate(currentEnd.getDate() + 7);
+                    await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${referrerId}`, {
+                      method: 'PATCH', headers: supabaseHeaders,
+                      body: JSON.stringify({ current_period_end: currentEnd.toISOString(), updated_at: new Date().toISOString() })
+                    });
+                  }
+                  // Add 5 bonus days to referee's subscription
+                  const refeeSubRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}&select=current_period_end`, {
+                    headers: supabaseHeaders
+                  });
+                  const refeeSub = await refeeSubRes.json();
+                  if (refeeSub.length) {
+                    const refeeEnd = new Date(refeeSub[0].current_period_end);
+                    refeeEnd.setDate(refeeEnd.getDate() + 5);
+                    await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {
+                      method: 'PATCH', headers: supabaseHeaders,
+                      body: JSON.stringify({ current_period_end: refeeEnd.toISOString(), updated_at: new Date().toISOString() })
+                    });
+                  }
+                  console.log(`[Referral] ${refCode}: referrer +7 days, referee +5 days`);
+                }
+              }
+            }
+          } catch (e) { console.error('[Referral] Error:', e); }
+
           // If trial, mark trial_used even if upgrading later
           if (plan === 'trial') {
             await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}`, {

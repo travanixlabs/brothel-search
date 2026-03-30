@@ -3579,12 +3579,13 @@ function renderRoadmapPage() {
   html += '<thead><tr>';
   html += '<th style="width:50px">Type</th>';
   html += '<th>Summary</th>';
+  html += '<th>Description</th>';
   html += '<th style="width:100px">Status</th>';
   html += '<th style="width:80px">Initiator</th>';
   html += '<th style="width:90px">Created</th>';
   html += '<th style="width:80px"></th>';
   html += '</tr></thead>';
-  html += '<tbody id="roadmapBody"><tr><td colspan="6" class="roadmap-empty">Loading...</td></tr></tbody>';
+  html += '<tbody id="roadmapBody"><tr><td colspan="7" class="roadmap-empty">Loading...</td></tr></tbody>';
   html += '</table></div>';
 
   html += '</div>';
@@ -3603,7 +3604,8 @@ function renderRoadmapRow(item) {
 
   let html = '<tr class="roadmap-row" data-id="' + item.id + '">';
   html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (catClass[item.category] || 'review') + '">' + (catIcons[item.category] || '') + ' ' + item.category + '</span></td>';
-  html += '<td><div class="roadmap-title-text" onclick="var d=this.nextElementSibling;var i=this.querySelector(\'.roadmap-expand-icon\');if(d.style.display===\'none\'){d.style.display=\'\';i.classList.add(\'open\')}else{d.style.display=\'none\';i.classList.remove(\'open\')}">' + item.title.replace(/</g, '&lt;') + '<span class="roadmap-expand-icon">\u25B6</span></div><div class="roadmap-desc" style="display:none">' + item.description.replace(/</g, '&lt;') + '</div></td>';
+  html += '<td><div class="roadmap-title-text" style="cursor:default">' + item.title.replace(/</g, '&lt;') + '</div></td>';
+  html += '<td class="roadmap-desc">' + item.description.replace(/</g, '&lt;') + '</td>';
   html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '">' + item.status + '</span></td>';
   html += '<td><span class="roadmap-initiator-' + item.initiator.toLowerCase() + '">' + item.initiator + '</span></td>';
   html += '<td class="roadmap-key">' + date + '</td>';
@@ -3625,7 +3627,7 @@ async function initRoadmapPage() {
   if (!body) return;
 
   if (!items.length) {
-    body.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-dim)">No roadmap items yet.</td></tr>';
+    body.innerHTML = '<tr><td colspan="7" class="roadmap-empty">No roadmap items yet.</td></tr>';
   } else {
     body.innerHTML = items.map(i => renderRoadmapRow(i)).join('');
   }

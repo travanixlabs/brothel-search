@@ -3445,7 +3445,7 @@ function renderHomePage() {
   html += '<div class="referral-promo-inner">';
   html += '<div class="referral-promo-icon">\ud83c\udf81</div>';
   html += '<h3 class="referral-promo-title">Invite Friends, Earn Free Days</h3>';
-  html += '<p class="referral-promo-text">Share your referral code with friends. When they subscribe, you get <strong>7 free days</strong> added to your membership. They get <strong>5 bonus days</strong> on top of their plan.</p>';
+  html += '<p class="referral-promo-text">Share your referral code with friends. When they purchase a monthly pass, you get <strong>7 free days</strong> added to your membership. They get <strong>5 bonus days</strong> on top of their plan.</p>';
   html += '<div id="homeReferralCode" class="referral-code-wrap" style="display:none"></div>';
   html += '</div></div>';
 

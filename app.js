@@ -17,6 +17,17 @@
   }
 })();
 
+function applyPendingReferral() {
+  const pendingRef = sessionStorage.getItem('pending-referral');
+  if (!pendingRef) return;
+  // Switch to signup mode if in login mode
+  const nameField = document.getElementById('authName');
+  if (nameField && nameField.style.display === 'none') toggleAuthMode();
+  // Fill the referral code
+  const refInput = document.getElementById('authReferralCode');
+  if (refInput) refInput.value = pendingRef;
+}
+
 // Country flag emoji mapping
 const COUNTRY_FLAGS = {
   'Japanese': '\ud83c\uddef\ud83c\uddf5', 'Korean': '\ud83c\uddf0\ud83c\uddf7', 'Chinese': '\ud83c\udde8\ud83c\uddf3',
@@ -135,6 +146,7 @@ async function checkAuth() {
   }
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
+  applyPendingReferral();
   return false;
 }
 
@@ -142,6 +154,7 @@ function requireLogin() {
   if (document.getElementById('userMenu').style.display !== 'none') return true;
   document.getElementById('authOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  applyPendingReferral();
   return false;
 }
 

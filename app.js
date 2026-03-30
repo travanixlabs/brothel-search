@@ -117,8 +117,21 @@ async function checkAuth() {
     await loadFavorites();
     return true;
   }
+  // Don't block home or roadmap pages
+  const path = window.location.pathname;
+  if (path === '/' || path === '/index.html' || path === '/roadmap') {
+    document.getElementById('userMenu').style.display = 'none';
+    return false;
+  }
   document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
   document.getElementById('userMenu').style.display = 'none';
+  return false;
+}
+
+function requireLogin() {
+  if (document.getElementById('userMenu').style.display !== 'none') return true;
+  document.getElementById('authOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
   return false;
 }
 
@@ -3281,6 +3294,8 @@ setTimeout(async () => {
 
 // Gate navigation for unsubscribed users
 function requireSubscription() {
+  // Check login first
+  if (!requireLogin()) return false;
   if (isSubscribed === true || userRole === 'admin') return true;
   if (isSubscribed === false) { showPaywall(); return false; }
   // Still loading — allow for now

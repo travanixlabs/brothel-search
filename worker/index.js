@@ -2309,8 +2309,8 @@ export default {
             body: JSON.stringify(upsertData),
           });
 
-          // Process referral reward
-          try {
+          // Process referral reward — only for non-trial plans
+          if (plan !== 'trial') try {
             // Get referee's referral code from user metadata
             const userRes = await fetch(`${SUPABASE_URL}/auth/v1/admin/users/${userId}`, {
               headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` }

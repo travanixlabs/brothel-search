@@ -641,3 +641,8 @@ body.is-admin .admin-only{display:initial!important}
 .roadmap-submit:hover{opacity:0.9}
 .roadmap-cancel{padding:6px 16px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:13px;cursor:pointer}
 .roadmap-empty{text-align:center;padding:40px 16px;color:var(--text-dim);font-size:14px}
+.roadmap-editable{cursor:pointer;border-radius:3px;padding:2px 4px;margin:-2px -4px;transition:background .15s}
+.roadmap-editable:hover{background:rgba(255,255,255,0.04)}
+.roadmap-inline-input{width:100%;background:rgba(255,255,255,0.06);border:2px solid rgba(201,149,44,0.4);border-radius:3px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:13px;padding:4px 8px;outline:none;resize:vertical}
+.roadmap-inline-select{border:none;cursor:pointer;appearance:auto;-webkit-appearance:menulist;padding-right:16px}
+.roadmap-inline-select option{background:#0e0e16}

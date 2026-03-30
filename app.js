@@ -3601,21 +3601,79 @@ function renderRoadmapRow(item) {
   const statusClass = { review: 'review', planned: 'planned', 'in progress': 'inprogress', completed: 'completed' };
   const catClass = { review: 'review', feature: 'feature', fix: 'fix', improvement: 'improvement', content: 'content' };
   const catIcons = { review: '\ud83d\udcdd', feature: '\u2728', fix: '\ud83d\udd27', improvement: '\u26a1', content: '\ud83d\udcc4' };
+  const id = item.id;
 
-  let html = '<tr class="roadmap-row" data-id="' + item.id + '">';
-  html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (catClass[item.category] || 'review') + '">' + (catIcons[item.category] || '') + ' ' + item.category + '</span></td>';
-  html += '<td><div class="roadmap-title-text" style="cursor:default">' + item.title.replace(/</g, '&lt;') + '</div></td>';
-  html += '<td class="roadmap-desc">' + item.description.replace(/</g, '&lt;') + '</td>';
-  html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '">' + item.status + '</span></td>';
+  let html = '<tr class="roadmap-row" data-id="' + id + '">';
+
+  // Type (admin inline select)
+  if (isAdmin) {
+    html += '<td><select class="roadmap-inline-select roadmap-lozenge roadmap-lozenge-' + (catClass[item.category] || 'review') + '" onchange="roadmapInlineSave(\'' + id + '\',{category:this.value});this.className=\'roadmap-inline-select roadmap-lozenge roadmap-lozenge-\'+({review:\'review\',feature:\'feature\',fix:\'fix\',improvement:\'improvement\',content:\'content\'}[this.value]||\'review\')">';
+    ['review','feature','fix','improvement','content'].forEach(function(v) { html += '<option value="' + v + '"' + (item.category === v ? ' selected' : '') + '>' + (catIcons[v]||'') + ' ' + v + '</option>'; });
+    html += '</select></td>';
+  } else {
+    html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (catClass[item.category] || 'review') + '">' + (catIcons[item.category] || '') + ' ' + item.category + '</span></td>';
+  }
+
+  // Summary (editable for owner/admin)
+  if (canEdit) {
+    html += '<td><div class="roadmap-title-text roadmap-editable" onclick="roadmapInlineEdit(this,\'' + id + '\',\'title\',25)">' + item.title.replace(/</g, '&lt;') + '</div></td>';
+  } else {
+    html += '<td><div class="roadmap-title-text">' + item.title.replace(/</g, '&lt;') + '</div></td>';
+  }
+
+  // Description (editable for owner/admin)
+  if (canEdit) {
+    html += '<td class="roadmap-desc roadmap-editable" onclick="roadmapInlineEdit(this,\'' + id + '\',\'description\',250)">' + item.description.replace(/</g, '&lt;') + '</td>';
+  } else {
+    html += '<td class="roadmap-desc">' + item.description.replace(/</g, '&lt;') + '</td>';
+  }
+
+  // Status (admin inline select)
+  if (isAdmin) {
+    html += '<td><select class="roadmap-inline-select roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '" onchange="roadmapInlineSave(\'' + id + '\',{status:this.value});this.className=\'roadmap-inline-select roadmap-lozenge roadmap-lozenge-\'+({review:\'review\',planned:\'planned\',\'in progress\':\'inprogress\',completed:\'completed\'}[this.value]||\'review\')">';
+    ['review','planned','in progress','completed'].forEach(function(v) { html += '<option value="' + v + '"' + (item.status === v ? ' selected' : '') + '>' + v + '</option>'; });
+    html += '</select></td>';
+  } else {
+    html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '">' + item.status + '</span></td>';
+  }
+
   html += '<td><span class="roadmap-initiator-' + item.initiator.toLowerCase() + '">' + item.initiator + '</span></td>';
   html += '<td class="roadmap-key">' + date + '</td>';
   html += '<td><div class="roadmap-actions">';
-  if (canEdit) html += '<button class="roadmap-action-btn" onclick="editRoadmapItem(\'' + item.id + '\')" title="Edit">\u270E</button>';
-  if (isAdmin) html += '<button class="roadmap-action-btn roadmap-delete-btn" onclick="deleteRoadmapItemUI(\'' + item.id + '\')" title="Delete">\ud83d\uddd1</button>';
+  if (isAdmin) html += '<button class="roadmap-action-btn roadmap-delete-btn" onclick="deleteRoadmapItemUI(\'' + id + '\')" title="Delete">\ud83d\uddd1</button>';
   html += '</div></td>';
   html += '</tr>';
   return html;
 }
+
+window.roadmapInlineEdit = function(el, id, field, maxLen) {
+  if (el.querySelector('input,textarea')) return; // already editing
+  const current = el.textContent;
+  const isLong = field === 'description';
+  if (isLong) {
+    el.innerHTML = '<textarea class="roadmap-inline-input" maxlength="' + maxLen + '" style="min-height:50px">' + current + '</textarea>';
+  } else {
+    el.innerHTML = '<input class="roadmap-inline-input" type="text" maxlength="' + maxLen + '" value="' + current.replace(/"/g, '&quot;') + '">';
+  }
+  const input = el.querySelector('input,textarea');
+  input.focus();
+  input.addEventListener('blur', function() {
+    const val = this.value.trim();
+    if (val && val !== current) {
+      const fields = {}; fields[field] = val;
+      roadmapInlineSave(id, fields);
+    }
+    el.textContent = val || current;
+  });
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !isLong) { this.blur(); }
+    if (e.key === 'Escape') { el.textContent = current; }
+  });
+};
+
+window.roadmapInlineSave = async function(id, fields) {
+  await updateRoadmapItem(id, fields);
+};
 
 async function initRoadmapPage() {
   // Get current user ID
@@ -3657,41 +3715,6 @@ async function initRoadmapPage() {
   }
 }
 
-window.editRoadmapItem = async function(id) {
-  const { data: items } = await sbClient.from('roadmap').select('*').eq('id', id).single();
-  if (!items) return;
-  const item = items;
-  const isAdmin = userRole === 'admin';
-
-  let formHtml = '<div class="roadmap-edit-form" id="editForm_' + id + '">';
-  if (isAdmin) {
-    formHtml += '<select id="editStatus_' + id + '" class="roadmap-select"><option value="review"' + (item.status === 'review' ? ' selected' : '') + '>review</option><option value="planned"' + (item.status === 'planned' ? ' selected' : '') + '>planned</option><option value="in progress"' + (item.status === 'in progress' ? ' selected' : '') + '>in progress</option><option value="completed"' + (item.status === 'completed' ? ' selected' : '') + '>completed</option></select>';
-    formHtml += '<select id="editCategory_' + id + '" class="roadmap-select"><option value="review"' + (item.category === 'review' ? ' selected' : '') + '>review</option><option value="feature"' + (item.category === 'feature' ? ' selected' : '') + '>feature</option><option value="fix"' + (item.category === 'fix' ? ' selected' : '') + '>fix</option><option value="improvement"' + (item.category === 'improvement' ? ' selected' : '') + '>improvement</option><option value="content"' + (item.category === 'content' ? ' selected' : '') + '>content</option></select>';
-  }
-  formHtml += '<input type="text" id="editTitle_' + id + '" class="roadmap-input" value="' + item.title.replace(/"/g, '&quot;') + '" maxlength="25">';
-  formHtml += '<textarea id="editDesc_' + id + '" class="roadmap-textarea" maxlength="250">' + item.description + '</textarea>';
-  formHtml += '<div style="display:flex;gap:8px"><button class="roadmap-submit" onclick="saveRoadmapEdit(\'' + id + '\')">Save</button><button class="roadmap-cancel" onclick="initRoadmapPage()">Cancel</button></div>';
-  formHtml += '</div>';
-
-  const row = document.querySelector('tr[data-id="' + id + '"]');
-  if (row) {
-    row.innerHTML = '<td colspan="6">' + formHtml + '</td>';
-  }
-};
-
-window.saveRoadmapEdit = async function(id) {
-  const isAdmin = userRole === 'admin';
-  const fields = {
-    title: document.getElementById('editTitle_' + id).value.trim().substring(0, 25),
-    description: document.getElementById('editDesc_' + id).value.trim().substring(0, 250),
-  };
-  if (isAdmin) {
-    fields.status = document.getElementById('editStatus_' + id).value;
-    fields.category = document.getElementById('editCategory_' + id).value;
-  }
-  await updateRoadmapItem(id, fields);
-  initRoadmapPage();
-};
 
 window.deleteRoadmapItemUI = async function(id) {
   if (!confirm('Delete this roadmap item?')) return;

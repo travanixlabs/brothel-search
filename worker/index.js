@@ -885,22 +885,12 @@ async function scrapeFantasyClub35Roster(site) {
   if (!resp.ok) throw new Error(`Fantasy Club 35 roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
-  // Extract week range: "Week 09/3/2026 to 15/3/2026"
-  const weekMatch = html.match(/Week\s+(\d{1,2})\/(\d{1,2})\/(\d{4})\s+to\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
-  if (!weekMatch) return {};
-
-  const startDay = parseInt(weekMatch[1]);
-  const startMonth = parseInt(weekMatch[2]);
-  const startYear = parseInt(weekMatch[3]);
-
-  // Build date for each day: Mon=0, Tue=1, ..., Sun=6
-  const dayNames = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-  const dates = {};
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(startYear, startMonth - 1, startDay + i);
-    const dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-    dates[dayNames[i]] = dateStr;
-  }
+  // Calculate dates: tab 1 = Monday of current week
+  const aest = getAEDTDate();
+  const currentDow = aest.getDay(); // 0=Sun
+  const mondayOffset = currentDow === 0 ? -6 : 1 - currentDow;
+  const monday = new Date(aest);
+  monday.setDate(monday.getDate() + mondayOffset);
 
   // Tabs use kt-inner-tab-1 through kt-inner-tab-7 (Mon=1, Sun=7)
   const result = {};
@@ -909,14 +899,16 @@ async function scrapeFantasyClub35Roster(site) {
     const tabStart = html.indexOf(tabMarker);
     if (tabStart === -1) continue;
     const nextTab = html.indexOf('kt-inner-tab-' + (tabNum + 1), tabStart);
-    const section = html.substring(tabStart, nextTab > tabStart ? nextTab : tabStart + 5000);
+    const section = html.substring(tabStart, nextTab > tabStart ? nextTab : tabStart + 10000);
     const text = section.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 
-    const d = new Date(startYear, startMonth - 1, startDay + (tabNum - 1));
-    const dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const d = new Date(monday);
+    d.setDate(d.getDate() + (tabNum - 1));
+    const dateStr = fmtDate(d);
 
     const entries = [];
-    const entryRe = /([A-Za-z]+)\s*[\(\uff08]\s*(?:HK|CN|JP|VN|TH|SG|TW)\s*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
+    // Match: Name(Country) optional NEW Xam-Xam or Xpm-Xam
+    const entryRe = /([A-Za-z]+)\s*[\(\uff08]\s*[A-Za-z]+\s*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
     let m;
     while ((m = entryRe.exec(text)) !== null) {
       const name = m[1].trim();
@@ -932,6 +924,7 @@ async function scrapeFantasyClub35Roster(site) {
     if (entries.length > 0) result[dateStr] = entries;
   }
 
+  console.log(`[Fantasy Club 35] Roster scraped: ${Object.keys(result).length} days, ${Object.values(result).reduce((s, e) => s + e.length, 0)} entries`);
   return result;
 }
 

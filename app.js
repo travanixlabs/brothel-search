@@ -3431,15 +3431,6 @@ function renderHomePage() {
   }
   html += '</div>';
 
-  // Referral promo
-  html += '<div class="referral-promo">';
-  html += '<div class="referral-promo-inner">';
-  html += '<div class="referral-promo-icon">\ud83c\udf81</div>';
-  html += '<h3 class="referral-promo-title">Invite Friends, Earn Free Days</h3>';
-  html += '<p class="referral-promo-text">Share your referral code with friends. When they subscribe, you get <strong>7 free days</strong> added to your membership. They get <strong>5 bonus days</strong> on top of their plan.</p>';
-  html += '<div id="homeReferralCode" class="referral-code-wrap" style="display:none"></div>';
-  html += '</div></div>';
-
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
   html += '<div class="landing-grid" style="margin-top:20px;justify-content:center">';
@@ -3448,6 +3439,15 @@ function renderHomePage() {
   html += '<a href="/compare" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/compare\')"><h2 class="landing-card-title">Compare Venues</h2><div class="landing-card-stat">Side-by-side comparison</div><div class="landing-card-link">Compare now \u2192</div></a>';
   html += '<a href="/sydney/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')"><h2 class="landing-card-title">Browse by Location</h2><div class="landing-card-stat">Interactive map of Sydney</div><div class="landing-card-link">View map \u2192</div></a>';
   html += '</div>';
+
+  // Referral promo
+  html += '<div class="referral-promo">';
+  html += '<div class="referral-promo-inner">';
+  html += '<div class="referral-promo-icon">\ud83c\udf81</div>';
+  html += '<h3 class="referral-promo-title">Invite Friends, Earn Free Days</h3>';
+  html += '<p class="referral-promo-text">Share your referral code with friends. When they subscribe, you get <strong>7 free days</strong> added to your membership. They get <strong>5 bonus days</strong> on top of their plan.</p>';
+  html += '<div id="homeReferralCode" class="referral-code-wrap" style="display:none"></div>';
+  html += '</div></div>';
 
   html += '</div>';
   return html;

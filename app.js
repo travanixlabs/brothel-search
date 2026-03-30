@@ -205,6 +205,9 @@ async function handleAuth() {
   await fetchUserRole();
   await loadFavorites();
   loadProfiles();
+  // Navigate to home after login
+  history.replaceState(null, '', '/');
+  handleLandingRoute('/');
 }
 
 function toggleAuthMode() {
@@ -645,13 +648,14 @@ sbClient.auth.onAuthStateChange((event, session) => {
     document.getElementById('userMenu').style.display = '';
     document.getElementById('notifBell').style.display = 'flex';
     loadNotifications();
+    // Navigate to home after login
+    history.replaceState(null, '', '/');
+    handleLandingRoute('/');
     fetchUserRole().then(() => {
       loadPreferences().then(() => {
         if (userPreferences) {
           computeMatchScores(); renderGrid();
-          // Re-render home page if currently showing it
-          const p = window.location.pathname;
-          if (p === '/' || p === '/index.html') handleLandingRoute('/');
+          handleLandingRoute('/');
         }
       });
       // Paywall check 2s after login — skip on home page

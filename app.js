@@ -3698,6 +3698,7 @@ async function initRoadmapPage() {
   // Get current user ID
   const { data: { user } } = await sbClient.auth.getUser();
   window._currentUserId = user ? user.id : null;
+  const isLoggedIn = !!user;
 
   const items = await loadRoadmapItems();
   const body = document.getElementById('roadmapBody');
@@ -3709,28 +3710,32 @@ async function initRoadmapPage() {
     body.innerHTML = items.map(i => renderRoadmapRow(i)).join('');
   }
 
-  // Add button
+  // Add button — only for logged-in users
   const addBtn = document.getElementById('roadmapAddBtn');
   const form = document.getElementById('roadmapForm');
   if (addBtn && form) {
-    addBtn.onclick = () => { form.style.display = ''; addBtn.style.display = 'none'; };
-    document.getElementById('roadmapCancelBtn').onclick = () => { form.style.display = 'none'; addBtn.style.display = ''; };
-    document.getElementById('roadmapSubmitBtn').onclick = async () => {
-      const title = document.getElementById('roadmapTitle').value.trim();
-      const desc = document.getElementById('roadmapDesc').value.trim();
-      const msg = document.getElementById('roadmapMsg');
-      if (!title) { msg.textContent = 'Title required'; return; }
-      if (!desc) { msg.textContent = 'Description required'; return; }
-      msg.textContent = 'Submitting...';
-      const result = await createRoadmapItem({ title, description: desc });
-      if (result.error) { msg.textContent = result.error; return; }
-      msg.textContent = '';
-      document.getElementById('roadmapTitle').value = '';
-      document.getElementById('roadmapDesc').value = '';
-      form.style.display = 'none';
-      addBtn.style.display = '';
-      initRoadmapPage();
-    };
+    if (!isLoggedIn) {
+      addBtn.style.display = 'none';
+    } else {
+      addBtn.onclick = () => { form.style.display = ''; addBtn.style.display = 'none'; };
+      document.getElementById('roadmapCancelBtn').onclick = () => { form.style.display = 'none'; addBtn.style.display = ''; };
+      document.getElementById('roadmapSubmitBtn').onclick = async () => {
+        const title = document.getElementById('roadmapTitle').value.trim();
+        const desc = document.getElementById('roadmapDesc').value.trim();
+        const msg = document.getElementById('roadmapMsg');
+        if (!title) { msg.textContent = 'Title required'; return; }
+        if (!desc) { msg.textContent = 'Description required'; return; }
+        msg.textContent = 'Submitting...';
+        const result = await createRoadmapItem({ title, description: desc });
+        if (result.error) { msg.textContent = result.error; return; }
+        msg.textContent = '';
+        document.getElementById('roadmapTitle').value = '';
+        document.getElementById('roadmapDesc').value = '';
+        form.style.display = 'none';
+        addBtn.style.display = '';
+        initRoadmapPage();
+      };
+    }
   }
 }
 

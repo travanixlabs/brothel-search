@@ -45,7 +45,7 @@ const COUNTRY_FLAGS = {
 function countryFlag(country) { return COUNTRY_FLAGS[country] || ''; }
 function countriesWithFlags(countries) {
   const cs = Array.isArray(countries) ? countries : [countries || ''];
-  return cs.map(c => (countryFlag(c) ? countryFlag(c) + ' ' : '') + c).join(', ');
+  return cs.join(', ');
 }
 
 // Supabase Auth

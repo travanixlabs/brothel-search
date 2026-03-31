@@ -3841,7 +3841,7 @@ async function initRoadmapPage() {
   const hintEl = document.getElementById('roadmapHint');
   if (hintEl) {
     if (!isLoggedIn) { hintEl.style.display = ''; hintEl.innerHTML = '<a href="#" onclick="event.preventDefault();requireLogin()" style="color:var(--gold)">Sign in</a> and subscribe to create items and vote.'; }
-    else if (!canInteract) { hintEl.style.display = ''; hintEl.textContent = 'Subscribe to create items and vote.'; }
+    else if (!canInteract) { hintEl.style.display = ''; hintEl.innerHTML = '<a href="#" onclick="event.preventDefault();showPaywall()" style="color:var(--gold)">Subscribe</a> to create items and vote.'; }
     else { hintEl.style.display = 'none'; }
   }
 

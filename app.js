@@ -3673,6 +3673,26 @@ async function deleteRoadmapItem(id) {
   return { success: true };
 }
 
+async function loadRoadmapVotes() {
+  const { data } = await sbClient.from('roadmap_votes').select('roadmap_id,user_id,vote');
+  return data || [];
+}
+
+window.roadmapVote = async function(roadmapId, vote) {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+  const existing = window._roadmapVotes.find(v => v.roadmap_id === roadmapId && v.user_id === user.id);
+  if (existing && existing.vote === vote) {
+    await sbClient.from('roadmap_votes').delete().eq('roadmap_id', roadmapId).eq('user_id', user.id);
+  } else if (existing) {
+    await sbClient.from('roadmap_votes').update({ vote }).eq('roadmap_id', roadmapId).eq('user_id', user.id);
+  } else {
+    await sbClient.from('roadmap_votes').insert({ roadmap_id: roadmapId, user_id: user.id, vote });
+  }
+  window._roadmapVotes = await loadRoadmapVotes();
+  initRoadmapPage();
+};
+
 function renderRoadmapPage() {
   updateMeta(
     'Roadmap \u2013 Development Timeline | Brothel Search',
@@ -3702,11 +3722,12 @@ function renderRoadmapPage() {
   html += '<th>Summary</th>';
   html += '<th>Description</th>';
   html += '<th style="width:100px">Status</th>';
+  html += '<th style="width:70px">Votes</th>';
   html += '<th style="width:80px">Initiator</th>';
   html += '<th style="width:90px">Created</th>';
   html += '<th style="width:80px"></th>';
   html += '</tr></thead>';
-  html += '<tbody id="roadmapBody"><tr><td colspan="7" class="roadmap-empty">Loading...</td></tr></tbody>';
+  html += '<tbody id="roadmapBody"><tr><td colspan="8" class="roadmap-empty">Loading...</td></tr></tbody>';
   html += '</table></div>';
 
   html += '</div>';
@@ -3758,6 +3779,17 @@ function renderRoadmapRow(item) {
     html += '<td><span class="roadmap-lozenge roadmap-lozenge-' + (statusClass[item.status] || 'review') + '">' + item.status + '</span></td>';
   }
 
+  // Votes
+  const votes = (window._roadmapVotes || []).filter(v => v.roadmap_id === id);
+  const ups = votes.filter(v => v.vote === 1).length;
+  const downs = votes.filter(v => v.vote === -1).length;
+  const myVote = window._currentUserId ? (votes.find(v => v.user_id === window._currentUserId) || {}).vote : 0;
+  html += '<td><div class="roadmap-votes">';
+  html += '<button class="roadmap-vote-btn' + (myVote === 1 ? ' active-up' : '') + '" onclick="roadmapVote(\'' + id + '\',1)" title="Upvote">\u25B2</button>';
+  html += '<span class="roadmap-vote-count' + (ups - downs > 0 ? ' vote-positive' : ups - downs < 0 ? ' vote-negative' : '') + '">' + (ups - downs) + '</span>';
+  html += '<button class="roadmap-vote-btn' + (myVote === -1 ? ' active-down' : '') + '" onclick="roadmapVote(\'' + id + '\',-1)" title="Downvote">\u25BC</button>';
+  html += '</div></td>';
+
   html += '<td><span class="roadmap-initiator-' + item.initiator.toLowerCase() + '">' + item.initiator + '</span></td>';
   html += '<td class="roadmap-key">' + date + '</td>';
   html += '<td><div class="roadmap-actions">';
@@ -3802,12 +3834,13 @@ async function initRoadmapPage() {
   window._currentUserId = user ? user.id : null;
   const isLoggedIn = !!user;
 
+  window._roadmapVotes = await loadRoadmapVotes();
   const items = await loadRoadmapItems();
   const body = document.getElementById('roadmapBody');
   if (!body) return;
 
   if (!items.length) {
-    body.innerHTML = '<tr><td colspan="7" class="roadmap-empty">No roadmap items yet.</td></tr>';
+    body.innerHTML = '<tr><td colspan="8" class="roadmap-empty">No roadmap items yet.</td></tr>';
   } else {
     body.innerHTML = items.map(i => renderRoadmapRow(i)).join('');
   }

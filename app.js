@@ -3680,7 +3680,7 @@ async function loadRoadmapVotes() {
 
 window.roadmapVote = async function(roadmapId, vote) {
   const { data: { user } } = await sbClient.auth.getUser();
-  if (!user) return;
+  if (!user || (!isSubscribed && userRole !== 'admin')) return;
   const existing = window._roadmapVotes.find(v => v.roadmap_id === roadmapId && v.user_id === user.id);
   if (existing && existing.vote === vote) {
     await sbClient.from('roadmap_votes').delete().eq('roadmap_id', roadmapId).eq('user_id', user.id);

@@ -3787,8 +3787,9 @@ function renderRoadmapRow(item) {
   const myVote = window._currentUserId ? (votes.find(v => v.user_id === window._currentUserId) || {}).vote : 0;
   html += '<td><div class="roadmap-votes">';
   html += '<button class="roadmap-vote-btn' + (myVote === 1 ? ' active-up' : '') + '" onclick="roadmapVote(\'' + id + '\',1)" title="Upvote">\u25B2</button>';
-  html += '<span class="roadmap-vote-count' + (ups - downs > 0 ? ' vote-positive' : ups - downs < 0 ? ' vote-negative' : '') + '">' + (ups - downs) + '</span>';
+  html += '<span class="roadmap-vote-count vote-positive">' + ups + '</span>';
   html += '<button class="roadmap-vote-btn' + (myVote === -1 ? ' active-down' : '') + '" onclick="roadmapVote(\'' + id + '\',-1)" title="Downvote">\u25BC</button>';
+  html += '<span class="roadmap-vote-count vote-negative">' + downs + '</span>';
   html += '</div></td>';
 
   html += '<td><span class="roadmap-initiator-' + item.initiator.toLowerCase() + '">' + item.initiator + '</span></td>';

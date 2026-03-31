@@ -696,14 +696,17 @@ sbClient.auth.onAuthStateChange((event, session) => {
     document.getElementById('userMenu').style.display = '';
     document.getElementById('notifBell').style.display = 'flex';
     loadNotifications();
-    // Navigate to home after login
-    history.replaceState(null, '', '/');
-    handleLandingRoute('/');
+    // Navigate to home only on actual login, not session restore
+    if (event === 'SIGNED_IN') {
+      history.replaceState(null, '', '/');
+      handleLandingRoute('/');
+    }
     fetchUserRole().then(() => {
       loadPreferences().then(() => {
         if (userPreferences) {
           computeMatchScores(); renderGrid();
-          handleLandingRoute('/');
+          const p = window.location.pathname;
+          if (p === '/' || p === '/index.html') handleLandingRoute('/');
         }
       });
       // Paywall check 2s after login — skip on home page

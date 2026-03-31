@@ -2642,18 +2642,15 @@ function buildSimilarGirls(g) {
   if (!scored.length) return '';
 
   let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
-  html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:12px">Similar Girls</div>';
-  html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px">';
+  html += '<div class="venue-divider"><span>\u2014 SIMILAR GIRLS \u2014</span></div>';
+  html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;justify-content:center">';
   for (const s of scored) {
     const gg = s.girl;
-    const countries = countriesWithFlags(gg.country);
-    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:120px;height:160px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-    html += '<div style="flex-shrink:0;cursor:pointer;width:120px" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">';
+    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+    html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">';
     html += img;
     html += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (gg.name||'') + '</div>';
     html += '<div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div>';
-    html += '<div style="font-size:9px;color:var(--text-dim)">' + countries + '</div>';
-    if (gg.val1) html += '<div style="font-size:9px;color:rgba(201,149,44,0.7)">$' + gg.val1 + '</div>';
     html += '</div>';
   }
   html += '</div></div>';

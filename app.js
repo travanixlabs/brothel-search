@@ -3038,7 +3038,9 @@ function showProfile(g) {
           ${detailRow('Body', g.body)}
           ${detailRow('Height', g.height ? g.height + ' cm' : '')}
           ${detailRow('Cup', g.cup)}
-          ${(g.val1 || g.val2 || g.val3) ? '<div class="profile-price-table"><div class="profile-price-header">Rates</div><div class="profile-price-grid">' + (g.val1 ? '<div class="profile-price-item"><span class="profile-price-duration">30 min</span><span class="profile-price-amount">$' + g.val1 + '</span></div>' : '') + (g.val2 ? '<div class="profile-price-item"><span class="profile-price-duration">45 min</span><span class="profile-price-amount">$' + g.val2 + '</span></div>' : '') + (g.val3 ? '<div class="profile-price-item"><span class="profile-price-duration">60 min</span><span class="profile-price-amount">$' + g.val3 + '</span></div>' : '') + '</div></div>' : ''}
+          ${detailRow('30 min', g.val1 ? '$' + g.val1 : '')}
+          ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
+          ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
           ${detailRow('Start Date', g.startDate)}
           ${(() => {
             if (!g.lastRostered) return '';

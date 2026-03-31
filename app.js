@@ -3860,7 +3860,7 @@ async function initRoadmapPage() {
   const addBtn = document.getElementById('roadmapAddBtn');
   const form = document.getElementById('roadmapForm');
   if (addBtn && form) {
-    if (!isLoggedIn || (!isSubscribed && userRole !== 'admin')) {
+    if (!isLoggedIn || (isSubscribed !== true && userRole !== 'admin')) {
       addBtn.style.display = 'none';
     } else {
       addBtn.onclick = () => { form.style.display = ''; addBtn.style.display = 'none'; };

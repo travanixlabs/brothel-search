@@ -42,7 +42,7 @@
       ],
       "lastModified": "2026-03-13T06:15:57.133Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -129,7 +129,7 @@
       ],
       "lastModified": "2026-03-13T06:16:27.537Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -171,7 +171,7 @@
       ],
       "lastModified": "2026-03-13T06:16:27.537Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -484,7 +484,7 @@
       ],
       "lastModified": "2026-03-13T06:18:15.285Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -622,7 +622,7 @@
       ],
       "lastModified": "2026-03-13T06:18:40.786Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -841,7 +841,7 @@
       ],
       "lastModified": "2026-03-13T06:19:58.736Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -883,7 +883,7 @@
       ],
       "lastModified": "2026-03-13T06:19:58.736Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -1176,7 +1176,7 @@
       ],
       "lastModified": "2026-03-13T06:21:48.920Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-26",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Experienced"
@@ -1262,7 +1262,7 @@
       ],
       "lastModified": "2026-03-13T06:22:17.643Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -1940,7 +1940,7 @@
       ],
       "lastModified": "2026-03-13T06:26:59.579Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -2122,7 +2122,7 @@
       ],
       "lastModified": "2026-03-13T08:15:21.147Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": ""
@@ -2291,7 +2291,7 @@
         "CIM"
       ],
       "lastModified": "2026-03-15T01:10:26.039Z",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -2364,7 +2364,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-18T08:38:39.527Z",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-04-01",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -2563,7 +2563,7 @@
         "CIM"
       ],
       "lastModified": "2026-03-22T20:00:30.914Z",
-      "lastRostered": "2026-03-31"
+      "lastRostered": "2026-04-01"
     },
     {
       "name": "Ibuki",
@@ -2676,7 +2676,7 @@
         "GFE"
       ],
       "lastModified": "2026-03-30T06:00:32.927Z",
-      "lastRostered": "2026-03-31"
+      "lastRostered": "2026-04-01"
     },
     {
       "name": "Ollie",
@@ -2749,6 +2749,10 @@
       "2026-03-31": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-04-01": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Choo": {
@@ -2773,6 +2777,10 @@
         "end": "18:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -2809,6 +2817,10 @@
         "end": "02:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -2859,6 +2871,10 @@
       "2026-03-31": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-01": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Iona": {
@@ -2883,6 +2899,10 @@
         "end": "02:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -2926,6 +2946,10 @@
       "2026-03-31": {
         "start": "10:30",
         "end": "01:00"
+      },
+      "2026-04-01": {
+        "start": "10:30",
+        "end": "01:00"
       }
     },
     "Erena": {
@@ -2940,6 +2964,10 @@
     },
     "Cindy": {
       "2026-03-31": {
+        "start": "10:30",
+        "end": "22:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "22:00"
       }
@@ -2968,6 +2996,10 @@
       "2026-03-26": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-04-01": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "_published": [
@@ -2976,7 +3008,8 @@
       "2026-03-28",
       "2026-03-29",
       "2026-03-30",
-      "2026-03-31"
+      "2026-03-31",
+      "2026-04-01"
     ],
     "Rum": {
       "2026-03-26": {
@@ -2992,6 +3025,10 @@
         "end": "18:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -3030,6 +3067,10 @@
         "end": "02:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -3080,6 +3121,10 @@
       "2026-03-31": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-01": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Bella": {
@@ -3123,6 +3168,10 @@
         "end": "18:00"
       },
       "2026-03-31": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-04-01": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -3182,6 +3231,10 @@
       "2026-03-31": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-04-01": {
+        "start": "16:00",
+        "end": "02:00"
       }
     },
     "Mugi": {
@@ -3206,6 +3259,10 @@
         "end": "02:00"
       },
       "2026-03-31": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-01": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -3250,9 +3307,13 @@
       "2026-03-31": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-01": {
+        "start": "12:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-31T06:00:21.032Z",
-  "lastCalendarSync": "2026-03-30T07:00:38.572Z"
+  "lastCalendarSync": "2026-03-31T07:00:21.010Z"
 }

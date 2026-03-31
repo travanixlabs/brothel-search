@@ -3729,6 +3729,7 @@ function renderRoadmapPage() {
   html += '</tr></thead>';
   html += '<tbody id="roadmapBody"><tr><td colspan="8" class="roadmap-empty">Loading...</td></tr></tbody>';
   html += '</table></div>';
+  html += '<div id="roadmapHint" style="display:none;text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px"></div>';
 
   html += '</div>';
   return html;
@@ -3833,6 +3834,15 @@ async function initRoadmapPage() {
   const { data: { user } } = await sbClient.auth.getUser();
   window._currentUserId = user ? user.id : null;
   const isLoggedIn = !!user;
+  const canInteract = isLoggedIn && (isSubscribed || userRole === 'admin');
+
+  // Show hint for non-interactive users
+  const hintEl = document.getElementById('roadmapHint');
+  if (hintEl) {
+    if (!isLoggedIn) { hintEl.style.display = ''; hintEl.innerHTML = '<a href="#" onclick="event.preventDefault();requireLogin()" style="color:var(--gold)">Sign in</a> and subscribe to create items and vote.'; }
+    else if (!canInteract) { hintEl.style.display = ''; hintEl.textContent = 'Subscribe to create items and vote.'; }
+    else { hintEl.style.display = 'none'; }
+  }
 
   window._roadmapVotes = await loadRoadmapVotes();
   const items = await loadRoadmapItems();

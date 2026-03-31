@@ -696,8 +696,9 @@ sbClient.auth.onAuthStateChange((event, session) => {
     document.getElementById('userMenu').style.display = '';
     document.getElementById('notifBell').style.display = 'flex';
     loadNotifications();
-    // Navigate to home only on actual login, not session restore
-    if (event === 'SIGNED_IN') {
+    // Navigate to home only on actual login from auth overlay, not session restore
+    const authOverlay = document.getElementById('authOverlay');
+    if (event === 'SIGNED_IN' && authOverlay && authOverlay.style.display === 'flex') {
       history.replaceState(null, '', '/');
       handleLandingRoute('/');
     }

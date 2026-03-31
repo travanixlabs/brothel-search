@@ -3705,6 +3705,7 @@ function renderRoadmapPage() {
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Roadmap');
   html += '<p class="landing-desc">Development timeline of upcoming changes, new features, and fixes.</p>';
+  html += '<div id="roadmapHint" class="landing-desc" style="display:none"></div>';
 
   // New item form
   html += '<div id="roadmapFormWrap" style="margin-bottom:24px">';
@@ -3729,7 +3730,6 @@ function renderRoadmapPage() {
   html += '</tr></thead>';
   html += '<tbody id="roadmapBody"><tr><td colspan="8" class="roadmap-empty">Loading...</td></tr></tbody>';
   html += '</table></div>';
-  html += '<div id="roadmapHint" style="display:none;text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px"></div>';
 
   html += '</div>';
   return html;

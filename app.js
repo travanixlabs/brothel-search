@@ -3443,31 +3443,33 @@ function renderHomePage() {
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingToday + '">0</span><span class="home-stat-label">Working Today</span></div>';
   html += '</div>';
 
-  // Editor's Picks — top matches available now, fallback to available soon
-  let picks = allGirls.filter(g => {
+  // Daily Digest — favourites available today + 90% matches available today
+  const favAvailToday = allGirls.filter(g => {
+    const avail = getAvailabilityText(g);
+    return isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
+  });
+  const matchAvailToday = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
     const score = matchScores.get(g.venue + ':' + g.name) || 0;
-    return avail && avail.startsWith('Available Now') && score >= 70;
+    return !isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 90;
   }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
 
-  let picksLabel = 'TOP MATCHES AVAILABLE NOW';
-  if (!picks.length) {
-    picks = allGirls.filter(g => {
-      const avail = getAvailabilityText(g);
-      const score = matchScores.get(g.venue + ':' + g.name) || 0;
-      return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 70;
-    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
-    picksLabel = 'TOP MATCHES AVAILABLE SOON';
-  }
-
-  if (picks.length) {
-    html += '<div class="venue-divider"><span>\u2014 ' + picksLabel + ' \u2014</span></div>';
+  if (favAvailToday.length || matchAvailToday.length) {
+    html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
     html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
-    for (const g of picks) {
+
+    for (const g of favAvailToday) {
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
       const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:' + (score >= 90 ? 'var(--gold)' : 'var(--text-dim)') + '">' + score + '% match</div></div>';
+      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div>' + (score > 0 ? '<div style="font-size:9px;color:var(--gold)">' + score + '% match</div>' : '') + '<div style="font-size:9px;color:#c9952c;font-weight:600">Favourite</div></div>';
     }
+
+    for (const g of matchAvailToday) {
+      const score = matchScores.get(g.venue + ':' + g.name) || 0;
+      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+      html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:var(--gold)">' + score + '% match</div><div style="font-size:9px;color:#00c864;font-weight:600">New</div></div>';
+    }
+
     html += '</div>';
   }
 

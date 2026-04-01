@@ -1134,7 +1134,8 @@ function clearPrefsForm() {
     minI.value = minI.min;
     minI.dispatchEvent(new Event('input'));
   });
-  document.querySelectorAll('#settingsOverlay .pref-checkboxes input[type=checkbox]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#preferencesOverlay .pref-checkboxes input[type=checkbox]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#preferencesOverlay .pref-select').forEach(sel => sel.value = '');
   document.getElementById('prefLastRosterDays').value = '';
   document.getElementById('prefDateStartedDays').value = '';
 }

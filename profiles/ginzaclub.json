@@ -1417,7 +1417,7 @@
       "age": "23",
       "body": "7",
       "height": "162",
-      "cup": "",
+      "cup": "D",
       "val1": "250",
       "val2": "300",
       "val3": "350",
@@ -2563,7 +2563,8 @@
         "CIM"
       ],
       "lastModified": "2026-03-22T20:00:30.914Z",
-      "lastRostered": "2026-04-01"
+      "lastRostered": "2026-04-01",
+      "cup": "D"
     },
     {
       "name": "Ibuki",
@@ -2599,7 +2600,8 @@
         "GFE"
       ],
       "lastModified": "2026-03-23T08:00:32.536Z",
-      "lastRostered": "2026-03-29"
+      "lastRostered": "2026-03-29",
+      "cup": "D"
     },
     {
       "name": "Ami",
@@ -2638,7 +2640,8 @@
         "GFE"
       ],
       "lastModified": "2026-03-27T06:00:37.122Z",
-      "lastRostered": "2026-03-31"
+      "lastRostered": "2026-03-31",
+      "cup": "B"
     },
     {
       "name": "Mary",
@@ -2676,7 +2679,8 @@
         "GFE"
       ],
       "lastModified": "2026-03-30T06:00:32.927Z",
-      "lastRostered": "2026-04-02"
+      "lastRostered": "2026-04-02",
+      "cup": "C"
     },
     {
       "name": "Ollie",
@@ -2711,7 +2715,8 @@
         "CIM"
       ],
       "lastModified": "2026-03-31T06:00:21.032Z",
-      "lastRostered": "2026-04-02"
+      "lastRostered": "2026-04-02",
+      "cup": "D"
     },
     {
       "name": "Kaya",
@@ -2758,7 +2763,8 @@
       "lastRostered": "2026-04-02",
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": "Experienced"
+      "experienceLevel": "Experienced",
+      "cup": "C"
     },
     {
       "name": "Miwa",
@@ -2795,7 +2801,8 @@
         "CIM"
       ],
       "lastModified": "2026-04-01T06:01:13.717Z",
-      "lastRostered": "2026-04-02"
+      "lastRostered": "2026-04-02",
+      "cup": "B"
     }
   ],
   "calendar": {

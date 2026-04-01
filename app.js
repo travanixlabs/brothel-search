@@ -3448,10 +3448,12 @@ function renderHomePage() {
     const avail = getAvailabilityText(g);
     return isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
   });
+  const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
+  const sevenDayStrDigest = sevenDaysAgoDigest.toISOString().split('T')[0];
   const matchAvailToday = allGirls.filter(g => {
     const avail = getAvailabilityText(g);
     const score = matchScores.get(g.venue + ':' + g.name) || 0;
-    return !isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 90;
+    return !isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 90 && g.startDate && g.startDate >= sevenDayStrDigest;
   }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
 
   if (favAvailToday.length || matchAvailToday.length) {

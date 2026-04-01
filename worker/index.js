@@ -2166,6 +2166,37 @@ export default {
       return new Response(null, { headers: cors });
     }
 
+    // Activate free trial
+    if (url.pathname === '/activate-trial' && request.method === 'POST') {
+      try {
+        const { userId } = await request.json();
+        if (!userId) return json({ error: 'No userId' });
+
+        const SUPABASE_URL = 'https://blhwekuidksxiaickeck.supabase.co';
+        const sbH = { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`, 'Content-Type': 'application/json' };
+
+        // Check if trial already used
+        const subRes = await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions?user_id=eq.${userId}&select=trial_used`, { headers: sbH });
+        const subs = await subRes.json();
+        if (subs.length && subs[0].trial_used) return json({ error: 'Free trial already used' });
+
+        // Create 3-day subscription
+        const now = new Date();
+        const periodEnd = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+        await fetch(`${SUPABASE_URL}/rest/v1/user_subscriptions`, {
+          method: 'POST',
+          headers: { ...sbH, Prefer: 'resolution=merge-duplicates' },
+          body: JSON.stringify({
+            user_id: userId, plan: 'trial', status: 'active', trial_used: true,
+            current_period_start: now.toISOString(), current_period_end: periodEnd.toISOString(),
+            updated_at: now.toISOString(),
+          }),
+        });
+
+        return json({ success: true });
+      } catch (e) { return json({ error: e.message }); }
+    }
+
     // Create Stripe Checkout Session
     if (url.pathname === '/create-checkout' && request.method === 'POST') {
       try {

@@ -112,8 +112,22 @@ async function selectPlan(plan) {
   const { data: { session } } = await sbClient.auth.getSession();
   if (!session) return;
   const btn = document.querySelector(`[data-plan="${plan}"]`);
-  if (btn) btn.textContent = 'Redirecting...';
+  if (btn) btn.textContent = plan === 'trial' ? 'Activating...' : 'Redirecting...';
   try {
+    // Free trial — create subscription directly without Stripe
+    if (plan === 'trial') {
+      const res = await fetch(`${WORKER_URL}/activate-trial`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token },
+        body: JSON.stringify({ userId: session.user.id }),
+      });
+      const data = await res.json();
+      if (data.error) { alert(data.error); if (btn) btn.textContent = 'Select'; return; }
+      isSubscribed = true;
+      hidePaywall();
+      return;
+    }
+    // Paid plans — Stripe checkout
     const res = await fetch(`${WORKER_URL}/create-checkout`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -127,7 +141,7 @@ async function selectPlan(plan) {
     const data = await res.json();
     if (data.error) { alert(data.error); if (btn) btn.textContent = 'Select'; return; }
     if (data.sessionUrl) window.location.href = data.sessionUrl;
-  } catch (e) { alert('Payment error: ' + e.message); if (btn) btn.textContent = 'Select'; }
+  } catch (e) { alert('Error: ' + e.message); if (btn) btn.textContent = 'Select'; }
 }
 
 async function checkAuth() {

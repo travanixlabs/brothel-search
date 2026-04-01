@@ -2546,10 +2546,13 @@ function renderNotifications() {
       const n = notifCache.find(x => x.id === id);
       if (n) n.read = true;
       renderNotifications();
-      // Navigate to girl profile if available
+      // Navigate based on notification type
+      document.getElementById('notifBell').classList.remove('open');
       if (venue && girl) {
         const g = allGirls.find(gg => gg.venue === venue && gg.name === girl);
-        if (g) { document.getElementById('notifBell').classList.remove('open'); showProfile(g); }
+        if (g) showProfile(g);
+      } else {
+        navigateToLanding('/working-now');
       }
     });
   });

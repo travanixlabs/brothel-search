@@ -525,7 +525,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   const heightMatch = html.match(/Height:\s*(1[3-9]\d|20\d)/i) || html.match(/(1[4-8]\d)\s*cm/i);
   const height = heightMatch ? heightMatch[1] : '';
 
-  const cupMatch = html.match(/(?:Cup|Bust)\s*(?:Size)?\s*:?\s*([A-HJ-Z](?:-[A-HJ-Z])?)\b/i);
+  const cupMatch = html.match(/([A-H](?:DD)?)\s*[Cc]up/i) || html.match(/(?:Cup|Bust)\s*(?:Size)?\s*:?\s*([A-H](?:DD)?)\b/i);
   const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
 
   let val1 = '', val2 = '', val3 = '';

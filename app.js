@@ -1765,6 +1765,7 @@ function renderFilters() {
     { id: 'age', label: 'Age' },
     { id: 'body', label: 'Body' },
     { id: 'height', label: 'Height' },
+    { id: 'cup', label: 'Cup' },
     { id: 'val1', label: '30 Min' },
     { id: 'val2', label: '45 Min' },
     { id: 'val3', label: '60 Min' },

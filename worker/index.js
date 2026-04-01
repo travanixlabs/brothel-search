@@ -2038,7 +2038,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, de
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const json = h => new Response(JSON.stringify(h), { headers: { 'Content-Type': 'application/json' } });
+    const json = h => new Response(JSON.stringify(h), { headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } });
 
     // Social bot pre-rendering — serve meta tags for crawlers
     const ua = request.headers.get('user-agent') || '';

@@ -1709,19 +1709,23 @@ async function sendDailyDigest(env) {
       }
     }
 
-    // Build notifications for bell UI
-    for (const g of favWorking) {
-      notifications.push({ user_id: userId, type: 'favourite_rostered', title: g.name + ' is working today', body: g.name + ' at ' + g.venueName + ' is on the roster today.', venue: g.venue, girl_name: g.name });
-    }
-    for (const g of [...matchesWorking, ...matchesNotWorking]) {
-      notifications.push({ user_id: userId, type: 'new_match', title: 'New ' + g.matchScore + '% match: ' + g.name, body: g.name + ' just joined ' + g.venueName + ' and matches your preferences.', venue: g.venue, girl_name: g.name });
-    }
+    // Build single digest notification for bell UI
+    const parts = [];
+    if (favWorking.length) parts.push(favWorking.length + ' favourite' + (favWorking.length !== 1 ? 's' : '') + ' working today');
+    if (matchesWorking.length) parts.push(matchesWorking.length + ' new match' + (matchesWorking.length !== 1 ? 'es' : '') + ' working today');
+    if (matchesNotWorking.length) parts.push(matchesNotWorking.length + ' new match' + (matchesNotWorking.length !== 1 ? 'es' : ''));
 
-    if (!notifications.length && !allFavGirls.length) continue;
+    if (!parts.length && !allFavGirls.length) continue;
 
-    // Insert notifications into Supabase (only actual alerts)
-    if (notifications.length) {
-      await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify(notifications) });
+    // Insert single digest notification
+    if (parts.length) {
+      const digestNotif = {
+        user_id: userId, type: 'favourite_rostered',
+        title: 'Daily Digest',
+        body: parts.join(', ') + '. Check your email for details.',
+        venue: null, girl_name: null,
+      };
+      await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify(digestNotif) });
     }
 
     // Send email via Resend (always send if user has favourites)

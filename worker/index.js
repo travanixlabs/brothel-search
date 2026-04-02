@@ -1041,7 +1041,7 @@ async function syncPennys77Girls(env, site) {
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
   const html = await resp.text();
 
-  const linkRe = /href="(https:\/\/pennys77\.com\.au\/[a-z0-9%\-]+\/?)">/gi;
+  const linkRe = /href="(https:\/\/pennys77\.com\.au\/[^"]+)"/gi;
   const urls = new Set();
   let m;
   while ((m = linkRe.exec(html)) !== null) {

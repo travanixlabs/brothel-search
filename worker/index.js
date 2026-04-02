@@ -1030,6 +1030,193 @@ async function scrape429CityRoster(site) {
   return { _429cityUrls: true, ...result };
 }
 
+/* ── Custom girl sync for new venues ── */
+
+async function syncPennys77Girls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingUrls = new Set(existing.map(g => g.oldUrl));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  const linkRe = /href="(https:\/\/pennys77\.com\.au\/[a-z0-9%\-]+\/?)">/gi;
+  const urls = new Set();
+  let m;
+  while ((m = linkRe.exec(html)) !== null) {
+    const url = m[1];
+    if (!/our-girls|contact|rate|service|feed|wp-|about|faq|privacy|xmlrpc|wp-json|category|tag|page/i.test(url) && url !== 'https://pennys77.com.au/') {
+      urls.add(url);
+    }
+  }
+
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (const url of urls) {
+    if (existingUrls.has(url)) continue;
+    try {
+      const pResp = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!pResp.ok) continue;
+      const pHtml = await pResp.text();
+
+      // Extract from meta description: Name:X Nationality:X Age:Xyo Height:Xcm Boobs:X cup
+      const metaMatch = pHtml.match(/content="Name:([^"]*?)"/i) || pHtml.match(/content="([^"]*?Nationality[^"]*?)"/i);
+      const metaText = metaMatch ? metaMatch[1] : '';
+
+      const nameMatch = metaText.match(/Name:\s*([A-Za-z]+)/) || pHtml.match(/<h1[^>]*>.*?([A-Z][a-z]+)/);
+      const name = nameMatch ? nameMatch[1].trim() : '';
+      if (!name || name.length < 2) continue;
+
+      const ageMatch = metaText.match(/Age:\s*(\d+)/);
+      const heightMatch = metaText.match(/Height:\s*(\d+)/);
+      const cupMatch = metaText.match(/Boobs:\s*([A-H](?:DD)?)/i);
+      const natMatch = metaText.match(/Nationality:\s*([A-Za-z]+)/);
+
+      const imgRe = /wp-content\/uploads\/[^"'\s]+\.(?:jpe?g|png|webp)/gi;
+      const photos = [];
+      let im;
+      while ((im = imgRe.exec(pHtml)) !== null) {
+        const src = 'https://pennys77.com.au/' + im[0];
+        if (!/cropped|logo|icon|android|favicon|banner/i.test(src) && !photos.includes(src)) photos.push(src);
+      }
+
+      const country = natMatch ? (natMatch[1] === 'Thailand' ? 'Thai' : natMatch[1] === 'Vietnam' ? 'Vietnamese' : natMatch[1]) : '';
+
+      const entry = {
+        name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+        height: heightMatch ? heightMatch[1] : '', cup: cupMatch ? cupMatch[1].toUpperCase() : '',
+        body: '', val1: '', val2: '', val3: '',
+        startDate: todayStr, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+      };
+      existing.push(entry);
+      addedNames.push(name);
+      await new Promise(r => setTimeout(r, 500));
+    } catch (e) { console.error(`[Penny's 77] Error scraping ${url}:`, e.message); }
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Penny's 77] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+async function syncBlackCatGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse girl blocks: data comes before name in HTML
+  // Pattern: Age: X ... Dress Size: X ... Hair: X ... Bust: X Cup ... Nationality: X ... src="thumb.php..." ... girl-name">Name
+  const girlBlocks = html.split('class="girl"');
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (const block of girlBlocks) {
+    const nameMatch = block.match(/class="girl-name">([^<]+)/);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+    if (existingNames.has(name)) continue;
+
+    const ageMatch = block.match(/Age:\s*(\d+)/);
+    const bustMatch = block.match(/Bust:\s*([A-H](?:DD)?)\s*Cup/i);
+    const natMatch = block.match(/Nationality:\s*([A-Za-z]+)/);
+    const imgMatch = block.match(/src="(https:\/\/blackcatparlour\.com\.au\/wp-content\/[^"]+)"/);
+
+    const country = natMatch ? natMatch[1] : '';
+    const photos = imgMatch ? [imgMatch[1]] : [];
+
+    const entry = {
+      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+      height: '', cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Black Cat] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+async function syncBellevue12Girls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingUrls = new Set(existing.map(g => g.oldUrl));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Extract profile URLs: /YYYY/MM/DD/name/
+  const linkRe = /href="(https:\/\/bellevue12\.com\.au\/\d{4}\/\d{2}\/\d{2}\/[^"]+)"/gi;
+  const urls = new Set();
+  let m;
+  while ((m = linkRe.exec(html)) !== null) urls.add(m[1]);
+
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (const url of urls) {
+    if (existingUrls.has(url)) continue;
+    try {
+      const pResp = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!pResp.ok) continue;
+      const pHtml = await pResp.text();
+
+      // Name from URL slug
+      const slugMatch = url.match(/\/([a-z0-9\-]+)\/?$/);
+      let name = slugMatch ? slugMatch[1].replace(/-?\d+$/, '').replace(/-/g, ' ') : '';
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      if (!name || name.length < 2) continue;
+
+      // Photos
+      const imgRe = /wp-content\/uploads\/[^"'\s]+\.(?:jpe?g|png|webp)/gi;
+      const photos = [];
+      let im;
+      while ((im = imgRe.exec(pHtml)) !== null) {
+        const src = 'https://bellevue12.com.au/' + im[0];
+        if (!/slider|slash_it|logo|icon|cropped|banner/i.test(src) && !/150x150|300x300/i.test(src) && !photos.includes(src)) photos.push(src);
+      }
+
+      // Try to get details from h3 tags or content
+      const textContent = pHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      const cupMatch = textContent.match(/([A-H])\s*cup/i);
+      const heightMatch = textContent.match(/(1[4-8]\d)\s*cm/i);
+
+      const entry = {
+        name, country: [], age: '', height: heightMatch ? heightMatch[1] : '',
+        cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
+        val1: '', val2: '', val3: '',
+        startDate: todayStr, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+      };
+      existing.push(entry);
+      addedNames.push(name);
+      await new Promise(r => setTimeout(r, 500));
+    } catch (e) { console.error(`[Bellevue 12] Error scraping ${url}:`, e.message); }
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Bellevue 12] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
 async function scrapePennys77Roster(site) {
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Penny's 77 roster fetch failed: ${resp.status}`);
@@ -2296,7 +2483,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-pennys77-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.pennys77)); }
+      try { return json(await syncPennys77Girls(env, SITES.pennys77)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-pennys77-calendar' && request.method === 'POST') {
@@ -2312,7 +2499,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-blackcatparlour-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.blackcatparlour)); }
+      try { return json(await syncBlackCatGirls(env, SITES.blackcatparlour)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-blackcatparlour-calendar' && request.method === 'POST') {
@@ -2320,7 +2507,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-bellevue12-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.bellevue12)); }
+      try { return json(await syncBellevue12Girls(env, SITES.bellevue12)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-bellevue12-calendar' && request.method === 'POST') {
@@ -2759,10 +2946,10 @@ export default {
           syncAllGirls(syncWpGirls, SITES.top127),
           syncAllGirls(syncWpGirls, SITES.fantasyclub35),
           syncAllGirls(syncWpGirls, SITES.city429),
-          syncAllGirls(syncWpGirls, SITES.pennys77),
+          syncAllGirls(syncPennys77Girls, SITES.pennys77),
           syncAllGirls(syncWpGirls, SITES.thegoldenapple),
-          syncAllGirls(syncWpGirls, SITES.blackcatparlour),
-          syncAllGirls(syncWpGirls, SITES.bellevue12),
+          syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
+          syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
         ]);
         console.log('All girls syncs complete.');
 

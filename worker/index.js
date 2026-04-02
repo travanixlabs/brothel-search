@@ -1037,7 +1037,8 @@ async function syncPennys77Girls(env, site) {
   const existing = data.girls || [];
   const existingUrls = new Set(existing.map(g => g.oldUrl));
 
-  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
   const html = await resp.text();
 
@@ -1057,7 +1058,7 @@ async function syncPennys77Girls(env, site) {
   for (const url of urls) {
     if (existingUrls.has(url)) continue;
     try {
-      const pResp = await fetch(url, { headers: { 'User-Agent': UA } });
+      const pResp = await fetch(url, { headers: { 'User-Agent': BROWSER_UA } });
       if (!pResp.ok) continue;
       const pHtml = await pResp.text();
 
@@ -1197,11 +1198,15 @@ async function syncBellevue12Girls(env, site) {
       const cupMatch = textContent.match(/([A-H])\s*cup/i);
       const heightMatch = textContent.match(/(1[4-8]\d)\s*cm/i);
 
+      // Extract start date from URL: /YYYY/MM/DD/
+      const dateMatch = url.match(/\/(\d{4})\/(\d{2})\/(\d{2})\//);
+      const startDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3] : todayStr;
+
       const entry = {
         name, country: [], age: '', height: heightMatch ? heightMatch[1] : '',
         cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
         val1: '', val2: '', val3: '',
-        startDate: todayStr, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+        startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);
       addedNames.push(name);

@@ -1311,21 +1311,55 @@ async function scrapeBlackCatRoster(site) {
   const html = await resp.text();
 
   const aest = getAEDTDate();
-  const todayStr = fmtDate(aest);
+  const dayMap = { monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6, sunday: 0 };
+  const currentDow = aest.getDay();
 
-  // Black Cat roster shows today's girls with class="girl-name"
-  const nameRe = /class="girl-name">([^<]+)/gi;
-  const names = [];
-  let m;
-  while ((m = nameRe.exec(html)) !== null) {
-    names.push(m[1].trim());
+  // Split by roster sections: "Thursday night time", "Friday day time" etc.
+  const sectionRe = /class="roster-title">(\w+)\s+(day|night)\s+time/gi;
+  const sections = [];
+  let sm;
+  while ((sm = sectionRe.exec(html)) !== null) {
+    sections.push({ dayName: sm[1].toLowerCase(), shift: sm[2].toLowerCase(), pos: sm.index });
   }
 
   const result = {};
-  if (names.length) {
-    result[todayStr] = names.map(name => ({ name, start: '10:00', end: '04:00' }));
+  for (let i = 0; i < sections.length; i++) {
+    const sec = sections[i];
+    const sectionHtml = html.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : html.length);
+
+    // Calculate date for this day
+    const targetDow = dayMap[sec.dayName];
+    if (targetDow === undefined) continue;
+    let dayOffset = targetDow - currentDow;
+    if (dayOffset < 0) dayOffset += 7;
+    // Night shift: same calendar day as the day name
+    const targetDate = new Date(aest);
+    targetDate.setDate(targetDate.getDate() + dayOffset);
+    const dateStr = fmtDate(targetDate);
+
+    const start = sec.shift === 'day' ? '08:00' : '20:00';
+    const end = sec.shift === 'day' ? '20:00' : '08:00';
+
+    // Extract girl names from this section
+    const nameRe = /class="girl-name">([^<]+)/gi;
+    let m;
+    while ((m = nameRe.exec(sectionHtml)) !== null) {
+      const name = m[1].trim();
+      if (!result[dateStr]) result[dateStr] = [];
+      // Check if this girl already has an entry for this date (day + night shift)
+      const existing = result[dateStr].find(e => e.name === name);
+      if (existing) {
+        // Extend: if day shift exists and now adding night, set start to day start, end to night end
+        if (sec.shift === 'night') existing.end = end;
+        else existing.start = start;
+      } else {
+        result[dateStr].push({ name, start, end });
+      }
+    }
   }
-  console.log(`[Black Cat] Roster scraped: ${names.length} girls for today`);
+
+  const totalEntries = Object.values(result).reduce((s, e) => s + e.length, 0);
+  console.log(`[Black Cat] Roster scraped: ${Object.keys(result).length} days, ${totalEntries} entries`);
   return result;
 }
 

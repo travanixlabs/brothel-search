@@ -5357,7 +5357,7 @@
       "lang": "Mandarin, Limited English",
       "desc": "LARA (CHINA) D - 30 minutes Age: 25 Height: 170cm Bust: E Service: Diamond 30mins $190 45mins $250 60mins $300",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T07:50:01.623Z",
       "lastRostered": "2026-03-29",
       "photos": [
@@ -8400,6 +8400,62 @@
       "lastRostered": "2026-03-30",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Miyuku",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-02",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/miyuku-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80851775098795_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80841775098793_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80801775098786_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80821775098790_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80791775098785_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80811775098789_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/80831775098792_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-02T06:00:46.397Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Chizuru",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "162",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-01-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/chizuru-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Chizuru-Jp-06-scaled.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Chizuru-Jp-07-scaled.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Chizuru-Jp-02-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Chizuru-Jp-03-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Chizuru-Jp-04-160x160.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-02T06:00:46.397Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -8914,7 +8970,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-23T08:00:32.858Z",
+  "lastGirlsSync": "2026-04-02T06:00:46.397Z",
   "lastCalendarSync": "2026-04-01T10:00:25.231Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

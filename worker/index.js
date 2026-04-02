@@ -1190,7 +1190,7 @@ async function syncBellevue12Girls(env, site) {
       let im;
       while ((im = imgRe.exec(pHtml)) !== null) {
         const src = 'https://bellevue12.com.au/' + im[0];
-        if (!/slider|slash_it|logo|icon|cropped|banner/i.test(src) && !/150x150|300x300/i.test(src) && !photos.includes(src)) photos.push(src);
+        if (!/slider|slash_it|logo|icon|cropped|banner/i.test(src) && !/-\d{2,3}x\d{2,3}\./.test(src) && !/1500x430|1210x423/.test(src) && !photos.includes(src)) photos.push(src);
       }
 
       // Try to get details from h3 tags or content

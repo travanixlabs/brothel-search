@@ -27,11 +27,13 @@
     },
     {
       "name": "Candy",
-      "country": [],
-      "age": "",
+      "country": [
+        "Thai"
+      ],
+      "age": "28",
       "height": "164",
       "cup": "D",
-      "body": "",
+      "body": "8",
       "val1": "",
       "val2": "",
       "val3": "",
@@ -45,7 +47,9 @@
     },
     {
       "name": "Jojo",
-      "country": [],
+      "country": [
+        "Singaporean"
+      ],
       "age": "",
       "height": "165",
       "cup": "D",
@@ -104,7 +108,9 @@
     },
     {
       "name": "Sara",
-      "country": [],
+      "country": [
+        "Thai"
+      ],
       "age": "",
       "height": "",
       "cup": "",
@@ -124,7 +130,9 @@
     },
     {
       "name": "Lucy",
-      "country": [],
+      "country": [
+        "Chinese"
+      ],
       "age": "",
       "height": "165",
       "cup": "C",
@@ -161,7 +169,9 @@
     },
     {
       "name": "Coco",
-      "country": [],
+      "country": [
+        "Chinese"
+      ],
       "age": "",
       "height": "168",
       "cup": "",
@@ -201,10 +211,12 @@
     },
     {
       "name": "Lisa",
-      "country": [],
+      "country": [
+        "Taiwanese"
+      ],
       "age": "",
       "height": "165",
-      "cup": "",
+      "cup": "B",
       "body": "",
       "val1": "",
       "val2": "",
@@ -239,8 +251,10 @@
     },
     {
       "name": "Nancy",
-      "country": [],
-      "age": "",
+      "country": [
+        "Chinese"
+      ],
+      "age": "27",
       "height": "160",
       "cup": "",
       "body": "",

@@ -23,7 +23,8 @@
         "https://bellevue12.com.au/wp-content/uploads/2026/03/图片_20260310121450_3_61.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Candy",
@@ -64,7 +65,8 @@
         "https://bellevue12.com.au/wp-content/uploads/2019/04/Jojo_meitu_1-773x1030.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Nana",
@@ -229,7 +231,8 @@
         "https://bellevue12.com.au/wp-content/uploads/2018/01/20180109180155.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Tiffany",
@@ -269,7 +272,8 @@
         "https://bellevue12.com.au/wp-content/uploads/2017/12/20171212104636.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     }
   ],
   "calendar": {
@@ -281,8 +285,32 @@
         "start": "10:00",
         "end": "02:00"
       }
+    },
+    "ShaSha": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      }
+    },
+    "Lisa": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      }
+    },
+    "Jojo": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      }
+    },
+    "Nancy": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-04-02T23:35:00.505Z"
+  "lastCalendarSync": "2026-04-02T23:39:47.929Z"
 }

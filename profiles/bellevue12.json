@@ -165,7 +165,8 @@
         "https://bellevue12.com.au/wp-content/uploads/2026/02/图片_20260210143702.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Coco",
@@ -274,8 +275,14 @@
   "calendar": {
     "_published": [
       "2026-04-03"
-    ]
+    ],
+    "Mimi": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "04:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-04-02T22:53:06.856Z"
+  "lastCalendarSync": "2026-04-02T23:35:00.505Z"
 }

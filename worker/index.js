@@ -1327,16 +1327,18 @@ async function scrapeBellevue12Roster(site) {
   const aest = getAEDTDate();
   const todayStr = fmtDate(aest);
 
-  // Bellevue 12 roster has girl info in h3 tags
-  const h3Re = /<h3[^>]*>([^<]+)<\/h3>/gi;
+  // Bellevue 12 roster: h3 tags contain "Name Country Height details"
+  // Tags may contain <strong>, <span> — strip inner tags to get text
+  const h3Re = /<h3[^>]*>([\s\S]*?)<\/h3>/gi;
   const entries = [];
   let m;
   while ((m = h3Re.exec(html)) !== null) {
-    const text = m[1].trim();
-    // Extract name (first word before nationality/details)
+    const text = m[1].replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!text || /Today|Roster|Recent|Comment|Phone|Address|Time/i.test(text)) continue;
+    // First word is the name
     const nameMatch = text.match(/^([A-Za-z]+)/);
-    if (nameMatch && nameMatch[1].length > 1 && !/Recent|Comment|Phone|Address|Time/i.test(nameMatch[1])) {
-      entries.push({ name: nameMatch[1], start: '10:00', end: '04:00' });
+    if (nameMatch && nameMatch[1].length > 1) {
+      entries.push({ name: nameMatch[1], start: '10:00', end: '02:00' });
     }
   }
 

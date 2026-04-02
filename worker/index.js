@@ -1337,8 +1337,8 @@ async function scrapeBlackCatRoster(site) {
     targetDate.setDate(targetDate.getDate() + dayOffset);
     const dateStr = fmtDate(targetDate);
 
-    const start = sec.shift === 'day' ? '08:00' : '20:00';
-    const end = sec.shift === 'day' ? '20:00' : '08:00';
+    const start = sec.shift === 'day' ? '06:00' : '18:00';
+    const end = sec.shift === 'day' ? '18:00' : '06:00';
 
     // Extract girl names from this section
     const nameRe = /class="girl-name">([^<]+)/gi;

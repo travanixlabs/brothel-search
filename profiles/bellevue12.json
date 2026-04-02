@@ -5,7 +5,7 @@
   "venueLocationCoordinates": "-33.88358115264125, 151.21205877114085",
   "girls": [
     {
-      "name": "Shasha",
+      "name": "ShaSha",
       "country": [],
       "age": "",
       "height": "",
@@ -279,7 +279,7 @@
     "Mimi": {
       "2026-04-03": {
         "start": "10:00",
-        "end": "04:00"
+        "end": "02:00"
       }
     }
   },

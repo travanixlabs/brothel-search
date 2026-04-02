@@ -4,7 +4,11 @@
   "venueLocation": "371 Riley St, Surry Hills NSW 2010",
   "venueLocationCoordinates": "-33.88444709795769, 151.21255926239868",
   "girls": [],
-  "calendar": {},
+  "calendar": {
+    "_published": [
+      "2026-04-03"
+    ]
+  },
   "lastGirlsSync": null,
-  "lastCalendarSync": null
+  "lastCalendarSync": "2026-04-02T22:53:05.149Z"
 }

@@ -4,7 +4,11 @@
   "venueLocation": "12 Bellevue St, Surry Hills NSW 2010",
   "venueLocationCoordinates": "-33.88358115264125, 151.21205877114085",
   "girls": [],
-  "calendar": {},
+  "calendar": {
+    "_published": [
+      "2026-04-03"
+    ]
+  },
   "lastGirlsSync": null,
-  "lastCalendarSync": null
+  "lastCalendarSync": "2026-04-02T22:53:06.856Z"
 }

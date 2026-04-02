@@ -1128,15 +1128,25 @@ async function syncBlackCatGirls(env, site) {
 
     const ageMatch = block.match(/Age:\s*(\d+)/);
     const bustMatch = block.match(/Bust:\s*([A-H](?:DD)?)\s*Cup/i);
-    const natMatch = block.match(/Nationality:\s*([A-Za-z]+)/);
-    const imgMatch = block.match(/src="(https:\/\/blackcatparlour\.com\.au\/wp-content\/[^"]+)"/);
+    const natMatch = block.match(/Nationality:\s*([A-Za-z ]+)/);
+    const dressMatch = block.match(/Dress Size:\s*(\d+)/);
+    const heightMatch = block.match(/Height:\s*(\d+)&#039;(\d+)/);
+    const imgMatch = block.match(/src="(https:\/\/blackcatparlour\.com\.au\/wp-content\/themes\/blackcatparlour\/thumb\.php\?[^"]+)"/);
 
-    const country = natMatch ? natMatch[1] : '';
+    // Convert feet'inches to cm: 5'6 = 167cm
+    let heightCm = '';
+    if (heightMatch) {
+      const feet = parseInt(heightMatch[1]);
+      const inches = parseInt(heightMatch[2]);
+      heightCm = String(Math.round(feet * 30.48 + inches * 2.54));
+    }
+
+    const country = natMatch ? natMatch[1].trim() : '';
     const photos = imgMatch ? [imgMatch[1]] : [];
 
     const entry = {
       name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
-      height: '', cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
+      height: heightCm, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
       val1: '', val2: '', val3: '',
       startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
     };

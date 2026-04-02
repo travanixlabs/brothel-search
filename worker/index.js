@@ -120,6 +120,50 @@ const SITES = {
     },
     embedPhotos: true,
   },
+  pennys77: {
+    name: "Penny's 77",
+    baseUrl: 'https://pennys77.com.au',
+    girlsUrl: 'https://pennys77.com.au/our-girls/',
+    rosterUrl: 'https://pennys77.com.au/',
+    rosterFormat: 'pennys77',
+    jsonPath: 'profiles/pennys77.json',
+    imgPrefix: 'profiles/pennys77',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  thegoldenapple: {
+    name: 'The Golden Apple',
+    baseUrl: 'https://www.thegoldenapple.com.au',
+    girlsUrl: 'https://www.thegoldenapple.com.au/escorts/',
+    rosterUrl: 'https://www.thegoldenapple.com.au/roster/',
+    rosterFormat: 'thegoldenapple',
+    jsonPath: 'profiles/thegoldenapple.json',
+    imgPrefix: 'profiles/thegoldenapple',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  blackcatparlour: {
+    name: 'Black Cat Parlour',
+    baseUrl: 'https://blackcatparlour.com.au',
+    girlsUrl: 'https://blackcatparlour.com.au/our-ladies/',
+    rosterUrl: 'https://blackcatparlour.com.au/our-roster/',
+    rosterFormat: 'blackcatparlour',
+    jsonPath: 'profiles/blackcatparlour.json',
+    imgPrefix: 'profiles/blackcatparlour',
+    siteType: 'custom',
+    embedPhotos: true,
+  },
+  bellevue12: {
+    name: 'Bellevue 12',
+    baseUrl: 'https://bellevue12.com.au',
+    girlsUrl: 'https://bellevue12.com.au/ladies/',
+    rosterUrl: 'https://bellevue12.com.au/roster/',
+    rosterFormat: 'bellevue12',
+    jsonPath: 'profiles/bellevue12.json',
+    imgPrefix: 'profiles/bellevue12',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
 };
 
 /* ── GitHub helpers ── */
@@ -986,6 +1030,124 @@ async function scrape429CityRoster(site) {
   return { _429cityUrls: true, ...result };
 }
 
+async function scrapePennys77Roster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Penny's 77 roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const todayMatch = html.match(/Today.s Roster\s*\((\d{1,2})\/(\d{1,2})\/(\d{4})\)/i);
+  if (!todayMatch) return {};
+
+  const dateStr = todayMatch[3] + '-' + todayMatch[2].padStart(2, '0') + '-' + todayMatch[1].padStart(2, '0');
+
+  // Extract girl names from roster section - they appear as links or text after the roster date
+  const rosterSection = html.substring(html.indexOf('Today'));
+  const nameRe = /href="https:\/\/pennys77\.com\.au\/[^"]*"[^>]*>([^<]+)</gi;
+  const names = new Set();
+  let m;
+  while ((m = nameRe.exec(rosterSection)) !== null) {
+    const name = m[1].trim();
+    if (name && name.length < 30 && !/menu|home|contact|girl|rate|service/i.test(name)) {
+      names.add(name);
+    }
+  }
+
+  const result = {};
+  if (names.size) {
+    result[dateStr] = [...names].map(name => ({ name, start: '10:00', end: '04:00' }));
+  }
+  console.log(`[Penny's 77] Roster scraped: ${names.size} girls for ${dateStr}`);
+  return result;
+}
+
+async function scrapeGoldenAppleRoster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Golden Apple roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const aest = getAEDTDate();
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+
+  // Match day headers: "Friday 3 April", "Saturday 4 April" etc.
+  const dayRe = /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)/gi;
+  const months = { january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11 };
+  const sections = [];
+  let dm;
+  while ((dm = dayRe.exec(text)) !== null) {
+    sections.push({ pos: dm.index, day: parseInt(dm[2]), month: months[dm[3].toLowerCase()], year: aest.getFullYear() });
+  }
+
+  const result = {};
+  for (let i = 0; i < sections.length; i++) {
+    const sec = sections[i];
+    const sectionText = text.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : sec.pos + 2000);
+    const d = new Date(sec.year, sec.month, sec.day);
+    const dateStr = fmtDate(d);
+
+    // Extract names - look for capitalized words that appear to be names near "available"
+    const nameRe = /([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\s+(?:is\s+)?available/gi;
+    const names = [];
+    let nm;
+    while ((nm = nameRe.exec(sectionText)) !== null) {
+      names.push(nm[1].trim());
+    }
+    if (names.length) result[dateStr] = names.map(name => ({ name, start: '10:00', end: '04:00' }));
+  }
+  console.log(`[Golden Apple] Roster scraped: ${Object.keys(result).length} days`);
+  return result;
+}
+
+async function scrapeBlackCatRoster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Black Cat roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const aest = getAEDTDate();
+  const todayStr = fmtDate(aest);
+
+  // Black Cat roster shows today's girls with class="girl-name"
+  const nameRe = /class="girl-name">([^<]+)/gi;
+  const names = [];
+  let m;
+  while ((m = nameRe.exec(html)) !== null) {
+    names.push(m[1].trim());
+  }
+
+  const result = {};
+  if (names.length) {
+    result[todayStr] = names.map(name => ({ name, start: '10:00', end: '04:00' }));
+  }
+  console.log(`[Black Cat] Roster scraped: ${names.length} girls for today`);
+  return result;
+}
+
+async function scrapeBellevue12Roster(site) {
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Bellevue 12 roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const aest = getAEDTDate();
+  const todayStr = fmtDate(aest);
+
+  // Bellevue 12 roster has girl info in h3 tags
+  const h3Re = /<h3[^>]*>([^<]+)<\/h3>/gi;
+  const entries = [];
+  let m;
+  while ((m = h3Re.exec(html)) !== null) {
+    const text = m[1].trim();
+    // Extract name (first word before nationality/details)
+    const nameMatch = text.match(/^([A-Za-z]+)/);
+    if (nameMatch && nameMatch[1].length > 1 && !/Recent|Comment|Phone|Address|Time/i.test(nameMatch[1])) {
+      entries.push({ name: nameMatch[1], start: '10:00', end: '04:00' });
+    }
+  }
+
+  const result = {};
+  if (entries.length) result[todayStr] = entries;
+  console.log(`[Bellevue 12] Roster scraped: ${entries.length} girls for today`);
+  return result;
+}
+
 /* ── Image upload ── */
 
 function arrayBufferToBase64(buffer) {
@@ -1109,7 +1271,7 @@ async function loadData(env, site) {
 
 async function regenerateSitemap(env) {
   const today = new Date().toISOString().split('T')[0];
-  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429];
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12];
 
   let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
 
@@ -1387,6 +1549,14 @@ async function syncCalendar(env, site) {
     ? await scrapeFantasyClub35Roster(site)
     : site.rosterFormat === '429city'
     ? await scrape429CityRoster(site)
+    : site.rosterFormat === 'pennys77'
+    ? await scrapePennys77Roster(site)
+    : site.rosterFormat === 'thegoldenapple'
+    ? await scrapeGoldenAppleRoster(site)
+    : site.rosterFormat === 'blackcatparlour'
+    ? await scrapeBlackCatRoster(site)
+    : site.rosterFormat === 'bellevue12'
+    ? await scrapeBellevue12Roster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
@@ -1628,8 +1798,8 @@ async function sendDailyDigest(env) {
   }
 
   // Load all venue data + today's roster
-  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429];
-  const venueIds = ['ginzaempire', 'ginzaclub', 'kyoto206', 'sakura57', 'top127', 'fantasyclub35', '429city'];
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12];
+  const venueIds = ['ginzaempire', 'ginzaclub', 'kyoto206', 'sakura57', 'top127', 'fantasyclub35', '429city', 'pennys77', 'thegoldenapple', 'blackcatparlour', 'bellevue12'];
   const allGirls = [];
   const todayStr = fmtDate(getAEDTDate());
 
@@ -1861,22 +2031,27 @@ const VENUE_MAP = {
   ginzaempire: SITES.empire, ginzaclub: SITES.club, kyoto206: SITES.kyoto206,
   sakura57: SITES.sakura57, top127: SITES.top127, fantasyclub35: SITES.fantasyclub35,
   '429city': SITES.city429,
+  pennys77: SITES.pennys77, thegoldenapple: SITES.thegoldenapple,
+  blackcatparlour: SITES.blackcatparlour, bellevue12: SITES.bellevue12,
 };
 
 const VENUE_SUBURBS = {
   ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket',
+  pennys77: 'newtown', thegoldenapple: 'surryhills', blackcatparlour: 'surryhills', bellevue12: 'surryhills',
 };
 const VENUE_REGION_SLUGS = {
   ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
   sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral',
+  pennys77: 'innerwest', thegoldenapple: 'cbdandcentral', blackcatparlour: 'cbdandcentral', bellevue12: 'cbdandcentral',
 };
 
 const VENUE_NAMES = {
   ginzaempire: 'Ginza Empire', ginzaclub: 'Ginza Club', kyoto206: 'Kyoto 206',
   sakura57: 'Sakura 57', top127: 'Top 127', fantasyclub35: 'Fantasy Club 35', '429city': '429 City',
+  pennys77: "Penny's 77", thegoldenapple: 'The Golden Apple', blackcatparlour: 'Black Cat Parlour', bellevue12: 'Bellevue 12',
 };
-const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket' };
+const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket', newtown: 'Newtown' };
 const REGION_NAMES_WORKER = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West' };
 
 function botHtml(title, desc, url, jsonLd) {
@@ -2120,6 +2295,38 @@ export default {
       try { return json({ success: await syncCalendar(env, SITES.city429) }); }
       catch (e) { return json({ error: e.message }); }
     }
+    if (url.pathname === '/sync-pennys77-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.pennys77)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-pennys77-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.pennys77) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-thegoldenapple-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.thegoldenapple)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-thegoldenapple-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.thegoldenapple) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-blackcatparlour-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.blackcatparlour)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-blackcatparlour-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.blackcatparlour) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-bellevue12-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.bellevue12)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-bellevue12-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.bellevue12) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
 
     // ── Photo health check endpoints ──
     if (url.pathname === '/check-photos' && request.method === 'POST') {
@@ -2129,6 +2336,8 @@ export default {
           checkBrokenPhotos(env, SITES.kyoto206), checkBrokenPhotos(env, SITES.sakura57),
           checkBrokenPhotos(env, SITES.top127), checkBrokenPhotos(env, SITES.fantasyclub35),
           checkBrokenPhotos(env, SITES.city429),
+          checkBrokenPhotos(env, SITES.pennys77), checkBrokenPhotos(env, SITES.thegoldenapple),
+          checkBrokenPhotos(env, SITES.blackcatparlour), checkBrokenPhotos(env, SITES.bellevue12),
         ]);
         return json({ results });
       } catch (e) { return json({ error: e.message }); }
@@ -2550,6 +2759,10 @@ export default {
           syncAllGirls(syncWpGirls, SITES.top127),
           syncAllGirls(syncWpGirls, SITES.fantasyclub35),
           syncAllGirls(syncWpGirls, SITES.city429),
+          syncAllGirls(syncWpGirls, SITES.pennys77),
+          syncAllGirls(syncWpGirls, SITES.thegoldenapple),
+          syncAllGirls(syncWpGirls, SITES.blackcatparlour),
+          syncAllGirls(syncWpGirls, SITES.bellevue12),
         ]);
         console.log('All girls syncs complete.');
 
@@ -2561,6 +2774,10 @@ export default {
           checkBrokenPhotos(env, SITES.top127).catch(e => console.error('[Top 127] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.city429).catch(e => console.error('[429 City] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.pennys77).catch(e => console.error("[Penny's 77] Photo check error:", e)),
+          checkBrokenPhotos(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Photo check error:', e)),
         ]);
         console.log('Photo checks complete.');
 
@@ -2586,6 +2803,10 @@ export default {
           syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e)),
           syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e)),
           syncCalendar(env, SITES.city429).catch(e => console.error('[429 City] Calendar sync error:', e)),
+          syncCalendar(env, SITES.pennys77).catch(e => console.error("[Penny's 77] Calendar sync error:", e)),
+          syncCalendar(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Calendar sync error:', e)),
+          syncCalendar(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Calendar sync error:', e)),
+          syncCalendar(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Calendar sync error:', e)),
         ]);
         console.log('All calendar syncs complete.');
       }

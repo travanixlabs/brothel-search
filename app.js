@@ -1205,7 +1205,11 @@ const VENUES = [
   { id: 'sakura57', name: 'Sakura 57', file: 'sakura57.json' },
   { id: 'top127', name: 'Top 127', file: 'top127.json' },
   { id: 'fantasyclub35', name: 'Fantasy Club 35', file: 'fantasyclub35.json' },
-  { id: '429city', name: '429 City', file: '429city.json' }
+  { id: '429city', name: '429 City', file: '429city.json' },
+  { id: 'pennys77', name: "Penny's 77", file: 'pennys77.json' },
+  { id: 'thegoldenapple', name: 'The Golden Apple', file: 'thegoldenapple.json' },
+  { id: 'blackcatparlour', name: 'Black Cat Parlour', file: 'blackcatparlour.json' },
+  { id: 'bellevue12', name: 'Bellevue 12', file: 'bellevue12.json' },
 ];
 
 let allGirls = [];
@@ -2925,11 +2929,13 @@ function buildProfileCalendar(g) {
 
 const VENUE_REGIONS = {
   ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
-  sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral'
+  sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral',
+  pennys77: 'innerwest', thegoldenapple: 'cbdandcentral', blackcatparlour: 'cbdandcentral', bellevue12: 'cbdandcentral',
 };
 const VENUE_SUBURB_NAMES = {
   ginzaempire: 'Surry Hills', ginzaclub: 'Surry Hills', kyoto206: 'Surry Hills',
-  sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket'
+  sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket',
+  pennys77: 'Newtown', thegoldenapple: 'Surry Hills', blackcatparlour: 'Surry Hills', bellevue12: 'Surry Hills',
 };
 const REGION_NAMES = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West', easternsuburbs: 'Eastern Suburbs', northshore: 'North Shore', northernbeaches: 'Northern Beaches', northwest: 'North West', westernsuburbs: 'Western Suburbs', southwesternsuburbs: 'South Western Suburbs', southernsuburbs: 'Southern Suburbs' };
 const REGION_ORDER = ['cbdandcentral', 'innerwest', 'easternsuburbs', 'northshore', 'northernbeaches', 'northwest', 'westernsuburbs', 'southwesternsuburbs', 'southernsuburbs'];
@@ -4039,6 +4045,10 @@ const VENUE_DATA = {
   top127: { name: 'Top 127', suburb: 'Chippendale', suburbSlug: 'chippendale', url: 'https://127city.com/', address: '127 Regent St, Chippendale NSW 2008', lat: -33.887895846811354, lng: 151.20126815545416, desc: 'Located on Regent Street in Chippendale, Top 127 offers a selection of beautiful girls with competitive rates and a friendly, no-pressure atmosphere close to the city centre.' },
   fantasyclub35: { name: 'Fantasy Club 35', suburb: 'Annandale', suburbSlug: 'innerwest', url: 'https://fantasyclub35.com.au/', address: '33/35 Parramatta Rd, Annandale NSW 2038', lat: -33.88719005098213, lng: 151.1706113116501, desc: 'An upmarket Sydney brothel boasting a wide range of beauties. Highly reputable for many years, offering sophisticated full-service Asian girls in well-appointed rooms along Parramatta Road.' },
   '429city': { name: '429 City', suburb: 'Haymarket', suburbSlug: 'haymarket', url: 'https://www.429city.com/', address: '429A Pitt St, Haymarket NSW 2000', lat: -33.87874734224782, lng: 151.20694241127885, desc: 'Sydney\u2019s Haymarket venue on Pitt Street, featuring a diverse roster of beauties from across Asia. Known for friendly service and a central CBD location just steps from Chinatown.' },
+  pennys77: { name: "Penny's 77", suburb: 'Newtown', suburbSlug: 'newtown', url: 'https://pennys77.com.au/', address: '77A Enmore Rd, Newtown NSW 2042', lat: -33.898490435845176, lng: 151.17499527337114, desc: "A popular Newtown venue on Enmore Road offering a friendly and relaxed atmosphere with a diverse selection of ladies." },
+  thegoldenapple: { name: 'The Golden Apple', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.thegoldenapple.com.au/', address: '377 Riley St, Surry Hills NSW 2010', lat: -33.884634181442, lng: 151.2126912705119, desc: "Located on Riley Street in Surry Hills, The Golden Apple is known for its genuine photo guarantee and wide selection of escorts." },
+  blackcatparlour: { name: 'Black Cat Parlour', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://blackcatparlour.com.au/', address: '371 Riley St, Surry Hills NSW 2010', lat: -33.88444709795769, lng: 151.21255926239868, desc: "A well-established Surry Hills parlour on Riley Street featuring a curated roster of ladies with detailed profiles and reviews." },
+  bellevue12: { name: 'Bellevue 12', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://bellevue12.com.au/', address: '12 Bellevue St, Surry Hills NSW 2010', lat: -33.88358115264125, lng: 151.21205877114085, desc: "A discreet Surry Hills venue on Bellevue Street, close to the CBD, offering Asian beauties in a comfortable environment." },
 };
 
 function getSuburbs() {

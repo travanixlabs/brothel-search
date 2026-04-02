@@ -1195,15 +1195,21 @@ async function syncBellevue12Girls(env, site) {
 
       // Try to get details from h3 tags or content
       const textContent = pHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-      const cupMatch = textContent.match(/([A-H])\s*cup/i);
+      const cupMatch = textContent.match(/([A-H])\s*(?:cup|cap)/i);
       const heightMatch = textContent.match(/(1[4-8]\d)\s*cm/i);
+      const ageMatch = textContent.match(/(\d{2})\s*(?:yo|years? old|y\.o)/i) || textContent.match(/age\s*:?\s*(\d{2})/i);
+      const countryMap = { singapore: 'Singaporean', singaporean: 'Singaporean', china: 'Chinese', chinese: 'Chinese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', thailand: 'Thai', thai: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', hongkong: 'Hong Kong', 'hong kong': 'Hong Kong', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian' };
+      let country = '';
+      for (const [key, val] of Object.entries(countryMap)) {
+        if (textContent.toLowerCase().includes(key)) { country = val; break; }
+      }
 
       // Extract start date from URL: /YYYY/MM/DD/
       const dateMatch = url.match(/\/(\d{4})\/(\d{2})\/(\d{2})\//);
       const startDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3] : todayStr;
 
       const entry = {
-        name, country: [], age: '', height: heightMatch ? heightMatch[1] : '',
+        name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '', height: heightMatch ? heightMatch[1] : '',
         cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
         val1: '', val2: '', val3: '',
         startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',

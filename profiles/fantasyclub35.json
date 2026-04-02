@@ -401,7 +401,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:38.628Z",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-05",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/Lala2Image_20250911033152_3_35.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/LalaImage_20250911033151_2_35.jpg"
@@ -1708,11 +1708,15 @@
       "2026-04-04": {
         "start": "13:00",
         "end": "05:00"
+      },
+      "2026-04-05": {
+        "start": "13:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-03-18T20:00:57.801Z",
-  "lastCalendarSync": "2026-03-30T09:42:41.891Z",
+  "lastCalendarSync": "2026-04-02T07:01:08.557Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/"
   ]

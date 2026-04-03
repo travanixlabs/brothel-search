@@ -1710,27 +1710,30 @@ async function syncJiniaGirls(env, site) {
       let height = heightMatch ? heightMatch[1] : '';
       if (height && parseInt(height) < 100) height = '1' + height;
 
-      // Photos from profile page (skip thumbnails, QR codes, logo)
+      // Photos: collect all upload URLs, strip dimension suffixes to get originals, skip QR/logo/thumbnails
       const photoRe = /src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+      const photoSet = new Set();
       const photos = [];
       let pm;
       while ((pm = photoRe.exec(pHtml)) !== null) {
-        const src = pm[1];
-        if (!/80x80|36x36|120x120|180x180|logo|QR|qr/i.test(src) && !/-\d{2,3}x\d{2,3}\./.test(src) && !photos.includes(src)) {
-          photos.push(src);
-        }
+        let src = pm[1];
+        if (/QR|qr|logo/i.test(src)) continue;
+        // Skip tiny thumbnails (80x80 etc used in sidebar)
+        if (/-(80x80|36x36|120x120|180x180)\./i.test(src)) continue;
+        // Strip WP dimension suffix to get original: image-529x705.jpg -> image.jpg
+        src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+        if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
       }
-      // Also get the large header/featured image
-      if (photos.length === 0) {
-        const featMatch = pHtml.match(/src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+\d+x705[^"]+)"/);
-        if (featMatch) photos.push(featMatch[1]);
-      }
+
+      // Start date from datePublished meta
+      const dateMatch = pHtml.match(/itemprop="datePublished"\s+datetime="(\d{4}-\d{2}-\d{2})/);
+      const startDate = dateMatch ? dateMatch[1] : todayStr;
 
       const entry = {
         name, country: countries, age: ageMatch ? ageMatch[1] : '',
         height, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
         val1: '', val2: '', val3: '',
-        startDate: todayStr, oldUrl: profileUrl,
+        startDate, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);

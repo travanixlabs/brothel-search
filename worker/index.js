@@ -1646,12 +1646,14 @@ async function syncJiniaGirls(env, site) {
     if (seenUrls.has(profileUrl)) continue;
     seenUrls.add(profileUrl);
 
-    // Strip time patterns, age hints, annotations: "Nika12:30pm- close", "Madoka (21yo)", "*Highly recommended", "*Real Photos"
+    // Strip time patterns, age hints, annotations: "Nika12:30pm- close", "Whisky 11am-close", "Madoka (21yo)", "*Highly recommended"
     let name = rawTitle
-      .replace(/\s*\d{1,2}:\d{2}\s*(?:am|pm)?\s*[-–~]?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)?|close|late)\b.*/gi, '')
+      .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
+      .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
       .replace(/\s*\(\d+yo\)/gi, '')
       .replace(/\s*\*[^)]*$/gi, '')
       .replace(/\s*\(joined.*$/gi, '')
+      .replace(/\s*\([^)]*\)\s*$/gi, '')
       .trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
     if (existingUrls.has(profileUrl)) continue;

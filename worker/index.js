@@ -1408,42 +1408,49 @@ async function syncGoldenAppleGirls(env, site) {
 }
 
 async function scrapeGoldenAppleRoster(site) {
-  // Roster is on the homepage, not /roster/
-  const resp = await fetch(site.baseUrl + '/', { headers: { 'User-Agent': UA } });
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Golden Apple roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
   const aest = getAEDTDate();
+  const year = aest.getFullYear();
   const months = { january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11 };
 
-  // Find date sections: "Friday 3 April 2026"
-  const dateRe = /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})/gi;
+  // Find date sections: "<h2>Friday 3 April</h2>" (no year)
+  const dateRe = /<h2>\s*(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s*<\/h2>/gi;
   const sections = [];
   let dm;
   while ((dm = dateRe.exec(html)) !== null) {
-    sections.push({ pos: dm.index, day: parseInt(dm[2]), month: months[dm[3].toLowerCase()], year: parseInt(dm[4]) });
+    sections.push({ pos: dm.index, day: parseInt(dm[2]), month: months[dm[3].toLowerCase()], year });
   }
 
   const result = {};
   for (let i = 0; i < sections.length; i++) {
     const sec = sections[i];
-    const sectionHtml = html.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : sec.pos + 5000);
+    const sectionHtml = html.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : sec.pos + 10000);
     const d = new Date(sec.year, sec.month, sec.day);
     const dateStr = fmtDate(d);
 
-    // Extract: <h4><a href="/roster/">Name</a> (10am-5pm)</h4>
-    const entryRe = /<h4><a[^>]*>([^<]+)<\/a>\s*\((\d{1,2}(?:am|pm))-(\d{1,2}(?:am|pm))\)/gi;
+    // Extract: <h4><a class="ag_inline" href="#inline">Name</a> (10am-5pm)</h4>
+    // Some entries have no time: <h4><a ...>Hennessy</a></h4>
+    const entryRe = /<h4><a[^>]*>([^<]+)<\/a>(?:\s*\((\d{1,2}(?:\.?\d+)?(?:am|pm))-(\d{1,2}(?:\.?\d+)?(?:am|pm))\))?<\/h4>/gi;
     let em;
     while ((em = entryRe.exec(sectionHtml)) !== null) {
       const name = em[1].trim();
-      let startH = parseInt(em[2]);
-      const startAP = em[2].replace(/\d+/, '').toLowerCase();
-      let endH = parseInt(em[3]);
-      const endAP = em[3].replace(/\d+/, '').toLowerCase();
-      const start = (startAP === 'pm' && startH !== 12 ? startH + 12 : startAP === 'am' && startH === 12 ? 0 : startH);
-      const end = (endAP === 'pm' && endH !== 12 ? endH + 12 : endAP === 'am' && endH === 12 ? 0 : endH);
+      if (!name) continue;
+      let startTime = '10:00', endTime = '22:00';
+      if (em[2] && em[3]) {
+        let startH = parseInt(em[2]);
+        const startAP = em[2].replace(/[\d.]+/, '').toLowerCase();
+        let endH = parseInt(em[3]);
+        const endAP = em[3].replace(/[\d.]+/, '').toLowerCase();
+        const start = (startAP === 'pm' && startH !== 12 ? startH + 12 : startAP === 'am' && startH === 12 ? 0 : startH);
+        const end = (endAP === 'pm' && endH !== 12 ? endH + 12 : endAP === 'am' && endH === 12 ? 0 : endH);
+        startTime = String(start).padStart(2, '0') + ':00';
+        endTime = String(end).padStart(2, '0') + ':00';
+      }
       if (!result[dateStr]) result[dateStr] = [];
-      result[dateStr].push({ name, start: String(start).padStart(2, '0') + ':00', end: String(end).padStart(2, '0') + ':00' });
+      result[dateStr].push({ name, start: startTime, end: endTime });
     }
   }
 

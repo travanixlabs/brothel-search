@@ -1353,40 +1353,102 @@ async function scrapePennys77Roster(site, env) {
   return result;
 }
 
+async function syncGoldenAppleGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse <li> items with structured spans: name, age, bust, country, dress, height, photo
+  const liRe = /<li[^>]*class="mix[^"]*"[^>]*>([\s\S]*?)<\/li>/gi;
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  let m;
+  while ((m = liRe.exec(html)) !== null) {
+    const block = m[1];
+    const nameMatch = block.match(/class="name">([^<]+)/);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+    if (existingNames.has(name)) continue;
+
+    const ageMatch = block.match(/class="age">(\d+)/);
+    const bustMatch = block.match(/class="bust">(?:\d+)?([A-H])/i);
+    const countryMatch = block.match(/class="country">([^<]+)/);
+    const dressMatch = block.match(/class="dress">(\d+)/);
+    const heightMatch = block.match(/class="height">(\d+)[''"](\d+)/);
+    const imgMatch = block.match(/data-original="([^"]+)"/);
+
+    let heightCm = '';
+    if (heightMatch) {
+      heightCm = String(Math.round(parseInt(heightMatch[1]) * 30.48 + parseInt(heightMatch[2]) * 2.54));
+    }
+
+    const photos = imgMatch ? [imgMatch[1]] : [];
+
+    existing.push({
+      name, country: countryMatch ? [countryMatch[1].trim()] : [],
+      age: ageMatch ? ageMatch[1] : '', height: heightCm,
+      cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
+    });
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Golden Apple] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
 async function scrapeGoldenAppleRoster(site) {
-  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  // Roster is on the homepage, not /roster/
+  const resp = await fetch(site.baseUrl + '/', { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Golden Apple roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
   const aest = getAEDTDate();
-  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-
-  // Match day headers: "Friday 3 April", "Saturday 4 April" etc.
-  const dayRe = /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)/gi;
   const months = { january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11 };
+
+  // Find date sections: "Friday 3 April 2026"
+  const dateRe = /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})/gi;
   const sections = [];
   let dm;
-  while ((dm = dayRe.exec(text)) !== null) {
-    sections.push({ pos: dm.index, day: parseInt(dm[2]), month: months[dm[3].toLowerCase()], year: aest.getFullYear() });
+  while ((dm = dateRe.exec(html)) !== null) {
+    sections.push({ pos: dm.index, day: parseInt(dm[2]), month: months[dm[3].toLowerCase()], year: parseInt(dm[4]) });
   }
 
   const result = {};
   for (let i = 0; i < sections.length; i++) {
     const sec = sections[i];
-    const sectionText = text.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : sec.pos + 2000);
+    const sectionHtml = html.substring(sec.pos, i + 1 < sections.length ? sections[i + 1].pos : sec.pos + 5000);
     const d = new Date(sec.year, sec.month, sec.day);
     const dateStr = fmtDate(d);
 
-    // Extract names - look for capitalized words that appear to be names near "available"
-    const nameRe = /([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\s+(?:is\s+)?available/gi;
-    const names = [];
-    let nm;
-    while ((nm = nameRe.exec(sectionText)) !== null) {
-      names.push(nm[1].trim());
+    // Extract: <h4><a href="/roster/">Name</a> (10am-5pm)</h4>
+    const entryRe = /<h4><a[^>]*>([^<]+)<\/a>\s*\((\d{1,2}(?:am|pm))-(\d{1,2}(?:am|pm))\)/gi;
+    let em;
+    while ((em = entryRe.exec(sectionHtml)) !== null) {
+      const name = em[1].trim();
+      let startH = parseInt(em[2]);
+      const startAP = em[2].replace(/\d+/, '').toLowerCase();
+      let endH = parseInt(em[3]);
+      const endAP = em[3].replace(/\d+/, '').toLowerCase();
+      const start = (startAP === 'pm' && startH !== 12 ? startH + 12 : startAP === 'am' && startH === 12 ? 0 : startH);
+      const end = (endAP === 'pm' && endH !== 12 ? endH + 12 : endAP === 'am' && endH === 12 ? 0 : endH);
+      if (!result[dateStr]) result[dateStr] = [];
+      result[dateStr].push({ name, start: String(start).padStart(2, '0') + ':00', end: String(end).padStart(2, '0') + ':00' });
     }
-    if (names.length) result[dateStr] = names.map(name => ({ name, start: '10:00', end: '04:00' }));
   }
-  console.log(`[Golden Apple] Roster scraped: ${Object.keys(result).length} days`);
+
+  const totalEntries = Object.values(result).reduce((s, e) => s + e.length, 0);
+  console.log(`[Golden Apple] Roster scraped: ${Object.keys(result).length} days, ${totalEntries} entries`);
   return result;
 }
 
@@ -2633,7 +2695,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-thegoldenapple-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.thegoldenapple)); }
+      try { return json(await syncGoldenAppleGirls(env, SITES.thegoldenapple)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-thegoldenapple-calendar' && request.method === 'POST') {
@@ -3089,7 +3151,7 @@ export default {
           syncAllGirls(syncWpGirls, SITES.fantasyclub35),
           syncAllGirls(syncWpGirls, SITES.city429),
           syncAllGirls(syncPennys77Girls, SITES.pennys77),
-          syncAllGirls(syncWpGirls, SITES.thegoldenapple),
+          syncGoldenAppleGirls(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Girls sync error:', e)),
           syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
         ]);

@@ -298,6 +298,19 @@ function getAEDTDate() {
   return new Date(new Date().toLocaleString('en-US', { timeZone: 'Australia/Sydney' }));
 }
 
+function ampmTo24(t) {
+  if (!t) return '04:00';
+  const s = t.trim().toLowerCase().replace(/\s/g, '');
+  if (s === 'close' || s === 'late' || s === 'open') return '04:00';
+  const m = s.match(/^(\d{1,2})(?::(\d{2}))?(am|pm)$/);
+  if (!m) return '04:00';
+  let h = parseInt(m[1]);
+  const mins = m[2] || '00';
+  if (m[3] === 'pm' && h !== 12) h += 12;
+  if (m[3] === 'am' && h === 12) h = 0;
+  return String(h).padStart(2, '0') + ':' + mins;
+}
+
 function fmtDate(d) {
   return d.getFullYear() + '-' +
     String(d.getMonth() + 1).padStart(2, '0') + '-' +
@@ -1613,8 +1626,8 @@ async function scrapeJiniaRoster(site) {
     if (/Search|Menu|Facebook|Instagram|Jinia|Scroll|parking|brothel|porn|^\d+$|图片|副本/i.test(name)) continue;
     const entry = { name };
     if (timeMatch) {
-      entry.start = timeMatch[1].replace(/\s/g, '');
-      entry.end = timeMatch[2].replace(/\s/g, '');
+      entry.start = ampmTo24(timeMatch[1]);
+      entry.end = ampmTo24(timeMatch[2]);
     }
     rosterEntries.push(entry);
   }

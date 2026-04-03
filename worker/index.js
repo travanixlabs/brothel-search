@@ -1062,34 +1062,45 @@ async function syncPennys77Girls(env, site) {
       if (!pResp.ok) continue;
       const pHtml = await pResp.text();
 
-      // Extract from meta description: Name:X Nationality:X Age:Xyo Height:Xcm Boobs:X cup
-      const metaMatch = pHtml.match(/content="Name:([^"]*?)"/i) || pHtml.match(/content="([^"]*?Nationality[^"]*?)"/i);
-      const metaText = metaMatch ? metaMatch[1] : '';
+      // Extract from og:description: "Name: Nina Age : 25yo Nationality: Thai Boobs: C cup Height : 165cm"
+      const ogDescMatch = pHtml.match(/property="og:description"\s+content="([^"]+)"/i);
+      const metaText = ogDescMatch ? ogDescMatch[1].replace(/&#\d+;/g, ' ') : '';
 
-      const nameMatch = metaText.match(/Name:\s*([A-Za-z]+)/) || pHtml.match(/<h1[^>]*>.*?([A-Z][a-z]+)/);
+      const nameMatch = metaText.match(/Name:\s*([A-Za-z]+)/i);
       const name = nameMatch ? nameMatch[1].trim() : '';
       if (!name || name.length < 2) continue;
 
-      const ageMatch = metaText.match(/Age:\s*(\d+)/);
-      const heightMatch = metaText.match(/Height:\s*(\d+)/);
-      const cupMatch = metaText.match(/Boobs:\s*([A-H](?:DD)?)/i);
-      const natMatch = metaText.match(/Nationality:\s*([A-Za-z]+)/);
+      const ageMatch = metaText.match(/Age\s*:?\s*(\d+)/i);
+      const heightMatch = metaText.match(/Height\s*:?\s*(\d+)\s*cm/i);
+      const cupMatch = metaText.match(/Boobs:\s*([A-H](?:DD)?)/i) || metaText.match(/([A-H](?:DD)?)\s*cup/i);
+      const natMatch = metaText.match(/Nationality:\s*[^\w]*([A-Za-z]+)/i);
 
-      const imgRe = /wp-content\/uploads\/[^"'\s]+\.(?:jpe?g|png|webp)/gi;
+      // Start date from article:published_time
+      const pubMatch = pHtml.match(/article:published_time"\s+content="(\d{4}-\d{2}-\d{2})/);
+      const startDate = pubMatch ? pubMatch[1] : todayStr;
+
+      // Photos from wp-block-image src attributes (gallery images)
+      const galleryRe = /wp-block-image[^>]*>.*?src="(https:\/\/pennys77\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
       const photos = [];
       let im;
-      while ((im = imgRe.exec(pHtml)) !== null) {
-        const src = 'https://pennys77.com.au/' + im[0];
-        if (!/cropped|logo|icon|android|favicon|banner/i.test(src) && !photos.includes(src)) photos.push(src);
+      while ((im = galleryRe.exec(pHtml)) !== null) {
+        const src = im[1];
+        if (!/cropped|logo|icon|android|favicon|banner/i.test(src) && !/-\d+x\d+\./.test(src) && !photos.includes(src)) photos.push(src);
+      }
+      // Fallback: og:image
+      if (!photos.length) {
+        const ogImg = pHtml.match(/og:image"\s+content="(https:\/\/pennys77\.com\.au\/wp-content\/uploads\/[^"]+)"/i);
+        if (ogImg) photos.push(ogImg[1]);
       }
 
-      const country = natMatch ? (natMatch[1] === 'Thailand' ? 'Thai' : natMatch[1] === 'Vietnam' ? 'Vietnamese' : natMatch[1]) : '';
+      const countryMap = { thai: 'Thai', thailand: 'Thai', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', china: 'Chinese', japanese: 'Japanese', japan: 'Japanese', korean: 'Korean', korea: 'Korean', australian: 'Australian', aussie: 'Australian', polish: 'Polish', european: 'European', caucasian: 'Australian', indian: 'Indian' };
+      const country = natMatch ? (countryMap[natMatch[1].toLowerCase()] || natMatch[1]) : '';
 
       const entry = {
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
         height: heightMatch ? heightMatch[1] : '', cup: cupMatch ? cupMatch[1].toUpperCase() : '',
         body: '', val1: '', val2: '', val3: '',
-        startDate: todayStr, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+        startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);
       addedNames.push(name);

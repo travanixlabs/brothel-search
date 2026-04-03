@@ -1592,17 +1592,20 @@ async function scrapeJiniaRoster(site) {
   const html = await resp.text();
 
   // Homepage has 7 content sliders (avia-content-slider1 through slider7), one per day of the week:
-  // Slider 1 = Sunday, 2 = Monday, ..., 7 = Saturday
+  // Slider 1 = Monday, 2 = Tuesday, ..., 6 = Saturday, 7 = Sunday
   const today = getAEDTDate();
-  const todayDow = today.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  const todayDow = today.getDay(); // JS: 0=Sun, 1=Mon, ..., 6=Sat
   const calendar = {};
 
+  // Map slider number to JS day-of-week: slider1=Mon(1), slider2=Tue(2), ..., slider6=Sat(6), slider7=Sun(0)
+  const sliderToDow = [0, 1, 2, 3, 4, 5, 6, 0]; // index 0 unused, slider 1-7
+
   for (let sliderNum = 1; sliderNum <= 7; sliderNum++) {
-    const dayOffset = (sliderNum - 1) - todayDow; // slider1=Sun(0), slider5=Thu(4), etc
+    const sliderDow = sliderToDow[sliderNum];
+    let dayOffset = sliderDow - todayDow;
+    if (dayOffset < 0) dayOffset += 7; // wrap to next week
     const targetDate = new Date(today);
     targetDate.setDate(today.getDate() + dayOffset);
-    // Only include today and future days (up to 6 days ahead)
-    if (dayOffset < 0) targetDate.setDate(targetDate.getDate() + 7); // wrap to next week
     const dateStr = fmtDate(targetDate);
 
     // Extract section content between this slider and the next

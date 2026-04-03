@@ -229,7 +229,7 @@ const SITES = {
   jinia: {
     name: 'Jinia',
     baseUrl: 'https://jinia.com.au',
-    girlsUrl: 'https://jinia.com.au/',
+    girlsUrl: 'https://jinia.com.au/strathfield-hooker/',
     rosterUrl: 'https://jinia.com.au/',
     rosterFormat: 'generic-wp',
     jsonPath: 'profiles/jinia.json',
@@ -1621,80 +1621,116 @@ async function syncWivesOnlyGirls(env, site) {
   return { added: addedNames.length, remaining: 0, names: addedNames };
 }
 
-/* ── Jinia custom scraper (Enfold/Avia portfolio theme) ── */
+/* ── Jinia custom scraper (Enfold/Avia portfolio theme, fetches profile pages) ── */
 async function syncJiniaGirls(env, site) {
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
   const existingNames = new Set(existing.map(g => g.name));
+  const existingUrls = new Set(existing.map(g => g.oldUrl).filter(Boolean));
 
-  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
   const html = await resp.text();
 
-  // Parse portfolio articles: <article class='slide-entry...'><a href='URL'...<img src="PHOTO".../>...<a href='URL' title='Name Time'>Name Time</a>...<div class='slide-entry-excerpt...'>details</div>
+  // Collect unique profile URLs from portfolio listing
   const articles = html.split("class='slide-entry flex_column");
-  const addedNames = [];
-  const todayStr = fmtDate(getAEDTDate());
+  const profileUrls = [];
   const seenUrls = new Set();
   const countryMap = { chinese: 'Chinese', vietnamese: 'Vietnamese', thai: 'Thai', greek: 'Greek', japanese: 'Japanese', korean: 'Korean', 'hong kong': 'Hong Kong', taiwanese: 'Taiwanese', australian: 'Australian', singaporean: 'Singaporean', malaysian: 'Malaysian', indonesian: 'Indonesian' };
 
   for (const article of articles) {
-    // Get profile URL and title
     const linkMatch = article.match(/href='(https:\/\/jinia\.com\.au\/[^']+)'\s+title='([^']+)'/);
     if (!linkMatch) continue;
     const [, profileUrl, rawTitle] = linkMatch;
-
-    // Avoid duplicates (page shows same profiles in multiple slider sections)
     if (seenUrls.has(profileUrl)) continue;
     seenUrls.add(profileUrl);
 
-    // Extract name: remove time suffix like "12:30pm- close", "1:00pm-close", "10:30am-CLOSE"
-    let name = rawTitle.replace(/\s*\d{1,2}:\d{2}\s*(?:am|pm)\s*-?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)|close)\s*/gi, '').trim();
+    let name = rawTitle.replace(/\s*\d{1,2}:\d{2}\s*-?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)|close)\s*/gi, '').replace(/\s*\d{1,2}:\d{2}(?:am|pm)\s*-?\s*(?:\d{1,2}:\d{2}(?:am|pm)|close)\s*/gi, '').trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
-
-    // Photo
-    const imgMatch = article.match(/src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/);
-
-    // Details from excerpt: "22yo | 160cm | 55kg | 36D" or free-form text
-    const excerptMatch = article.match(/slide-entry-excerpt[^>]*>[^<]*itemprop="text"\s*>([^<]+)/);
-    const excerpt = excerptMatch ? excerptMatch[1] : '';
-
-    const ageMatch = excerpt.match(/(\d{2})\s*(?:yo|years?[\s-]*old)/i) || excerpt.match(/(\d{2})yo/);
-    const heightMatch = excerpt.match(/(1[4-8]\d)\s*cm/i);
-    const cupMatch = excerpt.match(/(\d{2,3})([A-H])\b/) || excerpt.match(/([A-H])\s*cup/i);
-
-    // Try to detect country from excerpt
-    let country = '';
-    const lowerExcerpt = excerpt.toLowerCase();
-    for (const [key, val] of Object.entries(countryMap)) {
-      if (lowerExcerpt.includes(key)) { country = val; break; }
-    }
-    // Also check emoji flags
-    if (!country && /🇨🇳/.test(excerpt)) country = 'Chinese';
-    if (!country && /🇻🇳/.test(excerpt)) country = 'Vietnamese';
-    if (!country && /🇹🇭/.test(excerpt)) country = 'Thai';
-    if (!country && /🇬🇷/.test(excerpt)) country = 'Greek';
-
-    const cup = cupMatch ? (cupMatch[2] || cupMatch[1]).toUpperCase() : '';
-
-    const entry = {
-      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
-      height: heightMatch ? heightMatch[1] : '', cup, body: '',
-      val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: profileUrl,
-      photos: imgMatch ? [imgMatch[1]] : [], labels: [], originalSite: 'Exists',
-    };
-    existing.push(entry);
-    existingNames.add(name);
-    addedNames.push(name);
+    if (existingUrls.has(profileUrl)) continue;
+    profileUrls.push({ profileUrl, name });
   }
 
-  if (addedNames.length) {
+  // Mark existing girls' originalSite status
+  const activeUrls = seenUrls;
+  let siteChanged = false;
+  for (const g of existing) {
+    const shouldBe = activeUrls.has(g.oldUrl) ? 'Exists' : '';
+    if (g.originalSite !== shouldBe) { g.originalSite = shouldBe; siteChanged = true; }
+  }
+
+  if (profileUrls.length === 0) {
+    if (siteChanged) {
+      data.girls = existing;
+      data.lastGirlsSync = new Date().toISOString();
+      await ghPut(env, site.jsonPath, data, sha, `[Jinia] Update originalSite status`);
+    }
+    return { added: 0, remaining: 0, names: [] };
+  }
+
+  const toProcess = profileUrls.slice(0, MAX_NEW_PER_RUN);
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (const { profileUrl, name } of toProcess) {
+    try {
+      await new Promise(r => setTimeout(r, 1000));
+      const pResp = await fetch(profileUrl, { headers: { 'User-Agent': BROWSER_UA } });
+      if (!pResp.ok) continue;
+      const pHtml = await pResp.text();
+
+      // Parse profile page: <p>Nationalit: Chinese</p> <p>Age: 22yo</p> <p>Height: 160cm</p> <p>Bust Size: 36D</p>
+      const natMatch = pHtml.match(/<p>Nationalit[^:]*:\s*([^<]+)/i);
+      const ageMatch = pHtml.match(/<p>Age:\s*(\d+)/i);
+      const heightMatch = pHtml.match(/<p>Height:\s*(\d+)\s*cm/i);
+      const bustMatch = pHtml.match(/<p>Bust Size:\s*\d*([A-H](?:DD)?)/i);
+
+      let country = '';
+      if (natMatch) {
+        const raw = natMatch[1].trim().toLowerCase();
+        country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
+      }
+
+      // Fix common height typos (e.g. "60cm" should be "160cm")
+      let height = heightMatch ? heightMatch[1] : '';
+      if (height && parseInt(height) < 100) height = '1' + height;
+
+      // Photos from profile page (skip thumbnails, QR codes, logo)
+      const photoRe = /src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+      const photos = [];
+      let pm;
+      while ((pm = photoRe.exec(pHtml)) !== null) {
+        const src = pm[1];
+        if (!/80x80|36x36|120x120|180x180|logo|QR|qr/i.test(src) && !/-\d{2,3}x\d{2,3}\./.test(src) && !photos.includes(src)) {
+          photos.push(src);
+        }
+      }
+      // Also get the large header/featured image
+      if (photos.length === 0) {
+        const featMatch = pHtml.match(/src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+\d+x705[^"]+)"/);
+        if (featMatch) photos.push(featMatch[1]);
+      }
+
+      const entry = {
+        name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+        height, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
+        val1: '', val2: '', val3: '',
+        startDate: todayStr, oldUrl: profileUrl,
+        photos, labels: [], originalSite: 'Exists',
+      };
+      existing.push(entry);
+      existingNames.add(name);
+      addedNames.push(name);
+    } catch (e) { console.error(`[Jinia] Error scraping ${profileUrl}:`, e.message); }
+  }
+
+  if (addedNames.length || siteChanged) {
     data.girls = existing;
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Jinia] Auto-sync: ${addedNames.join(', ')}`);
   }
-  return { added: addedNames.length, remaining: 0, names: addedNames };
+  return { added: addedNames.length, remaining: profileUrls.length - toProcess.length, names: addedNames };
 }
 
 async function scrapePennys77Roster(site, env) {

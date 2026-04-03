@@ -3,7 +3,1348 @@
   "venueURL": "https://www.thegoldenapple.com.au/",
   "venueLocation": "377 Riley St, Surry Hills NSW 2010",
   "venueLocationCoordinates": "-33.884634181442, 151.2126912705119",
-  "girls": [],
+  "girls": [
+    {
+      "name": "Abbie",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "168",
+      "cup": "D",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/09/FB9B00FA-6671-4410-BBDB-E1BD9E650282-scaled.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alexa",
+      "country": [
+        "Italian/Brazillian"
+      ],
+      "age": "24",
+      "height": "170",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/03/Chantelle.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alice",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "175",
+      "cup": "G",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2019/04/ALICE-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amanda",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "30",
+      "height": "163",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/08/Amanda.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amber",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/06/Amber.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amelia",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "165",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/05/Amelia.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Athena",
+      "country": [
+        "Greek"
+      ],
+      "age": "26",
+      "height": "170",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/06/IMG_0362-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Audrey",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/12/Audrey.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Belle",
+      "country": [
+        "English"
+      ],
+      "age": "26",
+      "height": "168",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/10/2D355115-386D-49DE-85DB-B8E1586116AE.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bree",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/05/Bree.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Charlie",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "175",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2019/05/Charlie-IMG_7939.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Charlotte",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "19",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/08/Charlotte.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Claire",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/02/Claire.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cola",
+      "country": [
+        "Korean"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/12/cola-a-touch-more-class-sydney.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Crystal",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "D",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/03/Crystal.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dahlia",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "170",
+      "cup": "D",
+      "body": "12",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2026/01/IMG_0248.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Davina",
+      "country": [
+        "Australian/Greek"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "C",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/10/Davina-ATMC-GA.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Elise",
+      "country": [
+        "European"
+      ],
+      "age": "34",
+      "height": "170",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2018/03/Elise-IMG_7732.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ellie",
+      "country": [
+        "Swedish"
+      ],
+      "age": "27",
+      "height": "173",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/07/Ellie.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Gabrielle",
+      "country": [
+        "Australian"
+      ],
+      "age": "35",
+      "height": "170",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/01/Gabrielle.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Georgia",
+      "country": [
+        "American/New Zealander"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/03/Georgia.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Gia",
+      "country": [
+        "Australian/Italian"
+      ],
+      "age": "25",
+      "height": "180",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/12/Gia.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hallie",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "163",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/06/evie-18.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hazel",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "173",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/06/Hazel.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hennessy",
+      "country": [
+        "African"
+      ],
+      "age": "24",
+      "height": "180",
+      "cup": "C",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/02/Hennesy.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Icra",
+      "country": [
+        "Indian"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/08/C3847CC5-9DB7-420A-9114-62CA31E8D9B7.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Isabella",
+      "country": [
+        "Spanish"
+      ],
+      "age": "25",
+      "height": "170",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/06/Isabella.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Isla",
+      "country": [
+        "Australian/fijian"
+      ],
+      "age": "20",
+      "height": "168",
+      "cup": "A",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2022/05/isla.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ivy",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "170",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/03/Ivy.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jane",
+      "country": [
+        "Thai"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/04/Jade.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Janelle",
+      "country": [
+        "African"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2019/04/Michelle-IMG_7621.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jessica",
+      "country": [
+        "Italian"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/08/82419633-3267-477F-9A46-9D2FB904657C-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lani",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "C",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/12/Lani.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lara",
+      "country": [
+        "Indian"
+      ],
+      "age": "19",
+      "height": "165",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2018/03/Porsha-IMG_6464.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lilian",
+      "country": [
+        "Australian/Chinese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/11/Lillian-ATMC.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lily",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "168",
+      "cup": "C",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/07/Lily-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lola",
+      "country": [
+        "Italian"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/09/Lola.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lucy",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/12/Kora.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Maddison",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "C",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/05/Maddison.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Melody",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "170",
+      "cup": "E",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/01/Chanel5.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mia",
+      "country": [
+        "English"
+      ],
+      "age": "33",
+      "height": "163",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/11/Mia.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Miley",
+      "country": [
+        "French/Australian"
+      ],
+      "age": "33",
+      "height": "170",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2022/09/emma53-1.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nadia",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "157",
+      "cup": "C",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/09/NADIA-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Natalie",
+      "country": [
+        "South American"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/02/Natalie.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Natasha",
+      "country": [
+        "Singapore"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/04/Natasha-2-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Petra",
+      "country": [
+        "Eastern European"
+      ],
+      "age": "25",
+      "height": "163",
+      "cup": "B",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2013/10/camera_shy.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Poppy",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/06/Poppy.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Roxy",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2022/07/DSC05245-1.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sierra",
+      "country": [
+        "Hawaiian"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/11/Sierra-ATMC-Sydney.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Stacey",
+      "country": [
+        "Australian/South American"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "E",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/09/Stacy.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Valerie",
+      "country": [
+        "Polish"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/06/Valorie.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Violet",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "170",
+      "cup": "A",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/02/Violet.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Zoey",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "165",
+      "cup": "C",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/10/Zoey.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amy",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "22",
+      "height": "160",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "April",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "178",
+      "cup": "E",
+      "body": "12",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Brielle",
+      "country": [
+        "Australian"
+      ],
+      "age": "26",
+      "height": "170",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Darcy",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dylan",
+      "country": [
+        "Australian/Italian"
+      ],
+      "age": "30",
+      "height": "168",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Giselle",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "173",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mila",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ruby",
+      "country": [
+        "Australian/European"
+      ],
+      "age": "29",
+      "height": "165",
+      "cup": "E",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Scarlett",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Snow",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "165",
+      "cup": "D",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sophia",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "163",
+      "cup": "F",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tasha",
+      "country": [
+        "Caribbean"
+      ],
+      "age": "22",
+      "height": "180",
+      "cup": "C",
+      "body": "8",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tiffany",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "D",
+      "body": "6",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Vivian",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "28",
+      "height": "165",
+      "cup": "",
+      "body": "10",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "/wp-content/uploads/2013/10/coming_soon.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    }
+  ],
   "calendar": {
     "_published": [
       "2026-04-03",
@@ -11,6 +1352,6 @@
       "2026-04-05"
     ]
   },
-  "lastGirlsSync": null,
+  "lastGirlsSync": "2026-04-03T00:33:27.645Z",
   "lastCalendarSync": "2026-04-02T22:53:04.105Z"
 }

@@ -1591,47 +1591,55 @@ async function scrapeJiniaRoster(site) {
   if (!resp.ok) throw new Error(`Jinia roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
-  // Homepage shows today's working girls as portfolio items with title='Name HH:MMam/pm-HH:MMam/pm'
-  const titleRe = /title='([^']+)'/g;
-  const todayStr = fmtDate(getAEDTDate());
-  const names = [];
-  let m;
-  while ((m = titleRe.exec(html)) !== null) {
-    let raw = m[1].trim();
-    if (!raw || /Search|Menu|Facebook|Instagram|Close|Submit|Jinia|Scroll|parking|brothel|porn|jinia|zinia|Image|YouCut|^\d+$|图片|副本/i.test(raw)) continue;
-    // Strip time suffix to get clean name
-    let name = raw
-      .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
-      .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
-      .replace(/\s*\(\d+yo\)/gi, '')
-      .replace(/\s*\*.*$/gi, '')
-      .trim();
-    if (name && name.length >= 2 && !names.includes(name)) names.push(name);
+  // Homepage has 7 content sliders (avia-content-slider1 through slider7), one per day of the week:
+  // Slider 1 = Sunday, 2 = Monday, ..., 7 = Saturday
+  const today = getAEDTDate();
+  const todayDow = today.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  const calendar = {};
+
+  for (let sliderNum = 1; sliderNum <= 7; sliderNum++) {
+    const dayOffset = (sliderNum - 1) - todayDow; // slider1=Sun(0), slider5=Thu(4), etc
+    const targetDate = new Date(today);
+    targetDate.setDate(today.getDate() + dayOffset);
+    // Only include today and future days (up to 6 days ahead)
+    if (dayOffset < 0) targetDate.setDate(targetDate.getDate() + 7); // wrap to next week
+    const dateStr = fmtDate(targetDate);
+
+    // Extract section content between this slider and the next
+    const marker = `avia-content-slider${sliderNum} `;
+    const idx = html.indexOf(marker);
+    if (idx === -1) continue;
+    const nextMarker = `avia-content-slider${sliderNum + 1} `;
+    const nextIdx = sliderNum < 7 ? html.indexOf(nextMarker, idx + 1) : html.length;
+    const section = html.substring(idx, nextIdx > -1 ? nextIdx : html.length);
+
+    // Parse girl names and shift times from title attributes
+    const titleRe = /title='([^']+)'/g;
+    const entries = [];
+    let m;
+    while ((m = titleRe.exec(section)) !== null) {
+      const raw = m[1].trim();
+      if (!raw || /Search|Menu|Facebook|Instagram|Jinia|Scroll|parking|brothel|porn|jinia|zinia|Image|YouCut|^\d+$|图片|副本/i.test(raw)) continue;
+
+      const timeMatch = raw.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s*[-–~]\s*(\d{1,2}(?::\d{2})?\s*(?:am|pm)|close)/i);
+      let name = raw
+        .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
+        .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
+        .replace(/\s*\(\d+yo\)/gi, '').replace(/\s*\*.*$/gi, '').trim();
+      if (!name || name.length < 2 || entries.some(e => e.name === name)) continue;
+
+      const entry = { name };
+      if (timeMatch) {
+        entry.start = ampmTo24(timeMatch[1]);
+        entry.end = ampmTo24(timeMatch[2]);
+      }
+      entries.push(entry);
+    }
+
+    if (entries.length) calendar[dateStr] = entries;
   }
 
-  if (names.length === 0) return {};
-  const rosterEntries = [];
-  // Re-parse to get shift times
-  const shiftRe = /title='([^']+)'/g;
-  let sm;
-  while ((sm = shiftRe.exec(html)) !== null) {
-    const raw = sm[1].trim();
-    // Match "Name HH:MMam/pm-HH:MMam/pm" or "Name HH:MMam/pm-close"
-    const timeMatch = raw.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s*[-–~]\s*(\d{1,2}(?::\d{2})?\s*(?:am|pm)|close)/i);
-    let name = raw
-      .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
-      .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
-      .replace(/\s*\(\d+yo\)/gi, '').replace(/\s*\*.*$/gi, '').trim();
-    if (!name || name.length < 2 || rosterEntries.some(e => e.name === name)) continue;
-    if (/Search|Menu|Facebook|Instagram|Jinia|Scroll|parking|brothel|porn|^\d+$|图片|副本/i.test(name)) continue;
-    const entry = { name };
-    if (timeMatch) {
-      entry.start = ampmTo24(timeMatch[1]);
-      entry.end = ampmTo24(timeMatch[2]);
-    }
-    rosterEntries.push(entry);
-  }
-  return rosterEntries.length ? { [todayStr]: rosterEntries } : {};
+  return calendar;
 }
 
 /* ── Wives Only custom scraper (Elementor, bgimage-roster) ── */

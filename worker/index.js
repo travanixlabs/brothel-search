@@ -231,7 +231,7 @@ const SITES = {
     baseUrl: 'https://jinia.com.au',
     girlsUrl: 'https://jinia.com.au/strathfield-hooker/',
     rosterUrl: 'https://jinia.com.au/',
-    rosterFormat: 'generic-wp',
+    rosterFormat: 'jinia',
     jsonPath: 'profiles/jinia.json',
     imgPrefix: 'profiles/jinia',
     siteType: 'wordpress',
@@ -1559,14 +1559,66 @@ async function scrapeStilettoRoster(site, env) {
   const calendar = {};
   for (const entry of entries) {
     const startTime = entry.starting_time; // "2026-04-03 15:00:00"
+    const endTime = entry.ending_time; // "2026-04-04 02:00:00"
     if (!startTime) continue;
     const dateStr = startTime.split(' ')[0]; // "2026-04-03"
     let name = (entry.post_title || '').replace(/\s*\*?New\*?\s*/gi, '').trim();
     if (!name) continue;
+    const start = startTime.split(' ')[1]?.slice(0, 5) || '';
+    const end = endTime ? endTime.split(' ')[1]?.slice(0, 5) || '' : '';
     if (!calendar[dateStr]) calendar[dateStr] = [];
-    if (!calendar[dateStr].includes(name)) calendar[dateStr].push(name);
+    if (!calendar[dateStr].some(e => e.name === name)) calendar[dateStr].push({ name, start, end });
   }
   return calendar;
+}
+
+async function scrapeJiniaRoster(site) {
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!resp.ok) throw new Error(`Jinia roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  // Homepage shows today's working girls as portfolio items with title='Name HH:MMam/pm-HH:MMam/pm'
+  const titleRe = /title='([^']+)'/g;
+  const todayStr = fmtDate(getAEDTDate());
+  const names = [];
+  let m;
+  while ((m = titleRe.exec(html)) !== null) {
+    let raw = m[1].trim();
+    if (!raw || /Search|Menu|Facebook|Instagram|Close|Submit|Jinia|Scroll|parking|brothel|porn|jinia|zinia|Image|YouCut|^\d+$|图片|副本/i.test(raw)) continue;
+    // Strip time suffix to get clean name
+    let name = raw
+      .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
+      .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
+      .replace(/\s*\(\d+yo\)/gi, '')
+      .replace(/\s*\*.*$/gi, '')
+      .trim();
+    if (name && name.length >= 2 && !names.includes(name)) names.push(name);
+  }
+
+  if (names.length === 0) return {};
+  const rosterEntries = [];
+  // Re-parse to get shift times
+  const shiftRe = /title='([^']+)'/g;
+  let sm;
+  while ((sm = shiftRe.exec(html)) !== null) {
+    const raw = sm[1].trim();
+    // Match "Name HH:MMam/pm-HH:MMam/pm" or "Name HH:MMam/pm-close"
+    const timeMatch = raw.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s*[-–~]\s*(\d{1,2}(?::\d{2})?\s*(?:am|pm)|close)/i);
+    let name = raw
+      .replace(/\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late|open)\b.*/gi, '')
+      .replace(/\d{1,2}:\d{2}\s*(?:am|pm)\s*[-–~]?\s*(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?|close|late)\b.*/gi, '')
+      .replace(/\s*\(\d+yo\)/gi, '').replace(/\s*\*.*$/gi, '').trim();
+    if (!name || name.length < 2 || rosterEntries.some(e => e.name === name)) continue;
+    if (/Search|Menu|Facebook|Instagram|Jinia|Scroll|parking|brothel|porn|^\d+$|图片|副本/i.test(name)) continue;
+    const entry = { name };
+    if (timeMatch) {
+      entry.start = timeMatch[1].replace(/\s/g, '');
+      entry.end = timeMatch[2].replace(/\s/g, '');
+    }
+    rosterEntries.push(entry);
+  }
+  return rosterEntries.length ? { [todayStr]: rosterEntries } : {};
 }
 
 /* ── Wives Only custom scraper (Elementor, bgimage-roster) ── */
@@ -2456,6 +2508,8 @@ async function syncCalendar(env, site) {
     ? await scrapeBellevue12Roster(site)
     : site.rosterFormat === 'stiletto-api'
     ? await scrapeStilettoRoster(site, env)
+    : site.rosterFormat === 'jinia'
+    ? await scrapeJiniaRoster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);

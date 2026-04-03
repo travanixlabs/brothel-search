@@ -1256,7 +1256,7 @@ async function syncBellevue12Girls(env, site) {
   return { added: addedNames.length, remaining: 0, names: addedNames };
 }
 
-async function scrapePennys77Roster(site) {
+async function scrapePennys77Roster(site, env) {
   const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
   if (!resp.ok) throw new Error(`Penny's 77 roster fetch failed: ${resp.status}`);
@@ -1267,20 +1267,89 @@ async function scrapePennys77Roster(site) {
   if (!todayMatch) return {};
   const dateStr = todayMatch[3] + '-' + String(todayMatch[2]).padStart(2, '0') + '-' + String(todayMatch[1]).padStart(2, '0');
 
-  // Extract names from article post excerpts: "Name: Nina"
-  const rosterSection = html.substring(html.indexOf('Roster'));
-  const nameRe = /Name:\s*([A-Za-z]+)/gi;
-  const names = new Set();
-  let m;
-  while ((m = nameRe.exec(rosterSection)) !== null) {
-    names.add(m[1].trim());
+  // Parse article blocks for profile data
+  const articles = html.split('<article ').slice(1);
+  const rosterGirls = [];
+  const countryMap = { thai: 'Thai', thailand: 'Thai', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', australian: 'Australian', aussie: 'Australian', japanese: 'Japanese', korean: 'Korean', polish: 'Polish', european: 'European', indian: 'Indian', spanish: 'Spanish' };
+
+  for (const article of articles) {
+    if (!article.includes('tag-roster')) continue;
+    const excerpt = article.substring(article.indexOf('post__excerpt') || 0);
+    const nameMatch = excerpt.match(/Name:\s*([A-Za-z]+)/i);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+
+    const ageMatch = excerpt.match(/Age\s*:?\s*(\d+)/i);
+    const heightMatch = excerpt.match(/Height\s*:?\s*(\d+)\s*cm/i) || excerpt.match(/Height\s*:?\s*(\d)[''](\d+)/i);
+    const cupMatch = excerpt.match(/Boobs:\s*([A-H](?:DD)?)/i) || excerpt.match(/([A-H](?:DD)?)\s*cup/i);
+    const natMatch = excerpt.match(/Nationality:\s*[^\w]*([A-Za-z]+)/i);
+    const bodyMatch = excerpt.match(/Body Size:\s*(\d+)/i) || excerpt.match(/Size:\s*(\d+)/i);
+
+    let heightCm = '';
+    if (heightMatch && heightMatch[2]) {
+      heightCm = String(Math.round(parseInt(heightMatch[1]) * 30.48 + parseInt(heightMatch[2]) * 2.54));
+    } else if (heightMatch) {
+      heightCm = heightMatch[1];
+    }
+
+    const country = natMatch ? (countryMap[natMatch[1].toLowerCase()] || natMatch[1]) : '';
+
+    // Get profile URL and photo from article
+    const urlMatch = article.match(/href="(https:\/\/pennys77\.com\.au\/[^"]+)"/);
+    const imgMatch = article.match(/src="(https:\/\/pennys77\.com\.au\/wp-content\/uploads\/[^"]+)"/);
+    // Get largest image (not thumbnail)
+    let photo = '';
+    if (imgMatch) {
+      const srcsetMatch = article.match(/srcset="([^"]+)"/);
+      if (srcsetMatch) {
+        const srcs = srcsetMatch[1].split(',').map(s => s.trim().split(/\s+/));
+        const largest = srcs.filter(s => !/-\d+x\d+\./.test(s[0]));
+        photo = largest.length ? largest[0][0] : srcs[srcs.length - 1][0];
+      } else {
+        photo = imgMatch[1];
+      }
+    }
+
+    rosterGirls.push({
+      name, age: ageMatch ? ageMatch[1] : '', height: heightCm,
+      cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: bodyMatch ? bodyMatch[1] : '',
+      country, oldUrl: urlMatch ? urlMatch[1] : '', photo,
+    });
+  }
+
+  // Create profiles for girls not already in the system
+  if (env && rosterGirls.length) {
+    try {
+      const { data, sha } = await loadData(env, site);
+      const existing = data.girls || [];
+      const existingNames = new Set(existing.map(g => g.name));
+      const added = [];
+      for (const g of rosterGirls) {
+        if (existingNames.has(g.name)) continue;
+        existing.push({
+          name: g.name, country: g.country ? [g.country] : [], age: g.age,
+          height: g.height, cup: g.cup, body: g.body,
+          val1: '', val2: '', val3: '',
+          startDate: dateStr, oldUrl: g.oldUrl, photos: g.photo ? [g.photo] : [],
+          labels: [], originalSite: 'Exists',
+        });
+        existingNames.add(g.name);
+        added.push(g.name);
+      }
+      if (added.length) {
+        data.girls = existing;
+        await ghPut(env, site.jsonPath, data, sha, `[Penny's 77] Auto-create from roster: ${added.join(', ')}`);
+        console.log(`[Penny's 77] Created ${added.length} profiles from roster: ${added.join(', ')}`);
+      }
+    } catch (e) { console.error("[Penny's 77] Error creating profiles from roster:", e.message); }
   }
 
   const result = {};
-  if (names.size) {
-    result[dateStr] = [...names].map(name => ({ name, start: '11:00', end: '03:00' }));
+  const names = rosterGirls.map(g => g.name);
+  if (names.length) {
+    result[dateStr] = names.map(name => ({ name, start: '11:00', end: '03:00' }));
   }
-  console.log(`[Penny's 77] Roster scraped: ${names.size} girls for ${dateStr}`);
+  console.log(`[Penny's 77] Roster scraped: ${names.length} girls for ${dateStr}`);
   return result;
 }
 
@@ -1810,7 +1879,7 @@ async function syncCalendar(env, site) {
     : site.rosterFormat === '429city'
     ? await scrape429CityRoster(site)
     : site.rosterFormat === 'pennys77'
-    ? await scrapePennys77Roster(site)
+    ? await scrapePennys77Roster(site, env)
     : site.rosterFormat === 'thegoldenapple'
     ? await scrapeGoldenAppleRoster(site)
     : site.rosterFormat === 'blackcatparlour'

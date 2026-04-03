@@ -42,7 +42,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/11/IMG_1922.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Riho",
@@ -277,7 +278,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/12/IMG_1956.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Nicole",
@@ -317,7 +319,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/09/IMG_8562-1.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Nana",
@@ -337,7 +340,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/08/IMG_1370.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Ami",
@@ -419,7 +423,8 @@
         "https://pennys77.com.au/wp-content/uploads/2024/04/88578e1cdc3bdbce9e76e18030a7c84a.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     }
   ],
   "calendar": {
@@ -437,8 +442,26 @@
     },
     "_published": [
       "2026-04-03"
-    ]
+    ],
+    "Daisy": {
+      "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Nana": {
+      "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Anjali": {
+      "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-03T00:15:22.003Z"
+  "lastCalendarSync": "2026-04-03T00:19:13.111Z"
 }

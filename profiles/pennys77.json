@@ -444,7 +444,8 @@
         "https://pennys77.com.au/wp-content/uploads/2022/03/Screenshot_20220104_001249_com.android.chrome_edit_371303881034489-1.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     }
   ],
   "calendar": {
@@ -480,8 +481,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Sonia": {
+      "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-03T00:19:13.111Z"
+  "lastCalendarSync": "2026-04-03T00:25:00.894Z"
 }

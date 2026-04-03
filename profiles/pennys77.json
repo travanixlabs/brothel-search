@@ -465,7 +465,8 @@
         "https://pennys77.com.au/wp-content/uploads/2026/02/IMG_0002.webp"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     }
   ],
   "calendar": {
@@ -507,8 +508,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Kelly": {
+      "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-03T00:25:00.894Z"
+  "lastCalendarSync": "2026-04-03T10:00:44.692Z"
 }

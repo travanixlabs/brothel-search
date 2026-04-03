@@ -1287,7 +1287,7 @@ function getAvailabilityText(g) {
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.getFullYear() + '-' + String(yesterday.getMonth() + 1).padStart(2, '0') + '-' + String(yesterday.getDate()).padStart(2, '0');
     const ySlot = cal[yesterdayStr];
-    if (ySlot) {
+    if (ySlot && ySlot.start && ySlot.end && ySlot.start.includes(':') && ySlot.end.includes(':')) {
       const [ysh, ysm] = ySlot.start.split(':').map(Number);
       const [yeh, yem] = ySlot.end.split(':').map(Number);
       const yStartMins = ysh * 60 + ysm;
@@ -1301,7 +1301,7 @@ function getAvailabilityText(g) {
   }
 
   const slot = cal[today];
-  if (slot) {
+  if (slot && slot.start && slot.end && slot.start.includes(':') && slot.end.includes(':')) {
     const [sh, sm] = slot.start.split(':').map(Number);
     const [eh, em] = slot.end.split(':').map(Number);
     const startMins = sh * 60 + sm;
@@ -1310,16 +1310,23 @@ function getAvailabilityText(g) {
     const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
     if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
     if (nowMins < startMins) return 'Available Later Today (' + timeStr + ')';
+  } else if (slot) {
+    return 'Available Now';
   }
   // Check future dates
   const futureDates = Object.keys(cal).filter(d => d > today && !d.startsWith('_'));
   if (futureDates.length) {
     const next = futureDates.sort()[0];
     const fSlot = cal[next];
-    const fTimeStr = fmt24to12(fSlot.start) + ' - ' + fmt24to12(fSlot.end);
+    if (fSlot && fSlot.start && fSlot.end && fSlot.start.includes(':') && fSlot.end.includes(':')) {
+      const fTimeStr = fmt24to12(fSlot.start) + ' - ' + fmt24to12(fSlot.end);
+      const dObj = new Date(next + 'T00:00:00');
+      const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      return 'Available Future: ' + dayNames[dObj.getDay()] + ' ' + next.slice(5) + ' (' + fTimeStr + ')';
+    }
     const dObj = new Date(next + 'T00:00:00');
     const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    return 'Available Future: ' + dayNames[dObj.getDay()] + ' ' + next.slice(5) + ' (' + fTimeStr + ')';
+    return 'Available Future: ' + dayNames[dObj.getDay()] + ' ' + next.slice(5);
   }
   return 'ended';
 }
@@ -1328,7 +1335,7 @@ function isAvailableAt(g, dateStr, timeMins) {
   const cal = calendarData[(g.venue || '') + ':' + g.name];
   if (!cal) return false;
   const slot = cal[dateStr];
-  if (!slot) return false;
+  if (!slot || !slot.start || !slot.end || !slot.start.includes(':') || !slot.end.includes(':')) return !!slot;
   const [sh, sm] = slot.start.split(':').map(Number);
   const [eh, em] = slot.end.split(':').map(Number);
   const startMins = sh * 60 + sm;
@@ -1343,7 +1350,7 @@ function getAvailabilityStatus(g) {
   const now = new Date();
   const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   const slot = cal[todayStr];
-  if (slot) {
+  if (slot && slot.start && slot.end && slot.start.includes(':') && slot.end.includes(':')) {
     const [sh, sm] = slot.start.split(':').map(Number);
     const [eh, em] = slot.end.split(':').map(Number);
     const nowMins = now.getHours() * 60 + now.getMinutes();
@@ -1352,6 +1359,8 @@ function getAvailabilityStatus(g) {
     const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
     if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now';
     if (nowMins < startMins) return 'Available Later Today';
+  } else if (slot) {
+    return 'Available Now'; // Rostered but no time info
   }
   // Check future dates
   const dates = Object.keys(cal).filter(d => d > todayStr);

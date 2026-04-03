@@ -1110,11 +1110,10 @@ async function syncPennys77Girls(env, site) {
       const countryMap = { thai: 'Thai', thailand: 'Thai', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', china: 'Chinese', japanese: 'Japanese', japan: 'Japanese', korean: 'Korean', korea: 'Korean', australian: 'Australian', aussie: 'Australian', polish: 'Polish', european: 'European', caucasian: 'Australian', indian: 'Indian' };
       const country = natMatch ? (countryMap[natMatch[1].toLowerCase()] || natMatch[1]) : '';
 
-      const entry = {
       const asianNats = ['Thai','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
       const isAsian = asianNats.includes(country);
       const pricing = isAsian ? (site.pricingByCountry?.asian || {}) : (site.pricingByCountry?.other || site.defaultPricing || {});
-
+      const entry = {
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
         height: heightMatch ? heightMatch[1] : '', cup: cupMatch ? cupMatch[1].toUpperCase() : '',
         body: '', val1: pricing.val1 || '', val2: pricing.val2 || '', val3: pricing.val3 || '',
@@ -1173,8 +1172,8 @@ async function syncBlackCatGirls(env, site) {
     const country = natMatch ? natMatch[1].trim() : '';
     const photos = imgMatch ? [imgMatch[1]] : [];
 
+    const dp = site.defaultPricing || {};
     const entry = {
-      const dp = site.defaultPricing || {};
       name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
       height: heightCm, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
       val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
@@ -1248,8 +1247,8 @@ async function syncBellevue12Girls(env, site) {
       const dateMatch = url.match(/\/(\d{4})\/(\d{2})\/(\d{2})\//);
       const startDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3] : todayStr;
 
-      const entry = {
       const dp = site.defaultPricing || {};
+      const entry = {
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '', height: heightMatch ? heightMatch[1] : '',
         cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
         val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
@@ -1395,7 +1394,8 @@ async function syncGoldenAppleGirls(env, site) {
     const countryMatch = block.match(/class="country">([^<]+)/);
     const dressMatch = block.match(/class="dress">(\d+)/);
     const heightMatch = block.match(/class="height">(\d+)[''"](\d+)/);
-    const imgMatch = block.match(/data-original="([^"]+)"/);
+    const imgRaw = block.match(/data-original="([^"]+)"/);
+    const imgMatch = imgRaw && !imgRaw[1].includes('coming_soon') ? imgRaw : null;
 
     let heightCm = '';
     if (heightMatch) {

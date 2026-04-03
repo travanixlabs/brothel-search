@@ -8456,6 +8456,35 @@
       "labels": [],
       "lastModified": "2026-04-02T06:00:46.397Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Yaki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-03",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yaki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/5c6103492e9eae207a29d0cca5df724d.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/c6591987443d6e64f0a34bd32c2f68b0.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/91c4e959f28fbab17db2e181c05fa33b.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/1489c480d5c79073aee78b63167a32dc.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/f8566f08f02342dc5ab6ca581b380405.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/aea2732c68a0f46de3ccdc44648f549c.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/3bb2be7e3e8c281fb370047aa6376af2.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-03T06:00:54.230Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9043,7 +9072,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-02T06:00:46.397Z",
+  "lastGirlsSync": "2026-04-03T06:00:54.230Z",
   "lastCalendarSync": "2026-04-02T10:01:01.160Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

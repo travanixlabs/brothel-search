@@ -1799,6 +1799,8 @@ async function syncJiniaGirls(env, site) {
         if (/-(80x80|36x36|120x120|180x180)\./i.test(src)) continue;
         // Strip WP dimension suffix to get original: image-529x705.jpg -> image.jpg
         src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+        // Percent-encode non-ASCII chars (e.g. Chinese 图片) so URLs work in browsers
+        src = encodeURI(src);
         if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
       }
 

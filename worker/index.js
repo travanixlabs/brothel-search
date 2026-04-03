@@ -1710,14 +1710,15 @@ async function syncJiniaGirls(env, site) {
       let height = heightMatch ? heightMatch[1] : '';
       if (height && parseInt(height) < 100) height = '1' + height;
 
-      // Photos: collect all upload URLs, strip dimension suffixes to get originals, skip QR/logo/thumbnails
-      const photoRe = /src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+      // Photos: collect from both src= and href= (masonry gallery uses href for larger versions)
+      // Strip dimension suffixes to get originals, skip QR/logo/thumbnails
+      const photoRe = /(?:src|href)="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
       const photoSet = new Set();
       const photos = [];
       let pm;
       while ((pm = photoRe.exec(pHtml)) !== null) {
         let src = pm[1];
-        if (/QR|qr|logo/i.test(src)) continue;
+        if (/QR|qr|logo|QXqOMWY5vY/i.test(src)) continue;
         // Skip tiny thumbnails (80x80 etc used in sidebar)
         if (/-(80x80|36x36|120x120|180x180)\./i.test(src)) continue;
         // Strip WP dimension suffix to get original: image-529x705.jpg -> image.jpg

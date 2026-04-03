@@ -3,8 +3,225 @@
   "venueURL": "https://jinia.com.au/",
   "venueLocation": "2/81-89 Cosgrove Rd, Strathfield South NSW 2136",
   "venueLocationCoordinates": "-33.89686475038878, 151.07533399699363",
-  "girls": [],
+  "girls": [
+    {
+      "name": "Nika",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/nika/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260330093634-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hazel",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/hazel/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/mmexport1774337200004-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Angela",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/angela-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260311025717_123_20-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ami",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/ami/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/11/图片_20260103060716_574_2-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Linda",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/linda/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/12/图片_20251205095125_副本-1-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yumi",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/yumi-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260331092631-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cassie",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/cassie-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/05/图片_20250511130614-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "June",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/june/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Eva",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/eva/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260401093820-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lucy",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/lucy-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260401094425-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Anna",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/anna-5/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/图片_20251101081431_323_2-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bobo",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://jinia.com.au/bobo/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/10/图片_20241026113010-360x480.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    }
+  ],
   "calendar": {},
-  "lastGirlsSync": null,
+  "lastGirlsSync": "2026-04-03T09:48:24.480Z",
   "lastCalendarSync": null
 }

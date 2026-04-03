@@ -22,7 +22,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/å›¾ç‰‡_20260401093820.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Lucy",
@@ -42,7 +43,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/å›¾ç‰‡_20260401094425.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Nika",
@@ -62,7 +64,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/å›¾ç‰‡_20260330093634.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Hazel",
@@ -82,7 +85,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/mmexport1774337200004.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "May",
@@ -163,7 +167,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/å›¾ç‰‡_20260311025717_123_20.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Marissa",
@@ -339,7 +344,8 @@
         "https://jinia.com.au/wp-content/uploads/2025/11/å›¾ç‰‡_20260103060716_574_2.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Cassie",
@@ -359,7 +365,8 @@
         "https://jinia.com.au/wp-content/uploads/2025/05/å›¾ç‰‡_20250511130614.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Linda",
@@ -379,7 +386,8 @@
         "https://jinia.com.au/wp-content/uploads/2025/12/å›¾ç‰‡_20251205095125_å‰¯æœ¬-1.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Vivian",
@@ -477,7 +485,8 @@
         "https://jinia.com.au/wp-content/uploads/2026/01/å›¾ç‰‡_20260331092631.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Rika",
@@ -817,7 +826,8 @@
         "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Anna",
@@ -835,7 +845,8 @@
         "https://jinia.com.au/wp-content/uploads/2025/10/å›¾ç‰‡_20251101081431_323_2.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Bobo",
@@ -853,7 +864,8 @@
         "https://jinia.com.au/wp-content/uploads/2024/10/å›¾ç‰‡_20241026113010.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Coco",
@@ -1744,7 +1756,80 @@
       "originalSite": "Exists"
     }
   ],
-  "calendar": {},
+  "calendar": {
+    "Nika": {
+      "2026-04-03": {
+        "start": "12:30pm",
+        "end": "close"
+      }
+    },
+    "Hazel": {
+      "2026-04-03": {
+        "start": "1:00pm",
+        "end": "close"
+      }
+    },
+    "Angela": {
+      "2026-04-03": {
+        "start": "11:00am",
+        "end": "6:00pm"
+      }
+    },
+    "Ami": {
+      "2026-04-03": {
+        "start": "2:00pm",
+        "end": "2:00am"
+      }
+    },
+    "Linda": {
+      "2026-04-03": {
+        "start": "12:00pm",
+        "end": "CLOSE"
+      }
+    },
+    "Yumi": {
+      "2026-04-03": {
+        "start": "10:30am",
+        "end": "CLOSE"
+      }
+    },
+    "Cassie": {
+      "2026-04-03": {
+        "start": "5:00pm",
+        "end": "3:00am"
+      }
+    },
+    "June": {
+      "2026-04-03": {
+        "start": "6:00pm",
+        "end": "12:00am"
+      }
+    },
+    "Eva": {
+      "2026-04-03": {
+        "start": "6:00pm",
+        "end": "close"
+      }
+    },
+    "Lucy": {
+      "2026-04-03": {
+        "start": "4:00pm",
+        "end": "3:30am"
+      }
+    },
+    "Anna": {
+      "2026-04-03": {}
+    },
+    "Bobo": {
+      "2026-04-03": {
+        "start": "7:30pm",
+        "end": "4:00am"
+      }
+    },
+    "_published": [
+      "2026-04-03"
+    ]
+  },
   "lastGirlsSync": "2026-04-03T10:08:32.538Z",
-  "lastCalendarSync": null
+  "lastCalendarSync": "2026-04-03T10:23:18.883Z"
 }

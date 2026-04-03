@@ -129,6 +129,10 @@ const SITES = {
     jsonPath: 'profiles/pennys77.json',
     imgPrefix: 'profiles/pennys77',
     siteType: 'wordpress',
+    pricingByCountry: {
+      asian: { val1: '180', val2: '260', val3: '310' },
+      other: { val1: '170', val2: '250', val3: '300' },
+    },
     embedPhotos: true,
   },
   thegoldenapple: {
@@ -140,6 +144,7 @@ const SITES = {
     jsonPath: 'profiles/thegoldenapple.json',
     imgPrefix: 'profiles/thegoldenapple',
     siteType: 'wordpress',
+    defaultPricing: { val1: '260', val2: '330', val3: '400' },
     embedPhotos: true,
   },
   blackcatparlour: {
@@ -151,6 +156,7 @@ const SITES = {
     jsonPath: 'profiles/blackcatparlour.json',
     imgPrefix: 'profiles/blackcatparlour',
     siteType: 'custom',
+    defaultPricing: { val1: '260', val2: '330', val3: '400' },
     embedPhotos: true,
   },
   bellevue12: {
@@ -162,6 +168,7 @@ const SITES = {
     jsonPath: 'profiles/bellevue12.json',
     imgPrefix: 'profiles/bellevue12',
     siteType: 'wordpress',
+    defaultPricing: { val1: '80', val2: '130', val3: '160' },
     embedPhotos: true,
   },
 };
@@ -1104,9 +1111,13 @@ async function syncPennys77Girls(env, site) {
       const country = natMatch ? (countryMap[natMatch[1].toLowerCase()] || natMatch[1]) : '';
 
       const entry = {
+      const asianNats = ['Thai','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
+      const isAsian = asianNats.includes(country);
+      const pricing = isAsian ? (site.pricingByCountry?.asian || {}) : (site.pricingByCountry?.other || site.defaultPricing || {});
+
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
         height: heightMatch ? heightMatch[1] : '', cup: cupMatch ? cupMatch[1].toUpperCase() : '',
-        body: '', val1: '', val2: '', val3: '',
+        body: '', val1: pricing.val1 || '', val2: pricing.val2 || '', val3: pricing.val3 || '',
         startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);
@@ -1163,9 +1174,10 @@ async function syncBlackCatGirls(env, site) {
     const photos = imgMatch ? [imgMatch[1]] : [];
 
     const entry = {
+      const dp = site.defaultPricing || {};
       name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
       height: heightCm, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
-      val1: '', val2: '', val3: '',
+      val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
       startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
     };
     existing.push(entry);
@@ -1237,9 +1249,10 @@ async function syncBellevue12Girls(env, site) {
       const startDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3] : todayStr;
 
       const entry = {
+      const dp = site.defaultPricing || {};
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '', height: heightMatch ? heightMatch[1] : '',
         cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
-        val1: '', val2: '', val3: '',
+        val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
         startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);
@@ -1326,10 +1339,13 @@ async function scrapePennys77Roster(site, env) {
       const added = [];
       for (const g of rosterGirls) {
         if (existingNames.has(g.name)) continue;
+        const asianNats2 = ['Thai','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
+        const isAsian2 = asianNats2.includes(g.country);
+        const pr = isAsian2 ? (site.pricingByCountry?.asian || {}) : (site.pricingByCountry?.other || site.defaultPricing || {});
         existing.push({
           name: g.name, country: g.country ? [g.country] : [], age: g.age,
           height: g.height, cup: g.cup, body: g.body,
-          val1: '', val2: '', val3: '',
+          val1: pr.val1 || '', val2: pr.val2 || '', val3: pr.val3 || '',
           startDate: dateStr, oldUrl: g.oldUrl, photos: g.photo ? [g.photo] : [],
           labels: [], originalSite: 'Exists',
         });
@@ -1392,7 +1408,7 @@ async function syncGoldenAppleGirls(env, site) {
       name, country: countryMatch ? [countryMatch[1].trim()] : [],
       age: ageMatch ? ageMatch[1] : '', height: heightCm,
       cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
-      val1: '', val2: '', val3: '',
+      val1: (site.defaultPricing || {}).val1 || '', val2: (site.defaultPricing || {}).val2 || '', val3: (site.defaultPricing || {}).val3 || '',
       startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
     });
     existingNames.add(name);

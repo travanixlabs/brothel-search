@@ -1250,30 +1250,28 @@ async function syncBellevue12Girls(env, site) {
 }
 
 async function scrapePennys77Roster(site) {
-  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
   if (!resp.ok) throw new Error(`Penny's 77 roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
+  // Date from "Today's Roster (03/04/2026)"
   const todayMatch = html.match(/Today.s Roster\s*\((\d{1,2})\/(\d{1,2})\/(\d{4})\)/i);
   if (!todayMatch) return {};
+  const dateStr = todayMatch[3] + '-' + String(todayMatch[2]).padStart(2, '0') + '-' + String(todayMatch[1]).padStart(2, '0');
 
-  const dateStr = todayMatch[3] + '-' + todayMatch[2].padStart(2, '0') + '-' + todayMatch[1].padStart(2, '0');
-
-  // Extract girl names from roster section - they appear as links or text after the roster date
-  const rosterSection = html.substring(html.indexOf('Today'));
-  const nameRe = /href="https:\/\/pennys77\.com\.au\/[^"]*"[^>]*>([^<]+)</gi;
+  // Extract names from article post excerpts: "Name: Nina"
+  const rosterSection = html.substring(html.indexOf('Roster'));
+  const nameRe = /Name:\s*([A-Za-z]+)/gi;
   const names = new Set();
   let m;
   while ((m = nameRe.exec(rosterSection)) !== null) {
-    const name = m[1].trim();
-    if (name && name.length < 30 && !/menu|home|contact|girl|rate|service/i.test(name)) {
-      names.add(name);
-    }
+    names.add(m[1].trim());
   }
 
   const result = {};
   if (names.size) {
-    result[dateStr] = [...names].map(name => ({ name, start: '10:00', end: '04:00' }));
+    result[dateStr] = [...names].map(name => ({ name, start: '11:00', end: '03:00' }));
   }
   console.log(`[Penny's 77] Roster scraped: ${names.size} girls for ${dateStr}`);
   return result;

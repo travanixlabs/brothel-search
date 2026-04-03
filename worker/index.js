@@ -185,19 +185,19 @@ const SITES = {
   marrickvillebrothel: {
     name: 'Marrickville Brothel',
     baseUrl: 'https://www.marrickvillebrothel.com',
-    girlsUrl: 'https://www.marrickvillebrothel.com/',
-    rosterUrl: 'https://www.marrickvillebrothel.com/',
+    girlsUrl: 'https://www.marrickvillebrothel.com/ladies.php',
+    rosterUrl: 'https://www.marrickvillebrothel.com/roster.php',
     rosterFormat: 'generic-wp',
     jsonPath: 'profiles/marrickvillebrothel.json',
     imgPrefix: 'profiles/marrickvillebrothel',
-    siteType: 'wordpress',
+    siteType: 'php',
     embedPhotos: true,
   },
   springhouse: {
     name: 'Spring House',
     baseUrl: 'https://46springhouse.com.au',
-    girlsUrl: 'https://46springhouse.com.au/',
-    rosterUrl: 'https://46springhouse.com.au/',
+    girlsUrl: 'https://46springhouse.com.au/ladies/',
+    rosterUrl: 'https://46springhouse.com.au/roster/',
     rosterFormat: 'generic-wp',
     jsonPath: 'profiles/springhouse.json',
     imgPrefix: 'profiles/springhouse',
@@ -207,9 +207,9 @@ const SITES = {
   stiletto: {
     name: 'Stiletto',
     baseUrl: 'https://www.stilettosydney.com',
-    girlsUrl: 'https://www.stilettosydney.com/',
-    rosterUrl: 'https://www.stilettosydney.com/',
-    rosterFormat: 'generic-wp',
+    girlsUrl: 'https://www.stilettosydney.com/ladies-of-stiletto/',
+    rosterUrl: 'https://www.stilettosydney.com/wp-json/roster-manager/v1/availability/current',
+    rosterFormat: 'stiletto-api',
     jsonPath: 'profiles/stiletto.json',
     imgPrefix: 'profiles/stiletto',
     siteType: 'wordpress',
@@ -218,8 +218,8 @@ const SITES = {
   wivesonly: {
     name: 'Wives Only',
     baseUrl: 'https://wivesonly.com.au',
-    girlsUrl: 'https://wivesonly.com.au/',
-    rosterUrl: 'https://wivesonly.com.au/',
+    girlsUrl: 'https://wivesonly.com.au/wives-only-ladies/',
+    rosterUrl: 'https://wivesonly.com.au/ladies-roster/',
     rosterFormat: 'generic-wp',
     jsonPath: 'profiles/wivesonly.json',
     imgPrefix: 'profiles/wivesonly',
@@ -1334,6 +1334,303 @@ async function syncBellevue12Girls(env, site) {
   return { added: addedNames.length, remaining: 0, names: addedNames };
 }
 
+/* ── Marrickville Brothel custom scraper (plain PHP site) ── */
+async function syncMarrickvilleBrothelGirls(env, site) {
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse: <h5><a href="page.php?ID=N"><img src="/data/files/X.jpg" height="260">\n<span class="blue">Name</span></a></h5>
+  const liRe = /<h5><a href="page\.php\?ID=(\d+)"><img src="([^"]+)"[^>]*>\s*<span class="blue">([^<]+)<\/span>/gi;
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  let m;
+
+  while ((m = liRe.exec(html)) !== null) {
+    const [, id, imgPath, rawName] = m;
+    const name = rawName.trim();
+    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    const photo = imgPath.startsWith('http') ? imgPath : site.baseUrl + imgPath;
+    const entry = {
+      name, country: [], age: '', height: '', cup: '', body: '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: site.baseUrl + '/page.php?ID=' + id,
+      photos: [photo], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Marrickville Brothel] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+/* ── Spring House custom scraper (WordPress, structured listing) ── */
+async function syncSpringHouseGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse girl blocks: <a href="URL" class="item ..."><div class="girl"><img src="PHOTO">...<span class="age roundBorder">Age: N</span><span class="nationality roundBorder">X</span>...<h3 class="name">Name</h3>
+  const blocks = html.split('class="item col-');
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  const countryMap = { china: 'Chinese', chinese: 'Chinese', singapore: 'Singaporean', singaporean: 'Singaporean', thai: 'Thai', thailand: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian', 'hong kong': 'Hong Kong' };
+
+  for (const block of blocks) {
+    const nameMatch = block.match(/class="name">([^<]+)/);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    const urlMatch = block.match(/href="(https:\/\/46springhouse\.com\.au\/[^"]+)"/);
+    const imgMatch = block.match(/<img[^>]+src="(https:\/\/46springhouse\.com\.au\/wp-content\/uploads\/[^"]+)"/);
+    const ageMatch = block.match(/Age:\s*(\d+)/i);
+    const natMatch = block.match(/class="nationality[^"]*">([^<]+)/);
+
+    let country = '';
+    if (natMatch) {
+      const raw = natMatch[1].trim().toLowerCase();
+      country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
+    }
+
+    const photo = imgMatch ? imgMatch[1] : '';
+    const entry = {
+      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+      height: '', cup: '', body: '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
+      photos: photo ? [photo] : [], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Spring House] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+/* ── Stiletto custom scraper (WordPress, data attributes + REST API roster) ── */
+async function syncStilettoGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch('https://www.stilettosydney.com/ladies-of-stiletto/', { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse: <div class="worker-tile post-NNN" data-stature='...' data-nationality='Asian'><a href="URL" class="worker-tile-img-container" title="Name *New*"><div class="worker-tile-img" style="background-image: url('PHOTO')"></div></a>
+  const tileRe = /<div class="worker-tile post-\d+"([^>]*)>\s*<a href="([^"]+)" class="worker-tile-img-container" title="([^"]+)">\s*<div class="worker-tile-img" style="background-image: url\('([^']+)'\)"/g;
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  let m;
+
+  while ((m = tileRe.exec(html)) !== null) {
+    const [, attrs, profileUrl, rawTitle, photoUrl] = m;
+    // Clean name: remove "*New*", trailing numbers
+    let name = rawTitle.replace(/\s*\*?New\*?\s*/gi, '').trim();
+    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    // Extract data attributes
+    const natMatch = attrs.match(/data-nationality='([^']+)'/);
+    const bustSizeMatch = attrs.match(/data-bust-size='([^']+)'/);
+    const figureMatch = attrs.match(/data-figure='([^']+)'/);
+    const statureMatch = attrs.match(/data-stature='([^']+)'/);
+
+    // Stiletto uses generic "Asian" / "European" / "Latin" etc for nationality
+    const nat = natMatch ? natMatch[1].trim() : '';
+    const cup = bustSizeMatch ? bustSizeMatch[1].replace(/\+/, '').trim() : '';
+
+    const entry = {
+      name, country: nat ? [nat] : [], age: '', height: '',
+      cup, body: figureMatch ? figureMatch[1] : '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: profileUrl,
+      photos: photoUrl ? [photoUrl] : [], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Stiletto] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+async function scrapeStilettoRoster(site, env) {
+  const resp = await fetch('https://www.stilettosydney.com/wp-json/roster-manager/v1/availability/current', {
+    headers: { 'User-Agent': UA },
+  });
+  if (!resp.ok) throw new Error(`Stiletto roster API failed: ${resp.status}`);
+  const entries = await resp.json();
+  if (!Array.isArray(entries) || !entries.length) return {};
+
+  const calendar = {};
+  for (const entry of entries) {
+    const startTime = entry.starting_time; // "2026-04-03 15:00:00"
+    if (!startTime) continue;
+    const dateStr = startTime.split(' ')[0]; // "2026-04-03"
+    let name = (entry.post_title || '').replace(/\s*\*?New\*?\s*/gi, '').trim();
+    if (!name) continue;
+    if (!calendar[dateStr]) calendar[dateStr] = [];
+    if (!calendar[dateStr].includes(name)) calendar[dateStr].push(name);
+  }
+  return calendar;
+}
+
+/* ── Wives Only custom scraper (Elementor, bgimage-roster) ── */
+async function syncWivesOnlyGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch('https://wivesonly.com.au/wives-only-ladies/', { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse blocks: name from <a href="URL"><h4>Name</h4></a>, photo from bgimage-roster style, model-parameters for height/bust/age
+  // Structure: <div class="bgimage-roster" style="background-image:url(PHOTO)">...model-parameters...Height/Bust/Age/Hair...</div>...<div class="mid-title-name"><a href="URL"><h4>Name</h4></a></div>
+  const blocks = html.split('class="col-sm-3 ohoverzoom');
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+
+  for (const block of blocks) {
+    const nameMatch = block.match(/<h4>([^<]+)<\/h4>/);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+    if (!name || name === 'New Girl' || existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    const urlMatch = block.match(/href="(https:\/\/wivesonly\.com\.au\/[^"]+)"/);
+    const imgMatch = block.match(/background-image:url\(([^)]+)\)/);
+    const heightMatch = block.match(/Height<\/span><br><span>(\d+)/);
+    const bustMatch = block.match(/Bust<\/span><br><span>([^<]+)/);
+    const ageMatch = block.match(/Age<\/span><br><span>(\d+)/);
+
+    const cupMatch = bustMatch ? bustMatch[1].match(/([A-H](?:DD)?)\s*cup/i) : null;
+    const photo = imgMatch ? imgMatch[1] : '';
+
+    const entry = {
+      name, country: [], age: ageMatch ? ageMatch[1] : '',
+      height: heightMatch ? heightMatch[1] : '',
+      cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
+      photos: photo ? [photo] : [], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Wives Only] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+/* ── Jinia custom scraper (Enfold/Avia portfolio theme) ── */
+async function syncJiniaGirls(env, site) {
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
+  const html = await resp.text();
+
+  // Parse portfolio articles: <article class='slide-entry...'><a href='URL'...<img src="PHOTO".../>...<a href='URL' title='Name Time'>Name Time</a>...<div class='slide-entry-excerpt...'>details</div>
+  const articles = html.split("class='slide-entry flex_column");
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  const seenUrls = new Set();
+  const countryMap = { chinese: 'Chinese', vietnamese: 'Vietnamese', thai: 'Thai', greek: 'Greek', japanese: 'Japanese', korean: 'Korean', 'hong kong': 'Hong Kong', taiwanese: 'Taiwanese', australian: 'Australian', singaporean: 'Singaporean', malaysian: 'Malaysian', indonesian: 'Indonesian' };
+
+  for (const article of articles) {
+    // Get profile URL and title
+    const linkMatch = article.match(/href='(https:\/\/jinia\.com\.au\/[^']+)'\s+title='([^']+)'/);
+    if (!linkMatch) continue;
+    const [, profileUrl, rawTitle] = linkMatch;
+
+    // Avoid duplicates (page shows same profiles in multiple slider sections)
+    if (seenUrls.has(profileUrl)) continue;
+    seenUrls.add(profileUrl);
+
+    // Extract name: remove time suffix like "12:30pm- close", "1:00pm-close", "10:30am-CLOSE"
+    let name = rawTitle.replace(/\s*\d{1,2}:\d{2}\s*(?:am|pm)\s*-?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)|close)\s*/gi, '').trim();
+    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    // Photo
+    const imgMatch = article.match(/src="(https:\/\/jinia\.com\.au\/wp-content\/uploads\/[^"]+)"/);
+
+    // Details from excerpt: "22yo | 160cm | 55kg | 36D" or free-form text
+    const excerptMatch = article.match(/slide-entry-excerpt[^>]*>[^<]*itemprop="text"\s*>([^<]+)/);
+    const excerpt = excerptMatch ? excerptMatch[1] : '';
+
+    const ageMatch = excerpt.match(/(\d{2})\s*(?:yo|years?[\s-]*old)/i) || excerpt.match(/(\d{2})yo/);
+    const heightMatch = excerpt.match(/(1[4-8]\d)\s*cm/i);
+    const cupMatch = excerpt.match(/(\d{2,3})([A-H])\b/) || excerpt.match(/([A-H])\s*cup/i);
+
+    // Try to detect country from excerpt
+    let country = '';
+    const lowerExcerpt = excerpt.toLowerCase();
+    for (const [key, val] of Object.entries(countryMap)) {
+      if (lowerExcerpt.includes(key)) { country = val; break; }
+    }
+    // Also check emoji flags
+    if (!country && /🇨🇳/.test(excerpt)) country = 'Chinese';
+    if (!country && /🇻🇳/.test(excerpt)) country = 'Vietnamese';
+    if (!country && /🇹🇭/.test(excerpt)) country = 'Thai';
+    if (!country && /🇬🇷/.test(excerpt)) country = 'Greek';
+
+    const cup = cupMatch ? (cupMatch[2] || cupMatch[1]).toUpperCase() : '';
+
+    const entry = {
+      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+      height: heightMatch ? heightMatch[1] : '', cup, body: '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: profileUrl,
+      photos: imgMatch ? [imgMatch[1]] : [], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Jinia] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
 async function scrapePennys77Roster(site, env) {
   const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
@@ -2037,6 +2334,8 @@ async function syncCalendar(env, site) {
     ? await scrapeBlackCatRoster(site)
     : site.rosterFormat === 'bellevue12'
     ? await scrapeBellevue12Roster(site)
+    : site.rosterFormat === 'stiletto-api'
+    ? await scrapeStilettoRoster(site, env)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);
@@ -2825,7 +3124,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-marrickvillebrothel-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.marrickvillebrothel)); }
+      try { return json(await syncMarrickvilleBrothelGirls(env, SITES.marrickvillebrothel)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-marrickvillebrothel-calendar' && request.method === 'POST') {
@@ -2833,7 +3132,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-springhouse-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.springhouse)); }
+      try { return json(await syncSpringHouseGirls(env, SITES.springhouse)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-springhouse-calendar' && request.method === 'POST') {
@@ -2841,7 +3140,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-stiletto-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.stiletto)); }
+      try { return json(await syncStilettoGirls(env, SITES.stiletto)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-stiletto-calendar' && request.method === 'POST') {
@@ -2849,7 +3148,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-wivesonly-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.wivesonly)); }
+      try { return json(await syncWivesOnlyGirls(env, SITES.wivesonly)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-wivesonly-calendar' && request.method === 'POST') {
@@ -2857,7 +3156,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-jinia-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.jinia)); }
+      try { return json(await syncJiniaGirls(env, SITES.jinia)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-jinia-calendar' && request.method === 'POST') {
@@ -3304,11 +3603,11 @@ export default {
           syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
           syncAllGirls(syncWpGirls, SITES.thegatewayclub),
-          syncAllGirls(syncWpGirls, SITES.marrickvillebrothel),
-          syncAllGirls(syncWpGirls, SITES.springhouse),
-          syncAllGirls(syncWpGirls, SITES.stiletto),
-          syncAllGirls(syncWpGirls, SITES.wivesonly),
-          syncAllGirls(syncWpGirls, SITES.jinia),
+          syncAllGirls(syncMarrickvilleBrothelGirls, SITES.marrickvillebrothel),
+          syncAllGirls(syncSpringHouseGirls, SITES.springhouse),
+          syncAllGirls(syncStilettoGirls, SITES.stiletto),
+          syncAllGirls(syncWivesOnlyGirls, SITES.wivesonly),
+          syncAllGirls(syncJiniaGirls, SITES.jinia),
         ]);
         console.log('All girls syncs complete.');
 

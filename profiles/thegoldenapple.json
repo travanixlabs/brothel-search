@@ -27,7 +27,8 @@
     {
       "name": "Alexa",
       "country": [
-        "Italian/Brazillian"
+        "Italian",
+        "Brazillian"
       ],
       "age": "24",
       "height": "170",
@@ -337,7 +338,8 @@
     {
       "name": "Davina",
       "country": [
-        "Australian/Greek"
+        "Australian",
+        "Greek"
       ],
       "age": "24",
       "height": "168",
@@ -419,7 +421,8 @@
     {
       "name": "Georgia",
       "country": [
-        "American/New Zealander"
+        "American",
+        "New Zealander"
       ],
       "age": "21",
       "height": "168",
@@ -440,7 +443,8 @@
     {
       "name": "Gia",
       "country": [
-        "Australian/Italian"
+        "Australian",
+        "Italian"
       ],
       "age": "25",
       "height": "180",
@@ -563,7 +567,8 @@
     {
       "name": "Isla",
       "country": [
-        "Australian/fijian"
+        "Australian",
+        "fijian"
       ],
       "age": "20",
       "height": "168",
@@ -707,7 +712,8 @@
     {
       "name": "Lilian",
       "country": [
-        "Australian/Chinese"
+        "Australian",
+        "Chinese"
       ],
       "age": "19",
       "height": "163",
@@ -849,7 +855,8 @@
     {
       "name": "Miley",
       "country": [
-        "French/Australian"
+        "French",
+        "Australian"
       ],
       "age": "33",
       "height": "170",
@@ -1012,7 +1019,8 @@
     {
       "name": "Stacey",
       "country": [
-        "Australian/South American"
+        "Australian",
+        "South American"
       ],
       "age": "24",
       "height": "168",
@@ -1170,7 +1178,8 @@
     {
       "name": "Dylan",
       "country": [
-        "Australian/Italian"
+        "Australian",
+        "Italian"
       ],
       "age": "30",
       "height": "168",
@@ -1227,7 +1236,8 @@
     {
       "name": "Ruby",
       "country": [
-        "Australian/European"
+        "Australian",
+        "European"
       ],
       "age": "29",
       "height": "165",

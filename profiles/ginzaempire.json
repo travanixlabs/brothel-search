@@ -2325,7 +2325,8 @@
     {
       "name": "Elly",
       "country": [
-        "N/A"
+        "N",
+        "A"
       ],
       "age": "26",
       "body": "7",
@@ -2538,7 +2539,8 @@
     {
       "name": "Lise",
       "country": [
-        "N/A"
+        "N",
+        "A"
       ],
       "age": "24",
       "body": "6",

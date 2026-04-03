@@ -1210,6 +1210,12 @@ const VENUES = [
   { id: 'thegoldenapple', name: 'The Golden Apple', file: 'thegoldenapple.json' },
   { id: 'blackcatparlour', name: 'Black Cat Parlour', file: 'blackcatparlour.json' },
   { id: 'bellevue12', name: 'Bellevue 12', file: 'bellevue12.json' },
+  { id: 'thegatewayclub', name: 'The Gateway Club', file: 'thegatewayclub.json' },
+  { id: 'marrickvillebrothel', name: 'Marrickville Brothel', file: 'marrickvillebrothel.json' },
+  { id: 'springhouse', name: 'Spring House', file: 'springhouse.json' },
+  { id: 'stiletto', name: 'Stiletto', file: 'stiletto.json' },
+  { id: 'wivesonly', name: 'Wives Only', file: 'wivesonly.json' },
+  { id: 'jinia', name: 'Jinia', file: 'jinia.json' },
 ];
 
 let allGirls = [];
@@ -2936,11 +2942,15 @@ const VENUE_REGIONS = {
   ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
   sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral',
   pennys77: 'innerwest', thegoldenapple: 'cbdandcentral', blackcatparlour: 'cbdandcentral', bellevue12: 'cbdandcentral',
+  thegatewayclub: 'innerwest', marrickvillebrothel: 'innerwest', springhouse: 'innerwest',
+  stiletto: 'innerwest', wivesonly: 'innerwest', jinia: 'westernsuburbs',
 };
 const VENUE_SUBURB_NAMES = {
   ginzaempire: 'Surry Hills', ginzaclub: 'Surry Hills', kyoto206: 'Surry Hills',
   sakura57: 'Surry Hills', top127: 'Chippendale', fantasyclub35: 'Annandale', '429city': 'Haymarket',
   pennys77: 'Newtown', thegoldenapple: 'Surry Hills', blackcatparlour: 'Surry Hills', bellevue12: 'Surry Hills',
+  thegatewayclub: 'Petersham', marrickvillebrothel: 'Marrickville', springhouse: 'Marrickville',
+  stiletto: 'Camperdown', wivesonly: 'St Peters', jinia: 'Strathfield South',
 };
 const REGION_NAMES = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West', easternsuburbs: 'Eastern Suburbs', northshore: 'North Shore', northernbeaches: 'Northern Beaches', northwest: 'North West', westernsuburbs: 'Western Suburbs', southwesternsuburbs: 'South Western Suburbs', southernsuburbs: 'Southern Suburbs' };
 const REGION_ORDER = ['cbdandcentral', 'innerwest', 'easternsuburbs', 'northshore', 'northernbeaches', 'northwest', 'westernsuburbs', 'southwesternsuburbs', 'southernsuburbs'];
@@ -4054,6 +4064,12 @@ const VENUE_DATA = {
   thegoldenapple: { name: 'The Golden Apple', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://www.thegoldenapple.com.au/', address: '377 Riley St, Surry Hills NSW 2010', lat: -33.884634181442, lng: 151.2126912705119, desc: "Located on Riley Street in Surry Hills, The Golden Apple is known for its genuine photo guarantee and wide selection of escorts." },
   blackcatparlour: { name: 'Black Cat Parlour', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://blackcatparlour.com.au/', address: '371 Riley St, Surry Hills NSW 2010', lat: -33.88444709795769, lng: 151.21255926239868, desc: "A well-established Surry Hills parlour on Riley Street featuring a curated roster of ladies with detailed profiles and reviews." },
   bellevue12: { name: 'Bellevue 12', suburb: 'Surry Hills', suburbSlug: 'surryhills', url: 'https://bellevue12.com.au/', address: '12 Bellevue St, Surry Hills NSW 2010', lat: -33.88358115264125, lng: 151.21205877114085, desc: "A discreet Surry Hills venue on Bellevue Street, close to the CBD, offering Asian beauties in a comfortable environment." },
+  thegatewayclub: { name: 'The Gateway Club', suburb: 'Petersham', suburbSlug: 'petersham', url: 'https://www.gatewayclub.com.au/', address: '74 Parramatta Rd, Petersham NSW 2049', lat: -33.888249251526354, lng: 151.15849643516688, desc: 'A well-known Inner West venue on Parramatta Road in Petersham, offering a relaxed and welcoming atmosphere.' },
+  marrickvillebrothel: { name: 'Marrickville Brothel', suburb: 'Marrickville', suburbSlug: 'marrickville', url: 'https://www.marrickvillebrothel.com/', address: '143 Marrickville Rd, Marrickville NSW 2204', lat: -33.911427703493736, lng: 151.16157536214604, desc: 'Located on Marrickville Road, a popular local venue with a friendly environment and diverse selection of ladies.' },
+  springhouse: { name: 'Spring House', suburb: 'Marrickville', suburbSlug: 'marrickville', url: 'https://46springhouse.com.au/', address: '46 Sydenham Rd, Marrickville NSW 2204', lat: -33.91183862895485, lng: 151.16550426446886, desc: 'A Marrickville venue on Sydenham Road offering a comfortable and discreet experience.' },
+  stiletto: { name: 'Stiletto', suburb: 'Camperdown', suburbSlug: 'camperdown', url: 'https://www.stilettosydney.com/', address: '82 Parramatta Road, Larkin St, Camperdown NSW 2000', lat: -33.88535604131434, lng: 151.1813658994193, desc: 'Stiletto Sydney on Parramatta Road in Camperdown, known for premium adult entertainment services.' },
+  wivesonly: { name: 'Wives Only', suburb: 'St Peters', suburbSlug: 'stpeters', url: 'https://wivesonly.com.au/', address: '673 King St, St Peters NSW 2044', lat: -33.90812288485341, lng: 151.18155845118417, desc: 'Located on King Street in St Peters, Wives Only offers a unique and welcoming experience.' },
+  jinia: { name: 'Jinia', suburb: 'Strathfield South', suburbSlug: 'strathfieldsouth', url: 'https://jinia.com.au/', address: '2/81-89 Cosgrove Rd, Strathfield South NSW 2136', lat: -33.89686475038878, lng: 151.07533399699363, desc: 'A Western Sydney venue in Strathfield South offering Asian beauties in a comfortable setting.' },
 };
 
 function getSuburbs() {

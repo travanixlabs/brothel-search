@@ -171,6 +171,72 @@ const SITES = {
     defaultPricing: { val1: '80', val2: '130', val3: '160' },
     embedPhotos: true,
   },
+  thegatewayclub: {
+    name: 'The Gateway Club',
+    baseUrl: 'https://www.gatewayclub.com.au',
+    girlsUrl: 'https://www.gatewayclub.com.au/',
+    rosterUrl: 'https://www.gatewayclub.com.au/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/thegatewayclub.json',
+    imgPrefix: 'profiles/thegatewayclub',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  marrickvillebrothel: {
+    name: 'Marrickville Brothel',
+    baseUrl: 'https://www.marrickvillebrothel.com',
+    girlsUrl: 'https://www.marrickvillebrothel.com/',
+    rosterUrl: 'https://www.marrickvillebrothel.com/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/marrickvillebrothel.json',
+    imgPrefix: 'profiles/marrickvillebrothel',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  springhouse: {
+    name: 'Spring House',
+    baseUrl: 'https://46springhouse.com.au',
+    girlsUrl: 'https://46springhouse.com.au/',
+    rosterUrl: 'https://46springhouse.com.au/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/springhouse.json',
+    imgPrefix: 'profiles/springhouse',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  stiletto: {
+    name: 'Stiletto',
+    baseUrl: 'https://www.stilettosydney.com',
+    girlsUrl: 'https://www.stilettosydney.com/',
+    rosterUrl: 'https://www.stilettosydney.com/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/stiletto.json',
+    imgPrefix: 'profiles/stiletto',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  wivesonly: {
+    name: 'Wives Only',
+    baseUrl: 'https://wivesonly.com.au',
+    girlsUrl: 'https://wivesonly.com.au/',
+    rosterUrl: 'https://wivesonly.com.au/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/wivesonly.json',
+    imgPrefix: 'profiles/wivesonly',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
+  jinia: {
+    name: 'Jinia',
+    baseUrl: 'https://jinia.com.au',
+    girlsUrl: 'https://jinia.com.au/',
+    rosterUrl: 'https://jinia.com.au/',
+    rosterFormat: 'generic-wp',
+    jsonPath: 'profiles/jinia.json',
+    imgPrefix: 'profiles/jinia',
+    siteType: 'wordpress',
+    embedPhotos: true,
+  },
 };
 
 /* ── GitHub helpers ── */
@@ -1685,7 +1751,7 @@ async function loadData(env, site) {
 
 async function regenerateSitemap(env) {
   const today = new Date().toISOString().split('T')[0];
-  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12];
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
 
   let urls = [`<url><loc>https://brothelsearch.com/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`];
 
@@ -2212,8 +2278,8 @@ async function sendDailyDigest(env) {
   }
 
   // Load all venue data + today's roster
-  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12];
-  const venueIds = ['ginzaempire', 'ginzaclub', 'kyoto206', 'sakura57', 'top127', 'fantasyclub35', '429city', 'pennys77', 'thegoldenapple', 'blackcatparlour', 'bellevue12'];
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
+  const venueIds = ['ginzaempire', 'ginzaclub', 'kyoto206', 'sakura57', 'top127', 'fantasyclub35', '429city', 'pennys77', 'thegoldenapple', 'blackcatparlour', 'bellevue12', 'thegatewayclub', 'marrickvillebrothel', 'springhouse', 'stiletto', 'wivesonly', 'jinia'];
   const allGirls = [];
   const todayStr = fmtDate(getAEDTDate());
 
@@ -2447,26 +2513,35 @@ const VENUE_MAP = {
   '429city': SITES.city429,
   pennys77: SITES.pennys77, thegoldenapple: SITES.thegoldenapple,
   blackcatparlour: SITES.blackcatparlour, bellevue12: SITES.bellevue12,
+  thegatewayclub: SITES.thegatewayclub, marrickvillebrothel: SITES.marrickvillebrothel,
+  springhouse: SITES.springhouse, stiletto: SITES.stiletto,
+  wivesonly: SITES.wivesonly, jinia: SITES.jinia,
 };
 
 const VENUE_SUBURBS = {
   ginzaempire: 'surryhills', ginzaclub: 'surryhills', kyoto206: 'surryhills',
   sakura57: 'surryhills', top127: 'chippendale', fantasyclub35: 'annandale', '429city': 'haymarket',
   pennys77: 'newtown', thegoldenapple: 'surryhills', blackcatparlour: 'surryhills', bellevue12: 'surryhills',
+  thegatewayclub: 'petersham', marrickvillebrothel: 'marrickville', springhouse: 'marrickville',
+  stiletto: 'camperdown', wivesonly: 'stpeters', jinia: 'strathfieldsouth',
 };
 const VENUE_REGION_SLUGS = {
   ginzaempire: 'cbdandcentral', ginzaclub: 'cbdandcentral', kyoto206: 'cbdandcentral',
   sakura57: 'cbdandcentral', top127: 'cbdandcentral', fantasyclub35: 'innerwest', '429city': 'cbdandcentral',
   pennys77: 'innerwest', thegoldenapple: 'cbdandcentral', blackcatparlour: 'cbdandcentral', bellevue12: 'cbdandcentral',
+  thegatewayclub: 'innerwest', marrickvillebrothel: 'innerwest', springhouse: 'innerwest',
+  stiletto: 'innerwest', wivesonly: 'innerwest', jinia: 'westernsuburbs',
 };
 
 const VENUE_NAMES = {
   ginzaempire: 'Ginza Empire', ginzaclub: 'Ginza Club', kyoto206: 'Kyoto 206',
   sakura57: 'Sakura 57', top127: 'Top 127', fantasyclub35: 'Fantasy Club 35', '429city': '429 City',
   pennys77: "Penny's 77", thegoldenapple: 'The Golden Apple', blackcatparlour: 'Black Cat Parlour', bellevue12: 'Bellevue 12',
+  thegatewayclub: 'The Gateway Club', marrickvillebrothel: 'Marrickville Brothel', springhouse: 'Spring House',
+  stiletto: 'Stiletto', wivesonly: 'Wives Only', jinia: 'Jinia',
 };
-const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket', newtown: 'Newtown' };
-const REGION_NAMES_WORKER = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West' };
+const SUBURB_NAMES = { surryhills: 'Surry Hills', chippendale: 'Chippendale', annandale: 'Annandale', haymarket: 'Haymarket', newtown: 'Newtown', petersham: 'Petersham', marrickville: 'Marrickville', camperdown: 'Camperdown', stpeters: 'St Peters', strathfieldsouth: 'Strathfield South' };
+const REGION_NAMES_WORKER = { cbdandcentral: 'CBD & Central', innerwest: 'Inner West', westernsuburbs: 'Western Suburbs' };
 
 function botHtml(title, desc, url, jsonLd) {
   return `<!DOCTYPE html>
@@ -2741,6 +2816,54 @@ export default {
       try { return json({ success: await syncCalendar(env, SITES.bellevue12) }); }
       catch (e) { return json({ error: e.message }); }
     }
+    if (url.pathname === '/sync-thegatewayclub-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.thegatewayclub)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-thegatewayclub-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.thegatewayclub) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-marrickvillebrothel-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.marrickvillebrothel)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-marrickvillebrothel-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.marrickvillebrothel) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-springhouse-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.springhouse)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-springhouse-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.springhouse) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-stiletto-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.stiletto)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-stiletto-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.stiletto) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-wivesonly-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.wivesonly)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-wivesonly-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.wivesonly) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-jinia-girls' && request.method === 'POST') {
+      try { return json(await syncWpGirls(env, SITES.jinia)); }
+      catch (e) { return json({ error: e.message }); }
+    }
+    if (url.pathname === '/sync-jinia-calendar' && request.method === 'POST') {
+      try { return json({ success: await syncCalendar(env, SITES.jinia) }); }
+      catch (e) { return json({ error: e.message }); }
+    }
 
     // ── Photo health check endpoints ──
     if (url.pathname === '/check-photos' && request.method === 'POST') {
@@ -2752,6 +2875,9 @@ export default {
           checkBrokenPhotos(env, SITES.city429),
           checkBrokenPhotos(env, SITES.pennys77), checkBrokenPhotos(env, SITES.thegoldenapple),
           checkBrokenPhotos(env, SITES.blackcatparlour), checkBrokenPhotos(env, SITES.bellevue12),
+          checkBrokenPhotos(env, SITES.thegatewayclub), checkBrokenPhotos(env, SITES.marrickvillebrothel),
+          checkBrokenPhotos(env, SITES.springhouse), checkBrokenPhotos(env, SITES.stiletto),
+          checkBrokenPhotos(env, SITES.wivesonly), checkBrokenPhotos(env, SITES.jinia),
         ]);
         return json({ results });
       } catch (e) { return json({ error: e.message }); }
@@ -3177,6 +3303,12 @@ export default {
           syncGoldenAppleGirls(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Girls sync error:', e)),
           syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
+          syncAllGirls(syncWpGirls, SITES.thegatewayclub),
+          syncAllGirls(syncWpGirls, SITES.marrickvillebrothel),
+          syncAllGirls(syncWpGirls, SITES.springhouse),
+          syncAllGirls(syncWpGirls, SITES.stiletto),
+          syncAllGirls(syncWpGirls, SITES.wivesonly),
+          syncAllGirls(syncWpGirls, SITES.jinia),
         ]);
         console.log('All girls syncs complete.');
 
@@ -3192,6 +3324,12 @@ export default {
           checkBrokenPhotos(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Photo check error:', e)),
           checkBrokenPhotos(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.thegatewayclub).catch(e => console.error('[The Gateway Club] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.marrickvillebrothel).catch(e => console.error('[Marrickville Brothel] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.springhouse).catch(e => console.error('[Spring House] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.stiletto).catch(e => console.error('[Stiletto] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.wivesonly).catch(e => console.error('[Wives Only] Photo check error:', e)),
+          checkBrokenPhotos(env, SITES.jinia).catch(e => console.error('[Jinia] Photo check error:', e)),
         ]);
         console.log('Photo checks complete.');
 
@@ -3221,6 +3359,12 @@ export default {
           syncCalendar(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Calendar sync error:', e)),
           syncCalendar(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Calendar sync error:', e)),
           syncCalendar(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Calendar sync error:', e)),
+          syncCalendar(env, SITES.thegatewayclub).catch(e => console.error('[The Gateway Club] Calendar sync error:', e)),
+          syncCalendar(env, SITES.marrickvillebrothel).catch(e => console.error('[Marrickville Brothel] Calendar sync error:', e)),
+          syncCalendar(env, SITES.springhouse).catch(e => console.error('[Spring House] Calendar sync error:', e)),
+          syncCalendar(env, SITES.stiletto).catch(e => console.error('[Stiletto] Calendar sync error:', e)),
+          syncCalendar(env, SITES.wivesonly).catch(e => console.error('[Wives Only] Calendar sync error:', e)),
+          syncCalendar(env, SITES.jinia).catch(e => console.error('[Jinia] Calendar sync error:', e)),
         ]);
         console.log('All calendar syncs complete.');
       }

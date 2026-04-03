@@ -1263,7 +1263,7 @@ function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.no
 function imgProxy(url, w = 300) {
   if (!url) return '';
   if (url.includes('thegoldenapple.com.au')) return 'https://www.thegoldenapple.com.au/wp-content/themes/thegoldenapple/timthumb.php?w=' + w + '&src=' + encodeURIComponent(url);
-  if (url.includes('pennys77.com.au')) return url;
+  if (url.includes('pennys77.com.au') || url.includes('gatewayclub.com.au')) return url;
   return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=80';
 }
 

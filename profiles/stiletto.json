@@ -3,8 +3,2709 @@
   "venueURL": "https://www.stilettosydney.com/",
   "venueLocation": "82 Parramatta Road, Larkin St, Camperdown NSW 2000",
   "venueLocationCoordinates": "-33.88535604131434, 151.1813658994193",
-  "girls": [],
+  "girls": [
+    {
+      "name": "Alena",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/alena-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/01/image13.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alex",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/alex-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo-1.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alexis",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/alexis-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alice",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/alice/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Alisa",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/alissa/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Allegra",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "A",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/allegra-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amelia",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/amelia-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/IMG_4525.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Anna",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Athletic",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/anna/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Annabell",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/annabell/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/07/Annabell-1-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Annika",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/annika/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Aria",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/aria/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Arizona",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/arizona/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Aspen",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/aspen/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Audrey",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/audrey-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/DSCF3153.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Aurora",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/aurora/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ava",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ava/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2021/06/609F7EA7-1E52-4E77-A296-326AD075D81C-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bambi",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/bambi-new2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/09/Bambi-01.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bella",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "F",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/bella-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Blake",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/blake-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/03/Blake-04.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Brandy",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/brandy/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cali",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/cali-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Candice",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/candice/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/03/DSCF2760-1-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Carmen",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/carmen-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Carol",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/carol/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/10/CAROL-3-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "CeCe",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "A",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/cece/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Chanel",
+      "country": [
+        "African"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "F",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/chanel-new-4/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/03/IMG_5421-scaled.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "ChiChi",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Athletic",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/chichi/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cindy",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/cindy-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/02/Attachment.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Clara",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "F",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/clara-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Claudia",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Athletic",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/claudia/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Coco",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/coco-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Daisy",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/daisy-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dakota",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/dakota-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dallas",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/dallas/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Darcie",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/darcie-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/01/DSCF2562.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Diamond",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/diamond-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Elizabeth",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/elizabeth-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/04/Elizabeth-1-1-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ella",
+      "country": [
+        "Middle Eastern"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ella-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/03/dfa067d1-ad76-44a8-8f82-b7ccfa6878b1-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Erika",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/erika/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Eva",
+      "country": [
+        "Middle Eastern"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "A",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/eva/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/050A0616-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Faith",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/faith-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Felicity",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/felicity/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/01/IMG_5681.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Flora",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/flora-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/03/0E1A2987-Edit-scaled.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Gabrielle",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/gabrielle-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/03/DSCF3049-копия-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Gaia",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/gaia-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2019/02/IMG_6869-2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ginger",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ginger/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Giselle",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/giselle-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/10/Giselle-3--scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Gloria",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/gloria-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Grace",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/grace-new-4/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/12/Grace-05.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hailey",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/haylee-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Halo",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/halo-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hazel",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/hazel-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/08/HAZEL_IMG_1086-copy-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hennessy",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/hennessy-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Honey",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/honey-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Imogen",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/imogen-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Iris",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/iris-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jamie",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/jamie-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/03/Jamie-S-8.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jasmine",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/jasmine-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jayde",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/maze-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jess",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/jess/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/07/050A0019-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jojo",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/jojo-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Josie",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/josie/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/01/JOSIE-4-scaled.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Julia",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/julia/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Julietta",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/amy/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Karina",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/karina-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/12/DzO8OG7UwAAoc2Z.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kay",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kay-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo-1.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Keisha",
+      "country": [
+        "African"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/keisha-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kelsey",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kelsey-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kennedy",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "A",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kennedy/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kianna",
+      "country": [
+        "African"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kianna/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kiara",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "F",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kiara/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kitana",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kitana-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo-1.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kiyomi",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/kiyomi-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/KIYOMI-12-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lacey",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/lacey-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/01/WILLOW-9-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lena",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/lena-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/02/Lena-02-DSCF2709-Edit.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lilith",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/lillith/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/01/LILLITH-6-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lilly",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/lilly/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "London",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "A",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/london/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Maddie",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/maddie-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Malibu",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/malibu/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mara",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/mara/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Margot",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/margot/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/01/050A6267-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mel",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/mel-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2021/10/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mercy",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/mercy-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mia",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/mia-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Miley",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Athletic",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/miley-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Molly",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/molly-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Natalie",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/natalie-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/11/Danielle-0588-Edit-skin-smoothing-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Natasha",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/natasha-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nova",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/nova-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/12/DSF4991-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Onika",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/onika-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Opal",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/opal/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/DSF9955-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ophelia",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ophelia-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Paloma",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/paloma-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/01/PALOMA-9-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Parker",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/parker/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Piper",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/piper-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/11/Piper-02.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Polly",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/polly-new-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Queen",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/queen-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Quinn",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/quinn/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Raelynn",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/raelynn/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Raven",
+      "country": [
+        "Middle Eastern"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/raven/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Rebecca",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/rebecca-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/10/Rebecca-01-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ria",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ria/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/01/Screen-Shot-2023-06-07-at-12.39.02-pm.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Riley",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/riley-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Robin",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C-D",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/diamond/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Roxi",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/roxi-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/02/IMG_1536.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ruby",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/ruby-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sabrina",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/sabrina-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/07/Sabrina-S-4.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sadie",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/sadie-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Salem",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/salem-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/12/050A8951-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sasha",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/sasha-new3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/03/sasha-1.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Savana",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Voluptuous",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/savana/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/12/DzO8OG7UwAAoc2Z.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Scarlett",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/scarlett-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/03/Scarlett-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Selene",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/selene-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Serafina",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/serafina-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Serene",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/serene-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Simone",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/simone-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Skye",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/addison-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Stacy",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/stacy-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/04/Stacey-S-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Star",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/star-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/11/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Stella",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/stella-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Storm",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/storm-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sugar",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/sugar-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/04/SUGAR-3-scaled.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sydney",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/sydney-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tahlia",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/tahlia-new-2/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tahnya",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Athletic",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/tahnya-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Trinity",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/trinity/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tyler",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Curvy",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/tyler/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Valerie",
+      "country": [
+        "Asian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/valerie-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Venus",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/venus/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/07/VENUS-5-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Victoria",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/victoria/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/11/VICTORIA-9-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Viv",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "D",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/viv/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/DSF3754-scaled.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yvette",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/yvette/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Zara",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "B",
+      "body": "Slim",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/zara-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2025/05/Screen-Shot-2025-06-22-at-10.16.28-pm.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Zarina",
+      "country": [
+        "South American"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "Busty",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-03",
+      "oldUrl": "https://www.stilettosydney.com/workers/zarina-3/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2023/04/Logo.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    }
+  ],
   "calendar": {},
-  "lastGirlsSync": null,
+  "lastGirlsSync": "2026-04-03T09:15:25.926Z",
   "lastCalendarSync": null
 }

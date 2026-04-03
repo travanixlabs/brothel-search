@@ -1357,7 +1357,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Kendra",
@@ -1417,7 +1418,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Lara",
@@ -2535,7 +2536,7 @@
         "end": "06:00"
       },
       "2026-04-03": {
-        "start": "06:00",
+        "start": "18:00",
         "end": "06:00"
       },
       "2026-04-04": {
@@ -2675,6 +2676,10 @@
     },
     "Lani": {
       "2026-04-03": {
+        "start": "06:00",
+        "end": "18:00"
+      },
+      "2026-04-04": {
         "start": "06:00",
         "end": "06:00"
       }
@@ -3020,8 +3025,14 @@
         "start": "18:00",
         "end": "06:00"
       }
+    },
+    "Kayla": {
+      "2026-04-03": {
+        "start": "06:00",
+        "end": "18:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-02T23:47:01.987Z",
-  "lastCalendarSync": "2026-04-02T23:55:45.516Z"
+  "lastCalendarSync": "2026-04-03T07:00:51.280Z"
 }

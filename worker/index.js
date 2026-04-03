@@ -1646,7 +1646,13 @@ async function syncJiniaGirls(env, site) {
     if (seenUrls.has(profileUrl)) continue;
     seenUrls.add(profileUrl);
 
-    let name = rawTitle.replace(/\s*\d{1,2}:\d{2}\s*-?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)|close)\s*/gi, '').replace(/\s*\d{1,2}:\d{2}(?:am|pm)\s*-?\s*(?:\d{1,2}:\d{2}(?:am|pm)|close)\s*/gi, '').trim();
+    // Strip time patterns, age hints, annotations: "Nika12:30pm- close", "Madoka (21yo)", "*Highly recommended", "*Real Photos"
+    let name = rawTitle
+      .replace(/\s*\d{1,2}:\d{2}\s*(?:am|pm)?\s*[-–~]?\s*(?:\d{1,2}:\d{2}\s*(?:am|pm)?|close|late)\b.*/gi, '')
+      .replace(/\s*\(\d+yo\)/gi, '')
+      .replace(/\s*\*[^)]*$/gi, '')
+      .replace(/\s*\(joined.*$/gi, '')
+      .trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
     if (existingUrls.has(profileUrl)) continue;
     profileUrls.push({ profileUrl, name });
@@ -1669,7 +1675,9 @@ async function syncJiniaGirls(env, site) {
     return { added: 0, remaining: 0, names: [] };
   }
 
-  const toProcess = profileUrls.slice(0, MAX_NEW_PER_RUN);
+  // Cloudflare Workers have 50 subrequest limit; we used 1 for listing + need ~2 for GitHub
+  const JINIA_BATCH = Math.min(20, MAX_NEW_PER_RUN);
+  const toProcess = profileUrls.slice(0, JINIA_BATCH);
   const addedNames = [];
   const todayStr = fmtDate(getAEDTDate());
 
@@ -1686,10 +1694,14 @@ async function syncJiniaGirls(env, site) {
       const heightMatch = pHtml.match(/<p>Height:\s*(\d+)\s*cm/i);
       const bustMatch = pHtml.match(/<p>Bust Size:\s*\d*([A-H](?:DD)?)/i);
 
-      let country = '';
+      let countries = [];
       if (natMatch) {
-        const raw = natMatch[1].trim().toLowerCase();
-        country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
+        // Split on ×, /, &, comma, "and", "x" (between words); strip "mixed"
+        const parts = natMatch[1].trim().split(/\s*[×\/&,]\s*|\s+and\s+|\s+x\s+/i).map(s => s.trim().toLowerCase()).filter(s => s && s !== 'mixed');
+        for (const part of parts) {
+          const mapped = countryMap[part] || (part.charAt(0).toUpperCase() + part.slice(1));
+          if (mapped) countries.push(mapped);
+        }
       }
 
       // Fix common height typos (e.g. "60cm" should be "160cm")
@@ -1713,7 +1725,7 @@ async function syncJiniaGirls(env, site) {
       }
 
       const entry = {
-        name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+        name, country: countries, age: ageMatch ? ageMatch[1] : '',
         height, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
         val1: '', val2: '', val3: '',
         startDate: todayStr, oldUrl: profileUrl,
@@ -1730,7 +1742,7 @@ async function syncJiniaGirls(env, site) {
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Jinia] Auto-sync: ${addedNames.join(', ')}`);
   }
-  return { added: addedNames.length, remaining: profileUrls.length - toProcess.length, names: addedNames };
+  return { added: addedNames.length, remaining: profileUrls.length - toProcess.length, names: addedNames, total: profileUrls.length };
 }
 
 async function scrapePennys77Roster(site, env) {

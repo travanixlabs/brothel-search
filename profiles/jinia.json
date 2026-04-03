@@ -5,225 +5,10 @@
   "venueLocationCoordinates": "-33.89686475038878, 151.07533399699363",
   "girls": [
     {
-      "name": "Nika",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/nika/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260330093634-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Hazel",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/hazel/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/mmexport1774337200004-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Angela",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/angela-2/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260311025717_123_20-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Ami",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/ami/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2025/11/图片_20260103060716_574_2-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Linda",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/linda/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2025/12/图片_20251205095125_副本-1-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Yumi",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/yumi-2/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260331092631-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Cassie",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/cassie-2/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2025/05/图片_20250511130614-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "June",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/june/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Eva",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/eva/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260401093820-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Lucy",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/lucy-3/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260401094425-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Anna",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/anna-5/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2025/10/图片_20251101081431_323_2-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Bobo",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/bobo/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2024/10/图片_20241026113010-360x480.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
       "name": "May",
       "country": [
-        "Taiwanese × vietnamese"
+        "Taiwanese",
+        "Vietnamese"
       ],
       "age": "24",
       "height": "166",
@@ -235,7 +20,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/may-2/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260123114102-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260123114102-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -255,7 +40,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/morika/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260324112505-1170x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/03/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260324112505-1170x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -275,13 +60,13 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/ella-2/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260319105449-1170x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/03/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260319105449-1170x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
     },
     {
-      "name": "Marissa 6pm-close",
+      "name": "Marissa",
       "country": [],
       "age": "25",
       "height": "165",
@@ -293,7 +78,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/marissa-2/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260314014410_139_20-1024x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/03/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260314014410_139_20-1024x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -313,25 +98,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/ellen-3/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/03/图片_20260307042350_107_20-1080x423.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Helen",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/7664-2/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2022/11/sexy-girl_meitu_1-470x705.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/03/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260307042350_107_20-1080x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -339,7 +106,7 @@
     {
       "name": "Yuna",
       "country": [
-        "Korean mixed"
+        "Korean"
       ],
       "age": "25",
       "height": "161",
@@ -351,7 +118,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/yuna-3/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/02/图片_20260225011636_47_20-470x705.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/02/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260225011636_47_20-470x705.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -391,7 +158,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/sara/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/02/图片_20260221043206_35_20-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/02/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260221043206_35_20-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -411,7 +178,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/cici-4/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2024/11/图片_20241214175132-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2024/11/\u00e5\u203a\u00be\u00e7\u2030\u2021_20241214175132-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -431,25 +198,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/vivian-3/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/02/图片_20260206151402-1210x423.jpg"
-      ],
-      "labels": [],
-      "originalSite": "Exists"
-    },
-    {
-      "name": "Andi",
-      "country": [],
-      "age": "",
-      "height": "",
-      "cup": "",
-      "body": "",
-      "val1": "",
-      "val2": "",
-      "val3": "",
-      "startDate": "2026-04-03",
-      "oldUrl": "https://jinia.com.au/andi/",
-      "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/02/mmexport1770108292366-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/02/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260206151402-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -469,7 +218,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/cookie/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260201100431_833_2-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260201100431_833_2-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -489,7 +238,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/aki/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260122104612-1147x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260122104612-1147x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -509,7 +258,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/rika/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260115105333-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260115105333-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -529,7 +278,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/sushi/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260115104416-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260115104416-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -549,7 +298,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/michelle-3/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260111090338_611_2-510x705.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260111090338_611_2-510x705.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -569,7 +318,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/mia-7/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260111090141_609_2-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260111090141_609_2-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -589,13 +338,13 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/sandy/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2026/01/图片_20260107093049-1210x423.jpg"
+        "https://jinia.com.au/wp-content/uploads/2026/01/\u00e5\u203a\u00be\u00e7\u2030\u2021_20260107093049-1210x423.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
     },
     {
-      "name": "Madoka (21yo)",
+      "name": "Madoka",
       "country": [
         "Japanese"
       ],
@@ -609,7 +358,7 @@
       "startDate": "2026-04-03",
       "oldUrl": "https://jinia.com.au/madoka/",
       "photos": [
-        "https://jinia.com.au/wp-content/uploads/2025/12/图片_20251223072516_547_2-470x705.jpg"
+        "https://jinia.com.au/wp-content/uploads/2025/12/\u00e5\u203a\u00be\u00e7\u2030\u2021_20251223072516_547_2-470x705.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"

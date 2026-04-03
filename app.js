@@ -1254,7 +1254,11 @@ function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 function numToDateShort(n) { const d = new Date(n); return d.toISOString().slice(2,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
-function imgProxy(url, w = 300) { if (!url) return ''; return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&output=webp&q=80`; }
+function imgProxy(url, w = 300) {
+  if (!url) return '';
+  if (url.includes('thegoldenapple.com.au')) return 'https://www.thegoldenapple.com.au/wp-content/themes/thegoldenapple/timthumb.php?w=' + w + '&src=' + encodeURIComponent(url);
+  return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=80';
+}
 
 function fmt24to12(t) {
   const [h, m] = t.split(':').map(Number);

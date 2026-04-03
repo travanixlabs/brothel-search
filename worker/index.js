@@ -174,7 +174,7 @@ const SITES = {
   thegatewayclub: {
     name: 'The Gateway Club',
     baseUrl: 'https://www.gatewayclub.com.au',
-    girlsUrl: 'https://www.gatewayclub.com.au/',
+    girlsUrl: 'https://www.gatewayclub.com.au/gateway-club-private-girls-sydney/',
     rosterUrl: 'https://www.gatewayclub.com.au/',
     rosterFormat: 'generic-wp',
     jsonPath: 'profiles/thegatewayclub.json',
@@ -1330,6 +1330,72 @@ async function syncBellevue12Girls(env, site) {
     data.girls = existing;
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Bellevue 12] Auto-sync: ${addedNames.join(', ')}`);
+  }
+  return { added: addedNames.length, remaining: 0, names: addedNames };
+}
+
+/* ── The Gateway Club custom scraper (WAF-protected, may 403) ── */
+async function syncGatewayClubGirls(env, site) {
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const { data, sha } = await loadData(env, site);
+  const existing = data.girls || [];
+  const existingNames = new Set(existing.map(g => g.name));
+
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!resp.ok) {
+    console.log(`[Gateway Club] Girls page returned ${resp.status} — site may be WAF-protected`);
+    return { added: 0, remaining: 0, names: [] };
+  }
+  const html = await resp.text();
+  if (html.includes('403 - Forbidden')) {
+    console.log('[Gateway Club] Got 403 page content — WAF blocking');
+    return { added: 0, remaining: 0, names: [] };
+  }
+
+  // Parse: <a href="URL"><img src="PHOTO" alt="NAME" class="img_lrg"></a>...<h5>NAME</h5>...Age:</td><td>N...Bust:</td><td>X...Height:</td><td>Ncm
+  const blocks = html.split('sl_col_glry');
+  const addedNames = [];
+  const todayStr = fmtDate(getAEDTDate());
+  const countryMap = { aussie: 'Australian', australian: 'Australian', singaporean: 'Singaporean', chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', brazilian: 'Brazilian', kiwi: 'New Zealander', indian: 'Indian', european: 'European', filipina: 'Filipino', indonesian: 'Indonesian', persian: 'Persian', colombian: 'Colombian' };
+
+  for (const block of blocks) {
+    const nameMatch = block.match(/<h5>([^<]+)<\/h5>/);
+    if (!nameMatch) continue;
+    let name = nameMatch[1].trim();
+    if (!name || name === 'SYDNEY LADIES') continue;
+    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    if (existingNames.has(name) || !isValidGirlName(name)) continue;
+
+    const urlMatch = block.match(/href="(https:\/\/www\.gatewayclub\.com\.au\/ladies\/[^"]+)"/);
+    const imgMatch = block.match(/src="(https:\/\/www\.gatewayclub\.com\.au\/wp-content\/uploads\/[^"]+)"/);
+    const ageMatch = block.match(/Age:<\/td><td>(\d+)/);
+    const bustMatch = block.match(/Bust:<\/td><td>([A-H](?:DD)?)/);
+    const heightMatch = block.match(/Height:<\/td><td>(\d+)cm/);
+    const dressMatch = block.match(/Dress [Ss]ize:<\/td><td>([\d\-]+)/);
+
+    const descText = block.replace(/<[^>]+>/g, ' ').toLowerCase();
+    let country = '';
+    for (const [key, val] of Object.entries(countryMap)) {
+      if (descText.includes(key)) { country = val; break; }
+    }
+
+    const entry = {
+      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+      height: heightMatch ? heightMatch[1] : '', cup: bustMatch ? bustMatch[1] : '',
+      body: dressMatch ? dressMatch[1] : '',
+      val1: '', val2: '', val3: '',
+      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
+      photos: imgMatch ? [imgMatch[1]] : [], labels: [], originalSite: 'Exists',
+    };
+    existing.push(entry);
+    existingNames.add(name);
+    addedNames.push(name);
+  }
+
+  if (addedNames.length) {
+    data.girls = existing;
+    data.lastGirlsSync = new Date().toISOString();
+    await ghPut(env, site.jsonPath, data, sha, `[Gateway Club] Auto-sync: ${addedNames.join(', ')}`);
   }
   return { added: addedNames.length, remaining: 0, names: addedNames };
 }
@@ -3116,7 +3182,7 @@ export default {
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-thegatewayclub-girls' && request.method === 'POST') {
-      try { return json(await syncWpGirls(env, SITES.thegatewayclub)); }
+      try { return json(await syncGatewayClubGirls(env, SITES.thegatewayclub)); }
       catch (e) { return json({ error: e.message }); }
     }
     if (url.pathname === '/sync-thegatewayclub-calendar' && request.method === 'POST') {
@@ -3602,7 +3668,7 @@ export default {
           syncGoldenAppleGirls(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Girls sync error:', e)),
           syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
-          syncAllGirls(syncWpGirls, SITES.thegatewayclub),
+          syncAllGirls(syncGatewayClubGirls, SITES.thegatewayclub),
           syncAllGirls(syncMarrickvilleBrothelGirls, SITES.marrickvillebrothel),
           syncAllGirls(syncSpringHouseGirls, SITES.springhouse),
           syncAllGirls(syncStilettoGirls, SITES.stiletto),

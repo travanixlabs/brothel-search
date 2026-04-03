@@ -182,7 +182,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/10/2D355115-386D-49DE-85DB-B8E1586116AE.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Bree",
@@ -242,7 +243,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2024/08/Charlotte.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Claire",
@@ -302,7 +304,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/03/Crystal.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Dahlia",
@@ -382,7 +385,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/07/Ellie.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Gabrielle",
@@ -522,7 +526,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/08/C3847CC5-9DB7-420A-9114-62CA31E8D9B7.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Isabella",
@@ -542,7 +547,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/06/Isabella.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Isla",
@@ -662,7 +668,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2024/12/Lani.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Lara",
@@ -682,7 +689,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2018/03/Porsha-IMG_6464.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-03"
     },
     {
       "name": "Lilian",
@@ -1350,8 +1358,56 @@
       "2026-04-03",
       "2026-04-04",
       "2026-04-05"
-    ]
+    ],
+    "Belle": {
+      "2026-04-03": {
+        "start": "18:00",
+        "end": "03:00"
+      }
+    },
+    "Charlotte": {
+      "2026-04-03": {
+        "start": "12:00",
+        "end": "19:00"
+      }
+    },
+    "Crystal": {
+      "2026-04-03": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
+    "Ellie": {
+      "2026-04-03": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    },
+    "Icra": {
+      "2026-04-03": {
+        "start": "12:00",
+        "end": "21:00"
+      }
+    },
+    "Isabella": {
+      "2026-04-03": {
+        "start": "15:00",
+        "end": "22:00"
+      }
+    },
+    "Lani": {
+      "2026-04-03": {
+        "start": "17:00",
+        "end": "02:00"
+      }
+    },
+    "Lara": {
+      "2026-04-03": {
+        "start": "09:00",
+        "end": "18:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-03T00:33:27.645Z",
-  "lastCalendarSync": "2026-04-02T22:53:04.105Z"
+  "lastCalendarSync": "2026-04-03T00:33:29.048Z"
 }

@@ -1038,18 +1038,25 @@ async function syncPennys77Girls(env, site) {
   const existingUrls = new Set(existing.map(g => g.oldUrl));
 
   const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
-  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
-  const html = await resp.text();
-
-  const linkRe = /href="(https:\/\/pennys77\.com\.au\/[^"]+)"/gi;
   const urls = new Set();
-  let m;
-  while ((m = linkRe.exec(html)) !== null) {
-    const url = m[1];
-    if (!/our-girls|contact|rate|service|feed|wp-|about|faq|privacy|xmlrpc|wp-json|category|tag|page/i.test(url) && url !== 'https://pennys77.com.au/') {
-      urls.add(url);
+
+  // Fetch all pages
+  for (let page = 1; page <= 10; page++) {
+    const pageUrl = page === 1 ? site.girlsUrl : site.girlsUrl + page + '/';
+    const resp = await fetch(pageUrl, { headers: { 'User-Agent': BROWSER_UA } });
+    if (!resp.ok) break;
+    const html = await resp.text();
+    const linkRe = /href="(https:\/\/pennys77\.com\.au\/[^"]+)"/gi;
+    let m;
+    while ((m = linkRe.exec(html)) !== null) {
+      const url = m[1];
+      if (!/our-girls|contact|rate|service|feed|wp-|about|faq|privacy|xmlrpc|wp-json|category|tag|page/i.test(url) && url !== 'https://pennys77.com.au/') {
+        urls.add(url);
+      }
     }
+    // Stop if no next page link found
+    if (!html.includes('our-girls/' + (page + 1) + '/')) break;
+    await new Promise(r => setTimeout(r, 500));
   }
 
   const addedNames = [];

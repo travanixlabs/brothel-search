@@ -3880,7 +3880,15 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
-  html += '<p class="landing-desc">' + todayTotal + ' rostered today' + (nowCount > 0 ? ' \u00b7 ' + nowCount + ' available now' : '') + '</p>';
+  // Subtitle based on selected day
+  const selectedDay = rosterDays[wnSelectedDay] || todayRoster;
+  const selectedIsToday = selectedDay && selectedDay.dateStr === todayStr;
+  const selectedCount = selectedDay ? selectedDay.entries.length : 0;
+  if (selectedIsToday) {
+    html += '<p class="landing-desc">' + selectedCount + ' rostered today' + (nowCount > 0 ? ' \u00b7 ' + nowCount + ' available now' : '') + '</p>';
+  } else {
+    html += '<p class="landing-desc">' + selectedCount + ' rostered</p>';
+  }
 
   if (!rosterDays.length) {
     html += '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No roster data available. Check back later!</div></div>';
@@ -3911,7 +3919,6 @@ function renderWorkingNow() {
   const day = rosterDays[wnSelectedDay];
   const isToday = day.dateStr === todayStr;
 
-  html += '<div class="roster-day-count">' + day.entries.length + ' girl' + (day.entries.length !== 1 ? 's' : '') + '</div>';
   html += '<div class="roster-day"><div class="roster-timeline"><div class="roster-timeline-header"><div></div><div class="roster-timeline-hours">' + hours.map(h => '<span>' + h + '</span>').join('') + '</div></div>';
 
   for (const { girl: g, slot } of day.entries) {

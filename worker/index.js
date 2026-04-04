@@ -1600,13 +1600,22 @@ async function syncStilettoGirls(env, site) {
   function parseStilettoProfile(pHtml) {
     const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
     const servicesMatch = [...pHtml.matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim());
-    // Filter to known useful labels
     const labels = servicesMatch.filter(s => /Girlfriend|BDSM|Pornstar|Couples|Doubles|Fantasy|Toys|Lesbian|COB|Kissing|Fetish|Escort|Role Play|Body Slide|Tantric|DFK/i.test(s));
-    return { age: ageMatch ? ageMatch[1] : '', labels };
+    // Photos from wp-block-image figure tags
+    const photos = [];
+    const photoSet = new Set();
+    const photoRe = /wp-block-image[^>]*>\s*<img[^>]+src="(https:\/\/www\.stilettosydney\.com\/wp-content\/uploads\/[^"]+)"/gi;
+    let pm;
+    while ((pm = photoRe.exec(pHtml)) !== null) {
+      let src = pm[1];
+      src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+      if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
+    }
+    return { age: ageMatch ? ageMatch[1] : '', labels, photos };
   }
 
   for (const p of toProcess) {
-    let age = '', labels = [];
+    let age = '', labels = [], photos = p.photoUrl ? [p.photoUrl] : [];
     try {
       await new Promise(r => setTimeout(r, 300));
       const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': UA } });
@@ -1614,6 +1623,7 @@ async function syncStilettoGirls(env, site) {
         const parsed = parseStilettoProfile(await pResp.text());
         age = parsed.age;
         labels = parsed.labels;
+        if (parsed.photos.length) photos = parsed.photos;
       }
     } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
 
@@ -1622,15 +1632,15 @@ async function syncStilettoGirls(env, site) {
       cup: p.cup, body: p.body,
       val1: '', val2: '', val3: '',
       startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
-      photos: p.photoUrl ? [p.photoUrl] : [], labels, originalSite: 'Exists',
+      photos, labels, originalSite: 'Exists',
     };
     existing.push(entry);
     existingNames.add(p.name);
     addedNames.push(p.name);
   }
 
-  // Also backfill age/labels for existing girls missing them (batch of 20)
-  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  // Also backfill age/labels/photos for existing girls missing them (batch of 20)
+  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
   const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
   for (const g of backfillBatch) {
     try {
@@ -1641,6 +1651,7 @@ async function syncStilettoGirls(env, site) {
         let updated = false;
         if (!g.age && parsed.age) { g.age = parsed.age; updated = true; }
         if ((!g.labels || !g.labels.length) && parsed.labels.length) { g.labels = parsed.labels; updated = true; }
+        if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
         if (updated) addedNames.push(g.name + ' (details)');
       }
     } catch (e) {}

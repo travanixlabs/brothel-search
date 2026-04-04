@@ -1892,7 +1892,8 @@ async function scrapeWivesOnlyRoster(site) {
   const calendar = {};
 
   async function scrapeWeek(url) {
-    const resp = await fetch(url, { headers: { 'User-Agent': UA } });
+    const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+    const resp = await fetch(url, { headers: { 'User-Agent': BROWSER_UA } });
     if (!resp.ok) return;
     const html = await resp.text();
     // Extract week dates from buttons: data-date='2026-04-04'

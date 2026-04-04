@@ -1693,7 +1693,9 @@ async function syncStilettoGirls(env, site) {
       name: p.name, country: p.nat ? [p.nat] : [], age, height: '',
       cup: p.cup, body, desc,
       val1: '390', val2: '490', val3: '590',
-      startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
+      startDate: (() => { for (const ph of photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) return m[1] + '-' + m[2] + '-01'; } return '2026-01-01'; })(),
+      lastRostered: Object.keys(parsed.roster || {}).length ? todayStr : '',
+      oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',
     };
     existing.push(entry);

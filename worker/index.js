@@ -1538,8 +1538,8 @@ async function syncSpringHouseGirls(env, site) {
         if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
       }
 
-      // Description: <p> inside .singleText after the <hr> following schedule
-      const descMatch = pHtml.match(/class="singleText"[\s\S]*?<hr>[\s\S]*?<p>([\s\S]*?)<\/p>/i);
+      // Description: <p> after the second <hr> in singleText (after schedule h4 tags)
+      const descMatch = pHtml.match(/<\/h4>\s*<hr>\s*<p>([\s\S]*?)<\/p>/i);
       const desc = descMatch ? descMatch[1].replace(/<[^>]+>/g, '').replace(/&#8217;/g, "'").replace(/&#8230;/g, '...').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim() : '';
 
       const entry = {

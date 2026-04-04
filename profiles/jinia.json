@@ -235,7 +235,7 @@
     {
       "name": "Yuna",
       "country": [
-        "Korean mixed"
+        "Korean"
       ],
       "age": "25",
       "height": "161",
@@ -1003,7 +1003,7 @@
     {
       "name": "Nanami",
       "country": [
-        "Japan"
+        "Japanese"
       ],
       "age": "22",
       "height": "170",
@@ -1131,7 +1131,7 @@
     {
       "name": "Apple",
       "country": [
-        "Hongkong"
+        "Hong Konger"
       ],
       "age": "26",
       "height": "",
@@ -1152,7 +1152,7 @@
     {
       "name": "Sasa",
       "country": [
-        "Hongkong"
+        "Hong Konger"
       ],
       "age": "26",
       "height": "",
@@ -1173,7 +1173,7 @@
     {
       "name": "Mango",
       "country": [
-        "Vietnam"
+        "Vietnamese"
       ],
       "age": "24",
       "height": "158",
@@ -1236,7 +1236,7 @@
     {
       "name": "Jasmine",
       "country": [
-        "New zealand"
+        "New Zealander"
       ],
       "age": "22",
       "height": "165",
@@ -1316,7 +1316,7 @@
     {
       "name": "Candy",
       "country": [
-        "Hong Kong"
+        "Hong Konger"
       ],
       "age": "24",
       "height": "165",
@@ -1335,7 +1335,7 @@
     {
       "name": "Honey",
       "country": [
-        "Singapore"
+        "Singaporean"
       ],
       "age": "24",
       "height": "",
@@ -1535,7 +1535,7 @@
     {
       "name": "Baby",
       "country": [
-        "Hongkong"
+        "Hong Konger"
       ],
       "age": "24",
       "height": "160",

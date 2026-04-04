@@ -3141,8 +3141,9 @@ const STALE_THRESHOLD = 10 * 60 * 1000; // 10 minutes
 loadProfiles().then(() => {
   profilesLoaded = true;
   lastVisibleTime = Date.now();
-  // Update Working Now nav count
-  const wnCount = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  // Update Working Now nav count — all girls rostered today
+  const todayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const wnCount = Object.entries(calendarData).filter(([k, cal]) => cal && cal[todayStr]).length;
   const wnLink = document.getElementById('navWorkingNow');
   if (wnLink && wnCount > 0) wnLink.textContent = 'Working Now (' + wnCount + ')';
   // Handle URL path on load

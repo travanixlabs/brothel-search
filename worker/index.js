@@ -1815,7 +1815,7 @@ async function syncJiniaGirls(env, site) {
         name, country: countries, age: ageMatch ? ageMatch[1] : '',
         height, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
         val1: '', val2: '', val3: '',
-        startDate, oldUrl: profileUrl,
+        startDate, lastRostered: startDate, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
       };
       existing.push(entry);

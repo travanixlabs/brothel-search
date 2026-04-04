@@ -1573,38 +1573,68 @@ async function syncStilettoGirls(env, site) {
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
   const html = await resp.text();
 
-  // Parse: <div class="worker-tile post-NNN" data-stature='...' data-nationality='Asian'><a href="URL" class="worker-tile-img-container" title="Name *New*"><div class="worker-tile-img" style="background-image: url('PHOTO')"></div></a>
+  // Parse listing tiles for new girls, then fetch profile pages for age/details
   const tileRe = /<div class="worker-tile post-\d+"([^>]*)>\s*<a href="([^"]+)" class="worker-tile-img-container" title="([^"]+)">\s*<div class="worker-tile-img" style="background-image: url\('([^']+)'\)"/g;
   const addedNames = [];
   const todayStr = fmtDate(getAEDTDate());
+  const newProfiles = [];
   let m;
 
   while ((m = tileRe.exec(html)) !== null) {
     const [, attrs, profileUrl, rawTitle, photoUrl] = m;
-    // Clean name: remove "*New*", trailing numbers
     let name = rawTitle.replace(/\s*\*?New\*?\s*/gi, '').trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
 
-    // Extract data attributes
     const natMatch = attrs.match(/data-nationality='([^']+)'/);
     const bustSizeMatch = attrs.match(/data-bust-size='([^']+)'/);
     const figureMatch = attrs.match(/data-figure='([^']+)'/);
-    const statureMatch = attrs.match(/data-stature='([^']+)'/);
-
-    // Stiletto uses generic "Asian" / "European" / "Latin" etc for nationality
     const nat = natMatch ? natMatch[1].trim() : '';
     const cup = bustSizeMatch ? bustSizeMatch[1].replace(/\+/, '').trim() : '';
+    newProfiles.push({ name, profileUrl, photoUrl, nat, cup, body: figureMatch ? figureMatch[1] : '' });
+  }
+
+  // Batch fetch profile pages for age (20 per run due to subrequest limits)
+  const BATCH = Math.min(20, MAX_NEW_PER_RUN);
+  const toProcess = newProfiles.slice(0, BATCH);
+
+  for (const p of toProcess) {
+    let age = '';
+    try {
+      await new Promise(r => setTimeout(r, 300));
+      const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) {
+        const pHtml = await pResp.text();
+        // <div class='custom-field-display custom-field-age'><strong>Age:</strong> <span>28</span></div>
+        const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
+        if (ageMatch) age = ageMatch[1];
+      }
+    } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
 
     const entry = {
-      name, country: nat ? [nat] : [], age: '', height: '',
-      cup, body: figureMatch ? figureMatch[1] : '',
+      name: p.name, country: p.nat ? [p.nat] : [], age, height: '',
+      cup: p.cup, body: p.body,
       val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: profileUrl,
-      photos: photoUrl ? [photoUrl] : [], labels: [], originalSite: 'Exists',
+      startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
+      photos: p.photoUrl ? [p.photoUrl] : [], labels: [], originalSite: 'Exists',
     };
     existing.push(entry);
-    existingNames.add(name);
-    addedNames.push(name);
+    existingNames.add(p.name);
+    addedNames.push(p.name);
+  }
+
+  // Also backfill age for existing girls missing it (batch of 20)
+  const needAge = existing.filter(g => !g.age && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  const ageBackfill = needAge.slice(0, Math.max(0, BATCH - toProcess.length));
+  for (const g of ageBackfill) {
+    try {
+      await new Promise(r => setTimeout(r, 300));
+      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) {
+        const pHtml = await pResp.text();
+        const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
+        if (ageMatch) { g.age = ageMatch[1]; addedNames.push(g.name + ' (age)'); }
+      }
+    } catch (e) {}
   }
 
   if (addedNames.length) {

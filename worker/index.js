@@ -1587,10 +1587,27 @@ async function syncStilettoGirls(env, site) {
 
     const natMatch = attrs.match(/data-nationality='([^']+)'/);
     const bustSizeMatch = attrs.match(/data-bust-size='([^']+)'/);
-    const figureMatch = attrs.match(/data-figure='([^']+)'/);
+    const servicesMatch = attrs.match(/data-services='([^']+)'/);
     const nat = natMatch ? natMatch[1].trim() : '';
     const cup = bustSizeMatch ? bustSizeMatch[1].replace(/\+/, '').trim() : '';
-    newProfiles.push({ name, profileUrl, photoUrl, nat, cup });
+    const tileLabels = servicesMatch ? servicesMatch[1].replace(/&#038;/g, '&').split('::').map(s => s.trim()).filter(Boolean) : [];
+    newProfiles.push({ name, profileUrl, photoUrl, nat, cup, tileLabels });
+  }
+
+  // Also backfill labels from listing tile for existing girls missing them
+  const tileRe2 = /<div class="worker-tile post-\d+"([^>]*)>\s*<a href="([^"]+)" class="worker-tile-img-container" title="([^"]+)"/g;
+  let m2;
+  while ((m2 = tileRe2.exec(html)) !== null) {
+    const [, attrs2, , rawTitle2] = m2;
+    let tileName = rawTitle2.replace(/\s*\*?New\*?\s*/gi, '').trim();
+    const girl = existing.find(g => g.name === tileName);
+    if (girl && (!girl.labels || !girl.labels.length)) {
+      const svc = attrs2.match(/data-services='([^']+)'/);
+      if (svc) {
+        girl.labels = svc[1].replace(/&#038;/g, '&').split('::').map(s => s.trim()).filter(Boolean);
+        addedNames.push(tileName + ' (labels)');
+      }
+    }
   }
 
   // Batch fetch profile pages for age (20 per run due to subrequest limits)
@@ -1631,7 +1648,7 @@ async function syncStilettoGirls(env, site) {
   }
 
   for (const p of toProcess) {
-    let age = '', labels = [], photos = p.photoUrl ? [p.photoUrl] : [], desc = '', body = '';
+    let age = '', labels = p.tileLabels || [], photos = p.photoUrl ? [p.photoUrl] : [], desc = '', body = '';
     try {
       await new Promise(r => setTimeout(r, 300));
       const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';

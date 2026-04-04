@@ -1668,7 +1668,7 @@ async function syncSpringHouseGirls(env, site) {
       const entry = {
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
         height: '', cup: '', body: '', desc,
-        val1: '', val2: '', val3: '',
+        val1: '110', val2: '140', val3: '170',
         startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
       };

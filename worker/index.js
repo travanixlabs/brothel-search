@@ -1702,8 +1702,7 @@ async function syncStilettoGirls(env, site) {
   }
 
   // Also backfill age/labels/photos/desc/body for existing girls missing them (batch of 20)
-  const calNames = new Set(Object.keys(data.calendar || {}).filter(k => !k.startsWith('_')));
-  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || !g.desc || !g.body || g.photos.length <= 1 || !calNames.has(g.name)) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || !g.desc || !g.body || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
   const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
   for (const g of backfillBatch) {
     try {

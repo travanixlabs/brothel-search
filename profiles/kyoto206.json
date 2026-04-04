@@ -8933,6 +8933,31 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Yiika",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "167",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-04",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yiika-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/81101775265291_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/81091775265288_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/81081775265283_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-04T06:00:23.338Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9570,7 +9595,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-31T06:00:21.156Z",
+  "lastGirlsSync": "2026-04-04T06:00:23.338Z",
   "lastCalendarSync": "2026-04-03T07:00:56.415Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

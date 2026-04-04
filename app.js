@@ -3791,6 +3791,65 @@ window.roadmapVote = async function(roadmapId, vote) {
   initRoadmapPage();
 };
 
+let dataSort = { col: 'venue', dir: 1 };
+function renderDataPage() {
+  const cols = [
+    { key: 'venueName', label: 'Venue' },
+    { key: 'name', label: 'Name' },
+    { key: 'country', label: 'Country', fmt: v => Array.isArray(v) ? v.join(', ') : (v || '') },
+    { key: 'age', label: 'Age' },
+    { key: 'height', label: 'Height' },
+    { key: 'cup', label: 'Cup' },
+    { key: 'body', label: 'Body' },
+    { key: 'val1', label: '30 min', fmt: v => v ? '$' + v : '' },
+    { key: 'val2', label: '45 min', fmt: v => v ? '$' + v : '' },
+    { key: 'val3', label: '60 min', fmt: v => v ? '$' + v : '' },
+    { key: 'startDate', label: 'Start Date' },
+    { key: 'lastRostered', label: 'Last Rostered' },
+  ];
+
+  const sorted = [...allGirls].sort((a, b) => {
+    let va = a[dataSort.col], vb = b[dataSort.col];
+    if (dataSort.col === 'country') { va = Array.isArray(va) ? va.join(', ') : (va || ''); vb = Array.isArray(vb) ? vb.join(', ') : (vb || ''); }
+    if (dataSort.col === 'age' || dataSort.col === 'height' || dataSort.col === 'body' || dataSort.col === 'val1' || dataSort.col === 'val2' || dataSort.col === 'val3') {
+      va = parseFloat(va) || 0; vb = parseFloat(vb) || 0;
+    }
+    va = va || ''; vb = vb || '';
+    if (va < vb) return -1 * dataSort.dir;
+    if (va > vb) return 1 * dataSort.dir;
+    return 0;
+  });
+
+  let html = '<div class="landing-page" style="padding-top:20px">';
+  html += sectionHeader('Data');
+  html += '<p class="landing-desc">' + allGirls.length + ' profiles across ' + Object.keys(VENUE_DATA).length + ' venues</p>';
+  html += '<div style="overflow-x:auto;margin-top:16px"><table style="width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap">';
+  html += '<thead><tr>';
+  for (const col of cols) {
+    const arrow = dataSort.col === col.key ? (dataSort.dir === 1 ? ' \u25B2' : ' \u25BC') : '';
+    html += '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid var(--gold);cursor:pointer;color:var(--gold);font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:1px" onclick="sortDataTable(\'' + col.key + '\')">' + col.label + arrow + '</th>';
+  }
+  html += '</tr></thead><tbody>';
+  for (const g of sorted) {
+    html += '<tr style="border-bottom:1px solid rgba(201,149,44,0.1)">';
+    for (const col of cols) {
+      const val = col.fmt ? col.fmt(g[col.key]) : (g[col.key] || '');
+      html += '<td style="padding:6px 10px;color:var(--text)">' + val + '</td>';
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table></div></div>';
+  return html;
+}
+
+function sortDataTable(col) {
+  if (dataSort.col === col) dataSort.dir *= -1;
+  else { dataSort.col = col; dataSort.dir = 1; }
+  const landing = document.getElementById('landingPage');
+  landing.innerHTML = renderDataPage();
+  window.scrollTo({ top: 0 });
+}
+
 function renderRoadmapPage() {
   updateMeta(
     'Roadmap \u2013 Development Timeline | Brothel Search',
@@ -4432,6 +4491,9 @@ function handleLandingRoute(path) {
     html = renderAnalyticsPage();
   } else if (cleanPath === 'roadmap') {
     html = renderRoadmapPage();
+  } else if (cleanPath === 'data') {
+    if (userRole !== 'admin') { navigateToLanding('/'); return true; }
+    html = renderDataPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
   } else if (parts.length === 2 && parts[0] === 'sydney') {
@@ -4584,6 +4646,11 @@ document.getElementById('navBrothels').addEventListener('click', function(e) {
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
+
+document.getElementById('navData').addEventListener('click', function(e) {
+  e.preventDefault();
+  navigateToLanding('/data');
 });
 
 // Background particles

@@ -1618,7 +1618,8 @@ async function syncStilettoGirls(env, site) {
     let age = '', labels = [], photos = p.photoUrl ? [p.photoUrl] : [];
     try {
       await new Promise(r => setTimeout(r, 300));
-      const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': UA } });
+      const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+      const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': BROWSER_UA } });
       if (pResp.ok) {
         const parsed = parseStilettoProfile(await pResp.text());
         age = parsed.age;
@@ -1645,7 +1646,8 @@ async function syncStilettoGirls(env, site) {
   for (const g of backfillBatch) {
     try {
       await new Promise(r => setTimeout(r, 300));
-      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
+      const BROWSER_UA2 = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': BROWSER_UA2 } });
       if (pResp.ok) {
         const parsed = parseStilettoProfile(await pResp.text());
         let updated = false;

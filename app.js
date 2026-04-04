@@ -4059,21 +4059,61 @@ window.deleteRoadmapItemUI = async function(id) {
 
 // ── Working Now ──
 
+let wnSelectedDay = 0;
+function setWnDay(i) { wnSelectedDay = i; const landing = document.getElementById('landingPage'); if (landing) landing.innerHTML = renderWorkingNow(); }
+
 function renderWorkingNow() {
+  const now = new Date();
+  const rosterNow = new Date(now);
+  if (rosterNow.getHours() < 6) rosterNow.setDate(rosterNow.getDate() - 1);
+  const todayStr = rosterNow.getFullYear() + '-' + String(rosterNow.getMonth() + 1).padStart(2, '0') + '-' + String(rosterNow.getDate()).padStart(2, '0');
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
   const filtered = getFiltered();
-  const sortByMatch = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
-  const now = filtered.filter(g => {
-    const avail = getAvailabilityText(g);
-    return avail && avail.startsWith('Available Now');
-  }).sort(sortByMatch);
-  const later = filtered.filter(g => {
-    const avail = getAvailabilityText(g);
-    return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-  }).sort(sortByMatch);
+  const filteredOrder = new Map();
+  filtered.forEach((g, i) => { filteredOrder.set((g.venue || '') + ':' + g.name, i); });
+
+  // Collect 7 days of roster data
+  const dates = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(rosterNow); d.setDate(d.getDate() + i);
+    dates.push({ str: d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'), date: d });
+  }
+
+  const rosterDays = [];
+  for (const { str: dateStr, date } of dates) {
+    const entries = [];
+    for (const [key, cal] of Object.entries(calendarData)) {
+      if (!cal[dateStr]) continue;
+      if (!filteredOrder.has(key)) continue;
+      const g = filtered.find(g => (g.venue || '') + ':' + g.name === key);
+      if (!g) continue;
+      if (dateStr === todayStr) {
+        const slot = cal[dateStr];
+        if (validSlot(slot)) {
+          let nowMins = now.getHours() * 60 + now.getMinutes();
+          if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
+          const startMins = slotMins(slot.start), endMins = slotMins(slot.end);
+          const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+          if (nowMins >= effectiveEnd) continue;
+        }
+      }
+      entries.push({ girl: g, slot: cal[dateStr], order: filteredOrder.get(key) });
+    }
+    if (entries.length > 0) {
+      entries.sort((a, b) => a.order - b.order);
+      rosterDays.push({ dateStr, date, entries });
+    }
+  }
+
+  const nowCount = filtered.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  const laterCount = filtered.filter(g => { const a = getAvailabilityText(g); return a && (a.startsWith('Available Later') || a.startsWith('Available Future')); }).length;
 
   updateMeta(
     'Who\'s Working Now \u2013 Live Roster | Brothel Search',
-    now.length + ' girls available now across Sydney brothels. ' + later.length + ' more starting later.',
+    nowCount + ' girls available now across Sydney brothels. ' + laterCount + ' more starting later.',
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/working-now',
     null
@@ -4081,31 +4121,69 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
-  html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later.</p>';
+  html += '<p class="landing-desc">' + nowCount + ' available now \u00b7 ' + laterCount + ' starting later</p>';
 
-  if (now.length) {
-    html += '<div class="venue-divider"><span>\u2014 AVAILABLE NOW \u2014</span></div>';
-    html += '<div class="girls-grid">';
-    for (const g of now) {
-      html += renderWorkingNowCard(g);
-    }
+  if (!rosterDays.length) {
+    html += '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No roster data available. Check back later!</div></div>';
     html += '</div>';
+    return html;
   }
 
-  if (later.length) {
-    html += '<div class="venue-divider"><span>\u2014 STARTING LATER \u2014</span></div>';
-    html += '<div class="girls-grid">';
-    for (const g of later) {
-      html += renderWorkingNowCard(g);
-    }
-    html += '</div>';
-  }
+  if (wnSelectedDay >= rosterDays.length) wnSelectedDay = 0;
 
-  if (!now.length && !later.length) {
-    html += '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No girls rostered right now. Check back later!</div></div>';
-  }
-
+  // Day tabs
+  html += '<div class="roster-day-tabs">';
+  rosterDays.forEach((day, i) => {
+    const isToday = day.dateStr === todayStr;
+    const label = isToday ? 'Today' : dayNamesShort[day.date.getDay()];
+    const dateLabel = day.date.getDate() + ' ' + monthNames[day.date.getMonth()];
+    html += '<button class="roster-day-tab' + (i === wnSelectedDay ? ' active' : '') + '" onclick="setWnDay(' + i + ')">' + label + ' <span style="opacity:0.7">' + dateLabel + '</span><span class="tab-count">' + day.entries.length + '</span></button>';
+  });
   html += '</div>';
+
+  // Timeline
+  const TIMELINE_START = 6, TIMELINE_HOURS = 24;
+  const hours = [];
+  for (let i = 0; i <= TIMELINE_HOURS; i += 2) {
+    const h = (TIMELINE_START + i) % 24;
+    hours.push(fmt24to12(String(h).padStart(2, '0') + ':00'));
+  }
+
+  const day = rosterDays[wnSelectedDay];
+  const isToday = day.dateStr === todayStr;
+
+  html += '<div class="roster-day-count">' + day.entries.length + ' girl' + (day.entries.length !== 1 ? 's' : '') + '</div>';
+  html += '<div class="roster-day"><div class="roster-timeline"><div class="roster-timeline-header"><div></div><div class="roster-timeline-hours">' + hours.map(h => '<span>' + h + '</span>').join('') + '</div></div>';
+
+  for (const { girl: g, slot } of day.entries) {
+    const thumb = g.photos && g.photos.length ? imgProxy(g.photos[0], 72) : '';
+    const sM = validSlot(slot) ? slotMins(slot.start) : 0;
+    const eM = validSlot(slot) ? slotMins(slot.end) : 0;
+    let startOffset = sM - TIMELINE_START * 60; if (startOffset < 0) startOffset += 24 * 60;
+    let endOffset = eM - TIMELINE_START * 60; if (endOffset < 0) endOffset += 24 * 60;
+    if (endOffset <= startOffset) endOffset += 24 * 60;
+    const totalMins = TIMELINE_HOURS * 60;
+    const leftPct = Math.max(0, (startOffset / totalMins) * 100);
+    const widthPct = Math.min(100 - leftPct, ((endOffset - startOffset) / totalMins) * 100);
+    let barClass = 'future';
+    if (isToday) {
+      let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+      if (nowOffset < 0) nowOffset += 24 * 60;
+      if (nowOffset >= startOffset && nowOffset < endOffset) barClass = 'now';
+      else if (nowOffset < startOffset) barClass = 'later';
+    }
+    const timeStr = validSlot(slot) ? fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end) : 'Rostered';
+    const priceStr = (g.val1 || g.val2 || g.val3) ? [g.val1 ? '$' + g.val1 : '', g.val2 ? '$' + g.val2 : '', g.val3 ? '$' + g.val3 : ''].filter(Boolean).join(' / ') : g.venueName;
+
+    html += '<div class="roster-entry" onclick="showProfile(allGirls.find(g=>g.venue===\'' + g.venue + '\'&&g.name===\'' + g.name.replace(/'/g, "\\'") + '\'))">';
+    html += '<div class="roster-entry-info">';
+    html += thumb ? '<img class="roster-entry-thumb" src="' + thumb + '" alt="">' : '<div class="roster-entry-thumb" style="background:rgba(255,255,255,0.06)"></div>';
+    html += '<div><div class="roster-entry-name">' + g.name + '</div><div class="roster-entry-venue">' + priceStr + '</div></div></div>';
+    html += '<div class="roster-entry-bar-container"><div class="roster-entry-bar ' + barClass + '" style="left:' + leftPct + '%;width:' + widthPct + '%" title="' + timeStr + '"><span>' + timeStr + '</span></div></div>';
+    html += '</div>';
+  }
+
+  html += '</div></div></div>';
   return html;
 }
 

@@ -1403,7 +1403,38 @@ async function syncGatewayClubGirls(env, site) {
     // Description from og:description or MEET section
     const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
     const desc = ogDesc ? ogDesc[1].replace(/&#8217;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"').replace(/&hellip;/g, '...').replace(/&amp;/g, '&').trim() : '';
-    return { photos, labels, desc };
+    // Availability table: row1=day names, row2=Day Time/Night Time/NA
+    const roster = {};
+    const availMatch = pHtml.match(/AVAILABILITY[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/i);
+    if (availMatch) {
+      const rows = [...availMatch[1].matchAll(/<tr>([\s\S]*?)<\/tr>/gi)];
+      if (rows.length >= 2) {
+        const days = [...rows[0][1].matchAll(/<td>([^<]+)<\/td>/gi)].map(m => m[1].trim());
+        const avails = [...rows[1][1].matchAll(/<td>([\s\S]*?)<\/td>/gi)].map(m => m[1].replace(/<br\s*\/?>/g, ' ').replace(/<[^>]*>/g, '').trim());
+        const DAY_MAP = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, thursday: 4, friday: 5, saturday: 6 };
+        const today = getAEDTDate();
+        for (let i = 0; i < days.length && i < avails.length; i++) {
+          const avail = avails[i].toLowerCase();
+          if (avail === 'na' || !avail) continue;
+          const dow = DAY_MAP[days[i].toLowerCase()];
+          if (dow === undefined) continue;
+          // Find the date for this day of week (today + offset)
+          let offset = dow - today.getDay();
+          if (offset < 0) offset += 7;
+          const d = new Date(today); d.setDate(today.getDate() + offset);
+          const dateStr = fmtDate(d);
+          if (avail.includes('day time') && avail.includes('night time')) {
+            roster[dateStr] = { start: '08:00', end: '08:00' }; // 24h
+          } else if (avail.includes('night time')) {
+            roster[dateStr] = { start: '20:00', end: '08:00' };
+          } else if (avail.includes('day time')) {
+            roster[dateStr] = { start: '08:00', end: '20:00' };
+          }
+        }
+      }
+    }
+
+    return { photos, labels, desc, roster };
   }
 
   // Fetch profile pages for new girls (batch of 15)
@@ -1412,7 +1443,7 @@ async function syncGatewayClubGirls(env, site) {
   const addedNames = [];
 
   for (const p of toProcess) {
-    let photos = [], labels = [], desc = '';
+    let photos = [], labels = [], desc = '', roster = {};
     if (p.profileUrl) {
       try {
         await new Promise(r => setTimeout(r, 500));
@@ -1422,6 +1453,12 @@ async function syncGatewayClubGirls(env, site) {
           photos = parsed.photos;
           labels = parsed.labels;
           desc = parsed.desc;
+          roster = parsed.roster || {};
+          if (Object.keys(roster).length) {
+            if (!data.calendar) data.calendar = {};
+            if (!data.calendar[p.name]) data.calendar[p.name] = {};
+            Object.assign(data.calendar[p.name], roster);
+          }
         }
       } catch (e) { console.error(`[Gateway Club] Error fetching ${p.name}:`, e.message); }
     }
@@ -1451,6 +1488,13 @@ async function syncGatewayClubGirls(env, site) {
         if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
         if ((!g.labels || !g.labels.length) && parsed.labels.length) { g.labels = parsed.labels; updated = true; }
         if (!g.desc && parsed.desc) { g.desc = parsed.desc; updated = true; }
+        // Roster from availability table
+        if (parsed.roster && Object.keys(parsed.roster).length) {
+          if (!data.calendar) data.calendar = {};
+          if (!data.calendar[g.name]) data.calendar[g.name] = {};
+          Object.assign(data.calendar[g.name], parsed.roster);
+          updated = true;
+        }
         // Update startDate from photos if still default
         if (g.startDate === '2026-01-01' || !g.startDate) {
           for (const ph of g.photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) { g.startDate = m[1] + '-' + m[2] + '-01'; g.lastRostered = g.startDate; break; } }

@@ -1430,16 +1430,41 @@ async function syncMarrickvilleBrothelGirls(env, site) {
   const todayStr = fmtDate(getAEDTDate());
   let m;
 
+  const countryMap = { chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', malaysian: 'Malaysian', singaporean: 'Singaporean', indonesian: 'Indonesian', taiwanese: 'Taiwanese', australian: 'Australian', indian: 'Indian', filipina: 'Filipino', 'hong kong': 'Hong Kong' };
+
   while ((m = liRe.exec(html)) !== null) {
     const [, id, imgPath, rawName] = m;
     const name = rawName.trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
 
     const photo = imgPath.startsWith('http') ? imgPath : site.baseUrl + imgPath;
+    const profileUrl = site.baseUrl + '/page.php?ID=' + id;
+
+    // Fetch profile page for details
+    let age = '', height = '', cup = '', country = '';
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(profileUrl, { headers: { 'User-Agent': BROWSER_UA } });
+      if (pResp.ok) {
+        const pHtml = await pResp.text().then(t => t.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' '));
+        const ageMatch = pHtml.match(/Age:\s*(\d+)/i);
+        const heightMatch = pHtml.match(/Height:\s*(\d+)\s*cm/i);
+        const cupMatch = pHtml.match(/(?:Cup|Bust):\s*([A-H])/i);
+        const raceMatch = pHtml.match(/Race:\s*([A-Za-z ]+)/i);
+        age = ageMatch ? ageMatch[1] : '';
+        height = heightMatch ? heightMatch[1] : '';
+        cup = cupMatch ? cupMatch[1].toUpperCase() : '';
+        if (raceMatch) {
+          const raw = raceMatch[1].trim().toLowerCase();
+          country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
+        }
+      }
+    } catch (e) { console.error(`[Marrickville] Error scraping ${profileUrl}:`, e.message); }
+
     const entry = {
-      name, country: [], age: '', height: '', cup: '', body: '',
-      val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: site.baseUrl + '/page.php?ID=' + id,
+      name, country: country ? [country] : [], age, height, cup, body: '',
+      val1: '70', val2: '100', val3: '130',
+      startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
       photos: [photo], labels: [], originalSite: 'Exists',
     };
     existing.push(entry);

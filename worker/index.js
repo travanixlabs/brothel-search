@@ -2091,32 +2091,103 @@ async function syncWivesOnlyGirls(env, site) {
   const addedNames = [];
   const todayStr = fmtDate(getAEDTDate());
 
+  // Collect new profiles from listing
+  const newProfiles = [];
   for (const block of blocks) {
     const nameMatch = block.match(/<h4>([^<]+)<\/h4>/);
     if (!nameMatch) continue;
     const name = nameMatch[1].trim();
     if (!name || name === 'New Girl' || existingNames.has(name) || !isValidGirlName(name)) continue;
-
     const urlMatch = block.match(/href="(https:\/\/wivesonly\.com\.au\/[^"]+)"/);
-    const imgMatch = block.match(/background-image:url\(([^)]+)\)/);
-    const heightMatch = block.match(/Height<\/span><br><span>(\d+)/);
-    const bustMatch = block.match(/Bust<\/span><br><span>([^<]+)/);
-    const ageMatch = block.match(/Age<\/span><br><span>(\d+)/);
+    if (urlMatch) newProfiles.push({ name, url: urlMatch[1] });
+  }
 
-    const cupMatch = bustMatch ? bustMatch[1].match(/([A-H](?:DD)?)\s*cup/i) : null;
-    const photo = imgMatch ? imgMatch[1] : '';
+  function parseWivesOnlyProfile(pHtml) {
+    // Parse h6 label/value pairs: Nationality, Age, Height (Hight), Bust, Hair, Skin
+    const headings = [...pHtml.matchAll(/elementor-heading-title elementor-size-default">([^<]+)/gi)].map(m => m[1].trim());
+    const fields = {};
+    for (let i = 0; i < headings.length - 1; i++) {
+      const key = headings[i].toLowerCase();
+      if (['nationality', 'age', 'hight', 'height', 'bust', 'hair', 'skin'].includes(key)) {
+        fields[key] = headings[i + 1];
+      }
+    }
+    // Description from <p class="p1"> or first substantial <p>
+    const descMatch = pHtml.match(/<p class="p1">([^<]+)/i) || pHtml.match(/elementor-widget-text-editor[\s\S]*?<p[^>]*>([^<]{20,})/i);
+    const desc = descMatch ? descMatch[1].replace(/&#8217;/g, "'").replace(/&#8230;/g, '...').replace(/&amp;/g, '&').trim() : '';
+    // Body (dress size) from description
+    const sizeMatch = desc.match(/size\s+(\d+)/i);
+    // Country from nationality field
+    const country = fields.nationality || '';
+    const age = fields.age || '';
+    const height = fields.hight || fields.height || '';
+    const cupMatch = (fields.bust || '').match(/([A-H](?:DD)?)/i);
+    const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
+    const body = sizeMatch ? sizeMatch[1] : '';
+    // Photos
+    const photos = [];
+    const photoSet = new Set();
+    const photoRe = /src="(https:\/\/wivesonly\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+    let pm;
+    while ((pm = photoRe.exec(pHtml)) !== null) {
+      let src = pm[1];
+      if (/logo|icon|VIP|phn|BECOME|cropped/i.test(src)) continue;
+      src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+      if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
+    }
+    return { country, age, height, cup, body, desc, photos };
+  }
 
+  const BATCH = Math.min(20, MAX_NEW_PER_RUN);
+  const toProcess = newProfiles.slice(0, BATCH);
+  const addedNames = [];
+
+  for (const p of toProcess) {
+    let parsed = { country: '', age: '', height: '', cup: '', body: '', desc: '', photos: [] };
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(p.url, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) parsed = parseWivesOnlyProfile(await pResp.text());
+    } catch (e) { console.error(`[Wives Only] Error fetching ${p.name}:`, e.message); }
+
+    const startDate = (() => { for (const ph of parsed.photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) return m[1] + '-' + m[2] + '-01'; } return todayStr; })();
     const entry = {
-      name, country: [], age: ageMatch ? ageMatch[1] : '',
-      height: heightMatch ? heightMatch[1] : '',
-      cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
+      name: p.name, country: parsed.country ? [parsed.country] : [],
+      age: parsed.age, height: parsed.height, cup: parsed.cup, body: parsed.body, desc: parsed.desc,
       val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
-      photos: photo ? [photo] : [], labels: [], originalSite: 'Exists',
+      startDate, lastRostered: startDate, oldUrl: p.url,
+      photos: parsed.photos, labels: [], originalSite: 'Exists',
     };
     existing.push(entry);
-    existingNames.add(name);
-    addedNames.push(name);
+    existingNames.add(p.name);
+    addedNames.push(p.name);
+  }
+
+  // Backfill existing girls missing country/desc/photos
+  const needBackfill = existing.filter(g => (!g.country || !g.country.length || !g.desc || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('wivesonly.com.au/'));
+  const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
+  for (const g of backfillBatch) {
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) {
+        const parsed = parseWivesOnlyProfile(await pResp.text());
+        let updated = false;
+        if ((!g.country || !g.country.length) && parsed.country) { g.country = [parsed.country]; updated = true; }
+        if (!g.desc && parsed.desc) { g.desc = parsed.desc; updated = true; }
+        if (!g.body && parsed.body) { g.body = parsed.body; updated = true; }
+        if (!g.age && parsed.age) { g.age = parsed.age; updated = true; }
+        if (!g.height && parsed.height) { g.height = parsed.height; updated = true; }
+        if (!g.cup && parsed.cup) { g.cup = parsed.cup; updated = true; }
+        if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
+        // Update startDate from photos
+        if ((!g.startDate || g.startDate === todayStr) && parsed.photos.length) {
+          for (const ph of parsed.photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) { g.startDate = m[1] + '-' + m[2] + '-01'; g.lastRostered = g.startDate; break; } }
+          updated = true;
+        }
+        if (updated) addedNames.push(g.name + ' (details)');
+      }
+    } catch (e) {}
   }
 
   if (addedNames.length) {
@@ -2124,7 +2195,7 @@ async function syncWivesOnlyGirls(env, site) {
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Wives Only] Auto-sync: ${addedNames.join(', ')}`);
   }
-  return { added: addedNames.length, remaining: 0, names: addedNames };
+  return { added: addedNames.length, remaining: newProfiles.length - toProcess.length, names: addedNames };
 }
 
 /* ── Jinia custom scraper (Enfold/Avia portfolio theme, fetches profile pages) ── */

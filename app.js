@@ -3864,12 +3864,15 @@ function renderWorkingNow() {
     }
   }
 
+  // Count today's roster only
+  const todayRoster = rosterDays.find(d => d.dateStr === todayStr);
+  const todayTotal = todayRoster ? todayRoster.entries.length : 0;
   const nowCount = filtered.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
-  const laterCount = filtered.filter(g => { const a = getAvailabilityText(g); return a && (a.startsWith('Available Later') || a.startsWith('Available Future')); }).length;
+  const laterTodayCount = todayTotal - nowCount;
 
   updateMeta(
     'Who\'s Working Now \u2013 Live Roster | Brothel Search',
-    nowCount + ' girls available now across Sydney brothels. ' + laterCount + ' more starting later.',
+    nowCount + ' girls available now across Sydney brothels. ' + (laterTodayCount > 0 ? laterTodayCount + ' more starting later.' : ''),
     'https://brothelsearch.com/og-preview.png',
     'https://brothelsearch.com/working-now',
     null
@@ -3877,7 +3880,7 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
-  html += '<p class="landing-desc">' + nowCount + ' available now \u00b7 ' + laterCount + ' starting later</p>';
+  html += '<p class="landing-desc">' + todayTotal + ' rostered today' + (nowCount > 0 ? ' \u00b7 ' + nowCount + ' available now' : '') + '</p>';
 
   if (!rosterDays.length) {
     html += '<div class="empty-msg"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom:20px"><circle cx="40" cy="40" r="38" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><circle cx="40" cy="40" r="28" stroke="rgba(201,149,44,0.15)" stroke-width="1"/><path d="M30 45c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="rgba(201,149,44,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none" transform="rotate(180 40 40)"/><circle cx="33" cy="35" r="2" fill="rgba(201,149,44,0.3)"/><circle cx="47" cy="35" r="2" fill="rgba(201,149,44,0.3)"/></svg><div>No roster data available. Check back later!</div></div>';

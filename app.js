@@ -4221,12 +4221,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: v.name, url: v.url, address: { '@type': 'PostalAddress', streetAddress: v.address.split(',')[0], addressLocality: v.suburb, addressRegion: 'NSW', addressCountry: 'AU' } }
   );
 
-  const topGirl = girls.find(g => g.photos && g.photos.length);
-  const heroImg = topGirl ? imgProxy(topGirl.photos[0], 1200) : '';
   let html = '';
-  if (heroImg) {
-    html += '<div class="venue-hero" style="background-image:url(' + heroImg + ')"><div class="venue-hero-overlay"></div></div>';
-  }
   html += '<div class="landing-page">';
   html += '<h1 class="landing-title">' + v.name + '</h1>';
   html += '<div class="landing-venue-meta">';

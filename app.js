@@ -2201,11 +2201,12 @@ function loadMore() {
 
 
 function renderGrid() {
-  // If Working Now page is active, re-render it with updated filters
-  if (window.location.pathname === '/working-now') {
+  // If Working Now or Data page is active, re-render with updated filters
+  const activePath = window.location.pathname;
+  if (activePath === '/working-now' || activePath === '/data') {
     const landing = document.getElementById('landingPage');
     if (landing && landing.style.display !== 'none') {
-      landing.innerHTML = renderWorkingNow();
+      landing.innerHTML = activePath === '/working-now' ? renderWorkingNow() : renderDataPage();
     }
   }
 
@@ -3814,7 +3815,8 @@ function renderDataPage() {
     { key: 'lastRostered', label: 'Last Rostered' },
   ];
 
-  const sorted = [...allGirls].sort((a, b) => {
+  const filtered = getFiltered();
+  const sorted = [...filtered].sort((a, b) => {
     let va = a[dataSort.col], vb = b[dataSort.col];
     if (dataSort.col === 'country') { va = Array.isArray(va) ? va.join(', ') : (va || ''); vb = Array.isArray(vb) ? vb.join(', ') : (vb || ''); }
     if (dataSort.col === 'age' || dataSort.col === 'height' || dataSort.col === 'body' || dataSort.col === 'val1' || dataSort.col === 'val2' || dataSort.col === 'val3') {
@@ -3828,7 +3830,7 @@ function renderDataPage() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Data');
-  html += '<p class="landing-desc">' + allGirls.length + ' profiles across ' + Object.keys(VENUE_DATA).length + ' venues</p>';
+  html += '<p class="landing-desc">' + filtered.length + ' of ' + allGirls.length + ' profiles</p>';
   html += '<div style="overflow-x:auto;margin-top:16px"><table style="width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap">';
   html += '<thead><tr>';
   for (const col of cols) {
@@ -4552,7 +4554,7 @@ function handleLandingRoute(path) {
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Show filter bar on Working Now page
     const fsb = document.getElementById('filterSortBar');
-    if (fsb) fsb.style.display = (cleanPath === 'working-now') ? '' : 'none';
+    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data') ? '' : 'none';
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {

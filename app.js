@@ -3259,12 +3259,15 @@ function renderHomePage() {
   const thirtyDayStrStats = thirtyDaysAgoStats.toISOString().split('T')[0];
   const newCount = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrStats).length;
   const activeGirls = allGirls.filter(g => g.lastRostered && g.lastRostered >= sevenDayStrStats).length;
-  const workingToday = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  const homeTodayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const workingToday = Object.entries(calendarData).filter(([k, cal]) => cal && cal[homeTodayStr]).length;
+  const workingNow = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
   html += '<div class="home-stats">';
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalVenues + '">0</span><span class="home-stat-label">Venues</span></div>';
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + newCount + '">0</span><span class="home-stat-label">New</span></div>';
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + activeGirls + '">0</span><span class="home-stat-label">Active Girls</span></div>';
   html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingToday + '">0</span><span class="home-stat-label">Working Today</span></div>';
+  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingNow + '">0</span><span class="home-stat-label">Working Now</span></div>';
   html += '</div>';
 
   // Daily Digest section

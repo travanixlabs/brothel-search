@@ -1538,9 +1538,13 @@ async function syncSpringHouseGirls(env, site) {
         if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
       }
 
+      // Description: <p> inside .singleText after the <hr> following schedule
+      const descMatch = pHtml.match(/class="singleText"[\s\S]*?<hr>[\s\S]*?<p>([\s\S]*?)<\/p>/i);
+      const desc = descMatch ? descMatch[1].replace(/<[^>]+>/g, '').replace(/&#8217;/g, "'").replace(/&#8230;/g, '...').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim() : '';
+
       const entry = {
         name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
-        height: '', cup: '', body: '',
+        height: '', cup: '', body: '', desc,
         val1: '', val2: '', val3: '',
         startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',

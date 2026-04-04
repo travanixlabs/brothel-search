@@ -187,7 +187,7 @@ const SITES = {
     baseUrl: 'https://www.marrickvillebrothel.com',
     girlsUrl: 'https://www.marrickvillebrothel.com/ladies.php',
     rosterUrl: 'https://www.marrickvillebrothel.com/roster.php',
-    rosterFormat: 'generic-wp',
+    rosterFormat: 'marrickville',
     jsonPath: 'profiles/marrickvillebrothel.json',
     imgPrefix: 'profiles/marrickvillebrothel',
     siteType: 'php',
@@ -1610,6 +1610,80 @@ async function scrapeStilettoRoster(site, env) {
   return calendar;
 }
 
+async function scrapeMarrickvilleRoster(site) {
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!resp.ok) throw new Error(`Marrickville roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  // Parse table: pairs of <td>Name</td><td>Roster</td> (skip &nbsp; cells)
+  const cells = [...html.matchAll(/<td[^>]*>([^<]+)<\/td>/gi)]
+    .map(m => m[1].trim())
+    .filter(t => t !== '&nbsp;' && t !== '');
+
+  const today = getAEDTDate();
+  const todayDow = today.getDay(); // 0=Sun
+  const calendar = {};
+  const DAY_MAP = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, thursay: 4, friday: 5, saturday: 6 };
+
+  // Build dates for the next 7 days indexed by dow
+  const datesByDow = {};
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() + i);
+    const dow = d.getDay();
+    datesByDow[dow] = fmtDate(d);
+  }
+
+  function getDatesForRoster(rosterText) {
+    const text = rosterText.toLowerCase().trim();
+    if (text === 'everyday') return Object.values(datesByDow);
+
+    // Range: "monday to friday"
+    const rangeMatch = text.match(/(\w+)\s+to\s+(\w+)/);
+    if (rangeMatch) {
+      const startDow = DAY_MAP[rangeMatch[1]];
+      const endDow = DAY_MAP[rangeMatch[2]];
+      if (startDow !== undefined && endDow !== undefined) {
+        const dates = [];
+        for (let dow = startDow; ; dow = (dow + 1) % 7) {
+          if (datesByDow[dow]) dates.push(datesByDow[dow]);
+          if (dow === endDow) break;
+        }
+        return dates;
+      }
+    }
+
+    // Specific days: "Thursday,Tuesday,Wednesday"
+    const days = text.split(/[,\s]+/).map(d => d.trim());
+    const dates = [];
+    for (const day of days) {
+      const dow = DAY_MAP[day];
+      if (dow !== undefined && datesByDow[dow]) dates.push(datesByDow[dow]);
+    }
+    return dates;
+  }
+
+  // Process pairs: Name, Roster
+  for (let i = 0; i < cells.length - 1; i += 2) {
+    const name = cells[i];
+    const roster = cells[i + 1];
+    if (!name || !roster) continue;
+    // Skip header row
+    if (name === 'Image' || name === 'Name') continue;
+
+    const dates = getDatesForRoster(roster);
+    for (const dateStr of dates) {
+      if (!calendar[dateStr]) calendar[dateStr] = [];
+      if (!calendar[dateStr].some(e => e.name === name)) {
+        calendar[dateStr].push({ name, start: '09:00', end: '00:00' });
+      }
+    }
+  }
+
+  return calendar;
+}
+
 async function scrapeJiniaRoster(site) {
   const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
@@ -2628,6 +2702,8 @@ async function syncCalendar(env, site) {
     ? await scrapeStilettoRoster(site, env)
     : site.rosterFormat === 'jinia'
     ? await scrapeJiniaRoster(site)
+    : site.rosterFormat === 'marrickville'
+    ? await scrapeMarrickvilleRoster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);

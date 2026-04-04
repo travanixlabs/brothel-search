@@ -1635,6 +1635,9 @@ async function scrapeJiniaRoster(site) {
       if (timeMatch) {
         entry.start = ampmTo24(timeMatch[1]);
         entry.end = ampmTo24(timeMatch[2]);
+      } else {
+        entry.start = '10:30';
+        entry.end = '04:00';
       }
       entries.push(entry);
     }

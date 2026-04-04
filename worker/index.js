@@ -1600,7 +1600,7 @@ async function syncStilettoGirls(env, site) {
   function parseStilettoProfile(pHtml) {
     const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
     const servicesMatch = [...pHtml.matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim());
-    const labels = servicesMatch.filter(s => /Girlfriend|BDSM|Pornstar|Couples|Doubles|Fantasy|Toys|Lesbian|COB|Kissing|Fetish|Escort|Role Play|Body Slide|Tantric|DFK/i.test(s));
+    const labels = servicesMatch.filter(s => s.length > 1);
     // Description + body (dress size) from og:description
     const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
     let desc = '', body = '';

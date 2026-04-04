@@ -1309,8 +1309,14 @@ function getAvailabilityText(g) {
   if (slot && slot.start && slot.end && slot.start.includes(':') && slot.end.includes(':')) {
     const [sh, sm] = slot.start.split(':').map(Number);
     const [eh, em] = slot.end.split(':').map(Number);
-    const startMins = sh * 60 + sm;
+    let startMins = sh * 60 + sm;
     const endMins = eh * 60 + em;
+    // Shifts starting before 6am are overnight (tonight's shift, not this morning's)
+    // Only treat as current-morning if we're actually before the end time AND before 6am
+    if (startMins < 360 && endMins > 0 && endMins <= 600 && nowMins >= 360) {
+      // This is a late-night shift (e.g. 00:00-09:00) and it's past 6am — treat as tonight
+      startMins += 24 * 60;
+    }
     const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
     const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
     if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now (' + timeStr + ')';
@@ -1359,8 +1365,11 @@ function getAvailabilityStatus(g) {
     const [sh, sm] = slot.start.split(':').map(Number);
     const [eh, em] = slot.end.split(':').map(Number);
     const nowMins = now.getHours() * 60 + now.getMinutes();
-    const startMins = sh * 60 + sm;
+    let startMins = sh * 60 + sm;
     const endMins = eh * 60 + em;
+    if (startMins < 360 && endMins > 0 && endMins <= 600 && nowMins >= 360) {
+      startMins += 24 * 60;
+    }
     const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
     if (nowMins >= startMins && nowMins < effectiveEnd) return 'Available Now';
     if (nowMins < startMins) return 'Available Later Today';

@@ -2088,7 +2088,6 @@ async function syncWivesOnlyGirls(env, site) {
   // Parse blocks: name from <a href="URL"><h4>Name</h4></a>, photo from bgimage-roster style, model-parameters for height/bust/age
   // Structure: <div class="bgimage-roster" style="background-image:url(PHOTO)">...model-parameters...Height/Bust/Age/Hair...</div>...<div class="mid-title-name"><a href="URL"><h4>Name</h4></a></div>
   const blocks = html.split('class="col-sm-3 ohoverzoom');
-  const addedNames = [];
   const todayStr = fmtDate(getAEDTDate());
 
   // Collect new profiles from listing

@@ -2709,9 +2709,10 @@ async function syncCalendar(env, site) {
     }
   }
 
-  // Update lastRostered on each girl profile
+  // Update lastRostered: use latest roster date <= today, never future
+  const today = fmtDate(getAEDTDate());
   for (const [dateStr, entries] of Object.entries(scraped)) {
-    if (dateStr.startsWith('_')) continue;
+    if (dateStr.startsWith('_') || dateStr > today) continue;
     for (const entry of entries) {
       let girl;
       if (is429City && entry.url) {
@@ -2726,10 +2727,24 @@ async function syncCalendar(env, site) {
     }
   }
 
-  // Ensure all girls have lastRostered (fall back to startDate)
+  // Ensure all girls have lastRostered: check calendar history, fall back to startDate, cap at today
   for (const g of (data.girls || [])) {
+    const girlCal = calendar[g.name];
+    if (girlCal && typeof girlCal === 'object') {
+      for (const d of Object.keys(girlCal)) {
+        if (d.startsWith('_') || d > today) continue;
+        if (!g.lastRostered || d > g.lastRostered) {
+          g.lastRostered = d;
+          changed = true;
+        }
+      }
+    }
     if (!g.lastRostered && g.startDate) {
-      g.lastRostered = g.startDate;
+      g.lastRostered = g.startDate <= today ? g.startDate : today;
+      changed = true;
+    }
+    if (g.lastRostered && g.lastRostered > today) {
+      g.lastRostered = today;
       changed = true;
     }
   }

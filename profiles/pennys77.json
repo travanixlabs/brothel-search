@@ -44,7 +44,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Riho",
@@ -270,7 +270,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-02-11"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Nina",
@@ -291,7 +291,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Nicole",
@@ -333,7 +333,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Nana",
@@ -354,7 +354,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Ami",
@@ -482,7 +482,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Leah",
@@ -502,12 +502,17 @@
         "https://pennys77.com.au/wp-content/uploads/2025/12/Facetune_22-10-2025-16-19-55_VSCO.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-04"
     }
   ],
   "calendar": {
     "Lyly": {
       "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -516,19 +521,32 @@
       "2026-04-03": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
-      "2026-04-03"
+      "2026-04-03",
+      "2026-04-04"
     ],
     "Daisy": {
       "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
       }
     },
     "Nana": {
       "2026-04-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -549,9 +567,25 @@
       "2026-04-03": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-04": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Meya": {
+      "2026-04-04": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Leah": {
+      "2026-04-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-03T10:00:44.692Z"
+  "lastCalendarSync": "2026-04-04T03:25:23.725Z"
 }

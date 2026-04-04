@@ -1508,7 +1508,7 @@ async function syncGatewayClubGirls(env, site) {
   if (!data.calendar) data.calendar = {};
   const calNames = new Set(Object.keys(data.calendar).filter(k => !k.startsWith('_')));
   const needRoster = existing.filter(g => !calNames.has(g.name) && g.oldUrl && g.oldUrl.includes('gatewayclub.com.au/ladies/'));
-  const rosterBatch = needRoster.slice(0, Math.max(0, BATCH - toProcess.length - backfillBatch.length));
+  const rosterBatch = needRoster.slice(0, 10);
   for (const g of rosterBatch) {
     try {
       await new Promise(r => setTimeout(r, 500));

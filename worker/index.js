@@ -1631,7 +1631,7 @@ async function syncStilettoGirls(env, site) {
     const entry = {
       name: p.name, country: p.nat ? [p.nat] : [], age, height: '',
       cup: p.cup, body: '',
-      val1: '', val2: '', val3: '',
+      val1: '390', val2: '490', val3: '590',
       startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',
     };

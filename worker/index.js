@@ -1644,7 +1644,27 @@ async function syncStilettoGirls(env, site) {
       src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
       if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
     }
-    return { age, labels, photos, desc, body };
+    // Roster: parse availability days from profile page
+    // <span class='roster-manager-post-availability-day-title-sub'>04 Apr</span>
+    // <span class='roster-manager-post-availability-day-hour-start'>9:00 PM</span> ~
+    // <span class='roster-manager-post-availability-day-hour-end'>5:00 AM</span>
+    const roster = {};
+    const dayBlocks = pHtml.split('roster-manager-post-availability-day\'');
+    for (const block of dayBlocks) {
+      const dateMatch = block.match(/day-title-sub'>(\d{2}) (\w{3})<\/span>/);
+      const startMatch = block.match(/day-hour-start'>(\d{1,2}:\d{2} [AP]M)<\/span>/i);
+      const endMatch = block.match(/day-hour-end'>(\d{1,2}:\d{2} [AP]M)<\/span>/i);
+      if (!dateMatch || !startMatch || !endMatch) continue;
+      // Convert "04 Apr" to "2026-04-04"
+      const months = { Jan:'01', Feb:'02', Mar:'03', Apr:'04', May:'05', Jun:'06', Jul:'07', Aug:'08', Sep:'09', Oct:'10', Nov:'11', Dec:'12' };
+      const mon = months[dateMatch[2]];
+      if (!mon) continue;
+      const year = new Date().getFullYear();
+      const dateStr = year + '-' + mon + '-' + dateMatch[1];
+      roster[dateStr] = { start: ampmTo24(startMatch[1].replace(' ', '')), end: ampmTo24(endMatch[1].replace(' ', '')) };
+    }
+
+    return { age, labels, photos, desc, body, roster };
   }
 
   for (const p of toProcess) {
@@ -1660,6 +1680,12 @@ async function syncStilettoGirls(env, site) {
         desc = parsed.desc;
         body = parsed.body;
         if (parsed.photos.length) photos = parsed.photos;
+        // Save roster to calendar
+        if (Object.keys(parsed.roster).length) {
+          if (!data.calendar) data.calendar = {};
+          if (!data.calendar[p.name]) data.calendar[p.name] = {};
+          Object.assign(data.calendar[p.name], parsed.roster);
+        }
       }
     } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
 
@@ -1676,7 +1702,8 @@ async function syncStilettoGirls(env, site) {
   }
 
   // Also backfill age/labels/photos/desc/body for existing girls missing them (batch of 20)
-  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || !g.desc || !g.body || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  const calNames = new Set(Object.keys(data.calendar || {}).filter(k => !k.startsWith('_')));
+  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || !g.desc || !g.body || g.photos.length <= 1 || !calNames.has(g.name)) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
   const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
   for (const g of backfillBatch) {
     try {
@@ -1691,6 +1718,13 @@ async function syncStilettoGirls(env, site) {
         if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
         if (!g.desc && parsed.desc) { g.desc = parsed.desc; updated = true; }
         if (!g.body && parsed.body) { g.body = parsed.body; updated = true; }
+        // Save roster to calendar
+        if (Object.keys(parsed.roster).length) {
+          if (!data.calendar) data.calendar = {};
+          if (!data.calendar[g.name]) data.calendar[g.name] = {};
+          Object.assign(data.calendar[g.name], parsed.roster);
+          updated = true;
+        }
         if (updated) addedNames.push(g.name + ' (details)');
       }
     } catch (e) {}

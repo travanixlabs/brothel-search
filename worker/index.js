@@ -2153,7 +2153,7 @@ async function syncWivesOnlyGirls(env, site) {
     const entry = {
       name: p.name, country: parsed.country ? [parsed.country] : [],
       age: parsed.age, height: parsed.height, cup: parsed.cup, body: parsed.body, desc: parsed.desc,
-      val1: '', val2: '', val3: '',
+      val1: '250', val2: '320', val3: '400',
       startDate, lastRostered: startDate, oldUrl: p.url,
       photos: parsed.photos, labels: [], originalSite: 'Exists',
     };

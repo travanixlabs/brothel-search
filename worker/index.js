@@ -1393,7 +1393,7 @@ async function syncGatewayClubGirls(env, site) {
     let pm;
     while ((pm = photoRe.exec(pHtml)) !== null) {
       let src = pm[1];
-      if (/logo|telegram|250x250/i.test(src)) continue;
+      if (/logo|telegram|250x250|right\.png/i.test(src)) continue;
       src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
       if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
     }

@@ -2726,6 +2726,14 @@ async function syncCalendar(env, site) {
     }
   }
 
+  // Ensure all girls have lastRostered (fall back to startDate)
+  for (const g of (data.girls || [])) {
+    if (!g.lastRostered && g.startDate) {
+      g.lastRostered = g.startDate;
+      changed = true;
+    }
+  }
+
   // Auto-publish scraped dates
   if (!Array.isArray(calendar._published)) calendar._published = [];
   for (const dateStr of Object.keys(scraped)) {

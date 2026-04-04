@@ -1268,7 +1268,9 @@
     },
     {
       "name": "Jess",
-      "country": [],
+      "country": [
+        "Sweedish/ Australian"
+      ],
       "age": "42",
       "height": "170",
       "cup": "B",
@@ -1278,14 +1280,21 @@
       "val3": "",
       "startDate": "2026-04-03",
       "oldUrl": "https://wivesonly.com.au/jess/",
-      "photos": [],
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/08/FF5704EC-71CC-40D5-BB3C-0D587FFE48E6-1.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2025/08/1F441B26-30C6-4333-8485-69AAC1A837B3.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2025/09/633CDF60-97F8-4E2F-8A06-AA7641814E6A.jpg"
+      ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-03",
+      "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
       "name": "Grace",
-      "country": [],
+      "country": [
+        "Sth African"
+      ],
       "age": "21",
       "height": "157",
       "cup": "C",
@@ -1295,14 +1304,19 @@
       "val3": "",
       "startDate": "2026-04-03",
       "oldUrl": "https://wivesonly.com.au/grace-2/",
-      "photos": [],
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
+      ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-03",
+      "desc": "Welcome Grace to Wives Only, on tour for a short time but looking for a good time! 21years old, from South Africa, with a fit figure & booty that will blow your mind! Whether you're after a super passionate experience or a naughty one you're sure to come out with a smile. Pre book Grace now so you dont miss out on an experience you'll never forget."
     },
     {
       "name": "Martina",
-      "country": [],
+      "country": [
+        "Cuban"
+      ],
       "age": "27",
       "height": "167",
       "cup": "D",
@@ -1312,10 +1326,13 @@
       "val3": "",
       "startDate": "2026-04-03",
       "oldUrl": "https://wivesonly.com.au/martina/",
-      "photos": [],
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
+      ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-03",
+      "desc": "Exotic elegance meets athletic allure with Martina, a Cuban beauty whose warm olive skin and toned, fit figure will instantly captivate you. With soft dark blonde hair and mesmerizing eyes, Martina brings both charm and sophistication to every encounter. Her D-cup curves and confident presence exude sensuality, while her vibrant personality and genuine warmth make her unforgettable. Whether you're seeking relaxation, connection, or an indulgent escape, Martina offers a truly elevated experience from start to finish."
     },
     {
       "name": "Inaya",
@@ -2381,6 +2398,6 @@
     }
   ],
   "calendar": {},
-  "lastGirlsSync": "2026-04-04T06:17:01.995Z",
+  "lastGirlsSync": "2026-04-04T06:17:16.956Z",
   "lastCalendarSync": null
 }

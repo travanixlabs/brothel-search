@@ -510,14 +510,12 @@ function renderFavRoster(favGirls) {
       if (!cal[dateStr] || !favKeys.has(key)) continue;
       const g = favGirls.find(g => (g.venue || '') + ':' + g.name === key);
       if (!g) continue;
-      if (dateStr === todayStr) {
+      if (dateStr === todayStr && validSlot(cal[dateStr])) {
         const slot = cal[dateStr];
-        const [sh, sm] = slot.start.split(':').map(Number);
-        const [eh, em] = slot.end.split(':').map(Number);
+        const startMins = slotMins(slot.start);
+        const endMins = slotMins(slot.end);
         let nowMins = now.getHours() * 60 + now.getMinutes();
         if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
-        const endMins = eh * 60 + em;
-        const startMins = sh * 60 + sm;
         const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
         if (nowMins >= effectiveEnd) continue;
       }
@@ -555,10 +553,10 @@ function renderFavRoster(favGirls) {
 
   for (const { girl: g, slot } of day.entries) {
     const thumb = g.photos && g.photos.length ? imgProxy(g.photos[0], 72) : '';
-    const [sh, sm] = slot.start.split(':').map(Number);
-    const [eh, em] = slot.end.split(':').map(Number);
-    let startOffset = (sh - TIMELINE_START) * 60 + sm; if (startOffset < 0) startOffset += 24 * 60;
-    let endOffset = (eh - TIMELINE_START) * 60 + em; if (endOffset < 0) endOffset += 24 * 60;
+    const sh = validSlot(slot) ? slotMins(slot.start) : 0;
+    const eh = validSlot(slot) ? slotMins(slot.end) : 0;
+    let startOffset = sh - TIMELINE_START * 60; if (startOffset < 0) startOffset += 24 * 60;
+    let endOffset = eh - TIMELINE_START * 60; if (endOffset < 0) endOffset += 24 * 60;
     if (endOffset <= startOffset) endOffset += 24 * 60;
     const totalMins = TIMELINE_HOURS * 60;
     const leftPct = Math.max(0, (startOffset / totalMins) * 100);
@@ -571,7 +569,7 @@ function renderFavRoster(favGirls) {
       if (nowOffset >= startOffset && nowOffset < endOffset) barClass = 'now';
       else if (nowOffset < startOffset) barClass = 'later';
     }
-    const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
+    const timeStr = validSlot(slot) ? fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end) : 'Rostered';
     const priceStr = (g.val1 || g.val2 || g.val3) ? [g.val1 ? '$' + g.val1 : '', g.val2 ? '$' + g.val2 : '', g.val3 ? '$' + g.val3 : ''].filter(Boolean).join(' / ') : g.venueName;
     html += '<div class="roster-entry" onclick="closeFavorites();showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + g.name.replace(/'/g, "\\'") + '\'))">' +
       '<div class="roster-entry-info">' +
@@ -1268,11 +1266,16 @@ function imgProxy(url, w = 300) {
 }
 
 function fmt24to12(t) {
+  if (!t || !t.includes(':')) return t || '';
   const [h, m] = t.split(':').map(Number);
+  if (isNaN(h)) return t;
   const suffix = h >= 12 ? 'pm' : 'am';
   const h12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
   return m === 0 ? h12 + suffix : h12 + ':' + String(m).padStart(2, '0') + suffix;
 }
+
+function slotMins(t) { if (!t || !t.includes(':')) return 0; const [h, m] = t.split(':').map(Number); return (isNaN(h) ? 0 : h) * 60 + (isNaN(m) ? 0 : m); }
+function validSlot(s) { return s && s.start && s.end && s.start.includes(':') && s.end.includes(':'); }
 
 function getAvailabilityText(g) {
   const cal = calendarData[(g.venue || '') + ':' + g.name];
@@ -2312,15 +2315,17 @@ function renderRoster() {
       // For today, skip entries whose shift has ended
       if (dateStr === todayStr) {
         const slot = cal[dateStr];
-        const [sh, sm] = slot.start.split(':').map(Number);
-        const [eh, em] = slot.end.split(':').map(Number);
-        // If we're before 6am and todayStr is yesterday, add 24h to nowMins
-        let nowMins = now.getHours() * 60 + now.getMinutes();
-        if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
-        const startMins = sh * 60 + sm;
-        const endMins = eh * 60 + em;
-        const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
-        if (nowMins >= effectiveEnd) continue;
+        if (slot && slot.start && slot.end && slot.start.includes(':') && slot.end.includes(':')) {
+          const [sh, sm] = slot.start.split(':').map(Number);
+          const [eh, em] = slot.end.split(':').map(Number);
+          // If we're before 6am and todayStr is yesterday, add 24h to nowMins
+          let nowMins = now.getHours() * 60 + now.getMinutes();
+          if (now.getHours() < 6 && rosterNow.getDate() !== now.getDate()) nowMins += 24 * 60;
+          const startMins = sh * 60 + sm;
+          const endMins = eh * 60 + em;
+          const effectiveEnd = endMins <= startMins ? 24 * 60 + endMins : endMins;
+          if (nowMins >= effectiveEnd) continue;
+        }
       }
       entries.push({ girl: g, slot: cal[dateStr], order: filteredOrder.get(key) });
     }
@@ -2394,13 +2399,13 @@ function renderRoster() {
 
     for (const { girl: g, slot } of day.entries) {
       const thumb = g.photos && g.photos.length ? imgProxy(g.photos[0], 72) : '';
-      const [sh, sm] = slot.start.split(':').map(Number);
-      const [eh, em] = slot.end.split(':').map(Number);
+      const sMin = validSlot(slot) ? slotMins(slot.start) : 0;
+      const eMin = validSlot(slot) ? slotMins(slot.end) : 0;
 
       // Convert to position within timeline (6am = 0%, 6am+24h = 100%)
-      let startOffset = (sh - TIMELINE_START) * 60 + sm;
+      let startOffset = sMin - TIMELINE_START * 60;
       if (startOffset < 0) startOffset += 24 * 60;
-      let endOffset = (eh - TIMELINE_START) * 60 + em;
+      let endOffset = eMin - TIMELINE_START * 60;
       if (endOffset < 0) endOffset += 24 * 60;
       if (endOffset <= startOffset) endOffset += 24 * 60;
 
@@ -2411,14 +2416,13 @@ function renderRoster() {
       // Determine bar state
       let barClass = 'future';
       if (isToday) {
-        const nowMins = now.getHours() * 60 + now.getMinutes();
         let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
         if (nowOffset < 0) nowOffset += 24 * 60;
         if (nowOffset >= startOffset && nowOffset < endOffset) barClass = 'now';
         else if (nowOffset < startOffset) barClass = 'later';
       }
 
-      const timeStr = fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end);
+      const timeStr = validSlot(slot) ? fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end) : 'Rostered';
 
       html += `<div class="roster-entry" onclick="showProfile(allGirls.find(g=>g.venue==='${g.venue}'&&g.name==='${g.name.replace(/'/g, "\\'")}'))">
         <div class="roster-entry-info">

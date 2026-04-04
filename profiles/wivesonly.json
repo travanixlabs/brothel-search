@@ -1336,20 +1336,25 @@
     },
     {
       "name": "Inaya",
-      "country": [],
+      "country": [
+        "South Asian"
+      ],
       "age": "21",
       "height": "156",
-      "cup": "",
+      "cup": "C",
       "body": "",
       "val1": "",
       "val2": "",
       "val3": "",
       "startDate": "2026-04-03",
       "oldUrl": "https://wivesonly.com.au/inaya/",
-      "photos": [],
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
+      ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-03",
+      "desc": "Inaya embodies grace and charm with a touch of mystery. Her South Asian heritage brings a unique, exotic beauty that turns heads, while her gentle demeanor puts you instantly at ease. Petite and perfectly proportioned, she offers a truly intimate and attentive experience, always focused on connection and your comfort. Whether you're seeking engaging conversation or quiet companionship, Inaya makes every moment feel personal and unforgettable."
     },
     {
       "name": "Morgan",
@@ -2398,6 +2403,6 @@
     }
   ],
   "calendar": {},
-  "lastGirlsSync": "2026-04-04T06:17:16.956Z",
+  "lastGirlsSync": "2026-04-04T06:17:31.961Z",
   "lastCalendarSync": null
 }

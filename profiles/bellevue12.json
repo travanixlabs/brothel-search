@@ -24,7 +24,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Candy",
@@ -67,7 +67,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Nana",
@@ -173,7 +173,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Coco",
@@ -239,7 +239,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     },
     {
       "name": "Tiffany",
@@ -281,15 +281,20 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-03"
+      "lastRostered": "2026-04-04"
     }
   ],
   "calendar": {
     "_published": [
-      "2026-04-03"
+      "2026-04-03",
+      "2026-04-04"
     ],
     "Mimi": {
       "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -298,10 +303,18 @@
       "2026-04-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Lisa": {
       "2026-04-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -310,15 +323,23 @@
       "2026-04-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Nancy": {
       "2026-04-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-04-02T23:39:47.929Z"
+  "lastCalendarSync": "2026-04-04T03:25:25.413Z"
 }

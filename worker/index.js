@@ -197,8 +197,8 @@ const SITES = {
     name: 'Spring House',
     baseUrl: 'https://46springhouse.com.au',
     girlsUrl: 'https://46springhouse.com.au/ladies/',
-    rosterUrl: 'https://46springhouse.com.au/roster/',
-    rosterFormat: 'generic-wp',
+    rosterUrl: 'https://46springhouse.com.au/ladies/',
+    rosterFormat: 'springhouse',
     jsonPath: 'profiles/springhouse.json',
     imgPrefix: 'profiles/springhouse',
     siteType: 'wordpress',
@@ -1496,34 +1496,59 @@ async function syncSpringHouseGirls(env, site) {
   const todayStr = fmtDate(getAEDTDate());
   const countryMap = { china: 'Chinese', chinese: 'Chinese', singapore: 'Singaporean', singaporean: 'Singaporean', thai: 'Thai', thailand: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian', 'hong kong': 'Hong Kong' };
 
+  // Collect profile URLs from listing
+  const profileUrls = [];
   for (const block of blocks) {
     const nameMatch = block.match(/class="name">([^<]+)/);
     if (!nameMatch) continue;
     const name = nameMatch[1].trim();
     if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
-
     const urlMatch = block.match(/href="(https:\/\/46springhouse\.com\.au\/[^"]+)"/);
-    const imgMatch = block.match(/<img[^>]+src="(https:\/\/46springhouse\.com\.au\/wp-content\/uploads\/[^"]+)"/);
-    const ageMatch = block.match(/Age:\s*(\d+)/i);
-    const natMatch = block.match(/class="nationality[^"]*">([^<]+)/);
+    if (urlMatch) profileUrls.push({ name, url: urlMatch[1] });
+  }
 
-    let country = '';
-    if (natMatch) {
-      const raw = natMatch[1].trim().toLowerCase();
-      country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
-    }
+  const BATCH = Math.min(20, MAX_NEW_PER_RUN);
+  const toProcess = profileUrls.slice(0, BATCH);
 
-    const photo = imgMatch ? imgMatch[1] : '';
-    const entry = {
-      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
-      height: '', cup: '', body: '',
-      val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
-      photos: photo ? [photo] : [], labels: [], originalSite: 'Exists',
-    };
-    existing.push(entry);
-    existingNames.add(name);
-    addedNames.push(name);
+  for (const { name, url: profileUrl } of toProcess) {
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(profileUrl, { headers: { 'User-Agent': UA } });
+      if (!pResp.ok) continue;
+      const pHtml = await pResp.text();
+
+      // Parse profile page: <h3>Age: 24</h3> <h3>From: china</h3>
+      const ageMatch = pHtml.match(/<h3>Age:\s*(\d+)/i);
+      const fromMatch = pHtml.match(/<h3>From:\s*([^<]+)/i);
+      let country = '';
+      if (fromMatch) {
+        const raw = fromMatch[1].trim().toLowerCase();
+        country = countryMap[raw] || (raw.charAt(0).toUpperCase() + raw.slice(1));
+      }
+
+      // Photos: banner image + singleImage img + acf-gallery images
+      const photos = [];
+      const photoSet = new Set();
+      const photoRe = /(?:src|data-imageUrl)="(https:\/\/46springhouse\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+      let pm;
+      while ((pm = photoRe.exec(pHtml)) !== null) {
+        let src = pm[1];
+        if (/logo|icon|banner/i.test(src)) continue;
+        src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+        if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
+      }
+
+      const entry = {
+        name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
+        height: '', cup: '', body: '',
+        val1: '', val2: '', val3: '',
+        startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
+        photos, labels: [], originalSite: 'Exists',
+      };
+      existing.push(entry);
+      existingNames.add(name);
+      addedNames.push(name);
+    } catch (e) { console.error(`[Spring House] Error scraping ${profileUrl}:`, e.message); }
   }
 
   if (addedNames.length) {
@@ -1607,6 +1632,58 @@ async function scrapeStilettoRoster(site, env) {
     if (!calendar[dateStr]) calendar[dateStr] = [];
     if (!calendar[dateStr].some(e => e.name === name)) calendar[dateStr].push({ name, start, end });
   }
+  return calendar;
+}
+
+async function scrapeSpringHouseRoster(site) {
+  // Each girl's profile page has her schedule: <h4>Monday: 18;00-24;00</h4>
+  // Fetch listing page for profile URLs, then each profile for schedule
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Spring House roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const DAY_MAP = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6 };
+  const today = getAEDTDate();
+  const datesByDow = {};
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(today); d.setDate(today.getDate() + i);
+    datesByDow[d.getDay()] = fmtDate(d);
+  }
+
+  // Get profile URLs and names from listing
+  const blocks = html.split('class="item col-');
+  const profiles = [];
+  for (const block of blocks) {
+    const nameMatch = block.match(/class="name">([^<]+)/);
+    const urlMatch = block.match(/href="(https:\/\/46springhouse\.com\.au\/[^"]+)"/);
+    if (nameMatch && urlMatch) profiles.push({ name: nameMatch[1].trim(), url: urlMatch[1] });
+  }
+
+  const calendar = {};
+  for (const { name, url } of profiles) {
+    try {
+      await new Promise(r => setTimeout(r, 300));
+      const pResp = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!pResp.ok) continue;
+      const pHtml = await pResp.text();
+
+      // Parse schedule: <h4>Monday: 18;00-24;00</h4> or <h4>Monday: 10;00-02;00</h4>
+      const dayRe = /<h4>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday):\s*(\d{1,2})[;:](\d{2})\s*-\s*(\d{1,2})[;:](\d{2})<\/h4>/gi;
+      let dm;
+      while ((dm = dayRe.exec(pHtml)) !== null) {
+        const dow = DAY_MAP[dm[1].toLowerCase()];
+        const dateStr = datesByDow[dow];
+        if (!dateStr) continue;
+        const start = String(dm[2]).padStart(2, '0') + ':' + dm[3];
+        const end = String(dm[4]).padStart(2, '0') + ':' + dm[5];
+        if (!calendar[dateStr]) calendar[dateStr] = [];
+        if (!calendar[dateStr].some(e => e.name === name)) {
+          calendar[dateStr].push({ name, start, end });
+        }
+      }
+    } catch (e) { console.error(`[Spring House] Roster error ${name}:`, e.message); }
+  }
+
   return calendar;
 }
 
@@ -2704,6 +2781,8 @@ async function syncCalendar(env, site) {
     ? await scrapeJiniaRoster(site)
     : site.rosterFormat === 'marrickville'
     ? await scrapeMarrickvilleRoster(site)
+    : site.rosterFormat === 'springhouse'
+    ? await scrapeSpringHouseRoster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);

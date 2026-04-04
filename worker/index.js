@@ -1668,7 +1668,7 @@ async function syncStilettoGirls(env, site) {
   }
 
   for (const p of toProcess) {
-    let age = '', labels = p.tileLabels || [], photos = (p.photoUrl && !/Logo/i.test(p.photoUrl)) ? [p.photoUrl] : [], desc = '', body = '';
+    let age = '', labels = p.tileLabels || [], photos = (p.photoUrl && !/Logo|Screen-Shot/i.test(p.photoUrl)) ? [p.photoUrl] : [], desc = '', body = '';
     try {
       await new Promise(r => setTimeout(r, 300));
       const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';

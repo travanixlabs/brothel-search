@@ -1820,7 +1820,9 @@ async function syncJiniaGirls(env, site) {
       const serviceMatch = pHtml.match(/<p>Service:\s*([^<]+)/i);
       const schemaDesc = pHtml.match(/"description":"([^"]+)"/);
       const descBlock = pHtml.match(/lady-description[\s\S]*?<\/div>/i);
-      const combined = ((serviceMatch ? serviceMatch[1] : '') + ' ' + (schemaDesc ? schemaDesc[1] : '') + ' ' + (descBlock ? descBlock[0].replace(/<[^>]+>/g, ' ') : '')).replace(/\\r\\n|\\n|\\r/g, ' ').replace(/\s+/g, ' ');
+      // Also capture lady-description div content
+      const ladyDesc = pHtml.match(/lady-description[\s\S]*?<\/div>/i);
+      const combined = ((serviceMatch ? serviceMatch[1] : '') + ' ' + (schemaDesc ? schemaDesc[1] : '') + ' ' + (ladyDesc ? ladyDesc[0].replace(/<[^>]+>/g, ' ') : '')).replace(/\\r\\n|\\n|\\r/g, ' ').replace(/\r\n|\n|\r/g, ' ').replace(/\s+/g, ' ');
 
       // Parse pricing: prioritise Diamond > Gold > Standard
       // Look for tier-specific pricing blocks like "Gold services(30min $170, 60min $260)"

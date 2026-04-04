@@ -838,6 +838,421 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "June",
+      "country": [
+        "Australia",
+        "Thai"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "B",
+      "body": "",
+      "val1": "170",
+      "val2": "",
+      "val3": "",
+      "startDate": "2025-10-30",
+      "lastRostered": "2025-10-30",
+      "oldUrl": "https://jinia.com.au/june/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Anna",
+      "country": [],
+      "age": "26",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-28",
+      "lastRostered": "2025-10-28",
+      "oldUrl": "https://jinia.com.au/anna-5/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bobo",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-28",
+      "lastRostered": "2025-10-28",
+      "oldUrl": "https://jinia.com.au/bobo/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/10/%E5%9B%BE%E7%89%87_20241026113010.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Coco",
+      "country": [
+        "Chinese"
+      ],
+      "age": "30",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-27",
+      "lastRostered": "2025-10-27",
+      "oldUrl": "https://jinia.com.au/coco-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251030212355_307_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Selena",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-24",
+      "lastRostered": "2025-10-24",
+      "oldUrl": "https://jinia.com.au/selena-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/07/%E5%9B%BE%E7%89%87_20250726130951.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lucky",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-22",
+      "lastRostered": "2025-10-22",
+      "oldUrl": "https://jinia.com.au/lucky-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251030103500.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tina",
+      "country": [
+        "Chinese"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "A",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-21",
+      "lastRostered": "2025-10-21",
+      "oldUrl": "https://jinia.com.au/tina-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101082335_328_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ebony",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-16",
+      "lastRostered": "2025-10-16",
+      "oldUrl": "https://jinia.com.au/ebony/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251016224503_246_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nanami",
+      "country": [
+        "Japan"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "F",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-01",
+      "lastRostered": "2025-10-01",
+      "oldUrl": "https://jinia.com.au/nanami/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/03/%E5%9B%BE%E7%89%87_20250314093010.jpg",
+        "https://jinia.com.au/wp-content/uploads/2025/03/%E5%9B%BE%E7%89%87_20250314093014.jpg",
+        "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20251014010833_206_23.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Kit",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "24",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-30",
+      "lastRostered": "2025-09-30",
+      "oldUrl": "https://jinia.com.au/kit/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250930165835.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sophia",
+      "country": [
+        "Chinese"
+      ],
+      "age": "24",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-28",
+      "lastRostered": "2025-09-28",
+      "oldUrl": "https://jinia.com.au/sophia-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250928082610_196_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nancy",
+      "country": [
+        "Korean"
+      ],
+      "age": "25",
+      "height": "164",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-22",
+      "lastRostered": "2025-09-22",
+      "oldUrl": "https://jinia.com.au/nancy/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20250620224555.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Miko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "24",
+      "height": "166",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-17",
+      "lastRostered": "2025-09-17",
+      "oldUrl": "https://jinia.com.au/miko/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250918094031.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Attiya",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "161",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-16",
+      "lastRostered": "2025-09-16",
+      "oldUrl": "https://jinia.com.au/aria/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2023/04/Image_20230405145948.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Apple",
+      "country": [
+        "Hongkong"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-12",
+      "lastRostered": "2025-09-12",
+      "oldUrl": "https://jinia.com.au/apple-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141943.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sasa",
+      "country": [
+        "Hongkong"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-12",
+      "lastRostered": "2025-09-12",
+      "oldUrl": "https://jinia.com.au/sasa-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141729.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mango",
+      "country": [
+        "Vietnam"
+      ],
+      "age": "24",
+      "height": "158",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-06",
+      "lastRostered": "2025-09-06",
+      "oldUrl": "https://jinia.com.au/mango/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250906194509_105_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hina",
+      "country": [
+        "Japanese"
+      ],
+      "age": "25",
+      "height": "158",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-04",
+      "lastRostered": "2025-09-04",
+      "oldUrl": "https://jinia.com.au/hina/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/11111111111.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Star",
+      "country": [
+        "Chinese"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-03",
+      "lastRostered": "2025-09-03",
+      "oldUrl": "https://jinia.com.au/nicole/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250911100245.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Jasmine",
+      "country": [
+        "New zealand"
+      ],
+      "age": "22",
+      "height": "165",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-02",
+      "lastRostered": "2025-09-02",
+      "oldUrl": "https://jinia.com.au/7205-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251002163505.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -1170,6 +1585,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-04T02:33:57.882Z",
+  "lastGirlsSync": "2026-04-04T02:34:31.066Z",
   "lastCalendarSync": "2026-04-04T01:23:24.562Z"
 }

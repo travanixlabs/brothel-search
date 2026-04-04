@@ -86,7 +86,7 @@
       "val2": "",
       "val3": "",
       "startDate": "2026-04-04",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-10",
       "oldUrl": "https://46springhouse.com.au/nana-2/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/01/WechatIMG1135.jpeg",
@@ -109,7 +109,7 @@
       "val2": "",
       "val3": "",
       "startDate": "2026-04-04",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-08",
       "oldUrl": "https://46springhouse.com.au/nanoo/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2022/10/Nanoo2.jpeg",
@@ -182,7 +182,7 @@
       "val2": "",
       "val3": "",
       "startDate": "2026-04-04",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-05",
       "oldUrl": "https://46springhouse.com.au/nina/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/09/Nina.jpeg"
@@ -379,5 +379,5 @@
     }
   },
   "lastGirlsSync": "2026-04-04T03:40:39.326Z",
-  "lastCalendarSync": "2026-04-04T07:08:31.203Z"
+  "lastCalendarSync": "2026-04-04T07:33:37.133Z"
 }

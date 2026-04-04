@@ -1697,6 +1697,7 @@ function renderFilters() {
     + buildLabelDropdown('ddAV', 'AV', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>g.pornstar).length},{value:'No',label:'No',count:allGirls.filter(g=>!g.pornstar).length}], activeAV.include, activeAV.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddFav', 'Favourites', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>isFavorite(g)).length},{value:'No',label:'No',count:allGirls.filter(g=>!isFavorite(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
+    + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + '<button class="more-filters-toggle" id="moreFiltersToggle">More Filters <span class="more-filters-badge" id="moreFiltersBadge" style="display:none"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>'
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
@@ -1734,6 +1735,7 @@ function renderFilters() {
     { sel: '#ddAV', state: activeAV },
     { sel: '#ddPhotos', state: activePhotos },
     { sel: '#ddFav', state: activeFavFilter },
+    { sel: '#ddAvailability', state: activeAvailability },
   ];
   toggleMappings.forEach(({ sel, state }) => {
     document.querySelectorAll(sel + ' .label-toggle-btn').forEach(btn => {

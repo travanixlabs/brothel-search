@@ -3,7 +3,426 @@
   "venueURL": "https://jinia.com.au/",
   "venueLocation": "2/81-89 Cosgrove Rd, Strathfield South NSW 2136",
   "venueLocationCoordinates": "-33.89686475038878, 151.07533399699363",
-  "girls": [],
+  "girls": [
+    {
+      "name": "Eva",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "162",
+      "cup": "C",
+      "body": "",
+      "val1": "170",
+      "val2": "",
+      "val3": "260",
+      "startDate": "2026-03-31",
+      "lastRostered": "2026-03-31",
+      "oldUrl": "https://jinia.com.au/eva/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260401093820.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lucy",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "162",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-30",
+      "lastRostered": "2026-03-30",
+      "oldUrl": "https://jinia.com.au/lucy-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260401094425.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nika",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "160",
+      "cup": "D",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-29",
+      "lastRostered": "2026-03-29",
+      "oldUrl": "https://jinia.com.au/nika/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260330093634.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Hazel",
+      "country": [
+        "Greek"
+      ],
+      "age": "19",
+      "height": "159",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-24",
+      "lastRostered": "2026-03-24",
+      "oldUrl": "https://jinia.com.au/hazel/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/mmexport1774337200004.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "May",
+      "country": [
+        "Taiwanese",
+        "Vietnamese"
+      ],
+      "age": "24",
+      "height": "166",
+      "cup": "D",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-23",
+      "lastRostered": "2026-03-23",
+      "oldUrl": "https://jinia.com.au/may-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/01/%E5%9B%BE%E7%89%87_20260123114102.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Monica",
+      "country": [
+        "Thai"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-22",
+      "lastRostered": "2026-03-22",
+      "oldUrl": "https://jinia.com.au/morika/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260324112505.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ella",
+      "country": [
+        "Chinese"
+      ],
+      "age": "24",
+      "height": "162",
+      "cup": "D",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-18",
+      "lastRostered": "2026-03-18",
+      "oldUrl": "https://jinia.com.au/ella-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260319105449.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Angela",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "158",
+      "cup": "D",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-14",
+      "lastRostered": "2026-03-14",
+      "oldUrl": "https://jinia.com.au/angela-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260311025717_123_20.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Marissa",
+      "country": [],
+      "age": "25",
+      "height": "165",
+      "cup": "D",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-13",
+      "lastRostered": "2026-03-13",
+      "oldUrl": "https://jinia.com.au/marissa-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260314014410_139_20.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ellen",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "162",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-07",
+      "lastRostered": "2026-03-07",
+      "oldUrl": "https://jinia.com.au/ellen-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260307042350_107_20.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Helen",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-03-02",
+      "lastRostered": "2026-03-02",
+      "oldUrl": "https://jinia.com.au/7664-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2022/11/sexy-girl_meitu_1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yuna",
+      "country": [
+        "Korean mixed"
+      ],
+      "age": "25",
+      "height": "161",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-24",
+      "lastRostered": "2026-02-24",
+      "oldUrl": "https://jinia.com.au/yuna-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/02/%E5%9B%BE%E7%89%87_20260225011636_47_20.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ruby",
+      "country": [
+        "Chinese"
+      ],
+      "age": "21",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-23",
+      "lastRostered": "2026-02-23",
+      "oldUrl": "https://jinia.com.au/ruby-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/05/mmexport1772181138144.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sara",
+      "country": [
+        "Chinese"
+      ],
+      "age": "30",
+      "height": "168",
+      "cup": "E",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-21",
+      "lastRostered": "2026-02-21",
+      "oldUrl": "https://jinia.com.au/sara/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/02/%E5%9B%BE%E7%89%87_20260221043206_35_20.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cici",
+      "country": [
+        "Singaporean"
+      ],
+      "age": "25",
+      "height": "160",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-20",
+      "lastRostered": "2026-02-20",
+      "oldUrl": "https://jinia.com.au/cici-4/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/11/%E5%9B%BE%E7%89%87_20241214175132.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mia",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-20",
+      "lastRostered": "2026-02-20",
+      "oldUrl": "https://jinia.com.au/tina/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2024/02/%E5%9B%BE%E7%89%87_20241013112931.jpg",
+        "https://jinia.com.au/wp-content/uploads/2024/02/%E5%9B%BE%E7%89%87_20240720130458.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Ami",
+      "country": [
+        "Chinese"
+      ],
+      "age": "20",
+      "height": "155",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-19",
+      "lastRostered": "2026-02-19",
+      "oldUrl": "https://jinia.com.au/ami/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/11/%E5%9B%BE%E7%89%87_20260103060716_574_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cassie",
+      "country": [
+        "Chinese"
+      ],
+      "age": "24",
+      "height": "164",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-19",
+      "lastRostered": "2026-02-19",
+      "oldUrl": "https://jinia.com.au/cassie-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250511130614.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Linda",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "25",
+      "height": "156",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-13",
+      "lastRostered": "2026-02-13",
+      "oldUrl": "https://jinia.com.au/linda/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251205095125_%E5%89%AF%E6%9C%AC-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Vivian",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "162",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-02-06",
+      "lastRostered": "2026-02-06",
+      "oldUrl": "https://jinia.com.au/vivian-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/02/%E5%9B%BE%E7%89%87_20260206151402.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    }
+  ],
   "calendar": {
     "Nika": {
       "2026-04-03": {
@@ -334,6 +753,6 @@
       }
     }
   },
-  "lastGirlsSync": null,
+  "lastGirlsSync": "2026-04-04T02:18:14.603Z",
   "lastCalendarSync": "2026-04-04T01:23:24.562Z"
 }

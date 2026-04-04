@@ -4050,12 +4050,13 @@ window.deleteRoadmapItemUI = async function(id) {
 // ── Working Now ──
 
 function renderWorkingNow() {
+  const filtered = getFiltered();
   const sortByMatch = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
-  const now = allGirls.filter(g => {
+  const now = filtered.filter(g => {
     const avail = getAvailabilityText(g);
     return avail && avail.startsWith('Available Now');
   }).sort(sortByMatch);
-  const later = allGirls.filter(g => {
+  const later = filtered.filter(g => {
     const avail = getAvailabilityText(g);
     return avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future'));
   }).sort(sortByMatch);
@@ -4070,7 +4071,9 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
-  html += '<p class="landing-desc">' + now.length + ' girls available right now. ' + later.length + ' starting later.</p>';
+  // Inline filter bar (syncs with profile page filters)
+  html += '<div class="wn-filter-bar" id="wnFilterBar"></div>';
+  html += '<p class="landing-desc" id="wnCounts">' + now.length + ' girls available right now. ' + later.length + ' starting later.</p>';
 
   if (now.length) {
     html += '<div class="venue-divider"><span>\u2014 AVAILABLE NOW \u2014</span></div>';
@@ -4096,6 +4099,59 @@ function renderWorkingNow() {
 
   html += '</div>';
   return html;
+}
+
+function initWorkingNowFilters() {
+  const bar = document.getElementById('wnFilterBar');
+  if (!bar) return;
+
+  // Build venue options from working girls
+  const venueOpts = [];
+  VENUES.forEach(v => { venueOpts.push({ value: v.id, label: v.name, count: allGirls.filter(g => g.venue === v.id).length }); });
+  venueOpts.sort((a, b) => a.label.localeCompare(b.label));
+
+  const countryCounts = {};
+  allGirls.forEach(g => { (Array.isArray(g.country) ? g.country : (g.country ? [g.country] : [])).forEach(c => { countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
+  const countryOpts = Object.keys(countryCounts).sort().map(c => ({ value: c, label: c, count: countryCounts[c] }));
+
+  bar.innerHTML = '<div class="filter-row" style="padding:0;margin-bottom:16px">'
+    + buildLabelDropdown('wnVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)
+    + buildLabelDropdown('wnCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
+    + (hasAnyFilter() ? '<button class="clear-all-btn" onclick="clearAllFilters();refreshWorkingNow()">Clear All</button>' : '')
+    + '</div>';
+
+  // Bind filter toggles
+  [{ sel: '#wnVenue', state: activeVenue }, { sel: '#wnCountry', state: activeCountry }].forEach(({ sel, state }) => {
+    document.querySelectorAll(sel + ' .label-toggle-btn').forEach(btn => {
+      btn.onclick = e => {
+        e.stopPropagation();
+        const label = btn.dataset.label;
+        const action = btn.dataset.action;
+        if (action === 'include') {
+          state.exclude = state.exclude.filter(l => l !== label);
+          if (state.include.includes(label)) state.include = state.include.filter(l => l !== label);
+          else state.include.push(label);
+        } else {
+          state.include = state.include.filter(l => l !== label);
+          if (state.exclude.includes(label)) state.exclude = state.exclude.filter(l => l !== label);
+          else state.exclude.push(label);
+        }
+        refreshWorkingNow();
+        renderFilters();
+        renderGrid();
+      };
+    });
+    const ddBtn = document.querySelector(sel + ' .filter-dropdown-btn');
+    if (ddBtn) ddBtn.onclick = e => { e.stopPropagation(); closeAllDropdowns(ddBtn); ddBtn.classList.toggle('open'); ddBtn.nextElementSibling.classList.toggle('open'); };
+  });
+}
+
+function refreshWorkingNow() {
+  const landing = document.getElementById('landingPage');
+  if (landing && window.location.pathname === '/working-now') {
+    landing.innerHTML = renderWorkingNow();
+    setTimeout(initWorkingNowFilters, 50);
+  }
 }
 
 function renderWorkingNowCard(g) {
@@ -4541,6 +4597,8 @@ function handleLandingRoute(path) {
     }
     // Init roadmap
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
+    // Init Working Now filter bar
+    if (document.getElementById('wnFilterBar')) setTimeout(initWorkingNowFilters, 50);
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {

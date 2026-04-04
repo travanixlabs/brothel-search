@@ -1811,10 +1811,61 @@ async function syncJiniaGirls(env, site) {
       const dateMatch = pHtml.match(/itemprop="datePublished"\s+datetime="(\d{4}-\d{2}-\d{2})/);
       const startDate = dateMatch ? dateMatch[1] : todayStr;
 
+      // Pricing: parse from Service field and description text
+      // Default tiers: Standard 30m=$130, Gold 30m=$170, Diamond 30m=$190 45m=$250 60m=$300
+      const JINIA_STANDARD = { val1: '130', val2: '', val3: '' };
+      const JINIA_GOLD = { val1: '170', val2: '', val3: '' };
+      const JINIA_DIAMOND = { val1: '190', val2: '250', val3: '300' };
+      const pageText = pHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      const serviceMatch = pHtml.match(/<p>Service:\s*([^<]+)/i);
+      const serviceText = serviceMatch ? serviceMatch[1] : '';
+      const descText = pageText;
+      const combined = serviceText || descText;
+
+      // Parse pricing: prioritise Diamond > Gold > Standard
+      // Look for tier-specific pricing blocks like "Gold services(30min $170, 60min $260)"
+      // or "Diamond Service Rates:\n30 mins – $190"
+      let val1 = '', val2 = '', val3 = '';
+      const hasDiamond = /diamond/i.test(combined);
+      const hasGold = /gold/i.test(combined);
+      const hasStandard = /standard/i.test(combined);
+
+      // Extract prices from highest-tier block first
+      function extractPrices(text) {
+        const p30 = [...text.matchAll(/30\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
+        const p45 = [...text.matchAll(/45\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
+        const p60 = [...text.matchAll(/60\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
+        return { v1: p30.length ? p30[p30.length - 1][1] : '', v2: p45.length ? p45[p45.length - 1][1] : '', v3: p60.length ? p60[p60.length - 1][1] : '' };
+      }
+
+      // Try tier-specific sections: "Diamond ... $NNN" or "Gold services(30min $170, 60min $260)"
+      const diamondBlock = combined.match(/diamond[^.]*?\$([\d, min$]+)/i);
+      const goldBlock = combined.match(/gold[^.]*?\$([\d, min$]+)/i);
+
+      if (hasDiamond && diamondBlock) {
+        const block = combined.slice(combined.search(/diamond/i));
+        const p = extractPrices(block);
+        val1 = p.v1; val2 = p.v2; val3 = p.v3;
+      } else if (hasGold && goldBlock) {
+        const block = combined.slice(combined.search(/gold/i));
+        const p = extractPrices(block);
+        val1 = p.v1; val2 = p.v2; val3 = p.v3;
+      } else if (hasStandard) {
+        const block = combined.slice(combined.search(/standard/i));
+        const p = extractPrices(block);
+        val1 = p.v1; val2 = p.v2; val3 = p.v3;
+      }
+
+      // If no explicit prices found, use tier defaults
+      if (!val1 && !val2 && !val3) {
+        const tier = hasDiamond ? JINIA_DIAMOND : hasGold ? JINIA_GOLD : hasStandard ? JINIA_STANDARD : JINIA_DIAMOND;
+        val1 = tier.val1; val2 = tier.val2; val3 = tier.val3;
+      }
+
       const entry = {
         name, country: countries, age: ageMatch ? ageMatch[1] : '',
         height, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: '',
-        val1: '', val2: '', val3: '',
+        val1, val2, val3,
         startDate, lastRostered: startDate, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
       };

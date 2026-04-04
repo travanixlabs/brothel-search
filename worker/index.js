@@ -1601,6 +1601,22 @@ async function syncStilettoGirls(env, site) {
     const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
     const servicesMatch = [...pHtml.matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim());
     const labels = servicesMatch.filter(s => /Girlfriend|BDSM|Pornstar|Couples|Doubles|Fantasy|Toys|Lesbian|COB|Kissing|Fetish|Escort|Role Play|Body Slide|Tantric|DFK/i.test(s));
+    // Description + body (dress size) from og:description
+    const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
+    let desc = '', body = '';
+    if (ogDesc) {
+      desc = ogDesc[1].replace(/&#8217;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"').replace(/&hellip;/g, '...').replace(/&amp;/g, '&').replace(/About me\s*/i, '').trim();
+      // Remove leading trait words like "Bold Sophisticated Brunette"
+      desc = desc.replace(/^(?:Bold|Sophisticated|Elegant|Sexy|Sweet|Gorgeous|Stunning|Beautiful|Petite|Curvy|Slim|Tall|Short|Brunette|Blonde|Redhead|Asian|European|Latin|[A-Z][a-z]+)\s+(?:(?:Bold|Sophisticated|Elegant|Sexy|Sweet|Gorgeous|Stunning|Beautiful|Petite|Curvy|Slim|Tall|Short|Brunette|Blonde|Redhead|Asian|European|Latin|[A-Z][a-z]+)\s+)*(?=[A-Z])/g, '').trim();
+      const sizeMatch = desc.match(/size\s+(\d+)/i);
+      if (sizeMatch) body = sizeMatch[1];
+    }
+    // Age fallback from description if not in custom field
+    let age = ageMatch ? ageMatch[1] : '';
+    if (!age && desc) {
+      const descAge = desc.match(/(\d{2})[- ]year[- ]old/i);
+      if (descAge) age = descAge[1];
+    }
     // Photos from wp-block-image figure tags
     const photos = [];
     const photoSet = new Set();
@@ -1611,11 +1627,11 @@ async function syncStilettoGirls(env, site) {
       src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
       if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
     }
-    return { age: ageMatch ? ageMatch[1] : '', labels, photos };
+    return { age, labels, photos, desc, body };
   }
 
   for (const p of toProcess) {
-    let age = '', labels = [], photos = p.photoUrl ? [p.photoUrl] : [];
+    let age = '', labels = [], photos = p.photoUrl ? [p.photoUrl] : [], desc = '', body = '';
     try {
       await new Promise(r => setTimeout(r, 300));
       const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -1624,13 +1640,15 @@ async function syncStilettoGirls(env, site) {
         const parsed = parseStilettoProfile(await pResp.text());
         age = parsed.age;
         labels = parsed.labels;
+        desc = parsed.desc;
+        body = parsed.body;
         if (parsed.photos.length) photos = parsed.photos;
       }
     } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
 
     const entry = {
       name: p.name, country: p.nat ? [p.nat] : [], age, height: '',
-      cup: p.cup, body: '',
+      cup: p.cup, body, desc,
       val1: '390', val2: '490', val3: '590',
       startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',
@@ -1640,8 +1658,8 @@ async function syncStilettoGirls(env, site) {
     addedNames.push(p.name);
   }
 
-  // Also backfill age/labels/photos for existing girls missing them (batch of 20)
-  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  // Also backfill age/labels/photos/desc/body for existing girls missing them (batch of 20)
+  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length || !g.desc || !g.body || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
   const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
   for (const g of backfillBatch) {
     try {
@@ -1654,6 +1672,8 @@ async function syncStilettoGirls(env, site) {
         if (!g.age && parsed.age) { g.age = parsed.age; updated = true; }
         if ((!g.labels || !g.labels.length) && parsed.labels.length) { g.labels = parsed.labels; updated = true; }
         if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
+        if (!g.desc && parsed.desc) { g.desc = parsed.desc; updated = true; }
+        if (!g.body && parsed.body) { g.body = parsed.body; updated = true; }
         if (updated) addedNames.push(g.name + ' (details)');
       }
     } catch (e) {}

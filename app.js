@@ -4334,6 +4334,10 @@ function handleLandingRoute(path) {
   if (cleanPath === '' || cleanPath === 'index.html') {
     html = renderHomePage();
   } else if (cleanPath === 'profiles') {
+    // Clear availability filter when going to profiles
+    activeAvailability.include = [];
+    activeAvailability.exclude = [];
+    renderFilters(); renderGrid();
     // Show the main profiles section instead
     landingEl.style.display = 'none';
     mainSection.style.display = '';
@@ -4341,6 +4345,9 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     return true;
   } else if (cleanPath === 'working-now') {
+    activeAvailability.include = ['Available Now'];
+    activeAvailability.exclude = [];
+    renderFilters(); renderGrid();
     html = renderWorkingNow();
   } else if (cleanPath === 'compare') {
     html = renderComparePage();
@@ -4473,6 +4480,9 @@ document.getElementById('navHome').addEventListener('click', function(e) {
 document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
   if (!requireSubscription()) return;
+  activeAvailability.include = [];
+  activeAvailability.exclude = [];
+  renderFilters(); renderGrid();
   history.pushState(null, '', '/profiles');
   showMainSection();
   updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);

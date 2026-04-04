@@ -707,6 +707,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = '';
     document.getElementById('notifBell').style.display = 'flex';
+    // Skip redundant work on token refresh — only run full init on sign-in or initial session
+    if (event === 'TOKEN_REFRESHED') return;
     loadNotifications();
     // Navigate to home only on actual login from auth overlay, not session restore
     const authOverlay = document.getElementById('authOverlay');

@@ -1504,6 +1504,30 @@ async function syncGatewayClubGirls(env, site) {
     } catch (e) {}
   }
 
+  // Second pass: backfill roster for girls who have profile data but no calendar yet
+  if (!data.calendar) data.calendar = {};
+  const calNames = new Set(Object.keys(data.calendar).filter(k => !k.startsWith('_')));
+  const needRoster = existing.filter(g => !calNames.has(g.name) && g.oldUrl && g.oldUrl.includes('gatewayclub.com.au/ladies/'));
+  const rosterBatch = needRoster.slice(0, Math.max(0, BATCH - toProcess.length - backfillBatch.length));
+  for (const g of rosterBatch) {
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) {
+        const parsed = parseGatewayProfile(await pResp.text());
+        if (parsed.roster && Object.keys(parsed.roster).length) {
+          if (!data.calendar[g.name]) data.calendar[g.name] = {};
+          Object.assign(data.calendar[g.name], parsed.roster);
+          addedNames.push(g.name + ' (roster)');
+        } else {
+          // Mark as checked with empty calendar so we don't re-check
+          data.calendar[g.name] = {};
+          addedNames.push(g.name + ' (no roster)');
+        }
+      }
+    } catch (e) {}
+  }
+
   if (addedNames.length) {
     data.girls = existing;
     data.lastGirlsSync = new Date().toISOString();

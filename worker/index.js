@@ -197,7 +197,7 @@ const SITES = {
     name: 'Spring House',
     baseUrl: 'https://46springhouse.com.au',
     girlsUrl: 'https://46springhouse.com.au/ladies/',
-    rosterUrl: 'https://46springhouse.com.au/ladies/',
+    rosterUrl: 'https://46springhouse.com.au/roster/',
     rosterFormat: 'springhouse',
     jsonPath: 'profiles/springhouse.json',
     imgPrefix: 'profiles/springhouse',
@@ -1930,55 +1930,17 @@ async function scrapeWivesOnlyRoster(site) {
 }
 
 async function scrapeSpringHouseRoster(site) {
-  // Each girl's profile page has her schedule: <h4>Monday: 18;00-24;00</h4>
-  // Fetch listing page for profile URLs, then each profile for schedule
+  // /roster/ page shows all girls currently rostered (today's roster)
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) throw new Error(`Spring House roster fetch failed: ${resp.status}`);
   const html = await resp.text();
 
-  const DAY_MAP = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6 };
-  const today = getAEDTDate();
-  const datesByDow = {};
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(today); d.setDate(today.getDate() + i);
-    datesByDow[d.getDay()] = fmtDate(d);
-  }
+  const todayStr = fmtDate(getAEDTDate());
+  const names = [...html.matchAll(/class="name">([^<]+)/g)].map(m => m[1].trim()).filter(n => n.length >= 2);
 
-  // Get profile URLs and names from listing
-  const blocks = html.split('class="item col-');
-  const profiles = [];
-  for (const block of blocks) {
-    const nameMatch = block.match(/class="name">([^<]+)/);
-    const urlMatch = block.match(/href="(https:\/\/46springhouse\.com\.au\/[^"]+)"/);
-    if (nameMatch && urlMatch) profiles.push({ name: nameMatch[1].trim(), url: urlMatch[1] });
-  }
-
-  const calendar = {};
-  for (const { name, url } of profiles) {
-    try {
-      await new Promise(r => setTimeout(r, 300));
-      const pResp = await fetch(url, { headers: { 'User-Agent': UA } });
-      if (!pResp.ok) continue;
-      const pHtml = await pResp.text();
-
-      // Parse schedule: <h4>Monday: 18;00-24;00</h4> or <h4>Monday: 10;00-02;00</h4>
-      const dayRe = /<h4>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday):\s*(\d{1,2})[;:](\d{2})\s*-\s*(\d{1,2})[;:](\d{2})<\/h4>/gi;
-      let dm;
-      while ((dm = dayRe.exec(pHtml)) !== null) {
-        const dow = DAY_MAP[dm[1].toLowerCase()];
-        const dateStr = datesByDow[dow];
-        if (!dateStr) continue;
-        const start = String(dm[2]).padStart(2, '0') + ':' + dm[3];
-        const end = String(dm[4]).padStart(2, '0') + ':' + dm[5];
-        if (!calendar[dateStr]) calendar[dateStr] = [];
-        if (!calendar[dateStr].some(e => e.name === name)) {
-          calendar[dateStr].push({ name, start, end });
-        }
-      }
-    } catch (e) { console.error(`[Spring House] Roster error ${name}:`, e.message); }
-  }
-
-  return calendar;
+  if (!names.length) return {};
+  // All girls on the roster page are working today — default hours 10am-3am
+  return { [todayStr]: names.map(name => ({ name, start: '10:00', end: '03:00' })) };
 }
 
 async function scrapeMarrickvilleRoster(site) {

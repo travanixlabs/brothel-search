@@ -1820,7 +1820,7 @@ async function syncJiniaGirls(env, site) {
       const serviceMatch = pHtml.match(/<p>Service:\s*([^<]+)/i);
       const schemaDesc = pHtml.match(/"description":"([^"]+)"/);
       const descBlock = pHtml.match(/lady-description[\s\S]*?<\/div>/i);
-      const combined = (serviceMatch ? serviceMatch[1] : '') + ' ' + (schemaDesc ? schemaDesc[1].replace(/\\r\\n/g, ' ').replace(/\\n/g, ' ') : '') + ' ' + (descBlock ? descBlock[0].replace(/<[^>]+>/g, ' ') : '');
+      const combined = ((serviceMatch ? serviceMatch[1] : '') + ' ' + (schemaDesc ? schemaDesc[1] : '') + ' ' + (descBlock ? descBlock[0].replace(/<[^>]+>/g, ' ') : '')).replace(/\\r\\n|\\n|\\r/g, ' ').replace(/\s+/g, ' ');
 
       // Parse pricing: prioritise Diamond > Gold > Standard
       // Look for tier-specific pricing blocks like "Gold services(30min $170, 60min $260)"
@@ -1832,11 +1832,14 @@ async function syncJiniaGirls(env, site) {
 
       // Extract prices from highest-tier block first
       function extractPrices(text) {
-        // Match "30min $170" or "30 mins – $200" or "$170 for 30 minutes"
+        // Match patterns: "30min $170", "30 mins – $200", "$170 for 30 minutes", "$200/30mins"
         const find = (dur) => {
-          const fwd = [...text.matchAll(new RegExp(dur + '\\s*min[s]?\\s*[-–]?\\s*\\$(\\d+)', 'gi'))];
-          const rev = [...text.matchAll(new RegExp('\\$(\\d+)\\s*(?:for|per)?\\s*' + dur + '\\s*min', 'gi'))];
-          const all = [...fwd.map(m => m[1]), ...rev.map(m => m[1])];
+          const patterns = [
+            new RegExp(dur + '\\s*min[s]?\\s*[-–]?\\s*\\$(\\d+)', 'gi'),          // 30min $170
+            new RegExp('\\$(\\d+)\\s*(?:for|per)?\\s*' + dur + '\\s*min', 'gi'),   // $170 for 30 min
+            new RegExp('\\$(\\d+)\\s*/\\s*' + dur + '\\s*min', 'gi'),              // $200/30mins
+          ];
+          const all = patterns.flatMap(re => [...text.matchAll(re)].map(m => m[1]));
           return all.length ? all[all.length - 1] : '';
         };
         return { v1: find('30'), v2: find('45'), v3: find('60') };

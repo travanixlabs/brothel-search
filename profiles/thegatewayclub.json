@@ -2154,8 +2154,14 @@
       }
     },
     "Stevie": {},
-    "Storm": {}
+    "Storm": {},
+    "Valentina": {
+      "2026-04-04": {
+        "start": "08:00",
+        "end": "08:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-04-04T05:54:44.469Z",
+  "lastGirlsSync": "2026-04-04T05:55:01.229Z",
   "lastCalendarSync": null
 }

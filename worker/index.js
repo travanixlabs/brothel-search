@@ -1349,25 +1349,19 @@ async function syncBellevue12Girls(env, site) {
 
 /* ── The Gateway Club custom scraper (WAF-protected, may 403) ── */
 async function syncGatewayClubGirls(env, site) {
-  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  // Gateway Club WAF blocks browser UA but allows default/bot UA
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
   const existingNames = new Set(existing.map(g => g.name));
 
-  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': BROWSER_UA } });
-  if (!resp.ok) {
-    console.log(`[Gateway Club] Girls page returned ${resp.status} — site may be WAF-protected`);
-    return { added: 0, remaining: 0, names: [] };
-  }
+  const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
+  if (!resp.ok) return { added: 0, remaining: 0, names: [] };
   const html = await resp.text();
-  if (html.includes('403 - Forbidden')) {
-    console.log('[Gateway Club] Got 403 page content — WAF blocking');
-    return { added: 0, remaining: 0, names: [] };
-  }
+  if (html.includes('403 - Forbidden')) return { added: 0, remaining: 0, names: [] };
 
-  // Parse: <a href="URL"><img src="PHOTO" alt="NAME" class="img_lrg"></a>...<h5>NAME</h5>...Age:</td><td>N...Bust:</td><td>X...Height:</td><td>Ncm
+  // Collect new profiles from listing page
   const blocks = html.split('sl_col_glry');
-  const addedNames = [];
+  const newProfiles = [];
   const todayStr = fmtDate(getAEDTDate());
   const countryMap = { aussie: 'Australian', australian: 'Australian', singaporean: 'Singaporean', chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', brazilian: 'Brazilian', kiwi: 'New Zealander', indian: 'Indian', european: 'European', filipina: 'Filipino', indonesian: 'Indonesian', persian: 'Persian', colombian: 'Colombian' };
 
@@ -1380,29 +1374,90 @@ async function syncGatewayClubGirls(env, site) {
     if (existingNames.has(name) || !isValidGirlName(name)) continue;
 
     const urlMatch = block.match(/href="(https:\/\/www\.gatewayclub\.com\.au\/ladies\/[^"]+)"/);
-    const imgMatch = block.match(/src="(https:\/\/www\.gatewayclub\.com\.au\/wp-content\/uploads\/[^"]+)"/);
     const ageMatch = block.match(/Age:<\/td><td>(\d+)/);
     const bustMatch = block.match(/Bust:<\/td><td>([A-H](?:DD)?)/);
     const heightMatch = block.match(/Height:<\/td><td>(\d+)cm/);
     const dressMatch = block.match(/Dress [Ss]ize:<\/td><td>([\d\-]+)/);
-
     const descText = block.replace(/<[^>]+>/g, ' ').toLowerCase();
     let country = '';
-    for (const [key, val] of Object.entries(countryMap)) {
-      if (descText.includes(key)) { country = val; break; }
-    }
+    for (const [key, val] of Object.entries(countryMap)) { if (descText.includes(key)) { country = val; break; } }
 
+    newProfiles.push({ name, profileUrl: urlMatch ? urlMatch[1] : '', age: ageMatch ? ageMatch[1] : '', height: heightMatch ? heightMatch[1] : '', cup: bustMatch ? bustMatch[1] : '', body: dressMatch ? dressMatch[1] : '', country });
+  }
+
+  function parseGatewayProfile(pHtml) {
+    // Photos from slides: <li><img src="URL" ...></li> — skip logo/telegram
+    const photos = [];
+    const photoSet = new Set();
+    const photoRe = /src="(https:\/\/www\.gatewayclub\.com\.au\/wp-content\/uploads\/[^"]+)"/gi;
+    let pm;
+    while ((pm = photoRe.exec(pHtml)) !== null) {
+      let src = pm[1];
+      if (/logo|telegram|250x250/i.test(src)) continue;
+      src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+      if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
+    }
+    // Services: <li>Service Name</li> inside cl_2 div
+    const svcBlock = pHtml.match(/SERVICES[\s\S]*?<ul>([\s\S]*?)<\/ul>/i);
+    const labels = svcBlock ? [...svcBlock[1].matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim()).filter(Boolean) : [];
+    // Description from og:description or MEET section
+    const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
+    const desc = ogDesc ? ogDesc[1].replace(/&#8217;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"').replace(/&hellip;/g, '...').replace(/&amp;/g, '&').trim() : '';
+    return { photos, labels, desc };
+  }
+
+  // Fetch profile pages for new girls (batch of 15)
+  const BATCH = Math.min(15, MAX_NEW_PER_RUN);
+  const toProcess = newProfiles.slice(0, BATCH);
+  const addedNames = [];
+
+  for (const p of toProcess) {
+    let photos = [], labels = [], desc = '';
+    if (p.profileUrl) {
+      try {
+        await new Promise(r => setTimeout(r, 500));
+        const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': UA } });
+        if (pResp.ok) {
+          const parsed = parseGatewayProfile(await pResp.text());
+          photos = parsed.photos;
+          labels = parsed.labels;
+          desc = parsed.desc;
+        }
+      } catch (e) { console.error(`[Gateway Club] Error fetching ${p.name}:`, e.message); }
+    }
+    const startDate = (() => { for (const ph of photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) return m[1] + '-' + m[2] + '-01'; } return '2026-01-01'; })();
     const entry = {
-      name, country: country ? [country] : [], age: ageMatch ? ageMatch[1] : '',
-      height: heightMatch ? heightMatch[1] : '', cup: bustMatch ? bustMatch[1] : '',
-      body: dressMatch ? dressMatch[1] : '',
+      name: p.name, country: p.country ? [p.country] : [], age: p.age, height: p.height,
+      cup: p.cup, body: p.body, desc,
       val1: '', val2: '', val3: '',
-      startDate: todayStr, oldUrl: urlMatch ? urlMatch[1] : site.girlsUrl,
-      photos: imgMatch ? [imgMatch[1]] : [], labels: [], originalSite: 'Exists',
+      startDate, lastRostered: startDate, oldUrl: p.profileUrl || site.girlsUrl,
+      photos, labels, originalSite: 'Exists',
     };
     existing.push(entry);
-    existingNames.add(name);
-    addedNames.push(name);
+    existingNames.add(p.name);
+    addedNames.push(p.name);
+  }
+
+  // Backfill existing girls missing photos/labels/desc (batch remaining)
+  const needBackfill = existing.filter(g => (!g.labels || !g.labels.length || !g.desc || g.photos.length <= 1) && g.oldUrl && g.oldUrl.includes('gatewayclub.com.au/ladies/'));
+  const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
+  for (const g of backfillBatch) {
+    try {
+      await new Promise(r => setTimeout(r, 500));
+      const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
+      if (pResp.ok) {
+        const parsed = parseGatewayProfile(await pResp.text());
+        let updated = false;
+        if (parsed.photos.length > g.photos.length) { g.photos = parsed.photos; updated = true; }
+        if ((!g.labels || !g.labels.length) && parsed.labels.length) { g.labels = parsed.labels; updated = true; }
+        if (!g.desc && parsed.desc) { g.desc = parsed.desc; updated = true; }
+        // Update startDate from photos if still default
+        if (g.startDate === '2026-01-01' || !g.startDate) {
+          for (const ph of g.photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) { g.startDate = m[1] + '-' + m[2] + '-01'; g.lastRostered = g.startDate; break; } }
+        }
+        if (updated) addedNames.push(g.name + ' (details)');
+      }
+    } catch (e) {}
   }
 
   if (addedNames.length) {
@@ -1410,7 +1465,7 @@ async function syncGatewayClubGirls(env, site) {
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Gateway Club] Auto-sync: ${addedNames.join(', ')}`);
   }
-  return { added: addedNames.length, remaining: 0, names: addedNames };
+  return { added: addedNames.length, remaining: newProfiles.length - toProcess.length, names: addedNames };
 }
 
 /* ── Marrickville Brothel custom scraper (plain PHP site) ── */

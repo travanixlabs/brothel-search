@@ -291,7 +291,8 @@
     {
       "name": "Venetia",
       "country": [
-        "Australian/Asian"
+        "Australian",
+        "Asian"
       ],
       "age": "30",
       "height": "165",
@@ -358,7 +359,8 @@
     {
       "name": "Honey",
       "country": [
-        "Australian/Spanish"
+        "Australian",
+        "Spanish"
       ],
       "age": "25",
       "height": "165",
@@ -453,7 +455,8 @@
     {
       "name": "Alicia",
       "country": [
-        "japanese/Chinese"
+        "Japanese",
+        "Chinese"
       ],
       "age": "36",
       "height": "5",
@@ -523,7 +526,8 @@
     {
       "name": "Scarlett",
       "country": [
-        "Australian/Turkish"
+        "Australian",
+        "Turkish"
       ],
       "age": "35",
       "height": "160",
@@ -545,7 +549,8 @@
     {
       "name": "Rita",
       "country": [
-        "Australian/English"
+        "Australian",
+        "English"
       ],
       "age": "29",
       "height": "165",
@@ -900,7 +905,8 @@
     {
       "name": "Savannah",
       "country": [
-        "Maltese/Spanish"
+        "Maltese",
+        "Spanish"
       ],
       "age": "42",
       "height": "152",
@@ -947,7 +953,8 @@
     {
       "name": "Aven",
       "country": [
-        "Chinese/Japanese"
+        "Chinese",
+        "Japanese"
       ],
       "age": "24",
       "height": "160",
@@ -1085,7 +1092,8 @@
     {
       "name": "Oksana",
       "country": [
-        "Ukrainian/Australian"
+        "Ukrainian",
+        "Australian"
       ],
       "age": "23",
       "height": "182",
@@ -1130,7 +1138,8 @@
     {
       "name": "Bunny",
       "country": [
-        "Filipino/Greek"
+        "Filipino",
+        "Greek"
       ],
       "age": "22",
       "height": "165",
@@ -1153,7 +1162,8 @@
     {
       "name": "Nixie",
       "country": [
-        "Australian/Croatian"
+        "Australian",
+        "Croatian"
       ],
       "age": "40",
       "height": "152",
@@ -1245,7 +1255,8 @@
     {
       "name": "Veronika",
       "country": [
-        "french/British"
+        "French",
+        "British"
       ],
       "age": "27",
       "height": "175",
@@ -1269,7 +1280,8 @@
     {
       "name": "Jess",
       "country": [
-        "Sweedish/ Australian"
+        "Swedish",
+        "Australian"
       ],
       "age": "42",
       "height": "170",

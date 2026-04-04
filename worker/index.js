@@ -1397,8 +1397,8 @@ async function syncGatewayClubGirls(env, site) {
       src = src.replace(/-\d+x\d+(\.\w+)$/, '$1');
       if (!photoSet.has(src)) { photoSet.add(src); photos.push(src); }
     }
-    // Services: <li>Service Name</li> inside cl_2 div
-    const svcBlock = pHtml.match(/SERVICES[\s\S]*?<ul>([\s\S]*?)<\/ul>/i);
+    // Services: <h4>SERVICES</h4>...</div><div class="cl_2"><ul><li>...</li></ul>
+    const svcBlock = pHtml.match(/SERVICES<\/h4>[\s\S]*?<ul>([\s\S]*?)<\/ul>/i);
     const labels = svcBlock ? [...svcBlock[1].matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim()).filter(Boolean) : [];
     // Description from og:description or MEET section
     const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);

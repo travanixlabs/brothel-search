@@ -1597,16 +1597,23 @@ async function syncStilettoGirls(env, site) {
   const BATCH = Math.min(20, MAX_NEW_PER_RUN);
   const toProcess = newProfiles.slice(0, BATCH);
 
+  function parseStilettoProfile(pHtml) {
+    const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
+    const servicesMatch = [...pHtml.matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim());
+    // Filter to known useful labels
+    const labels = servicesMatch.filter(s => /Girlfriend|BDSM|Pornstar|Couples|Doubles|Fantasy|Toys|Lesbian|COB|Kissing|Fetish|Escort|Role Play|Body Slide|Tantric|DFK/i.test(s));
+    return { age: ageMatch ? ageMatch[1] : '', labels };
+  }
+
   for (const p of toProcess) {
-    let age = '';
+    let age = '', labels = [];
     try {
       await new Promise(r => setTimeout(r, 300));
       const pResp = await fetch(p.profileUrl, { headers: { 'User-Agent': UA } });
       if (pResp.ok) {
-        const pHtml = await pResp.text();
-        // <div class='custom-field-display custom-field-age'><strong>Age:</strong> <span>28</span></div>
-        const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
-        if (ageMatch) age = ageMatch[1];
+        const parsed = parseStilettoProfile(await pResp.text());
+        age = parsed.age;
+        labels = parsed.labels;
       }
     } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
 
@@ -1615,24 +1622,26 @@ async function syncStilettoGirls(env, site) {
       cup: p.cup, body: p.body,
       val1: '', val2: '', val3: '',
       startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
-      photos: p.photoUrl ? [p.photoUrl] : [], labels: [], originalSite: 'Exists',
+      photos: p.photoUrl ? [p.photoUrl] : [], labels, originalSite: 'Exists',
     };
     existing.push(entry);
     existingNames.add(p.name);
     addedNames.push(p.name);
   }
 
-  // Also backfill age for existing girls missing it (batch of 20)
-  const needAge = existing.filter(g => !g.age && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
-  const ageBackfill = needAge.slice(0, Math.max(0, BATCH - toProcess.length));
-  for (const g of ageBackfill) {
+  // Also backfill age/labels for existing girls missing them (batch of 20)
+  const needBackfill = existing.filter(g => (!g.age || !g.labels || !g.labels.length) && g.oldUrl && g.oldUrl.includes('stilettosydney.com'));
+  const backfillBatch = needBackfill.slice(0, Math.max(0, BATCH - toProcess.length));
+  for (const g of backfillBatch) {
     try {
       await new Promise(r => setTimeout(r, 300));
       const pResp = await fetch(g.oldUrl, { headers: { 'User-Agent': UA } });
       if (pResp.ok) {
-        const pHtml = await pResp.text();
-        const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
-        if (ageMatch) { g.age = ageMatch[1]; addedNames.push(g.name + ' (age)'); }
+        const parsed = parseStilettoProfile(await pResp.text());
+        let updated = false;
+        if (!g.age && parsed.age) { g.age = parsed.age; updated = true; }
+        if ((!g.labels || !g.labels.length) && parsed.labels.length) { g.labels = parsed.labels; updated = true; }
+        if (updated) addedNames.push(g.name + ' (details)');
       }
     } catch (e) {}
   }

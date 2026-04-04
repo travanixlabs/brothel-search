@@ -1816,38 +1816,42 @@ async function syncJiniaGirls(env, site) {
       const JINIA_STANDARD = { val1: '130', val2: '', val3: '' };
       const JINIA_GOLD = { val1: '170', val2: '', val3: '' };
       const JINIA_DIAMOND = { val1: '190', val2: '250', val3: '300' };
-      const pageText = pHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      // Get service/pricing text from Service field and schema description (avoid HTML class noise)
       const serviceMatch = pHtml.match(/<p>Service:\s*([^<]+)/i);
-      const serviceText = serviceMatch ? serviceMatch[1] : '';
-      const descText = pageText;
-      const combined = serviceText || descText;
+      const schemaDesc = pHtml.match(/"description":"([^"]+)"/);
+      const descBlock = pHtml.match(/lady-description[\s\S]*?<\/div>/i);
+      const combined = (serviceMatch ? serviceMatch[1] : '') + ' ' + (schemaDesc ? schemaDesc[1].replace(/\\r\\n/g, ' ').replace(/\\n/g, ' ') : '') + ' ' + (descBlock ? descBlock[0].replace(/<[^>]+>/g, ' ') : '');
 
       // Parse pricing: prioritise Diamond > Gold > Standard
       // Look for tier-specific pricing blocks like "Gold services(30min $170, 60min $260)"
       // or "Diamond Service Rates:\n30 mins – $190"
       let val1 = '', val2 = '', val3 = '';
       const hasDiamond = /diamond/i.test(combined);
-      const hasGold = /gold/i.test(combined);
+      const hasGold = /gold(?:en)?/i.test(combined);
       const hasStandard = /standard/i.test(combined);
 
       // Extract prices from highest-tier block first
       function extractPrices(text) {
-        const p30 = [...text.matchAll(/30\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
-        const p45 = [...text.matchAll(/45\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
-        const p60 = [...text.matchAll(/60\s*min[s]?\s*[-–]?\s*\$(\d+)/gi)];
-        return { v1: p30.length ? p30[p30.length - 1][1] : '', v2: p45.length ? p45[p45.length - 1][1] : '', v3: p60.length ? p60[p60.length - 1][1] : '' };
+        // Match "30min $170" or "30 mins – $200" or "$170 for 30 minutes"
+        const find = (dur) => {
+          const fwd = [...text.matchAll(new RegExp(dur + '\\s*min[s]?\\s*[-–]?\\s*\\$(\\d+)', 'gi'))];
+          const rev = [...text.matchAll(new RegExp('\\$(\\d+)\\s*(?:for|per)?\\s*' + dur + '\\s*min', 'gi'))];
+          const all = [...fwd.map(m => m[1]), ...rev.map(m => m[1])];
+          return all.length ? all[all.length - 1] : '';
+        };
+        return { v1: find('30'), v2: find('45'), v3: find('60') };
       }
 
       // Try tier-specific sections: "Diamond ... $NNN" or "Gold services(30min $170, 60min $260)"
       const diamondBlock = combined.match(/diamond[^.]*?\$([\d, min$]+)/i);
-      const goldBlock = combined.match(/gold[^.]*?\$([\d, min$]+)/i);
+      const goldBlock = combined.match(/gold(?:en)?[^.]*?\$([\d, min$]+)/i);
 
       if (hasDiamond && diamondBlock) {
         const block = combined.slice(combined.search(/diamond/i));
         const p = extractPrices(block);
         val1 = p.v1; val2 = p.v2; val3 = p.v3;
       } else if (hasGold && goldBlock) {
-        const block = combined.slice(combined.search(/gold/i));
+        const block = combined.slice(combined.search(/gold(?:en)?/i));
         const p = extractPrices(block);
         val1 = p.v1; val2 = p.v2; val3 = p.v3;
       } else if (hasStandard) {

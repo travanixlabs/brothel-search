@@ -2087,10 +2087,15 @@ function renderCard(g, grid) {
       if (!g.lastRostered) return '';
       const today = new Date(); today.setHours(0,0,0,0);
       const rd = new Date(g.lastRostered + 'T00:00:00');
-      if (rd > today) return '';
       const diff = Math.round((today - rd) / 86400000);
       if (diff === 0) return 'Last available: Today';
       if (diff === 1) return 'Last available: Yesterday';
+      if (diff < 0) {
+        // Future date
+        const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
+      }
       return 'Last available: ' + diff + ' days ago';
     })();
 
@@ -3099,7 +3104,12 @@ function showProfile(g) {
             const rd = new Date(g.lastRostered + 'T00:00:00');
             const today = new Date(); today.setHours(0,0,0,0);
             const diff = Math.round((today - rd) / 86400000);
-            if (diff < 0) return '';
+            if (diff < 0) {
+              const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+              const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+              const label = 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
+              return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a9eff;margin-right:8px;box-shadow:0 0 6px #4a9eff40"></span>' + label + '</span></div>';
+            }
             const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
             const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
             return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
@@ -4327,10 +4337,14 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
       if (!g.lastRostered) return '';
       const today = new Date(); today.setHours(0,0,0,0);
       const rd = new Date(g.lastRostered + 'T00:00:00');
-      if (rd > today) return '';
       const diff = Math.round((today - rd) / 86400000);
       if (diff === 0) return 'Last rostered: Today';
       if (diff === 1) return 'Last rostered: Yesterday';
+      if (diff < 0) {
+        const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
+      }
       return 'Last rostered: ' + diff + ' days ago';
     })();
     const img = g.photos && g.photos.length

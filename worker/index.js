@@ -220,7 +220,7 @@ const SITES = {
     baseUrl: 'https://wivesonly.com.au',
     girlsUrl: 'https://wivesonly.com.au/wives-only-ladies/',
     rosterUrl: 'https://wivesonly.com.au/ladies-roster/',
-    rosterFormat: 'generic-wp',
+    rosterFormat: 'wivesonly',
     jsonPath: 'profiles/wivesonly.json',
     imgPrefix: 'profiles/wivesonly',
     siteType: 'wordpress',
@@ -1886,6 +1886,48 @@ async function scrapeStilettoRoster(site, env) {
   return calendar;
 }
 
+async function scrapeWivesOnlyRoster(site) {
+  // Roster page shows girls for current week; ?week=next for next week
+  // Each girl on the page is rostered for all dates in that week with their timeclock shift
+  const calendar = {};
+
+  async function scrapeWeek(url) {
+    const resp = await fetch(url, { headers: { 'User-Agent': UA } });
+    if (!resp.ok) return;
+    const html = await resp.text();
+    // Extract week dates from buttons: data-date='2026-04-04'
+    const dates = [...html.matchAll(/data-date='(\d{4}-\d{2}-\d{2})'/g)].map(m => m[1]);
+    if (!dates.length) return;
+    // Extract girls with timeclock
+    const blocks = html.split('ohoverzoom newroster');
+    for (const block of blocks) {
+      const nameMatch = block.match(/<h4>([^<]+)<\/h4>/);
+      const timeMatch = block.match(/timeclock[\s\S]*?<span>([^<]+)<\/span>/);
+      if (!nameMatch) continue;
+      const name = nameMatch[1].trim();
+      let start = '11:00', end = '04:00'; // default
+      if (timeMatch) {
+        const parts = timeMatch[1].trim().match(/(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
+        if (parts) {
+          start = ampmTo24(parts[1].replace(/\s/g, ''));
+          end = ampmTo24(parts[2].replace(/\s/g, ''));
+        }
+      }
+      for (const dateStr of dates) {
+        if (!calendar[dateStr]) calendar[dateStr] = [];
+        if (!calendar[dateStr].some(e => e.name === name)) {
+          calendar[dateStr].push({ name, start, end });
+        }
+      }
+    }
+  }
+
+  await scrapeWeek(site.rosterUrl);
+  await scrapeWeek(site.rosterUrl + '?week=next');
+
+  return calendar;
+}
+
 async function scrapeSpringHouseRoster(site) {
   // Each girl's profile page has her schedule: <h4>Monday: 18;00-24;00</h4>
   // Fetch listing page for profile URLs, then each profile for schedule
@@ -3104,6 +3146,8 @@ async function syncCalendar(env, site) {
     ? await scrapeMarrickvilleRoster(site)
     : site.rosterFormat === 'springhouse'
     ? await scrapeSpringHouseRoster(site)
+    : site.rosterFormat === 'wivesonly'
+    ? await scrapeWivesOnlyRoster(site)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);

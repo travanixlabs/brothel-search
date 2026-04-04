@@ -1429,7 +1429,7 @@ async function syncGatewayClubGirls(env, site) {
     const entry = {
       name: p.name, country: p.country ? [p.country] : [], age: p.age, height: p.height,
       cup: p.cup, body: p.body, desc,
-      val1: '', val2: '', val3: '',
+      val1: '260', val2: '320', val3: '400',
       startDate, lastRostered: startDate, oldUrl: p.profileUrl || site.girlsUrl,
       photos, labels, originalSite: 'Exists',
     };

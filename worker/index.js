@@ -1590,7 +1590,7 @@ async function syncStilettoGirls(env, site) {
     const figureMatch = attrs.match(/data-figure='([^']+)'/);
     const nat = natMatch ? natMatch[1].trim() : '';
     const cup = bustSizeMatch ? bustSizeMatch[1].replace(/\+/, '').trim() : '';
-    newProfiles.push({ name, profileUrl, photoUrl, nat, cup, body: figureMatch ? figureMatch[1] : '' });
+    newProfiles.push({ name, profileUrl, photoUrl, nat, cup });
   }
 
   // Batch fetch profile pages for age (20 per run due to subrequest limits)
@@ -1630,7 +1630,7 @@ async function syncStilettoGirls(env, site) {
 
     const entry = {
       name: p.name, country: p.nat ? [p.nat] : [], age, height: '',
-      cup: p.cup, body: p.body,
+      cup: p.cup, body: '',
       val1: '', val2: '', val3: '',
       startDate: todayStr, lastRostered: todayStr, oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',

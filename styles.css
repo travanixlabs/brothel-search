@@ -282,9 +282,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .profile-gallery .profile-main-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:opacity .5s ease}
 .profile-gallery .profile-main-wrap img.crossfade-out{opacity:0;position:absolute;inset:0}
 .photo-counter{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:rgba(255,255,255,0.8);font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;padding:4px 10px;border-radius:12px;pointer-events:none}
-.profile-thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:thin;scrollbar-color:rgba(201,149,44,0.2) transparent}
-.profile-thumbs::-webkit-scrollbar{height:4px}
-.profile-thumbs::-webkit-scrollbar-thumb{background:rgba(201,149,44,0.2);border-radius:2px}
+.profile-thumbs{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0 4px}
 .profile-thumbs img{width:64px;height:64px;object-fit:cover;cursor:pointer;border:2px solid rgba(201,149,44,0.1);border-radius:6px;transition:all .3s;flex-shrink:0;opacity:0.6}
 .profile-thumbs img:hover{opacity:1;border-color:rgba(201,149,44,0.4)}
 .profile-thumbs img.active{border-color:var(--gold);opacity:1;box-shadow:0 0 12px rgba(201,149,44,0.2)}

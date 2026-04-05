@@ -3456,10 +3456,14 @@ function renderComparePage() {
   const thirtyDaysAgoCmp = new Date(); thirtyDaysAgoCmp.setDate(thirtyDaysAgoCmp.getDate() - 30);
   const thirtyDayStrCmp = thirtyDaysAgoCmp.toISOString().split('T')[0];
 
+  const cmpTodayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const cmpTomorrowStr = (() => { const n = new Date(); n.setDate(n.getDate()+1); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+
   const rankings = venueIds.map(id => {
     const v = VENUE_DATA[id];
     const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrCmp);
-    const rostered = active.filter(g => { const a = getAvailabilityText(g); return a && a !== 'ended'; }).length;
+    const rostered = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && cal && cal[cmpTodayStr]).length;
+    const rosteredTomorrow = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && cal && cal[cmpTomorrowStr]).length;
     const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
     const countryCounts = {};
     active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c && c !== 'N/A') countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
@@ -3470,7 +3474,7 @@ function renderComparePage() {
       const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
       avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
     }
-    return { id, name: v.name, suburb: v.suburb, rostered, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch, activeCount: active.length };
+    return { id, name: v.name, suburb: v.suburb, rostered, rosteredTomorrow, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch, activeCount: active.length };
   }).sort((a,b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
 
   let html = '<div class="landing-page" style="padding-top:20px">';
@@ -3479,7 +3483,7 @@ function renderComparePage() {
   if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
 
   html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
-  html += '<th class="compare-label">Venue</th><th class="compare-label">Rank</th><th class="compare-label">Address</th><th class="compare-label">Website</th><th class="compare-label">Top Countries</th><th class="compare-label">New</th><th class="compare-label">Active Girls</th><th class="compare-label">Working Today</th>';
+  html += '<th class="compare-label">Venue</th><th class="compare-label">Rank</th><th class="compare-label">Address</th><th class="compare-label">Website</th><th class="compare-label">Top Countries</th><th class="compare-label">New</th><th class="compare-label">Active Girls</th><th class="compare-label">Working Today</th><th class="compare-label">Working Tomorrow</th>';
   if (userPreferences) html += '<th class="compare-label">Avg Match</th>';
   html += '<th class="compare-label">Avg 30min</th><th class="compare-label">Avg 45min</th><th class="compare-label">Avg 60min</th>';
   html += '</tr></thead><tbody>';
@@ -3494,6 +3498,7 @@ function renderComparePage() {
     html += '<td>' + r.newCount + '</td>';
     html += '<td>' + r.activeCount + '</td>';
     html += '<td>' + r.rostered + '</td>';
+    html += '<td>' + r.rosteredTomorrow + '</td>';
     if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? 'var(--gold)' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
     html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
     html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';

@@ -176,7 +176,7 @@ const SITES = {
     baseUrl: 'https://www.gatewayclub.com.au',
     girlsUrl: 'https://www.gatewayclub.com.au/gateway-club-private-girls-sydney/',
     rosterUrl: 'https://www.gatewayclub.com.au/',
-    rosterFormat: 'generic-wp',
+    rosterFormat: 'gateway',
     jsonPath: 'profiles/thegatewayclub.json',
     imgPrefix: 'profiles/thegatewayclub',
     siteType: 'wordpress',
@@ -3111,6 +3111,8 @@ async function syncCalendar(env, site) {
     ? await scrapeSpringHouseRoster(site)
     : site.rosterFormat === 'wivesonly'
     ? await scrapeWivesOnlyRoster(site)
+    : site.rosterFormat === 'gateway'
+    ? {} // Gateway Club roster extracted during girl sync (profile page backfill)
     : await scrapeRoster(site);
   if (Object.keys(scraped).length === 0) {
     console.log(`[${site.name}] Roster scrape: no data found`);

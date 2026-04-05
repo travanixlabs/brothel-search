@@ -85,7 +85,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-03-05"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Ally",
@@ -270,7 +270,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Nina",
@@ -291,7 +291,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Nicole",
@@ -354,7 +354,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Ami",
@@ -503,7 +503,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     }
   ],
   "calendar": {
@@ -525,11 +525,16 @@
       "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
       "2026-04-03",
-      "2026-04-04"
+      "2026-04-04",
+      "2026-04-05"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -547,6 +552,10 @@
         "end": "03:00"
       },
       "2026-04-04": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-05": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -577,15 +586,29 @@
       "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Leah": {
       "2026-04-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-05": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Taylor": {
+      "2026-04-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-04T03:25:23.725Z"
+  "lastCalendarSync": "2026-04-05T09:19:04.809Z"
 }

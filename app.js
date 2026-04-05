@@ -56,6 +56,7 @@ const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
+let userHidden = []; // array of oldUrl strings
 function getMaxFavorites() { return userRole === 'admin' ? Infinity : 10; }
 
 async function fetchUserRole() {
@@ -430,39 +431,61 @@ function closePreferences() {
   if (window.location.hash.includes('profile/')) history.replaceState(null, '', window.location.pathname);
 }
 
-// Favorites
+// Favorites & Hidden
 async function loadFavorites() {
   const { data } = await sbClient.from('user_favorites').select('old_url');
   userFavorites = data ? data.map(r => r.old_url) : [];
+  const { data: hData } = await sbClient.from('user_hidden').select('old_url');
+  userHidden = hData ? hData.map(r => r.old_url) : [];
 }
 
 async function toggleFavorite(oldUrl, e) {
   if (e) e.stopPropagation();
   if (!oldUrl) return;
-  const idx = userFavorites.indexOf(oldUrl);
-  if (idx > -1) {
-    // Remove
-    userFavorites.splice(idx, 1);
-    await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
-  } else {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+
+  const isFav = userFavorites.includes(oldUrl);
+  const isHid = userHidden.includes(oldUrl);
+
+  if (!isFav && !isHid) {
+    // Others → Favourite
     if (userFavorites.length >= getMaxFavorites()) {
       alert('Maximum ' + getMaxFavorites() + ' favourites. Remove one first.');
       return;
     }
     userFavorites.push(oldUrl);
-    const { data: { user } } = await sbClient.auth.getUser();
     await sbClient.from('user_favorites').insert({ user_id: user.id, old_url: oldUrl });
+  } else if (isFav) {
+    // Favourite → Hidden
+    userFavorites.splice(userFavorites.indexOf(oldUrl), 1);
+    await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
+    userHidden.push(oldUrl);
+    await sbClient.from('user_hidden').insert({ user_id: user.id, old_url: oldUrl });
+  } else {
+    // Hidden → Others
+    userHidden.splice(userHidden.indexOf(oldUrl), 1);
+    await sbClient.from('user_hidden').delete().eq('old_url', oldUrl);
   }
+
   renderGrid();
-  // Update heart and panel glow in profile detail if open
+  // Update heart in profile detail if open
   const detailHeart = document.getElementById('profileFavHeart');
-  if (detailHeart) detailHeart.classList.toggle('active', userFavorites.includes(oldUrl));
+  if (detailHeart) {
+    detailHeart.classList.remove('active', 'hidden-state');
+    if (userFavorites.includes(oldUrl)) detailHeart.classList.add('active');
+    else if (userHidden.includes(oldUrl)) detailHeart.classList.add('hidden-state');
+  }
   const panel = document.getElementById('profilePanel');
-  if (panel && detailHeart) panel.classList.toggle('favorited', userFavorites.includes(oldUrl));
+  if (panel) panel.classList.toggle('favorited', userFavorites.includes(oldUrl));
 }
 
 function isFavorite(g) {
   return g.oldUrl && userFavorites.includes(g.oldUrl);
+}
+
+function isHidden(g) {
+  return g.oldUrl && userHidden.includes(g.oldUrl);
 }
 
 function showFavorites() {
@@ -2067,6 +2090,8 @@ function renderRangeFilters() {
 
 function getFiltered() {
   let list = [...allGirls];
+  // Hide hidden profiles by default
+  list = list.filter(g => !isHidden(g));
   // Venue filter
   if (activeVenue.include.length) list = list.filter(g => activeVenue.include.includes(g.venue));
   if (activeVenue.exclude.length) list = list.filter(g => !activeVenue.exclude.includes(g.venue));
@@ -2209,10 +2234,10 @@ function renderCard(g, grid) {
     const showBadge = userPreferences && girlScore > 0;
 
     const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-    const favActive = isFavorite(g) ? ' active' : '';
+    const heartState = isFavorite(g) ? ' active' : isHidden(g) ? ' hidden-state' : '';
 
     el.innerHTML = `
-      <div class="fav-heart${favActive}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
+      <div class="fav-heart${heartState}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
       <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-info">
@@ -2933,7 +2958,7 @@ function showProfile(g) {
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-      <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <div class="fav-heart${isFavorite(g) ? ' active' : isHidden(g) ? ' hidden-state' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="country-badge">${g.venueName}</div>
       ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge' + (s >= 90 ? ' match-gold' : '') + '" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
       ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}

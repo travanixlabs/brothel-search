@@ -3575,8 +3575,8 @@ window.roadmapVote = async function(roadmapId, vote) {
 let dataSort = { col: 'venue', dir: 1 };
 function renderDataPage() {
   const cols = [
-    { key: 'venueName', label: 'Venue' },
-    { key: 'name', label: 'Name' },
+    { key: 'venueName', label: 'Venue', fmtG: g => '<a href="/sydney/' + (VENUE_REGIONS[g.venue] || 'other') + '/' + (VENUE_DATA[g.venue] ? VENUE_DATA[g.venue].suburbSlug : '') + '/' + g.venue + '/" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + (VENUE_REGIONS[g.venue] || 'other') + '/' + (VENUE_DATA[g.venue] ? VENUE_DATA[g.venue].suburbSlug : '') + '/' + g.venue + '/\')" style="color:var(--gold);text-decoration:none">' + g.venueName + '</a>' },
+    { key: 'name', label: 'Name', fmtG: g => '<a href="' + profilePath(g) + '" onclick="event.preventDefault();showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g, "\\'") + '\'))" style="color:var(--gold);text-decoration:none">' + g.name + '</a>' },
     { key: 'country', label: 'Country', fmt: v => Array.isArray(v) ? v.join(', ') : (v || '') },
     { key: 'age', label: 'Age' },
     { key: 'height', label: 'Height' },
@@ -3615,7 +3615,7 @@ function renderDataPage() {
   for (const g of sorted) {
     html += '<tr style="border-bottom:1px solid rgba(201,149,44,0.1)">';
     for (const col of cols) {
-      const val = col.fmt ? col.fmt(g[col.key]) : (g[col.key] || '');
+      const val = col.fmtG ? col.fmtG(g) : col.fmt ? col.fmt(g[col.key]) : (g[col.key] || '');
       html += '<td style="padding:6px 10px;color:var(--text)">' + val + '</td>';
     }
     html += '</tr>';

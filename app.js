@@ -2959,6 +2959,11 @@ function updateMeta(title, desc, image, url, jsonLd) {
 
 function showProfile(g) {
   if (!g) return;
+  if (!isLoggedIn()) {
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    return;
+  }
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
@@ -4494,9 +4499,17 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   return html;
 }
 
+function isLoggedIn() {
+  return document.getElementById('userMenu').style.display !== 'none';
+}
+
 function navigateToLanding(path) {
-  // Allow home page without subscription, gate everything else
-  if (path !== '/' && path !== '/index.html' && path !== '/roadmap' && !requireSubscription()) return;
+  // Non-logged-in users can only access home and roadmap
+  if (path !== '/' && path !== '/index.html' && path !== '/roadmap' && !isLoggedIn()) {
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    return;
+  }
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd) dd.classList.remove('open');
   const landing = document.getElementById('landingPage');
@@ -4673,7 +4686,11 @@ document.getElementById('navHome').addEventListener('click', function(e) {
 
 document.getElementById('navProfiles').addEventListener('click', function(e) {
   e.preventDefault();
-  if (!requireSubscription()) return;
+  if (!isLoggedIn()) {
+    document.getElementById('authOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    return;
+  }
   activeAvailability.include = [];
   activeAvailability.exclude = [];
   activeFavFilter.include = [];

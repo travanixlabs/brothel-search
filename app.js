@@ -1824,7 +1824,7 @@ function renderFilters() {
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildLabelDropdown('ddAV', 'AV', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>g.pornstar).length},{value:'No',label:'No',count:allGirls.filter(g=>!g.pornstar).length}], activeAV.include, activeAV.exclude)
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
-    + buildLabelDropdown('ddFav', 'Favourites', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>isFavorite(g)).length},{value:'No',label:'No',count:allGirls.filter(g=>!isFavorite(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
+    + buildLabelDropdown('ddFav', 'Favourites', [{value:'Favourite',label:'Favourite',count:allGirls.filter(g=>isFavorite(g)).length},{value:'Hidden',label:'Hidden',count:allGirls.filter(g=>isHidden(g)).length},{value:'Others',label:'Others',count:allGirls.filter(g=>!isFavorite(g)&&!isHidden(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
     + '<button class="more-filters-toggle" id="moreFiltersToggle">More Filters <span class="more-filters-badge" id="moreFiltersBadge" style="display:none"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>'
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
@@ -2090,8 +2090,10 @@ function renderRangeFilters() {
 
 function getFiltered() {
   let list = [...allGirls];
-  // Hide hidden profiles by default
-  list = list.filter(g => !isHidden(g));
+  // Hide hidden profiles unless Favourites filter explicitly includes 'Hidden'
+  if (!activeFavFilter.include.includes('Hidden')) {
+    list = list.filter(g => !isHidden(g));
+  }
   // Venue filter
   if (activeVenue.include.length) list = list.filter(g => activeVenue.include.includes(g.venue));
   if (activeVenue.exclude.length) list = list.filter(g => !activeVenue.exclude.includes(g.venue));
@@ -2134,14 +2136,14 @@ function getFiltered() {
     const hasPhotos = g.photos && g.photos.length > 0;
     return !activePhotos.exclude.includes(hasPhotos ? 'Yes' : 'No');
   });
-  // Favourites filter
+  // Favourites filter (3-state: Favourite, Hidden, Others)
   if (activeFavFilter.include.length) list = list.filter(g => {
-    const fav = isFavorite(g) ? 'Yes' : 'No';
-    return activeFavFilter.include.includes(fav);
+    const state = isFavorite(g) ? 'Favourite' : isHidden(g) ? 'Hidden' : 'Others';
+    return activeFavFilter.include.includes(state);
   });
   if (activeFavFilter.exclude.length) list = list.filter(g => {
-    const fav = isFavorite(g) ? 'Yes' : 'No';
-    return !activeFavFilter.exclude.includes(fav);
+    const state = isFavorite(g) ? 'Favourite' : isHidden(g) ? 'Hidden' : 'Others';
+    return !activeFavFilter.exclude.includes(state);
   });
   // DateTime filter
   if (activeDateTime) {

@@ -169,6 +169,9 @@ async function checkAuth() {
 }
 
 function requireLogin() {
+  return true; // Access open to all users
+}
+function requireLoginReal() {
   if (document.getElementById('userMenu').style.display !== 'none') return true;
   document.getElementById('authOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -784,13 +787,11 @@ sbClient.auth.onAuthStateChange((event, session) => {
           if (p === '/' || p === '/index.html') handleLandingRoute('/');
         }
       });
-      // Paywall check 2s after login — skip on home page
+      // Subscription check (no paywall enforcement)
       setTimeout(async () => {
         if (userRole === 'admin') { isSubscribed = true; return; }
         const sub = await checkSubscription();
         isSubscribed = sub && sub.status === 'active';
-        const path = window.location.pathname;
-        if (!isSubscribed && path !== '/' && path !== '/index.html' && path !== '/roadmap') showPaywall();
       }, 2000);
     });
   }
@@ -2955,7 +2956,6 @@ function updateMeta(title, desc, image, url, jsonLd) {
 
 function showProfile(g) {
   if (!g) return;
-  if (!requireSubscription()) return;
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
@@ -3365,20 +3365,13 @@ setTimeout(async () => {
     const sub = await checkSubscription();
     isSubscribed = sub && sub.status === 'active';
     // Only show paywall on non-home pages
-    const path = window.location.pathname;
-    if (!isSubscribed && path !== '/' && path !== '/index.html' && path !== '/roadmap') showPaywall();
-    else if (isSubscribed && window.location.hash === '#subscribe') hidePaywall();
+    if (isSubscribed && window.location.hash === '#subscribe') hidePaywall();
   } catch(e) { console.error('Paywall check:', e); isSubscribed = false; }
 }, 2000);
 
 // Gate navigation for unsubscribed users
 function requireSubscription() {
-  // Check login first
-  if (!requireLogin()) return false;
-  if (isSubscribed === true || userRole === 'admin') return true;
-  if (isSubscribed === false) { showPaywall(); return false; }
-  // Still loading — allow for now
-  return true;
+  return true; // Access open to all users
 }
 
 // hashchange handled above in unified listener
@@ -3426,7 +3419,7 @@ function renderHomePage() {
   html += '</div>';
 
   // Daily Digest section
-  const isLoggedInHome = document.getElementById('userMenu').style.display !== 'none';
+  const isLoggedInHome = true; // Access open to all
   const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
   const sevenDayStrDigest = sevenDaysAgoDigest.toISOString().split('T')[0];
 
@@ -3958,9 +3951,7 @@ async function initRoadmapPage() {
   // Show hint for non-interactive users
   const hintEl = document.getElementById('roadmapHint');
   if (hintEl) {
-    if (!isLoggedIn) { hintEl.style.display = ''; hintEl.innerHTML = '<a href="#" onclick="event.preventDefault();requireLogin()" style="color:var(--gold)">Sign in</a> and subscribe to create items and vote.'; }
-    else if (!canInteract) { hintEl.style.display = ''; hintEl.innerHTML = '<a href="#" onclick="event.preventDefault();showPaywall()" style="color:var(--gold)">Subscribe</a> to create items and vote.'; }
-    else { hintEl.style.display = 'none'; }
+    hintEl.style.display = 'none';
   }
 
   window._roadmapVotes = await loadRoadmapVotes();

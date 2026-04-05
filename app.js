@@ -4504,8 +4504,8 @@ function isLoggedIn() {
 }
 
 function navigateToLanding(path) {
-  // Non-logged-in users can only access home and roadmap
-  if (path !== '/' && path !== '/index.html' && path !== '/roadmap' && !isLoggedIn()) {
+  // Non-logged-in users can only access home
+  if (path !== '/' && path !== '/index.html' && !isLoggedIn()) {
     document.getElementById('authOverlay').style.display = 'flex';
     document.body.style.overflow = 'hidden';
     return;

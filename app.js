@@ -404,9 +404,24 @@ function showPreferences() {
   populatePrefCheckboxes();
   initPrefSliders();
   clearPrefsForm();
-  loadPreferences();
+  loadPreferences().then(() => colorPrefLabels());
   document.getElementById('preferencesOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  // Live-update label colors on interaction
+  setTimeout(() => {
+    document.querySelectorAll('#preferencesOverlay input[type=range]').forEach(inp => {
+      inp.addEventListener('input', colorPrefLabels);
+    });
+    document.querySelectorAll('#preferencesOverlay input[type=checkbox]').forEach(cb => {
+      cb.addEventListener('change', colorPrefLabels);
+    });
+    document.querySelectorAll('#preferencesOverlay input[type=number]').forEach(inp => {
+      inp.addEventListener('input', colorPrefLabels);
+    });
+    document.querySelectorAll('#preferencesOverlay .pref-select').forEach(sel => {
+      sel.addEventListener('change', colorPrefLabels);
+    });
+  }, 100);
 }
 
 function closePreferences() {
@@ -1124,6 +1139,33 @@ function writePrefsToForm(p) {
 
   if (p.last_roster_days) document.getElementById('prefLastRosterDays').value = p.last_roster_days;
   if (p.date_started_days) document.getElementById('prefDateStartedDays').value = p.date_started_days;
+}
+
+function colorPrefLabels() {
+  // Color pref-labels green if filter is applied, red if not
+  document.querySelectorAll('#preferencesOverlay .pref-group').forEach(group => {
+    const label = group.querySelector('.pref-label');
+    if (!label) return;
+    let active = false;
+    // Check sliders: active if min > slider.min or max < slider.max
+    const slider = group.querySelector('.pref-range-slider');
+    if (slider) {
+      const minI = slider.querySelector('[data-handle=min]');
+      const maxI = slider.querySelector('[data-handle=max]');
+      if (minI && maxI) active = parseInt(minI.value) > parseInt(minI.min) || parseInt(maxI.value) < parseInt(maxI.max);
+    }
+    // Check checkboxes: active if any checked
+    const cbs = group.querySelectorAll('input[type=checkbox]:checked');
+    if (cbs.length > 0) active = true;
+    // Check selects: active if value is set
+    const sel = group.querySelector('.pref-select');
+    if (sel && sel.value) active = true;
+    // Check text inputs
+    const inp = group.querySelector('input[type=number]');
+    if (inp && inp.value && parseInt(inp.value) > 0) active = true;
+
+    label.style.color = active ? '#00c864' : '#ff4444';
+  });
 }
 
 function clearPrefsForm() {

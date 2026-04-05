@@ -2112,10 +2112,6 @@ function renderRangeFilters() {
 
 function getFiltered() {
   let list = [...allGirls];
-  // Hide hidden profiles unless Favourites filter explicitly includes 'Hidden'
-  if (!activeFavFilter.include.includes('Hidden')) {
-    list = list.filter(g => !isHidden(g));
-  }
   // Venue filter
   if (activeVenue.include.length) list = list.filter(g => activeVenue.include.includes(g.venue));
   if (activeVenue.exclude.length) list = list.filter(g => !activeVenue.exclude.includes(g.venue));

@@ -1142,27 +1142,51 @@ function writePrefsToForm(p) {
 }
 
 function colorPrefLabels() {
-  // Color pref-labels green if filter is applied, red if not
+  // Color pref-labels, sliders, checkboxes, selects, inputs green if active, red if not
   document.querySelectorAll('#preferencesOverlay .pref-group').forEach(group => {
     const label = group.querySelector('.pref-label');
     if (!label) return;
     let active = false;
+
     // Check sliders: active if min > slider.min or max < slider.max
     const slider = group.querySelector('.pref-range-slider');
     if (slider) {
       const minI = slider.querySelector('[data-handle=min]');
       const maxI = slider.querySelector('[data-handle=max]');
       if (minI && maxI) active = parseInt(minI.value) > parseInt(minI.min) || parseInt(maxI.value) < parseInt(maxI.max);
+      // Color the slider fill
+      const fill = slider.querySelector('.range-slider-fill');
+      if (fill) fill.style.background = active ? '#00c864' : '#ff4444';
+      // Color the range values
+      const vals = slider.querySelector('.pref-range-values');
+      if (vals) vals.style.color = active ? '#00c864' : '#ff4444';
     }
     // Check checkboxes: active if any checked
-    const cbs = group.querySelectorAll('input[type=checkbox]:checked');
-    if (cbs.length > 0) active = true;
+    const cbs = group.querySelectorAll('input[type=checkbox]');
+    const anyCbChecked = [...cbs].some(cb => cb.checked);
+    if (anyCbChecked) active = true;
+    // Color checkbox container
+    const cbWrap = group.querySelector('.pref-checkboxes');
+    if (cbWrap) cbWrap.style.borderColor = active ? 'rgba(0,200,100,0.3)' : 'rgba(255,68,68,0.3)';
+    // Color individual checkbox labels
+    cbs.forEach(cb => {
+      const lbl = cb.parentElement;
+      if (lbl) lbl.style.color = cb.checked ? '#00c864' : '';
+    });
     // Check selects: active if value is set
     const sel = group.querySelector('.pref-select');
     if (sel && sel.value) active = true;
-    // Check text inputs
+    if (sel) {
+      sel.style.borderColor = (sel.value ? 'rgba(0,200,100,0.5)' : 'rgba(255,68,68,0.3)');
+      sel.style.color = sel.value ? '#00c864' : '#ff4444';
+    }
+    // Check text/number inputs
     const inp = group.querySelector('input[type=number]');
     if (inp && inp.value && parseInt(inp.value) > 0) active = true;
+    if (inp) {
+      inp.style.borderColor = (inp.value && parseInt(inp.value) > 0) ? 'rgba(0,200,100,0.5)' : 'rgba(255,68,68,0.3)';
+      inp.style.color = (inp.value && parseInt(inp.value) > 0) ? '#00c864' : '#ff4444';
+    }
 
     label.style.color = active ? '#00c864' : '#ff4444';
   });

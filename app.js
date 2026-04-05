@@ -4526,9 +4526,10 @@ function handleLandingRoute(path) {
   if (cleanPath === '' || cleanPath === 'index.html') {
     html = renderHomePage();
   } else if (cleanPath === 'profiles') {
-    // Clear availability filter when going to profiles
     activeAvailability.include = [];
     activeAvailability.exclude = [];
+    activeFavFilter.include = [];
+    activeFavFilter.exclude = ['Hidden'];
     renderFilters(); renderGrid();
     // Show the main profiles section instead
     landingEl.style.display = 'none';
@@ -4539,9 +4540,13 @@ function handleLandingRoute(path) {
   } else if (cleanPath === 'working-now') {
     activeAvailability.include = ['Available Now'];
     activeAvailability.exclude = [];
+    activeFavFilter.include = [];
+    activeFavFilter.exclude = ['Hidden'];
     renderFilters(); renderGrid();
     html = renderWorkingNow();
   } else if (cleanPath === 'compare') {
+    activeFavFilter.include = [];
+    activeFavFilter.exclude = [];
     html = renderComparePage();
   } else if (cleanPath === 'analytics') {
     html = renderAnalyticsPage();
@@ -4549,6 +4554,9 @@ function handleLandingRoute(path) {
     html = renderRoadmapPage();
   } else if (cleanPath === 'data') {
     if (userRole !== 'admin') { navigateToLanding('/'); return true; }
+    activeFavFilter.include = [];
+    activeFavFilter.exclude = ['Hidden'];
+    renderFilters(); renderGrid();
     html = renderDataPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
     html = renderCityPage();
@@ -4674,6 +4682,8 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
   if (!requireSubscription()) return;
   activeAvailability.include = [];
   activeAvailability.exclude = [];
+  activeFavFilter.include = [];
+  activeFavFilter.exclude = ['Hidden'];
   renderFilters(); renderGrid();
   history.pushState(null, '', '/profiles');
   showMainSection();

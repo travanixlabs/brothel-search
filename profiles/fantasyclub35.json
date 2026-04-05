@@ -100,7 +100,7 @@
       "desc": "",
       "lang": "Cantonese, English",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-15T02:30:13.477Z",
       "lastRostered": "2026-04-05",
       "photos": [
@@ -1715,9 +1715,12 @@
       }
     }
   },
-  "lastGirlsSync": "2026-03-18T20:00:57.801Z",
+  "lastGirlsSync": "2026-04-05T09:17:16.070Z",
   "lastCalendarSync": "2026-04-04T07:33:23.917Z",
   "_skippedUrls": [
-    "https://fantasyclub35.com.au/listing_type/wendy-2/"
+    "https://fantasyclub35.com.au/listing_type/wendy-2/",
+    "https://fantasyclub35.com.au/listing_type/cocochinese-2/",
+    "https://fantasyclub35.com.au/listing_type/kk-chinese/",
+    "https://fantasyclub35.com.au/listing_type/lucky-vietnamese/"
   ]
 }

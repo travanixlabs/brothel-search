@@ -379,6 +379,8 @@ const LABEL_RENAMES = {
   'Rimming on you': 'Rimming', 'Sakura Branch': '', 'Shots': '', 'Single Females': '',
   'Social outing to impress': 'Social Escort', 'Spanish': '', 'Sub play': 'BDSM',
   'Submission': 'BDSM', 'Tantric massage': '', 'Toy Play': 'Toys',
+  'Anal play (on me)': 'Anal Play', 'Ball licking': '', 'ABDL': '',
+  'Bondage': 'BDSM', 'Foot fetish': 'Foot Fetish',
 };
 function normalizeLabels(labels) {
   const out = [];

@@ -1874,6 +1874,39 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Gia",
+      "country": [],
+      "age": "20",
+      "height": "173",
+      "cup": "B",
+      "body": "6",
+      "desc": "Gia is a petite size 6 20yr old with Green eyes, brown hair and a B Cup bust. She's of kiwi background and provides a GF experience, doubles and occasionally BI doubles",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-07-01",
+      "lastRostered": "2024-07-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/gia-new/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2024/07/Gia-1.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2024/07/Gia-2.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2024/07/Gia-3.jpg"
+      ],
+      "labels": [
+        "Kissing (On Discussion)",
+        "Doubles",
+        "Lesbian Doubles",
+        "Toy Play",
+        "Golden Showers",
+        "Party Bookings",
+        "Girlfriend Experience",
+        "Submission",
+        "Mutual Oral",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -1912,7 +1945,20 @@
       }
     },
     "Alex": {},
-    "Allie": {},
+    "Allie": {
+      "2026-04-06": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-10": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-11": {
+        "start": "08:00",
+        "end": "20:00"
+      }
+    },
     "Ava": {},
     "Billie": {},
     "Bonnie": {},
@@ -1974,6 +2020,22 @@
       "2026-04-04": {
         "start": "08:00",
         "end": "08:00"
+      },
+      "2026-04-08": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-09": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-10": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-11": {
+        "start": "08:00",
+        "end": "08:00"
       }
     },
     "Ivy": {},
@@ -1992,10 +2054,24 @@
     "Melissa": {},
     "Misty": {},
     "Natasha": {},
-    "Noa": {},
+    "Noa": {
+      "2026-04-06": {
+        "start": "08:00",
+        "end": "08:00"
+      },
+      "2026-04-09": {
+        "start": "08:00",
+        "end": "08:00"
+      }
+    },
     "Rachel": {},
     "Reign": {},
-    "Ruby": {},
+    "Ruby": {
+      "2026-04-10": {
+        "start": "08:00",
+        "end": "08:00"
+      }
+    },
     "Sahara": {
       "2026-04-09": {
         "start": "08:00",
@@ -2065,8 +2141,22 @@
         "start": "08:00",
         "end": "08:00"
       }
+    },
+    "Gia": {
+      "2026-04-07": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-10": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-04-11": {
+        "start": "08:00",
+        "end": "20:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-04T05:55:16.532Z",
+  "lastGirlsSync": "2026-04-05T09:17:42.710Z",
   "lastCalendarSync": null
 }

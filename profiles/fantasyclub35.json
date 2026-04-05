@@ -49,7 +49,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:08.285Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-04-05",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/Coco.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/Coco1.jpg"
@@ -1634,7 +1634,12 @@
         "end": "05:00"
       }
     },
-    "Coco": {},
+    "Coco": {
+      "2026-04-05": {
+        "start": "17:00",
+        "end": "05:00"
+      }
+    },
     "Chole": {
       "2026-03-24": {
         "start": "17:00",
@@ -1716,7 +1721,7 @@
     }
   },
   "lastGirlsSync": "2026-04-05T09:17:16.070Z",
-  "lastCalendarSync": "2026-04-04T07:33:23.917Z",
+  "lastCalendarSync": "2026-04-05T09:18:58.188Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

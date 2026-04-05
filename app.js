@@ -1176,12 +1176,14 @@ function colorPrefLabels() {
           if (span) span.style.color = '#00c864';
           cb.style.borderColor = '#00c864';
           cb.style.background = 'rgba(0,200,100,0.2)';
+          cb.classList.add('pref-active');
         } else {
           lbl.style.borderColor = '';
           lbl.style.background = '';
           if (span) span.style.color = '';
           cb.style.borderColor = '';
           cb.style.background = '';
+          cb.classList.remove('pref-active');
         }
       }
     });

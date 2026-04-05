@@ -427,6 +427,7 @@ body.is-admin .admin-only{display:initial!important}
 .pref-cb input[type=checkbox]{-webkit-appearance:none;appearance:none;width:14px;height:14px;border:1px solid rgba(201,149,44,0.3);border-radius:3px;background:rgba(201,149,44,0.04);cursor:pointer;position:relative;flex-shrink:0;transition:all .2s}
 .pref-cb input[type=checkbox]:checked{border-color:var(--gold);background:rgba(201,149,44,0.2)}
 .pref-cb input[type=checkbox]:checked::after{content:'';position:absolute;left:3px;top:1px;width:5px;height:8px;border:solid var(--gold);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.pref-cb input[type=checkbox].pref-active:checked::after{border-color:#00c864}
 .pref-cb:has(input:checked){border-color:rgba(201,149,44,0.5)}
 .pref-clear-link{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--gold);transition:opacity .3s;cursor:pointer}
 .pref-clear-link:hover{opacity:0.7}

@@ -374,12 +374,20 @@ const LABEL_RENAMES = {
   'Heavy BDSM upon request with regular clients': 'BDSM', 'Kissing (On Discussion)': 'DFK',
   'Kissing (on body)': 'DFK', 'Kissing': 'DFK', 'Lesbian Doubles': 'Double Lesbian',
   'Light BDSM': 'BDSM', 'Light Bondage': 'BDSM',
+  'Multiple Positions': '', 'Massage': '', 'Mutual Oral': 'BBBJ,DATY',
+  'Pornstar Experience': 'PSE', 'Remedial Massage': '', 'Rimming on me': 'Rimming',
+  'Rimming on you': 'Rimming', 'Sakura Branch': '', 'Shots': '', 'Single Females': '',
+  'Social outing to impress': 'Social Escort', 'Spanish': '', 'Sub play': 'BDSM',
+  'Submission': 'BDSM', 'Tantric massage': '', 'Toy Play': 'Toys',
 };
 function normalizeLabels(labels) {
   const out = [];
   for (const l of labels) {
-    const renamed = LABEL_RENAMES[l] || l;
-    if (!out.includes(renamed)) out.push(renamed);
+    const renamed = LABEL_RENAMES[l] !== undefined ? LABEL_RENAMES[l] : l;
+    if (!renamed) continue; // empty = remove
+    for (const r of renamed.split(',')) {
+      if (r && !out.includes(r)) out.push(r);
+    }
   }
   return out;
 }

@@ -536,7 +536,7 @@ body.is-admin .admin-only{display:initial!important}
 .compare-table thead th{background:rgba(12,12,20,0.5);position:sticky;top:0}
 .compare-venue-header{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold)!important;cursor:pointer;transition:background .2s;letter-spacing:1px}
 .compare-venue-header:hover{background:rgba(201,149,44,0.08)}
-.compare-label{text-align:left!important;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);width:120px;white-space:nowrap}
+.compare-label{text-align:center!important;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);width:120px;white-space:nowrap}
 .compare-table tbody tr:nth-child(even){background:rgba(201,149,44,0.02)}
 .compare-table tbody tr:hover{background:rgba(201,149,44,0.04)}
 .analytics-section{margin-bottom:40px}

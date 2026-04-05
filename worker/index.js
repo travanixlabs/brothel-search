@@ -365,6 +365,25 @@ const LANG_FROM_COUNTRY = {
   Eurasian: 'English',
 };
 
+const LABEL_RENAMES = {
+  '2 men at once': '2 Men', 'Anal ( with regular clientele )': 'Anal', 'Anal (On Discussion)': 'Anal',
+  'Couples': 'Couple', 'Dinner Companion': 'Social Escort', 'Bondage (on you)': 'Bondage',
+  'Dom & Sub Play': 'BDSM', 'Domination': 'BDSM', 'Doubles': 'Double',
+  'Doubles ( with select ladies)': 'Double', 'Fisting (on you)': 'Fisting',
+  'Girlfriend Experience': 'GFE', 'Greek': 'Anal', 'Heavy BDSM': 'BDSM',
+  'Heavy BDSM upon request with regular clients': 'BDSM', 'Kissing (On Discussion)': 'DFK',
+  'Kissing (on body)': 'DFK', 'Kissing': 'DFK', 'Lesbian Doubles': 'Double Lesbian',
+  'Light BDSM': 'BDSM', 'Light Bondage': 'BDSM',
+};
+function normalizeLabels(labels) {
+  const out = [];
+  for (const l of labels) {
+    const renamed = LABEL_RENAMES[l] || l;
+    if (!out.includes(renamed)) out.push(renamed);
+  }
+  return out;
+}
+
 const LABEL_PATTERNS = [
   ['Double Lesbian', /\blesbian\s*double\b/i],
   ['Shower Together', /\bshower\s*together\b/i],
@@ -392,7 +411,7 @@ const LABEL_PATTERNS = [
 
 function extractLabels(desc) {
   if (!desc) return [];
-  return LABEL_PATTERNS.filter(([, re]) => re.test(desc)).map(([label]) => label);
+  return normalizeLabels(LABEL_PATTERNS.filter(([, re]) => re.test(desc)).map(([label]) => label));
 }
 
 function parseGirlTitle(raw) {
@@ -1399,7 +1418,7 @@ async function syncGatewayClubGirls(env, site) {
     }
     // Services: <h4>SERVICES</h4>...</div><div class="cl_2"><ul><li>...</li></ul>
     const svcBlock = pHtml.match(/SERVICES<\/h4>[\s\S]*?<ul>([\s\S]*?)<\/ul>/i);
-    const labels = svcBlock ? [...svcBlock[1].matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim()).filter(Boolean) : [];
+    const labels = normalizeLabels(svcBlock ? [...svcBlock[1].matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim()).filter(Boolean) : []);
     // Description from og:description or MEET section
     const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
     const desc = ogDesc ? ogDesc[1].replace(/&#8217;/g, "'").replace(/&#8220;/g, '"').replace(/&#8221;/g, '"').replace(/&hellip;/g, '...').replace(/&amp;/g, '&').trim() : '';
@@ -1713,7 +1732,7 @@ async function syncStilettoGirls(env, site) {
     const servicesMatch = attrs.match(/data-services='([^']+)'/);
     const nat = natMatch ? natMatch[1].trim() : '';
     const cup = bustSizeMatch ? bustSizeMatch[1].replace(/\+/, '').trim() : '';
-    const tileLabels = servicesMatch ? servicesMatch[1].replace(/&#038;/g, '&').split('::').map(s => s.trim()).filter(Boolean) : [];
+    const tileLabels = normalizeLabels(servicesMatch ? servicesMatch[1].replace(/&#038;/g, '&').split('::').map(s => s.trim()).filter(Boolean) : []);
     newProfiles.push({ name, profileUrl, photoUrl, nat, cup, tileLabels });
   }
 
@@ -1740,7 +1759,7 @@ async function syncStilettoGirls(env, site) {
   function parseStilettoProfile(pHtml) {
     const ageMatch = pHtml.match(/custom-field-age[^>]*>.*?<span>(\d+)<\/span>/i);
     const servicesMatch = [...pHtml.matchAll(/<li>([^<]+)<\/li>/gi)].map(m => m[1].trim());
-    const labels = servicesMatch.filter(s => s.length > 1);
+    const labels = normalizeLabels(servicesMatch.filter(s => s.length > 1));
     // Description + body (dress size) from og:description
     const ogDesc = pHtml.match(/og:description"\s+content="([^"]+)"/i);
     let desc = '', body = '';

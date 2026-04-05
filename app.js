@@ -1160,6 +1160,11 @@ function colorPrefLabels() {
       // Color the range values
       const vals = slider.querySelector('.pref-range-values');
       if (vals) vals.style.color = active ? '#00c864' : '#ff4444';
+      // Color the thumb circles
+      slider.querySelectorAll('input[type=range]').forEach(inp => {
+        inp.classList.toggle('pref-slider-active', active);
+        inp.classList.toggle('pref-slider-inactive', !active);
+      });
     }
     // Check checkboxes: active if any checked
     const cbs = group.querySelectorAll('input[type=checkbox]');

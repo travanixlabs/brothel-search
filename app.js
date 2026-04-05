@@ -1165,7 +1165,8 @@ function colorPrefLabels() {
     const cbs = group.querySelectorAll('input[type=checkbox]');
     const anyCbChecked = [...cbs].some(cb => cb.checked);
     if (anyCbChecked) active = true;
-    // Color individual checkbox labels green/red
+    // Color individual checkbox labels green/red and sort checked to top
+    const cbWrap = group.querySelector('.pref-checkboxes');
     cbs.forEach(cb => {
       const lbl = cb.closest('.pref-cb');
       if (lbl) {
@@ -1187,6 +1188,16 @@ function colorPrefLabels() {
         }
       }
     });
+    // Move checked to top of list
+    if (cbWrap) {
+      const labels = [...cbWrap.querySelectorAll('.pref-cb')];
+      labels.sort((a, b) => {
+        const ac = a.querySelector('input').checked ? 0 : 1;
+        const bc = b.querySelector('input').checked ? 0 : 1;
+        return ac - bc;
+      });
+      labels.forEach(l => cbWrap.appendChild(l));
+    }
     // Check selects: active if value is set
     const sel = group.querySelector('.pref-select');
     if (sel && sel.value) active = true;

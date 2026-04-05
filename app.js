@@ -149,7 +149,7 @@ async function checkAuth() {
   const { data: { session } } = await sbClient.auth.getSession();
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
-    document.getElementById('userMenu').style.display = '';
+    document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
     document.getElementById('notifBell').style.display = 'flex';
     loadNotifications();
     await fetchUserRole();
@@ -244,7 +244,7 @@ async function handleAuth() {
   }
 
   document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
-  document.getElementById('userMenu').style.display = '';
+  document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
   document.getElementById('notifBell').style.display = 'flex';
   loadNotifications();
   await fetchUserRole();
@@ -283,9 +283,12 @@ async function signOut() {
   userRole = 'member';
   document.body.classList.remove('is-admin');
   hidePaywall();
-  document.getElementById('authOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden';
+  document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
   document.getElementById('userMenu').style.display = 'none';
+  document.getElementById('loginBtn').style.display = '';
   document.getElementById('notifBell').style.display = 'none';
+  history.replaceState(null, '', '/');
+  handleLandingRoute('/');
 }
 
 async function resetPassword() {
@@ -757,7 +760,7 @@ window.addEventListener('hashchange', () => {
 sbClient.auth.onAuthStateChange((event, session) => {
   if (event === 'PASSWORD_RECOVERY') {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
-    document.getElementById('userMenu').style.display = '';
+    document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
     document.getElementById('notifBell').style.display = 'flex';
     loadNotifications();
     fetchUserRole();
@@ -768,7 +771,7 @@ sbClient.auth.onAuthStateChange((event, session) => {
   }
   if (session) {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
-    document.getElementById('userMenu').style.display = '';
+    document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
     document.getElementById('notifBell').style.display = 'flex';
     // Skip redundant work on token refresh — only run full init on sign-in or initial session
     if (event === 'TOKEN_REFRESHED') return;

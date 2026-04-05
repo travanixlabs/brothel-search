@@ -445,37 +445,59 @@ async function toggleFavorite(oldUrl, e) {
   const { data: { user } } = await sbClient.auth.getUser();
   if (!user) return;
 
-  const isFav = userFavorites.includes(oldUrl);
-  const isHid = userHidden.includes(oldUrl);
-
-  if (!isFav && !isHid) {
-    // Others → Favourite
+  const idx = userFavorites.indexOf(oldUrl);
+  if (idx > -1) {
+    userFavorites.splice(idx, 1);
+    await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
+  } else {
     if (userFavorites.length >= getMaxFavorites()) {
       alert('Maximum ' + getMaxFavorites() + ' favourites. Remove one first.');
       return;
     }
+    // Remove from hidden if it was hidden
+    const hidIdx = userHidden.indexOf(oldUrl);
+    if (hidIdx > -1) { userHidden.splice(hidIdx, 1); await sbClient.from('user_hidden').delete().eq('old_url', oldUrl); }
     userFavorites.push(oldUrl);
     await sbClient.from('user_favorites').insert({ user_id: user.id, old_url: oldUrl });
-  } else if (isFav) {
-    // Favourite → Hidden
-    userFavorites.splice(userFavorites.indexOf(oldUrl), 1);
-    await sbClient.from('user_favorites').delete().eq('old_url', oldUrl);
+  }
+  updateHeartStates(oldUrl);
+  renderGrid();
+}
+
+async function toggleHidden(oldUrl, e) {
+  if (e) e.stopPropagation();
+  if (!oldUrl) return;
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+
+  const idx = userHidden.indexOf(oldUrl);
+  if (idx > -1) {
+    userHidden.splice(idx, 1);
+    await sbClient.from('user_hidden').delete().eq('old_url', oldUrl);
+  } else {
+    // Remove from favourites if it was favourited
+    const favIdx = userFavorites.indexOf(oldUrl);
+    if (favIdx > -1) { userFavorites.splice(favIdx, 1); await sbClient.from('user_favorites').delete().eq('old_url', oldUrl); }
     userHidden.push(oldUrl);
     await sbClient.from('user_hidden').insert({ user_id: user.id, old_url: oldUrl });
-  } else {
-    // Hidden → Others
-    userHidden.splice(userHidden.indexOf(oldUrl), 1);
-    await sbClient.from('user_hidden').delete().eq('old_url', oldUrl);
   }
-
+  updateHeartStates(oldUrl);
   renderGrid();
-  // Update heart in profile detail if open
-  const detailHeart = document.getElementById('profileFavHeart');
-  if (detailHeart) {
-    detailHeart.classList.remove('active', 'hidden-state');
-    if (userFavorites.includes(oldUrl)) detailHeart.classList.add('active');
-    else if (userHidden.includes(oldUrl)) detailHeart.classList.add('hidden-state');
-  }
+}
+
+function updateHeartStates(oldUrl) {
+  // Update card icons
+  document.querySelectorAll('.fav-heart[data-url="' + oldUrl.replace(/"/g, '\\"') + '"]').forEach(el => {
+    el.classList.toggle('active', userFavorites.includes(oldUrl));
+  });
+  document.querySelectorAll('.hide-btn[data-url="' + oldUrl.replace(/"/g, '\\"') + '"]').forEach(el => {
+    el.classList.toggle('active', userHidden.includes(oldUrl));
+  });
+  // Update profile detail
+  const detailFav = document.getElementById('profileFavHeart');
+  if (detailFav) detailFav.classList.toggle('active', userFavorites.includes(oldUrl));
+  const detailHide = document.getElementById('profileHideBtn');
+  if (detailHide) detailHide.classList.toggle('active', userHidden.includes(oldUrl));
   const panel = document.getElementById('profilePanel');
   if (panel) panel.classList.toggle('favorited', userFavorites.includes(oldUrl));
 }
@@ -2236,10 +2258,11 @@ function renderCard(g, grid) {
     const showBadge = userPreferences && girlScore > 0;
 
     const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
-    const heartState = isFavorite(g) ? ' active' : isHidden(g) ? ' hidden-state' : '';
+    const hideSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
 
     el.innerHTML = `
-      <div class="fav-heart${heartState}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
+      <div class="fav-heart${isFavorite(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
+      <div class="hide-btn${isHidden(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${hideSvg}</div>
       <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-info">
@@ -2256,6 +2279,7 @@ function renderCard(g, grid) {
         <div class="card-hover-line"></div>
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
+    el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));
     el.onclick = (e) => { closeFavorites(); spawnParticles(e); showProfile(g); };
     grid.appendChild(el);
     cardObserver.observe(el);
@@ -2960,7 +2984,8 @@ function showProfile(g) {
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-      <div class="fav-heart${isFavorite(g) ? ' active' : isHidden(g) ? ' hidden-state' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <div class="hide-btn${isHidden(g) ? ' active' : ''}" id="profileHideBtn" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleHidden('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
       <div class="country-badge">${g.venueName}</div>
       ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge' + (s >= 90 ? ' match-gold' : '') + '" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
       ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}

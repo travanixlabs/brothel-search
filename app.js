@@ -3442,6 +3442,14 @@ function renderAnalyticsPage() {
 
 // ── Venue Comparison ──
 
+let compareSort = { col: 'activeCount', dir: 1 };
+function sortCompareTable(col) {
+  if (compareSort.col === col) compareSort.dir *= -1;
+  else { compareSort.col = col; compareSort.dir = 1; }
+  const landing = document.getElementById('landingPage');
+  landing.innerHTML = renderComparePage();
+}
+
 function renderComparePage() {
   const venueIds = Object.keys(VENUE_DATA);
 
@@ -3475,17 +3483,40 @@ function renderComparePage() {
       avgMatch = scores.length ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
     }
     return { id, name: v.name, suburb: v.suburb, rostered, rosteredTomorrow, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch, activeCount: active.length };
-  }).sort((a,b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
+  });
+
+  // Sort by selected column
+  rankings.sort((a, b) => {
+    let va = a[compareSort.col], vb = b[compareSort.col];
+    if (typeof va === 'string') return va.localeCompare(vb) * compareSort.dir;
+    return ((vb || 0) - (va || 0)) * compareSort.dir;
+  });
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Compare Venues');
   html += '<p class="landing-desc">' + (userPreferences ? 'Ranked by your preferences' : 'Ranked by active girl count') + ' (rostered within 30 days).</p>';
   if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
 
+  const cmpCols = [
+    { key: 'name', label: 'Venue' },
+    { key: '_rank', label: 'Rank' },
+    { key: '_address', label: 'Address' },
+    { key: '_website', label: 'Website' },
+    { key: 'topCountries', label: 'Top Countries' },
+    { key: 'newCount', label: 'New' },
+    { key: 'activeCount', label: 'Active Girls' },
+    { key: 'rostered', label: 'Working Today' },
+    { key: 'rosteredTomorrow', label: 'Working Tomorrow' },
+  ];
+  if (userPreferences) cmpCols.push({ key: 'avgMatch', label: 'Avg Match' });
+  cmpCols.push({ key: 'avg30', label: 'Avg 30min' }, { key: 'avg45', label: 'Avg 45min' }, { key: 'avg60', label: 'Avg 60min' });
+
   html += '<div class="compare-table-wrap"><table class="compare-table"><thead><tr>';
-  html += '<th class="compare-label">Venue</th><th class="compare-label">Rank</th><th class="compare-label">Address</th><th class="compare-label">Website</th><th class="compare-label">Top Countries</th><th class="compare-label">New</th><th class="compare-label">Active Girls</th><th class="compare-label">Working Today</th><th class="compare-label">Working Tomorrow</th>';
-  if (userPreferences) html += '<th class="compare-label">Avg Match</th>';
-  html += '<th class="compare-label">Avg 30min</th><th class="compare-label">Avg 45min</th><th class="compare-label">Avg 60min</th>';
+  for (const c of cmpCols) {
+    const sortable = !c.key.startsWith('_');
+    const arrow = compareSort.col === c.key ? (compareSort.dir === 1 ? ' \u25BC' : ' \u25B2') : '';
+    html += '<th class="compare-label"' + (sortable ? ' style="cursor:pointer" onclick="sortCompareTable(\'' + c.key + '\')"' : '') + '>' + c.label + arrow + '</th>';
+  }
   html += '</tr></thead><tbody>';
   rankings.forEach((r, i) => {
     const v = VENUE_DATA[r.id];

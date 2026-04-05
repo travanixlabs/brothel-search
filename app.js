@@ -1165,13 +1165,25 @@ function colorPrefLabels() {
     const cbs = group.querySelectorAll('input[type=checkbox]');
     const anyCbChecked = [...cbs].some(cb => cb.checked);
     if (anyCbChecked) active = true;
-    // Color checkbox container
-    const cbWrap = group.querySelector('.pref-checkboxes');
-    if (cbWrap) cbWrap.style.borderColor = active ? 'rgba(0,200,100,0.3)' : 'rgba(255,68,68,0.3)';
-    // Color individual checkbox labels
+    // Color individual checkbox labels green/red
     cbs.forEach(cb => {
-      const lbl = cb.parentElement;
-      if (lbl) lbl.style.color = cb.checked ? '#00c864' : '';
+      const lbl = cb.closest('.pref-cb');
+      if (lbl) {
+        const span = lbl.querySelector('span');
+        if (cb.checked) {
+          lbl.style.borderColor = 'rgba(0,200,100,0.5)';
+          lbl.style.background = 'rgba(0,200,100,0.06)';
+          if (span) span.style.color = '#00c864';
+          cb.style.borderColor = '#00c864';
+          cb.style.background = 'rgba(0,200,100,0.2)';
+        } else {
+          lbl.style.borderColor = '';
+          lbl.style.background = '';
+          if (span) span.style.color = '';
+          cb.style.borderColor = '';
+          cb.style.background = '';
+        }
+      }
     });
     // Check selects: active if value is set
     const sel = group.querySelector('.pref-select');

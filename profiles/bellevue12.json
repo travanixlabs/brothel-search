@@ -24,7 +24,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Candy",
@@ -67,7 +67,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Nana",
@@ -173,7 +173,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Coco",
@@ -239,7 +239,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     },
     {
       "name": "Tiffany",
@@ -281,13 +281,14 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-05"
     }
   ],
   "calendar": {
     "_published": [
       "2026-04-03",
-      "2026-04-04"
+      "2026-04-04",
+      "2026-04-05"
     ],
     "Mimi": {
       "2026-04-03": {
@@ -295,6 +296,10 @@
         "end": "02:00"
       },
       "2026-04-04": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-05": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -307,6 +312,10 @@
       "2026-04-04": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-05": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Lisa": {
@@ -315,6 +324,10 @@
         "end": "02:00"
       },
       "2026-04-04": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-05": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -327,6 +340,10 @@
       "2026-04-04": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-05": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Nancy": {
@@ -337,9 +354,13 @@
       "2026-04-04": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-05": {
+        "start": "10:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-04-04T03:25:25.413Z"
+  "lastCalendarSync": "2026-04-05T09:19:08.968Z"
 }

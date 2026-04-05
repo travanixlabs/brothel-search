@@ -4034,7 +4034,7 @@ function renderWorkingNow() {
   const selectedIsToday = selectedDay && selectedDay.dateStr === todayStr;
   const selectedCount = selectedDay ? selectedDay.entries.length : 0;
   if (selectedIsToday) {
-    html += '<p class="landing-desc">' + selectedCount + ' rostered today' + (nowCount > 0 ? ' \u00b7 ' + nowCount + ' available now' : '') + '</p>';
+    html += '<p class="landing-desc">' + selectedCount + ' rostered today</p>';
   } else {
     html += '<p class="landing-desc">' + selectedCount + ' rostered</p>';
   }

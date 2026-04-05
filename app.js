@@ -3442,7 +3442,7 @@ function renderAnalyticsPage() {
 
 // ── Venue Comparison ──
 
-let compareSort = { col: 'activeCount', dir: 1 };
+let compareSort = { col: 'rank', dir: -1 };
 function sortCompareTable(col) {
   if (compareSort.col === col) compareSort.dir *= -1;
   else { compareSort.col = col; compareSort.dir = 1; }
@@ -3485,6 +3485,10 @@ function renderComparePage() {
     return { id, name: v.name, suburb: v.suburb, rostered, rosteredTomorrow, avg30: avgOf('val1'), avg45: avgOf('val2'), avg60: avgOf('val3'), topCountries, newCount, avgMatch, activeCount: active.length };
   });
 
+  // Assign rank by preference match or active count
+  rankings.sort((a, b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
+  rankings.forEach((r, i) => { r.rank = i + 1; });
+
   // Sort by selected column
   rankings.sort((a, b) => {
     let va = a[compareSort.col], vb = b[compareSort.col];
@@ -3499,7 +3503,7 @@ function renderComparePage() {
 
   const cmpCols = [
     { key: 'name', label: 'Venue' },
-    { key: '_rank', label: 'Rank' },
+    { key: 'rank', label: 'Rank' },
     { key: '_address', label: 'Address' },
     { key: '_website', label: 'Website' },
     { key: 'topCountries', label: 'Top Countries' },
@@ -3522,7 +3526,7 @@ function renderComparePage() {
     const v = VENUE_DATA[r.id];
     html += '<tr>';
     html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
-    html += '<td style="color:var(--gold);font-weight:700">#' + (i+1) + '</td>';
+    html += '<td style="color:var(--gold);font-weight:700">#' + r.rank + '</td>';
     html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
     html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
     html += '<td style="font-size:12px">' + (r.topCountries || '\u2014') + '</td>';

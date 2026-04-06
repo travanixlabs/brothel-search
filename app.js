@@ -3435,25 +3435,27 @@ function renderHomePage() {
   html += '</div>';
 
   // Daily Digest section
-  const isLoggedInHome = true; // Access open to all
   const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
   const sevenDayStrDigest = sevenDaysAgoDigest.toISOString().split('T')[0];
+  const thirtyDaysAgoDigest = new Date(); thirtyDaysAgoDigest.setDate(thirtyDaysAgoDigest.getDate() - 30);
+  const thirtyDayStrDigest = thirtyDaysAgoDigest.toISOString().split('T')[0];
 
-  if (isLoggedInHome) {
-    // Logged in: favourites available today + 90% matches
+  if (userPreferences) {
+    // Preferences set: show favourites + 90%+ matches, sorted by preference score
+    const sortByScore = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
     const favAvailToday = allGirls.filter(g => {
       const avail = getAvailabilityText(g);
       return isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-    });
+    }).sort(sortByScore);
     const matchAvailToday = allGirls.filter(g => {
-      const avail = getAvailabilityText(g);
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
-      return !isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')) && score >= 90 && g.startDate && g.startDate >= sevenDayStrDigest;
-    }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 10);
+      const avail = getAvailabilityText(g);
+      return !isFavorite(g) && score >= 90 && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
+    }).sort(sortByScore).slice(0, 10);
 
     if (favAvailToday.length || matchAvailToday.length) {
       html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
-      html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
+      html += '<div style="display:flex;flex-wrap:wrap;gap:14px;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
       for (const g of favAvailToday) {
         const score = matchScores.get(g.venue + ':' + g.name) || 0;
         const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
@@ -3467,17 +3469,16 @@ function renderHomePage() {
       html += '</div>';
     }
   } else {
-    // Not logged in: show latest 10 new girls blurred as teaser
-    const newGirlsTeaser = allGirls.filter(g => g.startDate && g.startDate >= sevenDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '')).slice(0, 10);
-    if (newGirlsTeaser.length) {
-      html += '<div class="venue-divider"><span>\u2014 NEW GIRLS THIS WEEK \u2014</span></div>';
-      html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;margin-bottom:16px;justify-content:center">';
-      for (const g of newGirlsTeaser) {
-        const img = '<img src="' + imgProxy(g.photos[0]) + '" alt="" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15);filter:blur(8px)">';
-        html += '<div style="flex-shrink:0;text-align:center">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:#00c864;font-weight:600">New</div></div>';
+    // No preferences: show new profiles sorted by date added (no blur, for all users)
+    const newGirls = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '')).slice(0, 20);
+    if (newGirls.length) {
+      html += '<div class="venue-divider"><span>\u2014 NEW GIRLS \u2014</span></div>';
+      html += '<div style="display:flex;flex-wrap:wrap;gap:14px;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
+      for (const g of newGirls) {
+        const img = '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">';
+        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:#00c864;font-weight:600">New</div></div>';
       }
       html += '</div>';
-      html += '<div style="text-align:center;margin-bottom:40px"><a href="#" onclick="event.preventDefault();requireLogin()" style="color:var(--gold);font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase">Sign up free to see full profiles \u2192</a></div>';
     }
   }
 

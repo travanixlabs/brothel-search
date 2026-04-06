@@ -244,7 +244,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-01",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/03/674b0952b0df7d31676ca8568d98d7bb.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/03/114a6138a92b28c0ee3f8f0232f4e361.jpg",
@@ -485,7 +485,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2023/10/Wendy-Cn-03.jpeg"
       ],
@@ -624,7 +624,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-05",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/09/Kaori-Jp-04-scaled.jpeg"
       ],
@@ -679,7 +679,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Amy-Vn-01.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Amy-Vn-02.jpeg"
@@ -706,7 +706,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Tsuki-Jp-09.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Tsuki-Jp-10.jpeg",
@@ -796,7 +796,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/03/Kiwi-Cn-01.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2024/03/Kiwi-Cn-02.jpeg",
@@ -914,7 +914,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/10/Ada-Cn-01.jpeg"
       ],
@@ -1644,7 +1644,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2023/08/Alisa-Tw-03-1.jpeg"
       ],
@@ -7169,7 +7169,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-02",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/08/Jasmine-Th.jpg"
       ],
@@ -8500,7 +8500,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2022-12-01",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/12/Luna-Jp-04.png",
         "https://citybrothel.com.au/wp-content/uploads/2022/12/Luna-Jp-03.png"
@@ -8806,7 +8806,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-23T08:00:32.119Z",
-      "lastRostered": "2026-03-26"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Babi",
@@ -8973,7 +8973,8 @@
       "2026-04-03",
       "2026-04-04",
       "2026-04-05",
-      "2026-04-06"
+      "2026-04-06",
+      "2026-04-07"
     ],
     "Muku": {},
     "Riria": {},
@@ -9072,6 +9073,10 @@
       "2026-04-06": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Tsuki": {
@@ -9114,6 +9119,10 @@
       "2026-04-04": {
         "start": "11:00",
         "end": "01:00"
+      },
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "01:00"
       }
     },
     "Jasmine": {
@@ -9126,6 +9135,10 @@
         "end": "16:00"
       },
       "2026-04-02": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-04-07": {
         "start": "10:00",
         "end": "16:00"
       }
@@ -9162,6 +9175,10 @@
       },
       "2026-04-04": {
         "start": "12:00",
+        "end": "00:00"
+      },
+      "2026-04-07": {
+        "start": "13:00",
         "end": "00:00"
       }
     },
@@ -9255,9 +9272,22 @@
       "2026-04-06": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-04-07": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
-    "Hiya": {},
+    "Hiya": {
+      "2026-04-06": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "15:00",
+        "end": "05:00"
+      }
+    },
     "Nako": {
       "2026-03-26": {
         "start": "19:00",
@@ -9344,6 +9374,10 @@
       "2026-04-06": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Alisa": {
@@ -9380,6 +9414,10 @@
         "end": "03:00"
       },
       "2026-04-06": {
+        "start": "21:00",
+        "end": "03:00"
+      },
+      "2026-04-07": {
         "start": "21:00",
         "end": "03:00"
       }
@@ -9530,12 +9568,24 @@
       "2026-04-05": {
         "start": "19:00",
         "end": "01:00"
+      },
+      "2026-04-07": {
+        "start": "18:00",
+        "end": "01:00"
       }
     },
     "Saiki": {
       "2026-03-26": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-04-06": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sue": {
@@ -9665,10 +9715,20 @@
         "start": "10:00",
         "end": "00:00"
       }
+    },
+    "Luna": {
+      "2026-04-06": {
+        "start": "10:00",
+        "end": "00:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-04T06:00:23.338Z",
-  "lastCalendarSync": "2026-04-05T07:00:21.377Z",
+  "lastCalendarSync": "2026-04-06T05:17:01.955Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

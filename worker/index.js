@@ -3364,15 +3364,17 @@ async function syncCalendar(env, site) {
     }
   }
 
-  // Remove girls from scraped dates if they're no longer in the roster
-  for (const [dateStr, entries] of Object.entries(scraped)) {
-    if (dateStr.startsWith('_')) continue;
-    const scrapedNames = new Set(entries.map(e => e.name));
-    for (const [girlName, girlCal] of Object.entries(calendar)) {
-      if (girlName.startsWith('_') || typeof girlCal !== 'object') continue;
-      if (girlCal[dateStr] && !scrapedNames.has(girlName)) {
-        delete girlCal[dateStr];
-        changed = true;
+  // Remove girls from scraped dates if they're no longer in the roster (skip URL-based venues like 429 City)
+  if (!is429City) {
+    for (const [dateStr, entries] of Object.entries(scraped)) {
+      if (dateStr.startsWith('_')) continue;
+      const scrapedNames = new Set(entries.map(e => e.name));
+      for (const [girlName, girlCal] of Object.entries(calendar)) {
+        if (girlName.startsWith('_') || typeof girlCal !== 'object') continue;
+        if (girlCal[dateStr] && !scrapedNames.has(girlName)) {
+          delete girlCal[dateStr];
+          changed = true;
+        }
       }
     }
   }

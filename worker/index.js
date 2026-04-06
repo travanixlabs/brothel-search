@@ -1021,10 +1021,10 @@ async function scrapeTop127Roster(site) {
   const start = '12:00';
   const end = isFriSat ? '03:00' : '02:00';
 
-  // Extract names: "J Sana", "C Angela", "Chanel" etc.
-  // Look for roster section names - patterns like "J Name" or just "Name" with ~ separator
+  // Extract names: "J Sana", "C Angela", "HK Maggie", "Chanel" etc.
+  // Look for roster section names - patterns like prefix + Name with ~ separator
   const rosterSection = html.split(/ROSTER/i).pop() || html;
-  const nameRe = /(?:^|\n|>)\s*(?:[JKCVSTM]\s+)?([A-Z][a-z]+)\s*(?:~|–)/gm;
+  const nameRe = /(?:^|\n|>)\s*(?:[A-Z]{1,3}\s+)?([A-Z][a-z]+)\s*(?:~|–)/gm;
   const names = [];
   let m;
   while ((m = nameRe.exec(rosterSection)) !== null) {

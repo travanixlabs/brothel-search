@@ -961,38 +961,31 @@ async function scrapeKyoto206Roster(site) {
 
   const result = {};
 
-  // Find today/tomorrow sections with date titles
-  // Format: <div class="roster-date-title">Saturday - MARCH 14</div>
-  // Followed by table rows: <td class="col-name">Name</td><td ...>Country</td><td class="col-time">Time</td>
-  const sectionRe = /roster-date-title[^>]*>\s*\w+\s*-\s*(\w+)\s+(\d+)\s*<\/div>([\s\S]*?)(?=roster-date-title|$)/gi;
-  let sm;
-
-  while ((sm = sectionRe.exec(html)) !== null) {
-    const monthName = sm[1];
-    const day = parseInt(sm[2], 10);
-    const dateStr = resolveDate(day, monthName);
+  // Split by roster-date-title to get day sections
+  const sections = html.split('roster-date-title');
+  for (const section of sections) {
+    // Parse date: ">Monday - APRIL 06<"
+    const dateMatch = section.match(/>\s*\w+\s*-\s*(\w+)\s+(\d+)\s*</);
+    if (!dateMatch) continue;
+    const dateStr = resolveDate(parseInt(dateMatch[2], 10), dateMatch[1]);
     if (!dateStr) continue;
 
-    const tableHtml = sm[3];
-    // Extract rows: <td class="col-name">Name</td>...<td class="col-time">Time</td>
-    const rowRe = /col-name[^>]*>([^<]+)<\/td>[\s\S]*?col-time[^>]*>([^<]+)<\/td>/gi;
+    // Extract all rows: col-name then col-time in same <tr>
+    const rowRe = /col-name[^>]*>([^<]+)<\/td>.*?col-time[^>]*>([^<]+)/g;
     let rm;
-
-    while ((rm = rowRe.exec(tableHtml)) !== null) {
+    while ((rm = rowRe.exec(section)) !== null) {
       const name = rm[1].trim();
       const timeRaw = rm[2].trim();
       if (!name) continue;
-
-      // Parse time range: "12pm - 2am" or "3pm - close"
       const timeParts = timeRaw.split(/\s*-\s*/);
       if (timeParts.length !== 2) continue;
-
       const start = parseKyoto206Time(timeParts[0]);
       const end = parseKyoto206Time(timeParts[1]);
       if (!start || !end) continue;
-
       if (!result[dateStr]) result[dateStr] = [];
-      result[dateStr].push({ name, start, end });
+      if (!result[dateStr].some(e => e.name === name)) {
+        result[dateStr].push({ name, start, end });
+      }
     }
   }
 

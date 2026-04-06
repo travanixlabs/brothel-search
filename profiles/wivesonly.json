@@ -1724,7 +1724,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Madeleine",
@@ -1860,7 +1860,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Maisie",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Clarisse",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Julia",
@@ -2572,6 +2572,10 @@
       "2026-04-06": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-04-07": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Layla": {
@@ -2762,10 +2766,18 @@
       "2026-04-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-07": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
       "2026-04-06": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-04-07": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -2850,6 +2862,10 @@
       "2026-04-05": {
         "start": "11:00",
         "end": "20:00"
+      },
+      "2026-04-07": {
+        "start": "11:30",
+        "end": "19:30"
       }
     },
     "Iris": {
@@ -2911,8 +2927,26 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Frankie": {
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Emma": {
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Ivy": {
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "19:30"
+      }
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-05T09:19:18.149Z"
+  "lastCalendarSync": "2026-04-06T19:31:31.679Z"
 }

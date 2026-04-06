@@ -3143,12 +3143,29 @@ async function syncCalendar(env, site) {
     : site.rosterFormat === 'gateway'
     ? {} // Gateway Club roster extracted during girl sync (profile page backfill)
     : await scrapeRoster(site);
-  if (Object.keys(scraped).length === 0) {
-    console.log(`[${site.name}] Roster scrape: no data found`);
-    return false;
-  }
-
   const { data, sha } = await loadData(env, site);
+
+  if (Object.keys(scraped).length === 0) {
+    // No new scraped data, but still update lastRostered from existing calendar
+    const calendar = data.calendar || {};
+    const today = fmtDate(getAEDTDate());
+    let changed = false;
+    for (const g of (data.girls || [])) {
+      const girlCal = calendar[g.name];
+      if (girlCal && typeof girlCal === 'object') {
+        for (const d of Object.keys(girlCal)) {
+          if (d.startsWith('_')) continue;
+          if (!g.lastRostered || d > g.lastRostered) { g.lastRostered = d; changed = true; }
+        }
+      }
+      if (!g.lastRostered && g.startDate) { g.lastRostered = g.startDate; changed = true; }
+    }
+    if (changed) {
+      data.lastCalendarSync = new Date().toISOString();
+      await ghPut(env, site.jsonPath, data, sha, `[${site.name}] Update lastRostered from existing calendar`);
+    }
+    return changed;
+  }
   const calendar = data.calendar || {};
   const validNames = new Set((data.girls || []).map(g => g.name));
 

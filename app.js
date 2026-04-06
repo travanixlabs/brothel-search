@@ -260,7 +260,7 @@ function toggleAuthMode() {
   const isSignup = authMode === 'signup';
   document.getElementById('authBtn').textContent = isSignup ? 'Create Account' : 'Sign In';
   document.getElementById('authSubtitle').textContent = isSignup ? 'Create a new account' : 'Sign in to continue';
-  document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up";
+  document.getElementById('authToggle').textContent = isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign up for free to access all features.";
   document.getElementById('authName').style.display = isSignup ? '' : 'none';
   document.getElementById('authReferralHint').style.display = isSignup ? '' : 'none';
   document.getElementById('authReferralCode').style.display = isSignup ? '' : 'none';

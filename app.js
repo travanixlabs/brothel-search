@@ -3539,7 +3539,6 @@ function renderHomePage() {
   html += '</div>';
 
   // First Timer's Guide
-  html += '<div class="venue-divider"><span>\u2014 FIRST TIMER\u2019S GUIDE \u2014</span></div>';
   html += '<div class="guide-section" style="max-width:800px;margin:0 auto 40px">';
 
   const guideItems = [

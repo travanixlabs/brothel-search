@@ -79,7 +79,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2019-05-01",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/141772244357_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/131772244356_.pic_.jpg"
@@ -343,7 +343,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-02",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/Kola-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/Kola-Jp-02.jpeg",
@@ -829,7 +829,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-03-30",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Hatano-Jp-14.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Hatano-Jp-15.jpeg",
@@ -2766,7 +2766,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2025-10-01",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/10/Sami-Jp-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/10/Sami-Jp-05.jpeg",
@@ -8255,7 +8255,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-18T08:38:51.159Z",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-07",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -8455,7 +8455,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-02T06:00:46.397Z",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Yaki",
@@ -8484,7 +8484,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-03T06:00:54.230Z",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Momoko",
@@ -8504,7 +8504,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-04T07:33:14.140Z",
-      "lastRostered": "2026-04-05",
+      "lastRostered": "2026-04-07",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81231775275769_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81191775275267_.pic_.jpg",
@@ -8537,7 +8537,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-05T09:17:03.560Z",
-      "lastRostered": "2026-04-06"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "honomi",
@@ -8815,10 +8815,6 @@
         "start": "11:00",
         "end": "00:00"
       },
-      "2026-04-06": {
-        "start": "11:00",
-        "end": "00:00"
-      },
       "2026-04-07": {
         "start": "11:00",
         "end": "00:00"
@@ -9059,6 +9055,14 @@
       "2026-03-30": {
         "start": "10:00",
         "end": "00:00"
+      },
+      "2026-04-06": {
+        "start": "10:00",
+        "end": "00:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "00:00"
       }
     },
     "Feifei": {
@@ -9076,6 +9080,14 @@
       "2026-04-04": {
         "start": "10:00",
         "end": "21:00"
+      },
+      "2026-04-06": {
+        "start": "13:00",
+        "end": "03:00"
+      },
+      "2026-04-07": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "Zona": {},
@@ -9272,16 +9284,20 @@
       "2026-04-05": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-04-06": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Kola": {
       "2026-04-02": {
         "start": "10:00",
         "end": "00:00"
+      },
+      "2026-04-06": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Fumo": {
@@ -9342,12 +9358,12 @@
         "end": "00:00"
       },
       "2026-04-06": {
-        "start": "10:00",
-        "end": "00:00"
+        "start": "16:00",
+        "end": "05:00"
       },
       "2026-04-07": {
-        "start": "10:00",
-        "end": "00:00"
+        "start": "16:00",
+        "end": "05:00"
       }
     },
     "Yaki": {
@@ -9358,23 +9374,69 @@
       "2026-04-04": {
         "start": "10:00",
         "end": "00:00"
+      },
+      "2026-04-06": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "17:00",
+        "end": "05:00"
       }
     },
     "Momoko": {
       "2026-04-05": {
         "start": "10:00",
         "end": "21:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Sandy": {
       "2026-04-06": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-04-07": {
+        "start": "12:00",
+        "end": "22:00"
+      }
+    },
+    "Chizuru": {
+      "2026-04-06": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "15:00",
+        "end": "05:00"
+      }
+    },
+    "Mayira": {
+      "2026-04-06": {
         "start": "10:00",
-        "end": "00:00"
+        "end": "03:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "03:00"
+      }
+    },
+    "Sami": {
+      "2026-04-06": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-04-07": {
+        "start": "10:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-05T09:17:03.560Z",
-  "lastCalendarSync": "2026-04-06T05:19:08.637Z",
+  "lastCalendarSync": "2026-04-06T09:30:29.091Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -2368,10 +2368,12 @@ function loadMore() {
 function renderGrid() {
   // If Working Now or Data page is active, re-render with updated filters
   const activePath = window.location.pathname;
-  if (activePath === '/working-now' || activePath === '/data') {
+  if (activePath === '/working-now' || activePath === '/data' || activePath.startsWith('/sydney/')) {
     const landing = document.getElementById('landingPage');
     if (landing && landing.style.display !== 'none') {
-      landing.innerHTML = activePath === '/working-now' ? renderWorkingNow() : renderDataPage();
+      if (activePath === '/working-now') landing.innerHTML = renderWorkingNow();
+      else if (activePath === '/data') landing.innerHTML = renderDataPage();
+      else handleLandingRoute(activePath);
     }
   }
 
@@ -4637,7 +4639,7 @@ function handleLandingRoute(path) {
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Show filter bar on Working Now page
     const fsb = document.getElementById('filterSortBar');
-    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data') ? '' : 'none';
+    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath.startsWith('sydney/')) ? '' : 'none';
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {

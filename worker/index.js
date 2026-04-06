@@ -4479,12 +4479,14 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    const hour = new Date(event.scheduledTime).getUTCHours();
+    const dt = new Date(event.scheduledTime);
+    const hour = dt.getUTCHours();
+    const minute = dt.getUTCMinutes();
 
     ctx.waitUntil((async () => {
-      // 6:00 UTC (5pm AEDT) — Girls sync + photo checks only
-      if (hour === 6) {
-        console.log('5pm AEDT — Girls sync + photo checks');
+      // 21:00 UTC (8am AEDT) or 7:00 UTC (6pm AEDT) — Girls sync + photo checks
+      if ((hour === 21 && minute === 0) || (hour === 7 && minute === 0)) {
+        console.log((hour === 21 ? '8am' : '6pm') + ' AEDT — Girls sync + photo checks');
 
         async function syncAllGirls(fn, site) {
           let result;
@@ -4540,15 +4542,15 @@ export default {
         await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
       }
 
-      // 21:00 UTC (8am AEDT) — Daily digest notifications
-      if (hour === 21) {
-        console.log('8am AEDT — Daily digest');
+      // 22:00 UTC (9am AEDT) — Daily digest notifications
+      if (hour === 22 && minute === 0) {
+        console.log('9am AEDT — Daily digest');
         await sendDailyDigest(env).catch(e => console.error('[Digest] Error:', e));
       }
 
-      // 7:00 UTC (6pm AEDT) and 10:00 UTC (9pm AEDT) — Roster sync only
-      if (hour === 7 || hour === 10) {
-        console.log((hour === 7 ? '6pm' : '9pm') + ' AEDT — Roster sync');
+      // 21:30 UTC (8:30am AEDT) and 7:30 UTC (6:30pm AEDT) — Roster sync only
+      if ((hour === 21 && minute === 30) || (hour === 7 && minute === 30)) {
+        console.log((hour === 21 ? '8:30am' : '6:30pm') + ' AEDT — Roster sync');
 
         await Promise.all([
           syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e)),

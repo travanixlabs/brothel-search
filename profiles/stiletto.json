@@ -312,7 +312,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-07",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -483,7 +483,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-07",
       "desc": "Hey gorgeous, I’m Bambi, and just like my name, I bring a natural sweetness and playful charm that you won’t forget. I’m your blonde Australian beauty with striking blue eyes and a petite, feminine figure that will draw you in from the very first glance. With a soft, sensual nature and ..."
     },
     {
@@ -711,7 +711,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "CeCe",
@@ -1109,7 +1109,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2025-04-01"
+      "lastRostered": "2026-04-06"
     },
     {
       "name": "Ella",
@@ -1611,7 +1611,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Honey",
@@ -3439,7 +3439,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-02-01"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Ruby",
@@ -4352,7 +4352,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-06"
+      "lastRostered": "2026-04-07"
     },
     {
       "name": "Victoria",
@@ -4604,6 +4604,10 @@
       "2026-04-04": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-04-07": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Bella": {
@@ -4640,10 +4644,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
-      },
-      "2026-04-06": {
-        "start": "20:00",
-        "end": "02:00"
       }
     },
     "Grace": {
@@ -4708,6 +4708,14 @@
       "2026-04-05": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-04-15": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-18": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Hennessy": {
@@ -4722,6 +4730,14 @@
       "2026-04-11": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-04-16": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-04-18": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Flora": {
@@ -4730,10 +4746,6 @@
         "end": "02:00"
       },
       "2026-04-05": {
-        "start": "18:00",
-        "end": "02:00"
-      },
-      "2026-04-06": {
         "start": "18:00",
         "end": "02:00"
       },
@@ -4770,10 +4782,6 @@
     },
     "Chanel": {
       "2026-04-04": {
-        "start": "19:00",
-        "end": "03:00"
-      },
-      "2026-04-06": {
         "start": "19:00",
         "end": "03:00"
       }
@@ -4832,10 +4840,6 @@
       "2026-04-12": {
         "start": "20:00",
         "end": "03:00"
-      },
-      "2026-04-06": {
-        "start": "19:00",
-        "end": "01:00"
       }
     },
     "Hazel": {
@@ -4962,10 +4966,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
-      },
-      "2026-04-06": {
-        "start": "20:00",
-        "end": "02:00"
       }
     },
     "Ella": {
@@ -5011,10 +5011,6 @@
       }
     },
     "Jamie": {
-      "2026-04-06": {
-        "start": "17:00",
-        "end": "02:00"
-      },
       "2026-04-09": {
         "start": "20:00",
         "end": "05:00"
@@ -5139,16 +5135,12 @@
       }
     },
     "Venus": {
-      "2026-04-06": {
-        "start": "16:00",
-        "end": "00:00"
+      "2026-04-07": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Lilith": {
-      "2026-04-06": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-04-07": {
         "start": "16:00",
         "end": "00:00"
@@ -5285,8 +5277,42 @@
         "start": "22:00",
         "end": "06:00"
       }
+    },
+    "Elizabeth": {
+      "2026-04-06": {
+        "start": "23:00",
+        "end": "07:00"
+      }
+    },
+    "Aria": {
+      "2026-04-07": {
+        "start": "02:00",
+        "end": "08:00"
+      }
+    },
+    "Roxi": {
+      "2026-04-09": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-11": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-17": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "21:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-05T09:17:55.462Z",
-  "lastCalendarSync": "2026-04-06T10:00:57.569Z"
+  "lastCalendarSync": "2026-04-06T19:31:28.358Z"
 }

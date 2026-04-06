@@ -175,7 +175,7 @@ const SITES = {
     name: 'The Gateway Club',
     baseUrl: 'https://www.gatewayclub.com.au',
     girlsUrl: 'https://www.gatewayclub.com.au/gateway-club-private-girls-sydney/',
-    rosterUrl: 'https://www.gatewayclub.com.au/',
+    rosterUrl: 'https://www.gatewayclub.com.au/gateway-club-roster/',
     rosterFormat: 'gateway',
     jsonPath: 'profiles/thegatewayclub.json',
     imgPrefix: 'profiles/thegatewayclub',
@@ -1965,6 +1965,62 @@ async function scrapeWivesOnlyRoster(site) {
   return calendar;
 }
 
+async function scrapeGatewayRoster(site) {
+  // Dedicated roster page: /gateway-club-roster/
+  // Structure: <h4>Monday 6 April</h4> ... <h5>Morning GIRLS</h5> <h5>NAME</h5> ... <h5>Afternoon GIRLS</h5> ...
+  const resp = await fetch('https://www.gatewayclub.com.au/gateway-club-roster/', { headers: { 'User-Agent': UA } });
+  if (!resp.ok) throw new Error(`Gateway roster fetch failed: ${resp.status}`);
+  const html = await resp.text();
+
+  const MONTHS = { january:'01', february:'02', march:'03', april:'04', may:'05', june:'06', july:'07', august:'08', september:'09', october:'10', november:'11', december:'12' };
+  const year = new Date().getFullYear();
+  const calendar = {};
+
+  // Split by day headers: <h4>Monday 6 April
+  const dayBlocks = html.split(/<h4>/i).slice(1);
+  for (const block of dayBlocks) {
+    // Parse day header: "Monday 6 April <i>..."
+    const dayMatch = block.match(/^\s*\w+\s+(\d+)\s+(\w+)/);
+    if (!dayMatch) continue;
+    const day = dayMatch[1].padStart(2, '0');
+    const month = MONTHS[dayMatch[2].toLowerCase()];
+    if (!month) continue;
+    const dateStr = year + '-' + month + '-' + day;
+
+    // Parse shift sections and girl names
+    // Split by shift headers: Morning GIRLS, Afternoon GIRLS, Night GIRLS
+    const sections = block.split(/<h5>\s*(Morning|Afternoon|Night)\s+GIRLS\s*<\/h5>/i);
+    // sections: [before, "Morning", content, "Afternoon", content, "Night", content, ...]
+    for (let i = 1; i < sections.length; i += 2) {
+      const shiftType = sections[i].toLowerCase();
+      const content = sections[i + 1] || '';
+      const names = [...content.matchAll(/<h5>([^<]+)<\/h5>/gi)].map(m => m[1].trim()).filter(n => n.length >= 2 && !/GIRLS/i.test(n));
+
+      let start, end;
+      if (shiftType === 'morning') { start = '06:00'; end = '12:00'; }
+      else if (shiftType === 'afternoon') { start = '12:00'; end = '18:00'; }
+      else { start = '18:00'; end = '06:00'; }
+
+      for (const rawName of names) {
+        const name = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase();
+        if (!calendar[dateStr]) calendar[dateStr] = [];
+        // Merge shifts for same girl on same day (extend time range)
+        const existing = calendar[dateStr].find(e => e.name === name);
+        if (existing) {
+          // Extend: use earliest start and latest end
+          if (start < existing.start) existing.start = start;
+          if (shiftType === 'night') existing.end = '06:00'; // night always extends to 6am
+          else if (end > existing.end && existing.end !== '06:00') existing.end = end;
+        } else {
+          calendar[dateStr].push({ name, start, end });
+        }
+      }
+    }
+  }
+
+  return calendar;
+}
+
 async function scrapeSpringHouseRoster(site) {
   // /roster/ page shows all girls currently rostered (today's roster)
   const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': UA } });
@@ -3148,7 +3204,7 @@ async function syncCalendar(env, site) {
     : site.rosterFormat === 'wivesonly'
     ? await scrapeWivesOnlyRoster(site)
     : site.rosterFormat === 'gateway'
-    ? {} // Gateway Club roster extracted during girl sync (profile page backfill)
+    ? await scrapeGatewayRoster(site)
     : await scrapeRoster(site);
   const { data, sha } = await loadData(env, site);
 

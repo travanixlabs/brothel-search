@@ -3473,13 +3473,19 @@ function renderHomePage() {
     }
   }
 
-  // Venue showcase — sorted by 30-day active, top 5 + more
+  // Venue showcase — sorted by preference match (or active count if no preferences)
   const thirtyDaysAgoHome = new Date(); thirtyDaysAgoHome.setDate(thirtyDaysAgoHome.getDate() - 30);
   const thirtyDayStrHome = thirtyDaysAgoHome.toISOString().split('T')[0];
   const venuesSorted = Object.entries(VENUE_DATA).map(([id, v]) => {
-    const activeCount = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrHome).length;
-    return { id, ...v, activeCount };
-  }).sort((a, b) => b.activeCount - a.activeCount);
+    const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrHome);
+    const activeCount = active.length;
+    let avgMatch = 0;
+    if (userPreferences && active.length) {
+      const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
+      avgMatch = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0;
+    }
+    return { id, ...v, activeCount, avgMatch };
+  }).sort((a, b) => userPreferences ? b.avgMatch - a.avgMatch : b.activeCount - a.activeCount);
   const topVenues = venuesSorted.slice(0, 5);
   const moreCount = venuesSorted.length - 5;
 

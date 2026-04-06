@@ -3041,11 +3041,11 @@ function showProfile(g) {
               const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
               const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
               const label = 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
-              return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a9eff;margin-right:8px;box-shadow:0 0 6px #4a9eff40"></span>' + label + '</span></div>';
+              return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a9eff;margin-right:8px;box-shadow:0 0 6px #4a9eff40"></span>' + label + '</span></div>';
             }
             const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
             const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
-            return '<div class="profile-detail-row"><span>Last Seen</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
+            return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
           })()}
           ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
           ${detailRow('Experience', g.exp)}

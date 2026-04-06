@@ -3683,10 +3683,10 @@ function renderComparePage() {
     html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
     html += '<td><a href="' + v.url + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:11px">' + v.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></td>';
     html += '<td style="font-size:12px">' + (r.topCountries || '\u2014') + '</td>';
-    html += '<td>' + r.newCount + '</td>';
-    html += '<td>' + r.activeCount + '</td>';
-    html += '<td>' + r.rostered + '</td>';
-    html += '<td>' + r.rosteredTomorrow + '</td>';
+    html += '<td' + (r.newCount === 0 ? ' style="color:#ff4444"' : '') + '>' + r.newCount + '</td>';
+    html += '<td' + (r.activeCount === 0 ? ' style="color:#ff4444"' : '') + '>' + r.activeCount + '</td>';
+    html += '<td' + (r.rostered === 0 ? ' style="color:#ff4444"' : '') + '>' + r.rostered + '</td>';
+    html += '<td' + (r.rosteredTomorrow === 0 ? ' style="color:#ff4444"' : '') + '>' + r.rosteredTomorrow + '</td>';
     if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? 'var(--gold)' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
     html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
     html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';

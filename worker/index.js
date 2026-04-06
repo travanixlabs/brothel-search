@@ -1923,44 +1923,35 @@ async function scrapeStilettoRoster(site, env) {
 }
 
 async function scrapeWivesOnlyRoster(site) {
-  // Roster page shows girls for current week; ?week=next for next week
-  // Each girl on the page is rostered for all dates in that week with their timeclock shift
+  // Roster page default view shows today's roster only (other days loaded via AJAX)
+  // Only assign girls to today's date
   const calendar = {};
+  const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const resp = await fetch(site.rosterUrl, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!resp.ok) return calendar;
+  const html = await resp.text();
 
-  async function scrapeWeek(url) {
-    const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-    const resp = await fetch(url, { headers: { 'User-Agent': BROWSER_UA } });
-    if (!resp.ok) return;
-    const html = await resp.text();
-    // Extract week dates from buttons: data-date='2026-04-04'
-    const dates = [...html.matchAll(/data-date='(\d{4}-\d{2}-\d{2})'/g)].map(m => m[1]);
-    if (!dates.length) return;
-    // Extract girls with timeclock
-    const blocks = html.split('ohoverzoom newroster');
-    for (const block of blocks) {
-      const nameMatch = block.match(/<h4>([^<]+)<\/h4>/);
-      const timeMatch = block.match(/timeclock[\s\S]*?<span>([^<]+)<\/span>/);
-      if (!nameMatch) continue;
-      const name = nameMatch[1].trim();
-      let start = '11:00', end = '04:00'; // default
-      if (timeMatch) {
-        const parts = timeMatch[1].trim().match(/(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
-        if (parts) {
-          start = ampmTo24(parts[1].replace(/\s/g, ''));
-          end = ampmTo24(parts[2].replace(/\s/g, ''));
-        }
-      }
-      for (const dateStr of dates) {
-        if (!calendar[dateStr]) calendar[dateStr] = [];
-        if (!calendar[dateStr].some(e => e.name === name)) {
-          calendar[dateStr].push({ name, start, end });
-        }
+  const todayStr = fmtDate(getAEDTDate());
+
+  const blocks = html.split('ohoverzoom newroster');
+  for (const block of blocks) {
+    const nameMatch = block.match(/<h4>([^<]+)<\/h4>/);
+    const timeMatch = block.match(/timeclock[\s\S]*?<span>([^<]+)<\/span>/);
+    if (!nameMatch) continue;
+    const name = nameMatch[1].trim();
+    let start = '11:00', end = '04:00';
+    if (timeMatch) {
+      const parts = timeMatch[1].trim().match(/(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
+      if (parts) {
+        start = ampmTo24(parts[1].replace(/\s/g, ''));
+        end = ampmTo24(parts[2].replace(/\s/g, ''));
       }
     }
+    if (!calendar[todayStr]) calendar[todayStr] = [];
+    if (!calendar[todayStr].some(e => e.name === name)) {
+      calendar[todayStr].push({ name, start, end });
+    }
   }
-
-  await scrapeWeek(site.rosterUrl);
-  await scrapeWeek(site.rosterUrl + '?week=next');
 
   return calendar;
 }

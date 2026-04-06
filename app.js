@@ -96,12 +96,6 @@ function showPaywall() {
   }
   document.getElementById('paywallOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  const trialBtn = document.getElementById('paywallTrialBtn');
-  if (subscriptionStatus && subscriptionStatus.trialUsed) {
-    trialBtn.style.opacity = '0.4';
-    trialBtn.style.pointerEvents = 'none';
-    trialBtn.querySelector('.paywall-plan-note').textContent = 'Already used';
-  }
 }
 
 function hidePaywall() {

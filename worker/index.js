@@ -1452,12 +1452,19 @@ async function syncGatewayClubGirls(env, site) {
           if (offset < 0) offset += 7;
           const d = new Date(today); d.setDate(today.getDate() + offset);
           const dateStr = fmtDate(d);
-          if (avail.includes('day time') && avail.includes('night time')) {
-            roster[dateStr] = { start: '08:00', end: '08:00' }; // 24h
-          } else if (avail.includes('night time')) {
-            roster[dateStr] = { start: '20:00', end: '08:00' };
-          } else if (avail.includes('day time')) {
-            roster[dateStr] = { start: '08:00', end: '20:00' };
+          // Gateway Club shifts:
+          // Day Time (Morning GIRLS) = 6am-12pm
+          // Afternoon Time (Afternoon GIRLS) = 12pm-6pm
+          // Night Time (Night GIRLS) = 6pm-6am
+          // Day Time + Night Time = 6am-6am (full day)
+          const hasDay = avail.includes('day time');
+          const hasNight = avail.includes('night time');
+          if (hasDay && hasNight) {
+            roster[dateStr] = { start: '06:00', end: '06:00' }; // full day
+          } else if (hasDay) {
+            roster[dateStr] = { start: '06:00', end: '12:00' }; // morning
+          } else if (hasNight) {
+            roster[dateStr] = { start: '18:00', end: '06:00' }; // night
           }
         }
       }

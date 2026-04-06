@@ -3687,7 +3687,7 @@ function renderComparePage() {
     html += '<td' + (r.activeCount === 0 ? ' style="color:#ff4444"' : ' style="color:#00c864"') + '>' + r.activeCount + '</td>';
     html += '<td' + (r.rostered === 0 ? ' style="color:#ff4444"' : ' style="color:#00c864"') + '>' + r.rostered + '</td>';
     html += '<td' + (r.rosteredTomorrow === 0 ? ' style="color:#ff4444"' : ' style="color:#00c864"') + '>' + r.rosteredTomorrow + '</td>';
-    if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? '#00c864' : r.avgMatch === 0 ? '#ff4444' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + ';font-weight:700">' + r.avgMatch + '%</td>';
+    if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? '#00c864' : r.avgMatch === 0 ? '#ff4444' : r.avgMatch >= 50 ? 'var(--text)' : 'var(--text-dim)') + '">' + r.avgMatch + '%</td>';
     html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
     html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
     html += '<td>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';

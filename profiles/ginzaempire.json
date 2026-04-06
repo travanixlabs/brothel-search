@@ -4024,6 +4024,25 @@
       ],
       "lastModified": "2026-04-05T09:18:18.785Z",
       "lastRostered": "2026-04-07"
+    },
+    {
+      "name": "Cola",
+      "country": [
+        "Chinese"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "",
+      "val2": "",
+      "val3": "",
+      "startDate": "2026-04-07",
+      "lastRostered": "2026-04-07",
+      "oldUrl": "https://479ginza.com.au/Roster",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {

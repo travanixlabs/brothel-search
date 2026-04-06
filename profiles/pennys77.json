@@ -419,7 +419,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2022-08-15"
+      "lastRostered": "2026-04-06"
     },
     {
       "name": "Anjali",
@@ -655,8 +655,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Hana": {
+      "2026-04-06": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-06T05:19:29.702Z"
+  "lastCalendarSync": "2026-04-06T08:21:03.464Z"
 }

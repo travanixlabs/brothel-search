@@ -3543,7 +3543,6 @@ function renderHomePage() {
   html += '<div class="guide-section" style="max-width:800px;margin:0 auto 40px">';
 
   const guideItems = [
-    { q: 'What to Expect on Arrival', a: 'When you arrive at a brothel, you\u2019ll be greeted by a receptionist. You\u2019ll be shown to a lounge where available ladies will introduce themselves. There\u2019s no pressure \u2014 take your time, ask questions, and choose who you\u2019d like to spend time with.' },
     { q: 'Understanding Pricing', a: 'Prices are typically quoted for 30, 45, or 60 minute sessions. The rate covers the room and the lady\u2019s time. Rates vary by venue and individual \u2014 use our Compare page to see average prices across venues. Payment is usually cash, though some venues accept card.' },
     { q: 'Rosters & Availability', a: 'Most venues publish daily rosters showing which ladies are working and their shift times. Our Working Now page shows live availability across all venues. Rosters change daily \u2014 check before you visit.' },
     { q: 'Etiquette & Respect', a: 'Shower before your session (most venues provide facilities). Be respectful, communicate clearly about what you\u2019d like, and always respect boundaries. Tipping is not expected but appreciated. If you enjoy your experience, leave a review to help others.' },

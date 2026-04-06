@@ -2007,7 +2007,7 @@ function renderRangeFilters() {
     if (dataMin === dataMax) return;
     rangeDefaults[def.key] = { min: dataMin, max: dataMax };
     const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-    const defaultMin = def.key === 'lastRostered' ? Math.max(dataMin, sevenDaysAgo.getTime()) : dataMin;
+    const defaultMin = dataMin;
     if (!rangeFilters[def.key] && defaultMin > dataMin) rangeFilters[def.key] = { min: defaultMin, max: dataMax };
     const rf = rangeFilters[def.key] || { min: defaultMin, max: dataMax };
     if (rf.min < dataMin) rf.min = dataMin;

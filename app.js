@@ -4558,7 +4558,7 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     return true;
   } else if (cleanPath === 'working-now') {
-    activeAvailability.include = ['Available Now'];
+    activeAvailability.include = [];
     activeAvailability.exclude = [];
     activeFavFilter.include = [];
     activeFavFilter.exclude = ['Hidden'];

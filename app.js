@@ -4626,7 +4626,8 @@ function handleLandingRoute(path) {
     html = renderWorkingNow();
   } else if (cleanPath === 'compare') {
     activeFavFilter.include = [];
-    activeFavFilter.exclude = [];
+    activeFavFilter.exclude = ['Hidden'];
+    renderFilters(); renderGrid();
     html = renderComparePage();
   } else if (cleanPath === 'analytics') {
     html = renderAnalyticsPage();

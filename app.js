@@ -3440,43 +3440,34 @@ function renderHomePage() {
   const thirtyDaysAgoDigest = new Date(); thirtyDaysAgoDigest.setDate(thirtyDaysAgoDigest.getDate() - 30);
   const thirtyDayStrDigest = thirtyDaysAgoDigest.toISOString().split('T')[0];
 
-  if (userPreferences) {
-    // Preferences set: show favourites + 90%+ matches, sorted by preference score
+  {
+    // Daily Digest: max 10, for all users logged in or not, with or without preferences
     const sortByScore = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
-    const favAvailToday = allGirls.filter(g => {
-      const avail = getAvailabilityText(g);
-      return isFavorite(g) && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-    }).sort(sortByScore);
-    const matchAvailToday = allGirls.filter(g => {
-      const score = matchScores.get(g.venue + ':' + g.name) || 0;
-      const avail = getAvailabilityText(g);
-      return !isFavorite(g) && score >= 90 && g.startDate && g.startDate >= thirtyDayStrDigest && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-    }).sort(sortByScore).slice(0, Math.max(0, 20 - favAvailToday.length));
+    const isAvailToday = g => { const avail = getAvailabilityText(g); return avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')); };
 
-    if (favAvailToday.length || matchAvailToday.length) {
+    let digestGirls = [];
+
+    if (userPreferences) {
+      // Favourites first, then 90%+ new matches
+      const favs = allGirls.filter(g => isFavorite(g) && isAvailToday(g)).sort(sortByScore);
+      const matches = allGirls.filter(g => {
+        const score = matchScores.get(g.venue + ':' + g.name) || 0;
+        return !isFavorite(g) && score >= 90 && g.startDate && g.startDate >= thirtyDayStrDigest && isAvailToday(g);
+      }).sort(sortByScore);
+      digestGirls = [...favs, ...matches].slice(0, 10);
+    } else {
+      // New profiles sorted by date
+      digestGirls = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '')).slice(0, 10);
+    }
+
+    if (digestGirls.length) {
       html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
       html += '<div style="display:flex;flex-wrap:wrap;gap:14px;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
-      for (const g of favAvailToday) {
+      for (const g of digestGirls) {
         const score = matchScores.get(g.venue + ':' + g.name) || 0;
         const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div>' + (score > 0 ? '<div style="font-size:9px;color:var(--gold)">' + score + '% match</div>' : '') + '<div style="font-size:9px;color:#c9952c;font-weight:600">Favourite</div></div>';
-      }
-      for (const g of matchAvailToday) {
-        const score = matchScores.get(g.venue + ':' + g.name) || 0;
-        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:var(--gold)">' + score + '% match</div><div style="font-size:9px;color:#00c864;font-weight:600">New</div></div>';
-      }
-      html += '</div>';
-    }
-  } else {
-    // No preferences: show new profiles sorted by date added (no blur, for all users)
-    const newGirls = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '')).slice(0, 20);
-    if (newGirls.length) {
-      html += '<div class="venue-divider"><span>\u2014 NEW GIRLS \u2014</span></div>';
-      html += '<div style="display:flex;flex-wrap:wrap;gap:14px;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
-      for (const g of newGirls) {
-        const img = '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">';
-        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div><div style="font-size:9px;color:#00c864;font-weight:600">New</div></div>';
+        const tag = isFavorite(g) ? '<div style="font-size:9px;color:#c9952c;font-weight:600">Favourite</div>' : (g.startDate && g.startDate >= thirtyDayStrDigest ? '<div style="font-size:9px;color:#00c864;font-weight:600">New</div>' : '');
+        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div>' + (userPreferences && score > 0 ? '<div style="font-size:9px;color:var(--gold)">' + score + '% match</div>' : '') + tag + '</div>';
       }
       html += '</div>';
     }

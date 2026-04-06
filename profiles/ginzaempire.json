@@ -4037,10 +4037,15 @@
       "val1": "",
       "val2": "",
       "val3": "",
-      "startDate": "2026-04-07",
+      "startDate": "2026-04-06",
       "lastRostered": "2026-04-07",
-      "oldUrl": "https://479ginza.com.au/Roster",
-      "photos": [],
+      "oldUrl": "https://479ginza.com.au/Girls/5815",
+      "photos": [
+        "https://479ginza.com.au/data/upload/2026-04/20260406150811173664.jpeg",
+        "https://479ginza.com.au/data/upload/2026-04/20260406150912316861.jpeg",
+        "https://479ginza.com.au/data/upload/2026-04/20260406150912908480.jpeg",
+        "https://479ginza.com.au/data/upload/2026-04/20260406150913826434.jpeg"
+      ],
       "labels": [],
       "originalSite": "Exists"
     }

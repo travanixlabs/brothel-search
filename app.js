@@ -249,6 +249,19 @@ async function handleAuth() {
   loadNotifications();
   await fetchUserRole();
   await loadFavorites();
+
+  // Auto-activate trial on signup
+  if (authMode === 'signup' && result.data.session) {
+    try {
+      await fetch(`${WORKER_URL}/activate-trial`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + result.data.session.access_token },
+        body: JSON.stringify({ userId: result.data.session.user.id }),
+      });
+      isSubscribed = true;
+    } catch (e) { console.error('Auto-trial failed:', e); }
+  }
+
   loadProfiles();
   // Navigate to home after login
   history.replaceState(null, '', '/');
@@ -2964,6 +2977,7 @@ function showProfile(g) {
     document.body.style.overflow = 'hidden';
     return;
   }
+  if (isSubscribed === false && userRole !== 'admin') { showPaywall(); return; }
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
@@ -4510,6 +4524,11 @@ function navigateToLanding(path) {
     document.body.style.overflow = 'hidden';
     return;
   }
+  // Logged-in users with expired subscription see paywall
+  if (path !== '/' && path !== '/index.html' && isLoggedIn() && isSubscribed === false && userRole !== 'admin') {
+    showPaywall();
+    return;
+  }
   const dd = document.getElementById('navBrothelsDropdown');
   if (dd) dd.classList.remove('open');
   const landing = document.getElementById('landingPage');
@@ -4691,6 +4710,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
     document.body.style.overflow = 'hidden';
     return;
   }
+  if (isSubscribed === false && userRole !== 'admin') { showPaywall(); return; }
   activeAvailability.include = [];
   activeAvailability.exclude = [];
   activeFavFilter.include = [];

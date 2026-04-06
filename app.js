@@ -3675,6 +3675,12 @@ function renderComparePage() {
     html += '<th class="compare-label"' + (sortable ? ' style="cursor:pointer" onclick="sortCompareTable(\'' + c.key + '\')"' : '') + '>' + c.label + arrow + '</th>';
   }
   html += '</tr></thead><tbody>';
+  // Calculate median for each price column
+  const median = arr => { const s = arr.filter(v => v > 0).sort((a,b) => a-b); return s.length ? s[Math.floor(s.length/2)] : 0; };
+  const med30 = median(rankings.map(r => r.avg30));
+  const med45 = median(rankings.map(r => r.avg45));
+  const med60 = median(rankings.map(r => r.avg60));
+
   rankings.forEach((r, i) => {
     const v = VENUE_DATA[r.id];
     html += '<tr>';
@@ -3688,9 +3694,9 @@ function renderComparePage() {
     html += '<td' + (r.rostered === 0 ? ' style="color:#ff4444"' : ' style="color:#00c864"') + '>' + r.rostered + '</td>';
     html += '<td' + (r.rosteredTomorrow === 0 ? ' style="color:#ff4444"' : ' style="color:#00c864"') + '>' + r.rosteredTomorrow + '</td>';
     if (userPreferences) html += '<td style="color:' + (r.avgMatch >= 90 ? '#00c864' : '#ff4444') + '">' + r.avgMatch + '%</td>';
-    html += '<td>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
-    html += '<td>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
-    html += '<td>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';
+    html += '<td' + (r.avg30 ? ' style="color:' + (r.avg30 <= med30 ? '#00c864' : '#ff4444') + '"' : '') + '>' + (r.avg30 ? '$' + r.avg30 : '\u2014') + '</td>';
+    html += '<td' + (r.avg45 ? ' style="color:' + (r.avg45 <= med45 ? '#00c864' : '#ff4444') + '"' : '') + '>' + (r.avg45 ? '$' + r.avg45 : '\u2014') + '</td>';
+    html += '<td' + (r.avg60 ? ' style="color:' + (r.avg60 <= med60 ? '#00c864' : '#ff4444') + '"' : '') + '>' + (r.avg60 ? '$' + r.avg60 : '\u2014') + '</td>';
     html += '</tr>';
   });
   html += '</tbody></table></div>';

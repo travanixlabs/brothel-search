@@ -3451,7 +3451,7 @@ function renderHomePage() {
       const score = matchScores.get(g.venue + ':' + g.name) || 0;
       const avail = getAvailabilityText(g);
       return !isFavorite(g) && score >= 90 && avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future'));
-    }).sort(sortByScore).slice(0, 20);
+    }).sort(sortByScore).slice(0, Math.max(0, 20 - favAvailToday.length));
 
     if (favAvailToday.length || matchAvailToday.length) {
       html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';

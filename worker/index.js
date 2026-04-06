@@ -794,9 +794,9 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
 /* ── Name validation ── */
 
 function classifyGirl(entry) {
-  const text = [entry.desc || '', entry.type || '', entry.exp || '', entry.lang || '', entry.name || '', ...(entry.labels || [])].join(' ');
+  const text = [entry.desc || '', entry.type || '', entry.exp || '', entry.special || '', entry.lang || '', entry.name || '', ...(entry.labels || [])].join(' ');
   // AV/Pornstar detection
-  const avRe = /\b(pornstar|porn\s*star|porn\s*actress|AV\s*(actress|star|idol)|JAV\s*(actress|star|idol)?)\b/i;
+  const avRe = /\b(pornstar|porn\s*star|porn\s*actress|AV\s*(actress|star|idol|debut|girl)|JAV|adult\s*(video|film))\b/i;
   entry.pornstar = avRe.test(text) ? 'Pornstar' : '';
   // English level
   const langText = ((entry.lang || '') + ' ' + (entry.desc || '')).toLowerCase();

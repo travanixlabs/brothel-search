@@ -1066,8 +1066,9 @@ async function scrapeFantasyClub35Roster(site) {
     const dateStr = fmtDate(d);
 
     const entries = [];
-    // Match: Name(Country) optional NEW Xam-Xam or Xpm-Xam
-    const entryRe = /([A-Za-z]+)\s*[\(\uff08]\s*[A-Za-z]+\s*[\)\uff09]\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
+    // Match: Name followed by (Country) then optional NEW then Xam-Xam
+    // Use broad pattern to handle fullwidth/garbled parentheses
+    const entryRe = /([A-Za-z]{2,})\s*\W+[A-Za-z]+\W+\s*(?:NEW\s+)?(\d{1,2}[ap]m)\s*-\s*(\d{1,2}[ap]m)/gi;
     let m;
     while ((m = entryRe.exec(text)) !== null) {
       const name = m[1].trim();
@@ -2754,17 +2755,18 @@ async function scrapeBellevue12Roster(site) {
   const aest = getAEDTDate();
   const todayStr = fmtDate(aest);
 
-  // Bellevue 12 roster: h3 tags contain "Name Country Height details"
-  // Tags may contain <strong>, <span> — strip inner tags to get text
-  const h3Re = /<h3[^>]*>([\s\S]*?)<\/h3>/gi;
+  // Bellevue 12 roster: girl descriptions contain "Name Nationality Xcm tall details"
+  // Can appear in <h3>, plain text, or mixed HTML. Extract all lines with "cm tall" or nationality keywords.
+  const text = html.replace(/<[^>]+>/g, '\n').replace(/&[^;]+;/g, ' ');
+  const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 10);
   const entries = [];
-  let m;
-  while ((m = h3Re.exec(html)) !== null) {
-    const text = m[1].replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!text || /Today|Roster|Recent|Comment|Phone|Address|Time/i.test(text)) continue;
-    // First word is the name
-    const nameMatch = text.match(/^([A-Za-z]+)/);
-    if (nameMatch && nameMatch[1].length > 1) {
+  const natWords = /Singapore|Taiwan|Chinese|Korean|Japanese|Thai|Vietnamese|Taiwanese|Malaysian|Hong Kong|Macau|Indonesian|Chese/i;
+
+  for (const line of lines) {
+    if (!/cm\s*tall|cup|busty|service|slim|sexy|fluent/i.test(line) && !natWords.test(line)) continue;
+    if (/Today|Roster|Recent|Comment|Phone|Address|Time|Rate|Booking/i.test(line)) continue;
+    const nameMatch = line.match(/^([A-Z][A-Za-z]+)/);
+    if (nameMatch && nameMatch[1].length > 1 && !entries.some(e => e.name === nameMatch[1])) {
       entries.push({ name: nameMatch[1], start: '10:00', end: '02:00' });
     }
   }

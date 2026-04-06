@@ -2977,7 +2977,7 @@ function showProfile(g) {
     document.body.style.overflow = 'hidden';
     return;
   }
-  if (isSubscribed === false && userRole !== 'admin') { showPaywall(); return; }
+  if (isSubscribed !== true && userRole !== 'admin') { showPaywall(); return; }
   const path = profilePath(g);
   if (window.location.pathname !== path) history.pushState({ profile: true }, '', path);
   const suburbName = VENUE_SUBURB_NAMES[g.venue] || '';
@@ -4524,8 +4524,8 @@ function navigateToLanding(path) {
     document.body.style.overflow = 'hidden';
     return;
   }
-  // Logged-in users with expired subscription see paywall
-  if (path !== '/' && path !== '/index.html' && isLoggedIn() && isSubscribed === false && userRole !== 'admin') {
+  // Logged-in users must have active subscription (block while loading too)
+  if (path !== '/' && path !== '/index.html' && isLoggedIn() && isSubscribed !== true && userRole !== 'admin') {
     showPaywall();
     return;
   }
@@ -4710,7 +4710,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
     document.body.style.overflow = 'hidden';
     return;
   }
-  if (isSubscribed === false && userRole !== 'admin') { showPaywall(); return; }
+  if (isSubscribed !== true && userRole !== 'admin') { showPaywall(); return; }
   activeAvailability.include = [];
   activeAvailability.exclude = [];
   activeFavFilter.include = [];

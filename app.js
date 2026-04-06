@@ -1375,6 +1375,7 @@ let userPreferences = null;
 let matchScores = new Map(); // girl key -> score 0-100
 let matchThreshold = 0; // top 20% cutoff
 
+let activeRegion = { include: [], exclude: [] };
 let activeVenue = { include: [], exclude: [] };
 let activeCountry = { include: [], exclude: [] };
 let activeLabels = { include: [], exclude: [] };
@@ -1624,7 +1625,7 @@ document.addEventListener('click', e => { if (!e.target.closest('.filter-dropdow
 function hasAnyFilter() {
   const hasRangeActive = Object.keys(rangeFilters).some(k => { const d = rangeDefaults[k]; return d && (rangeFilters[k].min > d.min || rangeFilters[k].max < d.max); });
   const hasTextFilter = Object.values(textFilters).some(v => v);
-  return activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeFavFilter.include.length || activeFavFilter.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
+  return activeRegion.include.length || activeRegion.exclude.length || activeVenue.include.length || activeVenue.exclude.length || activeCountry.include.length || activeCountry.exclude.length || activeLabels.include.length || activeLabels.exclude.length || activeAV.include.length || activeAV.exclude.length || activeAvailability.include.length || activeAvailability.exclude.length || activePhotos.include.length || activePhotos.exclude.length || activeFavFilter.include.length || activeFavFilter.exclude.length || activeDateTime || hasRangeActive || hasTextFilter;
 }
 
 function updateMoreFiltersCount() {
@@ -1852,7 +1853,19 @@ function renderFilters() {
     { value: 'No', label: 'No', count: base.filter(g => !g.photos || g.photos.length === 0).length }
   ];
 
-  fr.innerHTML = buildLabelDropdown('ddVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)
+  // Region options
+  const regionCounts = {};
+  base.forEach(g => { const r = VENUE_REGIONS[g.venue] || 'other'; regionCounts[r] = (regionCounts[r] || 0) + 1; });
+  const regionOpts = Object.entries(REGION_NAMES).filter(([k]) => regionCounts[k]).sort((a, b) => {
+    const aActive = activeRegion.include.includes(a[0]) || activeRegion.exclude.includes(a[0]);
+    const bActive = activeRegion.include.includes(b[0]) || activeRegion.exclude.includes(b[0]);
+    if (aActive && !bActive) return -1;
+    if (!aActive && bActive) return 1;
+    return a[1].localeCompare(b[1]);
+  }).map(([k, v]) => ({ value: k, label: v, count: regionCounts[k] || 0 }));
+
+  fr.innerHTML = buildLabelDropdown('ddRegion', 'Region', regionOpts, activeRegion.include, activeRegion.exclude)
+    + buildLabelDropdown('ddVenue', 'Venue', venueOpts, activeVenue.include, activeVenue.exclude)
     + buildLabelDropdown('ddCountry', 'Country', countryOpts, activeCountry.include, activeCountry.exclude)
     + buildLabelDropdown('ddLabels', 'Services', labelOpts, activeLabels.include, activeLabels.exclude)
     + buildLabelDropdown('ddAV', 'AV', [{value:'Yes',label:'Yes',count:allGirls.filter(g=>g.pornstar).length},{value:'No',label:'No',count:allGirls.filter(g=>!g.pornstar).length}], activeAV.include, activeAV.exclude)
@@ -1890,6 +1903,7 @@ function renderFilters() {
 
   // Bind +/- toggle for all label dropdowns
   const toggleMappings = [
+    { sel: '#ddRegion', state: activeRegion },
     { sel: '#ddVenue', state: activeVenue },
     { sel: '#ddCountry', state: activeCountry },
     { sel: '#ddLabels', state: activeLabels },
@@ -1945,7 +1959,7 @@ function renderFilters() {
   // Clear all filters
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
-    clearBtn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
+    clearBtn.onclick = () => { activeRegion.include.length = 0; activeRegion.exclude.length = 0; activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 
   // Sort row (dropdown + direction toggle)
@@ -2123,6 +2137,9 @@ function renderRangeFilters() {
 
 function getFiltered() {
   let list = [...allGirls];
+  // Region filter
+  if (activeRegion.include.length) list = list.filter(g => activeRegion.include.includes(VENUE_REGIONS[g.venue] || 'other'));
+  if (activeRegion.exclude.length) list = list.filter(g => !activeRegion.exclude.includes(VENUE_REGIONS[g.venue] || 'other'));
   // Venue filter
   if (activeVenue.include.length) list = list.filter(g => activeVenue.include.includes(g.venue));
   if (activeVenue.exclude.length) list = list.filter(g => !activeVenue.exclude.includes(g.venue));
@@ -2368,11 +2385,12 @@ function loadMore() {
 function renderGrid() {
   // If Working Now or Data page is active, re-render with updated filters
   const activePath = window.location.pathname;
-  if (activePath === '/working-now' || activePath === '/data' || activePath.startsWith('/sydney/')) {
+  if (activePath === '/working-now' || activePath === '/data' || activePath === '/compare' || activePath.startsWith('/sydney/')) {
     const landing = document.getElementById('landingPage');
     if (landing && landing.style.display !== 'none') {
       if (activePath === '/working-now') landing.innerHTML = renderWorkingNow();
       else if (activePath === '/data') landing.innerHTML = renderDataPage();
+      else if (activePath === '/compare') landing.innerHTML = renderComparePage();
       else handleLandingRoute(activePath);
     }
   }
@@ -2388,6 +2406,8 @@ function renderGrid() {
   const chipsEl = document.getElementById('filterChips');
   if (chipsEl) {
     const chips = [];
+    activeRegion.include.forEach(v => chips.push({ label: REGION_NAMES[v] || v, type: 'region', action: 'include' }));
+    activeRegion.exclude.forEach(v => chips.push({ label: REGION_NAMES[v] || v, type: 'region', action: 'exclude' }));
     activeVenue.include.forEach(v => chips.push({ label: v, type: 'venue', action: 'include' }));
     activeVenue.exclude.forEach(v => chips.push({ label: v, type: 'venue', action: 'exclude' }));
     activeCountry.include.forEach(v => chips.push({ label: v, type: 'country', action: 'include' }));
@@ -2407,7 +2427,7 @@ function renderGrid() {
           const label = chip.dataset.label;
           if (type === 'text') { textFilters[chip.dataset.key] = ''; }
           else {
-            const states = { venue: activeVenue, country: activeCountry, labels: activeLabels, availability: activeAvailability };
+            const states = { region: activeRegion, venue: activeVenue, country: activeCountry, labels: activeLabels, availability: activeAvailability };
             const state = states[type];
             if (state) { state.include = state.include.filter(v => v !== label); state.exclude = state.exclude.filter(v => v !== label); }
           }
@@ -3518,6 +3538,27 @@ function renderHomePage() {
   html += '<a href="/sydney/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')"><h2 class="landing-card-title">Browse by Location</h2><div class="landing-card-stat">Interactive map of Sydney</div><div class="landing-card-link">View map \u2192</div></a>';
   html += '</div>';
 
+  // First Timer's Guide
+  html += '<div class="venue-divider"><span>\u2014 FIRST TIMER\u2019S GUIDE \u2014</span></div>';
+  html += '<div class="guide-section" style="max-width:800px;margin:0 auto 40px">';
+
+  const guideItems = [
+    { q: 'What to Expect on Arrival', a: 'When you arrive at a brothel, you\u2019ll be greeted by a receptionist. You\u2019ll be shown to a lounge where available ladies will introduce themselves. There\u2019s no pressure \u2014 take your time, ask questions, and choose who you\u2019d like to spend time with.' },
+    { q: 'Understanding Pricing', a: 'Prices are typically quoted for 30, 45, or 60 minute sessions. The rate covers the room and the lady\u2019s time. Rates vary by venue and individual \u2014 use our Compare page to see average prices across venues. Payment is usually cash, though some venues accept card.' },
+    { q: 'Service Types Explained', a: '<strong>GFE</strong> (Girlfriend Experience) \u2014 intimate, relaxed, affectionate. <strong>PSE</strong> (Pornstar Experience) \u2014 more adventurous and uninhibited. <strong>DFK</strong> \u2014 Deep French Kissing. <strong>BDSM</strong> \u2014 Bondage, domination, and related services. <strong>COB/COF</strong> \u2014 Finish on body/face. Check each profile\u2019s service labels for what they offer.' },
+    { q: 'Rosters & Availability', a: 'Most venues publish daily rosters showing which ladies are working and their shift times. Our Working Now page shows live availability across all venues. Rosters change daily \u2014 check before you visit.' },
+    { q: 'Etiquette & Respect', a: 'Shower before your session (most venues provide facilities). Be respectful, communicate clearly about what you\u2019d like, and always respect boundaries. Tipping is not expected but appreciated. If you enjoy your experience, leave a review to help others.' },
+    { q: 'Safety & Hygiene', a: 'Licensed brothels in NSW are regulated and regularly inspected. Protection is mandatory. Ladies have the right to refuse any service they\u2019re not comfortable with. Your privacy is respected \u2014 venues are discreet.' },
+  ];
+
+  for (const item of guideItems) {
+    html += '<div class="guide-item" onclick="this.classList.toggle(\'open\')">';
+    html += '<div class="guide-q"><span>' + item.q + '</span><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>';
+    html += '<div class="guide-a">' + item.a + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+
   // Referral promo
   html += '<div class="referral-promo">';
   html += '<div class="referral-promo-inner">';
@@ -3604,7 +3645,13 @@ function sortCompareTable(col) {
 }
 
 function renderComparePage() {
-  const venueIds = Object.keys(VENUE_DATA);
+  let venueIds = Object.keys(VENUE_DATA);
+  // Apply region filter to compare page
+  if (activeRegion.include.length) venueIds = venueIds.filter(id => activeRegion.include.includes(VENUE_REGIONS[id] || 'other'));
+  if (activeRegion.exclude.length) venueIds = venueIds.filter(id => !activeRegion.exclude.includes(VENUE_REGIONS[id] || 'other'));
+  // Apply venue filter
+  if (activeVenue.include.length) venueIds = venueIds.filter(id => activeVenue.include.includes(id));
+  if (activeVenue.exclude.length) venueIds = venueIds.filter(id => !activeVenue.exclude.includes(id));
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',
@@ -4645,7 +4692,7 @@ function handleLandingRoute(path) {
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Show filter bar on Working Now page
     const fsb = document.getElementById('filterSortBar');
-    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath.startsWith('sydney/')) ? '' : 'none';
+    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath === 'compare' || cleanPath.startsWith('sydney/')) ? '' : 'none';
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {

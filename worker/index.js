@@ -1094,32 +1094,18 @@ async function scrape429CityRoster(site) {
   const result = {};
   const excludePaths = ['ladies', 'roster', 'contact', 'rate', 'escort', 'work-for-us', 'wp-content', 'feed', 'comments', 'wp-includes', 'wp-json', 'xmlrpc', 'job'];
 
-  // Split HTML by day sections
-  const sectionRe = /id='(\w+)_sort_button'/g;
-  const sections = [];
-  let sm;
-  while ((sm = sectionRe.exec(html)) !== null) {
-    sections.push({ day: sm[1], start: sm.index });
-  }
+  // 429 City shows today's roster duplicated across all 7 day tabs
+  // Only assign to today's date
+  const todayStr = fmtDate(aest);
 
-  for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    const sectionHtml = html.substring(section.start, i + 1 < sections.length ? sections[i + 1].start : html.length);
+  {
+    const dateStr = todayStr;
 
-    // Calculate date for this day of week
-    const targetDow = dayMap[section.day];
-    if (targetDow === undefined) continue;
-    let dayOffset = targetDow - currentDayOfWeek;
-    if (dayOffset < 0) dayOffset += 7;
-    const targetDate = new Date(aest);
-    targetDate.setDate(targetDate.getDate() + dayOffset);
-    const dateStr = fmtDate(targetDate);
-
-    // Extract girl profile links from this section
+    // Extract girl profile links from the whole page (all tabs have same data)
     const re = /href=['"]?(https?:\/\/www\.429city\.com\/[a-z0-9%\-]+\/?)['"]?/gi;
     const links = new Set();
     let lm;
-    while ((lm = re.exec(sectionHtml)) !== null) {
+    while ((lm = re.exec(html)) !== null) {
       const url = lm[1].replace(/\/$/, '/');
       const path = url.replace('https://www.429city.com/', '').replace(/\/$/, '');
       if (path && !excludePaths.some(x => path.includes(x))) {

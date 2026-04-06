@@ -4154,6 +4154,16 @@ function renderWorkingNow() {
     html += '</div>';
   }
 
+  // Now line for today
+  if (isToday) {
+    let nowOffset = (now.getHours() - TIMELINE_START) * 60 + now.getMinutes();
+    if (nowOffset < 0) nowOffset += 24 * 60;
+    const nowPct = (nowOffset / (TIMELINE_HOURS * 60)) * 100;
+    if (nowPct >= 0 && nowPct <= 100) {
+      html += '<div class="roster-timeline-line now" style="position:absolute;top:0;bottom:0;left:calc(172px + (100% - 172px) * ' + (nowPct / 100) + ')"><div class="roster-timeline-line-label">Now</div></div>';
+    }
+  }
+
   html += '</div></div></div>';
   return html;
 }

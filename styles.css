@@ -146,7 +146,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .more-filters-panel{display:none;flex-basis:100%;padding-top:16px;text-align:center}
 .more-filters-panel.open{display:flex;flex-direction:column;align-items:center;max-height:50vh;overflow-y:auto}
 .range-filter{margin-bottom:20px;padding:0 8px}
-.range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase}
 .range-filter-label > span:first-child{color:var(--gold)}
 .range-filter-label > span:last-child{color:var(--gold);font-weight:400}
 .range-filter-label .range-date-val{color:var(--gold);cursor:pointer;border-bottom:1px dashed rgba(201,149,44,0.4);padding-bottom:1px}

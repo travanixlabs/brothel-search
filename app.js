@@ -1872,7 +1872,6 @@ function renderFilters() {
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddFav', 'Favourites', [{value:'Favourite',label:'Favourite',count:allGirls.filter(g=>isFavorite(g)).length},{value:'Hidden',label:'Hidden',count:allGirls.filter(g=>isHidden(g)).length},{value:'Others',label:'Others',count:allGirls.filter(g=>!isFavorite(g)&&!isHidden(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
-    + '<button class="more-filters-toggle" id="moreFiltersToggle">More Filters <span class="more-filters-badge" id="moreFiltersBadge" style="display:none"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>'
     + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
 
   // Date-time picker hidden
@@ -1996,12 +1995,6 @@ function renderFilters() {
     };
   });
 
-  // More Filters toggle
-  const mfBtn = document.getElementById('moreFiltersToggle');
-  if (mfBtn) {
-    const panel = document.getElementById('moreFiltersPanel');
-    mfBtn.onclick = function() { this.classList.toggle('open'); if (panel) panel.classList.toggle('open'); };
-  }
 }
 
 function renderRangeFilters() {
@@ -4673,7 +4666,10 @@ function handleLandingRoute(path) {
     if (document.getElementById('roadmapTable')) setTimeout(initRoadmapPage, 50);
     // Show filter bar on Working Now page
     const fsb = document.getElementById('filterSortBar');
-    if (fsb) fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath === 'compare' || cleanPath.startsWith('sydney/')) ? '' : 'none';
+    if (fsb) {
+      fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath === 'compare' || cleanPath.startsWith('sydney/')) ? '' : 'none';
+      fsb.classList.remove('expanded'); // collapse on page change
+    }
     // Home search
     const homeSearch = document.getElementById('homeSearch');
     if (homeSearch) {
@@ -4731,7 +4727,9 @@ function showMainSection() {
   landingEl.style.display = 'none';
   landingEl.innerHTML = '';
   mainSection.style.display = '';
-  document.getElementById('filterSortBar').style.display = '';
+  const fsb = document.getElementById('filterSortBar');
+  fsb.style.display = '';
+  fsb.classList.remove('expanded');
   document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navProfiles'));
 }
 

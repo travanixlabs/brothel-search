@@ -106,7 +106,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Angela1-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Angela2-470x705.jpg"
@@ -318,7 +318,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Ai-529x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Ai1-529x705.jpg",
@@ -440,7 +440,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Moe9-529x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Moe6-529x705.jpg",
@@ -588,7 +588,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Jojo-462x705.jpg"
       ],
@@ -614,7 +614,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Annie-396x705.jpg"
       ],
@@ -640,7 +640,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Alice-536x705.jpg"
       ],
@@ -661,7 +661,7 @@
       "val2": "240",
       "val3": "280",
       "startDate": "2026-03-01",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-04-08",
       "oldUrl": "https://127city.com/c-summer-new-diamond-diamond170-240-280-30-45-60/",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/03/Summer2.jpg"
@@ -684,7 +684,8 @@
       "2026-04-04",
       "2026-04-05",
       "2026-04-06",
-      "2026-04-07"
+      "2026-04-07",
+      "2026-04-08"
     ],
     "Sana": {
       "2026-03-26": {
@@ -749,6 +750,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Annie": {
@@ -785,6 +790,10 @@
         "end": "02:00"
       },
       "2026-04-06": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-04-08": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -831,6 +840,10 @@
         "end": "02:00"
       },
       "2026-04-07": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-04-08": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -925,6 +938,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Moe": {
@@ -971,6 +988,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Maggie": {
@@ -991,15 +1012,23 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Jojo": {
       "2026-04-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-06T06:00:52.462Z",
-  "lastCalendarSync": "2026-04-07T07:30:38.053Z"
+  "lastCalendarSync": "2026-04-07T20:08:55.641Z"
 }

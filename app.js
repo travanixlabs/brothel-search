@@ -3538,23 +3538,6 @@ function renderHomePage() {
   html += '<a href="/sydney/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/\')"><h2 class="landing-card-title">Browse by Location</h2><div class="landing-card-stat">Interactive map of Sydney</div><div class="landing-card-link">View map \u2192</div></a>';
   html += '</div>';
 
-  // First Timer's Guide
-  html += '<div class="guide-section" style="max-width:800px;margin:0 auto 40px">';
-
-  const guideItems = [
-    { q: 'Understanding Pricing', a: 'Prices are typically quoted for 30, 45, or 60 minute sessions. The rate covers the room and the lady\u2019s time. Rates vary by venue and individual \u2014 use our Compare page to see average prices across venues. Payment is usually cash, though some venues accept card.' },
-    { q: 'Rosters & Availability', a: 'Most venues publish daily rosters showing which ladies are working and their shift times. Our Working Now page shows live availability across all venues. Rosters change daily \u2014 check before you visit.' },
-    { q: 'Etiquette & Respect', a: 'Shower before your session (most venues provide facilities). Be respectful, communicate clearly about what you\u2019d like, and always respect boundaries. Tipping is not expected but appreciated. If you enjoy your experience, leave a review to help others.' },
-    { q: 'Safety & Hygiene', a: 'Licensed brothels in NSW are regulated and regularly inspected. Protection is mandatory. Ladies have the right to refuse any service they\u2019re not comfortable with. Your privacy is respected \u2014 venues are discreet.' },
-  ];
-
-  for (const item of guideItems) {
-    html += '<div class="guide-item" onclick="this.classList.toggle(\'open\')">';
-    html += '<div class="guide-q"><span>' + item.q + '</span><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>';
-    html += '<div class="guide-a">' + item.a + '</div>';
-    html += '</div>';
-  }
-  html += '</div>';
 
   // Referral promo
   html += '<div class="referral-promo">';

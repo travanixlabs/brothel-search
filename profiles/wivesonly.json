@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05",
+      "lastRostered": "2026-04-08",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05",
+      "lastRostered": "2026-04-08",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-08"
     },
     {
       "name": "Sophia",
@@ -1860,7 +1860,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-07"
+      "lastRostered": "2026-04-08"
     },
     {
       "name": "Maisie",
@@ -2191,7 +2191,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-08"
     },
     {
       "name": "Luna",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-07"
+      "lastRostered": "2026-04-08"
     },
     {
       "name": "Clarisse",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-08"
     },
     {
       "name": "Katalina",
@@ -2444,6 +2444,10 @@
       "2026-04-05": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-04-08": {
+        "start": "14:30",
+        "end": "22:30"
       }
     },
     "Delilah": {
@@ -2538,6 +2542,10 @@
       "2026-04-06": {
         "start": "20:00",
         "end": "01:00"
+      },
+      "2026-04-08": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Cherry": {
@@ -2576,6 +2584,10 @@
       "2026-04-07": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-08": {
+        "start": "12:00",
+        "end": "19:00"
       }
     },
     "Layla": {
@@ -2770,6 +2782,10 @@
       "2026-04-07": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-04-08": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -2832,6 +2848,10 @@
       "2026-04-05": {
         "start": "08:30",
         "end": "06:00"
+      },
+      "2026-04-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Tara": {
@@ -2896,6 +2916,10 @@
       "2026-04-05": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -2938,15 +2962,35 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ivy": {
       "2026-04-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-08": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Sienna": {
+      "2026-04-08": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Jasmine": {
+      "2026-04-08": {
+        "start": "20:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-06T19:31:31.679Z"
+  "lastCalendarSync": "2026-04-07T20:09:20.945Z"
 }

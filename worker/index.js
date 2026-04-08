@@ -348,6 +348,7 @@ function resolveDate(day, monthName) {
 const COUNTRY_PREFIX = {
   J: 'Japanese', K: 'Korean', T: 'Thai', C: 'Chinese',
   V: 'Vietnamese', M: 'Malaysian', S: 'Singaporean',
+  Jav: 'Japanese', JAV: 'Japanese',
 };
 
 const LANG_FROM_COUNTRY = {
@@ -456,24 +457,28 @@ function parseGirlTitle(raw) {
   const words = clean.split(/\s+/).filter(Boolean);
   let country = [];
 
-  for (const w of words.slice(0, -1)) {
-    if (COUNTRY_PREFIX[w]) {
-      country = [COUNTRY_PREFIX[w]];
+  let countryIdx = -1;
+  for (let i = 0; i < words.length - 1; i++) {
+    if (COUNTRY_PREFIX[words[i]]) {
+      country = [COUNTRY_PREFIX[words[i]]];
+      countryIdx = i;
     }
   }
 
   if (!country.length && words.length > 1) {
     const prefix = words.slice(0, -1).join(' ').toLowerCase();
-    if (prefix.includes('japan')) country = ['Japanese'];
-    else if (prefix.includes('korea')) country = ['Korean'];
-    else if (prefix.includes('thai')) country = ['Thai'];
-    else if (prefix.includes('chin')) country = ['Chinese'];
-    else if (prefix.includes('vietnam')) country = ['Vietnamese'];
-    else if (prefix.includes('brazil')) country = ['Brazilian'];
-    else if (prefix.includes('malay')) country = ['Malaysian'];
+    if (prefix.includes('japan')) { country = ['Japanese']; countryIdx = 0; }
+    else if (prefix.includes('korea')) { country = ['Korean']; countryIdx = 0; }
+    else if (prefix.includes('thai')) { country = ['Thai']; countryIdx = 0; }
+    else if (prefix.includes('chin')) { country = ['Chinese']; countryIdx = 0; }
+    else if (prefix.includes('vietnam')) { country = ['Vietnamese']; countryIdx = 0; }
+    else if (prefix.includes('brazil')) { country = ['Brazilian']; countryIdx = 0; }
+    else if (prefix.includes('malay')) { country = ['Malaysian']; countryIdx = 0; }
   }
 
-  let name = (words[words.length - 1] || '').replace(/\./g, '');
+  let name = countryIdx >= 0
+    ? words.slice(countryIdx + 1).join(' ').replace(/\./g, '')
+    : (words[words.length - 1] || '').replace(/\./g, '');
   return { name, country, special };
 }
 
@@ -839,11 +844,13 @@ async function syncWpGirls(env, site) {
 
   // Update originalSite for existing girls
   let siteChanged = false;
+  let updated = 0;
   for (const g of existing) {
     const shouldBe = activeUrls.has(g.oldUrl) ? 'Exists' : '';
     if (g.originalSite !== shouldBe) {
       g.originalSite = shouldBe;
       siteChanged = true;
+      updated++;
     }
   }
 
@@ -856,7 +863,7 @@ async function syncWpGirls(env, site) {
       await ghPut(env, site.jsonPath, data, sha, `[${site.name}] Update originalSite status`);
     }
     console.log(`[${site.name}] Girls sync: no new profiles`);
-    return { added: 0, remaining: 0, names: [] };
+    return { added: 0, remaining: 0, names: [], updated };
   }
 
   const toProcess = newUrls.slice(0, MAX_NEW_PER_RUN);
@@ -942,7 +949,7 @@ async function syncWpGirls(env, site) {
       `[${site.name}] Auto-sync new girls: ${addedNames.length ? addedNames.join(', ') : 'skipped duplicates'}`);
   }
 
-  return { added: addedNames.length, remaining, names: addedNames };
+  return { added: addedNames.length, remaining, names: addedNames, updated };
 }
 
 /* ── Kyoto 206 Roster scraping ── */
@@ -2307,9 +2314,10 @@ async function syncJiniaGirls(env, site) {
   // Mark existing girls' originalSite status
   const activeUrls = seenUrls;
   let siteChanged = false;
+  let updated = 0;
   for (const g of existing) {
     const shouldBe = activeUrls.has(g.oldUrl) ? 'Exists' : '';
-    if (g.originalSite !== shouldBe) { g.originalSite = shouldBe; siteChanged = true; }
+    if (g.originalSite !== shouldBe) { g.originalSite = shouldBe; siteChanged = true; updated++; }
   }
 
   if (profileUrls.length === 0) {
@@ -2318,7 +2326,7 @@ async function syncJiniaGirls(env, site) {
       data.lastGirlsSync = new Date().toISOString();
       await ghPut(env, site.jsonPath, data, sha, `[Jinia] Update originalSite status`);
     }
-    return { added: 0, remaining: 0, names: [] };
+    return { added: 0, remaining: 0, names: [], updated };
   }
 
   // Cloudflare Workers have 50 subrequest limit; we used 1 for listing + need ~2 for GitHub
@@ -2458,7 +2466,7 @@ async function syncJiniaGirls(env, site) {
     data.lastGirlsSync = new Date().toISOString();
     await ghPut(env, site.jsonPath, data, sha, `[Jinia] Auto-sync: ${addedNames.join(', ')}`);
   }
-  return { added: addedNames.length, remaining: profileUrls.length - toProcess.length, names: addedNames, total: profileUrls.length };
+  return { added: addedNames.length, remaining: profileUrls.length - toProcess.length, names: addedNames, total: profileUrls.length, updated };
 }
 
 async function scrapePennys77Roster(site, env) {
@@ -2875,6 +2883,23 @@ async function loadData(env, site) {
   }
 }
 
+/* ── Sync Log (accumulates results across daily runs) ── */
+
+const SYNC_LOG_PATH = 'sync-log.json';
+
+async function loadSyncLog(env) {
+  try {
+    const { content, sha } = await ghGet(env, SYNC_LOG_PATH);
+    return { log: content, sha };
+  } catch {
+    return { log: { runs: [] }, sha: null };
+  }
+}
+
+async function saveSyncLog(env, log, sha) {
+  await ghPut(env, SYNC_LOG_PATH, log, sha, 'Update sync log');
+}
+
 /* ── SEO: Regenerate sitemap.xml ── */
 
 async function regenerateSitemap(env) {
@@ -3045,11 +3070,13 @@ async function syncGirls(env, site) {
 
   // Update originalSite for all existing girls
   let siteChanged = false;
+  let updated = 0;
   for (const g of existing) {
     const shouldBe = activeNames.has(g.name) ? 'Exists' : '';
     if (g.originalSite !== shouldBe) {
       g.originalSite = shouldBe;
       siteChanged = true;
+      updated++;
     }
   }
 
@@ -3067,7 +3094,7 @@ async function syncGirls(env, site) {
         `[${site.name}] Update originalSite status`);
     }
     console.log(`[${site.name}] Girls sync: no new profiles`);
-    return { added: 0, remaining: 0, names: [] };
+    return { added: 0, remaining: 0, names: [], updated };
   }
 
   const newCards = allNew.slice(0, MAX_NEW_PER_RUN);
@@ -3143,7 +3170,7 @@ async function syncGirls(env, site) {
       `[${site.name}] Auto-sync new girls: ${addedNames.join(', ')}`);
   }
 
-  return { added: addedNames.length, remaining, names: addedNames };
+  return { added: addedNames.length, remaining, names: addedNames, updated };
 }
 
 /* ── Sync: Calendar ── */
@@ -4463,6 +4490,154 @@ export default {
       }
     }
 
+    // GET /api/test-sync-email — trigger the daily summary email manually
+    if (url.pathname === '/api/test-sync-email') {
+      const allSites = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
+      try {
+        const { log } = await loadSyncLog(env);
+        const allRuns = log.runs || [];
+
+        // Aggregate per venue
+        const agg = {};
+        for (const s of allSites) agg[s.name] = { added: 0, updated: 0, removed: 0, errors: [] };
+        for (const run of allRuns) {
+          for (const [name, v] of Object.entries(run.venues || {})) {
+            if (!agg[name]) agg[name] = { added: 0, updated: 0, removed: 0, errors: [] };
+            agg[name].added += v.added || 0;
+            agg[name].updated += v.updated || 0;
+            agg[name].removed += v.removed || 0;
+            if (v.error) agg[name].errors.push(`${run.time}: ${v.error}`);
+          }
+        }
+
+        // Read roster data
+        const now = new Date();
+        const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
+        const todayStr = aestNow.toISOString().split('T')[0];
+        const tomorrow = new Date(aestNow); tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+        const rosterCounts = {};
+        await Promise.all(allSites.map(async (site) => {
+          try {
+            const { data } = await loadData(env, site);
+            const cal = data.calendar || {};
+            let today = 0, tmr = 0;
+            for (const [name, slots] of Object.entries(cal)) {
+              if (name === '_published') continue;
+              if (slots && slots[todayStr]) today++;
+              if (slots && slots[tomorrowStr]) tmr++;
+            }
+            rosterCounts[site.name] = { today, tomorrow: tmr };
+          } catch(e) {
+            rosterCounts[site.name] = { today: 0, tomorrow: 0 };
+          }
+        }));
+
+        const timeLabel = now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney', dateStyle: 'medium', timeStyle: 'short' });
+        const runLabels = allRuns.length > 0 ? allRuns.map(r => r.time).join(', ') : 'none (test)';
+        const totalAdded = Object.values(agg).reduce((s, v) => s + v.added, 0);
+        const totalRemoved = Object.values(agg).reduce((s, v) => s + v.removed, 0);
+        const totalUpdated = Object.values(agg).reduce((s, v) => s + v.updated, 0);
+        const totalErrors = Object.values(agg).reduce((s, v) => s + v.errors.length, 0);
+        const totalRosterToday = Object.values(rosterCounts).reduce((s, v) => s + v.today, 0);
+        const totalRosterTmr = Object.values(rosterCounts).reduce((s, v) => s + v.tomorrow, 0);
+
+        const rows = allSites.map(s => {
+          const a = agg[s.name];
+          const rc = rosterCounts[s.name] || { today: 0, tomorrow: 0 };
+          const hasErr = a.errors.length > 0;
+          const errIcon = hasErr ? ' <span style="color:#e74c3c" title="' + a.errors.join('; ').replace(/"/g, '&quot;') + '">⚠</span>' : '';
+          const addedStyle = a.added > 0 ? 'color:#2ecc71;font-weight:bold' : 'color:#888';
+          const removedStyle = a.removed > 0 ? 'color:#e74c3c;font-weight:bold' : 'color:#888';
+          const updatedStyle = a.updated > 0 ? 'color:#3498db;font-weight:bold' : 'color:#888';
+          const rosterTodayStyle = rc.today > 0 ? 'color:#2ecc71' : 'color:#888';
+          const rosterTmrStyle = rc.tomorrow > 0 ? 'color:#2ecc71' : 'color:#888';
+          const td = 'padding:6px 10px;border-bottom:1px solid #2a2a3e;';
+          return `<tr>
+            <td style="${td}white-space:nowrap">${s.name}${errIcon}</td>
+            <td style="${td}text-align:center;${addedStyle}">${a.added}</td>
+            <td style="${td}text-align:center;${removedStyle}">${a.removed}</td>
+            <td style="${td}text-align:center;${updatedStyle}">${a.updated}</td>
+            <td style="${td}text-align:center;${rosterTodayStyle}">${rc.today}</td>
+            <td style="${td}text-align:center;${rosterTmrStyle}">${rc.tomorrow}</td>
+          </tr>`;
+        }).join('');
+
+        const subjectStatus = totalErrors > 0 ? `⚠️ ${totalErrors} error(s)` : '✅ All OK';
+
+        const emailHtml = `
+<div style="font-family:Arial,sans-serif;background:#0f0f1e;color:#e0e0e0;padding:28px;border-radius:10px;max-width:720px;margin:0 auto">
+  <h2 style="color:#d4af37;margin:0 0 4px 0;font-size:20px">Brothel Search — Daily Sync Report</h2>
+  <p style="color:#888;margin:0 0 20px 0;font-size:13px">${timeLabel} &nbsp;|&nbsp; Runs included: ${runLabels}</p>
+
+  <div style="display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#2ecc71;font-size:22px;font-weight:bold">${totalAdded}</div>
+      <div style="color:#888;font-size:11px">New Profiles</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#e74c3c;font-size:22px;font-weight:bold">${totalRemoved}</div>
+      <div style="color:#888;font-size:11px">Removed</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#3498db;font-size:22px;font-weight:bold">${totalUpdated}</div>
+      <div style="color:#888;font-size:11px">Updated</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#d4af37;font-size:22px;font-weight:bold">${totalRosterToday}</div>
+      <div style="color:#888;font-size:11px">Roster Today</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#d4af37;font-size:22px;font-weight:bold">${totalRosterTmr}</div>
+      <div style="color:#888;font-size:11px">Roster Tomorrow</div>
+    </div>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:12px;background:#1a1a2e;border-radius:8px;overflow:hidden">
+    <thead>
+      <tr style="background:#252540">
+        <th style="text-align:left;padding:8px 10px;color:#d4af37;font-size:11px">Venue</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">New Profiles</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Removed</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Updated</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Roster Today</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Roster Tomorrow</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${rows}
+      <tr style="background:#252540;font-weight:bold">
+        <td style="padding:8px 10px;color:#d4af37">Total</td>
+        <td style="padding:8px 10px;text-align:center;color:#2ecc71">${totalAdded}</td>
+        <td style="padding:8px 10px;text-align:center;color:#e74c3c">${totalRemoved}</td>
+        <td style="padding:8px 10px;text-align:center;color:#3498db">${totalUpdated}</td>
+        <td style="padding:8px 10px;text-align:center;color:#d4af37">${totalRosterToday}</td>
+        <td style="padding:8px 10px;text-align:center;color:#d4af37">${totalRosterTmr}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="color:#555;font-size:10px;margin:16px 0 0 0;text-align:center">Brothel Search Worker &nbsp;•&nbsp; ${todayStr}</p>
+</div>`;
+
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: 'Brothel Search <info@travanixlabs.com>',
+            to: ['info@travanixlabs.com'],
+            subject: `Daily Sync Report — ${subjectStatus} — +${totalAdded} new, ${totalRosterToday} rostered today`,
+            html: emailHtml,
+          }),
+        });
+
+        return new Response(JSON.stringify({ ok: true, runs: allRuns.length, totalAdded, totalRemoved, totalUpdated, rosterToday: totalRosterToday, rosterTomorrow: totalRosterTmr }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch(e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
+    }
+
     return new Response('Not found', { status: 404 });
   },
 
@@ -4482,13 +4657,21 @@ export default {
       if (aest[hour]) {
         console.log(aest[hour] + ' AEST — Girl sync + Roster sync');
 
+        const allSites = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
+
         // Step 1: Girl sync (all venues in parallel)
+        const girlResults = {};
+        const photoResults = {};
         async function syncAllGirls(fn, site) {
+          let totalAdded = 0, totalUpdated = 0;
           let result;
           do {
-            result = await fn(env, site).catch(e => { console.error(`[${site.name}] Girls sync error:`, e); return { remaining: 0 }; });
+            result = await fn(env, site).catch(e => { console.error(`[${site.name}] Girls sync error:`, e); return { remaining: 0, error: e.message }; });
+            totalAdded += result.added || 0;
+            totalUpdated += result.updated || 0;
             console.log(`[${site.name}] Girls batch: added=${result.added || 0}, remaining=${result.remaining || 0}`);
           } while (result.remaining > 0);
+          girlResults[site.name] = { added: totalAdded, updated: totalUpdated, error: result.error || null };
         }
 
         await Promise.all([
@@ -4500,7 +4683,7 @@ export default {
           syncAllGirls(syncWpGirls, SITES.fantasyclub35),
           syncAllGirls(syncWpGirls, SITES.city429),
           syncAllGirls(syncPennys77Girls, SITES.pennys77),
-          syncGoldenAppleGirls(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Girls sync error:', e)),
+          (async () => { try { await syncGoldenAppleGirls(env, SITES.thegoldenapple); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: null }; } catch(e) { console.error('[Golden Apple] Girls sync error:', e); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: e.message }; } })(),
           syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
           syncAllGirls(syncGatewayClubGirls, SITES.thegatewayclub),
@@ -4512,26 +4695,17 @@ export default {
         ]);
         console.log('All girls syncs complete.');
 
-        // Step 2: Photo checks
-        await Promise.all([
-          checkBrokenPhotos(env, SITES.empire).catch(e => console.error('[Empire] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.club).catch(e => console.error('[Club] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.top127).catch(e => console.error('[Top 127] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.city429).catch(e => console.error('[429 City] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.pennys77).catch(e => console.error("[Penny's 77] Photo check error:", e)),
-          checkBrokenPhotos(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.thegatewayclub).catch(e => console.error('[The Gateway Club] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.marrickvillebrothel).catch(e => console.error('[Marrickville Brothel] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.springhouse).catch(e => console.error('[Spring House] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.stiletto).catch(e => console.error('[Stiletto] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.wivesonly).catch(e => console.error('[Wives Only] Photo check error:', e)),
-          checkBrokenPhotos(env, SITES.jinia).catch(e => console.error('[Jinia] Photo check error:', e)),
-        ]);
+        // Step 2: Photo checks (also handles dead profile removal)
+        async function trackPhotoCheck(site) {
+          try {
+            const r = await checkBrokenPhotos(env, site);
+            photoResults[site.name] = { removed: r.removed || 0, fixed: r.fixed || 0 };
+          } catch(e) {
+            console.error(`[${site.name}] Photo check error:`, e);
+            photoResults[site.name] = { removed: 0, fixed: 0 };
+          }
+        }
+        await Promise.all(allSites.map(s => trackPhotoCheck(s)));
         console.log('Photo checks complete.');
 
         // Step 3: Regenerate sitemap
@@ -4539,26 +4713,188 @@ export default {
 
         // Step 4: Roster sync (after girls sync complete)
         console.log('Starting roster sync...');
-        await Promise.all([
-          syncCalendar(env, SITES.empire).catch(e => console.error('[Empire] Calendar sync error:', e)),
-          syncCalendar(env, SITES.club).catch(e => console.error('[Club] Calendar sync error:', e)),
-          syncCalendar(env, SITES.kyoto206).catch(e => console.error('[Kyoto 206] Calendar sync error:', e)),
-          syncCalendar(env, SITES.sakura57).catch(e => console.error('[Sakura 57] Calendar sync error:', e)),
-          syncCalendar(env, SITES.top127).catch(e => console.error('[Top 127] Calendar sync error:', e)),
-          syncCalendar(env, SITES.fantasyclub35).catch(e => console.error('[Fantasy Club 35] Calendar sync error:', e)),
-          syncCalendar(env, SITES.city429).catch(e => console.error('[429 City] Calendar sync error:', e)),
-          syncCalendar(env, SITES.pennys77).catch(e => console.error("[Penny's 77] Calendar sync error:", e)),
-          syncCalendar(env, SITES.thegoldenapple).catch(e => console.error('[Golden Apple] Calendar sync error:', e)),
-          syncCalendar(env, SITES.blackcatparlour).catch(e => console.error('[Black Cat] Calendar sync error:', e)),
-          syncCalendar(env, SITES.bellevue12).catch(e => console.error('[Bellevue 12] Calendar sync error:', e)),
-          syncCalendar(env, SITES.thegatewayclub).catch(e => console.error('[The Gateway Club] Calendar sync error:', e)),
-          syncCalendar(env, SITES.marrickvillebrothel).catch(e => console.error('[Marrickville Brothel] Calendar sync error:', e)),
-          syncCalendar(env, SITES.springhouse).catch(e => console.error('[Spring House] Calendar sync error:', e)),
-          syncCalendar(env, SITES.stiletto).catch(e => console.error('[Stiletto] Calendar sync error:', e)),
-          syncCalendar(env, SITES.wivesonly).catch(e => console.error('[Wives Only] Calendar sync error:', e)),
-          syncCalendar(env, SITES.jinia).catch(e => console.error('[Jinia] Calendar sync error:', e)),
-        ]);
+        const rosterResults = {};
+        async function trackRoster(site) {
+          try {
+            await syncCalendar(env, site);
+            rosterResults[site.name] = { ok: true, error: null };
+          } catch(e) {
+            console.error(`[${site.name}] Calendar sync error:`, e);
+            rosterResults[site.name] = { ok: false, error: e.message };
+          }
+        }
+        await Promise.all(allSites.map(s => trackRoster(s)));
         console.log('All calendar syncs complete.');
+
+        // Step 5: Save this run's results to sync log
+        const runData = { time: aest[hour], venues: {} };
+        for (const s of allSites) {
+          runData.venues[s.name] = {
+            added: (girlResults[s.name] || {}).added || 0,
+            updated: (girlResults[s.name] || {}).updated || 0,
+            removed: (photoResults[s.name] || {}).removed || 0,
+            rosterOk: (rosterResults[s.name] || {}).ok || false,
+            error: (girlResults[s.name] || {}).error || (rosterResults[s.name] || {}).error || null,
+          };
+        }
+
+        if (hour !== 10) {
+          // Non-8pm run: accumulate results in sync log
+          try {
+            const { log, sha } = await loadSyncLog(env);
+            log.runs.push(runData);
+            await saveSyncLog(env, log, sha);
+            console.log(`Saved ${aest[hour]} results to sync log.`);
+          } catch(e) { console.error('[SyncLog] Save error:', e); }
+        } else {
+          // 8pm run: aggregate all runs and send daily email
+          try {
+            const { log, sha: logSha } = await loadSyncLog(env);
+            const allRuns = [...log.runs, runData]; // previous runs + this 8pm run
+
+            // Aggregate per venue across all runs
+            const agg = {};
+            for (const s of allSites) agg[s.name] = { added: 0, updated: 0, removed: 0, errors: [] };
+            for (const run of allRuns) {
+              for (const [name, v] of Object.entries(run.venues || {})) {
+                if (!agg[name]) agg[name] = { added: 0, updated: 0, removed: 0, errors: [] };
+                agg[name].added += v.added || 0;
+                agg[name].updated += v.updated || 0;
+                agg[name].removed += v.removed || 0;
+                if (v.error) agg[name].errors.push(`${run.time}: ${v.error}`);
+              }
+            }
+
+            // Read roster data (today + tomorrow) from profile JSONs
+            const now = new Date(event.scheduledTime);
+            const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
+            const todayStr = aestNow.toISOString().split('T')[0];
+            const tomorrow = new Date(aestNow); tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+            const rosterCounts = {};
+            await Promise.all(allSites.map(async (site) => {
+              try {
+                const { data } = await loadData(env, site);
+                const cal = data.calendar || {};
+                let today = 0, tmr = 0;
+                for (const [name, slots] of Object.entries(cal)) {
+                  if (name === '_published') continue;
+                  if (slots && slots[todayStr]) today++;
+                  if (slots && slots[tomorrowStr]) tmr++;
+                }
+                rosterCounts[site.name] = { today, tomorrow: tmr };
+              } catch(e) {
+                rosterCounts[site.name] = { today: 0, tomorrow: 0 };
+              }
+            }));
+
+            // Build email
+            const timeLabel = now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney', dateStyle: 'medium', timeStyle: 'short' });
+            const runLabels = allRuns.map(r => r.time).join(', ');
+            const totalAdded = Object.values(agg).reduce((s, v) => s + v.added, 0);
+            const totalRemoved = Object.values(agg).reduce((s, v) => s + v.removed, 0);
+            const totalUpdated = Object.values(agg).reduce((s, v) => s + v.updated, 0);
+            const totalErrors = Object.values(agg).reduce((s, v) => s + v.errors.length, 0);
+            const totalRosterToday = Object.values(rosterCounts).reduce((s, v) => s + v.today, 0);
+            const totalRosterTmr = Object.values(rosterCounts).reduce((s, v) => s + v.tomorrow, 0);
+
+            const rows = allSites.map(s => {
+              const a = agg[s.name];
+              const rc = rosterCounts[s.name] || { today: 0, tomorrow: 0 };
+              const hasErr = a.errors.length > 0;
+              const errIcon = hasErr ? ' <span style="color:#e74c3c" title="' + a.errors.join('; ').replace(/"/g, '&quot;') + '">⚠</span>' : '';
+              const addedStyle = a.added > 0 ? 'color:#2ecc71;font-weight:bold' : 'color:#888';
+              const removedStyle = a.removed > 0 ? 'color:#e74c3c;font-weight:bold' : 'color:#888';
+              const updatedStyle = a.updated > 0 ? 'color:#3498db;font-weight:bold' : 'color:#888';
+              const rosterTodayStyle = rc.today > 0 ? 'color:#2ecc71' : 'color:#888';
+              const rosterTmrStyle = rc.tomorrow > 0 ? 'color:#2ecc71' : 'color:#888';
+              const td = 'padding:6px 10px;border-bottom:1px solid #2a2a3e;';
+              return `<tr>
+                <td style="${td}white-space:nowrap">${s.name}${errIcon}</td>
+                <td style="${td}text-align:center;${addedStyle}">${a.added}</td>
+                <td style="${td}text-align:center;${removedStyle}">${a.removed}</td>
+                <td style="${td}text-align:center;${updatedStyle}">${a.updated}</td>
+                <td style="${td}text-align:center;${rosterTodayStyle}">${rc.today}</td>
+                <td style="${td}text-align:center;${rosterTmrStyle}">${rc.tomorrow}</td>
+              </tr>`;
+            }).join('');
+
+            const subjectStatus = totalErrors > 0 ? `⚠️ ${totalErrors} error(s)` : '✅ All OK';
+
+            const html = `
+<div style="font-family:Arial,sans-serif;background:#0f0f1e;color:#e0e0e0;padding:28px;border-radius:10px;max-width:720px;margin:0 auto">
+  <h2 style="color:#d4af37;margin:0 0 4px 0;font-size:20px">Brothel Search — Daily Sync Report</h2>
+  <p style="color:#888;margin:0 0 20px 0;font-size:13px">${timeLabel} &nbsp;|&nbsp; Runs included: ${runLabels}</p>
+
+  <div style="display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#2ecc71;font-size:22px;font-weight:bold">${totalAdded}</div>
+      <div style="color:#888;font-size:11px">New Profiles</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#e74c3c;font-size:22px;font-weight:bold">${totalRemoved}</div>
+      <div style="color:#888;font-size:11px">Removed</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#3498db;font-size:22px;font-weight:bold">${totalUpdated}</div>
+      <div style="color:#888;font-size:11px">Updated</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#d4af37;font-size:22px;font-weight:bold">${totalRosterToday}</div>
+      <div style="color:#888;font-size:11px">Roster Today</div>
+    </div>
+    <div style="background:#1a1a2e;padding:12px 18px;border-radius:8px;flex:1;min-width:100px;text-align:center">
+      <div style="color:#d4af37;font-size:22px;font-weight:bold">${totalRosterTmr}</div>
+      <div style="color:#888;font-size:11px">Roster Tomorrow</div>
+    </div>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:12px;background:#1a1a2e;border-radius:8px;overflow:hidden">
+    <thead>
+      <tr style="background:#252540">
+        <th style="text-align:left;padding:8px 10px;color:#d4af37;font-size:11px">Venue</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">New Profiles</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Removed</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Updated</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Roster Today</th>
+        <th style="text-align:center;padding:8px 10px;color:#d4af37;font-size:11px">Roster Tomorrow</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${rows}
+      <tr style="background:#252540;font-weight:bold">
+        <td style="padding:8px 10px;color:#d4af37">Total</td>
+        <td style="padding:8px 10px;text-align:center;color:#2ecc71">${totalAdded}</td>
+        <td style="padding:8px 10px;text-align:center;color:#e74c3c">${totalRemoved}</td>
+        <td style="padding:8px 10px;text-align:center;color:#3498db">${totalUpdated}</td>
+        <td style="padding:8px 10px;text-align:center;color:#d4af37">${totalRosterToday}</td>
+        <td style="padding:8px 10px;text-align:center;color:#d4af37">${totalRosterTmr}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="color:#555;font-size:10px;margin:16px 0 0 0;text-align:center">Brothel Search Worker &nbsp;•&nbsp; ${todayStr}</p>
+</div>`;
+
+            await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: { 'Authorization': `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                from: 'Brothel Search <info@travanixlabs.com>',
+                to: ['info@travanixlabs.com'],
+                subject: `Daily Sync Report — ${subjectStatus} — +${totalAdded} new, ${totalRosterToday} rostered today`,
+                html,
+              }),
+            });
+            console.log('Daily sync summary email sent.');
+
+            // Clear the sync log after sending
+            try { await saveSyncLog(env, { runs: [] }, logSha); } catch(e) { console.error('[SyncLog] Clear error:', e); }
+          } catch(e) {
+            console.error('[Email] Daily sync summary error:', e);
+          }
+        }
       }
     })());
   },

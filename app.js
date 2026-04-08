@@ -57,6 +57,7 @@ let authMode = 'signin'; // 'signin' or 'signup'
 let userRole = 'member'; // 'admin' or 'member'
 let userFavorites = []; // array of oldUrl strings
 let userHidden = []; // array of oldUrl strings
+let userFilterPresets = []; // array of { id, name, filters, is_active }
 function getMaxFavorites() { return userRole === 'admin' ? Infinity : 10; }
 
 async function fetchUserRole() {
@@ -797,6 +798,10 @@ sbClient.auth.onAuthStateChange((event, session) => {
           if (p === '/' || p === '/index.html') handleLandingRoute('/');
         }
       });
+      loadFilterPresets().then(() => {
+        const active = userFilterPresets.find(p => p.is_active);
+        if (active) applyFilterState(active.filters);
+      });
       // Subscription check (no paywall enforcement)
       setTimeout(async () => {
         if (userRole === 'admin') { isSubscribed = true; return; }
@@ -1348,6 +1353,130 @@ document.getElementById('prefSaveBtn').addEventListener('click', savePreferences
 document.getElementById('prefClearBtn').addEventListener('click', e => { e.preventDefault(); clearPreferences(); });
 
 // ── End Preferences ──
+
+// ── Filter Presets ──
+
+function captureFilterState() {
+  return {
+    activeRegion: { include: [...activeRegion.include], exclude: [...activeRegion.exclude] },
+    activeVenue: { include: [...activeVenue.include], exclude: [...activeVenue.exclude] },
+    activeCountry: { include: [...activeCountry.include], exclude: [...activeCountry.exclude] },
+    activeLabels: { include: [...activeLabels.include], exclude: [...activeLabels.exclude] },
+    activeAV: { include: [...activeAV.include], exclude: [...activeAV.exclude] },
+    activeAvailability: { include: [...activeAvailability.include], exclude: [...activeAvailability.exclude] },
+    activePhotos: { include: [...activePhotos.include], exclude: [...activePhotos.exclude] },
+    activeFavFilter: { include: [...activeFavFilter.include], exclude: [...activeFavFilter.exclude] },
+    rangeFilters: JSON.parse(JSON.stringify(rangeFilters)),
+    activeSort, sortDir,
+    textFilters: { ...textFilters },
+  };
+}
+
+function applyFilterState(f) {
+  if (!f) return;
+  const apply = (target, src) => { target.include.length = 0; target.exclude.length = 0; (src.include || []).forEach(v => target.include.push(v)); (src.exclude || []).forEach(v => target.exclude.push(v)); };
+  apply(activeRegion, f.activeRegion || {});
+  apply(activeVenue, f.activeVenue || {});
+  apply(activeCountry, f.activeCountry || {});
+  apply(activeLabels, f.activeLabels || {});
+  apply(activeAV, f.activeAV || {});
+  apply(activeAvailability, f.activeAvailability || {});
+  apply(activePhotos, f.activePhotos || {});
+  apply(activeFavFilter, f.activeFavFilter || {});
+  rangeFilters = f.rangeFilters ? JSON.parse(JSON.stringify(f.rangeFilters)) : {};
+  if (f.activeSort) activeSort = f.activeSort;
+  if (f.sortDir) sortDir = f.sortDir;
+  if (f.textFilters) Object.assign(textFilters, f.textFilters);
+  renderFilters(); renderRangeFilters(); renderGrid();
+}
+
+async function loadFilterPresets() {
+  try {
+    const { data: { user } } = await sbClient.auth.getUser();
+    if (!user) return;
+    const { data } = await sbClient.from('user_filter_presets').select('*').eq('user_id', user.id).order('created_at');
+    userFilterPresets = data || [];
+    renderFilterPresets();
+  } catch (e) { console.error('Load presets error:', e); }
+}
+
+async function saveFilterPreset() {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+  if (userFilterPresets.length >= 5) { alert('Maximum 5 filter presets. Delete one first.'); return; }
+  const name = prompt('Preset name:');
+  if (!name || !name.trim()) return;
+  // Deactivate all existing
+  for (const p of userFilterPresets) {
+    if (p.is_active) await sbClient.from('user_filter_presets').update({ is_active: false }).eq('id', p.id);
+  }
+  const { data, error } = await sbClient.from('user_filter_presets').insert({ user_id: user.id, name: name.trim(), filters: captureFilterState(), is_active: true }).select().single();
+  if (error) { alert('Error saving preset: ' + error.message); return; }
+  userFilterPresets.forEach(p => p.is_active = false);
+  userFilterPresets.push(data);
+  renderFilterPresets();
+}
+
+async function deleteFilterPreset(id) {
+  const { error } = await sbClient.from('user_filter_presets').delete().eq('id', id);
+  if (error) { alert('Error deleting preset: ' + error.message); return; }
+  userFilterPresets = userFilterPresets.filter(p => p.id !== id);
+  renderFilterPresets();
+}
+
+async function activateFilterPreset(id) {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+  // Deactivate all, activate selected
+  await sbClient.from('user_filter_presets').update({ is_active: false }).eq('user_id', user.id);
+  await sbClient.from('user_filter_presets').update({ is_active: true }).eq('id', id);
+  userFilterPresets.forEach(p => p.is_active = (p.id === id));
+  const preset = userFilterPresets.find(p => p.id === id);
+  if (preset) applyFilterState(preset.filters);
+  renderFilterPresets();
+}
+
+function renderFilterPresets() {
+  const row = document.getElementById('filterPresetsRow');
+  if (!row) return;
+  if (!isLoggedIn()) { row.innerHTML = ''; return; }
+
+  const activePreset = userFilterPresets.find(p => p.is_active);
+  const presetList = userFilterPresets.map(p => {
+    const isActive = p.is_active;
+    return `<div class="preset-item${isActive ? ' active' : ''}" data-id="${p.id}">
+      <span class="preset-name" title="Apply preset">${p.name}</span>
+      <button class="preset-delete" title="Delete preset">&times;</button>
+    </div>`;
+  }).join('');
+
+  row.innerHTML = `<div class="preset-section">
+    <div class="preset-list">${presetList}</div>
+    <button class="preset-save-btn" id="presetSaveBtn"${userFilterPresets.length >= 5 ? ' disabled' : ''}>
+      + Save Current Filters${userFilterPresets.length > 0 ? ' (' + userFilterPresets.length + '/5)' : ''}
+    </button>
+  </div>`;
+
+  document.getElementById('presetSaveBtn').onclick = () => saveFilterPreset();
+  row.querySelectorAll('.preset-name').forEach(el => {
+    el.onclick = () => activateFilterPreset(el.parentElement.dataset.id);
+  });
+  row.querySelectorAll('.preset-delete').forEach(el => {
+    el.onclick = (e) => { e.stopPropagation(); deleteFilterPreset(el.parentElement.dataset.id); };
+  });
+}
+
+function restoreActivePresetOrClear() {
+  const active = userFilterPresets.find(p => p.is_active);
+  if (active) {
+    applyFilterState(active.filters);
+  } else {
+    activeAvailability.include.length = 0; activeAvailability.exclude.length = 0;
+    activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0;
+  }
+}
+
+// ── End Filter Presets ──
 
 const PROFILES_BASE = 'https://raw.githubusercontent.com/travanixlabs/brothel-search/main/profiles';
 const VENUES = [
@@ -1986,6 +2115,7 @@ function renderFilters() {
     };
   });
 
+  renderFilterPresets();
 }
 
 function renderRangeFilters() {
@@ -2369,12 +2499,14 @@ function loadMore() {
 function renderGrid() {
   // If Working Now or Data page is active, re-render with updated filters
   const activePath = window.location.pathname;
-  if (activePath === '/working-now' || activePath === '/data' || activePath === '/compare' || activePath.startsWith('/sydney/')) {
+  if (activePath === '/working-now' || activePath === '/data' || activePath === '/compare' || activePath === '/analytics' || activePath.startsWith('/sydney/') || activePath === '/' || activePath === '/index.html') {
     const landing = document.getElementById('landingPage');
     if (landing && landing.style.display !== 'none') {
       if (activePath === '/working-now') landing.innerHTML = renderWorkingNow();
       else if (activePath === '/data') landing.innerHTML = renderDataPage();
       else if (activePath === '/compare') landing.innerHTML = renderComparePage();
+      else if (activePath === '/analytics') landing.innerHTML = renderAnalyticsPage();
+      else if (activePath === '/' || activePath === '/index.html') { landing.innerHTML = renderHomePage(); initHomePageListeners(); landing.querySelectorAll('.home-stat-num').forEach(el => { el.textContent = el.dataset.target; }); }
       else handleLandingRoute(activePath);
     }
   }
@@ -2384,6 +2516,9 @@ function renderGrid() {
   currentPage = 0;
 
   document.getElementById('resultCount').textContent = currentFiltered.length + ' girl' + (currentFiltered.length !== 1 ? 's' : '') + ' found';
+  const wnFiltered = currentFiltered.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+  const wnLink = document.getElementById('navWorkingNow');
+  if (wnLink) wnLink.textContent = 'Working Now' + (wnFiltered > 0 ? ' (' + wnFiltered + ')' : '');
   updateMoreFiltersCount();
 
   // Filter chips
@@ -3447,7 +3582,8 @@ function renderHomePage() {
   const thirtyDayStrDigest = thirtyDaysAgoDigest.toISOString().split('T')[0];
 
   {
-    // Daily Digest: max 10, for all users logged in or not, with or without preferences
+    // Daily Digest: filtered by active filters, for all users logged in or not, with or without preferences
+    const filtered = getFiltered();
     const sortByScore = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
     const isAvailToday = g => { const avail = getAvailabilityText(g); return avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')); };
 
@@ -3455,15 +3591,15 @@ function renderHomePage() {
 
     if (userPreferences) {
       // Favourites first, then 90%+ new matches
-      const favs = allGirls.filter(g => isFavorite(g) && isAvailToday(g)).sort(sortByScore);
-      const matches = allGirls.filter(g => {
+      const favs = filtered.filter(g => isFavorite(g) && isAvailToday(g)).sort(sortByScore);
+      const matches = filtered.filter(g => {
         const score = matchScores.get(g.venue + ':' + g.name) || 0;
         return !isFavorite(g) && score >= 90 && g.startDate && g.startDate >= thirtyDayStrDigest && isAvailToday(g);
       }).sort(sortByScore);
-      digestGirls = [...favs, ...matches].slice(0, 10);
+      digestGirls = [...favs, ...matches];
     } else {
       // New profiles sorted by date
-      digestGirls = allGirls.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '')).slice(0, 10);
+      digestGirls = filtered.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || ''));
     }
 
     if (digestGirls.length) {
@@ -3547,23 +3683,28 @@ function renderAnalyticsPage() {
 
   const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   const thirtyDayStr = thirtyDaysAgo.toISOString().split('T')[0];
+  const filtered = getFiltered();
 
-  // ── Busiest Days ──
-  const dayCounts = [0,0,0,0,0,0,0]; // Sun-Sat
+  // ── Busiest Days (avg unique girls per day of week, last 30 days) ──
+  const filteredKeys = new Set(filtered.map(g => g.venue + ':' + g.name));
+  const daySets = [new Set(), new Set(), new Set(), new Set(), new Set(), new Set(), new Set()]; // Sun-Sat
   const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   for (const [key, cal] of Object.entries(calendarData)) {
     if (key.startsWith('_')) continue;
+    if (!filteredKeys.has(key)) continue;
     for (const dateStr of Object.keys(cal)) {
+      if (dateStr < thirtyDayStr) continue;
       const d = new Date(dateStr + 'T00:00:00');
-      if (!isNaN(d)) dayCounts[d.getDay()]++;
+      if (!isNaN(d)) daySets[d.getDay()].add(key);
     }
   }
+  const dayCounts = daySets.map(s => s.size);
   const maxDay = Math.max(...dayCounts, 1);
 
 
   // ── Country Breakdown (rostered within 30 days) ──
   const countryTotals = {};
-  allGirls.filter(g => g.lastRostered && g.lastRostered >= thirtyDayStr).forEach(g => {
+  filtered.filter(g => g.lastRostered && g.lastRostered >= thirtyDayStr).forEach(g => {
     const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
     cs.forEach(c => { if (c) countryTotals[c] = (countryTotals[c] || 0) + 1; });
   });
@@ -3573,7 +3714,8 @@ function renderAnalyticsPage() {
   // ── Build HTML ──
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Analytics');
-  html += '<p class="landing-desc">Data insights across ' + allGirls.length + ' girls and ' + venueIds.length + ' venues.</p>';
+  const filteredVenueCount = new Set(filtered.map(g => g.venue)).size;
+  html += '<p class="landing-desc">Data insights across ' + filtered.length + ' girls and ' + filteredVenueCount + ' venues.</p>';
 
   // Busiest Days
   html += '<div class="analytics-section"><h2 class="analytics-heading">Busiest Days (Roster Frequency)</h2>';
@@ -3609,13 +3751,9 @@ function sortCompareTable(col) {
 }
 
 function renderComparePage() {
-  let venueIds = Object.keys(VENUE_DATA);
-  // Apply region filter to compare page
-  if (activeRegion.include.length) venueIds = venueIds.filter(id => activeRegion.include.includes(VENUE_REGIONS[id] || 'other'));
-  if (activeRegion.exclude.length) venueIds = venueIds.filter(id => !activeRegion.exclude.includes(VENUE_REGIONS[id] || 'other'));
-  // Apply venue filter
-  if (activeVenue.include.length) venueIds = venueIds.filter(id => activeVenue.include.includes(id));
-  if (activeVenue.exclude.length) venueIds = venueIds.filter(id => !activeVenue.exclude.includes(id));
+  const filtered = getFiltered();
+  const filteredVenueIds = new Set(filtered.map(g => g.venue));
+  let venueIds = Object.keys(VENUE_DATA).filter(id => filteredVenueIds.has(id));
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',
@@ -3633,14 +3771,15 @@ function renderComparePage() {
 
   const rankings = venueIds.map(id => {
     const v = VENUE_DATA[id];
-    const active = allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrCmp);
-    const rostered = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && cal && cal[cmpTodayStr]).length;
-    const rosteredTomorrow = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && cal && cal[cmpTomorrowStr]).length;
+    const active = filtered.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= thirtyDayStrCmp);
+    const filteredNames = new Set(filtered.filter(g => g.venue === id).map(g => g.venue + ':' + g.name));
+    const rostered = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && filteredNames.has(k) && cal && cal[cmpTodayStr]).length;
+    const rosteredTomorrow = Object.entries(calendarData).filter(([k, cal]) => k.startsWith(id + ':') && filteredNames.has(k) && cal && cal[cmpTomorrowStr]).length;
     const avgOf = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : 0; };
     const countryCounts = {};
     active.forEach(g => { const cs = Array.isArray(g.country) ? g.country : [g.country || '']; cs.forEach(c => { if (c && c !== 'N/A') countryCounts[c] = (countryCounts[c] || 0) + 1; }); });
     const topCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c).join(', ');
-    const newCount = allGirls.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStrCmp).length;
+    const newCount = filtered.filter(g => g.venue === id && g.startDate && g.startDate >= thirtyDayStrCmp).length;
     let avgMatch = 0;
     if (userPreferences && active.length) {
       const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0);
@@ -4252,12 +4391,12 @@ function getSuburbs() {
 }
 
 function venueGirlCount(venueId) {
-  return allGirls.filter(g => g.venue === venueId).length;
+  return getFiltered().filter(g => g.venue === venueId).length;
 }
 
 function venuePriceRange(venueId, field) {
   field = field || 'val1';
-  const girls = allGirls.filter(g => g.venue === venueId && g[field]);
+  const girls = getFiltered().filter(g => g.venue === venueId && g[field]);
   if (!girls.length) return '';
   const prices = girls.map(g => parseInt(g[field])).filter(p => p > 0);
   if (!prices.length) return '';
@@ -4265,13 +4404,14 @@ function venuePriceRange(venueId, field) {
 }
 
 function venueRosteredCount(venueId) {
-  return allGirls.filter(g => g.venue === venueId && getAvailabilityText(g) && getAvailabilityText(g) !== 'ended').length;
+  return getFiltered().filter(g => g.venue === venueId && getAvailabilityText(g) && getAvailabilityText(g) !== 'ended').length;
 }
 
 function renderCityPage() {
   const suburbs = getSuburbs();
-  const totalVenues = Object.keys(VENUE_DATA).length;
-  const totalGirls = allGirls.length;
+  const filtered = getFiltered();
+  const totalVenues = new Set(filtered.map(g => g.venue)).size;
+  const totalGirls = filtered.length;
 
   updateMeta(
     'Brothels in Sydney \u2013 Browse All Venues | Brothel Search',
@@ -4390,7 +4530,8 @@ function renderRegionPage(regionSlug) {
 
   const sevenDaysAgoSub = new Date(); sevenDaysAgoSub.setDate(sevenDaysAgoSub.getDate() - 7);
   const sevenDayStrSub = sevenDaysAgoSub.toISOString().split('T')[0];
-  const activeCount = venueIds.reduce((sum, id) => sum + allGirls.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= sevenDayStrSub).length, 0);
+  const filtered = getFiltered();
+  const activeCount = venueIds.reduce((sum, id) => sum + filtered.filter(g => g.venue === id && g.lastRostered && g.lastRostered >= sevenDayStrSub).length, 0);
 
   updateMeta(
     'Brothels in ' + regionName + ', Sydney | Brothel Search',
@@ -4427,7 +4568,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const v = VENUE_DATA[venueId];
   if (!v) return null;
 
-  const girls = allGirls.filter(g => g.venue === venueId);
+  const girls = getFiltered().filter(g => g.venue === venueId);
   const priceRange = venuePriceRange(venueId);
   const sevenDaysAgoVen = new Date(); sevenDaysAgoVen.setDate(sevenDaysAgoVen.getDate() - 7);
   const sevenDayStrVen = sevenDaysAgoVen.toISOString().split('T')[0];
@@ -4562,6 +4703,53 @@ function navigateToLanding(path) {
   }
 }
 
+function initHomePageListeners() {
+  const landingEl = document.getElementById('landingPage');
+  if (!landingEl) return;
+  const homeSearch = document.getElementById('homeSearch');
+  if (homeSearch) {
+    homeSearch.addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      if (q.length >= 2) {
+        const results = allGirls.filter(g => (g.name || '').toLowerCase().includes(q) || (Array.isArray(g.country) ? g.country.join(' ') : g.country || '').toLowerCase().includes(q) || (g.venueName || '').toLowerCase().includes(q)).slice(0, 5);
+        let dropdown = document.getElementById('homeSearchResults');
+        if (!dropdown) { dropdown = document.createElement('div'); dropdown.id = 'homeSearchResults'; dropdown.className = 'home-search-results'; homeSearch.parentElement.appendChild(dropdown); }
+        if (results.length) {
+          dropdown.innerHTML = results.map(g => '<div class="home-search-item" data-venue="' + g.venue + '" data-name="' + (g.name||'').replace(/"/g,'&quot;') + '">' + (g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 40) + '">' : '') + '<div><strong>' + (g.name||'') + '</strong><br><span>' + (g.venueName||'') + ' \u00b7 ' + countriesWithFlags(g.country) + '</span></div></div>').join('');
+          dropdown.style.display = 'block';
+          dropdown.querySelectorAll('.home-search-item').forEach(el => { el.onclick = () => { const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name); if (g) showProfile(g); }; });
+        } else { dropdown.innerHTML = '<div class="home-search-item"><span>No results</span></div>'; dropdown.style.display = 'block'; }
+      } else {
+        const dd = document.getElementById('homeSearchResults');
+        if (dd) dd.style.display = 'none';
+      }
+    });
+  }
+  landingEl.querySelectorAll('.girls-grid .girl-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    const venue = card.dataset.venue;
+    const name = card.dataset.name;
+    card.onclick = (e) => {
+      if (e.target.closest('.fav-heart')) return;
+      const g = allGirls.find(gg => gg.venue === venue && gg.name === name);
+      if (g) showProfile(g);
+    };
+    const heart = card.querySelector('.fav-heart');
+    if (heart) heart.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const url = heart.dataset.url;
+      if (url) toggleFavorite(url, e);
+    });
+  });
+  landingEl.querySelectorAll('[data-venue][data-name]:not(.girl-card)').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => {
+      const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name);
+      if (g) showProfile(g);
+    };
+  });
+}
+
 function handleLandingRoute(path) {
   const parts = path.replace(/^\//, '').replace(/\/$/, '').split('/');
   const landingEl = document.getElementById('landingPage');
@@ -4573,10 +4761,7 @@ function handleLandingRoute(path) {
   if (cleanPath === '' || cleanPath === 'index.html') {
     html = renderHomePage();
   } else if (cleanPath === 'profiles') {
-    activeAvailability.include = [];
-    activeAvailability.exclude = [];
-    activeFavFilter.include = [];
-    activeFavFilter.exclude = ['Hidden'];
+    restoreActivePresetOrClear();
     renderFilters(); renderGrid();
     // Show the main profiles section instead
     landingEl.style.display = 'none';
@@ -4585,15 +4770,11 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     return true;
   } else if (cleanPath === 'working-now') {
-    activeAvailability.include = [];
-    activeAvailability.exclude = [];
-    activeFavFilter.include = [];
-    activeFavFilter.exclude = ['Hidden'];
+    restoreActivePresetOrClear();
     renderFilters(); renderGrid();
     html = renderWorkingNow();
   } else if (cleanPath === 'compare') {
-    activeFavFilter.include = [];
-    activeFavFilter.exclude = ['Hidden'];
+    restoreActivePresetOrClear();
     renderFilters(); renderGrid();
     html = renderComparePage();
   } else if (cleanPath === 'analytics') {
@@ -4602,8 +4783,7 @@ function handleLandingRoute(path) {
     html = renderRoadmapPage();
   } else if (cleanPath === 'data') {
     if (userRole !== 'admin') { navigateToLanding('/'); return true; }
-    activeFavFilter.include = [];
-    activeFavFilter.exclude = ['Hidden'];
+    restoreActivePresetOrClear();
     renderFilters(); renderGrid();
     html = renderDataPage();
   } else if (parts.length === 1 && parts[0] === 'sydney') {
@@ -4658,55 +4838,10 @@ function handleLandingRoute(path) {
     // Show filter bar on Working Now page
     const fsb = document.getElementById('filterSortBar');
     if (fsb) {
-      fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath === 'compare' || cleanPath.startsWith('sydney/')) ? '' : 'none';
+      fsb.style.display = '';
       fsb.classList.remove('open'); // collapse on page change
     }
-    // Home search
-    const homeSearch = document.getElementById('homeSearch');
-    if (homeSearch) {
-      homeSearch.addEventListener('input', function() {
-        const q = this.value.trim().toLowerCase();
-        if (q.length >= 2) {
-          const results = allGirls.filter(g => (g.name || '').toLowerCase().includes(q) || (Array.isArray(g.country) ? g.country.join(' ') : g.country || '').toLowerCase().includes(q) || (g.venueName || '').toLowerCase().includes(q)).slice(0, 5);
-          let dropdown = document.getElementById('homeSearchResults');
-          if (!dropdown) { dropdown = document.createElement('div'); dropdown.id = 'homeSearchResults'; dropdown.className = 'home-search-results'; homeSearch.parentElement.appendChild(dropdown); }
-          if (results.length) {
-            dropdown.innerHTML = results.map(g => '<div class="home-search-item" data-venue="' + g.venue + '" data-name="' + (g.name||'').replace(/"/g,'&quot;') + '">' + (g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 40) + '">' : '') + '<div><strong>' + (g.name||'') + '</strong><br><span>' + (g.venueName||'') + ' \u00b7 ' + countriesWithFlags(g.country) + '</span></div></div>').join('');
-            dropdown.style.display = 'block';
-            dropdown.querySelectorAll('.home-search-item').forEach(el => { el.onclick = () => { const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name); if (g) showProfile(g); }; });
-          } else { dropdown.innerHTML = '<div class="home-search-item"><span>No results</span></div>'; dropdown.style.display = 'block'; }
-        } else {
-          const dd = document.getElementById('homeSearchResults');
-          if (dd) dd.style.display = 'none';
-        }
-      });
-    }
-    // Attach click handlers for Working Now cards
-    const wnGrid = landingEl.querySelectorAll('.girls-grid .girl-card');
-    wnGrid.forEach(card => {
-      card.style.cursor = 'pointer';
-      const venue = card.dataset.venue;
-      const name = card.dataset.name;
-      card.onclick = (e) => {
-        if (e.target.closest('.fav-heart')) return;
-        const g = allGirls.find(gg => gg.venue === venue && gg.name === name);
-        if (g) showProfile(g);
-      };
-      const heart = card.querySelector('.fav-heart');
-      if (heart) heart.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const url = heart.dataset.url;
-        if (url) toggleFavorite(url, e);
-      });
-    });
-    // Attach click handlers for compact pick cards (Home page)
-    landingEl.querySelectorAll('[data-venue][data-name]:not(.girl-card)').forEach(el => {
-      el.style.cursor = 'pointer';
-      el.onclick = () => {
-        const g = allGirls.find(gg => gg.venue === el.dataset.venue && gg.name === el.dataset.name);
-        if (g) showProfile(g);
-      };
-    });
+    initHomePageListeners();
     return true;
   }
   return false;
@@ -4738,10 +4873,7 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
     return;
   }
   if (isSubscribed !== true && userRole !== 'admin') { showPaywall(); return; }
-  activeAvailability.include = [];
-  activeAvailability.exclude = [];
-  activeFavFilter.include = [];
-  activeFavFilter.exclude = ['Hidden'];
+  restoreActivePresetOrClear();
   renderFilters(); renderGrid();
   history.pushState(null, '', '/profiles');
   showMainSection();

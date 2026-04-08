@@ -4470,17 +4470,17 @@ export default {
     const hour = new Date(event.scheduledTime).getUTCHours();
 
     ctx.waitUntil((async () => {
-      // 22:00 UTC (9am AEDT) — Daily digest only
-      if (hour === 22) {
+      // 23:00 UTC (9am AEST) — Daily digest only
+      if (hour === 23) {
         console.log('9am AEDT — Daily digest');
         await sendDailyDigest(env).catch(e => console.error('[Digest] Error:', e));
         return;
       }
 
-      // 08, 14, 20, 02 UTC (7pm, 1am, 7am, 1pm AEDT) — Girl sync → then Roster sync
-      const aedt = { 8: '7pm', 14: '1am', 20: '7am', 2: '1pm' };
-      if (aedt[hour]) {
-        console.log(aedt[hour] + ' AEDT — Girl sync + Roster sync');
+      // 10, 22, 04, 16 UTC (8pm, 8am, 2pm, 2am AEST) — Girl sync → then Roster sync
+      const aest = { 10: '8pm', 22: '8am', 4: '2pm', 16: '2am' };
+      if (aest[hour]) {
+        console.log(aest[hour] + ' AEST — Girl sync + Roster sync');
 
         // Step 1: Girl sync (all venues in parallel)
         async function syncAllGirls(fn, site) {

@@ -451,7 +451,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04",
+      "lastRostered": "2026-04-08",
       "desc": "Our new addition Ezra is a young, tall and slim South American &#8211; European beauty with sun kissed skin that glows with a perfect tan. She has long blonde hair cascading down her back and striking brown eyes. Effortlessly radiant, She embodies an exotic mix of warmth and elegance."
     },
     {
@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-12",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-10",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1543,7 +1543,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-11",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/layla-new-4/",
       "photos": [],
       "labels": [
@@ -1939,7 +1939,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-12",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/gabriela/",
       "photos": [],
       "labels": [
@@ -2039,6 +2039,10 @@
       "2026-04-10": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-11": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Alex": {
@@ -2053,16 +2057,16 @@
         "end": "18:00"
       },
       "2026-04-10": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-04-11": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-04-08": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Ava": {},
@@ -2089,22 +2093,6 @@
       "2026-04-04": {
         "start": "06:00",
         "end": "06:00"
-      },
-      "2026-04-08": {
-        "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-04-09": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-10": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-11": {
-        "start": "12:00",
-        "end": "06:00"
       }
     },
     "Diamond": {
@@ -2113,11 +2101,11 @@
         "end": "06:00"
       },
       "2026-04-09": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2148,13 +2136,13 @@
       "2026-04-04": {
         "start": "06:00",
         "end": "06:00"
-      }
-    },
-    "Ginger": {
+      },
       "2026-04-08": {
         "start": "12:00",
         "end": "06:00"
-      },
+      }
+    },
+    "Ginger": {
       "2026-04-11": {
         "start": "12:00",
         "end": "06:00"
@@ -2163,22 +2151,6 @@
     "Honey": {
       "2026-04-04": {
         "start": "06:00",
-        "end": "06:00"
-      },
-      "2026-04-08": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-09": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-10": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-11": {
-        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2237,11 +2209,11 @@
         "end": "06:00"
       },
       "2026-04-09": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2249,7 +2221,7 @@
     "Reign": {},
     "Ruby": {
       "2026-04-10": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2367,10 +2339,6 @@
     "Megan": {},
     "Mia": {},
     "Mika": {
-      "2026-04-08": {
-        "start": "12:00",
-        "end": "06:00"
-      },
       "2026-04-10": {
         "start": "12:00",
         "end": "06:00"
@@ -2378,6 +2346,10 @@
       "2026-04-11": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-09": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Misha": {
@@ -2474,15 +2446,15 @@
     ],
     "Hennessy": {
       "2026-04-08": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-08T11:40:15.904Z",
-  "lastCalendarSync": "2026-04-06T19:31:22.885Z"
+  "lastCalendarSync": "2026-04-08T11:41:04.897Z"
 }

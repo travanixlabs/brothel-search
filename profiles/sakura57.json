@@ -8579,6 +8579,36 @@
       "photos": [],
       "labels": [],
       "originalSite": ""
+    },
+    {
+      "name": "Himeka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "158",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-08",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/himeka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81651775621498_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81631775621495_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81641775621497_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81681775621505_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81611775621492_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81621775621494_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81661775621500_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/81671775621503_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-08T11:39:42.163Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9636,7 +9666,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-06T21:00:54.560Z",
+  "lastGirlsSync": "2026-04-08T11:39:42.163Z",
   "lastCalendarSync": "2026-04-07T20:08:53.047Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

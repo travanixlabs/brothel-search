@@ -1637,18 +1637,8 @@ function updateMoreFiltersCount() {
 }
 
 function updateClearBtn() {
-  const fr = document.getElementById('filterRow');
-  const existing = document.getElementById('clearAllBtn');
-  if (hasAnyFilter() && !existing) {
-    const btn = document.createElement('button');
-    btn.className = 'clear-all-btn';
-    btn.id = 'clearAllBtn';
-    btn.textContent = 'Clear All';
-    btn.onclick = () => { activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
-    fr.appendChild(btn);
-  } else if (!hasAnyFilter() && existing) {
-    existing.remove();
-  }
+  const clearBtn = document.getElementById('clearAllBtn');
+  if (clearBtn) clearBtn.disabled = !hasAnyFilter();
 }
 
 function buildDropdown(id, label, options, selected) {
@@ -1872,7 +1862,7 @@ function renderFilters() {
     + buildLabelDropdown('ddPhotos', 'Photos', photosOpts, activePhotos.include, activePhotos.exclude)
     + buildLabelDropdown('ddFav', 'Favourites', [{value:'Favourite',label:'Favourite',count:allGirls.filter(g=>isFavorite(g)).length},{value:'Hidden',label:'Hidden',count:allGirls.filter(g=>isHidden(g)).length},{value:'Others',label:'Others',count:allGirls.filter(g=>!isFavorite(g)&&!isHidden(g)).length}], activeFavFilter.include, activeFavFilter.exclude)
     + buildLabelDropdown('ddAvailability', 'Availability', availOpts, activeAvailability.include, activeAvailability.exclude)
-    + (hasAnyFilter() ? '<button class="clear-all-btn" id="clearAllBtn">Clear All</button>' : '');
+;
 
   // Date-time picker hidden
   document.getElementById('dtPickerRow').innerHTML = '';
@@ -1955,9 +1945,10 @@ function renderFilters() {
     syncDateTime(); renderFilters(); renderGrid();
   };
 
-  // Clear all filters
+  // Clear all filters — always present, enable/disable based on state
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) {
+    clearBtn.disabled = !hasAnyFilter();
     clearBtn.onclick = () => { activeRegion.include.length = 0; activeRegion.exclude.length = 0; activeVenue.include.length = 0; activeVenue.exclude.length = 0; activeCountry.include.length = 0; activeCountry.exclude.length = 0; activeLabels.include.length = 0; activeLabels.exclude.length = 0; activeAV.include.length = 0; activeAV.exclude.length = 0; activeAvailability.include.length = 0; activeAvailability.exclude.length = 0; activePhotos.include.length = 0; activePhotos.exclude.length = 0; activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0; activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = ''; rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = ''); renderFilters(); renderRangeFilters(); renderGrid(); };
   }
 

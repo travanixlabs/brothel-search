@@ -61,7 +61,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 @keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
 /* Search */
-.search-input{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;outline:none;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
+.search-input{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;outline:none;transition:all .4s cubic-bezier(0.23,1,0.32,1)}
 .search-input:focus{border-color:rgba(201,149,44,0.3)}
 .search-input:not(:placeholder-shown){border-color:rgba(201,149,44,0.4);box-shadow:0 0 16px rgba(201,149,44,0.2),0 0 32px rgba(201,149,44,0.1)}
 .search-input:placeholder-shown{}
@@ -85,7 +85,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .filter-sidebar.open .filter-sidebar-toggle svg{transform:rotate(180deg)}
 .filter-sidebar-content{width:300px;height:100%;overflow-y:auto;overflow-x:hidden;padding:16px;display:none;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:rgba(201,149,44,0.2) transparent}
 .filter-sidebar.open .filter-sidebar-content{display:flex}
-.filter-sidebar-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-align:center;padding-bottom:8px;border-bottom:1px solid rgba(201,149,44,0.12)}
+.filter-sidebar-title{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-align:center;padding-bottom:8px;border-bottom:1px solid rgba(201,149,44,0.12)}
 .filter-section-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .filter-row,.filter-row > span{display:contents}
 
@@ -95,18 +95,18 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .filter-dropdown-btn:hover{}
 .filter-dropdown-btn.has-selection{border-color:rgba(201,149,44,0.4);box-shadow:0 0 16px rgba(201,149,44,0.2),0 0 32px rgba(201,149,44,0.1)}
 .filter-btn-label{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
-.filter-btn-count{font-size:9px;letter-spacing:1px;opacity:0.8}
+.filter-btn-count{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:1px;opacity:0.8}
 .filter-dropdown-btn svg{width:16px;height:16px;fill:currentColor;transition:transform .2s;flex-shrink:0}
 .filter-dropdown-btn.open svg{transform:rotate(180deg)}
 .filter-dropdown-panel{display:none;position:absolute;top:100%;left:0;z-index:60;min-width:200px;max-height:300px;overflow-y:auto;background:rgba(12,12,20,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,149,44,0.2);border-radius:12px;padding:8px 0;box-shadow:0 12px 40px rgba(0,0,0,0.5)}
 .filter-dropdown-panel.open{display:block}
-.filter-option{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:9px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;cursor:pointer;transition:all .2s;text-align:left}
+.filter-option{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:13px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;cursor:pointer;transition:all .2s;text-align:left}
 .filter-option:hover{}
 .filter-option.active{color:var(--accent)}
 .filter-checkbox{width:14px;height:14px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
 .filter-option.active .filter-checkbox{border-color:var(--accent);background:rgba(180,74,255,0.2)}
 .filter-option.active .filter-checkbox::after{content:'';width:8px;height:8px;background:var(--accent)}
-.filter-option-count{font-size:9px;color:var(--text-dim);opacity:.6;min-width:24px;text-align:right;flex-shrink:0}
+.filter-option-count{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--text-dim);opacity:.6;min-width:24px;text-align:right;flex-shrink:0}
 .label-toggle{display:flex;gap:0;margin-left:auto;flex-shrink:0}
 .label-toggle-btn{width:22px;height:18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.03);color:var(--text-dim);font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;padding:0}
 .label-toggle-btn:first-child{border-right:none}
@@ -139,13 +139,13 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .filter-option.excluded .filter-checkbox::after{content:'';width:8px;height:8px;background:var(--gold-deep)}
 
 /* Clear all button */
-.clear-all-btn{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:400;letter-spacing:4px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);white-space:nowrap;align-self:flex-start;color:var(--gold);-webkit-text-fill-color:unset}
+.clear-all-btn{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:12px;font-family:'Orbitron',sans-serif;font-size:13px;font-weight:400;letter-spacing:4px;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:all .4s cubic-bezier(0.23,1,0.32,1);white-space:nowrap;align-self:flex-start;color:var(--gold);-webkit-text-fill-color:unset;width:100%}
 .clear-all-btn:hover{}
 
 /* More filters */
 .more-filters-section{margin-bottom:24px}
 .range-filter{margin-bottom:20px;padding:0 8px}
-.range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase}
+.range-filter-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase}
 .range-filter-label > span:first-child{color:var(--gold)}
 .range-filter-label > span:last-child{color:var(--gold);font-weight:400}
 .range-filter-label .range-date-val{color:var(--gold);cursor:pointer;border-bottom:1px dashed rgba(201,149,44,0.4);padding-bottom:1px}

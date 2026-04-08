@@ -386,18 +386,20 @@
 </nav>
 
 <main>
-<div class="filter-sort-bar" id="filterSortBar" style="display:none">
-<div class="filter-expand-toggle" id="filterExpandToggle" onclick="document.getElementById('filterSortBar').classList.toggle('expanded')">
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
-</div>
-<div class="filter-collapsible" id="filterCollapsible">
-<div class="filter-row" id="filterMainRow"><span id="sortRow"></span><span id="filterRow"></span></div>
-<div id="dtPickerRow" style="margin-bottom:16px"></div>
-<div class="text-filters-grid" id="moreFiltersDropdowns"></div>
-<div class="range-filters-grid" id="rangeFiltersGrid"></div>
-</div>
-</div>
 <div id="landingPage" style="display:none"></div>
+<div class="filter-sidebar" id="filterSortBar" style="display:none">
+<div class="filter-sidebar-toggle" id="filterExpandToggle" onclick="document.getElementById('filterSortBar').classList.toggle('open')">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+</div>
+<div class="filter-sidebar-content">
+<div class="filter-sidebar-title">Filters</div>
+<div id="sortRow"></div>
+<div id="filterRow"></div>
+<div id="dtPickerRow"></div>
+<div id="moreFiltersDropdowns"></div>
+<div id="rangeFiltersGrid"></div>
+</div>
+</div>
 <section class="section">
 <div class="section-header">
 <div class="section-line"></div>

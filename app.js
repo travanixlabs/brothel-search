@@ -4668,7 +4668,7 @@ function handleLandingRoute(path) {
     const fsb = document.getElementById('filterSortBar');
     if (fsb) {
       fsb.style.display = (cleanPath === 'working-now' || cleanPath === 'data' || cleanPath === 'compare' || cleanPath.startsWith('sydney/')) ? '' : 'none';
-      fsb.classList.remove('expanded'); // collapse on page change
+      fsb.classList.remove('open'); // collapse on page change
     }
     // Home search
     const homeSearch = document.getElementById('homeSearch');
@@ -4729,7 +4729,7 @@ function showMainSection() {
   mainSection.style.display = '';
   const fsb = document.getElementById('filterSortBar');
   fsb.style.display = '';
-  fsb.classList.remove('expanded');
+  fsb.classList.remove('open');
   document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.id === 'navProfiles'));
 }
 

@@ -1810,7 +1810,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250409100026.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Rina",
@@ -1850,6 +1850,27 @@
       "oldUrl": "https://jinia.com.au/cola/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260408111104.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sherry 7:pm-close",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "160",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-04-09",
+      "lastRostered": "2026-04-09",
+      "oldUrl": "https://jinia.com.au/sherry/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260409112813.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -2267,6 +2288,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-08T11:40:37.367Z",
+  "lastGirlsSync": "2026-04-09T04:00:49.746Z",
   "lastCalendarSync": "2026-04-08T11:41:13.711Z"
 }

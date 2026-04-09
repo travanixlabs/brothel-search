@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08",
+      "lastRostered": "2026-04-10",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-04-10",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -544,7 +544,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-02-01",
+      "lastRostered": "2026-04-10",
       "desc": "With striking red hair, captivating hazel eyes, and a slim size-6 figure, Scarlette is the perfect blend of Australian charm and Turkish allure. In her mid-30s, she carries herself with confidence, warmth, and a touch of mystery that keeps you intrigued from the moment you meet."
     },
     {
@@ -740,7 +740,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-04-01",
+      "lastRostered": "2026-04-10",
       "desc": "Talia is a gorgeous, sensual, sophisticated, and passionate ebony seductress. Whether you're looking for an engaging conversation, a night of indulgence, or a brief escape from the everyday, she brings warmth, charm, and a touch of mystery. Her approach is effortless yet intoxicating. With Talia, it's all about making you feel desired and at ease."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08",
+      "lastRostered": "2026-04-10",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Sophia",
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Cartier",
@@ -1724,7 +1724,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-07"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Madeleine",
@@ -1877,7 +1877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Chicago",
@@ -2140,7 +2140,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2024-11-01"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Vanessa",
@@ -2174,7 +2174,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Sienna",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Cherry",
@@ -2448,6 +2448,10 @@
       "2026-04-08": {
         "start": "14:30",
         "end": "22:30"
+      },
+      "2026-04-10": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Delilah": {
@@ -2476,6 +2480,10 @@
         "end": "17:00"
       },
       "2026-04-05": {
+        "start": "11:00",
+        "end": "17:00"
+      },
+      "2026-04-10": {
         "start": "11:00",
         "end": "17:00"
       }
@@ -2546,6 +2554,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "22:00",
+        "end": "05:00"
       }
     },
     "Cherry": {
@@ -2742,6 +2754,10 @@
       "2026-04-05": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -2786,6 +2802,10 @@
       "2026-04-08": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Lexi": {
@@ -2852,6 +2872,10 @@
       "2026-04-08": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Tara": {
@@ -2920,6 +2944,10 @@
       "2026-04-08": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Hazel": {
@@ -2956,6 +2984,10 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Emma": {
@@ -2989,8 +3021,44 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Talia": {
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "18:00"
+      }
+    },
+    "Scarlett": {
+      "2026-04-10": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
+    "Celine": {
+      "2026-04-10": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
+    "Sarah": {
+      "2026-04-10": {
+        "start": "18:00",
+        "end": "04:00"
+      }
+    },
+    "Maisie": {
+      "2026-04-10": {
+        "start": "20:00",
+        "end": "02:00"
+      }
+    },
+    "Chanel": {
+      "2026-04-10": {
+        "start": "20:30",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-07T20:09:20.945Z"
+  "lastCalendarSync": "2026-04-09T19:33:24.005Z"
 }

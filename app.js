@@ -3904,6 +3904,7 @@ function renderHomePage() {
       // New profiles sorted by date
       digestGirls = filtered.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || ''));
     }
+    if (!isLoggedIn()) digestGirls = digestGirls.slice(0, 10);
 
     if (digestGirls.length) {
       html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
@@ -3917,6 +3918,10 @@ function renderHomePage() {
       html += '</div>';
     }
   }
+
+  // Recent reviews placeholder
+  html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';
+  html += '<div id="homeRecentReviews" style="margin-bottom:40px"><div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">Loading reviews...</div></div>';
 
   // Venue showcase — sorted by preference match (or active count if no preferences)
   const thirtyDaysAgoHome = new Date(); thirtyDaysAgoHome.setDate(thirtyDaysAgoHome.getDate() - 30);
@@ -5097,6 +5102,43 @@ function initHomePageListeners() {
       if (g) showProfile(g);
     };
   });
+
+  // Load recent reviews
+  const reviewsContainer = document.getElementById('homeRecentReviews');
+  if (reviewsContainer) {
+    sbClient.from('reviews').select('*').order('created_at', { ascending: false }).limit(4).then(({ data: recentReviews }) => {
+      if (!recentReviews || !recentReviews.length) {
+        reviewsContainer.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">No reviews yet.</div>';
+        return;
+      }
+      let rhtml = '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">';
+      for (const r of recentReviews) {
+        const stars = '\u2605'.repeat(r.overall) + '\u2606'.repeat(5 - r.overall);
+        const date = new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+        const girl = allGirls.find(g => g.venue === r.venue && g.name === r.girl_name);
+        const photo = girl && girl.photos && girl.photos[0] ? '<img src="' + imgProxy(girl.photos[0], 40) + '" style="width:40px;height:40px;border-radius:8px;object-fit:cover;flex-shrink:0">' : '';
+        const venueName = girl ? girl.venueName : r.venue;
+        rhtml += '<div class="home-review-card" style="cursor:pointer" data-rv-venue="' + r.venue + '" data-rv-girl="' + (r.girl_name || '').replace(/"/g, '&quot;') + '">';
+        rhtml += '<div style="display:flex;gap:10px;align-items:flex-start">';
+        rhtml += photo;
+        rhtml += '<div style="flex:1;min-width:0">';
+        rhtml += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px"><span style="font-family:Orbitron,sans-serif;font-size:10px;color:var(--gold);letter-spacing:1px">' + (r.girl_name || '') + '</span><span style="font-size:10px;color:var(--text-dim)">' + date + '</span></div>';
+        rhtml += '<div style="font-size:9px;color:var(--text-dim);margin-bottom:4px">' + venueName + ' \u00b7 by ' + (r.user_name || 'Anonymous') + '</div>';
+        rhtml += '<div style="color:#d4af37;font-size:12px;letter-spacing:2px;margin-bottom:4px">' + stars + '</div>';
+        if (r.comment) rhtml += '<div style="font-size:12px;color:var(--text);line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">' + r.comment.replace(/</g, '&lt;').substring(0, 150) + '</div>';
+        rhtml += '</div></div></div>';
+      }
+      rhtml += '</div>';
+      reviewsContainer.innerHTML = rhtml;
+
+      reviewsContainer.querySelectorAll('.home-review-card').forEach(card => {
+        card.onclick = () => {
+          const g = allGirls.find(gg => gg.venue === card.dataset.rvVenue && gg.name === card.dataset.rvGirl);
+          if (g) showProfile(g);
+        };
+      });
+    });
+  }
 }
 
 function handleLandingRoute(path) {

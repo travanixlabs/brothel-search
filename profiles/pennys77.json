@@ -44,7 +44,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-07"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Riho",
@@ -419,7 +419,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Anjali",
@@ -482,7 +482,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Leah",
@@ -503,7 +503,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Sora",
@@ -544,7 +544,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/06/IMG_2084.webp"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Nivi",
@@ -564,7 +565,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/09/638BB75F-549A-4B1A-8C25-FC544518E477.png"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-10"
     }
   ],
   "calendar": {
@@ -578,6 +580,10 @@
         "end": "03:00"
       },
       "2026-04-06": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-04-10": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -606,7 +612,8 @@
       "2026-04-05",
       "2026-04-06",
       "2026-04-07",
-      "2026-04-08"
+      "2026-04-08",
+      "2026-04-10"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -676,6 +683,10 @@
       "2026-04-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Meya": {
@@ -712,6 +723,10 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Taylor": {
@@ -742,6 +757,10 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -753,8 +772,20 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Irene": {
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Nivi": {
+      "2026-04-10": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-04-08T11:40:57.554Z"
+  "lastCalendarSync": "2026-04-09T19:33:03.578Z"
 }

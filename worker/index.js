@@ -4490,6 +4490,47 @@ export default {
       }
     }
 
+    // POST /api/notify-reply — send email when someone replies to a review
+    if (url.pathname === '/api/notify-reply' && request.method === 'POST') {
+      try {
+        const body = await request.json();
+        const { review_user_id, review_user_name, girl_name, venue, reply_user_name, reply_comment } = body;
+        if (!review_user_id || !reply_user_name) return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        // Look up the review author's email
+        const headers = { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`, 'Content-Type': 'application/json' };
+        const userRes = await fetch(`${SB_URL}/auth/v1/admin/users/${review_user_id}`, { headers });
+        const userData = await userRes.json();
+        if (!userData.email) return new Response(JSON.stringify({ error: 'User email not found' }), { status: 404, headers: { ...cors, 'Content-Type': 'application/json' } });
+
+        const emailHtml = `
+<div style="font-family:Arial,sans-serif;background:#0f0f1e;color:#e0e0e0;padding:28px;border-radius:10px;max-width:500px;margin:0 auto">
+  <h2 style="color:#d4af37;margin:0 0 16px 0;font-size:18px">New Reply to Your Review</h2>
+  <p style="color:#aaa;margin:0 0 16px 0"><strong style="color:#d4af37">${reply_user_name}</strong> replied to your review of <strong style="color:#d4af37">${girl_name}</strong>:</p>
+  <div style="background:#1a1a2e;border-left:3px solid #d4af37;padding:12px 16px;border-radius:6px;margin-bottom:16px">
+    <p style="color:#e0e0e0;margin:0;font-size:14px;line-height:1.6">${reply_comment.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+  </div>
+  <a href="https://brothelsearch.com/" style="display:inline-block;background:#d4af37;color:#0f0f1e;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px">View on Brothel Search</a>
+  <p style="color:#555;font-size:10px;margin:20px 0 0 0">Brothel Search</p>
+</div>`;
+
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: 'Brothel Search <info@travanixlabs.com>',
+            to: [userData.email],
+            subject: reply_user_name + ' replied to your review of ' + girl_name,
+            html: emailHtml,
+          }),
+        });
+
+        return new Response(JSON.stringify({ ok: true }), { headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
+    }
+
     // GET /api/test-sync-email — trigger the daily summary email manually
     if (url.pathname === '/api/test-sync-email') {
       const allSites = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];

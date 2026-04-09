@@ -833,6 +833,8 @@ document.getElementById('prefBack').addEventListener('click', closePreferences);
 document.getElementById('preferencesOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closePreferences(); });
 document.getElementById('favBack').addEventListener('click', closeFavorites);
 document.getElementById('favoritesOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeFavorites(); });
+document.getElementById('presetsBack').addEventListener('click', closePresetsOverlay);
+document.getElementById('presetsOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closePresetsOverlay(); });
 document.getElementById('settingsChangePwBtn').addEventListener('click', changePassword);
 document.getElementById('settingsNewPw').addEventListener('input', () => {
   const pw = document.getElementById('settingsNewPw').value;
@@ -1415,6 +1417,7 @@ async function saveFilterPreset() {
   userFilterPresets.forEach(p => p.is_active = false);
   userFilterPresets.push(data);
   renderFilterPresets();
+  renderPresetsOverlayList();
 }
 
 async function deleteFilterPreset(id) {
@@ -1422,18 +1425,19 @@ async function deleteFilterPreset(id) {
   if (error) { alert('Error deleting preset: ' + error.message); return; }
   userFilterPresets = userFilterPresets.filter(p => p.id !== id);
   renderFilterPresets();
+  renderPresetsOverlayList();
 }
 
 async function activateFilterPreset(id) {
   const { data: { user } } = await sbClient.auth.getUser();
   if (!user) return;
-  // Deactivate all, activate selected
   await sbClient.from('user_filter_presets').update({ is_active: false }).eq('user_id', user.id);
   await sbClient.from('user_filter_presets').update({ is_active: true }).eq('id', id);
   userFilterPresets.forEach(p => p.is_active = (p.id === id));
   const preset = userFilterPresets.find(p => p.id === id);
   if (preset) applyFilterState(preset.filters);
   renderFilterPresets();
+  renderPresetsOverlayList();
 }
 
 function renderFilterPresets() {
@@ -1442,28 +1446,78 @@ function renderFilterPresets() {
   if (!isLoggedIn()) { row.innerHTML = ''; return; }
 
   const activePreset = userFilterPresets.find(p => p.is_active);
-  const presetList = userFilterPresets.map(p => {
-    const isActive = p.is_active;
-    return `<div class="preset-item${isActive ? ' active' : ''}" data-id="${p.id}">
-      <span class="preset-name" title="Apply preset">${p.name}</span>
-      <button class="preset-delete" title="Delete preset">&times;</button>
-    </div>`;
-  }).join('');
+  const label = activePreset ? activePreset.name : 'No Filter Selected';
 
   row.innerHTML = `<div class="preset-section">
-    <div class="preset-list">${presetList}</div>
-    <button class="preset-save-btn" id="presetSaveBtn"${userFilterPresets.length >= 5 ? ' disabled' : ''}>
-      + Save Current Filters${userFilterPresets.length > 0 ? ' (' + userFilterPresets.length + '/5)' : ''}
+    <button class="preset-open-btn" id="presetOpenBtn">
+      <span class="preset-open-label">${label}</span>
+      <span class="preset-open-arrow">&#9662;</span>
     </button>
   </div>`;
 
-  document.getElementById('presetSaveBtn').onclick = () => saveFilterPreset();
-  row.querySelectorAll('.preset-name').forEach(el => {
-    el.onclick = () => activateFilterPreset(el.parentElement.dataset.id);
+  document.getElementById('presetOpenBtn').onclick = () => openPresetsOverlay();
+}
+
+function openPresetsOverlay() {
+  const overlay = document.getElementById('presetsOverlay');
+  overlay.classList.add('open');
+  renderPresetsOverlayList();
+}
+
+function closePresetsOverlay() {
+  document.getElementById('presetsOverlay').classList.remove('open');
+}
+
+function renderPresetsOverlayList() {
+  const container = document.getElementById('presetsOverlayList');
+  const activePreset = userFilterPresets.find(p => p.is_active);
+
+  let html = `<div class="preset-item${!activePreset ? ' active' : ''}" data-id="none">
+    <span class="preset-name">No Filter</span>
+  </div>`;
+
+  html += userFilterPresets.map(p => `<div class="preset-item${p.is_active ? ' active' : ''}" data-id="${p.id}">
+    <span class="preset-name">${p.name}</span>
+    <button class="preset-delete" title="Delete preset">&times;</button>
+  </div>`).join('');
+
+  html += `<button class="preset-save-btn" id="presetSaveBtnOverlay"${userFilterPresets.length >= 5 ? ' disabled' : ''}>
+    + Save Current Filters${userFilterPresets.length > 0 ? ' (' + userFilterPresets.length + '/5)' : ''}
+  </button>`;
+
+  container.innerHTML = html;
+
+  document.getElementById('presetSaveBtnOverlay').onclick = () => saveFilterPreset();
+  container.querySelectorAll('.preset-item .preset-name').forEach(el => {
+    el.onclick = () => {
+      const id = el.parentElement.dataset.id;
+      if (id === 'none') deactivateAllPresets();
+      else activateFilterPreset(id);
+    };
   });
-  row.querySelectorAll('.preset-delete').forEach(el => {
+  container.querySelectorAll('.preset-delete').forEach(el => {
     el.onclick = (e) => { e.stopPropagation(); deleteFilterPreset(el.parentElement.dataset.id); };
   });
+}
+
+async function deactivateAllPresets() {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return;
+  await sbClient.from('user_filter_presets').update({ is_active: false }).eq('user_id', user.id);
+  userFilterPresets.forEach(p => p.is_active = false);
+  // Clear all filters
+  activeRegion.include.length = 0; activeRegion.exclude.length = 0;
+  activeVenue.include.length = 0; activeVenue.exclude.length = 0;
+  activeCountry.include.length = 0; activeCountry.exclude.length = 0;
+  activeLabels.include.length = 0; activeLabels.exclude.length = 0;
+  activeAV.include.length = 0; activeAV.exclude.length = 0;
+  activeAvailability.include.length = 0; activeAvailability.exclude.length = 0;
+  activePhotos.include.length = 0; activePhotos.exclude.length = 0;
+  activeFavFilter.include.length = 0; activeFavFilter.exclude.length = 0;
+  activeDateTime = ''; dtEnabled = false; dtPendingMonth = ''; dtPendingDay = '';
+  rangeFilters = {}; Object.keys(textFilters).forEach(k => textFilters[k] = '');
+  renderFilters(); renderRangeFilters(); renderGrid();
+  renderPresetsOverlayList();
 }
 
 function restoreActivePresetOrClear() {
@@ -2713,7 +2767,8 @@ async function submitReview(venue, girlName, ratings, comment) {
     user_id: user.id, user_name: userName, venue, girl_name: girlName,
     overall: ratings.overall, professionalism: ratings.professionalism, experience: ratings.experience,
     presentation: ratings.presentation, safety: ratings.safety, transparency: ratings.transparency,
-    comment: comment.substring(0, 500),
+    room_quality: ratings.room_quality, visit_date: ratings.visit_date || null, duration: ratings.duration || null,
+    comment: comment.substring(0, 1000),
   }, { onConflict: 'user_id,venue,girl_name' }).select();
   if (error) { console.error('Submit review error:', error); return { error: error.message }; }
   return { data };
@@ -2725,7 +2780,59 @@ async function deleteReview(reviewId) {
   return { success: true };
 }
 
-const REVIEW_LABELS = { overall: 'Overall', professionalism: 'Professionalism & Communication', experience: 'Experience Quality', presentation: 'Appearance & Presentation', safety: 'Safety & Respect', transparency: 'Value & Transparency' };
+async function loadReplies(reviewIds) {
+  if (!reviewIds.length) return [];
+  const { data, error } = await sbClient.from('review_replies').select('*').in('review_id', reviewIds).order('created_at', { ascending: true });
+  if (error) { console.error('Load replies error:', error); return []; }
+  return data || [];
+}
+
+async function submitReply(reviewId, comment) {
+  const { data: { user } } = await sbClient.auth.getUser();
+  if (!user) return { error: 'Not logged in' };
+  const userName = user.user_metadata?.display_name || user.user_metadata?.name || user.email.split('@')[0];
+  const { data, error } = await sbClient.from('review_replies').upsert({
+    review_id: reviewId, user_id: user.id, user_name: userName,
+    comment: comment.substring(0, 200),
+  }, { onConflict: 'review_id,user_id' }).select();
+  if (error) { console.error('Submit reply error:', error); return { error: error.message }; }
+  return { data };
+}
+
+async function deleteReply(replyId) {
+  const { error } = await sbClient.from('review_replies').delete().eq('id', replyId);
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+async function notifyReviewReply(review, replyUserName, replyComment, girl) {
+  // Insert bell notification for the review author
+  await sbClient.from('notifications').insert({
+    user_id: review.user_id,
+    type: 'review_reply',
+    title: 'New reply to your review',
+    body: replyUserName + ' replied to your review of ' + review.girl_name + ': "' + replyComment.substring(0, 100) + (replyComment.length > 100 ? '...' : '') + '"',
+    venue: review.venue,
+    girl_name: review.girl_name,
+  });
+  // Send email via worker
+  try {
+    await fetch('https://brothel-search-sync.travanixlabs.workers.dev/api/notify-reply', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        review_user_id: review.user_id,
+        review_user_name: review.user_name,
+        girl_name: review.girl_name,
+        venue: review.venue,
+        reply_user_name: replyUserName,
+        reply_comment: replyComment,
+      }),
+    });
+  } catch (e) { console.error('Reply notification email error:', e); }
+}
+
+const REVIEW_LABELS = { overall: 'Overall', professionalism: 'Professionalism & Communication', experience: 'Experience Quality', presentation: 'Appearance & Presentation', safety: 'Safety & Respect', transparency: 'Value & Transparency', room_quality: 'Room Quality' };
 
 function renderStars(rating, interactive, category) {
   let html = '<div class="review-stars' + (interactive ? ' review-stars-interactive' : '') + '"' + (category ? ' data-category="' + category + '"' : '') + '>';
@@ -2738,10 +2845,10 @@ function renderStars(rating, interactive, category) {
 
 function averageRatings(reviews) {
   if (!reviews.length) return null;
-  const fields = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
+  const fields = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
   const avg = {};
   for (const f of fields) {
-    avg[f] = (reviews.reduce((sum, r) => sum + r[f], 0) / reviews.length).toFixed(1);
+    avg[f] = (reviews.reduce((sum, r) => sum + (r[f] || 0), 0) / reviews.length).toFixed(1);
   }
   avg.count = reviews.length;
   return avg;
@@ -2781,7 +2888,7 @@ function buildSimilarGirls(g) {
 
 function buildReviewSection(g, reviews) {
   const avg = averageRatings(reviews);
-  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
 
   let html = '<div class="review-section" style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
   html += '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:16px">Reviews</div>';
@@ -2818,8 +2925,8 @@ function buildReviewSection(g, reviews) {
   return html;
 }
 
-function renderReviewCard(r) {
-  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
+function renderReviewCard(r, replies, currentUserId) {
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
   let html = '<div class="review-card" data-review-id="' + r.id + '">';
   html += '<div class="review-card-header">';
   html += '<div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
@@ -2830,7 +2937,46 @@ function renderReviewCard(r) {
     html += '<div class="review-card-rating"><span>' + (REVIEW_LABELS[cat] || cat) + '</span>' + renderStars(r[cat], false) + '</div>';
   }
   html += '</div>';
+  if (r.visit_date || r.duration) {
+    let visitInfo = '';
+    if (r.visit_date) {
+      const vd = new Date(r.visit_date);
+      visitInfo = 'Visited: ' + vd.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) + (r.visit_date.includes('T') && !r.visit_date.endsWith('T00:00') ? ' at ' + vd.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit' }) : '');
+    }
+    if (r.duration) visitInfo += (visitInfo ? ' \u00b7 ' : '') + r.duration;
+    html += '<div style="font-family:Orbitron,sans-serif;font-size:9px;letter-spacing:1px;color:var(--text-dim);margin-top:6px">' + visitInfo + '</div>';
+  }
   if (r.comment) html += '<div class="review-card-comment">' + r.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+
+  // Replies
+  const reviewReplies = (replies || []).filter(rp => rp.review_id === r.id);
+  if (reviewReplies.length) {
+    html += '<div class="review-replies">';
+    for (const rp of reviewReplies) {
+      const rpDate = new Date(rp.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+      const isOwn = currentUserId && rp.user_id === currentUserId;
+      html += '<div class="review-reply">';
+      html += '<div class="review-reply-header"><span class="review-reply-user">' + (rp.user_name || 'Anonymous') + '</span><span class="review-reply-date">' + rpDate + '</span></div>';
+      html += '<div class="review-reply-text">' + rp.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+      if (isOwn) html += '<button class="review-reply-delete" data-reply-id="' + rp.id + '">Delete</button>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  // Reply button (only if logged in, not own review, and haven't already replied)
+  const alreadyReplied = currentUserId && reviewReplies.some(rp => rp.user_id === currentUserId);
+  const isOwnReview = currentUserId && r.user_id === currentUserId;
+  if (currentUserId && !alreadyReplied) {
+    html += '<div class="review-reply-actions">';
+    html += '<button class="review-reply-btn" data-review-id="' + r.id + '">Reply</button>';
+    html += '</div>';
+    html += '<div class="review-reply-form" data-review-id="' + r.id + '" style="display:none">';
+    html += '<textarea class="review-reply-textarea" placeholder="Write a reply (max 200 chars)" maxlength="200"></textarea>';
+    html += '<div style="display:flex;gap:8px;align-items:center"><button class="review-reply-submit" data-review-id="' + r.id + '">Submit</button><button class="review-reply-cancel" data-review-id="' + r.id + '">Cancel</button><span class="review-reply-msg"></span></div>';
+    html += '</div>';
+  }
+
   html += '</div>';
   return html;
 }
@@ -2839,25 +2985,83 @@ async function initReviewSection(g) {
   const reviews = await loadReviews(g.venue, g.name);
   const rcEl = document.getElementById('profileReviewCount');
   if (rcEl) rcEl.textContent = reviews.length + ' review' + (reviews.length !== 1 ? 's' : '');
-  const container = document.querySelector('.review-section');
+  let container = document.querySelector('.review-section');
   if (!container) return;
+
+  // Rebuild the summary section with actual data
+  container.outerHTML = buildReviewSection(g, reviews);
+  container = document.querySelector('.review-section');
+  if (!container) return;
+
+  // Load replies for all reviews
+  const reviewIds = reviews.map(r => r.id);
+  const allReplies = await loadReplies(reviewIds);
+
+  const { data: { user } } = await sbClient.auth.getUser();
+  const currentUserId = user ? user.id : null;
 
   // Populate review list
   const listEl = document.getElementById('reviewList');
-  if (listEl) listEl.innerHTML = reviews.map(r => renderReviewCard(r)).join('');
+  if (listEl) {
+    listEl.innerHTML = reviews.map(r => renderReviewCard(r, allReplies, currentUserId)).join('');
+
+    // Reply button handlers
+    listEl.querySelectorAll('.review-reply-btn').forEach(btn => {
+      btn.onclick = () => {
+        const rid = btn.dataset.reviewId;
+        const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]');
+        if (form) { form.style.display = ''; btn.style.display = 'none'; }
+      };
+    });
+    listEl.querySelectorAll('.review-reply-cancel').forEach(btn => {
+      btn.onclick = () => {
+        const rid = btn.dataset.reviewId;
+        const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]');
+        const replyBtn = listEl.querySelector('.review-reply-btn[data-review-id="' + rid + '"]');
+        if (form) form.style.display = 'none';
+        if (replyBtn) replyBtn.style.display = '';
+      };
+    });
+    listEl.querySelectorAll('.review-reply-submit').forEach(btn => {
+      btn.onclick = async () => {
+        const rid = btn.dataset.reviewId;
+        const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]');
+        const textarea = form.querySelector('.review-reply-textarea');
+        const msg = form.querySelector('.review-reply-msg');
+        const comment = textarea.value.trim();
+        if (!comment) { msg.textContent = 'Reply cannot be empty'; return; }
+        btn.disabled = true; btn.textContent = 'Saving...';
+        const result = await submitReply(rid, comment);
+        if (result.error) { msg.textContent = result.error; btn.disabled = false; btn.textContent = 'Submit'; return; }
+        // Notify the review author
+        const review = reviews.find(r => r.id === rid);
+        if (review && review.user_id !== currentUserId) {
+          const userName = user.user_metadata?.display_name || user.user_metadata?.name || user.email.split('@')[0];
+          await notifyReviewReply(review, userName, comment, g);
+        }
+        initReviewSection(g);
+      };
+    });
+    listEl.querySelectorAll('.review-reply-delete').forEach(btn => {
+      btn.onclick = async () => {
+        if (!confirm('Delete your reply?')) return;
+        await deleteReply(btn.dataset.replyId);
+        initReviewSection(g);
+      };
+    });
+  }
 
   // Show review form for logged-in users
   const formContainer = document.getElementById('reviewFormContainer');
   if (!formContainer) return;
 
-  const { data: { user } } = await sbClient.auth.getUser();
   if (!user) {
     formContainer.innerHTML = '<div style="color:var(--text-dim);font-size:13px;margin:16px 0">Log in to leave a review.</div>';
     return;
   }
 
   const existingReview = reviews.find(r => r.user_id === user.id);
-  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency'];
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
 
   let formHtml = '<div class="review-form">';
   formHtml += '<div style="font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">' + (existingReview ? 'Update Your Review' : 'Leave a Review') + '</div>';
@@ -2867,7 +3071,17 @@ async function initReviewSection(g) {
     formHtml += '<div class="review-form-row"><label>' + (REVIEW_LABELS[cat] || cat) + '</label>' + renderStars(val, true, cat) + '</div>';
   }
 
-  formHtml += '<textarea id="reviewComment" class="review-textarea" placeholder="Share your experience (optional, max 500 chars)" maxlength="500">' + (existingReview ? (existingReview.comment || '') : '') + '</textarea>';
+  const todayStr = new Date().toISOString().split('T')[0];
+  const existingDate = existingReview && existingReview.visit_date ? existingReview.visit_date.substring(0, 10) : todayStr;
+  const fmtDateLabel = d => { const dt = new Date(d + 'T00:00:00'); return dt.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }); };
+  formHtml += '<input type="hidden" id="reviewVisitDate" value="' + existingDate + '">';
+  const existingDuration = existingReview ? (existingReview.duration || '') : '';
+  formHtml += '<input type="hidden" id="reviewDuration" value="' + existingDuration + '">';
+  const durations = ['30 Mins','45 Mins','1 Hour','1 Hour 15 Mins','1 Hour 30 Mins','1 Hour 45 Mins','2 Hours or More'];
+  const durLabel = existingDuration || 'Duration';
+  formHtml += '<div class="review-form-row" style="margin-top:8px;margin-bottom:12px"><label>Date & Duration</label><div style="display:flex;gap:8px;align-items:center;position:relative"><button type="button" class="review-date-input" id="reviewDateBtn">' + fmtDateLabel(existingDate) + '</button><button type="button" class="review-date-input" id="reviewDurBtn">' + durLabel + '</button></div></div>';
+
+  formHtml += '<textarea id="reviewComment" class="review-textarea" placeholder="Share your experience (optional, max 1000 chars)" maxlength="1000">' + (existingReview ? (existingReview.comment || '') : '') + '</textarea>';
   formHtml += '<div style="display:flex;gap:8px;align-items:center">';
   formHtml += '<button class="review-submit" id="reviewSubmitBtn">' + (existingReview ? 'Update Review' : 'Submit Review') + '</button>';
   if (existingReview) formHtml += '<button class="review-delete" id="reviewDeleteBtn">Delete</button>';
@@ -2886,6 +3100,91 @@ async function initReviewSection(g) {
     });
   });
 
+  // Date picker popup
+  document.getElementById('reviewDateBtn').addEventListener('click', function() {
+    const btn = this;
+    if (document.getElementById('reviewDatePopup')) { document.getElementById('reviewDatePopup').remove(); return; }
+    if (document.getElementById('reviewTimePopup')) document.getElementById('reviewTimePopup').remove();
+    const current = document.getElementById('reviewVisitDate').value || todayStr;
+    let viewYear = parseInt(current.substring(0, 4));
+    let viewMonth = parseInt(current.substring(5, 7)) - 1;
+
+    const popup = document.createElement('div');
+    popup.id = 'reviewDatePopup';
+    popup.className = 'review-picker-popup';
+    btn.parentElement.appendChild(popup);
+
+    function renderCal() {
+      const selDate = document.getElementById('reviewVisitDate').value;
+      const first = new Date(viewYear, viewMonth, 1);
+      const last = new Date(viewYear, viewMonth + 1, 0);
+      const startDay = first.getDay();
+      const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+      let h = '<div class="review-picker-header">';
+      h += '<button type="button" class="review-picker-nav" id="rpPrev">&lt;</button>';
+      h += '<span class="review-picker-title">' + monthNames[viewMonth] + ' ' + viewYear + '</span>';
+      h += '<button type="button" class="review-picker-nav" id="rpNext">&gt;</button>';
+      h += '</div>';
+      h += '<div class="review-picker-days">';
+      ['S','M','T','W','T','F','S'].forEach(d => { h += '<span class="review-picker-dayhead">' + d + '</span>'; });
+      for (let i = 0; i < startDay; i++) h += '<span></span>';
+      for (let d = 1; d <= last.getDate(); d++) {
+        const ds = viewYear + '-' + String(viewMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+        const isToday = ds === todayStr;
+        const isSel = ds === selDate;
+        h += '<button type="button" class="review-picker-day' + (isSel ? ' selected' : '') + (isToday ? ' today' : '') + '" data-date="' + ds + '">' + d + '</button>';
+      }
+      h += '</div>';
+      popup.innerHTML = h;
+
+      popup.querySelector('#rpPrev').onclick = e => { e.stopPropagation(); viewMonth--; if (viewMonth < 0) { viewMonth = 11; viewYear--; } renderCal(); };
+      popup.querySelector('#rpNext').onclick = e => { e.stopPropagation(); viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; } renderCal(); };
+      popup.querySelectorAll('.review-picker-day').forEach(el => {
+        el.onclick = e => {
+          e.stopPropagation();
+          document.getElementById('reviewVisitDate').value = el.dataset.date;
+          const dt = new Date(el.dataset.date + 'T00:00:00');
+          btn.textContent = dt.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+          popup.remove();
+        };
+      });
+    }
+    renderCal();
+    const closeOnClick = e => { if (!popup.contains(e.target) && e.target !== btn) { popup.remove(); document.removeEventListener('click', closeOnClick); } };
+    setTimeout(() => document.addEventListener('click', closeOnClick), 0);
+  });
+
+  // Duration picker popup
+  document.getElementById('reviewDurBtn').addEventListener('click', function() {
+    const btn = this;
+    if (document.getElementById('reviewDurPopup')) { document.getElementById('reviewDurPopup').remove(); return; }
+    if (document.getElementById('reviewDatePopup')) document.getElementById('reviewDatePopup').remove();
+    if (document.getElementById('reviewTimePopup')) document.getElementById('reviewTimePopup').remove();
+    const popup = document.createElement('div');
+    popup.id = 'reviewDurPopup';
+    popup.className = 'review-picker-popup review-dur-popup';
+    const durs = ['30 Mins','45 Mins','1 Hour','1 Hour 15 Mins','1 Hour 30 Mins','1 Hour 45 Mins','2 Hours or More'];
+    const sel = document.getElementById('reviewDuration').value;
+    let h = '<div class="review-picker-header"><span class="review-picker-title">Duration</span></div>';
+    h += '<div class="review-dur-list">';
+    durs.forEach(d => { h += '<button type="button" class="review-dur-opt' + (d === sel ? ' selected' : '') + '" data-dur="' + d + '">' + d + '</button>'; });
+    h += '</div>';
+    popup.innerHTML = h;
+    btn.parentElement.appendChild(popup);
+
+    popup.querySelectorAll('.review-dur-opt').forEach(el => {
+      el.onclick = e => {
+        e.stopPropagation();
+        document.getElementById('reviewDuration').value = el.dataset.dur;
+        btn.textContent = el.dataset.dur;
+        popup.remove();
+      };
+    });
+    const closeOnClick = e => { if (!popup.contains(e.target) && e.target !== btn) { popup.remove(); document.removeEventListener('click', closeOnClick); } };
+    setTimeout(() => document.addEventListener('click', closeOnClick), 0);
+  });
+
   // Submit handler
   document.getElementById('reviewSubmitBtn').addEventListener('click', async function() {
     const ratings = {};
@@ -2898,6 +3197,10 @@ async function initReviewSection(g) {
     });
 
     if (!allRated) { document.getElementById('reviewMsg').textContent = 'Please rate all categories'; return; }
+
+    const visitDate = document.getElementById('reviewVisitDate').value;
+    if (visitDate) ratings.visit_date = visitDate + 'T00:00';
+    ratings.duration = document.getElementById('reviewDuration').value || null;
 
     const comment = document.getElementById('reviewComment').value.trim();
     this.disabled = true;
@@ -3976,6 +4279,19 @@ function sortDataTable(col) {
   window.scrollTo({ top: 0 });
 }
 
+let roadmapSort = { col: 'status', dir: 1 };
+const ROADMAP_STATUS_ORDER = { review: 0, planned: 1, 'in progress': 2, completed: 3 };
+
+window.sortRoadmapTable = function(col) {
+  if (roadmapSort.col === col) roadmapSort.dir *= -1;
+  else { roadmapSort.col = col; roadmapSort.dir = 1; }
+  const landing = document.getElementById('landingPage');
+  if (landing) {
+    landing.innerHTML = renderRoadmapPage();
+    setTimeout(initRoadmapPage, 50);
+  }
+};
+
 function renderRoadmapPage() {
   updateMeta(
     'Roadmap \u2013 Development Timeline | Brothel Search',
@@ -4001,14 +4317,16 @@ function renderRoadmapPage() {
 
   // Table
   html += '<div class="roadmap-table-wrap"><table class="roadmap-table" id="roadmapTable">';
+  const sortArrow = col => roadmapSort.col === col ? (roadmapSort.dir === 1 ? ' \u25B2' : ' \u25BC') : '';
+  const sortTh = (col, label, style) => '<th style="cursor:pointer;' + (style || '') + '" onclick="sortRoadmapTable(\'' + col + '\')">' + label + sortArrow(col) + '</th>';
   html += '<thead><tr>';
-  html += '<th style="width:50px">Type</th>';
-  html += '<th>Summary</th>';
+  html += sortTh('category', 'Type', 'width:50px');
+  html += sortTh('title', 'Summary', '');
   html += '<th>Description</th>';
-  html += '<th style="width:100px">Status</th>';
-  html += '<th style="width:70px">Votes</th>';
-  html += '<th style="width:80px">Initiator</th>';
-  html += '<th style="width:90px">Created</th>';
+  html += sortTh('status', 'Status', 'width:100px');
+  html += sortTh('votes', 'Votes', 'width:70px');
+  html += sortTh('initiator', 'Initiator', 'width:80px');
+  html += sortTh('created_at', 'Created', 'width:90px');
   html += '<th style="width:80px"></th>';
   html += '</tr></thead>';
   html += '<tbody id="roadmapBody"><tr><td colspan="8" class="roadmap-empty">Loading...</td></tr></tbody>';
@@ -4111,6 +4429,8 @@ window.roadmapInlineEdit = function(el, id, field, maxLen) {
 
 window.roadmapInlineSave = async function(id, fields) {
   await updateRoadmapItem(id, fields);
+  window._roadmapItems = null;
+  initRoadmapPage();
 };
 
 async function initRoadmapPage() {
@@ -4126,10 +4446,37 @@ async function initRoadmapPage() {
     hintEl.style.display = 'none';
   }
 
-  window._roadmapVotes = await loadRoadmapVotes();
-  const items = await loadRoadmapItems();
+  if (!window._roadmapItems) {
+    window._roadmapVotes = await loadRoadmapVotes();
+    window._roadmapItems = await loadRoadmapItems();
+  }
+  const items = [...window._roadmapItems];
   const body = document.getElementById('roadmapBody');
   if (!body) return;
+
+  // Sort items
+  const votes = window._roadmapVotes || [];
+  items.sort((a, b) => {
+    const col = roadmapSort.col;
+    const dir = roadmapSort.dir;
+    let va, vb;
+    if (col === 'status') {
+      va = ROADMAP_STATUS_ORDER[a.status] ?? 99;
+      vb = ROADMAP_STATUS_ORDER[b.status] ?? 99;
+    } else if (col === 'votes') {
+      va = votes.filter(v => v.roadmap_id === a.id && v.vote === 1).length;
+      vb = votes.filter(v => v.roadmap_id === b.id && v.vote === 1).length;
+    } else if (col === 'created_at') {
+      va = a.created_at || '';
+      vb = b.created_at || '';
+    } else {
+      va = (a[col] || '').toLowerCase();
+      vb = (b[col] || '').toLowerCase();
+    }
+    if (va < vb) return -1 * dir;
+    if (va > vb) return 1 * dir;
+    return 0;
+  });
 
   if (!items.length) {
     body.innerHTML = '<tr><td colspan="8" class="roadmap-empty">No roadmap items yet.</td></tr>';
@@ -4160,6 +4507,7 @@ async function initRoadmapPage() {
         document.getElementById('roadmapDesc').value = '';
         form.style.display = 'none';
         addBtn.style.display = '';
+        window._roadmapItems = null;
         initRoadmapPage();
       };
     }
@@ -4170,6 +4518,7 @@ async function initRoadmapPage() {
 window.deleteRoadmapItemUI = async function(id) {
   if (!confirm('Delete this roadmap item?')) return;
   await deleteRoadmapItem(id);
+  window._roadmapItems = null;
   initRoadmapPage();
 };
 

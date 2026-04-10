@@ -3450,14 +3450,8 @@ function showProfile(g) {
   window._currentProfileIdx = profileIdx;
 
   panel.classList.toggle('favorited', isFavorite(g));
-  const hasPrev = profileIdx > 0;
-  const hasNext = profileIdx >= 0 && profileIdx < currentFiltered.length - 1;
-  const prevBtn = document.getElementById('profileNavPrev');
-  const nextBtn = document.getElementById('profileNavNext');
-  prevBtn.style.display = hasPrev ? '' : 'none';
-  nextBtn.style.display = hasNext ? '' : 'none';
-  // Position arrows after panel animation completes (500ms transition)
-  setTimeout(repositionProfileNav, 550);
+  // Render navigation strip after panel animation
+  setTimeout(renderProfileNavStrip, 100);
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
@@ -3662,16 +3656,57 @@ function lightboxNav(dir) {
   document.getElementById('lightboxCounter').textContent = (window._lightboxIdx + 1) + ' / ' + photos.length;
 }
 
-function repositionProfileNav() {
-  const panel = document.getElementById('profilePanel');
-  const prev = document.getElementById('profileNavPrev');
-  const next = document.getElementById('profileNavNext');
-  if (!panel || (!prev && !next)) return;
-  const r = panel.getBoundingClientRect();
-  if (prev && prev.style.display !== 'none') prev.style.left = (r.left - 28) + 'px';
-  if (next && next.style.display !== 'none') next.style.left = r.right + 'px';
+function getProfileNavVisible() {
+  const thumbSize = window.innerWidth <= 1100 ? 60 : 78;
+  const gap = 6;
+  const arrowSpace = 2 * (54 + 8); // two arrows + gaps
+  const available = window.innerHeight - arrowSpace - 24; // padding
+  return Math.max(3, Math.floor(available / (thumbSize + gap)));
 }
-window.addEventListener('resize', repositionProfileNav);
+
+function renderProfileNavStrip() {
+  const strip = document.getElementById('profileNavStrip');
+  const thumbs = document.getElementById('profileNavThumbs');
+  const upBtn = document.getElementById('profileNavUp');
+  const downBtn = document.getElementById('profileNavDown');
+  if (!strip || !thumbs) return;
+
+  const idx = window._currentProfileIdx;
+  if (idx < 0 || currentFiltered.length <= 1) { strip.style.display = 'none'; return; }
+
+  strip.style.display = '';
+
+  // Show a window of thumbnails around the current index
+  const visCount = getProfileNavVisible();
+  const half = Math.floor(visCount / 2);
+  let start = Math.max(0, idx - half);
+  let end = Math.min(currentFiltered.length, start + visCount);
+  if (end - start < visCount) start = Math.max(0, end - visCount);
+  window._profileNavStart = start;
+  window._profileNavEnd = end;
+
+  let html = '';
+  for (let i = start; i < end; i++) {
+    const g = currentFiltered[i];
+    const isActive = i === idx;
+    const photo = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 78) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : '<div class="thumb-placeholder">' + (g.name || '?').charAt(0) + '</div>';
+    html += '<div class="profile-nav-thumb' + (isActive ? ' active' : '') + '" data-nav-idx="' + i + '" title="' + (g.name || '').replace(/"/g, '&quot;') + '">' + photo + '</div>';
+  }
+  thumbs.innerHTML = html;
+
+  upBtn.disabled = start === 0 && idx === 0;
+  downBtn.disabled = end === currentFiltered.length && idx === currentFiltered.length - 1;
+
+  // Click handlers
+  thumbs.querySelectorAll('.profile-nav-thumb').forEach(el => {
+    el.onclick = () => {
+      const i = parseInt(el.dataset.navIdx);
+      if (i !== idx) showProfile(currentFiltered[i]);
+    };
+  });
+  upBtn.onclick = () => { if (idx > 0) showProfile(currentFiltered[idx - 1]); };
+  downBtn.onclick = () => { if (idx < currentFiltered.length - 1) showProfile(currentFiltered[idx + 1]); };
+}
 
 function navigateProfile(dir) {
   const idx = window._currentProfileIdx;
@@ -3686,8 +3721,7 @@ function closeProfile() {
   const overlay = document.getElementById('profileOverlay');
   overlay.classList.remove('active');
   document.body.style.overflow = '';
-  document.getElementById('profileNavPrev').style.display = 'none';
-  document.getElementById('profileNavNext').style.display = 'none';
+  document.getElementById('profileNavStrip').style.display = 'none';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
   updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);

@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1952,6 +1952,59 @@
         "DATY"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Pixie",
+      "country": [],
+      "age": "23",
+      "height": "",
+      "cup": "C",
+      "body": "8",
+      "desc": "Welcome Pixie! A stunningly petite, irresistibly captivating newcomer making her debut at the Gateway. Don’t be deceived by her soft, sweet voice—it only hints at the playful, adventurous side waiting to be discovered. Pixie offers a tantalising range of experiences, including couples sessions, pegging, women and lesbian doubles, indulgent erotic and Nuru massage, as well... View Article",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-04-01",
+      "lastRostered": "2026-04-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/pixie-new-3/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/IMG_9407-002-1.jpeg"
+      ],
+      "labels": [
+        "DFK",
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "Couple",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Chanel",
+      "country": [],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "Starting Monday, 13th April We’re excited to welcome Chanel to the Gateway Club. Chanel is a slim, petite beauty with striking body art, a size 6 figure, and a B-cup bust. She brings a fresh energy and captivating presence you won’t want to miss. More details coming soon — stay tuned.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/chanel-new-6/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Double",
+        "Toys",
+        "GFE"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2073,12 +2126,12 @@
         "end": "18:00"
       },
       "2026-04-10": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-11": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-08": {
         "start": "12:00",
@@ -2121,8 +2174,8 @@
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "12:00",
-        "end": "06:00"
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Dillan": {
@@ -2245,7 +2298,7 @@
     "Reign": {},
     "Ruby": {
       "2026-04-10": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -2479,8 +2532,15 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Chanel": {
+      "2026-04-13": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Pixie": {}
   },
-  "lastGirlsSync": "2026-04-08T11:40:15.904Z",
+  "lastGirlsSync": "2026-04-10T10:53:10.755Z",
   "lastCalendarSync": "2026-04-09T19:33:10.483Z"
 }

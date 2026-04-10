@@ -1392,6 +1392,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-10"
+    },
+    {
+      "name": "Cammie",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "A",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/07/cammie-1.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2032,6 +2052,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-03T00:33:27.645Z",
+  "lastGirlsSync": "2026-04-10T16:00:38.089Z",
   "lastCalendarSync": "2026-04-10T10:54:00.904Z"
 }

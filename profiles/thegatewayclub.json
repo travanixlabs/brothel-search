@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-12",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-10",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1543,7 +1543,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-11",
+      "lastRostered": "2026-04-12",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/layla-new-4/",
       "photos": [],
       "labels": [
@@ -1965,7 +1965,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-04-01",
+      "lastRostered": "2026-04-14",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/pixie-new-3/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/IMG_9407-002-1.jpeg"
@@ -1995,7 +1995,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-13",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/chanel-new-6/",
       "photos": [],
       "labels": [
@@ -2053,10 +2053,6 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-04-10": {
-        "start": "12:00",
-        "end": "06:00"
-      },
       "2026-04-11": {
         "start": "12:00",
         "end": "06:00"
@@ -2106,10 +2102,14 @@
         "end": "06:00"
       },
       "2026-04-10": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       },
       "2026-04-11": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-04-12": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -2126,12 +2126,12 @@
         "end": "18:00"
       },
       "2026-04-10": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-04-11": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-04-08": {
         "start": "12:00",
@@ -2174,8 +2174,8 @@
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Dillan": {
@@ -2273,6 +2273,10 @@
       "2026-04-12": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-11": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Madison": {},
@@ -2298,7 +2302,7 @@
     "Reign": {},
     "Ruby": {
       "2026-04-10": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2389,7 +2393,7 @@
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -2410,7 +2414,7 @@
       },
       "2026-04-10": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Megan": {},
@@ -2520,6 +2524,7 @@
       "2026-04-10",
       "2026-04-11",
       "2026-04-12",
+      "2026-04-13",
       "2026-04-14",
       "2026-04-15"
     ],
@@ -2539,8 +2544,13 @@
         "end": "06:00"
       }
     },
-    "Pixie": {}
+    "Pixie": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-10T10:53:10.755Z",
-  "lastCalendarSync": "2026-04-09T19:33:10.483Z"
+  "lastCalendarSync": "2026-04-10T10:54:05.033Z"
 }

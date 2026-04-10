@@ -4520,6 +4520,26 @@
       ],
       "originalSite": "Exists",
       "lastRostered": "2026-01-01"
+    },
+    {
+      "name": "Jolee",
+      "country": [
+        "Asian"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "A Geisha Experience Hello Handsome, Soft, alluring, and effortlessly captivating… I’m a refined Japanese beauty with silky black hair and a graceful 162cm frame. My petite size and natural C-cup curves create a delicate silhouette that feels just as inviting as it looks. I carry myself with quiet elegance, but beneath my gentle ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "",
+      "oldUrl": "https://www.stilettosydney.com/workers/jolee/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5611,6 +5631,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-05T09:17:55.462Z",
+  "lastGirlsSync": "2026-04-10T10:55:36.455Z",
   "lastCalendarSync": "2026-04-10T10:54:08.144Z"
 }

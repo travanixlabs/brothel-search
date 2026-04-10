@@ -1,6 +1,71 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 html[style*="paused"] *{animation-play-state:paused!important}
+
+/* ── Scroll Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(20px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)}
+.reveal-stagger.visible>*{opacity:1;transform:translateY(0)}
+.reveal-stagger.visible>*:nth-child(1){transition-delay:0s}
+.reveal-stagger.visible>*:nth-child(2){transition-delay:.06s}
+.reveal-stagger.visible>*:nth-child(3){transition-delay:.12s}
+.reveal-stagger.visible>*:nth-child(4){transition-delay:.18s}
+.reveal-stagger.visible>*:nth-child(5){transition-delay:.24s}
+.reveal-stagger.visible>*:nth-child(6){transition-delay:.3s}
+.reveal-stagger.visible>*:nth-child(7){transition-delay:.36s}
+.reveal-stagger.visible>*:nth-child(8){transition-delay:.42s}
+.reveal-stagger.visible>*:nth-child(9){transition-delay:.48s}
+.reveal-stagger.visible>*:nth-child(10){transition-delay:.54s}
+.reveal-stagger.visible>*:nth-child(n+11){transition-delay:.6s}
+
+/* ── Gold Shimmer Text ── */
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.shimmer-text{background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 25%,var(--gold) 50%,var(--gold-light) 75%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+
+/* ── Hero Entry ── */
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroLineExpand{from{width:0}to{width:60px}}
+.hero-enter{animation:heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both}
+.hero-enter-d1{animation-delay:.1s}
+.hero-enter-d2{animation-delay:.3s}
+.hero-enter-d3{animation-delay:.5s}
+.hero-enter-d4{animation-delay:.7s}
+.hero-enter-d5{animation-delay:.9s}
+.hero-line-anim{animation:heroLineExpand .8s cubic-bezier(0.16,1,0.3,1) .2s both}
+
+/* ── Page Transition ── */
+.page-transition-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:var(--bg-dark);opacity:0;transition:opacity .25s ease}
+.page-transition-overlay.active{opacity:1;pointer-events:all}
+
+/* ── Venue Carousel Enhanced ── */
+.venue-carousel{scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;cursor:grab;scrollbar-width:none}
+.venue-carousel::-webkit-scrollbar{display:none}
+.venue-carousel:active{cursor:grabbing}
+.venue-carousel-item{scroll-snap-align:center;transition:border-color .3s,transform .3s,box-shadow .3s}
+.venue-carousel-item:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(201,149,44,0.1)}
+
+/* ── Filter Sidebar Enhanced ── */
+.filter-sidebar{transition:width .35s cubic-bezier(0.16,1,0.3,1)}
+.filter-sidebar-content{transition:opacity .25s ease .1s}
+.filter-sidebar:not(.open) .filter-sidebar-content{opacity:0;transition:opacity .15s ease}
+
+/* ── Review Stars Animation ── */
+@keyframes starPop{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+.review-stars-interactive .review-star{transition:color .15s,transform .15s;cursor:pointer}
+.review-stars-interactive .review-star:hover{transform:scale(1.2)}
+.review-stars-interactive .review-star.active{animation:starPop .3s ease}
+
+/* ── Venue Divider Line Animation ── */
+.venue-divider{overflow:hidden}
+.venue-divider.reveal::before,.venue-divider.reveal::after{transform:scaleX(0);transition:transform .8s cubic-bezier(0.16,1,0.3,1) .2s}
+.venue-divider.reveal.visible::before,.venue-divider.reveal.visible::after{transform:scaleX(1)}
+
+/* ── Gold Particle Canvas ── */
+#goldParticleCanvas{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+/* ── Reduced Motion ── */
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*{opacity:1;transform:none;transition:none}.shimmer-text{animation:none}.hero-enter{animation:none;opacity:1;transform:none}.page-transition-overlay{display:none}#goldParticleCanvas{display:none}}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(201,149,44,0.2);border-radius:4px}

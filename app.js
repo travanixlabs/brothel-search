@@ -2542,10 +2542,20 @@ function loadMore() {
     loader.id = 'scrollLoader';
     loader.innerHTML = '<span></span><span></span><span></span>';
     document.getElementById('girlsGrid').appendChild(loader);
+  const firstNewIdx = grid.children.length;
   for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
   currentPage++;
     const sl = document.getElementById('scrollLoader');
     if (sl) sl.remove();
+  // Staggered entrance for new cards
+  const newCards = Array.from(grid.children).slice(firstNewIdx);
+  newCards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1)';
+    card.style.transitionDelay = (i * 0.04) + 's';
+    requestAnimationFrame(() => requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }));
+  });
   loadingMore = false;
 }
 
@@ -5326,3 +5336,156 @@ document.getElementById('navData').addEventListener('click', function(e) {
     container.appendChild(span);
   });
 })();
+
+// ══════════════════════════════════════════════
+// ── Animations & Visual Effects ──
+// ══════════════════════════════════════════════
+
+// ── 1. Scroll Reveal Observer ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+function initScrollReveals() {
+  document.querySelectorAll('.venue-divider, .home-stats, .home-search-wrap, .venue-carousel, #homeRecentReviews, .landing-grid, .review-section, .analytics-section, .compare-table-wrap, .roadmap-table-wrap').forEach(el => {
+    if (!el.classList.contains('reveal')) { el.classList.add('reveal'); revealObserver.observe(el); }
+  });
+  // Stagger children for card grids
+  document.querySelectorAll('.girls-grid, .landing-grid').forEach(el => {
+    if (!el.classList.contains('reveal-stagger')) { el.classList.add('reveal-stagger'); revealObserver.observe(el); }
+  });
+}
+
+// Re-init reveals after page renders
+const _origRenderGrid = renderGrid;
+renderGrid = function() { _origRenderGrid(); setTimeout(initScrollReveals, 50); };
+
+// ── 2. Gold Shimmer on Section Titles ──
+function initShimmerText() {
+  document.querySelectorAll('.section-title, .landing-title').forEach(el => {
+    if (!el.classList.contains('shimmer-text')) el.classList.add('shimmer-text');
+  });
+}
+
+// ── 3. Gold Particle Parallax Background ──
+(function initGoldParticles() {
+  const canvas = document.getElementById('goldParticleCanvas');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d');
+  const MAX_PARTICLES = 35;
+  let particles = [];
+  let w, h, mouseX = 0, mouseY = 0, animId;
+
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+  for (let i = 0; i < MAX_PARTICLES; i++) {
+    particles.push({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3, vy: -Math.random() * 0.4 - 0.1,
+      r: Math.random() * 2 + 0.5,
+      a: Math.random() * 0.3 + 0.05,
+      parallax: Math.random() * 0.5 + 0.5,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    for (const p of particles) {
+      // Subtle parallax from mouse
+      const dx = (mouseX - w / 2) * 0.01 * p.parallax;
+      const dy = (mouseY - h / 2) * 0.01 * p.parallax;
+      p.x += p.vx; p.y += p.vy;
+      if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+      if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
+
+      ctx.beginPath();
+      ctx.arc(p.x + dx, p.y + dy, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201, 149, 44, ${p.a})`;
+      ctx.fill();
+    }
+    animId = requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Pause when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(animId);
+    else draw();
+  });
+})();
+
+// ── 4. Hero Section Entry Classes ──
+function initHeroAnimations() {
+  const tag = document.querySelector('.section-tag');
+  const title = document.querySelector('.section-title');
+  const line = document.querySelector('.section-line');
+  const tagline = document.querySelector('.hero-tagline');
+  const stats = document.querySelector('.home-stats');
+  const search = document.querySelector('.home-search-wrap');
+
+  if (tag && !tag.classList.contains('hero-enter')) { tag.classList.add('hero-enter', 'hero-enter-d1'); }
+  if (line && !line.classList.contains('hero-line-anim')) { line.classList.add('hero-line-anim'); }
+  if (title && !title.classList.contains('hero-enter')) { title.classList.add('hero-enter', 'hero-enter-d2'); }
+  if (tagline && !tagline.classList.contains('hero-enter')) { tagline.classList.add('hero-enter', 'hero-enter-d3'); }
+  if (search && !search.classList.contains('hero-enter')) { search.classList.add('hero-enter', 'hero-enter-d4'); }
+  if (stats && !stats.classList.contains('hero-enter')) { stats.classList.add('hero-enter', 'hero-enter-d5'); }
+}
+
+// ── 5. Page Transition ──
+const pageTransEl = document.getElementById('pageTransition');
+const _origNavigateToLanding = navigateToLanding;
+navigateToLanding = function(path) {
+  if (!pageTransEl || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return _origNavigateToLanding(path);
+  }
+  pageTransEl.classList.add('active');
+  setTimeout(() => {
+    _origNavigateToLanding(path);
+    setTimeout(() => pageTransEl.classList.remove('active'), 50);
+  }, 250);
+};
+
+// ── 6. Venue Carousel Drag ──
+function initCarouselDrag() {
+  document.querySelectorAll('.venue-carousel').forEach(el => {
+    if (el._dragInit) return;
+    el._dragInit = true;
+    let isDown = false, startX, scrollLeft;
+    el.addEventListener('mousedown', e => { isDown = true; el.classList.add('grabbing'); startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft; });
+    el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('grabbing'); });
+    el.addEventListener('mouseup', () => { isDown = false; el.classList.remove('grabbing'); });
+    el.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - el.offsetLeft; el.scrollLeft = scrollLeft - (x - startX) * 1.5; });
+  });
+}
+
+// ── 7. Init all animations after page render ──
+function initAllAnimations() {
+  setTimeout(() => {
+    initHeroAnimations();
+    initShimmerText();
+    initScrollReveals();
+    initCarouselDrag();
+  }, 100);
+}
+
+// Hook into page renders
+const _origInitHomeListeners = initHomePageListeners;
+initHomePageListeners = function() {
+  _origInitHomeListeners();
+  initAllAnimations();
+};
+
+// Hook into landing route renders
+const _origHandleLanding = handleLandingRoute;
+handleLandingRoute = function(path) {
+  const result = _origHandleLanding(path);
+  initAllAnimations();
+  return result;
+};
+
+// Init on first load
+document.addEventListener('DOMContentLoaded', () => setTimeout(initAllAnimations, 200));

@@ -1814,7 +1814,7 @@ async function syncStilettoGirls(env, site) {
   }
 
   for (const p of toProcess) {
-    let age = '', labels = p.tileLabels || [], photos = (p.photoUrl && !/Logo|Screen-Shot/i.test(p.photoUrl)) ? [p.photoUrl] : [], desc = '', body = '';
+    let age = '', labels = p.tileLabels || [], photos = (p.photoUrl && !/Logo|Screen-Shot/i.test(p.photoUrl)) ? [p.photoUrl] : [], desc = '', body = '', roster = {};
     try {
       await new Promise(r => setTimeout(r, 300));
       const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -1825,12 +1825,13 @@ async function syncStilettoGirls(env, site) {
         labels = parsed.labels;
         desc = parsed.desc;
         body = parsed.body;
+        roster = parsed.roster;
         if (parsed.photos.length) photos = parsed.photos;
         // Save roster to calendar
-        if (Object.keys(parsed.roster).length) {
+        if (Object.keys(roster).length) {
           if (!data.calendar) data.calendar = {};
           if (!data.calendar[p.name]) data.calendar[p.name] = {};
-          Object.assign(data.calendar[p.name], parsed.roster);
+          Object.assign(data.calendar[p.name], roster);
         }
       }
     } catch (e) { console.error(`[Stiletto] Error fetching ${p.name}:`, e.message); }
@@ -1840,7 +1841,7 @@ async function syncStilettoGirls(env, site) {
       cup: p.cup, body, desc,
       val1: '390', val2: '490', val3: '590',
       startDate: (() => { for (const ph of photos) { const m = ph.match(/\/uploads\/(\d{4})\/(\d{2})\//); if (m) return m[1] + '-' + m[2] + '-01'; } return '2026-01-01'; })(),
-      lastRostered: Object.keys(parsed.roster || {}).length ? todayStr : '',
+      lastRostered: Object.keys(roster).length ? todayStr : '',
       oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',
     };
@@ -4736,21 +4737,25 @@ export default {
         ]);
         console.log('All girls syncs complete.');
 
-        // Step 2: Photo checks (also handles dead profile removal)
-        async function trackPhotoCheck(site) {
-          try {
-            const r = await checkBrokenPhotos(env, site);
-            photoResults[site.name] = { removed: r.removed || 0, fixed: r.fixed || 0 };
-          } catch(e) {
-            console.error(`[${site.name}] Photo check error:`, e);
-            photoResults[site.name] = { removed: 0, fixed: 0 };
+        // Step 2: Photo checks — only run on 2am AEST (16 UTC) to save subrequests for roster sync
+        if (hour === 16) {
+          async function trackPhotoCheck(site) {
+            try {
+              const r = await checkBrokenPhotos(env, site);
+              photoResults[site.name] = { removed: r.removed || 0, fixed: r.fixed || 0 };
+            } catch(e) {
+              console.error(`[${site.name}] Photo check error:`, e);
+              photoResults[site.name] = { removed: 0, fixed: 0 };
+            }
           }
-        }
-        await Promise.all(allSites.map(s => trackPhotoCheck(s)));
-        console.log('Photo checks complete.');
+          await Promise.all(allSites.map(s => trackPhotoCheck(s)));
+          console.log('Photo checks complete.');
 
-        // Step 3: Regenerate sitemap
-        await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
+          // Regenerate sitemap
+          await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
+        } else {
+          console.log('Skipping photo checks (only runs at 2am AEST).');
+        }
 
         // Step 4: Roster sync (after girls sync complete)
         console.log('Starting roster sync...');

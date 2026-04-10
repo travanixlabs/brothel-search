@@ -3445,7 +3445,19 @@ function showProfile(g) {
   const photos = g.photos || [];
   const mainImg = photos.length ? photos[0] : '';
 
+  // Track current profile index in filtered list
+  const profileIdx = currentFiltered.indexOf(g);
+  window._currentProfileIdx = profileIdx;
+
   panel.classList.toggle('favorited', isFavorite(g));
+  const hasPrev = profileIdx > 0;
+  const hasNext = profileIdx >= 0 && profileIdx < currentFiltered.length - 1;
+  const prevBtn = document.getElementById('profileNavPrev');
+  const nextBtn = document.getElementById('profileNavNext');
+  prevBtn.style.display = hasPrev ? '' : 'none';
+  nextBtn.style.display = hasNext ? '' : 'none';
+  // Position arrows after panel animation completes (500ms transition)
+  setTimeout(repositionProfileNav, 550);
   panel.innerHTML = `
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
@@ -3650,11 +3662,32 @@ function lightboxNav(dir) {
   document.getElementById('lightboxCounter').textContent = (window._lightboxIdx + 1) + ' / ' + photos.length;
 }
 
+function repositionProfileNav() {
+  const panel = document.getElementById('profilePanel');
+  const prev = document.getElementById('profileNavPrev');
+  const next = document.getElementById('profileNavNext');
+  if (!panel || (!prev && !next)) return;
+  const r = panel.getBoundingClientRect();
+  if (prev && prev.style.display !== 'none') prev.style.left = (r.left - 28) + 'px';
+  if (next && next.style.display !== 'none') next.style.left = r.right + 'px';
+}
+window.addEventListener('resize', repositionProfileNav);
+
+function navigateProfile(dir) {
+  const idx = window._currentProfileIdx;
+  if (idx < 0) return;
+  const newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= currentFiltered.length) return;
+  showProfile(currentFiltered[newIdx]);
+}
+
 function closeProfile() {
   clearInterval(window._profileRotate);
   const overlay = document.getElementById('profileOverlay');
   overlay.classList.remove('active');
   document.body.style.overflow = '';
+  document.getElementById('profileNavPrev').style.display = 'none';
+  document.getElementById('profileNavNext').style.display = 'none';
   setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
   if (window.location.pathname !== '/') history.pushState(null, '', '/');
   updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);

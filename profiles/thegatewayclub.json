@@ -1543,7 +1543,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-11",
+      "lastRostered": "2026-04-12",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/layla-new-4/",
       "photos": [],
       "labels": [
@@ -1952,6 +1952,59 @@
         "DATY"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Pixie",
+      "country": [],
+      "age": "23",
+      "height": "",
+      "cup": "C",
+      "body": "8",
+      "desc": "Welcome Pixie! A stunningly petite, irresistibly captivating newcomer making her debut at the Gateway. Don’t be deceived by her soft, sweet voice—it only hints at the playful, adventurous side waiting to be discovered. Pixie offers a tantalising range of experiences, including couples sessions, pegging, women and lesbian doubles, indulgent erotic and Nuru massage, as well... View Article",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-04-01",
+      "lastRostered": "2026-04-14",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/pixie-new-3/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/IMG_9407-002-1.jpeg"
+      ],
+      "labels": [
+        "DFK",
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "Couple",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Chanel",
+      "country": [],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "Starting Monday, 13th April We’re excited to welcome Chanel to the Gateway Club. Chanel is a slim, petite beauty with striking body art, a size 6 figure, and a B-cup bust. She brings a fresh energy and captivating presence you won’t want to miss. More details coming soon — stay tuned.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-04-13",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/chanel-new-6/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Double",
+        "Toys",
+        "GFE"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -1997,10 +2050,6 @@
         "end": "06:00"
       },
       "2026-04-07": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-10": {
         "start": "12:00",
         "end": "06:00"
       },
@@ -2053,10 +2102,14 @@
         "end": "06:00"
       },
       "2026-04-10": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       },
       "2026-04-11": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-04-12": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -2122,7 +2175,7 @@
       },
       "2026-04-11": {
         "start": "12:00",
-        "end": "06:00"
+        "end": "18:00"
       }
     },
     "Dillan": {
@@ -2220,6 +2273,10 @@
       "2026-04-12": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-11": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Madison": {},
@@ -2336,7 +2393,7 @@
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -2357,7 +2414,7 @@
       },
       "2026-04-10": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Megan": {},
@@ -2467,6 +2524,7 @@
       "2026-04-10",
       "2026-04-11",
       "2026-04-12",
+      "2026-04-13",
       "2026-04-14",
       "2026-04-15"
     ],
@@ -2479,8 +2537,20 @@
         "start": "12:00",
         "end": "06:00"
       }
+    },
+    "Chanel": {
+      "2026-04-13": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Pixie": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "18:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-08T11:40:15.904Z",
-  "lastCalendarSync": "2026-04-09T19:33:10.483Z"
+  "lastGirlsSync": "2026-04-10T10:53:10.755Z",
+  "lastCalendarSync": "2026-04-10T10:54:05.033Z"
 }

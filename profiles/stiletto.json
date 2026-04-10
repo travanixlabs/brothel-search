@@ -634,7 +634,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Carmen",
@@ -2116,7 +2116,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Kennedy",
@@ -2443,7 +2443,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "London",
@@ -2496,7 +2496,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Malibu",
@@ -2614,7 +2614,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2022-01-01"
+      "lastRostered": "2026-04-10"
     },
     {
       "name": "Mel",
@@ -3032,7 +3032,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Paloma",
@@ -3332,7 +3332,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Riley",
@@ -4111,7 +4111,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Tahlia",
@@ -4388,7 +4388,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-06"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Viv",
@@ -4520,6 +4520,26 @@
       ],
       "originalSite": "Exists",
       "lastRostered": "2026-01-01"
+    },
+    {
+      "name": "Jolee",
+      "country": [
+        "Asian"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "A Geisha Experience Hello Handsome, Soft, alluring, and effortlessly captivating… I’m a refined Japanese beauty with silky black hair and a graceful 162cm frame. My petite size and natural C-cup curves create a delicate silhouette that feels just as inviting as it looks. I carry myself with quiet elegance, but beneath my gentle ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "",
+      "oldUrl": "https://www.stilettosydney.com/workers/jolee/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4541,6 +4561,7 @@
       "2026-04-17",
       "2026-04-18",
       "2026-04-19",
+      "2026-04-20",
       "2026-04-23"
     ],
     "Allegra": {
@@ -4620,10 +4641,6 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-04-10": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-04-12": {
         "start": "09:00",
         "end": "17:00"
@@ -4695,6 +4712,22 @@
         "end": "22:00"
       },
       "2026-04-10": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-04-13": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-04-14": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-04-15": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-04-16": {
         "start": "14:00",
         "end": "22:00"
       }
@@ -4871,7 +4904,7 @@
         "end": "08:00"
       },
       "2026-04-10": {
-        "start": "19:00",
+        "start": "21:00",
         "end": "07:00"
       },
       "2026-04-11": {
@@ -5011,6 +5044,10 @@
       "2026-04-17": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-04-10": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Queen": {
@@ -5042,11 +5079,11 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-04-10": {
+      "2026-04-11": {
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-04-11": {
+      "2026-04-17": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -5059,6 +5096,22 @@
       "2026-04-05": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-04-16": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-17": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-18": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-19": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Giselle": {
@@ -5099,6 +5152,18 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-04-18": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-04-19": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-04-20": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -5129,6 +5194,14 @@
       "2026-04-12": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-04-14": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-04-16": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Jamie": {
@@ -5235,6 +5308,18 @@
       "2026-04-12": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-04-16": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-17": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Halo": {
@@ -5247,10 +5332,6 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
-      },
-      "2026-04-10": {
-        "start": "13:00",
-        "end": "19:00"
       }
     },
     "Lilith": {
@@ -5267,10 +5348,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-04-10": {
-        "start": "12:00",
-        "end": "20:00"
       },
       "2026-04-11": {
         "start": "06:00",
@@ -5363,7 +5440,7 @@
         "end": "06:00"
       },
       "2026-04-10": {
-        "start": "22:00",
+        "start": "14:30",
         "end": "06:00"
       },
       "2026-04-11": {
@@ -5376,13 +5453,41 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-04-10": {
+      "2026-04-15": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-04-16": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-04-17": {
+        "start": "06:00",
+        "end": "14:00"
       }
     },
     "Jayde": {
       "2026-04-08": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-10": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-11": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-16": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-17": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-18": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -5406,20 +5511,12 @@
         "start": "02:00",
         "end": "08:00"
       },
-      "2026-04-10": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-04-12": {
         "start": "12:00",
         "end": "20:00"
       }
     },
     "Roxi": {
-      "2026-04-10": {
-        "start": "21:00",
-        "end": "05:00"
-      },
       "2026-04-11": {
         "start": "21:00",
         "end": "05:00"
@@ -5520,8 +5617,20 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Margot": {
+      "2026-04-10": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
+    "Kelsey": {
+      "2026-04-10": {
+        "start": "20:00",
+        "end": "04:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-05T09:17:55.462Z",
-  "lastCalendarSync": "2026-04-09T19:33:19.374Z"
+  "lastGirlsSync": "2026-04-10T10:55:36.455Z",
+  "lastCalendarSync": "2026-04-10T10:54:08.144Z"
 }

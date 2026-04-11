@@ -732,7 +732,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Chanel",
@@ -915,7 +915,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Dakota",
@@ -1499,7 +1499,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-13"
     },
     {
       "name": "Halo",
@@ -2069,7 +2069,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-11"
     },
     {
       "name": "Kelsey",
@@ -4535,7 +4535,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/jolee/",
       "photos": [],
       "labels": [],
@@ -5125,10 +5125,6 @@
         "start": "07:00",
         "end": "15:00"
       },
-      "2026-04-11": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-04-12": {
         "start": "07:00",
         "end": "15:00"
@@ -5281,10 +5277,6 @@
       }
     },
     "Viv": {
-      "2026-04-11": {
-        "start": "11:00",
-        "end": "19:00"
-      },
       "2026-04-04": {
         "start": "20:00",
         "end": "04:00"
@@ -5348,10 +5340,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-04-11": {
-        "start": "06:00",
-        "end": "12:00"
       }
     },
     "Amelia": {
@@ -5361,10 +5349,6 @@
       }
     },
     "Jess": {
-      "2026-04-11": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-04-18": {
         "start": "18:00",
         "end": "02:00"
@@ -5629,8 +5613,36 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Keisha": {
+      "2026-04-11": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
+    "Daisy": {
+      "2026-04-13": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-04-16": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
+    "Hailey": {
+      "2026-04-13": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
+    "CeCe": {
+      "2026-04-17": {
+        "start": "19:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-10T10:55:36.455Z",
-  "lastCalendarSync": "2026-04-10T10:54:08.144Z"
+  "lastCalendarSync": "2026-04-11T10:18:27.172Z"
 }

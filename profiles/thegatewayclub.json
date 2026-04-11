@@ -451,7 +451,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-11",
       "desc": "Our new addition Ezra is a young, tall and slim South American &#8211; European beauty with sun kissed skin that glows with a perfect tan. She has long blonde hair cascading down her back and striking brown eyes. Effortlessly radiant, She embodies an exotic mix of warmth and elegance."
     },
     {
@@ -1628,7 +1628,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-11",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/mayanew/",
       "photos": [],
       "labels": [],
@@ -2018,7 +2018,7 @@
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2036,7 +2036,7 @@
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2110,7 +2110,7 @@
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2172,10 +2172,6 @@
       "2026-04-09": {
         "start": "12:00",
         "end": "06:00"
-      },
-      "2026-04-11": {
-        "start": "12:00",
-        "end": "18:00"
       }
     },
     "Dillan": {
@@ -2216,6 +2212,10 @@
       },
       "2026-04-10": {
         "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-04-11": {
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2276,7 +2276,7 @@
       },
       "2026-04-11": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Madison": {},
@@ -2389,11 +2389,11 @@
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-12": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2413,6 +2413,10 @@
         "end": "18:00"
       },
       "2026-04-10": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-04-11": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -2478,7 +2482,7 @@
         "end": "06:00"
       },
       "2026-04-11": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-12": {
@@ -2552,5 +2556,5 @@
     }
   },
   "lastGirlsSync": "2026-04-10T10:53:10.755Z",
-  "lastCalendarSync": "2026-04-10T10:54:05.033Z"
+  "lastCalendarSync": "2026-04-11T10:18:19.525Z"
 }

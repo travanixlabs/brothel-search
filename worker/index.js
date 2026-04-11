@@ -4694,16 +4694,18 @@ export default {
         return;
       }
 
-      // 10, 22, 04, 16 UTC (8pm, 8am, 2pm, 2am AEST) — Girl sync → then Roster sync
+      // Sync hours: 10(8pm AEST), 22(8am), 4(2pm), 16(2am)
+      // Run girl sync and roster sync SEQUENTIALLY in small batches to avoid subrequest limits
       const aest = { 10: '8pm', 22: '8am', 4: '2pm', 16: '2am' };
       if (aest[hour]) {
-        console.log(aest[hour] + ' AEST — Girl sync + Roster sync');
+        console.log(aest[hour] + ' AEST — Sync starting');
 
         const allSites = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
 
-        // Step 1: Girl sync (all venues in parallel)
         const girlResults = {};
         const photoResults = {};
+        const rosterResults = {};
+
         async function syncAllGirls(fn, site) {
           let totalAdded = 0, totalUpdated = 0;
           let result;
@@ -4715,64 +4717,58 @@ export default {
           } while (result.remaining > 0);
           girlResults[site.name] = { added: totalAdded, updated: totalUpdated, error: result.error || null };
         }
+        async function trackRoster(site) {
+          try { await syncCalendar(env, site); rosterResults[site.name] = { ok: true, error: null }; }
+          catch(e) { console.error(`[${site.name}] Calendar sync error:`, e); rosterResults[site.name] = { ok: false, error: e.message }; }
+        }
 
-        await Promise.all([
-          syncAllGirls(syncGirls, SITES.empire),
-          syncAllGirls(syncGirls, SITES.club),
-          syncAllGirls(syncWpGirls, SITES.kyoto206),
-          syncAllGirls(syncWpGirls, SITES.sakura57),
-          syncAllGirls(syncWpGirls, SITES.top127),
-          syncAllGirls(syncWpGirls, SITES.fantasyclub35),
-          syncAllGirls(syncWpGirls, SITES.city429),
-          syncAllGirls(syncPennys77Girls, SITES.pennys77),
-          (async () => { try { await syncGoldenAppleGirls(env, SITES.thegoldenapple); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: null }; } catch(e) { console.error('[Golden Apple] Girls sync error:', e); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: e.message }; } })(),
-          syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
-          syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
-          syncAllGirls(syncGatewayClubGirls, SITES.thegatewayclub),
-          syncAllGirls(syncMarrickvilleBrothelGirls, SITES.marrickvillebrothel),
-          syncAllGirls(syncSpringHouseGirls, SITES.springhouse),
-          syncAllGirls(syncStilettoGirls, SITES.stiletto),
-          syncAllGirls(syncWivesOnlyGirls, SITES.wivesonly),
-          syncAllGirls(syncJiniaGirls, SITES.jinia),
-        ]);
+        // Girl sync — 3 sequential batches of ~6 to stay within subrequest limits
+        const girlSyncTasks = [
+          () => syncAllGirls(syncGirls, SITES.empire),
+          () => syncAllGirls(syncGirls, SITES.club),
+          () => syncAllGirls(syncWpGirls, SITES.kyoto206),
+          () => syncAllGirls(syncWpGirls, SITES.sakura57),
+          () => syncAllGirls(syncWpGirls, SITES.top127),
+          () => syncAllGirls(syncWpGirls, SITES.fantasyclub35),
+          () => syncAllGirls(syncWpGirls, SITES.city429),
+          () => syncAllGirls(syncPennys77Girls, SITES.pennys77),
+          () => (async () => { try { await syncGoldenAppleGirls(env, SITES.thegoldenapple); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: null }; } catch(e) { girlResults['The Golden Apple'] = { added: 0, updated: 0, error: e.message }; } })(),
+          () => syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
+          () => syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
+          () => syncAllGirls(syncGatewayClubGirls, SITES.thegatewayclub),
+          () => syncAllGirls(syncMarrickvilleBrothelGirls, SITES.marrickvillebrothel),
+          () => syncAllGirls(syncSpringHouseGirls, SITES.springhouse),
+          () => syncAllGirls(syncStilettoGirls, SITES.stiletto),
+          () => syncAllGirls(syncWivesOnlyGirls, SITES.wivesonly),
+          () => syncAllGirls(syncJiniaGirls, SITES.jinia),
+        ];
+        // Run in sequential batches of 6
+        for (let i = 0; i < girlSyncTasks.length; i += 6) {
+          await Promise.all(girlSyncTasks.slice(i, i + 6).map(fn => fn()));
+          console.log(`Girls batch ${Math.floor(i/6)+1} complete.`);
+        }
         console.log('All girls syncs complete.');
 
-        // Step 2: Photo checks — only run on 2am AEST (16 UTC) to save subrequests for roster sync
+        // Roster sync — sequential batches of 6
+        for (let i = 0; i < allSites.length; i += 6) {
+          await Promise.all(allSites.slice(i, i + 6).map(s => trackRoster(s)));
+          console.log(`Roster batch ${Math.floor(i/6)+1} complete.`);
+        }
+        console.log('All roster syncs complete.');
+
+        // Photo checks + sitemap at 2am AEST only
         if (hour === 16) {
-          async function trackPhotoCheck(site) {
+          for (const site of allSites) {
             try {
               const r = await checkBrokenPhotos(env, site);
               photoResults[site.name] = { removed: r.removed || 0, fixed: r.fixed || 0 };
-            } catch(e) {
-              console.error(`[${site.name}] Photo check error:`, e);
-              photoResults[site.name] = { removed: 0, fixed: 0 };
-            }
+            } catch(e) { photoResults[site.name] = { removed: 0, fixed: 0 }; }
           }
-          await Promise.all(allSites.map(s => trackPhotoCheck(s)));
-          console.log('Photo checks complete.');
-
-          // Regenerate sitemap
           await regenerateSitemap(env).catch(e => console.error('[SEO] Sitemap error:', e));
-        } else {
-          console.log('Skipping photo checks (only runs at 2am AEST).');
+          console.log('Photo checks + sitemap complete.');
         }
 
-        // Step 4: Roster sync (after girls sync complete)
-        console.log('Starting roster sync...');
-        const rosterResults = {};
-        async function trackRoster(site) {
-          try {
-            await syncCalendar(env, site);
-            rosterResults[site.name] = { ok: true, error: null };
-          } catch(e) {
-            console.error(`[${site.name}] Calendar sync error:`, e);
-            rosterResults[site.name] = { ok: false, error: e.message };
-          }
-        }
-        await Promise.all(allSites.map(s => trackRoster(s)));
-        console.log('All calendar syncs complete.');
-
-        // Step 5: Save this run's results to sync log
+        // Save run results to sync log
         const runData = { time: aest[hour], venues: {} };
         for (const s of allSites) {
           runData.venues[s.name] = {
@@ -4783,20 +4779,18 @@ export default {
             error: (girlResults[s.name] || {}).error || (rosterResults[s.name] || {}).error || null,
           };
         }
+        try {
+          const { log, sha } = await loadSyncLog(env);
+          log.runs.push(runData);
+          await saveSyncLog(env, log, sha);
+          console.log('Saved run results to sync log.');
+        } catch(e) { console.error('[SyncLog] Save error:', e); }
 
-        if (hour !== 10) {
-          // Non-8pm run: accumulate results in sync log
-          try {
-            const { log, sha } = await loadSyncLog(env);
-            log.runs.push(runData);
-            await saveSyncLog(env, log, sha);
-            console.log(`Saved ${aest[hour]} results to sync log.`);
-          } catch(e) { console.error('[SyncLog] Save error:', e); }
-        } else {
-          // 8pm run: aggregate all runs and send daily email
+        // 8pm — send daily email
+        if (hour === 10) {
           try {
             const { log, sha: logSha } = await loadSyncLog(env);
-            const allRuns = [...log.runs, runData]; // previous runs + this 8pm run
+            const allRuns = log.runs || [];
 
             // Aggregate per venue across all runs
             const agg = {};

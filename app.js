@@ -4137,8 +4137,7 @@ function sortCompareTable(col) {
 
 function renderComparePage() {
   const filtered = getFiltered();
-  const filteredVenueIds = new Set(filtered.map(g => g.venue));
-  let venueIds = Object.keys(VENUE_DATA).filter(id => filteredVenueIds.has(id));
+  let venueIds = Object.keys(VENUE_DATA);
 
   updateMeta(
     'Compare Brothels in Sydney | Brothel Search',

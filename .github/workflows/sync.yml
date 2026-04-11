@@ -1,0 +1,93 @@
+name: Sync Girls & Rosters
+
+on:
+  schedule:
+    # Girl sync — 8pm, 8am, 2pm, 2am AEST (UTC: 10, 22, 4, 16)
+    - cron: '0 10 * * *'   # 8pm AEST
+    - cron: '0 22 * * *'   # 8am AEST
+    - cron: '0 4 * * *'    # 2pm AEST
+    - cron: '0 16 * * *'   # 2am AEST
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Task to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - girls
+          - rosters
+          - photos
+          - digest
+          - sitemap
+          - email
+
+env:
+  WORKER_URL: https://brothel-search-sync.travanixlabs.workers.dev
+
+jobs:
+  sync-girls:
+    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'girls'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync girls - batch 1
+        run: |
+          for venue in sync-girls sync-club-girls sync-kyoto206-girls sync-sakura57-girls sync-top127-girls sync-fantasyclub35-girls; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+      - name: Sync girls - batch 2
+        run: |
+          for venue in sync-429city-girls sync-pennys77-girls sync-thegoldenapple-girls sync-blackcatparlour-girls sync-bellevue12-girls sync-thegatewayclub-girls; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+      - name: Sync girls - batch 3
+        run: |
+          for venue in sync-marrickvillebrothel-girls sync-springhouse-girls sync-stiletto-girls sync-wivesonly-girls sync-jinia-girls; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+  sync-rosters:
+    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'rosters'
+    needs: sync-girls
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync rosters - batch 1
+        run: |
+          for venue in sync-calendar sync-club-calendar sync-kyoto206-calendar sync-sakura57-calendar sync-top127-calendar sync-fantasyclub35-calendar; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+      - name: Sync rosters - batch 2
+        run: |
+          for venue in sync-429city-calendar sync-pennys77-calendar sync-thegoldenapple-calendar sync-blackcatparlour-calendar sync-bellevue12-calendar sync-thegatewayclub-calendar; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+      - name: Sync rosters - batch 3
+        run: |
+          for venue in sync-marrickvillebrothel-calendar sync-springhouse-calendar sync-stiletto-calendar sync-wivesonly-calendar sync-jinia-calendar; do
+            echo "→ $venue"
+            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            sleep 1
+          done
+
+  sync-email:
+    if: (github.event.schedule == '0 10 * * *') || github.event.inputs.task == 'email'
+    needs: [sync-girls, sync-rosters]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send sync summary email
+        run: curl -sf "$WORKER_URL/api/test-sync-email" --max-time 120 || echo "⚠ email failed"

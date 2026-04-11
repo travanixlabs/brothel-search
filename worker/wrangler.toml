@@ -2,8 +2,8 @@ name = "brothel-search-sync"
 main = "index.js"
 compatibility_date = "2024-01-01"
 
-[triggers]
-crons = ["0 10 * * *", "0 22 * * *", "0 4 * * *", "0 16 * * *", "0 23 * * *"]  # 8pm AEST (sync), 8am AEST (sync), 2pm AEST (sync), 2am AEST (sync), 9am AEST (digest)
+# Cron triggers removed — scheduling handled by GitHub Actions
+# Worker only serves HTTP endpoints now
 
 # Secrets (set via dashboard or `wrangler secret put`):
 #   GITHUB_TOKEN  - GitHub personal access token (contents read/write scope)

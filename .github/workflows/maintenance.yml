@@ -1,0 +1,38 @@
+name: Maintenance (Photos + Sitemap)
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 2am AEST — runs once daily during quiet hours
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Task to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - photos
+          - sitemap
+
+env:
+  WORKER_URL: https://brothel-search-sync.travanixlabs.workers.dev
+
+jobs:
+  photo-checks:
+    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'photos'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check broken photos (all venues)
+        run: |
+          echo "→ check-photos"
+          curl -sf -X POST "$WORKER_URL/check-photos" --max-time 120 || echo "⚠ photo check failed"
+
+  sitemap:
+    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'sitemap'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Regenerate sitemap
+        run: |
+          echo "→ regenerate-sitemap"
+          curl -sf -X POST "$WORKER_URL/regenerate-sitemap" --max-time 30 || echo "⚠ sitemap failed"

@@ -2305,6 +2305,8 @@ function renderRangeFilters() {
 
 function getFiltered() {
   let list = [...allGirls];
+  // Exclude deleted profiles (unless on Data page for admins)
+  if (window.location.pathname !== '/data') list = list.filter(g => g.deleted !== 'Yes');
   // Region filter
   if (activeRegion.include.length) list = list.filter(g => activeRegion.include.includes(VENUE_REGIONS[g.venue] || 'other'));
   if (activeRegion.exclude.length) list = list.filter(g => !activeRegion.exclude.includes(VENUE_REGIONS[g.venue] || 'other'));
@@ -4315,6 +4317,8 @@ function renderDataPage() {
     { key: 'val3', label: '60 min', fmt: v => v ? '$' + v : '' },
     { key: 'startDate', label: 'Start Date' },
     { key: 'lastRostered', label: 'Last Rostered' },
+    { key: 'originalSite', label: 'On Site' },
+    { key: 'deleted', label: 'Deleted', fmt: v => v === 'Yes' ? '<span style="color:#e74c3c">Yes</span>' : '' },
   ];
 
   const filtered = getFiltered();
@@ -4341,7 +4345,8 @@ function renderDataPage() {
   }
   html += '</tr></thead><tbody>';
   for (const g of sorted) {
-    html += '<tr style="border-bottom:1px solid rgba(201,149,44,0.1)">';
+    const isDeleted = g.deleted === 'Yes';
+    html += '<tr style="border-bottom:1px solid rgba(201,149,44,0.1)' + (isDeleted ? ';opacity:0.4' : '') + '">';
     for (const col of cols) {
       const val = col.fmtG ? col.fmtG(g) : col.fmt ? col.fmt(g[col.key]) : (g[col.key] || '');
       html += '<td style="padding:6px 10px;color:var(--text)">' + val + '</td>';

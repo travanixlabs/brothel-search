@@ -2979,29 +2979,24 @@ async function checkBrokenPhotos(env, site) {
     if (slots && typeof slots === 'object') rosteredNames.add(name);
   }
 
-  // Step 1: Remove dead profiles — oldUrl is 404 and not rostered
-  const removeCandidates = girls.filter(g => g.oldUrl && !rosteredNames.has(g.name) && g.originalSite !== 'Exists');
+  // Step 1: Flag dead profiles as deleted — oldUrl is 404 and not rostered
+  const removeCandidates = girls.filter(g => g.oldUrl && !rosteredNames.has(g.name) && g.originalSite !== 'Exists' && g.deleted !== 'Yes');
   let removed = 0;
-  const removedNames = [];
   for (const g of removeCandidates) {
     try {
       const resp = await fetch(g.oldUrl, { method: 'HEAD', headers: { 'User-Agent': UA }, redirect: 'follow' });
       if (resp.status === 404) {
-        removedNames.push(g.name);
+        g.deleted = 'Yes';
+        g.deletedAt = new Date().toISOString();
         removed++;
-        console.log(`[${site.name}] Removing dead profile: ${g.name} (404, not rostered)`);
+        console.log(`[${site.name}] Flagged dead profile: ${g.name} (404, not rostered)`);
       }
       await new Promise(r => setTimeout(r, 300));
     } catch (e) { /* keep on error */ }
   }
-  if (removed > 0) {
-    data.girls = girls.filter(g => !removedNames.includes(g.name));
-    // Also clean calendar entries
-    for (const name of removedNames) delete calendar[name];
-  }
 
   // Step 2: Check photos — re-scrape to detect broken URLs and stale photos
-  const girlsWithPhotos = data.girls.filter(g => g.photos && g.photos.length > 0 && g.oldUrl);
+  const girlsWithPhotos = data.girls.filter(g => g.photos && g.photos.length > 0 && g.oldUrl && g.deleted !== 'Yes');
   let checked = 0, fixed = 0;
   // Shuffle to check different girls each run
   for (let i = girlsWithPhotos.length - 1; i > 0; i--) {

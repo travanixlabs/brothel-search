@@ -2,11 +2,24 @@ name: Sync Girls & Rosters
 
 on:
   schedule:
-    # Girl sync — 8pm, 8am, 2pm, 2am AEST (UTC: 10, 22, 4, 16)
-    - cron: '0 10 * * *'   # 8pm AEST
-    - cron: '0 22 * * *'   # 8am AEST
-    - cron: '0 4 * * *'    # 2pm AEST
-    - cron: '0 16 * * *'   # 2am AEST
+    # Girl sync — every 6 hours (8pm, 2am, 8am, 2pm AEST = 10, 16, 22, 4 UTC)
+    - cron: '0 10 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 22 * * *'
+    - cron: '0 4 * * *'
+    # Roster sync — every 2 hours
+    - cron: '30 0 * * *'
+    - cron: '30 2 * * *'
+    - cron: '30 4 * * *'
+    - cron: '30 6 * * *'
+    - cron: '30 8 * * *'
+    - cron: '30 10 * * *'
+    - cron: '30 12 * * *'
+    - cron: '30 14 * * *'
+    - cron: '30 16 * * *'
+    - cron: '30 18 * * *'
+    - cron: '30 20 * * *'
+    - cron: '30 22 * * *'
   workflow_dispatch:
     inputs:
       task:
@@ -18,9 +31,6 @@ on:
           - all
           - girls
           - rosters
-          - photos
-          - digest
-          - sitemap
           - email
 
 env:
@@ -28,64 +38,39 @@ env:
 
 jobs:
   sync-girls:
-    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'girls'
+    if: >
+      github.event_name == 'workflow_dispatch' && (github.event.inputs.task == 'all' || github.event.inputs.task == 'girls')
+      || (github.event_name == 'schedule' && contains('0 10,0 16,0 22,0 4', github.event.schedule))
     runs-on: ubuntu-latest
     steps:
-      - name: Sync girls - batch 1
+      - name: Sync girls - all venues
         run: |
-          for venue in sync-girls sync-club-girls sync-kyoto206-girls sync-sakura57-girls sync-top127-girls sync-fantasyclub35-girls; do
+          for venue in sync-girls sync-club-girls sync-kyoto206-girls sync-sakura57-girls sync-top127-girls sync-fantasyclub35-girls sync-429city-girls sync-pennys77-girls sync-thegoldenapple-girls sync-blackcatparlour-girls sync-bellevue12-girls sync-thegatewayclub-girls sync-marrickvillebrothel-girls sync-springhouse-girls sync-stiletto-girls sync-wivesonly-girls sync-jinia-girls; do
             echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
-            sleep 1
-          done
-
-      - name: Sync girls - batch 2
-        run: |
-          for venue in sync-429city-girls sync-pennys77-girls sync-thegoldenapple-girls sync-blackcatparlour-girls sync-bellevue12-girls sync-thegatewayclub-girls; do
-            echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
-            sleep 1
-          done
-
-      - name: Sync girls - batch 3
-        run: |
-          for venue in sync-marrickvillebrothel-girls sync-springhouse-girls sync-stiletto-girls sync-wivesonly-girls sync-jinia-girls; do
-            echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            result=$(curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 2>&1) || echo "  ⚠ failed"
+            echo "  $result"
             sleep 1
           done
 
   sync-rosters:
-    if: github.event_name == 'schedule' || github.event.inputs.task == 'all' || github.event.inputs.task == 'rosters'
-    needs: sync-girls
+    if: >
+      github.event_name == 'workflow_dispatch' && (github.event.inputs.task == 'all' || github.event.inputs.task == 'rosters')
+      || (github.event_name == 'schedule' && contains('30 0,30 2,30 4,30 6,30 8,30 10,30 12,30 14,30 16,30 18,30 20,30 22', github.event.schedule))
     runs-on: ubuntu-latest
     steps:
-      - name: Sync rosters - batch 1
+      - name: Sync rosters - all venues
         run: |
-          for venue in sync-calendar sync-club-calendar sync-kyoto206-calendar sync-sakura57-calendar sync-top127-calendar sync-fantasyclub35-calendar; do
+          for venue in sync-calendar sync-club-calendar sync-kyoto206-calendar sync-sakura57-calendar sync-top127-calendar sync-fantasyclub35-calendar sync-429city-calendar sync-pennys77-calendar sync-thegoldenapple-calendar sync-blackcatparlour-calendar sync-bellevue12-calendar sync-thegatewayclub-calendar sync-marrickvillebrothel-calendar sync-springhouse-calendar sync-stiletto-calendar sync-wivesonly-calendar sync-jinia-calendar; do
             echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
-            sleep 1
-          done
-
-      - name: Sync rosters - batch 2
-        run: |
-          for venue in sync-429city-calendar sync-pennys77-calendar sync-thegoldenapple-calendar sync-blackcatparlour-calendar sync-bellevue12-calendar sync-thegatewayclub-calendar; do
-            echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
-            sleep 1
-          done
-
-      - name: Sync rosters - batch 3
-        run: |
-          for venue in sync-marrickvillebrothel-calendar sync-springhouse-calendar sync-stiletto-calendar sync-wivesonly-calendar sync-jinia-calendar; do
-            echo "→ $venue"
-            curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 || echo "  ⚠ failed"
+            result=$(curl -sf -X POST "$WORKER_URL/$venue" --max-time 30 2>&1) || echo "  ⚠ failed"
+            echo "  $result"
             sleep 1
           done
 
   sync-email:
-    if: (github.event.schedule == '0 10 * * *') || github.event.inputs.task == 'email'
+    if: >
+      github.event_name == 'workflow_dispatch' && github.event.inputs.task == 'email'
+      || (github.event_name == 'schedule' && github.event.schedule == '0 10 * * *')
     needs: [sync-girls, sync-rosters]
     runs-on: ubuntu-latest
     steps:

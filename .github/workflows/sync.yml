@@ -71,8 +71,10 @@ jobs:
     if: >
       github.event_name == 'workflow_dispatch' && github.event.inputs.task == 'email'
       || (github.event_name == 'schedule' && github.event.schedule == '0 10 * * *')
-    needs: [sync-girls, sync-rosters]
+    needs: [sync-girls]
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for roster sync to likely finish
+        run: sleep 30
       - name: Send sync summary email
         run: curl -sf "$WORKER_URL/api/test-sync-email" --max-time 120 || echo "⚠ email failed"

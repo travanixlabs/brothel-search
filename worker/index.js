@@ -503,7 +503,7 @@ async function scrapeGirlsListing(site) {
     const age    = (cardHtml.match(/Age:(\d+)/)        || [])[1] || '';
     const body   = (cardHtml.match(/Body Size:(\d+)/)   || [])[1] || '';
     const cupRaw = (cardHtml.match(/Cup Size:([^<]+)/) || [])[1] || '';
-    const cupLetter = (cupRaw.match(/([A-H](?:[A-H])?[+\-]?)/) || [])[1] || cupRaw.trim();
+    const cupLetter = (cupRaw.match(/([A-Z](?:[A-Z])?[+\-]?)/) || [])[1] || cupRaw.trim();
     const cup = cupLetter;
     const height = (cardHtml.match(/Height:(\d+)/)       || [])[1] || '';
 
@@ -689,7 +689,7 @@ async function scrapeWpProfile(site, profileUrl, girlName) {
   const heightMatch = html.match(/Height:\s*(1[3-9]\d|20\d)/i) || html.match(/(1[4-8]\d)\s*cm/i);
   const height = heightMatch ? heightMatch[1] : '';
 
-  const cupMatch = html.match(/([A-H](?:DD)?)\s*[Cc]up/i) || html.match(/(?:Cup|Bust)\s*(?:Size)?\s*:?\s*([A-H](?:DD)?)\b/i);
+  const cupMatch = html.match(/([A-Z](?:DD)?)\s*[Cc]up/i) || html.match(/(?:Cup|Bust)\s*(?:Size)?\s*:?\s*([A-Z](?:DD)?)\b/i);
   const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
 
   let val1 = '', val2 = '', val3 = '';
@@ -1181,7 +1181,7 @@ async function syncPennys77Girls(env, site) {
 
       const ageMatch = metaText.match(/Age\s*:?\s*(\d+)/i);
       const heightMatch = metaText.match(/Height\s*:?\s*(\d+)\s*cm/i);
-      const cupMatch = metaText.match(/Boobs:\s*([A-H](?:DD)?)/i) || metaText.match(/([A-H](?:DD)?)\s*cup/i);
+      const cupMatch = metaText.match(/Boobs:\s*([A-Z](?:DD)?)/i) || metaText.match(/([A-Z](?:DD)?)\s*cup/i);
       const natMatch = metaText.match(/Nationality:\s*[^\w]*([A-Za-z]+)/i);
 
       // Start date from article:published_time
@@ -1250,7 +1250,7 @@ async function syncBlackCatGirls(env, site) {
     if (existingNames.has(name)) continue;
 
     const ageMatch = block.match(/Age:\s*(\d+)/);
-    const bustMatch = block.match(/Bust:\s*([A-H](?:DD)?)\s*Cup/i);
+    const bustMatch = block.match(/Bust:\s*([A-Z](?:DD)?)\s*Cup/i);
     const natMatch = block.match(/Nationality:\s*([A-Za-z ]+)/);
     const dressMatch = block.match(/Dress Size:\s*(\d+)/);
     const heightMatch = block.match(/Height:\s*(\d+)&#039;(\d+)/);
@@ -1329,7 +1329,7 @@ async function syncBellevue12Girls(env, site) {
 
       // Try to get details from h3 tags or content
       const textContent = pHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-      const cupMatch = textContent.match(/([A-H])\s*(?:cup|cap)/i);
+      const cupMatch = textContent.match(/([A-Z])\s*(?:cup|cap)/i);
       const heightMatch = textContent.match(/(1[4-8]\d)\s*cm/i);
       const ageMatch = textContent.match(/(\d{2})\s*(?:yo|years? old|y\.o)/i) || textContent.match(/age\s*:?\s*(\d{2})/i);
       const countryMap = { singapore: 'Singaporean', singaporean: 'Singaporean', china: 'Chinese', chinese: 'Chinese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', thailand: 'Thai', thai: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', hongkong: 'Hong Kong', 'hong kong': 'Hong Kong', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian' };
@@ -1391,7 +1391,7 @@ async function syncGatewayClubGirls(env, site) {
 
     const urlMatch = block.match(/href="(https:\/\/www\.gatewayclub\.com\.au\/ladies\/[^"]+)"/);
     const ageMatch = block.match(/Age:<\/td><td>(\d+)/);
-    const bustMatch = block.match(/Bust:<\/td><td>([A-H](?:DD)?)/);
+    const bustMatch = block.match(/Bust:<\/td><td>([A-Z](?:DD)?)/);
     const heightMatch = block.match(/Height:<\/td><td>(\d+)cm/);
     const dressMatch = block.match(/Dress [Ss]ize:<\/td><td>([\d\-]+)/);
     const descText = block.replace(/<[^>]+>/g, ' ').toLowerCase();
@@ -1595,7 +1595,7 @@ async function syncMarrickvilleBrothelGirls(env, site) {
         const pHtml = await pResp.text().then(t => t.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' '));
         const ageMatch = pHtml.match(/Age:\s*(\d+)/i);
         const heightMatch = pHtml.match(/Height:\s*(\d+)\s*cm/i);
-        const cupMatch = pHtml.match(/(?:Cup|Bust):\s*([A-H])/i);
+        const cupMatch = pHtml.match(/(?:Cup|Bust):\s*([A-Z])/i);
         const raceMatch = pHtml.match(/Race:\s*([A-Za-z ]+)/i);
         age = ageMatch ? ageMatch[1] : '';
         height = heightMatch ? heightMatch[1] : '';
@@ -2196,7 +2196,7 @@ async function syncWivesOnlyGirls(env, site) {
     const country = fields.nationality || '';
     const age = fields.age || '';
     const height = fields.hight || fields.height || '';
-    const cupMatch = (fields.bust || '').match(/([A-H](?:DD)?)/i);
+    const cupMatch = (fields.bust || '').match(/([A-Z](?:DD)?)/i);
     const cup = cupMatch ? cupMatch[1].toUpperCase() : '';
     const body = sizeMatch ? sizeMatch[1] : '';
     // Photos
@@ -2347,7 +2347,7 @@ async function syncJiniaGirls(env, site) {
       const natMatch = pHtml.match(/<p>Nationalit[^:]*:\s*([^<]+)/i);
       const ageMatch = pHtml.match(/<p>Age:\s*(\d+)/i);
       const heightMatch = pHtml.match(/<p>Height:\s*(\d+)\s*cm/i);
-      const bustMatch = pHtml.match(/<p>Bust Size:\s*\d*([A-H](?:DD)?)/i);
+      const bustMatch = pHtml.match(/<p>Bust Size:\s*\d*([A-Z](?:DD)?)/i);
 
       let countries = [];
       if (natMatch) {
@@ -2495,7 +2495,7 @@ async function scrapePennys77Roster(site, env) {
 
     const ageMatch = excerpt.match(/Age\s*:?\s*(\d+)/i);
     const heightMatch = excerpt.match(/Height\s*:?\s*(\d+)\s*cm/i) || excerpt.match(/Height\s*:?\s*(\d)[''](\d+)/i);
-    const cupMatch = excerpt.match(/Boobs:\s*([A-H](?:DD)?)/i) || excerpt.match(/([A-H](?:DD)?)\s*cup/i);
+    const cupMatch = excerpt.match(/Boobs:\s*([A-Z](?:DD)?)/i) || excerpt.match(/([A-Z](?:DD)?)\s*cup/i);
     const natMatch = excerpt.match(/Nationality:\s*[^\w]*([A-Za-z]+)/i);
     const bodyMatch = excerpt.match(/Body Size:\s*(\d+)/i) || excerpt.match(/Size:\s*(\d+)/i);
 
@@ -2592,7 +2592,7 @@ async function syncGoldenAppleGirls(env, site) {
     if (existingNames.has(name)) continue;
 
     const ageMatch = block.match(/class="age">(\d+)/);
-    const bustMatch = block.match(/class="bust">(?:\d+)?([A-H])/i);
+    const bustMatch = block.match(/class="bust">(?:\d+)?([A-Z])/i);
     const countryMatch = block.match(/class="country">([^<]+)/);
     const dressMatch = block.match(/class="dress">(\d+)/);
     const heightMatch = block.match(/class="height">(\d+)[''"](\d+)/);

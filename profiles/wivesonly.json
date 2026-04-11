@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-12",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11",
+      "lastRostered": "2026-04-12",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-12",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Cartier",
@@ -2068,7 +2068,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Amy",
@@ -2208,7 +2208,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Ivy",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Katalina",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Julia",
@@ -2612,6 +2612,10 @@
       "2026-04-11": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-04-12": {
+        "start": "12:00",
+        "end": "08:00"
       }
     },
     "Layla": {
@@ -2752,6 +2756,10 @@
       "2026-04-11": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Dasha": {
@@ -2848,6 +2856,10 @@
       "2026-04-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Serene": {
@@ -2912,6 +2924,10 @@
       "2026-04-10": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Tara": {
@@ -2950,6 +2966,10 @@
       "2026-04-11": {
         "start": "11:00",
         "end": "15:00"
+      },
+      "2026-04-12": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Iris": {
@@ -2988,6 +3008,10 @@
       "2026-04-10": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -3068,6 +3092,10 @@
       "2026-04-10": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Talia": {
@@ -3096,6 +3124,10 @@
       "2026-04-11": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-04-12": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Maisie": {
@@ -3112,12 +3144,20 @@
       "2026-04-11": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Luna": {
       "2026-04-11": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-04-12": {
+        "start": "00:00",
+        "end": "20:00"
       }
     },
     "Madeleine": {
@@ -3128,5 +3168,5 @@
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-11T10:18:32.952Z"
+  "lastCalendarSync": "2026-04-11T15:00:55.281Z"
 }

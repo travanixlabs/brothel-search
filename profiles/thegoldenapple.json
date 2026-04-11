@@ -1412,6 +1412,84 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Charlie ***",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "175",
+      "cup": "B",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2019/05/Charlie-IMG_7939.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dahlia ***",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "170",
+      "cup": "D",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2026/01/IMG_0248.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lola ***",
+      "country": [
+        "Italian"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/09/Lola.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sophia***",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "163",
+      "cup": "F",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2052,6 +2130,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-10T16:00:38.089Z",
+  "lastGirlsSync": "2026-04-11T04:00:23.891Z",
   "lastCalendarSync": "2026-04-10T10:54:00.904Z"
 }

@@ -2501,6 +2501,140 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Blair ***",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/0338bd8602c2e9aa1fd7d013111e91d4.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Charlie ***",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "175",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/9d1cdcc3eafdc1749f738078be702591.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dahlia ***",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "170",
+      "cup": "",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/0909b0e17c442658081941dbd0840fd6.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Diamond ***",
+      "country": [
+        "Fijian"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lola ***",
+      "country": [
+        "Italian"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/cbd9cb16d5246a00a17099e22c669e3f.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Rose ****",
+      "country": [
+        "Indian"
+      ],
+      "age": "22",
+      "height": "157",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sophia***",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "163",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3990,6 +4124,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-10T16:00:42.900Z",
+  "lastGirlsSync": "2026-04-11T04:00:26.291Z",
   "lastCalendarSync": "2026-04-10T10:54:02.494Z"
 }

@@ -8609,6 +8609,33 @@
       "labels": [],
       "lastModified": "2026-04-08T11:39:42.163Z",
       "lastRostered": "2026-04-11"
+    },
+    {
+      "name": "Yuna",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "155",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-11",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yuna-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82171775891072_.pic_-1400x834.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82151775891069_.pic_-1400x938.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82161775891071_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82181775891074_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82191775891075_.pic_hd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-11T10:00:35.667Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -9845,7 +9872,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-08T11:39:42.163Z",
+  "lastGirlsSync": "2026-04-11T10:00:35.667Z",
   "lastCalendarSync": "2026-04-10T10:53:52.763Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
@@ -9869,6 +9896,7 @@
     "https://www.surryhillsbrothel.com.au/project/haru-korea/",
     "https://www.surryhillsbrothel.com.au/project/mayo-japan-old/",
     "https://www.surryhillsbrothel.com.au/project/myka-japan/",
-    "https://www.surryhillsbrothel.com.au/project/momoko-japan-old/"
+    "https://www.surryhillsbrothel.com.au/project/momoko-japan-old/",
+    "https://www.surryhillsbrothel.com.au/project/haru-japan-ole/"
   ]
 }

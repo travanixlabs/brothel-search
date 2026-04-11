@@ -4317,7 +4317,6 @@ function renderDataPage() {
     { key: 'val3', label: '60 min', fmt: v => v ? '$' + v : '' },
     { key: 'startDate', label: 'Start Date' },
     { key: 'lastRostered', label: 'Last Rostered' },
-    { key: 'originalSite', label: 'On Site' },
     { key: 'deleted', label: 'Deleted', fmt: v => v === 'Yes' ? '<span style="color:#e74c3c">Yes</span>' : '' },
   ];
 

@@ -5093,7 +5093,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   if (a60) html += ' Average ' + a60 + ' for 60 min.';
   html += '</p>';
   html += '<hr class="gold-divider">';
-  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle"><button class="venue-layout-grid' + (currentLayout === 'grid' ? ' active' : '') + '" onclick="setLayout(\'grid\',false);handleLandingRoute(window.location.pathname)" title="Grid"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button><button class="venue-layout-bento' + (currentLayout === 'bento' ? ' active' : '') + '" onclick="setLayout(\'bento\',false);handleLandingRoute(window.location.pathname)" title="Bento"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg></button></div></div>';
+  const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;
+  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle"><button class="venue-layout-grid' + (currentLayout === 'grid' ? ' active' : '') + '" onclick="setLayout(\'grid\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/grid\');handleLandingRoute(\'' + venueBasePath + '/grid\')" title="Grid"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button><button class="venue-layout-bento' + (currentLayout === 'bento' ? ' active' : '') + '" onclick="setLayout(\'bento\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/bento\');handleLandingRoute(\'' + venueBasePath + '/bento\')" title="Bento"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg></button></div></div>';
   html += '<div class="girls-grid' + (currentLayout === 'bento' ? ' bento' : '') + '" style="margin-top:0">';
 
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
@@ -5335,6 +5336,10 @@ function handleLandingRoute(path) {
     html = renderVenuePage(parts[1], null, parts[2]);
   } else if (parts.length === 4 && parts[0] === 'sydney') {
     // /sydney/{region}/{suburb}/{venue} — venue page with suburb
+    html = renderVenuePage(parts[1], parts[2], parts[3]);
+  } else if (parts.length === 5 && parts[0] === 'sydney' && (parts[4] === 'bento' || parts[4] === 'grid')) {
+    // /sydney/{region}/{suburb}/{venue}/bento or /grid
+    setLayout(parts[4], false);
     html = renderVenuePage(parts[1], parts[2], parts[3]);
   }
 

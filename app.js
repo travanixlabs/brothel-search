@@ -3803,7 +3803,7 @@ document.addEventListener('keydown', e => {
 // Browser back/forward navigation
 window.addEventListener('popstate', () => {
   const path = window.location.pathname;
-  if (path === '/profiles') {
+  if (path === '/profiles' || path === '/profiles/bento' || path === '/profiles/grid') {
     clearInterval(window._profileRotate);
     const overlay = document.getElementById('profileOverlay');
     overlay.classList.remove('active');
@@ -3861,7 +3861,7 @@ loadProfiles().then(() => {
     const g = findGirlByPath(path);
     if (g) { showProfile(g); }
     else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') { handleLandingRoute(path); }
-    else if (path === '/profiles') { /* already showing main section */ }
+    else if (path === '/profiles' || path.startsWith('/profiles/')) { /* already showing main section */ }
   }
 });
 checkAuth().then(() => {
@@ -5268,7 +5268,10 @@ function handleLandingRoute(path) {
 
   if (cleanPath === '' || cleanPath === 'index.html') {
     html = renderHomePage();
-  } else if (cleanPath === 'profiles') {
+  } else if (cleanPath === 'profiles' || cleanPath === 'profiles/bento' || cleanPath === 'profiles/grid') {
+    const layout = cleanPath === 'profiles/grid' ? 'grid' : 'bento';
+    setLayout(layout, false);
+    if (cleanPath === 'profiles') history.replaceState(null, '', '/profiles/' + layout);
     restoreActivePresetOrClear();
     renderFilters(); renderGrid();
     // Show the main profiles section instead
@@ -5383,9 +5386,10 @@ document.getElementById('navProfiles').addEventListener('click', function(e) {
     return;
   }
   if (isSubscribed !== true && userRole !== 'admin') { showPaywall(); return; }
+  setLayout('bento', false);
   restoreActivePresetOrClear();
   renderFilters(); renderGrid();
-  history.pushState(null, '', '/profiles');
+  history.pushState(null, '', '/profiles/bento');
   showMainSection();
   updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
 });
@@ -5585,10 +5589,10 @@ function initCarouselDrag() {
 }
 
 // ── 7a. Layout Toggle (Grid / Bento) ──
-let currentLayout = 'grid';
-document.getElementById('layoutGrid').onclick = () => { setLayout('grid'); };
-document.getElementById('layoutBento').onclick = () => { setLayout('bento'); };
-function setLayout(mode) {
+let currentLayout = 'bento';
+document.getElementById('layoutGrid').onclick = () => { setLayout('grid', true); };
+document.getElementById('layoutBento').onclick = () => { setLayout('bento', true); };
+function setLayout(mode, pushState) {
   currentLayout = mode;
   const grid = document.getElementById('girlsGrid');
   if (grid) {
@@ -5596,6 +5600,7 @@ function setLayout(mode) {
   }
   document.getElementById('layoutGrid').classList.toggle('active', mode === 'grid');
   document.getElementById('layoutBento').classList.toggle('active', mode === 'bento');
+  if (pushState) history.pushState(null, '', '/profiles/' + mode);
 }
 
 // ── 7. Card Glow Follow ──

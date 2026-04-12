@@ -290,7 +290,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-14",
       "desc": "Hello gentlemen my name is Annika. I have beautiful soft skin and enchanting brown eyes. I am effortless sophisticated and intelligent. I can be the epitome of elegance and glamour, but only if that’s the type of girlfriend you want. Seemingly normal girl in the streets and naughty playmate in the ..."
     },
     {
@@ -988,7 +988,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Darcie",
@@ -1149,7 +1149,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Eva",
@@ -1375,7 +1375,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Giselle",
@@ -2135,7 +2135,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Kianna",
@@ -2171,7 +2171,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Kiara",
@@ -2408,7 +2408,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-12"
     },
     {
       "name": "Lilly",
@@ -3103,7 +3103,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Piper",
@@ -3384,7 +3384,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Roxi",
@@ -4235,7 +4235,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Tyler",
@@ -4562,6 +4562,7 @@
       "2026-04-18",
       "2026-04-19",
       "2026-04-20",
+      "2026-04-21",
       "2026-04-23"
     ],
     "Allegra": {
@@ -5070,10 +5071,6 @@
       "2026-04-05": {
         "start": "01:00",
         "end": "09:00"
-      },
-      "2026-04-12": {
-        "start": "03:00",
-        "end": "10:00"
       }
     },
     "Tyler": {
@@ -5281,6 +5278,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-04-12": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Coco": {
@@ -5470,21 +5471,33 @@
         "start": "17:00",
         "end": "01:00"
       },
-      "2026-04-14": {
-        "start": "17:00",
-        "end": "01:00"
-      },
       "2026-04-15": {
-        "start": "17:00",
-        "end": "01:00"
+        "start": "18:00",
+        "end": "02:00"
       },
       "2026-04-17": {
-        "start": "17:00",
-        "end": "01:00"
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Robin": {
       "2026-04-08": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-13": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-04-14": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-04-15": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-18": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -5503,6 +5516,22 @@
         "end": "02:00"
       },
       "2026-04-13": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-16": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-19": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-20": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -5563,8 +5592,138 @@
         "start": "19:00",
         "end": "03:00"
       }
+    },
+    "Erika": {
+      "2026-04-12": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
+    "Ginger": {
+      "2026-04-12": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-16": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-18": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-19": {
+        "start": "21:00",
+        "end": "05:00"
+      }
+    },
+    "Parker": {
+      "2026-04-12": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-15": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-16": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-19": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
+    "Kianna": {
+      "2026-04-12": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-13": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-17": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-18": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-19": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
+    "Trinity": {
+      "2026-04-13": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-14": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-15": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-16": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-17": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-20": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-04-21": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
+    "Dallas": {
+      "2026-04-13": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-04-14": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-04-16": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-04-17": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
+    "Annika": {
+      "2026-04-13": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-14": {
+        "start": "18:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-11T22:26:32.760Z",
-  "lastCalendarSync": "2026-04-11T23:03:50.468Z"
+  "lastCalendarSync": "2026-04-12T03:51:24.815Z"
 }

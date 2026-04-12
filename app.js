@@ -3464,7 +3464,6 @@ function showProfile(g) {
 
   // Render as dedicated page
   landingEl.innerHTML = `<div class="profile-panel${isFavorite(g) ? ' favorited' : ''}">
-    ${mainImg ? '<img class="profile-hero-img" src="' + imgProxy(mainImg, 900) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : ''}
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
     <div class="profile-body">

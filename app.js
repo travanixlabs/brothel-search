@@ -2579,7 +2579,7 @@ function renderGrid() {
       else if (activePath === '/data') landing.innerHTML = renderDataPage();
       else if (activePath === '/compare') landing.innerHTML = renderComparePage();
       else if (activePath === '/analytics') landing.innerHTML = renderAnalyticsPage();
-      else if (activePath === '/' || activePath === '/index.html') { landing.innerHTML = renderHomePage(); initHomePageListeners(); landing.querySelectorAll('.home-stat-num').forEach(el => { el.textContent = el.dataset.target; }); }
+      else if (activePath === '/' || activePath === '/index.html') { landing.innerHTML = renderHomePage(); initHomePageListeners(); document.querySelectorAll('.home-stat-num').forEach(el => { el.textContent = el.dataset.target; }); }
       else handleLandingRoute(activePath);
     }
   }
@@ -2637,6 +2637,7 @@ function renderGrid() {
   }
 
   grid.innerHTML = '';
+  grid.classList.toggle('bento', currentLayout === 'bento');
   loadMore();
   fillViewport();
 }
@@ -3462,8 +3463,10 @@ function showProfile(g) {
   // Render navigation strip after panel animation
   setTimeout(renderProfileNavStrip, 100);
   panel.innerHTML = `
+    ${mainImg ? '<img class="profile-hero-img" src="' + imgProxy(mainImg, 900) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : ''}
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
+    <div class="profile-body">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" id="profileHideBtn" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleHidden('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
@@ -3529,7 +3532,8 @@ function showProfile(g) {
     </div>
     ${buildProfileCalendar(g)}
     ${buildReviewSection(g, [])}
-    ${buildSimilarGirls(g)}`;
+    ${buildSimilarGirls(g)}
+    </div>`;
   // Cinematic open: show overlay then trigger transition
   overlay.style.display = 'flex';
   overlay.scrollTop = 0;
@@ -3940,12 +3944,6 @@ function renderHomePage() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-  let html = '<div class="landing-page" style="padding-top:20px">';
-  html += '<div class="section-header centered"><div><div class="section-tag">Brothel Search</div><h1 class="section-title">Home</h1></div></div>';
-  html += '<p class="hero-tagline" style="margin-bottom:32px;text-align:center">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
-
-  html += '<div class="home-search-wrap"><input type="text" class="home-search" id="homeSearch" placeholder="Search by name, country or venue..." autocomplete="off"></div>';
-
   const totalVenues = Object.keys(VENUE_DATA).length;
   const sevenDaysAgoStats = new Date(); sevenDaysAgoStats.setDate(sevenDaysAgoStats.getDate() - 7);
   const sevenDayStrStats = sevenDaysAgoStats.toISOString().split('T')[0];
@@ -3956,13 +3954,34 @@ function renderHomePage() {
   const homeTodayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
   const workingToday = Object.entries(calendarData).filter(([k, cal]) => cal && cal[homeTodayStr]).length;
   const workingNow = allGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
-  html += '<div class="home-stats">';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + totalVenues + '">0</span><span class="home-stat-label">Venues</span></div>';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + newCount + '">0</span><span class="home-stat-label">New</span></div>';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + activeGirls + '">0</span><span class="home-stat-label">Active Girls</span></div>';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingToday + '">0</span><span class="home-stat-label">Working Today</span></div>';
-  html += '<div class="home-stat"><span class="home-stat-num" data-target="' + workingNow + '">0</span><span class="home-stat-label">Working Now</span></div>';
+
+  // Title letters for staggered reveal
+  const titleText = 'Sydney';
+  const titleLetters = titleText.split('').map((c, i) => '<span class="hero-letter" style="animation-delay:' + (0.5 + i * 0.08) + 's">' + c + '</span>').join('');
+
+  let html = '';
+  // ── Full-Screen Cinematic Hero ──
+  html += '<section class="hero-section">';
+  html += '<div class="hero-bg"><div class="hero-vignette"></div></div>';
+  html += '<div class="hero-content">';
+  html += '<div class="hero-tag hero-enter hero-enter-d1">Brothel Search</div>';
+  html += '<div class="hero-line-el hero-line-anim"></div>';
+  html += '<h1 class="hero-title-main shimmer-text">' + titleLetters + '</h1>';
+  html += '<p class="hero-tagline hero-enter" style="text-align:center;animation-delay:1.2s">' + greeting + '. A curated selection across Sydney\u2019s finest venues.</p>';
+  html += '<div class="home-stats hero-enter" style="animation-delay:1.5s">';
+  html += '<div class="home-stat glass-stat"><span class="home-stat-num" data-target="' + totalVenues + '">0</span><span class="home-stat-label">Venues</span></div>';
+  html += '<div class="home-stat glass-stat"><span class="home-stat-num" data-target="' + newCount + '">0</span><span class="home-stat-label">New</span></div>';
+  html += '<div class="home-stat glass-stat"><span class="home-stat-num" data-target="' + activeGirls + '">0</span><span class="home-stat-label">Active Girls</span></div>';
+  html += '<div class="home-stat glass-stat"><span class="home-stat-num" data-target="' + workingToday + '">0</span><span class="home-stat-label">Working Today</span></div>';
+  html += '<div class="home-stat glass-stat"><span class="home-stat-num" data-target="' + workingNow + '">0</span><span class="home-stat-label">Working Now</span></div>';
   html += '</div>';
+  html += '<div class="home-search-wrap hero-enter" style="animation-delay:1.8s"><input type="text" class="home-search" id="homeSearch" placeholder="Search by name, country or venue..." autocomplete="off"></div>';
+  html += '</div>';
+  html += '<div class="hero-scroll-indicator"><div class="hero-scroll-arrow"></div></div>';
+  html += '</section>';
+
+  // ── Below-fold content ──
+  html += '<div class="landing-page" style="padding-top:20px">';
 
   // Daily Digest section
   const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
@@ -4681,6 +4700,7 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
+  html += '<div class="live-ticker" id="liveTicker"></div>';
   // Subtitle based on selected day
   const selectedDay = rosterDays[wnSelectedDay] || todayRoster;
   const selectedIsToday = selectedDay && selectedDay.dateStr === todayStr;
@@ -5286,19 +5306,21 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
-    // Animate count-up numbers
-    landingEl.querySelectorAll('.home-stat-num').forEach(el => {
-      const target = parseInt(el.dataset.target);
-      const duration = 1200;
-      const start = performance.now();
-      function tick(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
+    // Animate count-up numbers — delayed to sync with hero animation
+    setTimeout(() => {
+      document.querySelectorAll('.home-stat-num').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const duration = 1500;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, 1500);
     // Load referral code for home page
     const refCodeEl = document.getElementById('homeReferralCode');
     if (refCodeEl) {
@@ -5424,12 +5446,25 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 function initScrollReveals() {
-  document.querySelectorAll('.venue-divider, .home-stats, .home-search-wrap, .venue-carousel, #homeRecentReviews, .landing-grid, .review-section, .analytics-section, .compare-table-wrap, .roadmap-table-wrap').forEach(el => {
-    if (!el.classList.contains('reveal')) { el.classList.add('reveal'); revealObserver.observe(el); }
+  document.querySelectorAll('.venue-divider, .home-stats, .home-search-wrap, .venue-carousel, #homeRecentReviews, .review-section, .analytics-section, .compare-table-wrap, .roadmap-table-wrap, .live-ticker').forEach(el => {
+    if (!el.classList.contains('reveal') && !el.classList.contains('reveal-scale')) { el.classList.add('reveal'); revealObserver.observe(el); }
   });
   // Stagger children for card grids
-  document.querySelectorAll('.girls-grid, .landing-grid').forEach(el => {
+  document.querySelectorAll('.girls-grid').forEach(el => {
     if (!el.classList.contains('reveal-stagger')) { el.classList.add('reveal-stagger'); revealObserver.observe(el); }
+  });
+  // Landing grid cards alternate left/right
+  document.querySelectorAll('.landing-grid').forEach(grid => {
+    Array.from(grid.children).forEach((child, i) => {
+      if (child.classList.contains('reveal-left') || child.classList.contains('reveal-right')) return;
+      child.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
+      child.style.transitionDelay = (i * 0.08) + 's';
+      revealObserver.observe(child);
+    });
+  });
+  // Scale reveal for analytics bars
+  document.querySelectorAll('.analytics-bars').forEach(el => {
+    if (!el.classList.contains('reveal-scale')) { el.classList.add('reveal-scale'); revealObserver.observe(el); }
   });
 }
 
@@ -5539,13 +5574,61 @@ function initCarouselDrag() {
   });
 }
 
-// ── 7. Init all animations after page render ──
+// ── 7a. Layout Toggle (Grid / Bento) ──
+let currentLayout = 'grid';
+document.getElementById('layoutGrid').onclick = () => { setLayout('grid'); };
+document.getElementById('layoutBento').onclick = () => { setLayout('bento'); };
+function setLayout(mode) {
+  currentLayout = mode;
+  const grid = document.getElementById('girlsGrid');
+  if (grid) {
+    grid.classList.toggle('bento', mode === 'bento');
+  }
+  document.getElementById('layoutGrid').classList.toggle('active', mode === 'grid');
+  document.getElementById('layoutBento').classList.toggle('active', mode === 'bento');
+}
+
+// ── 7. Card Glow Follow ──
+function initCardTilt() {
+  document.querySelectorAll('.girl-card').forEach(card => {
+    if (card._tiltInit) return;
+    card._tiltInit = true;
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', (x / rect.width * 100) + '%');
+      card.style.setProperty('--mouse-y', (y / rect.height * 100) + '%');
+    });
+  });
+}
+
+// ── 8. Live Activity Ticker for Working Now ──
+function initLiveTicker() {
+  const container = document.getElementById('liveTicker');
+  if (!container) return;
+  const nowGirls = getFiltered().filter(g => {
+    const a = getAvailabilityText(g);
+    return a && a.startsWith('Available Now');
+  }).slice(0, 20);
+  if (!nowGirls.length) { container.style.display = 'none'; return; }
+  container.style.display = '';
+  // Duplicate items for seamless loop
+  const items = [...nowGirls, ...nowGirls];
+  container.innerHTML = '<div class="live-ticker-track">' + items.map(g =>
+    '<div class="live-ticker-item"><span class="live-ticker-dot"></span><span class="live-ticker-name">' + (g.name || '') + '</span><span class="live-ticker-venue">at ' + (g.venueName || '') + '</span></div>'
+  ).join('') + '</div>';
+}
+
+// ── 9. Init all animations after page render ──
 function initAllAnimations() {
   setTimeout(() => {
     initHeroAnimations();
     initShimmerText();
     initScrollReveals();
     initCarouselDrag();
+    initCardTilt();
+    initLiveTicker();
   }, 100);
 }
 
@@ -5566,3 +5649,35 @@ handleLandingRoute = function(path) {
 
 // Init on first load
 document.addEventListener('DOMContentLoaded', () => setTimeout(initAllAnimations, 200));
+
+// ── Custom Cursor ──
+(function initCustomCursor() {
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (!dot || !ring || window.matchMedia('(hover: none)').matches || window.innerWidth < 768) return;
+
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+
+  // Smooth ring follow
+  function followRing() {
+    rx += (mx - rx) * 0.15;
+    ry += (my - ry) * 0.15;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(followRing);
+  }
+  followRing();
+
+  // Hover effect on interactive elements
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a,button,[onclick],.girl-card,.filter-dropdown-btn,.venue-carousel-item,.preset-open-btn,input,textarea,select')) {
+      ring.classList.add('hovering');
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a,button,[onclick],.girl-card,.filter-dropdown-btn,.venue-carousel-item,.preset-open-btn,input,textarea,select')) {
+      ring.classList.remove('hovering');
+    }
+  });
+})();

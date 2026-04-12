@@ -4817,7 +4817,8 @@ function renderWorkingNowCard(g) {
   const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
 
   const hideSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
-  let html = '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
+  const glowClassWN = avail && avail.startsWith('Available Now') ? ' glow-now' : avail && (avail.startsWith('Available Later') || avail.startsWith('Available Future')) ? ' glow-later' : '';
+  let html = '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + glowClassWN + '" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
   html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g, '&quot;') + '" onclick="event.stopPropagation();toggleFavorite(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + heartSvg + '</div>';
   html += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g, '&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg + '</div>';
   html += '<div class="card-badges"><span class="country-badge">' + (g.venueName || '') + '</span>';
@@ -5092,7 +5093,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   if (a60) html += ' Average ' + a60 + ' for 60 min.';
   html += '</p>';
   html += '<hr class="gold-divider">';
-  html += '<div class="girls-grid" style="margin-top:16px">';
+  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle"><button class="venue-layout-grid' + (currentLayout === 'grid' ? ' active' : '') + '" onclick="setLayout(\'grid\',false);handleLandingRoute(window.location.pathname)" title="Grid"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button><button class="venue-layout-bento' + (currentLayout === 'bento' ? ' active' : '') + '" onclick="setLayout(\'bento\',false);handleLandingRoute(window.location.pathname)" title="Bento"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg></button></div></div>';
+  html += '<div class="girls-grid' + (currentLayout === 'bento' ? ' bento' : '') + '" style="margin-top:0">';
 
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
@@ -5122,7 +5124,9 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
       : '<div class="silhouette"></div>';
     const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
     const hideSvg2 = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
-    html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + '">';
+    const availTextV = getAvailabilityText(g);
+    const glowClassV = availTextV && availTextV.startsWith('Available Now') ? ' glow-now' : availTextV && (availTextV.startsWith('Available Later') || availTextV.startsWith('Available Future')) ? ' glow-later' : '';
+    html += '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + glowClassV + '">';
     html += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleFavorite(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + heartSvg + '</div>';
     html += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg2 + '</div>';
     html += '<div class="card-badges">' + '<span class="country-badge">' + v.name + '</span>';
@@ -5131,6 +5135,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     if (g.pornstar) html += '<span class="av-badge">AV</span>';
     html += '</div>';
     html += '<div class="card-img">' + img + '</div>';
+    html += '<div class="card-name-overlay"><span>' + (g.name || '') + '</span></div>';
     html += '<div class="card-info">';
     html += '<div class="card-name">' + (g.name || '') + '</div>';
     html += '<div class="card-country">' + countries + '</div>';

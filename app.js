@@ -5334,8 +5334,10 @@ function handleLandingRoute(path) {
   } else if (parts.length === 3 && parts[0] === 'sydney') {
     // /sydney/{region}/{venue} — venue page (suburb-less legacy or venue directly under region)
     html = renderVenuePage(parts[1], null, parts[2]);
-  } else if (parts.length === 4 && parts[0] === 'sydney') {
-    // /sydney/{region}/{suburb}/{venue} — venue page with suburb
+  } else if (parts.length === 4 && parts[0] === 'sydney' && VENUE_DATA[parts[3]]) {
+    // /sydney/{region}/{suburb}/{venue} — redirect to /bento
+    setLayout('bento', false);
+    history.replaceState(null, '', '/sydney/' + parts[1] + '/' + parts[2] + '/' + parts[3] + '/bento');
     html = renderVenuePage(parts[1], parts[2], parts[3]);
   } else if (parts.length === 5 && parts[0] === 'sydney' && (parts[4] === 'bento' || parts[4] === 'grid')) {
     // /sydney/{region}/{suburb}/{venue}/bento or /grid

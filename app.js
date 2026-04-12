@@ -3452,8 +3452,8 @@ function showProfile(g) {
     image: image || undefined,
     worksFor: { '@type': 'LocalBusiness', name: g.venueName || '', address: { '@type': 'PostalAddress', addressLocality: suburbName, addressRegion: 'NSW', addressCountry: 'AU' } }
   });
-  const overlay = document.getElementById('profileOverlay');
-  const panel = document.getElementById('profilePanel');
+  const landingEl = document.getElementById('landingPage');
+  const mainSection = document.querySelector('section.section');
   const countries = countriesWithFlags(g.country);
   const photos = g.photos || [];
   const mainImg = photos.length ? photos[0] : '';
@@ -3462,10 +3462,8 @@ function showProfile(g) {
   const profileIdx = currentFiltered.indexOf(g);
   window._currentProfileIdx = profileIdx;
 
-  panel.classList.toggle('favorited', isFavorite(g));
-  // Render navigation strip after panel animation
-  setTimeout(renderProfileNavStrip, 100);
-  panel.innerHTML = `
+  // Render as dedicated page
+  landingEl.innerHTML = `<div class="profile-panel${isFavorite(g) ? ' favorited' : ''}">
     ${mainImg ? '<img class="profile-hero-img" src="' + imgProxy(mainImg, 900) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : ''}
     <button class="profile-close" onclick="closeProfile()">&times;</button>
     <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
@@ -3536,14 +3534,14 @@ function showProfile(g) {
     ${buildProfileCalendar(g)}
     ${buildReviewSection(g, [])}
     ${buildSimilarGirls(g)}
-    </div>`;
-  // Cinematic open: show overlay then trigger transition
-  overlay.style.display = 'flex';
-  overlay.scrollTop = 0;
-  requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('active')));
+    </div>
+  </div>`;
+  landingEl.style.display = '';
+  mainSection.style.display = 'none';
+  window.scrollTo({ top: 0 });
   // Load and init reviews
   initReviewSection(g);
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = '';
 
   // Auto-rotate profile photos with crossfade
   clearInterval(window._profileRotate);
@@ -3734,21 +3732,19 @@ function navigateProfile(dir) {
 
 function closeProfile() {
   clearInterval(window._profileRotate);
-  const overlay = document.getElementById('profileOverlay');
-  overlay.classList.remove('active');
-  document.body.style.overflow = '';
   document.getElementById('profileNavStrip').style.display = 'none';
-  setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
-  if (window.location.pathname !== '/') history.pushState(null, '', '/');
-  updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null);
+  window._currentProfileIdx = -1;
+  document.body.style.overflow = '';
+  // Navigate back to profiles
+  history.pushState(null, '', '/profiles/' + currentLayout);
+  handleLandingRoute('/profiles/' + currentLayout);
 }
 
 // Close profile on Escape
 document.addEventListener('keydown', e => {
   // Escape — close profile or go back
   if (e.key === 'Escape') {
-    const overlay = document.getElementById('profileOverlay');
-    if (overlay && overlay.classList.contains('active')) { closeProfile(); return; }
+    if (window._currentProfileIdx >= 0 && document.querySelector('.profile-panel')) { closeProfile(); return; }
     const landing = document.getElementById('landingPage');
     if (landing && landing.style.display !== 'none') { history.pushState(null, '', '/'); showMainSection(); updateMeta('Brothel Search \u2013 Girls, Rosters & Venues', 'Find who\u2019s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/', null); return; }
   }
@@ -3756,8 +3752,7 @@ document.addEventListener('keydown', e => {
   // Don't handle shortcuts when typing in inputs
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
 
-  const overlay = document.getElementById('profileOverlay');
-  const profileOpen = overlay && overlay.classList.contains('active');
+  const profileOpen = window._currentProfileIdx >= 0 && !!document.querySelector('.profile-panel');
 
   // Lightbox navigation
   const lbOverlay = document.getElementById('lightboxOverlay');
@@ -3805,26 +3800,23 @@ window.addEventListener('popstate', () => {
   const path = window.location.pathname;
   if (path === '/profiles' || path === '/profiles/bento' || path === '/profiles/grid') {
     clearInterval(window._profileRotate);
-    const overlay = document.getElementById('profileOverlay');
-    overlay.classList.remove('active');
+    document.getElementById('profileNavStrip').style.display = 'none';
+    window._currentProfileIdx = -1;
     document.body.style.overflow = '';
-    setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 500);
+    const layout = path.endsWith('/grid') ? 'grid' : 'bento';
+    setLayout(layout, false);
     showMainSection();
     updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
   } else if (path === '/' || path === '/index.html') {
-    closeProfile();
     handleLandingRoute(path);
   } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') && !findGirlByPath(path)) {
-    closeProfile();
     handleLandingRoute(path);
   } else {
     const g = findGirlByPath(path);
     if (g) showProfile(g);
   }
 });
-document.getElementById('profileOverlay').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeProfile();
-});
+// Profile overlay removed — now renders as page
 
 
 // Back to top

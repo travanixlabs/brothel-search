@@ -366,7 +366,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .card-special{font-size:12px;color:var(--accent2);letter-spacing:1px;margin-bottom:4px}
 .card-stats{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:.5px;margin-top:6px}
 .card-stats span{white-space:nowrap}
-.card-rates{font-size:12px;letter-spacing:1px;margin-top:4px;background:linear-gradient(135deg,#c9952c,#f5e6a3,#c9952c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.card-rates{font-size:12px;letter-spacing:1px;margin-top:4px;color:var(--text-dim)}
 .card-labels{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
 .card-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border:1px solid rgba(201,149,44,0.25);border-radius:4px;color:var(--gold)}
 .card-hover-line{display:none}

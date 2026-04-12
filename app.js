@@ -5650,34 +5650,3 @@ handleLandingRoute = function(path) {
 // Init on first load
 document.addEventListener('DOMContentLoaded', () => setTimeout(initAllAnimations, 200));
 
-// ── Custom Cursor ──
-(function initCustomCursor() {
-  const dot = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  if (!dot || !ring || window.matchMedia('(hover: none)').matches || window.innerWidth < 768) return;
-
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-
-  // Smooth ring follow
-  function followRing() {
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(followRing);
-  }
-  followRing();
-
-  // Hover effect on interactive elements
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest('a,button,[onclick],.girl-card,.filter-dropdown-btn,.venue-carousel-item,.preset-open-btn,input,textarea,select')) {
-      ring.classList.add('hovering');
-    }
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest('a,button,[onclick],.girl-card,.filter-dropdown-btn,.venue-carousel-item,.preset-open-btn,input,textarea,select')) {
-      ring.classList.remove('hovering');
-    }
-  });
-})();

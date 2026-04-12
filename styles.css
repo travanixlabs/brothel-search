@@ -107,15 +107,6 @@ html[style*="paused"] *{animation-play-state:paused!important}
 .reveal-scale{opacity:0;transform:scale(0.9);transition:opacity .6s cubic-bezier(0.16,1,0.3,1),transform .6s cubic-bezier(0.16,1,0.3,1)}
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 
-/* ── Custom Cursor ── */
-.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:99999;border-radius:50%;mix-blend-mode:difference}
-.cursor-dot{width:6px;height:6px;background:var(--gold);transform:translate(-50%,-50%);transition:transform .1s}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(201,149,44,0.5);transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,transform .08s}
-.cursor-ring.hovering{width:48px;height:48px;border-color:var(--gold)}
-body{cursor:none}
-a,button,input,textarea,select,.girl-card,.filter-dropdown-btn,.preset-open-btn,.venue-carousel-item,[onclick]{cursor:none}
-@media(max-width:768px){.cursor-dot,.cursor-ring{display:none}body,a,button,input,textarea,select,.girl-card{cursor:auto}}
-@media(hover:none){.cursor-dot,.cursor-ring{display:none}body,a,button,input,textarea,select,.girl-card{cursor:auto}}
 
 /* ── Reduced Motion ── */
 @media(prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*{opacity:1;transform:none;transition:none}.shimmer-text{animation:none}.hero-enter{animation:none;opacity:1;transform:none}.page-transition-overlay{display:none}#goldParticleCanvas{display:none}}

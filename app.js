@@ -2466,6 +2466,7 @@ function renderCard(g, grid) {
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${hideSvg}</div>
       <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
+      <div class="card-name-overlay"><span>${g.name || ''}</span></div>
       <div class="card-info">
         <div class="card-name">${g.name || ''}</div>
         <div class="card-country">${countries}</div>

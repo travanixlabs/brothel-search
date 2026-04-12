@@ -808,7 +808,7 @@ body.is-admin .admin-only{display:initial!important}
 .review-reply-cancel{color:var(--text-dim);border-color:rgba(255,255,255,0.08)}
 .review-reply-cancel:hover{border-color:rgba(255,255,255,0.2)}
 .review-reply-msg{font-size:11px;color:var(--gold)}
-.home-review-card{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.1);border-radius:10px;padding:12px 14px;transition:border-color .2s;width:320px;flex-shrink:0}
+.home-review-card{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.1);border-radius:12px;padding:12px 14px;transition:border-color .2s;width:280px;flex-shrink:0;scroll-snap-align:center}
 .home-review-card:hover{border-color:rgba(201,149,44,0.3)}
 .nav-right-icons{display:flex;align-items:center;gap:12px}
 .notif-bell{position:relative;display:flex;align-items:center}

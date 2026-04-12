@@ -4025,12 +4025,12 @@ function renderHomePage() {
 
     if (digestGirls.length) {
       html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
-      html += '<div style="display:flex;flex-wrap:wrap;gap:14px;padding-bottom:12px;margin-bottom:40px;justify-content:center">';
+      html += '<div class="venue-carousel digest-carousel">';
       for (const g of digestGirls) {
         const score = matchScores.get(g.venue + ':' + g.name) || 0;
-        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:120px;height:160px;object-fit:cover;display:block;border-radius:10px 10px 0 0">' : '';
         const tag = isFavorite(g) ? '<div style="font-size:9px;color:#c9952c;font-weight:600">Favourite</div>' : (g.startDate && g.startDate >= thirtyDayStrDigest ? '<div style="font-size:9px;color:#00c864;font-weight:600">New</div>' : '');
-        html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name||'') + '</div><div style="font-size:9px;color:var(--text-dim)">' + (g.venueName||'') + '</div>' + (userPreferences && score > 0 ? '<div style="font-size:9px;color:var(--gold)">' + score + '% match</div>' : '') + tag + '</div>';
+        html += '<div class="venue-carousel-item" style="width:120px;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div class="venue-carousel-info"><div class="venue-carousel-name">' + (g.name||'') + '</div><div class="venue-carousel-meta">' + (g.venueName||'') + '</div>' + (userPreferences && score > 0 ? '<div class="venue-carousel-meta" style="color:var(--gold)">' + score + '% match</div>' : '') + tag + '</div></div>';
       }
       html += '</div>';
     }
@@ -5247,7 +5247,7 @@ function initHomePageListeners() {
         reviewsContainer.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">No reviews yet.</div>';
         return;
       }
-      let rhtml = '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">';
+      let rhtml = '<div class="venue-carousel review-carousel">';
       for (const r of recentReviews) {
         const stars = '\u2605'.repeat(r.overall) + '\u2606'.repeat(5 - r.overall);
         const date = new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });

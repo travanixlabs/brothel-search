@@ -1598,17 +1598,8 @@ function numToDateShort(n) { const d = new Date(n); return d.toISOString().slice
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
 function imgProxy(url, w = 300) {
   if (!url) return '';
-  if (url.includes('thegoldenapple.com.au')) return 'https://www.thegoldenapple.com.au/wp-content/themes/thegoldenapple/timthumb.php?w=' + w + '&src=' + encodeURIComponent(url);
-  return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=80';
+  return url;
 }
-// Fallback: if wsrv.nl fails, load the original URL directly
-document.addEventListener('error', function(e) {
-  const img = e.target;
-  if (img.tagName === 'IMG' && img.src.includes('wsrv.nl') && !img.dataset.fallback) {
-    const original = new URL(img.src).searchParams.get('url');
-    if (original) { img.dataset.fallback = '1'; img.src = original; }
-  }
-}, true);
 
 function fmt24to12(t) {
   if (!t || !t.includes(':')) return t || '';

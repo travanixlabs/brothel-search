@@ -3303,7 +3303,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2025-10-01"
+      "lastRostered": "2026-04-13"
     },
     {
       "name": "Ria",
@@ -5777,10 +5777,6 @@
       }
     },
     "Trinity": {
-      "2026-04-13": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-04-14": {
         "start": "00:00",
         "end": "08:00"
@@ -5863,8 +5859,14 @@
         "start": "16:00",
         "end": "22:00"
       }
+    },
+    "Rebecca": {
+      "2026-04-13": {
+        "start": "09:30",
+        "end": "17:30"
+      }
     }
   },
   "lastGirlsSync": "2026-04-12T22:28:21.831Z",
-  "lastCalendarSync": "2026-04-12T21:00:18.912Z"
+  "lastCalendarSync": "2026-04-12T23:05:01.825Z"
 }

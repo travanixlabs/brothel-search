@@ -503,8 +503,7 @@ async function scrapeGirlsListing(site) {
     const age    = (cardHtml.match(/Age:(\d+)/)        || [])[1] || '';
     const body   = (cardHtml.match(/Body Size:(\d+)/)   || [])[1] || '';
     const cupRaw = (cardHtml.match(/Cup Size:([^<]+)/) || [])[1] || '';
-    const cupLetter = (cupRaw.match(/([A-Z](?:[A-Z])?[+\-]?)/) || [])[1] || cupRaw.trim();
-    const cup = cupLetter;
+    const cup = cupRaw.trim().replace(/\s*[Cc]up\s*/, '').replace(/\s+/g, '').trim();
     const height = (cardHtml.match(/Height:(\d+)/)       || [])[1] || '';
 
     cards.push({ id, ...parsed, age, body, cup, height });
@@ -3074,6 +3073,20 @@ async function syncGirls(env, site) {
       siteChanged = true;
       updated++;
     }
+  }
+
+  // Backfill missing fields from listing cards
+  const cardsByName = {};
+  for (const c of cards) cardsByName[c.name] = c;
+  for (const g of existing) {
+    const c = cardsByName[g.name];
+    if (!c) continue;
+    let filled = false;
+    if (!g.age && c.age) { g.age = c.age; filled = true; }
+    if (!g.body && c.body) { g.body = c.body; filled = true; }
+    if (!g.cup && c.cup) { g.cup = c.cup; filled = true; }
+    if (!g.height && c.height) { g.height = c.height; filled = true; }
+    if (filled) { siteChanged = true; updated++; }
   }
 
   const allNew = cards.filter(c => {

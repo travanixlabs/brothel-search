@@ -781,8 +781,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
     document.getElementById('notifBell').style.display = 'flex';
-    // Skip redundant work on token refresh — only run full init on sign-in or initial session
-    if (event === 'TOKEN_REFRESHED') return;
+    // Skip redundant work on token refresh or session restore — only run full init on actual sign-in
+    if (event === 'TOKEN_REFRESHED' || event === 'INITIAL_SESSION') return;
     loadNotifications();
     // Navigate to home only on actual login from auth overlay, not session restore
     const authOverlay = document.getElementById('authOverlay');
@@ -1599,9 +1599,16 @@ function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.no
 function imgProxy(url, w = 300) {
   if (!url) return '';
   if (url.includes('thegoldenapple.com.au')) return 'https://www.thegoldenapple.com.au/wp-content/themes/thegoldenapple/timthumb.php?w=' + w + '&src=' + encodeURIComponent(url);
-  if (url.includes('pennys77.com.au') || url.includes('gatewayclub.com.au')) return url;
   return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=80';
 }
+// Fallback: if wsrv.nl fails, load the original URL directly
+document.addEventListener('error', function(e) {
+  const img = e.target;
+  if (img.tagName === 'IMG' && img.src.includes('wsrv.nl') && !img.dataset.fallback) {
+    const original = new URL(img.src).searchParams.get('url');
+    if (original) { img.dataset.fallback = '1'; img.src = original; }
+  }
+}, true);
 
 function fmt24to12(t) {
   if (!t || !t.includes(':')) return t || '';

@@ -5692,6 +5692,30 @@ handleLandingRoute = function(path) {
   return result;
 };
 
+// ── Mobile Hamburger Menu ──
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinksEl = document.getElementById('navLinks');
+if (hamburgerBtn && navLinksEl) {
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open');
+    navLinksEl.classList.toggle('mobile-open');
+  });
+  // Close mobile menu when a nav link is clicked
+  navLinksEl.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('open');
+      navLinksEl.classList.remove('mobile-open');
+    });
+  });
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!e.target.closest('nav') && navLinksEl.classList.contains('mobile-open')) {
+      hamburgerBtn.classList.remove('open');
+      navLinksEl.classList.remove('mobile-open');
+    }
+  });
+}
+
 // Init on first load
 document.addEventListener('DOMContentLoaded', () => setTimeout(initAllAnimations, 200));
 

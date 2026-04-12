@@ -535,24 +535,66 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);letter-spacing:2px;border-top:1px solid rgba(255,255,255,0.06)}
 
 /* Responsive */
+/* ── Hamburger Menu ── */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;z-index:101}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;transition:all .3s ease}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
 @media(max-width:768px){
   nav{padding:0 16px;height:60px}
   .logo{font-size:16px;letter-spacing:3px}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(6,6,12,0.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:flex-start;padding:32px 24px;gap:8px;display:none;z-index:99;overflow-y:auto}
+  .nav-links.mobile-open{display:flex}
+  .nav-link{width:100%;text-align:center;padding:14px 16px;font-size:12px;border-radius:10px;border:1px solid rgba(201,149,44,0.08)}
+  .nav-link.active{background:rgba(201,149,44,0.08);border-color:rgba(201,149,44,0.2)}
+  .nav-dropdown{width:100%}
+  .nav-dropdown .nav-link{width:100%}
+  .nav-dropdown-panel{position:static;width:100%;box-shadow:none;background:transparent;border:none;padding:0;margin-top:4px}
+  .nav-dropdown-panel .nav-dropdown-suburbs{display:flex;flex-direction:column;gap:4px}
+  .nav-dropdown-item{padding:10px 16px;text-align:center;font-size:11px}
+  .nav-right-icons{gap:8px}
   .search-input{font-size:13px;padding:6px 10px}
-  .section{padding:80px 16px;padding-top:100px}
+  .section{padding:80px 16px;padding-top:80px}
   .section-title{font-size:32px;letter-spacing:2px}
   .girls-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .girls-grid.bento{columns:3 120px}
   .profile-layout{grid-template-columns:1fr}
   .profile-details-grid{grid-template-columns:1fr}
-  .profile-panel{padding:0}
+  .profile-panel{padding:0;max-width:100%;margin:0 auto;border-radius:0}
   .profile-body{padding:0 16px 20px}
   .profile-hero-img{height:30vh}
-  .profile-overlay{padding:16px}
+  .profile-nav-strip{top:60px;padding:6px 10px}
+  .hero-section{min-height:calc(100vh - 60px)}
+  .hero-title-main{font-size:clamp(36px,12vw,60px);letter-spacing:3px}
+  .hero-tag{font-size:10px;letter-spacing:6px}
+  .hero-tagline{font-size:15px}
+  .home-stats{gap:12px}
+  .glass-stat{padding:10px 16px}
+  .home-stat-num{font-size:32px}
+  .home-stat-label{font-size:8px;letter-spacing:2px}
+  .home-search{font-size:14px;padding:12px 20px}
+  .venue-carousel{justify-content:flex-start}
+  .compare-table-wrap{font-size:11px}
+  .landing-title{font-size:24px}
+  .landing-desc{font-size:13px}
+  .review-form-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .review-form-row label{margin-bottom:0}
+  .filter-sidebar.open{width:80vw;min-width:0}.filter-sidebar-content{width:80vw;min-width:0}
 }
 @media(max-width:480px){
   .girls-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+  .girls-grid.bento{columns:2 100px}
   .card-info{padding:14px 12px 12px}
   .card-name{font-size:13px}
+  .home-stats{gap:8px}
+  .glass-stat{padding:8px 12px}
+  .home-stat-num{font-size:26px}
+  .hero-title-main{font-size:36px;letter-spacing:2px}
+  .profile-nav-thumb{width:36px;height:36px}
+  .profile-nav-arrow{width:28px;height:28px;font-size:12px}
 }
 /* Auth overlay */
 .auth-overlay{position:fixed;inset:0;z-index:1000;background:radial-gradient(ellipse at 50% 30%,rgba(201,149,44,0.03),rgba(8,8,14,0.98) 70%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}

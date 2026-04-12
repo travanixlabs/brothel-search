@@ -3528,10 +3528,10 @@ function showProfile(g) {
           ${detailRow('Type', g.type)}
           ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;word-break:break-all">' + g.oldUrl + '</a></span></div>' : ''}
         </div>
-      </div>
-      <div class="profile-desc-section">
-        ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
-        ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
+        <div class="profile-desc-section">
+          ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
+          ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
+        </div>
       </div>
     </div>
     ${buildProfileCalendar(g)}

@@ -350,9 +350,9 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .girl-card{background:linear-gradient(180deg,rgba(12,12,20,0.3) 0%,rgba(8,8,16,0.6) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,149,44,0.12);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .5s cubic-bezier(0.23,1,0.32,1);clip-path:none;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 8px 32px rgba(0,0,0,0.3);opacity:0;transform:translateY(30px)}
 .girl-card.card-visible{opacity:1;transform:translateY(0);transition:opacity .5s cubic-bezier(0.23,1,0.32,1),transform .5s cubic-bezier(0.23,1,0.32,1)}
 .girl-card.card-settled{opacity:1;transform:none;transition:border-color .4s,box-shadow .4s,transform .3s ease}
-.girl-card:hover,.girl-card.card-visible:hover,.girl-card.card-settled:hover{border-color:rgba(201,149,44,0.35);box-shadow:inset 0 1px 0 rgba(255,255,255,0.06),0 12px 40px rgba(0,0,0,0.4),0 0 20px rgba(201,149,44,0.08)}
+.girl-card:hover,.girl-card.card-visible:hover,.girl-card.card-settled:hover{}
 .girl-card::before{content:'';position:absolute;inset:0;border-radius:16px;background:radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,-100%),rgba(201,149,44,0.08),transparent 60%);opacity:0;transition:opacity .3s;z-index:1;pointer-events:none}
-.girl-card:hover::before{opacity:1}
+.girls-grid:not(.bento) .girl-card:hover::before{opacity:0}
 .card-img{position:relative;background:linear-gradient(135deg,rgba(201,149,44,0.04),rgba(180,74,255,0.02))}
 .card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(6,6,12,0.7) 100%);pointer-events:none;z-index:1}
 .card-thumb{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s cubic-bezier(0.23,1,0.32,1),opacity .4s;border-radius:16px 16px 0 0}

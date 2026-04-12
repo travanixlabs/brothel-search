@@ -844,6 +844,7 @@ async function syncWpGirls(env, site) {
   // Update originalSite for existing girls
   let siteChanged = false;
   let updated = 0;
+  const knownNames = new Set(existing.map(g => g.name));
   for (const g of existing) {
     const shouldBe = activeUrls.has(g.oldUrl) ? 'Exists' : '';
     if (g.originalSite !== shouldBe) {
@@ -872,7 +873,6 @@ async function syncWpGirls(env, site) {
   const now = new Date().toISOString();
   const todayStr = now.split('T')[0];
   const addedNames = [];
-  const knownNames = new Set(existing.map(g => g.name));
 
   for (const profileUrl of toProcess) {
     try {
@@ -1368,6 +1368,8 @@ async function syncGatewayClubGirls(env, site) {
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
   const existingNames = new Set(existing.map(g => g.name));
+  const existingByUrl = {};
+  for (const g of existing) { if (g.oldUrl) existingByUrl[g.oldUrl] = g; }
 
   const resp = await fetch(site.girlsUrl, { headers: { 'User-Agent': UA } });
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
@@ -1377,6 +1379,8 @@ async function syncGatewayClubGirls(env, site) {
   // Collect new profiles from listing page
   const blocks = html.split('sl_col_glry');
   const newProfiles = [];
+  const addedNames = [];
+  let siteChanged = false;
   const todayStr = fmtDate(getAEDTDate());
   const countryMap = { aussie: 'Australian', australian: 'Australian', singaporean: 'Singaporean', chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', brazilian: 'Brazilian', kiwi: 'New Zealander', indian: 'Indian', european: 'European', filipina: 'Filipino', indonesian: 'Indonesian', persian: 'Persian', colombian: 'Colombian' };
 
@@ -1386,9 +1390,23 @@ async function syncGatewayClubGirls(env, site) {
     let name = nameMatch[1].trim();
     if (!name || name === 'SYDNEY LADIES') continue;
     name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    if (existingNames.has(name) || !isValidGirlName(name)) continue;
+    if (!isValidGirlName(name)) continue;
 
     const urlMatch = block.match(/href="(https:\/\/www\.gatewayclub\.com\.au\/ladies\/[^"]+)"/);
+    // Handle renames — URL exists with different name
+    if (urlMatch && existingByUrl[urlMatch[1]] && existingByUrl[urlMatch[1]].name !== name) {
+      const g = existingByUrl[urlMatch[1]];
+      const oldName = g.name;
+      if (data.calendar && data.calendar[oldName]) { data.calendar[name] = data.calendar[oldName]; delete data.calendar[oldName]; }
+      existingNames.delete(oldName); existingNames.add(name);
+      g.name = name;
+      addedNames.push(name + ' (renamed from ' + oldName + ')');
+      siteChanged = true;
+      console.log(`[Gateway Club] Renamed: ${oldName} -> ${name}`);
+      continue;
+    }
+    if (existingNames.has(name)) continue;
+    if (urlMatch && existingByUrl[urlMatch[1]]) continue;
     const ageMatch = block.match(/Age:<\/td><td>(\d+)/);
     const bustMatch = block.match(/Bust:<\/td><td>([A-Z](?:DD)?)/);
     const heightMatch = block.match(/Height:<\/td><td>(\d+)cm/);
@@ -1462,7 +1480,6 @@ async function syncGatewayClubGirls(env, site) {
   // Fetch profile pages for new girls (batch of 15)
   const BATCH = Math.min(15, MAX_NEW_PER_RUN);
   const toProcess = newProfiles.slice(0, BATCH);
-  const addedNames = [];
 
   for (const p of toProcess) {
     let photos = [], labels = [], desc = '', roster = {};
@@ -1713,6 +1730,8 @@ async function syncStilettoGirls(env, site) {
   const { data, sha } = await loadData(env, site);
   const existing = data.girls || [];
   const existingNames = new Set(existing.map(g => g.name));
+  const existingByUrl = {};
+  for (const g of existing) { if (g.oldUrl) existingByUrl[g.oldUrl] = g; }
 
   const resp = await fetch('https://www.stilettosydney.com/ladies-of-stiletto/', { headers: { 'User-Agent': UA } });
   if (!resp.ok) return { added: 0, remaining: 0, names: [] };
@@ -1728,7 +1747,21 @@ async function syncStilettoGirls(env, site) {
   while ((m = tileRe.exec(html)) !== null) {
     const [, attrs, profileUrl, rawTitle, photoUrl] = m;
     let name = rawTitle.replace(/\s*\*?New\*?\s*/gi, '').trim();
-    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
+    if (!name || !isValidGirlName(name)) continue;
+    // Check if URL already exists (handle renames)
+    if (existingByUrl[profileUrl]) {
+      const g = existingByUrl[profileUrl];
+      if (g.name !== name) {
+        const oldName = g.name;
+        if (data.calendar && data.calendar[oldName]) { data.calendar[name] = data.calendar[oldName]; delete data.calendar[oldName]; }
+        existingNames.delete(oldName); existingNames.add(name);
+        g.name = name;
+        addedNames.push(name + ' (renamed from ' + oldName + ')');
+        console.log(`[Stiletto] Renamed: ${oldName} -> ${name}`);
+      }
+      continue;
+    }
+    if (existingNames.has(name)) continue;
 
     const natMatch = attrs.match(/data-nationality='([^']+)'/);
     const bustSizeMatch = attrs.match(/data-bust-size='([^']+)'/);
@@ -2306,8 +2339,20 @@ async function syncJiniaGirls(env, site) {
       .replace(/\s*\(joined.*$/gi, '')
       .replace(/\s*\([^)]*\)\s*$/gi, '')
       .trim();
-    if (!name || existingNames.has(name) || !isValidGirlName(name)) continue;
-    if (existingUrls.has(profileUrl)) continue;
+    if (!name || !isValidGirlName(name)) continue;
+    // Handle renames — URL exists with different name
+    if (existingUrls.has(profileUrl)) {
+      const g = existing.find(e => e.oldUrl === profileUrl);
+      if (g && g.name !== name) {
+        const oldName = g.name;
+        if (data.calendar && data.calendar[oldName]) { data.calendar[name] = data.calendar[oldName]; delete data.calendar[oldName]; }
+        existingNames.delete(oldName); existingNames.add(name);
+        g.name = name;
+        console.log(`[Jinia] Renamed: ${oldName} -> ${name}`);
+      }
+      continue;
+    }
+    if (existingNames.has(name)) continue;
     profileUrls.push({ profileUrl, name });
   }
 
@@ -3075,13 +3120,31 @@ async function syncGirls(env, site) {
     }
   }
 
-  // Backfill missing fields from listing cards
+  // Backfill missing fields + detect name changes from listing cards
+  const cardsByUrl = {};
+  for (const c of cards) cardsByUrl[`${site.girlsUrl}/${c.id}`] = c;
   const cardsByName = {};
   for (const c of cards) cardsByName[c.name] = c;
   for (const g of existing) {
-    const c = cardsByName[g.name];
+    // Match by URL first (handles renames)
+    const c = (g.oldUrl && cardsByUrl[g.oldUrl]) || cardsByName[g.name];
     if (!c) continue;
     let filled = false;
+    // Name change detection — URL matches but name differs
+    if (g.oldUrl && cardsByUrl[g.oldUrl] && cardsByUrl[g.oldUrl].name !== g.name) {
+      const oldName = g.name;
+      const newName = cardsByUrl[g.oldUrl].name;
+      // Update calendar key too
+      if (data.calendar && data.calendar[oldName]) {
+        data.calendar[newName] = data.calendar[oldName];
+        delete data.calendar[oldName];
+      }
+      g.name = newName;
+      knownNames.delete(oldName);
+      knownNames.add(newName);
+      console.log(`[${site.name}] Renamed: ${oldName} -> ${newName}`);
+      siteChanged = true; updated++;
+    }
     if (!g.age && c.age) { g.age = c.age; filled = true; }
     if (!g.body && c.body) { g.body = c.body; filled = true; }
     if (!g.cup && c.cup) { g.cup = c.cup; filled = true; }

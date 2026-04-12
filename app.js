@@ -3673,10 +3673,10 @@ function lightboxNav(dir) {
 }
 
 function getProfileNavVisible() {
-  const thumbSize = window.innerWidth <= 1100 ? 60 : 78;
+  const thumbSize = window.innerWidth <= 600 ? 40 : 52;
   const gap = 6;
-  const arrowSpace = 2 * (54 + 8); // two arrows + gaps
-  const available = window.innerHeight - arrowSpace - 24; // padding
+  const arrowSpace = 2 * (40 + 12); // two arrows + gaps
+  const available = window.innerWidth - arrowSpace - 48; // padding
   return Math.max(3, Math.floor(available / (thumbSize + gap)));
 }
 
@@ -3705,7 +3705,7 @@ function renderProfileNavStrip() {
   for (let i = start; i < end; i++) {
     const g = currentFiltered[i];
     const isActive = i === idx;
-    const photo = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 78) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : '<div class="thumb-placeholder">' + (g.name || '?').charAt(0) + '</div>';
+    const photo = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 52) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '">' : '<div class="thumb-placeholder">' + (g.name || '?').charAt(0) + '</div>';
     html += '<div class="profile-nav-thumb' + (isActive ? ' active' : '') + '" data-nav-idx="' + i + '" title="' + (g.name || '').replace(/"/g, '&quot;') + '">' + photo + '</div>';
   }
   thumbs.innerHTML = html;

@@ -3859,6 +3859,11 @@ loadProfiles().then(() => {
     if (g) {
       // Defer profile load until auth + subscription is resolved
       window._pendingProfileGirl = g;
+      // Hide main section while waiting
+      const mainSec = document.querySelector('section.section');
+      if (mainSec) mainSec.style.display = 'none';
+      const landingEl = document.getElementById('landingPage');
+      if (landingEl) { landingEl.style.display = ''; landingEl.innerHTML = '<div style="text-align:center;padding:120px 20px;color:var(--text-dim)">Loading...</div>'; }
     }
     else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') { handleLandingRoute(path); }
     else if (path === '/profiles' || path.startsWith('/profiles/')) { /* already showing main section */ }

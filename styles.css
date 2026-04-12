@@ -642,8 +642,11 @@ body.is-admin .admin-only{display:initial!important}
 .hide-btn svg path,.hide-btn svg line{stroke:var(--gold)}
 .hide-btn:hover svg path,.hide-btn:hover svg line{stroke:#ff4444}
 .hide-btn.active svg path,.hide-btn.active svg line{stroke:#ff4444}
-.girl-card.favorited{border-color:rgba(201,149,44,0.4);box-shadow:0 0 16px rgba(201,149,44,0.2),0 0 32px rgba(201,149,44,0.1)}
-.profile-panel.favorited{border-color:rgba(201,149,44,0.4);box-shadow:0 0 20px rgba(201,149,44,0.2),0 0 40px rgba(201,149,44,0.1)}
+/* Available Now — green glow (highest priority) */
+.girl-card.glow-now{border-color:rgba(0,200,100,0.4);box-shadow:0 0 16px rgba(0,200,100,0.15),0 0 32px rgba(0,200,100,0.08)}
+/* Available Later — blue glow */
+.girl-card.glow-later{border-color:rgba(60,120,255,0.4);box-shadow:0 0 16px rgba(60,120,255,0.15),0 0 32px rgba(60,120,255,0.08)}
+.profile-panel.favorited{}
 #favoritesOverlay .settings-container{border-color:rgba(201,149,44,0.4);box-shadow:0 0 20px rgba(201,149,44,0.2),0 0 40px rgba(201,149,44,0.1)}
 /* Match badge on cards */
 .card-badges{position:absolute;top:8px;right:8px;z-index:5;display:flex;flex-direction:column;gap:4px;align-items:flex-end;pointer-events:none}

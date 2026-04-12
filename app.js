@@ -2430,7 +2430,9 @@ let loadingMore = false;
 
 function renderCard(g, grid) {
     const el = document.createElement('div');
-    el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '');
+    const availText = getAvailabilityText(g);
+    const glowClass = availText && availText.startsWith('Available Now') ? ' glow-now' : availText && (availText.startsWith('Available Later') || availText.startsWith('Available Future')) ? ' glow-later' : '';
+    el.className = 'girl-card' + (isFavorite(g) ? ' favorited' : '') + glowClass;
     const img = g.photos && g.photos.length
       ? `<img class="card-thumb" src="${imgProxy(g.photos[0])}" alt="${(g.name || '').replace(/"/g, '&quot;')} – ${(g.venueName || '').replace(/"/g, '&quot;')} ${(VENUE_SUBURB_NAMES[g.venue] || '').replace(/"/g, '&quot;')}, Sydney" loading="lazy">`
       : '<div class="silhouette"></div>';

@@ -4865,6 +4865,13 @@ function venuePriceRange(venueId, field) {
   return '$' + Math.min(...prices) + ' \u2013 $' + Math.max(...prices);
 }
 
+function venueAvgPrice(venueId, field) {
+  field = field || 'val1';
+  const prices = getFiltered().filter(g => g.venue === venueId && g[field]).map(g => parseInt(g[field])).filter(p => p > 0);
+  if (!prices.length) return '';
+  return '$' + Math.round(prices.reduce((a, b) => a + b, 0) / prices.length);
+}
+
 function venueRosteredCount(venueId) {
   return getFiltered().filter(g => g.venue === venueId && getAvailabilityText(g) && getAvailabilityText(g) !== 'ended').length;
 }
@@ -5056,13 +5063,13 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const thirtyDaysAgoV = new Date(); thirtyDaysAgoV.setDate(thirtyDaysAgoV.getDate() - 30);
   const thirtyDayStrV = thirtyDaysAgoV.toISOString().split('T')[0];
   const activeCount = girls.filter(g => g.lastRostered && g.lastRostered >= thirtyDayStrV).length;
-  const p30 = venuePriceRange(venueId, 'val1');
-  const p45 = venuePriceRange(venueId, 'val2');
-  const p60 = venuePriceRange(venueId, 'val3');
+  const a30 = venueAvgPrice(venueId, 'val1');
+  const a45 = venueAvgPrice(venueId, 'val2');
+  const a60 = venueAvgPrice(venueId, 'val3');
   html += '<p class="landing-desc">' + activeCount + '/' + girls.length + ' girls active in past month.';
-  if (p30) html += ' ' + p30 + ' for 30 min.';
-  if (p45) html += ' ' + p45 + ' for 45 min.';
-  if (p60) html += ' ' + p60 + ' for 60 min.';
+  if (a30) html += ' Average ' + a30 + ' for 30 min.';
+  if (a45) html += ' Average ' + a45 + ' for 45 min.';
+  if (a60) html += ' Average ' + a60 + ' for 60 min.';
   html += '</p>';
   html += '<hr class="gold-divider">';
   html += '<div class="girls-grid" style="margin-top:16px">';

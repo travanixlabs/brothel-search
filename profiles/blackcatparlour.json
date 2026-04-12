@@ -2643,6 +2643,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-11"
+    },
+    {
+      "name": "Asia",
+      "country": [
+        "Euroasian"
+      ],
+      "age": "29",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-12",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Libby",
+      "country": [
+        "Indian"
+      ],
+      "age": "26",
+      "height": "168",
+      "cup": "",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-12",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4424,6 +4460,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-11T04:00:26.291Z",
+  "lastGirlsSync": "2026-04-12T10:33:31.788Z",
   "lastCalendarSync": "2026-04-12T09:26:47.451Z"
 }

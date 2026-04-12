@@ -72,7 +72,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11",
+      "lastRostered": "2026-04-18",
       "desc": "You're not ready for this gorgeous, petite, Singaporean babe. Not only is Allie absolutely stunning she has a great personality and provides an even better service, she loves to please and will have you in complete bliss!"
     },
     {
@@ -2163,6 +2163,10 @@
       "2026-04-08": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-18": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Ava": {},
@@ -2583,6 +2587,6 @@
     },
     "Daya": {}
   },
-  "lastGirlsSync": "2026-04-11T10:18:43.281Z",
-  "lastCalendarSync": "2026-04-11T11:01:29.515Z"
+  "lastGirlsSync": "2026-04-11T16:00:55.926Z",
+  "lastCalendarSync": "2026-04-11T17:06:25.520Z"
 }

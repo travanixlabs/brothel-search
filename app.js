@@ -3493,7 +3493,7 @@ function showProfile(g) {
           ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="${(g.name || '')} photo ${i + 1} of ${photos.length}" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
       </div>
-      <div>
+      <div class="profile-details-grid">
         <div class="profile-detail">
           ${detailRow('Country', countries)}
           ${detailRow('Age', g.age)}
@@ -3503,6 +3503,8 @@ function showProfile(g) {
           ${detailRow('30 min', g.val1 ? '$' + g.val1 : '')}
           ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
           ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
+        </div>
+        <div class="profile-detail">
           ${detailRow('Start Date', g.startDate)}
           ${(() => {
             if (!g.lastRostered) return '';
@@ -3524,8 +3526,10 @@ function showProfile(g) {
           ${detailRow('Special', g.special)}
           ${detailRow('Language', g.lang)}
           ${detailRow('Type', g.type)}
-          ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">' + g.oldUrl + '</a></span></div>' : ''}
+          ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;word-break:break-all">' + g.oldUrl + '</a></span></div>' : ''}
         </div>
+      </div>
+      <div class="profile-desc-section">
         ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
         ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
       </div>

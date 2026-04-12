@@ -2766,7 +2766,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-09",
+      "lastRostered": "2026-04-13",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/10/Sami-Jp-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/10/Sami-Jp-05.jpeg",
@@ -10109,6 +10109,10 @@
       "2026-04-09": {
         "start": "10:00",
         "end": "05:00"
+      },
+      "2026-04-13": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Honomi": {
@@ -10199,7 +10203,7 @@
     }
   },
   "lastGirlsSync": "2026-04-12T04:00:21.654Z",
-  "lastCalendarSync": "2026-04-12T07:49:09.421Z",
+  "lastCalendarSync": "2026-04-12T15:01:43.697Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

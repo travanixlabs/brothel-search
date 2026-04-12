@@ -5256,6 +5256,11 @@ function initHomePageListeners() {
 }
 
 function handleLandingRoute(path) {
+  // Hide profile nav strip on any non-profile navigation
+  document.getElementById('profileNavStrip').style.display = 'none';
+  window._currentProfileIdx = -1;
+  clearInterval(window._profileRotate);
+
   const parts = path.replace(/^\//, '').replace(/\/$/, '').split('/');
   const landingEl = document.getElementById('landingPage');
   const mainSection = document.querySelector('section.section');

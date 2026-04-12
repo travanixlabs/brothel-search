@@ -4669,7 +4669,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-13",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-01.jpeg",
@@ -6327,7 +6327,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-13",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2023/03/Renata-Tw-08.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2023/03/Renata-Tw-07.jpeg"
@@ -9425,6 +9425,10 @@
       "2026-04-10": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-04-13": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Akker": {
@@ -10163,6 +10167,10 @@
       "2026-04-12": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-04-13": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Yuna": {
@@ -10191,7 +10199,7 @@
     }
   },
   "lastGirlsSync": "2026-04-12T04:00:21.654Z",
-  "lastCalendarSync": "2026-04-12T05:09:26.902Z",
+  "lastCalendarSync": "2026-04-12T07:49:09.421Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

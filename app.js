@@ -3539,6 +3539,8 @@ function showProfile(g) {
   landingEl.style.display = '';
   mainSection.style.display = 'none';
   window.scrollTo({ top: 0 });
+  // Show nav strip
+  setTimeout(renderProfileNavStrip, 100);
   // Load and init reviews
   initReviewSection(g);
   document.body.style.overflow = '';

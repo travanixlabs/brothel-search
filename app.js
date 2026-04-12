@@ -3856,15 +3856,32 @@ loadProfiles().then(() => {
     handleLandingRoute('/');
   } else if (path !== '/profiles') {
     const g = findGirlByPath(path);
-    if (g) { showProfile(g); }
+    if (g) {
+      // Defer profile load until auth + subscription is resolved
+      window._pendingProfileGirl = g;
+    }
     else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') { handleLandingRoute(path); }
     else if (path === '/profiles' || path.startsWith('/profiles/')) { /* already showing main section */ }
   }
 });
-checkAuth().then(() => {
+checkAuth().then(async (loggedIn) => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }
   });
+  // Check subscription before resolving pending profile
+  if (loggedIn) {
+    if (userRole === 'admin') { isSubscribed = true; }
+    else {
+      const sub = await checkSubscription();
+      isSubscribed = sub && sub.status === 'active';
+    }
+  }
+  // Now show pending profile if one was deferred
+  if (window._pendingProfileGirl) {
+    const g = window._pendingProfileGirl;
+    window._pendingProfileGirl = null;
+    showProfile(g);
+  }
   // Handle hash routes on page load
   const hash = window.location.hash.replace('#', '');
   if (hash === 'subscribe') {

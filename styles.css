@@ -20,8 +20,8 @@ html[style*="paused"] *{animation-play-state:paused!important}
 .reveal-stagger.visible>*:nth-child(n+11){transition-delay:.6s}
 
 /* ── Full-Screen Cinematic Hero ── */
-.hero-section{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-section{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:visible}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero-bg::before{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse 80% 60% at 20% 80%,rgba(201,149,44,0.12),transparent 50%),
   radial-gradient(ellipse 60% 50% at 80% 20%,rgba(245,215,142,0.08),transparent 50%),

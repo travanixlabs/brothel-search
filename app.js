@@ -3493,45 +3493,45 @@ function showProfile(g) {
           ${photos.map((p, i) => `<img src="${imgProxy(p, 120)}" alt="${(g.name || '')} photo ${i + 1} of ${photos.length}" class="${i === 0 ? 'active' : ''}" onclick="selectProfilePhoto(${i})">`).join('')}
         </div>
       </div>
-      <div class="profile-details-grid">
-        <div class="profile-detail">
-          ${detailRow('Country', countries)}
-          ${detailRow('Age', g.age)}
-          ${detailRow('Body', g.body)}
-          ${detailRow('Height', g.height ? g.height + ' cm' : '')}
-          ${detailRow('Cup', g.cup)}
-          ${detailRow('30 min', g.val1 ? '$' + g.val1 : '')}
-          ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
-          ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
+      <div class="profile-details-wrap">
+        <div class="profile-details-grid">
+          <div class="profile-detail">
+            ${detailRow('Country', countries)}
+            ${detailRow('Age', g.age)}
+            ${detailRow('Body', g.body)}
+            ${detailRow('Height', g.height ? g.height + ' cm' : '')}
+            ${detailRow('Cup', g.cup)}
+            ${detailRow('30 min', g.val1 ? '$' + g.val1 : '')}
+            ${detailRow('45 min', g.val2 ? '$' + g.val2 : '')}
+            ${detailRow('60 min', g.val3 ? '$' + g.val3 : '')}
+          </div>
+          <div class="profile-detail">
+            ${detailRow('Start Date', g.startDate)}
+            ${(() => {
+              if (!g.lastRostered) return '';
+              const rd = new Date(g.lastRostered + 'T00:00:00');
+              const today = new Date(); today.setHours(0,0,0,0);
+              const diff = Math.round((today - rd) / 86400000);
+              if (diff < 0) {
+                const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                const label = 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
+                return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a9eff;margin-right:8px;box-shadow:0 0 6px #4a9eff40"></span>' + label + '</span></div>';
+              }
+              const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
+              const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
+              return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
+            })()}
+            ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
+            ${detailRow('Experience', g.exp)}
+            ${detailRow('Special', g.special)}
+            ${detailRow('Language', g.lang)}
+            ${detailRow('Type', g.type)}
+            ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;word-break:break-all">' + g.oldUrl + '</a></span></div>' : ''}
+          </div>
         </div>
-        <div class="profile-detail">
-          ${detailRow('Start Date', g.startDate)}
-          ${(() => {
-            if (!g.lastRostered) return '';
-            const rd = new Date(g.lastRostered + 'T00:00:00');
-            const today = new Date(); today.setHours(0,0,0,0);
-            const diff = Math.round((today - rd) / 86400000);
-            if (diff < 0) {
-              const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-              const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-              const label = 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
-              return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a9eff;margin-right:8px;box-shadow:0 0 6px #4a9eff40"></span>' + label + '</span></div>';
-            }
-            const color = diff === 0 ? '#00c864' : diff <= 3 ? '#f5e6a3' : diff <= 7 ? '#c9952c' : '#555';
-            const label = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff + ' days ago';
-            return '<div class="profile-detail-row"><span>Latest Availability</span><span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + color + ';margin-right:8px;box-shadow:0 0 6px ' + color + '40"></span>' + label + '</span></div>';
-          })()}
-          ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="profile-detail-row"><span>Availability</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
-          ${detailRow('Experience', g.exp)}
-          ${detailRow('Special', g.special)}
-          ${detailRow('Language', g.lang)}
-          ${detailRow('Type', g.type)}
-          ${g.oldUrl ? '<div class="profile-detail-row"><span>Reference</span><span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;word-break:break-all">' + g.oldUrl + '</a></span></div>' : ''}
-        </div>
-        <div class="profile-desc-section">
-          ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
-          ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
-        </div>
+        ${g.desc ? '<div class="profile-desc">' + g.desc + '</div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="card-labels">' + g.labels.map(l => '<span class="card-label">' + l + '</span>').join('') + '</div>' : ''}
       </div>
     </div>
     ${buildProfileCalendar(g)}

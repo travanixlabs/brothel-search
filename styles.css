@@ -438,6 +438,7 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 @keyframes profilePageIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .profile-hero-img{width:100%;height:40vh;max-height:400px;object-fit:cover;display:block;mask-image:linear-gradient(to bottom,black 60%,transparent);-webkit-mask-image:linear-gradient(to bottom,black 60%,transparent)}
 .profile-body{padding:40px;position:relative;z-index:2}
+.profile-body .fav-heart,.profile-body .hide-btn{opacity:1}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .profile-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-dim);font-size:28px;cursor:pointer;transition:color .3s}
 .profile-close:hover{color:#fff}

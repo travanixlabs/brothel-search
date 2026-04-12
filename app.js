@@ -4992,16 +4992,20 @@ async function initVenueMap() {
 
   for (const [id, v] of venues) {
     const count = venueGirlCount(id);
+    const venueGirls = allGirls.filter(g => g.venue === id);
+    const nowCount = venueGirls.filter(g => { const a = getAvailabilityText(g); return a && a.startsWith('Available Now'); }).length;
+    const laterCount = venueGirls.filter(g => { const a = getAvailabilityText(g); return a && (a.startsWith('Available Later') || a.startsWith('Available Future')); }).length;
     let label = v.name;
     if (userLat !== null) {
       const dist = haversine(userLat, userLng, v.lat, v.lng);
       label += ' <span style="opacity:0.6;font-size:9px">' + dist.toFixed(1) + 'km</span>';
     }
+    label += '<br><span style="font-size:9px"><span style="color:#00c864">' + nowCount + ' Working Now</span> <span style="opacity:0.6">|</span> <span style="color:#3c78ff">' + laterCount + ' Working Later</span></span>';
     const marker = L.marker([v.lat, v.lng], {
-      icon: L.divIcon({ html: '<div class="venue-marker">' + label + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 40] }),
+      icon: L.divIcon({ html: '<div class="venue-marker">' + label + '</div>', className: 'venue-marker-icon', iconSize: null, iconAnchor: [60, 50] }),
     });
     marker.on('click', function() { navigateToLanding('/sydney/' + (VENUE_REGIONS[id] || 'other') + '/' + v.suburbSlug + '/' + id + '/'); });
-    marker.bindTooltip('<strong>' + v.name + '</strong><br>' + v.address + '<br>' + count + ' girls', { className: 'venue-tooltip', direction: 'top', offset: [0, -20] });
+    marker.bindTooltip('<strong>' + v.name + '</strong><br>' + v.address + '<br>' + count + ' girls<br><span style="color:#00c864">' + nowCount + ' now</span> | <span style="color:#3c78ff">' + laterCount + ' later</span>', { className: 'venue-tooltip', direction: 'top', offset: [0, -20] });
     clusters.addLayer(marker);
   }
 

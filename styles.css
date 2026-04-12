@@ -335,6 +335,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;ba
 .girls-grid.bento .girl-card:nth-child(7n+5) .card-thumb{aspect-ratio:5/4}
 .girls-grid.bento .girl-card:nth-child(7n+6) .card-thumb{aspect-ratio:3/5}
 .girls-grid.bento .girl-card:nth-child(7n) .card-thumb{aspect-ratio:4/3}
+.card-name-overlay{display:none}
+.girls-grid.bento .card-name-overlay{display:block}
 .girls-grid.bento .girl-card:hover .card-name-overlay{opacity:1}
 .girls-grid.bento .card-name-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.8));opacity:0;transition:opacity .3s;pointer-events:none;border-radius:0 0 10px 10px}
 .girls-grid.bento .card-name-overlay span{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold)}

@@ -5692,29 +5692,21 @@ handleLandingRoute = function(path) {
   return result;
 };
 
-// ── Mobile Menu (logo toggles on mobile, navigates home on desktop) ──
+// ── Mobile Menu ──
 const logoBtn = document.getElementById('logoBtn');
-const navLinksEl = document.getElementById('navLinks');
-if (logoBtn && navLinksEl) {
+const mobileMenu = document.getElementById('mobileMenu');
+if (logoBtn && mobileMenu) {
   logoBtn.addEventListener('click', () => {
     if (window.innerWidth <= 768) {
-      navLinksEl.classList.toggle('mobile-open');
+      mobileMenu.classList.toggle('open');
     } else {
       navigateToLanding('/');
     }
   });
-  // Close mobile menu when a nav link is clicked
-  navLinksEl.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinksEl.classList.remove('mobile-open');
-    });
-  });
-  // Close on outside click
-  document.addEventListener('click', e => {
-    if (!e.target.closest('nav') && navLinksEl.classList.contains('mobile-open')) {
-      navLinksEl.classList.remove('mobile-open');
-    }
-  });
+}
+function closeMobileMenu() {
+  const mm = document.getElementById('mobileMenu');
+  if (mm) mm.classList.remove('open');
 }
 
 // Init on first load

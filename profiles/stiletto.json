@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-20",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-23",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -676,7 +676,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-04"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Carol",
@@ -1499,7 +1499,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13"
+      "lastRostered": "2026-04-14"
     },
     {
       "name": "Halo",
@@ -1679,7 +1679,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Iris",
@@ -4669,7 +4669,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-13",
       "oldUrl": "https://www.stilettosydney.com/workers/inanna-lux-new/",
       "photos": [],
       "labels": [
@@ -4715,6 +4715,7 @@
       "2026-04-19",
       "2026-04-20",
       "2026-04-21",
+      "2026-04-22",
       "2026-04-23"
     ],
     "Allegra": {
@@ -4811,6 +4812,34 @@
         "end": "05:00"
       },
       "2026-04-08": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-13": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-15": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-20": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-21": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-23": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -5131,6 +5160,14 @@
       "2026-04-04": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-17": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-04-18": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Cindy": {
@@ -5710,7 +5747,7 @@
       }
     },
     "Hailey": {
-      "2026-04-13": {
+      "2026-04-14": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -5846,6 +5883,10 @@
       "2026-04-19": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-04-13": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Alisa": {
@@ -5858,6 +5899,10 @@
       "2026-04-12": {
         "start": "16:00",
         "end": "22:00"
+      },
+      "2026-04-13": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Rebecca": {
@@ -5865,8 +5910,36 @@
         "start": "09:30",
         "end": "17:30"
       }
+    },
+    "Arizona": {
+      "2026-04-13": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-04-14": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-04-16": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-04-19": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-04-20": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
+    "Imogen": {
+      "2026-04-17": {
+        "start": "16:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-12T22:28:21.831Z",
-  "lastCalendarSync": "2026-04-12T23:05:01.825Z"
+  "lastCalendarSync": "2026-04-13T03:58:53.961Z"
 }

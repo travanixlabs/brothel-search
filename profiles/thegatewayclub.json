@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2034,6 +2034,26 @@
         "DATY"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Veronica",
+      "country": [],
+      "age": "27",
+      "height": "",
+      "cup": "D",
+      "body": "12",
+      "desc": "Starting at The Gateway Club, Veronica is a stunning new addition. A sophisticated young woman with a beautifully feminine figure, she captivates with her dark, exotic features and striking black hair. Effortlessly elegant and undeniably alluring, Veronica exudes confidence, charm, and pure femininity.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2019-06-01",
+      "lastRostered": "2019-06-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/veronica-new-2/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2019/06/Arrow.png"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2219,16 +2239,16 @@
         "end": "18:00"
       },
       "2026-04-18": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-13": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-15": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Ava": {},
@@ -2376,8 +2396,8 @@
         "end": "06:00"
       },
       "2026-04-15": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Ivy": {},
@@ -2467,7 +2487,7 @@
         "end": "06:00"
       },
       "2026-04-17": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -2571,8 +2591,8 @@
     "Bunny": {},
     "Chloe": {
       "2026-04-14": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-19": {
         "start": "12:00",
@@ -2857,8 +2877,9 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Veronica": {}
   },
-  "lastGirlsSync": "2026-04-13T06:18:37.059Z",
+  "lastGirlsSync": "2026-04-13T10:00:50.782Z",
   "lastCalendarSync": "2026-04-13T08:27:42.357Z"
 }

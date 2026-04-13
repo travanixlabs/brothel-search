@@ -1601,10 +1601,6 @@
       "2026-04-18": {
         "start": "11:00",
         "end": "05:00"
-      },
-      "2026-04-19": {
-        "start": "11:00",
-        "end": "05:00"
       }
     },
     "Amy": {
@@ -1804,10 +1800,6 @@
         "end": "05:00"
       },
       "2026-04-11": {
-        "start": "17:00",
-        "end": "05:00"
-      },
-      "2026-04-13": {
         "start": "17:00",
         "end": "05:00"
       }
@@ -2029,19 +2021,11 @@
       "2026-04-12": {
         "start": "11:00",
         "end": "05:00"
-      },
-      "2026-04-18": {
-        "start": "11:00",
-        "end": "05:00"
-      },
-      "2026-04-19": {
-        "start": "11:00",
-        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-13T04:00:40.344Z",
-  "lastCalendarSync": "2026-04-13T03:58:24.513Z",
+  "lastCalendarSync": "2026-04-13T11:48:25.033Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

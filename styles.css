@@ -366,13 +366,13 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .girls-grid.list .card-name-overlay{display:none}
 /* Extra details columns (list view only) */
 .card-list-extra{display:none}
-.girls-grid.list .card-list-extra{display:flex;flex-direction:column;justify-content:center;flex:0 0 30%;min-width:0;padding:10px 14px;gap:3px;font-size:10px;color:var(--text-dim);border-left:1px solid rgba(201,149,44,0.08);overflow:hidden}
+.girls-grid.list .card-list-extra{display:flex;flex-direction:column;justify-content:center;flex:0 0 30%;min-width:0;padding:10px 17px 10px 14px;gap:3px;font-size:10px;color:var(--text-dim);border-left:1px solid rgba(201,149,44,0.08);overflow:hidden;box-sizing:border-box}
 .girls-grid.list .card-list-extra-wide{flex:0 0 50%;justify-content:flex-start}
 .girls-grid.list .cle-row{display:flex;gap:6px;align-items:baseline;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .girls-grid.list .cle-row span:last-child,.girls-grid.list .cle-row a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1;color:var(--text)}
 .girls-grid.list .cle-label{color:var(--gold);font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;flex-shrink:0;min-width:40px}
-.girls-grid.list .cle-desc{font-size:10px;color:var(--text);line-height:1.4;padding:3px 0}
-.girls-grid.list .cle-labels{display:flex;flex-wrap:wrap;gap:3px;padding:3px 0}
+.girls-grid.list .cle-desc{font-size:10px;color:var(--text);line-height:1.4;padding:3px 0;white-space:normal;word-wrap:break-word;overflow-wrap:break-word;max-width:100%}
+.girls-grid.list .cle-labels{display:flex;flex-wrap:wrap;gap:3px;padding:3px 0;max-width:100%}
 .girls-grid.list .cle-label-pill{font-size:8px;padding:2px 6px;background:rgba(201,149,44,0.08);border:1px solid rgba(201,149,44,0.15);border-radius:4px;color:var(--gold);white-space:nowrap}
 /* Hide duplicate availability in column 1 */
 .girls-grid.list .card-last-rostered{display:none}

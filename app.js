@@ -2474,6 +2474,16 @@ function renderCard(g, grid) {
         ${(g.val1 || g.val2 || g.val3) ? '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>' : ''}
         ${lastRostered ? '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : lastRostered.startsWith('Available Future') ? ' available-future' : '') + '">' + lastRostered + '</div>' : ''}
         <div class="card-hover-line"></div>
+      </div>
+      <div class="card-list-extra">
+        ${g.startDate ? '<div class="cle-row"><span class="cle-label">Start</span><span>' + g.startDate + '</span></div>' : ''}
+        ${g.exp ? '<div class="cle-row"><span class="cle-label">Exp</span><span>' + g.exp + '</span></div>' : ''}
+        ${g.lang ? '<div class="cle-row"><span class="cle-label">Lang</span><span>' + g.lang + '</span></div>' : ''}
+        ${g.type ? '<div class="cle-row"><span class="cle-label">Type</span><span>' + g.type + '</span></div>' : ''}
+        ${g.special ? '<div class="cle-row"><span class="cle-label">Special</span><span>' + g.special + '</span></div>' : ''}
+        ${g.oldUrl ? '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>' : ''}
+        ${g.desc ? '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;').substring(0, 200) + (g.desc.length > 200 ? '...' : '') + '</div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="cle-labels">' + g.labels.slice(0, 6).map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>' : ''}
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));

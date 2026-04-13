@@ -3815,12 +3815,14 @@ document.addEventListener('keydown', e => {
 // Browser back/forward navigation
 window.addEventListener('popstate', () => {
   const path = window.location.pathname;
-  if (path === '/profiles' || path === '/profiles/bento' || path === '/profiles/grid') {
+  if (path === '/profiles' || path === '/profiles/bento' || path === '/profiles/grid' || path === '/profiles/compact' || path === '/profiles/list') {
     clearInterval(window._profileRotate);
     document.getElementById('profileNavStrip').style.display = 'none';
     window._currentProfileIdx = -1;
     document.body.style.overflow = '';
-    const layout = path.endsWith('/grid') ? 'grid' : 'bento';
+    const parts = path.split('/');
+    const layoutPart = parts[2] || 'bento';
+    const layout = ['grid','bento','compact','list'].includes(layoutPart) ? layoutPart : 'bento';
     setLayout(layout, false);
     showMainSection();
     updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
@@ -3878,7 +3880,7 @@ loadProfiles().then(() => {
       if (landingEl) { landingEl.style.display = ''; landingEl.innerHTML = '<div style="text-align:center;padding:120px 20px;color:var(--text-dim)">Loading...</div>'; }
     }
     else if (path.startsWith('/sydney') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') { handleLandingRoute(path); }
-    else if (path === '/profiles' || path.startsWith('/profiles/')) { /* already showing main section */ }
+    else if (path === '/profiles' || path.startsWith('/profiles/')) { handleLandingRoute(path); }
   }
 });
 checkAuth().then(async (loggedIn) => {

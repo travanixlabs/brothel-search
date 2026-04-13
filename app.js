@@ -2631,7 +2631,7 @@ function renderGrid() {
   }
 
   grid.innerHTML = '';
-  grid.classList.toggle('bento', currentLayout === 'bento');
+  ['grid','bento','compact','list'].forEach(m => grid.classList.toggle(m, currentLayout === m));
   loadMore();
   fillViewport();
 }
@@ -5089,8 +5089,18 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   html += '</p>';
   html += '<hr class="gold-divider">';
   const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;
-  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle"><button class="venue-layout-grid' + (currentLayout === 'grid' ? ' active' : '') + '" onclick="setLayout(\'grid\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/grid\');handleLandingRoute(\'' + venueBasePath + '/grid\')" title="Grid"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button><button class="venue-layout-bento' + (currentLayout === 'bento' ? ' active' : '') + '" onclick="setLayout(\'bento\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/bento\');handleLandingRoute(\'' + venueBasePath + '/bento\')" title="Bento"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg></button></div></div>';
-  html += '<div class="girls-grid' + (currentLayout === 'bento' ? ' bento' : '') + '" style="margin-top:0">';
+  const layoutSvgs = {
+    grid: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>',
+    bento: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg>',
+    compact: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="3" height="3"/><rect x="6.5" y="1" width="3" height="3"/><rect x="12" y="1" width="3" height="3"/><rect x="1" y="6.5" width="3" height="3"/><rect x="6.5" y="6.5" width="3" height="3"/><rect x="12" y="6.5" width="3" height="3"/><rect x="1" y="12" width="3" height="3"/><rect x="6.5" y="12" width="3" height="3"/><rect x="12" y="12" width="3" height="3"/></svg>',
+    list: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="3" rx="1"/><rect x="1" y="6.5" width="14" height="3" rx="1"/><rect x="1" y="11" width="14" height="3" rx="1"/></svg>',
+  };
+  let toggleBtns = '';
+  for (const m of ['grid','bento','compact','list']) {
+    toggleBtns += '<button class="' + (currentLayout === m ? 'active' : '') + '" onclick="setLayout(\'' + m + '\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/' + m + '\');handleLandingRoute(\'' + venueBasePath + '/' + m + '\')" title="' + m.charAt(0).toUpperCase() + m.slice(1) + '">' + layoutSvgs[m] + '</button>';
+  }
+  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle">' + toggleBtns + '</div></div>';
+  html += '<div class="girls-grid ' + currentLayout + '" style="margin-top:0">';
 
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
@@ -5292,8 +5302,9 @@ function handleLandingRoute(path) {
 
   if (cleanPath === '' || cleanPath === 'index.html') {
     html = renderHomePage();
-  } else if (cleanPath === 'profiles' || cleanPath === 'profiles/bento' || cleanPath === 'profiles/grid') {
-    const layout = cleanPath === 'profiles/grid' ? 'grid' : 'bento';
+  } else if (cleanPath === 'profiles' || cleanPath === 'profiles/bento' || cleanPath === 'profiles/grid' || cleanPath === 'profiles/compact' || cleanPath === 'profiles/list') {
+    const layoutPart = cleanPath.split('/')[1];
+    const layout = ['grid','bento','compact','list'].includes(layoutPart) ? layoutPart : 'bento';
     setLayout(layout, false);
     if (cleanPath === 'profiles') history.replaceState(null, '', '/profiles/' + layout);
     restoreActivePresetOrClear();
@@ -5330,12 +5341,13 @@ function handleLandingRoute(path) {
     // /sydney/{region}/{venue} — venue page (suburb-less legacy or venue directly under region)
     html = renderVenuePage(parts[1], null, parts[2]);
   } else if (parts.length === 4 && parts[0] === 'sydney' && VENUE_DATA[parts[3]]) {
-    // /sydney/{region}/{suburb}/{venue} — redirect to /bento
-    setLayout('bento', false);
-    history.replaceState(null, '', '/sydney/' + parts[1] + '/' + parts[2] + '/' + parts[3] + '/bento');
+    // /sydney/{region}/{suburb}/{venue} — redirect to default layout
+    const defLayout = currentLayout || 'bento';
+    setLayout(defLayout, false);
+    history.replaceState(null, '', '/sydney/' + parts[1] + '/' + parts[2] + '/' + parts[3] + '/' + defLayout);
     html = renderVenuePage(parts[1], parts[2], parts[3]);
-  } else if (parts.length === 5 && parts[0] === 'sydney' && (parts[4] === 'bento' || parts[4] === 'grid')) {
-    // /sydney/{region}/{suburb}/{venue}/bento or /grid
+  } else if (parts.length === 5 && parts[0] === 'sydney' && ['bento','grid','compact','list'].includes(parts[4])) {
+    // /sydney/{region}/{suburb}/{venue}/{layout}
     setLayout(parts[4], false);
     html = renderVenuePage(parts[1], parts[2], parts[3]);
   }
@@ -5618,18 +5630,23 @@ function initCarouselDrag() {
   });
 }
 
-// ── 7a. Layout Toggle (Grid / Bento) ──
+// ── 7a. Layout Toggle (Grid / Bento / Compact / List) ──
 let currentLayout = 'bento';
-document.getElementById('layoutGrid').onclick = () => { setLayout('grid', true); };
-document.getElementById('layoutBento').onclick = () => { setLayout('bento', true); };
+const LAYOUTS = ['grid', 'bento', 'compact', 'list'];
+LAYOUTS.forEach(m => {
+  const btn = document.getElementById('layout' + m.charAt(0).toUpperCase() + m.slice(1));
+  if (btn) btn.onclick = () => setLayout(m, true);
+});
 function setLayout(mode, pushState) {
   currentLayout = mode;
   const grid = document.getElementById('girlsGrid');
   if (grid) {
-    grid.classList.toggle('bento', mode === 'bento');
+    LAYOUTS.forEach(m => grid.classList.toggle(m, mode === m));
   }
-  document.getElementById('layoutGrid').classList.toggle('active', mode === 'grid');
-  document.getElementById('layoutBento').classList.toggle('active', mode === 'bento');
+  LAYOUTS.forEach(m => {
+    const btn = document.getElementById('layout' + m.charAt(0).toUpperCase() + m.slice(1));
+    if (btn) btn.classList.toggle('active', mode === m);
+  });
   if (pushState) history.pushState(null, '', '/profiles/' + mode);
 }
 

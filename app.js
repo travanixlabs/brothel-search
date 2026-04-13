@@ -5096,7 +5096,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     list: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="3" rx="1"/><rect x="1" y="6.5" width="14" height="3" rx="1"/><rect x="1" y="11" width="14" height="3" rx="1"/></svg>',
   };
   let toggleBtns = '';
-  for (const m of ['grid','bento','compact','list']) {
+  for (const m of ['bento','grid','compact','list']) {
     toggleBtns += '<button class="' + (currentLayout === m ? 'active' : '') + '" onclick="setLayout(\'' + m + '\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/' + m + '\');handleLandingRoute(\'' + venueBasePath + '/' + m + '\')" title="' + m.charAt(0).toUpperCase() + m.slice(1) + '">' + layoutSvgs[m] + '</button>';
   }
   html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle">' + toggleBtns + '</div></div>';

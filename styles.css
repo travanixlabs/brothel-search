@@ -345,7 +345,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 
 /* ── List View Layout ── */
 .girls-grid.list{display:flex;flex-direction:column;gap:8px;grid-template-columns:none}
-.girls-grid.list .girl-card{display:flex;flex-direction:row;align-items:stretch;width:100%;max-width:100%;height:auto;border-radius:10px;padding:3px 0;overflow:hidden}
+.girls-grid.list .girl-card{display:flex;flex-direction:row;align-items:stretch;width:100%;max-width:100%;height:auto;border-radius:10px;padding:3px;overflow:hidden;box-sizing:border-box}
 .girls-grid.list .card-img{flex-shrink:0;width:80px;align-self:stretch;margin:0 0 0 3px;display:flex}
 .girls-grid.list .card-thumb{width:80px;height:100%;aspect-ratio:auto;border-radius:6px;object-fit:cover}
 .girls-grid.list .card-info{flex:0 0 20%;padding:10px 14px;background:transparent;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;overflow:hidden}

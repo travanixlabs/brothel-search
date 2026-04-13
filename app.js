@@ -5124,11 +5124,19 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     toggleBtns += '<button class="' + (currentLayout === m ? 'active' : '') + '" onclick="history.pushState(null,\'\',\'' + venueBasePath + '/' + m + '\');handleLandingRoute(\'' + venueBasePath + '/' + m + '\')" title="' + m.charAt(0).toUpperCase() + m.slice(1) + '">' + layoutSvgs[m] + '</button>';
   }
   html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle">' + toggleBtns + '</div></div>';
-  html += '<div class="girls-grid ' + currentLayout + '" style="margin-top:0">';
+  html += '<div class="girls-grid ' + currentLayout + '" id="venuePageGrid" style="margin-top:0">';
 
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
-  for (const g of girls) {
+  // Paginate: 50 for compact, 12 for other layouts
+  const venuePageSize = currentLayout === 'compact' ? 50 : 12;
+  window._venueAllGirls = girls;
+  window._venueVenue = v;
+  window._venuePageShown = Math.min(venuePageSize, girls.length);
+  window._venuePageSize = venuePageSize;
+  const girlsToShow = girls.slice(0, window._venuePageShown);
+
+  for (const g of girlsToShow) {
     const countries = countriesWithFlags(g.country);
     const girlKey = g.venue + ':' + g.name;
     const girlScore = matchScores.get(girlKey) || 0;
@@ -5212,6 +5220,110 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
 
   return html;
 }
+
+// Build a single venue card HTML (for pagination load-more)
+function buildVenueCardHtml(g, v) {
+  const countries = countriesWithFlags(g.country);
+  const girlKey = g.venue + ':' + g.name;
+  const girlScore = matchScores.get(girlKey) || 0;
+  const showBadge = userPreferences && girlScore > 0;
+  const lastRostered = (() => {
+    const avail = getAvailabilityText(g);
+    if (avail && avail !== 'ended') return avail;
+    if (!g.lastRostered) return '';
+    const today = new Date(); today.setHours(0,0,0,0);
+    const rd = new Date(g.lastRostered + 'T00:00:00');
+    const diff = Math.round((today - rd) / 86400000);
+    if (diff === 0) return 'Last rostered: Today';
+    if (diff === 1) return 'Last rostered: Yesterday';
+    if (diff < 0) {
+      const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return 'Next: ' + dayNames[rd.getDay()] + ' ' + rd.getDate() + ' ' + monthNames[rd.getMonth()];
+    }
+    return 'Last rostered: ' + diff + ' days ago';
+  })();
+  const img = g.photos && g.photos.length
+    ? '<img class="card-thumb" src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name || '').replace(/"/g, '&quot;') + '" loading="lazy">'
+    : '<div class="silhouette"></div>';
+  const heartSvg = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+  const hideSvg2 = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+  const availTextV = getAvailabilityText(g);
+  const glowClassV = availTextV && availTextV.startsWith('Available Now') ? ' glow-now' : availTextV && (availTextV.startsWith('Available Later') || availTextV.startsWith('Available Future')) ? ' glow-later' : '';
+  let h = '<div class="girl-card card-settled' + (isFavorite(g) ? ' favorited' : '') + glowClassV + '">';
+  h += '<div class="fav-heart' + (isFavorite(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleFavorite(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + heartSvg + '</div>';
+  h += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg2 + '</div>';
+  h += '<div class="card-badges"><span class="country-badge">' + v.name + '</span>';
+  if (showBadge) h += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
+  if (isNewProfile(g)) h += '<span class="new-badge">New</span>';
+  if (g.pornstar) h += '<span class="av-badge">AV</span>';
+  h += '</div>';
+  h += '<div class="card-img">' + img + '</div>';
+  h += '<div class="card-name-overlay"><span>' + (g.name || '') + '</span></div>';
+  h += '<div class="card-info">';
+  h += '<div class="card-name">' + (g.name || '') + '</div>';
+  h += '<div class="card-country">' + countries + '</div>';
+  h += '<div class="card-stats">';
+  if (g.age) h += '<span>Age ' + g.age + '</span>';
+  if (g.body) h += '<span>Body ' + g.body + '</span>';
+  if (g.height) h += '<span>' + g.height + 'cm</span>';
+  if (g.cup) h += '<span>' + g.cup + ' cup</span>';
+  h += '</div>';
+  if (g.val1 || g.val2 || g.val3) h += '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>';
+  if (lastRostered) h += '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : lastRostered.startsWith('Available Future') ? ' available-future' : '') + '">' + lastRostered + '</div>';
+  h += '</div>';
+  h += '<div class="card-list-extra">';
+  if (lastRostered) h += '<div class="cle-row"><span class="cle-label">Last Avail</span><span class="' + (lastRostered.startsWith('Available Now') ? 'available-now' : lastRostered.startsWith('Available Later') ? 'available-later' : lastRostered.startsWith('Available Future') ? 'available-future' : '') + '">' + lastRostered + '</span></div>';
+  if (g.startDate) h += '<div class="cle-row"><span class="cle-label">Start</span><span>' + g.startDate + '</span></div>';
+  if (g.exp) h += '<div class="cle-row"><span class="cle-label">Exp</span><span>' + g.exp + '</span></div>';
+  if (g.lang) h += '<div class="cle-row"><span class="cle-label">Lang</span><span>' + g.lang + '</span></div>';
+  if (g.type) h += '<div class="cle-row"><span class="cle-label">Type</span><span>' + g.type + '</span></div>';
+  if (g.oldUrl) h += '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>';
+  h += '</div>';
+  h += '<div class="card-list-extra card-list-extra-wide">';
+  if (g.desc) h += '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</div>';
+  if (g.labels && g.labels.length) h += '<div class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>';
+  h += '</div>';
+  h += '</div>';
+  return h;
+}
+
+// Infinite scroll load-more for venue pages
+function loadMoreVenuePage() {
+  if (window._venueLoadingMore) return;
+  const grid = document.getElementById('venuePageGrid');
+  const girls = window._venueAllGirls;
+  const v = window._venueVenue;
+  if (!grid || !girls || !v) return;
+  if (window._venuePageShown >= girls.length) return;
+  window._venueLoadingMore = true;
+  const nextEnd = Math.min(window._venuePageShown + window._venuePageSize, girls.length);
+  const startIdx = window._venuePageShown;
+  for (let i = startIdx; i < nextEnd; i++) {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = buildVenueCardHtml(girls[i], v);
+    const card = wrap.firstChild;
+    grid.appendChild(card);
+    card.style.cursor = 'pointer';
+    const g = girls[i];
+    card.onclick = (e) => { if (!e.target.closest('.fav-heart') && !e.target.closest('.hide-btn')) showProfile(g); };
+    if (currentLayout === 'list') {
+      const nameEl = card.querySelector('.card-name');
+      const heart = card.querySelector('.fav-heart');
+      const hide = card.querySelector('.hide-btn');
+      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+    }
+  }
+  window._venuePageShown = nextEnd;
+  window._venueLoadingMore = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!document.getElementById('venuePageGrid')) return;
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+    loadMoreVenuePage();
+  }
+});
 
 function isLoggedIn() {
   return document.getElementById('userMenu').style.display !== 'none';

@@ -2700,7 +2700,8 @@
         "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/5333b14c7fd1fc38821221411606e30a.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-20"
     }
   ],
   "calendar": {
@@ -4849,8 +4850,22 @@
         "start": "18:00",
         "end": "06:00"
       }
+    },
+    "Mason": {
+      "2026-04-20": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-04-14": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-04-15": {
+        "start": "18:00",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-13T16:00:40.346Z",
-  "lastCalendarSync": "2026-04-13T14:14:55.234Z"
+  "lastCalendarSync": "2026-04-13T17:40:05.396Z"
 }

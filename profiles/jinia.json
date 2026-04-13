@@ -86,7 +86,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/mmexport1774337200004.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "May",
@@ -1810,7 +1810,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250409100026.jpg"
       ],
       "labels": [],
-      "originalSite": ""
+      "originalSite": "Exists"
     },
     {
       "name": "Rina",
@@ -2435,6 +2435,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-09T04:00:49.746Z",
+  "lastGirlsSync": "2026-04-13T06:19:26.591Z",
   "lastCalendarSync": "2026-04-13T05:26:35.455Z"
 }

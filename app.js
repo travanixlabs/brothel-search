@@ -5379,10 +5379,9 @@ function handleLandingRoute(path) {
     // /sydney/{region}/{venue} — venue page (suburb-less legacy or venue directly under region)
     html = renderVenuePage(parts[1], null, parts[2]);
   } else if (parts.length === 4 && parts[0] === 'sydney' && VENUE_DATA[parts[3]]) {
-    // /sydney/{region}/{suburb}/{venue} — redirect to default layout
-    const defLayout = currentLayout || 'bento';
-    setLayout(defLayout, false);
-    history.replaceState(null, '', '/sydney/' + parts[1] + '/' + parts[2] + '/' + parts[3] + '/' + defLayout);
+    // /sydney/{region}/{suburb}/{venue} — always default to bento
+    setLayout('bento', false);
+    history.replaceState(null, '', '/sydney/' + parts[1] + '/' + parts[2] + '/' + parts[3] + '/bento');
     html = renderVenuePage(parts[1], parts[2], parts[3]);
   } else if (parts.length === 5 && parts[0] === 'sydney' && ['bento','grid','compact','list'].includes(parts[4])) {
     // /sydney/{region}/{suburb}/{venue}/{layout}

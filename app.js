@@ -2476,14 +2476,16 @@ function renderCard(g, grid) {
         <div class="card-hover-line"></div>
       </div>
       <div class="card-list-extra">
+        ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="cle-row"><span class="cle-label">Avail</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
         ${g.startDate ? '<div class="cle-row"><span class="cle-label">Start</span><span>' + g.startDate + '</span></div>' : ''}
         ${g.exp ? '<div class="cle-row"><span class="cle-label">Exp</span><span>' + g.exp + '</span></div>' : ''}
         ${g.lang ? '<div class="cle-row"><span class="cle-label">Lang</span><span>' + g.lang + '</span></div>' : ''}
         ${g.type ? '<div class="cle-row"><span class="cle-label">Type</span><span>' + g.type + '</span></div>' : ''}
-        ${g.special ? '<div class="cle-row"><span class="cle-label">Special</span><span>' + g.special + '</span></div>' : ''}
         ${g.oldUrl ? '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>' : ''}
-        ${g.desc ? '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;').substring(0, 200) + (g.desc.length > 200 ? '...' : '') + '</div>' : ''}
-        ${g.labels && g.labels.length ? '<div class="cle-labels">' + g.labels.slice(0, 6).map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>' : ''}
+      </div>
+      <div class="card-list-extra card-list-extra-wide">
+        ${g.desc ? '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>' : ''}
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));

@@ -2488,6 +2488,13 @@ function renderCard(g, grid) {
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));
     el.onclick = (e) => { closeFavorites(); spawnParticles(e); showProfile(g); };
+    // In list view, move heart/hide icons next to the name
+    if (currentLayout === 'list') {
+      const nameEl = el.querySelector('.card-name');
+      const heart = el.querySelector('.fav-heart');
+      const hide = el.querySelector('.hide-btn');
+      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+    }
     grid.appendChild(el);
     cardObserver.observe(el);
 }

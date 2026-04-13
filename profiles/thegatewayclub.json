@@ -1329,7 +1329,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2020-10-01",
+      "lastRostered": "2026-04-19",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/chloe-new-4/",
       "photos": [],
       "labels": [
@@ -2552,10 +2552,6 @@
         "start": "06:00",
         "end": "12:00"
       },
-      "2026-04-14": {
-        "start": "12:00",
-        "end": "18:00"
-      },
       "2026-04-16": {
         "start": "06:00",
         "end": "18:00"
@@ -2573,7 +2569,16 @@
     "Aisha": {},
     "Bella": {},
     "Bunny": {},
-    "Chloe": {},
+    "Chloe": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-04-19": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
     "Claire": {},
     "Evana": {},
     "Hailey": {
@@ -2855,5 +2860,5 @@
     }
   },
   "lastGirlsSync": "2026-04-13T06:18:37.059Z",
-  "lastCalendarSync": "2026-04-13T06:30:18.165Z"
+  "lastCalendarSync": "2026-04-13T08:27:42.357Z"
 }

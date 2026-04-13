@@ -2484,8 +2484,8 @@ function renderCard(g, grid) {
         ${g.oldUrl ? '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>' : ''}
       </div>
       <div class="card-list-extra card-list-extra-wide">
-        ${g.desc ? '<div class="cle-row cle-row-wrap"><span class="cle-label">Desc</span><span class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</span></div>' : ''}
-        ${g.labels && g.labels.length ? '<div class="cle-row cle-row-wrap"><span class="cle-label">Labels</span><span class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</span></div>' : ''}
+        ${g.desc ? '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>' : ''}
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));

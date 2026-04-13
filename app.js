@@ -2414,6 +2414,8 @@ function getFiltered() {
   return list;
 }
 
+const PAGE_SIZES = { bento: 12, grid: 12, compact: 50, list: 12 };
+function getPageSize() { return PAGE_SIZES[currentLayout] || 12; }
 const PAGE_SIZE = 12;
 let currentFiltered = [];
 let currentPage = 0;
@@ -2536,8 +2538,9 @@ function spawnParticles(e) {
 function loadMore() {
   if (loadingMore) return;
   const grid = document.getElementById('girlsGrid');
-  const start = currentPage * PAGE_SIZE;
-  const end = Math.min(start + PAGE_SIZE, currentFiltered.length);
+  const ps = getPageSize();
+  const start = currentPage * ps;
+  const end = Math.min(start + ps, currentFiltered.length);
   if (start >= currentFiltered.length) return;
   loadingMore = true;
     const loader = document.createElement('div');
@@ -2638,14 +2641,14 @@ function renderGrid() {
 
 function fillViewport() {
   requestAnimationFrame(() => {
-    while (currentPage * PAGE_SIZE < currentFiltered.length && document.body.offsetHeight <= window.innerHeight + 400) {
+    while (currentPage * getPageSize() < currentFiltered.length && document.body.offsetHeight <= window.innerHeight + 400) {
       loadMore();
     }
   });
 }
 
 window.addEventListener('scroll', () => {
-  if (currentPage * PAGE_SIZE >= currentFiltered.length) return;
+  if (currentPage * getPageSize() >= currentFiltered.length) return;
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400) loadMore();
 });
 
@@ -5638,6 +5641,7 @@ LAYOUTS.forEach(m => {
   if (btn) btn.onclick = () => setLayout(m, true);
 });
 function setLayout(mode, pushState) {
+  const prevLayout = currentLayout;
   currentLayout = mode;
   const grid = document.getElementById('girlsGrid');
   if (grid) {
@@ -5648,6 +5652,13 @@ function setLayout(mode, pushState) {
     if (btn) btn.classList.toggle('active', mode === m);
   });
   if (pushState) history.pushState(null, '', '/profiles/' + mode);
+  // Re-render grid with new page size if layout changed and we're on profiles page
+  if (prevLayout !== mode && grid && document.querySelector('section.section').style.display !== 'none') {
+    currentPage = 0;
+    grid.innerHTML = '';
+    loadMore();
+    fillViewport();
+  }
 }
 
 // ── 7. Card Glow Follow ──

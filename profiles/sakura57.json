@@ -9722,7 +9722,7 @@
         "end": "04:00"
       },
       "2026-04-13": {
-        "start": "11:00",
+        "start": "23:00",
         "end": "04:00"
       },
       "2026-04-14": {
@@ -10319,7 +10319,7 @@
     }
   },
   "lastGirlsSync": "2026-04-13T04:00:36.491Z",
-  "lastCalendarSync": "2026-04-13T03:58:17.659Z",
+  "lastCalendarSync": "2026-04-13T05:25:48.559Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

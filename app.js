@@ -2476,7 +2476,7 @@ function renderCard(g, grid) {
         <div class="card-hover-line"></div>
       </div>
       <div class="card-list-extra">
-        ${(() => { const avail = getAvailabilityText(g); return avail && avail !== 'ended' ? '<div class="cle-row"><span class="cle-label">Avail</span><span class="' + (avail.startsWith('Available Now') ? 'available-now' : avail.startsWith('Available Later') ? 'available-later' : avail.startsWith('Available Future') ? 'available-future' : '') + '">' + avail + '</span></div>' : ''; })()}
+        ${lastRostered ? '<div class="cle-row"><span class="cle-label">Last Avail</span><span class="' + (lastRostered.startsWith('Available Now') ? 'available-now' : lastRostered.startsWith('Available Later') ? 'available-later' : lastRostered.startsWith('Available Future') ? 'available-future' : '') + '">' + lastRostered + '</span></div>' : ''}
         ${g.startDate ? '<div class="cle-row"><span class="cle-label">Start</span><span>' + g.startDate + '</span></div>' : ''}
         ${g.exp ? '<div class="cle-row"><span class="cle-label">Exp</span><span>' + g.exp + '</span></div>' : ''}
         ${g.lang ? '<div class="cle-row"><span class="cle-label">Lang</span><span>' + g.lang + '</span></div>' : ''}
@@ -2484,8 +2484,8 @@ function renderCard(g, grid) {
         ${g.oldUrl ? '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>' : ''}
       </div>
       <div class="card-list-extra card-list-extra-wide">
-        ${g.desc ? '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</div>' : ''}
-        ${g.labels && g.labels.length ? '<div class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>' : ''}
+        ${g.desc ? '<div class="cle-row cle-row-wrap"><span class="cle-label">Desc</span><span class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</span></div>' : ''}
+        ${g.labels && g.labels.length ? '<div class="cle-row cle-row-wrap"><span class="cle-label">Labels</span><span class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</span></div>' : ''}
       </div>`;
     el.querySelector('.fav-heart').addEventListener('click', (e) => toggleFavorite(g.oldUrl, e));
     el.querySelector('.hide-btn').addEventListener('click', (e) => toggleHidden(g.oldUrl, e));

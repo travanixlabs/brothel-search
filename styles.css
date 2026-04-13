@@ -371,9 +371,13 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .girls-grid.list .cle-row{display:flex;gap:6px;align-items:baseline;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .girls-grid.list .cle-row span:last-child,.girls-grid.list .cle-row a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1;color:var(--text)}
 .girls-grid.list .cle-label{color:var(--gold);font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;flex-shrink:0;min-width:40px}
-.girls-grid.list .cle-desc{font-size:10px;color:var(--text-dim);line-height:1.4;white-space:normal;word-wrap:break-word}
-.girls-grid.list .cle-labels{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.girls-grid.list .cle-desc{font-size:10px;color:var(--text);line-height:1.4;white-space:normal !important;word-wrap:break-word;overflow:visible !important;text-overflow:clip !important;display:block !important}
+.girls-grid.list .cle-row-wrap{flex-wrap:wrap;white-space:normal;align-items:flex-start}
+.girls-grid.list .cle-row-wrap > span:last-child{white-space:normal;overflow:visible;text-overflow:clip}
+.girls-grid.list .cle-labels{display:flex;flex-wrap:wrap;gap:3px}
 .girls-grid.list .cle-label-pill{font-size:8px;padding:2px 6px;background:rgba(201,149,44,0.08);border:1px solid rgba(201,149,44,0.15);border-radius:4px;color:var(--gold);white-space:nowrap}
+/* Hide duplicate availability in column 1 */
+.girls-grid.list .card-last-rostered{display:none}
 @media(max-width:768px){.girls-grid.list .card-list-extra{display:none}}
 
 /* ── Masonry / Bento Layout ── */

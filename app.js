@@ -3828,7 +3828,7 @@ window.addEventListener('popstate', () => {
     updateMeta('Browse All Profiles \u2013 Rosters Included | Brothel Search', 'Browse all girl profiles across Australian brothels. Filter by venue, country, availability, pricing and preferences. Photos, rosters and reviews.', 'https://brothelsearch.com/og-preview.png', 'https://brothelsearch.com/profiles', null);
   } else if (path === '/' || path === '/index.html') {
     handleLandingRoute(path);
-  } else if ((path.match(/^\/sydney\/([\w]+\/?){0,2}$/) || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') && !findGirlByPath(path)) {
+  } else if ((path.startsWith('/sydney/') || path === '/working-now' || path === '/compare' || path === '/analytics' || path === '/roadmap') && !findGirlByPath(path)) {
     handleLandingRoute(path);
   } else {
     const g = findGirlByPath(path);
@@ -5121,7 +5121,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   };
   let toggleBtns = '';
   for (const m of ['bento','grid','compact','list']) {
-    toggleBtns += '<button class="' + (currentLayout === m ? 'active' : '') + '" onclick="setLayout(\'' + m + '\',true);history.replaceState(null,\'\',\'' + venueBasePath + '/' + m + '\');handleLandingRoute(\'' + venueBasePath + '/' + m + '\')" title="' + m.charAt(0).toUpperCase() + m.slice(1) + '">' + layoutSvgs[m] + '</button>';
+    toggleBtns += '<button class="' + (currentLayout === m ? 'active' : '') + '" onclick="history.pushState(null,\'\',\'' + venueBasePath + '/' + m + '\');handleLandingRoute(\'' + venueBasePath + '/' + m + '\')" title="' + m.charAt(0).toUpperCase() + m.slice(1) + '">' + layoutSvgs[m] + '</button>';
   }
   html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin-top:12px;margin-bottom:8px"><div class="layout-toggle">' + toggleBtns + '</div></div>';
   html += '<div class="girls-grid ' + currentLayout + '" style="margin-top:0">';

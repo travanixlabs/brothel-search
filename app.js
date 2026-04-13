@@ -5177,7 +5177,21 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     html += '</div>';
     if (g.val1 || g.val2 || g.val3) html += '<div class="card-rates">' + [g.val1 ? '$'+g.val1 : '', g.val2 ? '$'+g.val2 : '', g.val3 ? '$'+g.val3 : ''].filter(Boolean).join(' / ') + '</div>';
     if (lastRostered) html += '<div class="card-last-rostered' + (lastRostered.startsWith('Available Now') ? ' available-now' : lastRostered.startsWith('Available Later') ? ' available-later' : lastRostered.startsWith('Available Future') ? ' available-future' : '') + '">' + lastRostered + '</div>';
-    html += '</div></div>';
+    html += '</div>';
+    // Extra columns for list view
+    html += '<div class="card-list-extra">';
+    if (lastRostered) html += '<div class="cle-row"><span class="cle-label">Last Avail</span><span class="' + (lastRostered.startsWith('Available Now') ? 'available-now' : lastRostered.startsWith('Available Later') ? 'available-later' : lastRostered.startsWith('Available Future') ? 'available-future' : '') + '">' + lastRostered + '</span></div>';
+    if (g.startDate) html += '<div class="cle-row"><span class="cle-label">Start</span><span>' + g.startDate + '</span></div>';
+    if (g.exp) html += '<div class="cle-row"><span class="cle-label">Exp</span><span>' + g.exp + '</span></div>';
+    if (g.lang) html += '<div class="cle-row"><span class="cle-label">Lang</span><span>' + g.lang + '</span></div>';
+    if (g.type) html += '<div class="cle-row"><span class="cle-label">Type</span><span>' + g.type + '</span></div>';
+    if (g.oldUrl) html += '<div class="cle-row"><span class="cle-label">Ref</span><a href="' + g.oldUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:var(--accent);text-decoration:none;word-break:break-all">Link</a></div>';
+    html += '</div>';
+    html += '<div class="card-list-extra card-list-extra-wide">';
+    if (g.desc) html += '<div class="cle-desc">' + g.desc.replace(/</g, '&lt;') + '</div>';
+    if (g.labels && g.labels.length) html += '<div class="cle-labels">' + g.labels.map(l => '<span class="cle-label-pill">' + l + '</span>').join('') + '</div>';
+    html += '</div>';
+    html += '</div>';
   }
 
   html += '</div></div>';
@@ -5385,6 +5399,15 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
+    // For list view, move heart/hide icons next to name in venue page cards
+    if (currentLayout === 'list') {
+      landingEl.querySelectorAll('.girl-card').forEach(el => {
+        const nameEl = el.querySelector('.card-name');
+        const heart = el.querySelector('.fav-heart');
+        const hide = el.querySelector('.hide-btn');
+        if (nameEl && heart && hide && !nameEl.querySelector('.fav-heart')) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+      });
+    }
     // Animate count-up numbers — delayed to sync with hero animation
     setTimeout(() => {
       document.querySelectorAll('.home-stat-num').forEach(el => {

@@ -348,7 +348,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .girls-grid.list .girl-card{display:flex;flex-direction:row;align-items:stretch;width:100%;max-width:100%;height:auto;border-radius:10px;padding:3px;overflow:hidden;box-sizing:border-box}
 .girls-grid.list .card-img{flex-shrink:0;width:80px;align-self:stretch;margin:0 0 0 3px;display:flex}
 .girls-grid.list .card-thumb{width:80px;height:100%;aspect-ratio:auto;border-radius:6px;object-fit:cover}
-.girls-grid.list .card-info{flex:0 0 20%;padding:10px 14px;background:transparent;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;overflow:hidden}
+.girls-grid.list .card-info{flex:2 1 0;padding:10px 14px;background:transparent;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;overflow:hidden}
 .girls-grid.list .card-name{font-size:14px;margin-bottom:0;padding-bottom:0;border:none;display:inline-block}
 .girls-grid.list .card-country{font-size:11px;color:var(--text-dim)}
 .girls-grid.list .card-stats{font-size:10px;display:flex;gap:8px;flex-wrap:wrap}
@@ -366,11 +366,11 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .girls-grid.list .card-name-overlay{display:none}
 /* Extra details columns (list view only) */
 .card-list-extra{display:none}
-.girls-grid.list .card-list-extra{display:flex;flex-direction:column;justify-content:center;flex:0 0 30%;min-width:0;padding:10px 17px 10px 14px;gap:3px;font-size:10px;color:var(--text-dim);border-left:1px solid rgba(201,149,44,0.08);overflow:hidden;box-sizing:border-box}
-.girls-grid.list .card-list-extra-wide{flex:0 0 50%;justify-content:flex-start}
+.girls-grid.list .card-list-extra{display:flex;flex-direction:column;justify-content:center;flex:3 1 0;min-width:0;padding:10px 17px 10px 14px;gap:3px;font-size:10px;color:var(--text-dim);border-left:1px solid rgba(201,149,44,0.08);overflow:hidden;box-sizing:border-box}
+.girls-grid.list .card-list-extra-wide{flex:5 1 0;justify-content:flex-start}
 .girls-grid.list .cle-row{display:flex;gap:6px;align-items:baseline;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .girls-grid.list .cle-row span:last-child,.girls-grid.list .cle-row a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1;color:var(--text)}
-.girls-grid.list .cle-label{color:var(--gold);font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;flex-shrink:0;min-width:40px}
+.girls-grid.list .cle-label{color:var(--gold);font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;flex-shrink:0;width:80px}
 .girls-grid.list .cle-desc{font-size:10px;color:var(--text);line-height:1.4;padding:3px 0;white-space:normal;word-wrap:break-word;overflow-wrap:break-word;max-width:100%}
 .girls-grid.list .cle-labels{display:flex;flex-wrap:wrap;gap:3px;padding:3px 0;max-width:100%}
 .girls-grid.list .cle-label-pill{font-size:8px;padding:2px 6px;background:rgba(201,149,44,0.08);border:1px solid rgba(201,149,44,0.15);border-radius:4px;color:var(--gold);white-space:nowrap}

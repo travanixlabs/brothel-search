@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-17",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-09",
+      "lastRostered": "2026-04-16",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -806,7 +806,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Clara",
@@ -2308,7 +2308,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2024-01-01"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Lena",
@@ -3032,7 +3032,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Paloma",
@@ -4792,7 +4792,8 @@
       "2026-04-23",
       "2026-04-24",
       "2026-04-25",
-      "2026-04-26"
+      "2026-04-26",
+      "2026-04-27"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -4936,10 +4937,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
-      },
-      "2026-04-14": {
-        "start": "10:00",
-        "end": "10:00"
       }
     },
     "Grace": {
@@ -5330,6 +5327,14 @@
       "2026-04-10": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-04-23": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-04-25": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Queen": {
@@ -5362,6 +5367,14 @@
         "end": "06:00"
       },
       "2026-04-17": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-24": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-25": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -5793,8 +5806,8 @@
         "end": "20:00"
       },
       "2026-04-16": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "14:00",
+        "end": "22:00"
       },
       "2026-04-17": {
         "start": "12:00",
@@ -5894,7 +5907,12 @@
       }
     },
     "Raelynn": {},
-    "Blake": {},
+    "Blake": {
+      "2026-04-16": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Kennedy": {
       "2026-04-13": {
         "start": "21:00",
@@ -6150,8 +6168,8 @@
     "Julietta": {},
     "Lovie": {
       "2026-04-14": {
-        "start": "08:00",
-        "end": "16:00"
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Jojo": {
@@ -6163,8 +6181,44 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Aurora": {
+      "2026-04-15": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-04-16": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-04-17": {
+        "start": "15:00",
+        "end": "23:00"
+      }
+    },
+    "Lacey": {
+      "2026-04-17": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-04-18": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-04-20": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-04-21": {
+        "start": "10:00",
+        "end": "18:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-13T22:39:14.223Z",
-  "lastCalendarSync": "2026-04-13T23:26:07.621Z"
+  "lastCalendarSync": "2026-04-14T03:49:27.853Z"
 }

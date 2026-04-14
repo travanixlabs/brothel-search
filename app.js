@@ -2661,32 +2661,35 @@ function renderGrid() {
   }
 
   grid.innerHTML = '';
+  compactCurrentPage = 1;
   ['grid','bento','compact','list'].forEach(m => grid.classList.toggle(m, currentLayout === m));
   loadMore();
   if (currentLayout === 'compact') renderCompactPagination();
   else fillViewport();
 }
 
+let compactCurrentPage = 1;
 function renderCompactPagination() {
   let pag = document.getElementById('compactPagination');
   if (!pag) { pag = document.createElement('div'); pag.id = 'compactPagination'; pag.className = 'compact-pagination'; document.getElementById('girlsGrid').after(pag); }
   const ps = getPageSize();
   const totalPages = Math.ceil(currentFiltered.length / ps);
   if (totalPages <= 1) { pag.innerHTML = ''; return; }
-  let html = '<button class="compact-pag-btn" ' + (currentPage <= 1 ? 'disabled' : '') + ' onclick="compactGoPage(' + (currentPage - 1) + ')">&lsaquo; Prev</button>';
-  html += '<span class="compact-pag-info">Page ' + currentPage + ' of ' + totalPages + '</span>';
-  html += '<button class="compact-pag-btn" ' + (currentPage >= totalPages ? 'disabled' : '') + ' onclick="compactGoPage(' + (currentPage + 1) + ')">Next &rsaquo;</button>';
+  let html = '<button class="compact-pag-btn" ' + (compactCurrentPage <= 1 ? 'disabled' : '') + ' onclick="compactGoPage(' + (compactCurrentPage - 1) + ')">&lsaquo; Prev</button>';
+  html += '<span class="compact-pag-info">Page ' + compactCurrentPage + ' of ' + totalPages + '</span>';
+  html += '<button class="compact-pag-btn" ' + (compactCurrentPage >= totalPages ? 'disabled' : '') + ' onclick="compactGoPage(' + (compactCurrentPage + 1) + ')">Next &rsaquo;</button>';
   pag.innerHTML = html;
 }
 window.compactGoPage = function(page) {
   const ps = getPageSize();
   const totalPages = Math.ceil(currentFiltered.length / ps);
   if (page < 1 || page > totalPages) return;
-  currentPage = page - 1;
+  compactCurrentPage = page;
   const grid = document.getElementById('girlsGrid');
   grid.innerHTML = '';
-  loadMore();
-  currentPage = page;
+  const start = (page - 1) * ps;
+  const end = Math.min(start + ps, currentFiltered.length);
+  for (let i = start; i < end; i++) renderCard(currentFiltered[i], grid);
   renderCompactPagination();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };

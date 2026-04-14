@@ -2301,10 +2301,15 @@ function renderRangeFilters() {
   });
 }
 
+let _filteredCache = null;
+let _filteredCachePath = null;
+function invalidateFilterCache() { _filteredCache = null; }
 function getFiltered() {
+  const currentPath = window.location.pathname;
+  if (_filteredCache && _filteredCachePath === currentPath) return _filteredCache;
   let list = [...allGirls];
   // Exclude deleted profiles (unless on Data page for admins)
-  if (window.location.pathname !== '/data') list = list.filter(g => g.deleted !== 'Yes');
+  if (currentPath !== '/data') list = list.filter(g => g.deleted !== 'Yes');
   // Region filter
   if (activeRegion.include.length) list = list.filter(g => activeRegion.include.includes(VENUE_REGIONS[g.venue] || 'other'));
   if (activeRegion.exclude.length) list = list.filter(g => !activeRegion.exclude.includes(VENUE_REGIONS[g.venue] || 'other'));
@@ -2411,6 +2416,8 @@ function getFiltered() {
     return sb - sa;
   });
   else list.sort((a, b) => emptyLast(a, b, () => (a.name || '').toLowerCase().localeCompare((b.name || '').toLowerCase())));
+  _filteredCache = list;
+  _filteredCachePath = currentPath;
   return list;
 }
 
@@ -2586,6 +2593,7 @@ function loadMore() {
 
 
 function renderGrid() {
+  invalidateFilterCache();
   // If Working Now or Data page is active, re-render with updated filters
   const activePath = window.location.pathname;
   if (activePath === '/working-now' || activePath === '/data' || activePath === '/compare' || activePath === '/analytics' || activePath.startsWith('/sydney/') || activePath === '/' || activePath === '/index.html') {
@@ -5438,6 +5446,11 @@ function initHomePageListeners() {
 }
 
 function handleLandingRoute(path) {
+  invalidateFilterCache();
+  // Particles only on home page
+  const isHome = path === '/' || path === '/index.html';
+  if (isHome && window._particlesStart) window._particlesStart();
+  else if (window._particlesStop) window._particlesStop();
   // Hide profile nav strip on any non-profile navigation
   document.getElementById('profileNavStrip').style.display = 'none';
   window._currentProfileIdx = -1;
@@ -5701,6 +5714,7 @@ function initShimmerText() {
   const MAX_PARTICLES = 35;
   let particles = [];
   let w, h, mouseX = 0, mouseY = 0, animId;
+  let running = false;
 
   function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
   resize();
@@ -5719,15 +5733,14 @@ function initShimmerText() {
   }
 
   function draw() {
+    if (!running) return;
     ctx.clearRect(0, 0, w, h);
     for (const p of particles) {
-      // Subtle parallax from mouse
       const dx = (mouseX - w / 2) * 0.01 * p.parallax;
       const dy = (mouseY - h / 2) * 0.01 * p.parallax;
       p.x += p.vx; p.y += p.vy;
       if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
       if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
-
       ctx.beginPath();
       ctx.arc(p.x + dx, p.y + dy, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(201, 149, 44, ${p.a})`;
@@ -5735,12 +5748,17 @@ function initShimmerText() {
     }
     animId = requestAnimationFrame(draw);
   }
-  draw();
 
-  // Pause when tab is hidden
+  window._particlesStart = function() { if (!running) { running = true; draw(); canvas.style.display = ''; } };
+  window._particlesStop = function() { running = false; cancelAnimationFrame(animId); ctx.clearRect(0, 0, w, h); canvas.style.display = 'none'; };
+
+  // Start on home page only
+  const p = window.location.pathname;
+  if (p === '/' || p === '/index.html') window._particlesStart();
+
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(animId);
-    else draw();
+    if (document.hidden) { running = false; cancelAnimationFrame(animId); }
+    else if (canvas.style.display !== 'none') { running = true; draw(); }
   });
 })();
 

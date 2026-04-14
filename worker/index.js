@@ -605,7 +605,7 @@ function parseWpPageTitle(html) {
   if (!titleMatch) return { name: '', country: [], special: '' };
 
   let titleText = decodeHtmlEntities(titleMatch[1])
-    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57|Top\s*127).*$/i, '').trim();
+    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57|Top\s*127|Fantasy\s*Club\s*35|429\s*City|Penny'?s\s*77).*$/i, '').trim();
 
   let special = '';
   const parenParts = [];

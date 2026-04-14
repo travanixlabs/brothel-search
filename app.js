@@ -5898,10 +5898,7 @@ function setLayout(mode, pushState) {
   if (pushState) history.pushState(null, '', '/profiles/' + mode);
   // Re-render grid with new page size if layout changed and we're on profiles page
   if (prevLayout !== mode && grid && document.querySelector('section.section').style.display !== 'none') {
-    currentPage = 0;
-    grid.innerHTML = '';
-    loadMore();
-    fillViewport();
+    renderGrid();
   }
 }
 

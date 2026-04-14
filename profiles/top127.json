@@ -691,7 +691,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-14"
     },
     {
       "name": "Momoko",
@@ -717,7 +717,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-14"
     },
     {
       "name": "Ikumi",
@@ -743,7 +743,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-14"
     }
   ],
   "calendar": {
@@ -1228,10 +1228,28 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Momoko": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Ikumi": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "02:00"
+      }
+    },
+    "Winnie": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-14T05:21:17.071Z",
-  "lastCalendarSync": "2026-04-13T14:14:21.405Z",
+  "lastCalendarSync": "2026-04-14T05:21:33.192Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

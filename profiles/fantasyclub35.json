@@ -1460,6 +1460,29 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Aya",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "166",
+      "cup": "C",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-04-14",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/ayachinese/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Aya-CN-1.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Aya-CN.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-14T04:35:26.811Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -2024,7 +2047,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-13T04:00:40.344Z",
+  "lastGirlsSync": "2026-04-14T04:35:26.811Z",
   "lastCalendarSync": "2026-04-13T11:48:25.033Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",

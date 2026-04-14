@@ -1482,7 +1482,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T04:35:26.811Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-19"
     }
   ],
   "calendar": {
@@ -2045,10 +2045,40 @@
         "start": "11:00",
         "end": "05:00"
       }
+    },
+    "Aya": {
+      "2026-04-13": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-14": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-15": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-16": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-17": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-04-19": {
+        "start": "11:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-14T04:35:26.811Z",
-  "lastCalendarSync": "2026-04-13T11:48:25.033Z",
+  "lastCalendarSync": "2026-04-14T05:08:46.262Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

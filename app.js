@@ -2414,7 +2414,7 @@ function getFiltered() {
   return list;
 }
 
-const PAGE_SIZES = { bento: 12, grid: 12, compact: 50, list: 12 };
+const PAGE_SIZES = { bento: 12, grid: 12, compact: 200, list: 12 };
 function getPageSize() { return PAGE_SIZES[currentLayout] || 12; }
 const PAGE_SIZE = 12;
 let currentFiltered = [];
@@ -5129,7 +5129,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
   // Paginate: 50 for compact, 12 for other layouts
-  const venuePageSize = currentLayout === 'compact' ? 50 : 12;
+  const venuePageSize = currentLayout === 'compact' ? 200 : 12;
   window._venueAllGirls = girls;
   window._venueVenue = v;
   window._venuePageShown = Math.min(venuePageSize, girls.length);

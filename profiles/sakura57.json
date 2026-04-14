@@ -1474,7 +1474,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2025-11-01",
+      "lastRostered": "2026-04-15",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Ichika-Jp-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Ichika-Jp-01.jpeg",
@@ -8822,6 +8822,33 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Tammy",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "158",
+      "cup": "C",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-04-14",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/tammy-china/",
+      "desc": "",
+      "lang": "Mandarin, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-14T03:48:41.654Z",
+      "lastRostered": "2026-04-14",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82611776124906_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/82621776124908_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -9532,10 +9559,6 @@
       "2026-04-12": {
         "start": "12:00",
         "end": "21:00"
-      },
-      "2026-04-14": {
-        "start": "14:00",
-        "end": "21:00"
       }
     },
     "Ruri": {
@@ -9629,6 +9652,10 @@
       },
       "2026-04-15": {
         "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-04-14": {
+        "start": "12:00",
         "end": "19:00"
       }
     },
@@ -9830,10 +9857,6 @@
         "end": "22:00"
       },
       "2026-04-13": {
-        "start": "12:00",
-        "end": "22:00"
-      },
-      "2026-04-14": {
         "start": "12:00",
         "end": "22:00"
       }
@@ -10397,10 +10420,26 @@
         "start": "11:00",
         "end": "23:00"
       }
+    },
+    "Tammy": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "01:00"
+      }
+    },
+    "Ichika": {
+      "2026-04-14": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-04-15": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-13T06:17:51.572Z",
-  "lastCalendarSync": "2026-04-13T21:12:13.478Z",
+  "lastCalendarSync": "2026-04-14T03:48:41.654Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

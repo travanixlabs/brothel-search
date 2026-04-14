@@ -2421,7 +2421,7 @@ function getFiltered() {
   return list;
 }
 
-const PAGE_SIZES = { bento: 12, grid: 12, compact: 200, list: 12 };
+const PAGE_SIZES = { bento: 12, grid: 12, compact: 100, list: 12 };
 function getPageSize() { return PAGE_SIZES[currentLayout] || 12; }
 const PAGE_SIZE = 12;
 let currentFiltered = [];
@@ -2663,8 +2663,33 @@ function renderGrid() {
   grid.innerHTML = '';
   ['grid','bento','compact','list'].forEach(m => grid.classList.toggle(m, currentLayout === m));
   loadMore();
-  fillViewport();
+  if (currentLayout === 'compact') renderCompactPagination();
+  else fillViewport();
 }
+
+function renderCompactPagination() {
+  let pag = document.getElementById('compactPagination');
+  if (!pag) { pag = document.createElement('div'); pag.id = 'compactPagination'; pag.className = 'compact-pagination'; document.getElementById('girlsGrid').after(pag); }
+  const ps = getPageSize();
+  const totalPages = Math.ceil(currentFiltered.length / ps);
+  if (totalPages <= 1) { pag.innerHTML = ''; return; }
+  let html = '<button class="compact-pag-btn" ' + (currentPage <= 1 ? 'disabled' : '') + ' onclick="compactGoPage(' + (currentPage - 1) + ')">&lsaquo; Prev</button>';
+  html += '<span class="compact-pag-info">Page ' + currentPage + ' of ' + totalPages + '</span>';
+  html += '<button class="compact-pag-btn" ' + (currentPage >= totalPages ? 'disabled' : '') + ' onclick="compactGoPage(' + (currentPage + 1) + ')">Next &rsaquo;</button>';
+  pag.innerHTML = html;
+}
+window.compactGoPage = function(page) {
+  const ps = getPageSize();
+  const totalPages = Math.ceil(currentFiltered.length / ps);
+  if (page < 1 || page > totalPages) return;
+  currentPage = page - 1;
+  const grid = document.getElementById('girlsGrid');
+  grid.innerHTML = '';
+  loadMore();
+  currentPage = page;
+  renderCompactPagination();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 function fillViewport() {
   requestAnimationFrame(() => {
@@ -2675,6 +2700,7 @@ function fillViewport() {
 }
 
 window.addEventListener('scroll', () => {
+  if (currentLayout === 'compact') return;
   if (currentPage * getPageSize() >= currentFiltered.length) return;
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400) loadMore();
 });
@@ -5137,7 +5163,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   girls.sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0));
 
   // Paginate: 50 for compact, 12 for other layouts
-  const venuePageSize = currentLayout === 'compact' ? 200 : 12;
+  const venuePageSize = currentLayout === 'compact' ? 100 : 12;
   window._venueAllGirls = girls;
   window._venueVenue = v;
   window._venuePageShown = Math.min(venuePageSize, girls.length);
@@ -5224,6 +5250,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
       const heart = card.querySelector('.fav-heart');
       if (heart) heart.addEventListener('click', (e) => { e.stopPropagation(); toggleFavorite(g.oldUrl, e); });
     });
+    if (currentLayout === 'compact') renderVenueCompactPagination();
   }, 50);
 
   return html;
@@ -5328,10 +5355,51 @@ function loadMoreVenuePage() {
 
 window.addEventListener('scroll', () => {
   if (!document.getElementById('venuePageGrid')) return;
+  if (currentLayout === 'compact') return;
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
     loadMoreVenuePage();
   }
 });
+
+function renderVenueCompactPagination() {
+  const grid = document.getElementById('venuePageGrid');
+  if (!grid || !window._venueAllGirls) return;
+  let pag = document.getElementById('venueCompactPagination');
+  if (!pag) { pag = document.createElement('div'); pag.id = 'venueCompactPagination'; pag.className = 'compact-pagination'; grid.after(pag); }
+  const ps = window._venuePageSize;
+  const total = window._venueAllGirls.length;
+  const totalPages = Math.ceil(total / ps);
+  const curPage = Math.ceil(window._venuePageShown / ps);
+  if (totalPages <= 1) { pag.innerHTML = ''; return; }
+  let html = '<button class="compact-pag-btn" ' + (curPage <= 1 ? 'disabled' : '') + ' onclick="venueCompactGoPage(' + (curPage - 1) + ')">&lsaquo; Prev</button>';
+  html += '<span class="compact-pag-info">Page ' + curPage + ' of ' + totalPages + '</span>';
+  html += '<button class="compact-pag-btn" ' + (curPage >= totalPages ? 'disabled' : '') + ' onclick="venueCompactGoPage(' + (curPage + 1) + ')">Next &rsaquo;</button>';
+  pag.innerHTML = html;
+}
+window.venueCompactGoPage = function(page) {
+  const girls = window._venueAllGirls;
+  const v = window._venueVenue;
+  const ps = window._venuePageSize;
+  if (!girls || !v) return;
+  const totalPages = Math.ceil(girls.length / ps);
+  if (page < 1 || page > totalPages) return;
+  const grid = document.getElementById('venuePageGrid');
+  grid.innerHTML = '';
+  const start = (page - 1) * ps;
+  const end = Math.min(start + ps, girls.length);
+  for (let i = start; i < end; i++) {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = buildVenueCardHtml(girls[i], v);
+    const card = wrap.firstChild;
+    grid.appendChild(card);
+    card.style.cursor = 'pointer';
+    const g = girls[i];
+    card.onclick = (e) => { if (!e.target.closest('.fav-heart') && !e.target.closest('.hide-btn')) showProfile(g); };
+  }
+  window._venuePageShown = end;
+  renderVenueCompactPagination();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 function isLoggedIn() {
   return document.getElementById('userMenu').style.display !== 'none';

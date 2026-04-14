@@ -2702,6 +2702,44 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-20"
+    },
+    {
+      "name": "Devon",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "26",
+      "height": "170",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/256276dc897bce660fcc34c2c373054c.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tahlia",
+      "country": [
+        "Caribbean"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4768,6 +4806,6 @@
     },
     "Mason": {}
   },
-  "lastGirlsSync": "2026-04-13T16:00:40.346Z",
+  "lastGirlsSync": "2026-04-14T10:00:49.151Z",
   "lastCalendarSync": "2026-04-14T09:57:25.348Z"
 }

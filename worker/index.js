@@ -86,6 +86,7 @@ const SITES = {
     siteType: 'wordpress',
     rosterFormat: 'top127',
     embedPhotos: true,
+    listingRegex: '[cjktv]-[a-z][a-z0-9-]+/',
   },
   fantasyclub35: {
     name: 'Fantasy Club 35',
@@ -605,7 +606,9 @@ function parseWpPageTitle(html) {
   if (!titleMatch) return { name: '', country: [], special: '' };
 
   let titleText = decodeHtmlEntities(titleMatch[1])
-    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57|Top\s*127|Fantasy\s*Club\s*35|429\s*City|Penny'?s\s*77).*$/i, '').trim();
+    .replace(/\s*[–—|\-]\s*(?:Kyoto\s*206|Sakura\s*57|Top\s*127|Fantasy\s*Club\s*35|429\s*City|Penny'?s\s*77).*$/i, '')
+    .replace(/\s*~.*$/, '') // Strip everything after first ~ (Top 127 format: "J Winnie ~ New ~ Diamond ~ ...")
+    .trim();
 
   let special = '';
   const parenParts = [];
@@ -620,7 +623,18 @@ function parseWpPageTitle(html) {
   }
   if (!name) return { name: '', country: [], special: '' };
 
+  // Handle Top 127 prefix format: "C Winnie", "J Momoko", "HK Maggie", "C K Nana"
   let country = [];
+  const top127Prefixes = { C: 'Chinese', J: 'Japanese', K: 'Korean', V: 'Vietnamese', HK: 'Hong Konger', T: 'Thai' };
+  const prefixMatch = name.match(/^([A-Z]{1,2})\s+(?:([A-Z])\s+)?([A-Z][a-z]+.*)$/);
+  if (prefixMatch) {
+    const [, p1, p2, rest] = prefixMatch;
+    if (top127Prefixes[p1]) {
+      country.push(top127Prefixes[p1]);
+      if (p2 && top127Prefixes[p2]) country.push(top127Prefixes[p2]);
+      name = rest.trim();
+    }
+  }
   for (const pp of parenParts) {
     const lower = pp.toLowerCase();
     if (/porn\s*star|new|retired/i.test(lower)) {
@@ -647,7 +661,9 @@ function parseWpPageTitle(html) {
 async function scrapeWpListing(site) {
   const domain = new URL(site.baseUrl).hostname.replace(/\./g, '\\.');
   const pathType = site.listingSelector || 'project';
-  const linkRe = new RegExp(`href="(https?://${domain}/${pathType}/[^"]+)"`, 'gi');
+  const linkRe = site.listingRegex
+    ? new RegExp(`href="(https?://${domain}/${site.listingRegex})"`, 'gi')
+    : new RegExp(`href="(https?://${domain}/${pathType}/[^"]+)"`, 'gi');
   const seen = new Set();
   const urls = [];
   const paginationParam = site.paginationParam || null;

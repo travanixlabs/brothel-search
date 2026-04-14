@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-15",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-15",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-04-15",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14",
+      "lastRostered": "2026-04-15",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1300,7 +1300,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-15",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-15"
     },
     {
       "name": "Cartier",
@@ -2140,7 +2140,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-15"
     },
     {
       "name": "Vanessa",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13"
+      "lastRostered": "2026-04-15"
     },
     {
       "name": "Clarisse",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13"
+      "lastRostered": "2026-04-15"
     },
     {
       "name": "Cherry",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-04-15"
     },
     {
       "name": "Julia",
@@ -2506,6 +2506,10 @@
       "2026-04-13": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-04-15": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Desiree": {
@@ -2578,6 +2582,10 @@
       "2026-04-10": {
         "start": "22:00",
         "end": "05:00"
+      },
+      "2026-04-15": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Cherry": {
@@ -2874,6 +2882,10 @@
       "2026-04-14": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-15": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -2920,7 +2932,8 @@
       "2026-04-11",
       "2026-04-12",
       "2026-04-13",
-      "2026-04-14"
+      "2026-04-14",
+      "2026-04-15"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -2961,6 +2974,10 @@
       },
       "2026-04-12": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-04-15": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -3004,6 +3021,10 @@
       "2026-04-12": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-04-15": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Iris": {
@@ -3045,6 +3066,10 @@
       },
       "2026-04-12": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-04-15": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -3114,6 +3139,10 @@
       "2026-04-13": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-15": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Sienna": {
@@ -3164,6 +3193,10 @@
       "2026-04-14": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-15": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Sarah": {
@@ -3180,6 +3213,10 @@
         "end": "04:00"
       },
       "2026-04-14": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-04-15": {
         "start": "18:00",
         "end": "03:00"
       }
@@ -3239,8 +3276,14 @@
         "start": "11:00",
         "end": "19:30"
       }
+    },
+    "Fox": {
+      "2026-04-15": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-13T14:15:22.273Z"
+  "lastCalendarSync": "2026-04-14T14:18:30.420Z"
 }

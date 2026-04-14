@@ -9603,10 +9603,6 @@
       "2026-04-09": {
         "start": "13:00",
         "end": "00:00"
-      },
-      "2026-04-15": {
-        "start": "13:00",
-        "end": "00:00"
       }
     },
     "Moca": {
@@ -10626,7 +10622,7 @@
     }
   },
   "lastGirlsSync": "2026-04-11T04:00:28.637Z",
-  "lastCalendarSync": "2026-04-14T03:48:34.068Z",
+  "lastCalendarSync": "2026-04-14T08:10:30.480Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

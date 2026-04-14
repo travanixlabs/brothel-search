@@ -1495,6 +1495,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-14"
+    },
+    {
+      "name": "Tahlia",
+      "country": [
+        "Caribbean/English"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "C",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-14",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2260,6 +2278,6 @@
     "Amy": {},
     "Sophia***": {}
   },
-  "lastGirlsSync": "2026-04-11T04:00:23.891Z",
+  "lastGirlsSync": "2026-04-14T10:57:39.832Z",
   "lastCalendarSync": "2026-04-14T09:57:15.541Z"
 }

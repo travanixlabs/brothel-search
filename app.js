@@ -5982,12 +5982,32 @@ function closeMobileMenu() {
 (function initInactivityTimer() {
   const WARN_AT = 10 * 60 * 1000;   // 10 min — show warning
   const LOGOUT_AT = 15 * 60 * 1000; // 15 min — auto logout
-  let lastActivity = Date.now();
+  const STORAGE_KEY = 'lastActivityTs';
+  const PERSIST_THROTTLE = 5000;    // write to localStorage at most every 5s
+
+  // Seed from stored timestamp so inactivity persists across PC restarts / tab closes.
+  // If the stored timestamp is already past LOGOUT_AT, sign out any lingering session.
+  const stored = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+  let lastActivity = (stored && Date.now() - stored < LOGOUT_AT) ? stored : Date.now();
+  let lastPersist = 0;
   let warningShown = false;
   let countdownInterval = null;
 
+  if (stored && Date.now() - stored >= LOGOUT_AT) {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
+    sbClient.auth.getSession().then(({ data: { session } }) => {
+      if (session) sbClient.auth.signOut();
+    }).catch(() => {});
+  }
+
+  function persistActivity() {
+    try { localStorage.setItem(STORAGE_KEY, String(lastActivity)); } catch (_) {}
+    lastPersist = lastActivity;
+  }
+
   function resetActivity() {
     lastActivity = Date.now();
+    if (lastActivity - lastPersist > PERSIST_THROTTLE) persistActivity();
     if (warningShown) hideWarning();
   }
 
@@ -6020,6 +6040,7 @@ function closeMobileMenu() {
 
   function doLogout() {
     hideWarning();
+    try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
     signOut();
   }
 
@@ -6031,6 +6052,9 @@ function closeMobileMenu() {
   // Check every 10 seconds
   setInterval(() => {
     if (!isLoggedIn()) return;
+    // Pick up activity from other tabs
+    const s = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+    if (s > lastActivity) lastActivity = s;
     const elapsed = Date.now() - lastActivity;
     if (elapsed >= LOGOUT_AT) doLogout();
     else if (elapsed >= WARN_AT && !warningShown) showWarning();

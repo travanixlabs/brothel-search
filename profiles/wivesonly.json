@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13",
+      "lastRostered": "2026-04-16",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15",
+      "lastRostered": "2026-04-16",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1300,7 +1300,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15",
+      "lastRostered": "2026-04-16",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Sara",
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Sophia",
@@ -1741,7 +1741,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Desiree",
@@ -2034,7 +2034,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Vera",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Clarisse",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-16"
     },
     {
       "name": "Victoria",
@@ -2464,6 +2464,10 @@
       "2026-04-14": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "14:30",
+        "end": "23:00"
       }
     },
     "Delilah": {
@@ -2586,6 +2590,10 @@
       "2026-04-15": {
         "start": "16:00",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Cherry": {
@@ -2640,6 +2648,10 @@
       "2026-04-14": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Layla": {
@@ -2748,6 +2760,10 @@
         "end": "00:00"
       },
       "2026-04-14": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-04-16": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -2886,6 +2902,10 @@
       "2026-04-15": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -2914,6 +2934,10 @@
       "2026-04-14": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "_published": [
@@ -2933,7 +2957,8 @@
       "2026-04-12",
       "2026-04-13",
       "2026-04-14",
-      "2026-04-15"
+      "2026-04-15",
+      "2026-04-16"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3143,6 +3168,10 @@
       "2026-04-15": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-16": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Sienna": {
@@ -3243,6 +3272,10 @@
       "2026-04-13": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Luna": {
@@ -3259,6 +3292,10 @@
       "2026-04-11": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Evie": {
@@ -3285,5 +3322,5 @@
     }
   },
   "lastGirlsSync": "2026-04-04T06:17:31.961Z",
-  "lastCalendarSync": "2026-04-14T14:18:30.420Z"
+  "lastCalendarSync": "2026-04-15T14:10:17.000Z"
 }

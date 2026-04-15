@@ -2742,6 +2742,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-19"
+    },
+    {
+      "name": "Bentley",
+      "country": [
+        "French"
+      ],
+      "age": "26",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-15",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4907,6 +4925,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-14T10:00:49.151Z",
+  "lastGirlsSync": "2026-04-15T10:01:03.508Z",
   "lastCalendarSync": "2026-04-15T08:13:06.723Z"
 }

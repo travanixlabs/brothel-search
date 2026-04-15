@@ -139,6 +139,19 @@
   </div>
 </div>
 
+<!-- Inactivity Warning Overlay -->
+<div class="auth-overlay" id="inactivityOverlay" style="display:none">
+  <div class="auth-box" style="max-width:400px;text-align:center">
+    <h1 style="font-size:18px;margin-bottom:16px">Session Timeout</h1>
+    <p style="color:var(--text-dim);margin-bottom:8px">You will be logged out due to inactivity in</p>
+    <div id="inactivityCountdown" style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);margin:16px 0"></div>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:20px">
+      <button class="auth-submit" id="inactivityStayBtn" style="flex:1">Stay Logged In</button>
+      <button class="auth-submit" id="inactivityLogoutBtn" style="flex:1;background:transparent;border:1px solid rgba(201,149,44,0.3)">Log Out</button>
+    </div>
+  </div>
+</div>
+
 <!-- Paywall Overlay -->
 <div class="auth-overlay" id="paywallOverlay" style="display:none">
   <div class="auth-box" style="max-width:700px;width:90%">

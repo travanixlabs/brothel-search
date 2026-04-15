@@ -5978,6 +5978,69 @@ function closeMobileMenu() {
   if (mm) mm.classList.remove('open');
 }
 
+// ── Inactivity Auto-Logout ──
+(function initInactivityTimer() {
+  const WARN_AT = 10 * 60 * 1000;   // 10 min — show warning
+  const LOGOUT_AT = 15 * 60 * 1000; // 15 min — auto logout
+  let lastActivity = Date.now();
+  let warningShown = false;
+  let countdownInterval = null;
+
+  function resetActivity() {
+    lastActivity = Date.now();
+    if (warningShown) hideWarning();
+  }
+
+  function showWarning() {
+    if (!isLoggedIn()) return;
+    warningShown = true;
+    const overlay = document.getElementById('inactivityOverlay');
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
+  }
+
+  function hideWarning() {
+    warningShown = false;
+    const overlay = document.getElementById('inactivityOverlay');
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+    if (countdownInterval) { clearInterval(countdownInterval); countdownInterval = null; }
+  }
+
+  function updateCountdown() {
+    const remaining = Math.max(0, LOGOUT_AT - (Date.now() - lastActivity));
+    const mins = Math.floor(remaining / 60000);
+    const secs = Math.floor((remaining % 60000) / 1000);
+    const el = document.getElementById('inactivityCountdown');
+    if (el) el.textContent = mins + ':' + String(secs).padStart(2, '0');
+    if (remaining <= 0) doLogout();
+  }
+
+  function doLogout() {
+    hideWarning();
+    signOut();
+  }
+
+  // Activity listeners
+  ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
+    document.addEventListener(evt, resetActivity, { passive: true });
+  });
+
+  // Check every 10 seconds
+  setInterval(() => {
+    if (!isLoggedIn()) return;
+    const elapsed = Date.now() - lastActivity;
+    if (elapsed >= LOGOUT_AT) doLogout();
+    else if (elapsed >= WARN_AT && !warningShown) showWarning();
+  }, 10000);
+
+  // Button handlers
+  document.getElementById('inactivityStayBtn').addEventListener('click', () => { resetActivity(); });
+  document.getElementById('inactivityLogoutBtn').addEventListener('click', () => { doLogout(); });
+})();
+
 // Init on first load
 document.addEventListener('DOMContentLoaded', () => setTimeout(initAllAnimations, 200));
 

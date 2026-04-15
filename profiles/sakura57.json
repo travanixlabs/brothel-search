@@ -829,7 +829,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-12",
+      "lastRostered": "2026-04-16",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Hatano-Jp-14.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Hatano-Jp-15.jpeg",
@@ -9668,6 +9668,10 @@
       "2026-04-10": {
         "start": "10:00",
         "end": "00:00"
+      },
+      "2026-04-16": {
+        "start": "10:00",
+        "end": "00:00"
       }
     },
     "Feifei": {
@@ -10546,7 +10550,7 @@
     }
   },
   "lastGirlsSync": "2026-04-13T06:17:51.572Z",
-  "lastCalendarSync": "2026-04-15T03:47:26.517Z",
+  "lastCalendarSync": "2026-04-15T09:58:26.106Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -1949,7 +1949,7 @@
       ],
       "lastModified": "2026-03-13T05:23:12.224Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14",
+      "lastRostered": "2026-04-16",
       "country": [
         "Japanese"
       ],
@@ -5748,6 +5748,10 @@
       "2026-04-14": {
         "start": "20:00",
         "end": "00:00"
+      },
+      "2026-04-16": {
+        "start": "20:00",
+        "end": "00:00"
       }
     },
     "Dolce": {
@@ -6983,5 +6987,5 @@
     "Sena": {}
   },
   "lastGirlsSync": "2026-04-15T04:00:53.245Z",
-  "lastCalendarSync": "2026-04-15T11:32:09.924Z"
+  "lastCalendarSync": "2026-04-15T17:40:33.107Z"
 }

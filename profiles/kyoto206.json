@@ -967,7 +967,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-15",
+      "lastRostered": "2026-04-16",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2019/11/Skylar-Cn-19.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2019/11/Skylar-Cn-20.jpeg",
@@ -9216,6 +9216,38 @@
       "lastRostered": "2026-03-01",
       "deleted": "Yes",
       "deletedAt": "2026-04-11T00:00:00Z"
+    },
+    {
+      "name": "Tomoyo",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "158",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-04-15",
+      "oldUrl": "https://citybrothel.com.au/project/tomoyo-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-15T09:58:22.613Z",
+      "lastRostered": "2026-04-16",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82841776233877_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82791776233845_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82801776233850_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82811776233856_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82821776233862_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82831776233871_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/82851776233885_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -10073,6 +10105,10 @@
       "2026-04-15": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-04-16": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Hana": {
@@ -10690,10 +10726,16 @@
         "start": "11:00",
         "end": "21:00"
       }
+    },
+    "Tomoyo": {
+      "2026-04-16": {
+        "start": "21:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-11T04:00:28.637Z",
-  "lastCalendarSync": "2026-04-15T03:47:22.815Z",
+  "lastCalendarSync": "2026-04-15T09:58:22.613Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

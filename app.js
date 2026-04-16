@@ -2951,6 +2951,7 @@ async function notifyReviewReply(review, replyUserName, replyComment, girl) {
 }
 
 const REVIEW_LABELS = { overall: 'Overall', professionalism: 'Professionalism & Communication', experience: 'Experience Quality', presentation: 'Appearance & Presentation', safety: 'Safety & Respect', transparency: 'Value & Transparency', room_quality: 'Room Quality' };
+const VENUE_REVIEW_LABELS = { overall: 'Overall', professionalism: 'Staff & Service', experience: 'Wait Time & Efficiency', presentation: 'Ambiance & Atmosphere', safety: 'Discretion & Privacy', transparency: 'Value for Money', room_quality: 'Cleanliness & Rooms' };
 
 function renderStars(rating, interactive, category) {
   let html = '<div class="review-stars' + (interactive ? ' review-stars-interactive' : '') + '"' + (category ? ' data-category="' + category + '"' : '') + '>';
@@ -3041,6 +3042,164 @@ function buildReviewSection(g, reviews) {
 
   html += '</div>';
   return html;
+}
+
+function buildVenueReviewSection(venueId, reviews) {
+  const avg = averageRatings(reviews);
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
+  let html = '<div class="venue-review-section" data-venue-id="' + venueId + '" style="margin:32px 0;border-top:1px solid rgba(201,149,44,0.15);padding-top:24px">';
+  html += '<div class="venue-divider"><span>\u2014 VENUE REVIEWS \u2014</span></div>';
+  if (avg) {
+    html += '<div class="review-summary">';
+    html += '<div class="review-avg-score">' + avg.overall + '</div>';
+    html += '<div class="review-avg-detail">';
+    html += '<div style="font-size:14px;color:var(--text);margin-bottom:4px">' + avg.count + ' review' + (avg.count !== 1 ? 's' : '') + '</div>';
+    for (const cat of categories) {
+      html += '<div class="review-avg-row"><span>' + (VENUE_REVIEW_LABELS[cat] || cat) + '</span><div class="review-bar"><div class="review-bar-fill" style="width:' + (avg[cat] / 5 * 100) + '%"></div></div><span>' + avg[cat] + '</span></div>';
+    }
+    html += '</div></div>';
+    const topComment = reviews.find(r => r.comment && r.comment.length > 20);
+    if (topComment) {
+      html += '<div class="review-highlight"><span class="review-highlight-star">\u2605</span> "' + topComment.comment.replace(/</g, '&lt;').substring(0, 150) + (topComment.comment.length > 150 ? '...' : '') + '" <span class="review-highlight-author">\u2014 ' + topComment.user_name + '</span></div>';
+    }
+  } else {
+    html += '<div class="empty-msg" style="padding:32px 20px;margin-bottom:16px"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom:12px"><circle cx="30" cy="30" r="28" stroke="rgba(201,149,44,0.25)" stroke-width="1.5"/><text x="30" y="36" text-anchor="middle" font-size="24" fill="rgba(201,149,44,0.3)">\u2605</text></svg><div>No venue reviews yet. Be the first to review!</div></div>';
+  }
+  html += '<div id="venueReviewFormContainer"></div>';
+  html += '<div id="venueReviewList">';
+  for (const r of reviews) html += renderVenueReviewCard(r);
+  html += '</div></div>';
+  return html;
+}
+
+function renderVenueReviewCard(r, replies, currentUserId) {
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
+  let html = '<div class="review-card" data-review-id="' + r.id + '">';
+  html += '<div class="review-card-header"><div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
+  html += '<div class="review-card-date">' + new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) + '</div></div>';
+  html += '<div class="review-card-ratings">';
+  for (const cat of categories) {
+    html += '<div class="review-card-rating"><span>' + (VENUE_REVIEW_LABELS[cat] || cat) + '</span>' + renderStars(r[cat], false) + '</div>';
+  }
+  html += '</div>';
+  if (r.comment) html += '<div class="review-card-comment">' + r.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+  const reviewReplies = (replies || []).filter(rp => rp.review_id === r.id);
+  if (reviewReplies.length) {
+    html += '<div class="review-replies">';
+    for (const rp of reviewReplies) {
+      const rpDate = new Date(rp.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+      const isOwn = currentUserId && rp.user_id === currentUserId;
+      html += '<div class="review-reply"><div class="review-reply-header"><span class="review-reply-user">' + (rp.user_name || 'Anonymous') + '</span><span class="review-reply-date">' + rpDate + '</span></div>';
+      html += '<div class="review-reply-text">' + rp.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+      if (isOwn) html += '<button class="review-reply-delete" data-reply-id="' + rp.id + '">Delete</button>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  const alreadyReplied = currentUserId && reviewReplies.some(rp => rp.user_id === currentUserId);
+  if (currentUserId && !alreadyReplied) {
+    html += '<div class="review-reply-actions"><button class="review-reply-btn" data-review-id="' + r.id + '">Reply</button></div>';
+    html += '<div class="review-reply-form" data-review-id="' + r.id + '" style="display:none">';
+    html += '<textarea class="review-reply-textarea" placeholder="Write a reply (max 200 chars)" maxlength="200"></textarea>';
+    html += '<div style="display:flex;gap:8px;align-items:center"><button class="review-reply-submit" data-review-id="' + r.id + '">Submit</button><button class="review-reply-cancel" data-review-id="' + r.id + '">Cancel</button><span class="review-reply-msg"></span></div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+async function initVenueReviewSection(venueId) {
+  const reviews = await loadReviews(venueId, '__venue__');
+  let container = document.querySelector('.venue-review-section');
+  if (!container) return;
+  container.outerHTML = buildVenueReviewSection(venueId, reviews);
+  container = document.querySelector('.venue-review-section');
+  if (!container) return;
+
+  const reviewIds = reviews.map(r => r.id);
+  const allReplies = await loadReplies(reviewIds);
+  const { data: { user } } = await sbClient.auth.getUser();
+  const currentUserId = user ? user.id : null;
+
+  const listEl = document.getElementById('venueReviewList');
+  if (listEl) {
+    listEl.innerHTML = reviews.map(r => renderVenueReviewCard(r, allReplies, currentUserId)).join('');
+    listEl.querySelectorAll('.review-reply-btn').forEach(btn => {
+      btn.onclick = () => { const rid = btn.dataset.reviewId; const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]'); if (form) { form.style.display = ''; btn.style.display = 'none'; } };
+    });
+    listEl.querySelectorAll('.review-reply-cancel').forEach(btn => {
+      btn.onclick = () => { const rid = btn.dataset.reviewId; const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]'); const rb = listEl.querySelector('.review-reply-btn[data-review-id="' + rid + '"]'); if (form) form.style.display = 'none'; if (rb) rb.style.display = ''; };
+    });
+    listEl.querySelectorAll('.review-reply-submit').forEach(btn => {
+      btn.onclick = async () => {
+        const rid = btn.dataset.reviewId;
+        const form = listEl.querySelector('.review-reply-form[data-review-id="' + rid + '"]');
+        const comment = form.querySelector('.review-reply-textarea').value.trim();
+        if (!comment) { form.querySelector('.review-reply-msg').textContent = 'Reply cannot be empty'; return; }
+        btn.disabled = true; btn.textContent = 'Saving...';
+        await submitReply(rid, comment);
+        initVenueReviewSection(venueId);
+      };
+    });
+    listEl.querySelectorAll('.review-reply-delete').forEach(btn => {
+      btn.onclick = async () => { if (!confirm('Delete your reply?')) return; await deleteReply(btn.dataset.replyId); initVenueReviewSection(venueId); };
+    });
+  }
+
+  const formContainer = document.getElementById('venueReviewFormContainer');
+  if (!formContainer) return;
+  if (!user) { formContainer.innerHTML = '<div style="color:var(--text-dim);font-size:13px;margin:16px 0">Log in to leave a venue review.</div>'; return; }
+
+  const existingReview = reviews.find(r => r.user_id === user.id);
+  const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
+  let formHtml = '<div class="review-form">';
+  formHtml += '<div style="font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">' + (existingReview ? 'Update Your Venue Review' : 'Review This Venue') + '</div>';
+  for (const cat of categories) {
+    const val = existingReview ? existingReview[cat] : 0;
+    formHtml += '<div class="review-form-row"><label>' + (VENUE_REVIEW_LABELS[cat] || cat) + '</label>' + renderStars(val, true, cat) + '</div>';
+  }
+  formHtml += '<textarea id="venueReviewComment" class="review-textarea" placeholder="Share your experience at this venue (optional, max 1000 chars)" maxlength="1000">' + (existingReview ? (existingReview.comment || '') : '') + '</textarea>';
+  formHtml += '<div style="display:flex;gap:8px;align-items:center">';
+  formHtml += '<button class="review-submit" id="venueReviewSubmitBtn">' + (existingReview ? 'Update Review' : 'Submit Review') + '</button>';
+  if (existingReview) formHtml += '<button class="review-delete" id="venueReviewDeleteBtn">Delete</button>';
+  formHtml += '<span id="venueReviewMsg" style="font-size:12px;color:var(--gold)"></span>';
+  formHtml += '</div></div>';
+  formContainer.innerHTML = formHtml;
+
+  formContainer.querySelectorAll('.review-stars-interactive').forEach(starsEl => {
+    starsEl.querySelectorAll('.review-star').forEach(star => {
+      star.addEventListener('click', function() {
+        const val = parseInt(this.dataset.value);
+        starsEl.querySelectorAll('.review-star').forEach((s, i) => s.classList.toggle('active', i < val));
+      });
+    });
+  });
+
+  document.getElementById('venueReviewSubmitBtn').addEventListener('click', async function() {
+    const ratings = {};
+    let allRated = true;
+    formContainer.querySelectorAll('.review-stars-interactive').forEach(starsEl => {
+      const cat = starsEl.dataset.category;
+      ratings[cat] = starsEl.querySelectorAll('.review-star.active').length;
+      if (ratings[cat] === 0) allRated = false;
+    });
+    if (!allRated) { document.getElementById('venueReviewMsg').textContent = 'Please rate all categories'; return; }
+    const comment = document.getElementById('venueReviewComment').value.trim();
+    this.disabled = true; this.textContent = 'Saving...';
+    const result = await submitReview(venueId, '__venue__', ratings, comment);
+    if (result.error) { document.getElementById('venueReviewMsg').textContent = result.error; this.disabled = false; this.textContent = existingReview ? 'Update Review' : 'Submit Review'; }
+    else { initVenueReviewSection(venueId); }
+  });
+
+  const deleteBtn = document.getElementById('venueReviewDeleteBtn');
+  if (deleteBtn && existingReview) {
+    deleteBtn.addEventListener('click', async function() {
+      if (!confirm('Delete your venue review?')) return;
+      this.disabled = true;
+      await deleteReview(existingReview.id);
+      initVenueReviewSection(venueId);
+    });
+  }
 }
 
 function renderReviewCard(r, replies, currentUserId) {
@@ -5196,6 +5355,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   if (a60) html += ' Average ' + a60 + ' for 60 min.';
   html += '</p>';
   html += '<hr class="gold-divider">';
+  html += buildVenueReviewSection(venueId, []);
+  html += '<hr class="gold-divider">';
   const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;
   const layoutSvgs = {
     grid: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>',
@@ -5528,7 +5689,7 @@ function initHomePageListeners() {
   // Load recent reviews
   const reviewsContainer = document.getElementById('homeRecentReviews');
   if (reviewsContainer) {
-    sbClient.from('reviews').select('*').order('created_at', { ascending: false }).limit(4).then(({ data: recentReviews }) => {
+    sbClient.from('reviews').select('*').neq('girl_name', '__venue__').order('created_at', { ascending: false }).limit(4).then(({ data: recentReviews }) => {
       if (!recentReviews || !recentReviews.length) {
         reviewsContainer.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">No reviews yet.</div>';
         return;
@@ -5641,6 +5802,9 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
+    // Init venue reviews
+    const vrs = document.querySelector('.venue-review-section');
+    if (vrs) initVenueReviewSection(vrs.dataset.venueId);
     // For list view, move heart/hide icons next to name in venue page cards
     if (currentLayout === 'list') {
       landingEl.querySelectorAll('.girl-card').forEach(el => {

@@ -4209,6 +4209,53 @@ function sectionHeader(title) {
   return '<div class="section-header"><div class="section-line"></div><div><div class="section-tag">Brothel Search</div><h1 class="section-title">' + title + '</h1></div></div>';
 }
 
+// ── Seasonal/Event Highlights ──
+
+function buildSeasonalHighlights() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const mmdd = String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+
+  // Australian public holidays & seasonal events (show 7 days before through the day)
+  const events = [
+    { start: '01-01', end: '01-01', title: "New Year's Day", desc: 'Start the year right. See who\u2019s working today.', icon: '\ud83c\udf89' },
+    { start: '01-19', end: '01-26', title: 'Australia Day', desc: 'Long weekend plans? Browse the full roster.', icon: '\ud83c\udde6\ud83c\uddfa' },
+    { start: '02-07', end: '02-14', title: "Valentine's Day", desc: 'Treat yourself this Valentine\u2019s. New girls added this week.', icon: '\u2764\ufe0f' },
+    { start: '03-28', end: '04-02', title: 'Easter Long Weekend', desc: 'Four days off. Full rosters across all venues.', icon: '\ud83d\udc30' },
+    { start: '04-18', end: '04-25', title: 'Anzac Day', desc: 'Public holiday rosters now available.', icon: '\ud83c\udf3f' },
+    { start: '06-02', end: '06-09', title: "Queen's Birthday", desc: 'Long weekend ahead. Plan your visit.', icon: '\ud83d\udc51' },
+    { start: '09-25', end: '10-02', title: 'AFL Grand Final / Long Weekend', desc: 'Grand final weekend rosters are live.', icon: '\ud83c\udfc8' },
+    { start: '12-18', end: '12-25', title: 'Christmas', desc: 'Holiday season rosters available. Book your visit.', icon: '\ud83c\udf84' },
+    { start: '12-26', end: '12-31', title: "New Year's Eve", desc: 'End the year with a celebration. See tonight\u2019s roster.', icon: '\ud83c\udf86' },
+  ];
+
+  // Season-based fallback if no event is near
+  const month = now.getMonth();
+  const seasons = [
+    { months: [11, 0, 1], title: 'Summer Vibes', desc: 'The hottest season. Explore new arrivals across Sydney.', icon: '\u2600\ufe0f' },
+    { months: [2, 3, 4], title: 'Autumn Escapes', desc: 'Cooler evenings, warmer encounters. Browse tonight\u2019s roster.', icon: '\ud83c\udf42' },
+    { months: [5, 6, 7], title: 'Winter Warmth', desc: 'Cold outside? Find warmth inside. See who\u2019s working now.', icon: '\u2744\ufe0f' },
+    { months: [8, 9, 10], title: 'Spring Refresh', desc: 'New season, new faces. Check out the latest profiles.', icon: '\ud83c\udf38' },
+  ];
+
+  let active = null;
+  for (const e of events) {
+    if (mmdd >= e.start && mmdd <= e.end) { active = e; break; }
+  }
+  if (!active) {
+    active = seasons.find(s => s.months.includes(month));
+  }
+  if (!active) return '';
+
+  let html = '<div class="venue-divider"><span>\u2014 ' + active.icon + ' ' + active.title.toUpperCase() + ' ' + active.icon + ' \u2014</span></div>';
+  html += '<div style="text-align:center;margin-bottom:32px;padding:24px 20px;background:linear-gradient(135deg,rgba(201,149,44,0.06),rgba(8,8,14,0.8));border:1px solid rgba(201,149,44,0.12);border-radius:12px">';
+  html += '<div style="font-family:Playfair Display,serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:8px">' + active.title + '</div>';
+  html += '<div style="font-size:14px;color:var(--text-dim);margin-bottom:16px">' + active.desc + '</div>';
+  html += '<a href="/working-now" onclick="event.preventDefault();navigateToLanding(\'/working-now\')" style="display:inline-block;padding:10px 28px;background:transparent;border:1px solid rgba(201,149,44,0.3);color:var(--gold);border-radius:8px;font-family:Rajdhani,sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .3s">See Who\u2019s Working</a>';
+  html += '</div>';
+  return html;
+}
+
 // ── Home Page ──
 
 function renderHomePage() {
@@ -4302,6 +4349,9 @@ function renderHomePage() {
       html += '</div>';
     }
   }
+
+  // Seasonal/Event Highlights
+  html += buildSeasonalHighlights();
 
   // Recent reviews placeholder
   html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';

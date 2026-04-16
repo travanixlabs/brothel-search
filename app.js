@@ -4309,6 +4309,9 @@ function renderHomePage() {
   // ── Below-fold content ──
   html += '<div class="landing-page" style="padding-top:20px">';
 
+  // Seasonal/Event Highlights
+  html += buildSeasonalHighlights();
+
   // Daily Digest section
   const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
   const sevenDayStrDigest = sevenDaysAgoDigest.toISOString().split('T')[0];
@@ -4349,9 +4352,6 @@ function renderHomePage() {
       html += '</div>';
     }
   }
-
-  // Seasonal/Event Highlights
-  html += buildSeasonalHighlights();
 
   // Recent reviews placeholder
   html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';

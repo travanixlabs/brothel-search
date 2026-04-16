@@ -2583,7 +2583,7 @@ function renderCard(g, grid) {
       const nameEl = el.querySelector('.card-name');
       const heart = el.querySelector('.fav-heart');
       const hide = el.querySelector('.hide-btn');
-      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); const cmp = el.querySelector('.compare-btn'); if (cmp) nameEl.appendChild(cmp); }
     }
     grid.appendChild(el);
     cardObserver.observe(el);
@@ -6095,7 +6095,7 @@ function loadMoreVenuePage() {
       const nameEl = card.querySelector('.card-name');
       const heart = card.querySelector('.fav-heart');
       const hide = card.querySelector('.hide-btn');
-      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+      if (nameEl && heart && hide) { nameEl.appendChild(heart); nameEl.appendChild(hide); const cmp = el.querySelector('.compare-btn'); if (cmp) nameEl.appendChild(cmp); }
     }
   }
   window._venuePageShown = nextEnd;
@@ -6349,7 +6349,7 @@ function handleLandingRoute(path) {
         const nameEl = el.querySelector('.card-name');
         const heart = el.querySelector('.fav-heart');
         const hide = el.querySelector('.hide-btn');
-        if (nameEl && heart && hide && !nameEl.querySelector('.fav-heart')) { nameEl.appendChild(heart); nameEl.appendChild(hide); }
+        if (nameEl && heart && hide && !nameEl.querySelector('.fav-heart')) { nameEl.appendChild(heart); nameEl.appendChild(hide); const cmp = el.querySelector('.compare-btn'); if (cmp) nameEl.appendChild(cmp); }
       });
     }
     // Animate count-up numbers — delayed to sync with hero animation

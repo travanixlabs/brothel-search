@@ -6006,9 +6006,9 @@ function closeMobileMenu() {
   }
 
   function resetActivity() {
+    if (warningShown) return; // force user to click Stay/Logout
     lastActivity = Date.now();
     if (lastActivity - lastPersist > PERSIST_THROTTLE) persistActivity();
-    if (warningShown) hideWarning();
   }
 
   function showWarning() {

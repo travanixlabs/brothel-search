@@ -5366,6 +5366,116 @@ function renderRegionPage(regionSlug) {
   return html;
 }
 
+function buildBestTimeToVisit(venueId) {
+  // Analyse historical calendar data for this venue's girls to find busiest days
+  const venueGirls = allGirls.filter(g => g.venue === venueId);
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const dayCounts = [0, 0, 0, 0, 0, 0, 0];
+  const dayDates = [new Set(), new Set(), new Set(), new Set(), new Set(), new Set(), new Set()];
+
+  for (const g of venueGirls) {
+    const cal = calendarData[venueId + ':' + g.name] || calendarData[(g.venue || '') + ':' + g.name];
+    if (!cal) continue;
+    for (const d of Object.keys(cal)) {
+      if (d.startsWith('_')) continue;
+      const date = new Date(d + 'T00:00:00');
+      const dow = date.getDay();
+      dayCounts[dow]++;
+      dayDates[dow].add(d);
+    }
+  }
+
+  const maxCount = Math.max(...dayCounts);
+  if (maxCount === 0) return '';
+
+  // Average girls per day (count / unique dates)
+  const avgPerDay = dayCounts.map((count, i) => dayDates[i].size > 0 ? Math.round(count / dayDates[i].size) : 0);
+  const maxAvg = Math.max(...avgPerDay);
+  if (maxAvg === 0) return '';
+
+  let html = '<div style="margin:24px 0">';
+  html += '<div class="venue-divider"><span>\u2014 BEST TIME TO VISIT \u2014</span></div>';
+  html += '<div style="display:flex;gap:6px;justify-content:center;align-items:flex-end;height:100px;padding:0 12px">';
+  for (let i = 0; i < 7; i++) {
+    const pct = maxAvg > 0 ? (avgPerDay[i] / maxAvg) : 0;
+    const height = Math.max(8, Math.round(pct * 80));
+    const hue = pct >= 0.8 ? '#00c864' : pct >= 0.5 ? '#c9952c' : '#555';
+    html += '<div style="flex:1;text-align:center;max-width:60px">';
+    html += '<div style="font-size:12px;font-weight:600;color:' + hue + ';margin-bottom:4px">' + avgPerDay[i] + '</div>';
+    html += '<div style="height:' + height + 'px;background:' + hue + ';border-radius:4px 4px 0 0;transition:height .3s"></div>';
+    html += '<div style="font-size:10px;color:var(--text-dim);margin-top:4px">' + dayNames[i] + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);margin-top:8px">Average girls rostered per day of the week</div>';
+  html += '</div>';
+  return html;
+}
+
+function buildVenueTrends(venueId) {
+  const venueGirls = allGirls.filter(g => g.venue === venueId);
+  const now = new Date();
+  const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const thirtyDayStr = thirtyDaysAgo.toISOString().split('T')[0];
+  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  const sevenDayStr = sevenDaysAgo.toISOString().split('T')[0];
+
+  const newThisMonth = venueGirls.filter(g => g.startDate && g.startDate >= thirtyDayStr).length;
+  const newThisWeek = venueGirls.filter(g => g.startDate && g.startDate >= sevenDayStr).length;
+  const activeRecent = venueGirls.filter(g => g.lastRostered && g.lastRostered >= sevenDayStr).length;
+  const totalProfiles = venueGirls.length;
+
+  // Count average roster size per week over last 4 weeks
+  const weeklyCounts = [];
+  for (let w = 0; w < 4; w++) {
+    const weekStart = new Date(); weekStart.setDate(weekStart.getDate() - (w + 1) * 7);
+    const weekEnd = new Date(); weekEnd.setDate(weekEnd.getDate() - w * 7);
+    const wsStr = weekStart.toISOString().split('T')[0];
+    const weStr = weekEnd.toISOString().split('T')[0];
+    let count = 0;
+    for (const g of venueGirls) {
+      const cal = calendarData[(g.venue || '') + ':' + g.name];
+      if (!cal) continue;
+      for (const d of Object.keys(cal)) {
+        if (d.startsWith('_')) continue;
+        if (d >= wsStr && d < weStr) { count++; break; }
+      }
+    }
+    weeklyCounts.push(count);
+  }
+  weeklyCounts.reverse(); // oldest first
+  const trend = weeklyCounts.length >= 2 ? weeklyCounts[weeklyCounts.length - 1] - weeklyCounts[0] : 0;
+  const trendLabel = trend > 0 ? '\u2191 ' + trend + ' more' : trend < 0 ? '\u2193 ' + Math.abs(trend) + ' fewer' : '\u2194 Stable';
+  const trendColor = trend > 0 ? '#00c864' : trend < 0 ? '#e74c3c' : '#c9952c';
+
+  let html = '<div style="margin:24px 0">';
+  html += '<div class="venue-divider"><span>\u2014 VENUE TRENDS \u2014</span></div>';
+  html += '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(201,149,44,0.05);border:1px solid rgba(201,149,44,0.12);border-radius:8px;min-width:80px"><div style="font-size:22px;font-weight:700;color:var(--gold)">' + totalProfiles + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Total</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(0,200,100,0.05);border:1px solid rgba(0,200,100,0.12);border-radius:8px;min-width:80px"><div style="font-size:22px;font-weight:700;color:#00c864">' + newThisMonth + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">New (30d)</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(74,158,255,0.05);border:1px solid rgba(74,158,255,0.12);border-radius:8px;min-width:80px"><div style="font-size:22px;font-weight:700;color:#4a9eff">' + activeRecent + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Active (7d)</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(201,149,44,0.05);border:1px solid rgba(201,149,44,0.12);border-radius:8px;min-width:80px"><div style="font-size:22px;font-weight:700;color:' + trendColor + '">' + trendLabel + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">4-Week Trend</div></div>';
+  html += '</div>';
+
+  // Mini sparkline of weekly roster counts
+  if (weeklyCounts.some(c => c > 0)) {
+    const sparkMax = Math.max(...weeklyCounts);
+    html += '<div style="display:flex;gap:4px;justify-content:center;align-items:flex-end;height:40px;margin-bottom:8px">';
+    for (let i = 0; i < weeklyCounts.length; i++) {
+      const h = sparkMax > 0 ? Math.max(4, Math.round((weeklyCounts[i] / sparkMax) * 36)) : 4;
+      const label = i === weeklyCounts.length - 1 ? 'This week' : (weeklyCounts.length - 1 - i) + 'w ago';
+      html += '<div style="flex:1;max-width:50px;text-align:center" title="' + label + ': ' + weeklyCounts[i] + ' girls">';
+      html += '<div style="height:' + h + 'px;background:var(--gold);border-radius:2px;margin:0 auto;width:70%"></div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '<div style="text-align:center;font-size:10px;color:var(--text-dim)">Weekly roster participation (last 4 weeks)</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const v = VENUE_DATA[venueId];
   if (!v) return null;
@@ -5406,6 +5516,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   html += '</p>';
   html += '<hr class="gold-divider">';
   html += buildVenueReviewSection(venueId, []);
+  html += buildBestTimeToVisit(venueId);
+  html += buildVenueTrends(venueId);
   html += '<hr class="gold-divider">';
   const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;
   const layoutSvgs = {

@@ -3985,7 +3985,7 @@ async function sendWeeklyWrapUp(env) {
 
 /* ── Social bot pre-rendering ── */
 
-const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|pinterest|snapchat/i;
+const BOT_UA = /googlebot|bingbot|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|pinterest|snapchat/i;
 
 const VENUE_MAP = {
   ginzaempire: SITES.empire, ginzaclub: SITES.club, kyoto206: SITES.kyoto206,

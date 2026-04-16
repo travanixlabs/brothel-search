@@ -1,12 +1,502 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script>
-    // GitHub Pages SPA redirect — preserves path for client-side routing
-    sessionStorage.setItem('spa-redirect', window.location.pathname);
-    window.location.replace('/');
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brothel Search – Girls, Rosters & Venues</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Find who’s working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability. Compare venues, pricing and reviews.">
+<meta name="keywords" content="australian brothels, brothel near me, who is working today brothel, brothel roster, brothel girls, brothel reviews, brothel prices, compare brothels, brothel photos, brothel availability, sydney brothels, brothel search">
+<link rel="canonical" href="https://brothelsearch.com/">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="zPGR6QWojLYHv9neWyna-nzV0ilEwIW8eY_oof-xGB8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brothel Search – Girls, Rosters & Venues">
+<meta property="og:description" content="Find who's working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.">
+<meta property="og:url" content="https://brothelsearch.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brothel Search – Girls, Rosters & Venues">
+<meta name="twitter:description" content="Find who's working today at local Australian brothels. Browse live rosters, girl profiles, photos and availability.">
+<meta property="og:image" content="https://brothelsearch.com/og-preview.png">
+<meta name="twitter:image" content="https://brothelsearch.com/og-preview.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Brothel Search",
+  "url": "https://brothelsearch.com/",
+  "description": "Browse profiles, rosters and availability across Sydney's top brothels.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://brothelsearch.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body></body>
+<body>
+<div class="page-transition-overlay" id="pageTransition"></div>
+<canvas id="goldParticleCanvas"></canvas>
+
+<!-- Background atmosphere -->
+<div class="bg-atmosphere">
+  <div class="bg-aurora"></div>
+  <div class="bg-rings"><div class="bg-ring"></div><div class="bg-ring"></div><div class="bg-ring"></div><div class="bg-ring"></div><div class="bg-ring"></div><div class="bg-ring"></div></div>
+  <div class="bg-center-glow"></div>
+  <div class="bg-center-logo">
+    <svg width="360" height="360" viewBox="0 0 200 200" fill="none"><defs><linearGradient id="bgLogoGold" x1="0%" y1="0%" x2="200%" y2="0%"><stop offset="0%" stop-color="#c9952c"/><stop offset="25%" stop-color="#f5e6a3"/><stop offset="50%" stop-color="#c9952c"/><stop offset="75%" stop-color="#e1b97e"/><stop offset="100%" stop-color="#f5e6a3"/></linearGradient></defs><circle cx="100" cy="100" r="90" stroke="url(#bgLogoGold)" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="80" stroke="url(#bgLogoGold)" stroke-width="1.5" fill="none" opacity="0.25"/><path d="M100 10V25M100 175V190M10 100H25M175 100H190" stroke="url(#bgLogoGold)" stroke-width="3" stroke-linecap="round"/><path d="M36 36L46 46M164 36L154 46M36 164L46 154M164 164L154 154" stroke="url(#bgLogoGold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/><svg x="55" y="35" width="80" height="130" viewBox="0 0 715 1280" overflow="hidden"><g transform="translate(0,1280) scale(0.1,-0.1)" fill="url(#bgLogoGold)" stroke="none"><path d="M5390 12760 c19 -16 38 -29 42 -30 20 -1 134 -164 178 -254 67 -137 93 -249 93 -396 0 -134 -21 -206 -81 -272 -41 -45 -51 -44 -23 3 11 19 32 70 47 114 24 71 26 90 21 170 -4 50 -11 106 -17 125 -6 19 -16 51 -21 70 -18 57 -151 289 -192 334 l-37 41 34 -65 c67 -127 114 -333 101 -444 -18 -162 -112 -249 -250 -231 -71 9 -187 39 -307 80 -153 53 -405 123 -504 140 -274 48 -540 -16 -810 -193 -205 -134 -314 -294 -314 -461 l0 -56 -68 -38 c-75 -42 -103 -76 -133 -163 -27 -75 -22 -136 18 -212 29 -57 29 -58 10 -77 -32 -33 -13 -182 37 -295 4 -11 -4 -21 -29 -34 -45 -24 -102 -87 -121 -132 -8 -18 -14 -57 -14 -85 0 -46 4 -55 38 -89 64 -64 162 -76 252 -30 l40 20 0 -39 c0 -49 -8 -52 -128 -53 -70 -1 -106 5 -187 30 -131 40 -169 45 -235 32 -72 -14 -184 -68 -239 -116 -55 -48 -137 -173 -382 -581 -104 -174 -200 -331 -215 -350 -14 -18 -74 -74 -132 -123 -103 -86 -146 -129 -283 -291 -183 -215 -290 -317 -475 -452 -104 -76 -144 -90 -175 -61 -23 21 -188 268 -234 349 -31 56 -83 115 -101 115 -38 0 -12 -93 63 -228 19 -34 31 -62 27 -62 -29 0 -192 147 -236 214 -51 77 -107 136 -129 136 -13 0 -15 -6 -9 -38 11 -64 54 -144 121 -226 35 -44 75 -93 89 -110 24 -30 23 -30 -30 9 -30 21 -70 50 -88 63 -18 14 -62 61 -98 106 -109 134 -174 180 -174 122 0 -74 73 -187 203 -313 46 -46 81 -83 76 -83 -5 0 -46 17 -91 39 -85 40 -122 64 -186 123 -93 84 -132 100 -132 53 0 -73 97 -163 360 -337 149 -98 230 -182 230 -237 0 -23 -9 -30 -62 -54 -133 -58 -231 -185 -202 -261 12 -31 46 -15 123 58 89 85 108 96 214 125 87 24 163 60 277 131 99 62 161 93 350 175 85 37 200 89 255 117 140 70 370 225 443 297 74 74 147 183 179 265 38 96 45 106 102 155 54 46 155 134 481 419 169 148 203 171 235 158 36 -13 6 -218 -61 -416 -47 -139 -49 -149 -48 -255 0 -128 18 -186 88 -288 32 -47 59 -72 109 -103 37 -22 74 -47 83 -55 8 -9 24 -50 34 -92 33 -133 85 -217 267 -431 48 -56 137 -153 198 -216 127 -131 148 -159 164 -215 11 -39 10 -40 -37 -90 -27 -27 -79 -88 -117 -134 -157 -191 -394 -338 -702 -436 -79 -25 -207 -65 -285 -90 -154 -49 -354 -143 -498 -235 -94 -60 -348 -236 -395 -274 l-30 -24 45 8 c102 20 551 6 704 -21 95 -17 219 -56 318 -100 126 -56 308 -159 308 -175 0 -24 -43 -200 -117 -484 -114 -435 -236 -791 -300 -880 -14 -19 -87 -96 -162 -170 -111 -109 -150 -156 -206 -245 -90 -144 -117 -204 -166 -366 -97 -322 -136 -520 -219 -1103 -32 -226 -65 -421 -90 -525 -22 -91 -47 -206 -55 -254 -29 -160 -51 -207 -150 -322 -62 -72 -146 -188 -168 -232 -13 -24 -16 -58 -15 -145 2 -121 -30 -333 -79 -538 -44 -184 -21 -319 66 -377 62 -42 243 -83 364 -83 29 0 74 7 99 16 39 13 49 22 62 55 24 59 20 159 -10 269 -26 93 -26 97 -15 241 25 338 101 787 177 1054 84 298 310 847 670 1627 252 547 287 629 332 770 23 70 48 140 56 156 23 44 325 450 437 587 54 66 153 179 219 250 67 72 136 149 153 173 29 39 35 42 67 37 19 -3 94 -8 166 -11 106 -5 147 -3 210 11 141 31 298 103 478 219 44 28 86 55 92 59 8 4 26 -35 54 -116 24 -67 85 -235 136 -373 50 -137 101 -281 112 -320 30 -99 129 -533 153 -671 30 -163 29 -387 0 -578 -80 -515 -82 -547 -57 -900 8 -110 17 -252 21 -315 11 -206 35 -551 51 -725 16 -173 15 -233 -11 -400 -8 -49 -17 -157 -20 -240 -9 -209 -23 -327 -51 -415 -26 -85 -56 -135 -145 -247 -110 -138 -135 -230 -84 -305 52 -77 182 -124 320 -115 86 5 129 19 213 70 62 37 92 89 93 163 1 78 13 136 29 145 8 4 32 15 52 24 21 10 41 27 45 38 4 12 7 96 8 187 l0 165 36 65 c49 87 61 163 44 261 -19 107 -59 199 -116 264 -71 81 -71 81 -59 187 25 207 62 406 135 713 45 188 84 386 126 630 28 162 33 215 33 360 0 200 -18 305 -89 496 -104 278 -104 312 -26 1124 52 529 71 816 71 1061 l0 202 53 6 c28 4 180 11 337 16 308 11 397 23 488 66 l57 27 -58 8 c-119 17 -280 131 -488 345 -132 137 -189 209 -372 471 -172 245 -273 369 -394 483 -177 166 -353 282 -690 457 -100 52 -192 106 -203 120 -25 32 -46 89 -126 345 -46 150 -64 223 -61 248 2 19 21 73 42 119 34 76 38 93 38 167 l0 81 191 -219 c105 -121 201 -232 213 -247 13 -15 34 -71 49 -126 14 -55 36 -119 50 -141 20 -35 432 -452 646 -653 42 -40 76 -82 92 -116 17 -35 36 -60 56 -70 35 -18 114 -21 153 -6 16 6 53 11 83 11 88 0 120 23 199 146 57 88 73 102 183 159 76 40 155 116 150 144 -4 20 -54 30 -98 18 -19 -5 -60 -27 -90 -50 -55 -42 -96 -60 -162 -72 l-38 -7 0 40 c0 54 24 177 46 232 9 25 38 77 64 115 54 81 70 119 67 157 -5 61 -46 26 -148 -124 -46 -68 -93 -147 -105 -177 -22 -53 -23 -54 -30 -27 -11 45 3 197 24 256 24 70 33 123 22 140 -7 11 -15 6 -38 -18 -17 -18 -34 -32 -39 -32 -20 0 -114 -109 -138 -161 -14 -31 -33 -105 -43 -165 l-18 -109 -12 49 c-9 32 -11 77 -6 132 7 87 1 100 -29 66 -26 -29 -48 -90 -50 -142 l-2 -49 -22 27 c-12 15 -69 110 -127 212 -133 236 -178 296 -268 364 -98 72 -111 89 -146 176 -87 217 -449 992 -499 1068 -71 106 -133 132 -317 132 -111 1 -119 2 -101 16 17 14 47 15 215 9 246 -8 329 -22 590 -101 304 -93 273 -89 675 -88 252 0 369 4 390 12 30 12 29 12 -10 7 -88 -11 -325 -17 -370 -11 l-47 8 53 24 c29 14 93 55 143 91 50 37 124 91 165 120 40 29 67 53 60 53 -42 1 176 109 223 111 17 1 19 2 5 6 -27 7 -105 -22 -192 -73 -73 -41 -92 -47 -210 -66 -304 -47 -532 -1 -734 151 -66 49 -60 55 6 7 68 -48 176 -100 263 -127 59 -18 97 -23 175 -22 165 1 313 53 515 177 89 55 90 56 167 56 54 0 91 -6 119 -19 38 -17 42 -22 54 -80 7 -33 10 -77 7 -97 -7 -44 2 -37 25 19 l17 42 1 -70 c2 -62 3 -66 11 -37 6 21 7 80 1 160 -5 70 -8 129 -6 131 10 11 109 -47 141 -82 52 -58 67 -100 67 -194 1 -55 4 -75 9 -60 5 12 7 54 5 93 -8 123 -71 207 -186 250 -28 11 -66 37 -93 65 -49 50 -102 81 -183 107 -41 14 -86 16 -226 15 -117 -2 -210 2 -280 13 -104 15 -240 51 -240 63 0 8 232 -3 245 -11 6 -4 47 -11 92 -18 97 -13 297 0 447 30 128 26 169 25 257 -5 161 -54 229 -146 216 -290 -4 -38 -3 -53 3 -40 5 11 9 49 9 84 1 109 -53 187 -169 242 -63 30 -58 36 10 10 101 -38 172 -107 214 -206 l17 -40 -6 92 c-7 116 -26 179 -69 229 -80 93 -184 119 -541 134 -163 6 -225 13 -275 28 -112 35 -285 94 -292 101 -4 3 28 5 70 3 142 -7 265 54 377 185 119 140 158 249 136 381 -7 43 -20 91 -29 107 -18 35 -63 97 -68 92 -2 -1 4 -25 12 -52 24 -76 21 -226 -5 -299 -53 -148 -163 -256 -289 -284 l-42 -10 73 72 c83 81 126 139 167 229 32 69 60 167 59 207 0 14 -7 -6 -15 -45 -31 -149 -133 -313 -256 -412 l-69 -56 -98 6 c-54 4 -136 14 -182 23 -89 16 -232 55 -226 61 2 1 48 -4 103 -12 124 -19 200 -19 289 0 102 22 171 59 245 134 106 106 167 245 189 430 22 176 -19 361 -99 451 l-22 25 18 -30 c106 -176 124 -381 52 -605 -88 -278 -288 -417 -568 -396 -95 7 -297 39 -307 50 -3 3 19 6 49 6 263 0 502 271 533 605 8 77 -6 190 -31 258 -8 23 -22 71 -30 105 -30 136 -95 262 -170 332 -41 37 -30 19 23 -42 39 -45 95 -153 117 -227 9 -30 16 -56 16 -58 0 -2 -25 23 -56 57 -32 33 -66 66 -78 72 -12 5 0 -9 25 -33 25 -24 64 -71 85 -103 l39 -59 0 -136 c-1 -155 -15 -221 -73 -339 -77 -159 -260 -308 -427 -348 -25 -6 -20 0 30 38 33 25 94 81 136 125 124 130 179 266 179 441 0 241 -94 453 -276 619 -85 78 -186 153 -207 153 -6 0 4 -13 23 -30z m657 -729 c8 -134 -14 -237 -77 -368 -83 -169 -212 -280 -368 -312 -69 -14 -176 -13 -227 3 l-40 13 75 13 c179 30 285 85 410 210 65 65 94 103 123 161 50 102 77 214 78 323 2 119 19 90 26 -43z m-732 -641 c19 -8 19 -9 -2 -9 -12 -1 -25 4 -28 9 -7 12 2 12 30 0z m453 -604 c31 -8 75 -17 97 -21 78 -12 71 -24 -10 -18 -65 4 -90 11 -130 35 -27 16 -42 27 -32 24 10 -3 43 -12 75 -20z m-2510 -198 c15 -18 51 -59 81 -90 l54 -58 -6 -51 c-8 -61 -31 -91 -86 -108 -73 -21 -156 -7 -203 36 -46 41 -40 140 12 213 23 32 95 90 112 90 5 0 21 -15 36 -32z m1953 -72 c69 -56 149 -126 144 -126 -7 0 -215 151 -215 155 0 9 49 -11 71 -29z m234 -83 c147 -57 280 -83 424 -83 68 0 122 -2 119 -5 -14 -15 -244 -25 -338 -15 -190 19 -230 33 -325 111 -47 39 -85 72 -85 74 0 2 26 -8 58 -22 31 -14 98 -41 147 -60z m94 -4 c176 -57 282 -61 641 -22 68 7 62 -3 -9 -17 -109 -20 -318 -31 -413 -20 -94 10 -220 43 -313 79 -82 33 -40 24 94 -20z m981 16 c-26 -13 -179 -39 -188 -31 -8 9 139 42 193 44 17 1 16 -1 -5 -13z m164 -16 l21 -21 -25 7 c-14 5 -50 11 -80 15 -51 6 -53 7 -30 18 34 16 90 7 114 -19z m-312 -69 c-157 -100 -309 -155 -456 -166 -111 -9 -216 14 -331 71 -85 43 -163 94 -122 81 132 -42 416 -45 582 -6 111 27 296 58 350 59 l40 1 -63 -40z m-2101 -270 c15 -12 43 -26 61 -33 l33 -12 -55 -6 c-30 -3 -79 -4 -108 -1 l-53 5 32 33 c38 39 51 41 90 14z m149 1 c62 -7 64 -8 37 -19 -47 -20 -121 -9 -162 23 -19 14 -17 15 20 9 22 -3 69 -9 105 -13z"/></g></svg></svg>
+  </div>
+  <div class="bg-particles" id="bgParticles"></div>
+  <template id="bgMiniLogo"><svg width="20" height="20" viewBox="0 0 200 200" fill="none"><defs><linearGradient id="pGold" x1="0%" y1="0%" x2="200%" y2="0%"><stop offset="0%" stop-color="#c9952c"/><stop offset="25%" stop-color="#f5e6a3"/><stop offset="50%" stop-color="#c9952c"/><stop offset="75%" stop-color="#e1b97e"/><stop offset="100%" stop-color="#f5e6a3"/></linearGradient></defs><circle cx="100" cy="100" r="90" stroke="url(#pGold)" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="80" stroke="url(#pGold)" stroke-width="1.5" fill="none" opacity="0.25"/><path d="M100 10V25M100 175V190M10 100H25M175 100H190" stroke="url(#pGold)" stroke-width="3" stroke-linecap="round"/><svg x="55" y="35" width="80" height="130" viewBox="0 0 715 1280" overflow="hidden"><g transform="translate(0,1280) scale(0.1,-0.1)" fill="url(#pGold)" stroke="none"><path d="M5390 12760 c19 -16 38 -29 42 -30 20 -1 134 -164 178 -254 67 -137 93 -249 93 -396 0 -134 -21 -206 -81 -272 -41 -45 -51 -44 -23 3 11 19 32 70 47 114 24 71 26 90 21 170 -4 50 -11 106 -17 125 -6 19 -16 51 -21 70 -18 57 -151 289 -192 334 l-37 41 34 -65 c67 -127 114 -333 101 -444 -18 -162 -112 -249 -250 -231 -71 9 -187 39 -307 80 -153 53 -405 123 -504 140 -274 48 -540 -16 -810 -193 -205 -134 -314 -294 -314 -461 l0 -56 -68 -38 c-75 -42 -103 -76 -133 -163 -27 -75 -22 -136 18 -212 29 -57 29 -58 10 -77 -32 -33 -13 -182 37 -295 4 -11 -4 -21 -29 -34 -45 -24 -102 -87 -121 -132 -8 -18 -14 -57 -14 -85 0 -46 4 -55 38 -89 64 -64 162 -76 252 -30 l40 20 0 -39 c0 -49 -8 -52 -128 -53 -70 -1 -106 5 -187 30 -131 40 -169 45 -235 32 -72 -14 -184 -68 -239 -116 -55 -48 -137 -173 -382 -581 -104 -174 -200 -331 -215 -350 -14 -18 -74 -74 -132 -123 -103 -86 -146 -129 -283 -291 -183 -215 -290 -317 -475 -452 -104 -76 -144 -90 -175 -61 -23 21 -188 268 -234 349 -31 56 -83 115 -101 115 -38 0 -12 -93 63 -228 19 -34 31 -62 27 -62 -29 0 -192 147 -236 214 -51 77 -107 136 -129 136 -13 0 -15 -6 -9 -38 11 -64 54 -144 121 -226 35 -44 75 -93 89 -110 24 -30 23 -30 -30 9 -30 21 -70 50 -88 63 -18 14 -62 61 -98 106 -109 134 -174 180 -174 122 0 -74 73 -187 203 -313 46 -46 81 -83 76 -83 -5 0 -46 17 -91 39 -85 40 -122 64 -186 123 -93 84 -132 100 -132 53 0 -73 97 -163 360 -337 149 -98 230 -182 230 -237 0 -23 -9 -30 -62 -54 -133 -58 -231 -185 -202 -261 12 -31 46 -15 123 58 89 85 108 96 214 125 87 24 163 60 277 131 99 62 161 93 350 175 85 37 200 89 255 117 140 70 370 225 443 297 74 74 147 183 179 265 38 96 45 106 102 155 54 46 155 134 481 419 169 148 203 171 235 158 36 -13 6 -218 -61 -416 -47 -139 -49 -149 -48 -255 0 -128 18 -186 88 -288 32 -47 59 -72 109 -103 37 -22 74 -47 83 -55 8 -9 24 -50 34 -92 33 -133 85 -217 267 -431 48 -56 137 -153 198 -216 127 -131 148 -159 164 -215 11 -39 10 -40 -37 -90 -27 -27 -79 -88 -117 -134 -157 -191 -394 -338 -702 -436 -79 -25 -207 -65 -285 -90 -154 -49 -354 -143 -498 -235 -94 -60 -348 -236 -395 -274 l-30 -24 45 8 c102 20 551 6 704 -21 95 -17 219 -56 318 -100 126 -56 308 -159 308 -175 0 -24 -43 -200 -117 -484 -114 -435 -236 -791 -300 -880 -14 -19 -87 -96 -162 -170 -111 -109 -150 -156 -206 -245 -90 -144 -117 -204 -166 -366 -97 -322 -136 -520 -219 -1103 -32 -226 -65 -421 -90 -525 -22 -91 -47 -206 -55 -254 -29 -160 -51 -207 -150 -322 -62 -72 -146 -188 -168 -232 -13 -24 -16 -58 -15 -145 2 -121 -30 -333 -79 -538 -44 -184 -21 -319 66 -377 62 -42 243 -83 364 -83 29 0 74 7 99 16 39 13 49 22 62 55 24 59 20 159 -10 269 -26 93 -26 97 -15 241 25 338 101 787 177 1054 84 298 310 847 670 1627 252 547 287 629 332 770 23 70 48 140 56 156 23 44 325 450 437 587 54 66 153 179 219 250 67 72 136 149 153 173 29 39 35 42 67 37 19 -3 94 -8 166 -11 106 -5 147 -3 210 11 141 31 298 103 478 219 44 28 86 55 92 59 8 4 26 -35 54 -116 24 -67 85 -235 136 -373 50 -137 101 -281 112 -320 30 -99 129 -533 153 -671 30 -163 29 -387 0 -578 -80 -515 -82 -547 -57 -900 8 -110 17 -252 21 -315 11 -206 35 -551 51 -725 16 -173 15 -233 -11 -400 -8 -49 -17 -157 -20 -240 -9 -209 -23 -327 -51 -415 -26 -85 -56 -135 -145 -247 -110 -138 -135 -230 -84 -305 52 -77 182 -124 320 -115 86 5 129 19 213 70 62 37 92 89 93 163 1 78 13 136 29 145 8 4 32 15 52 24 21 10 41 27 45 38 4 12 7 96 8 187 l0 165 36 65 c49 87 61 163 44 261 -19 107 -59 199 -116 264 -71 81 -71 81 -59 187 25 207 62 406 135 713 45 188 84 386 126 630 28 162 33 215 33 360 0 200 -18 305 -89 496 -104 278 -104 312 -26 1124 52 529 71 816 71 1061 l0 202 53 6 c28 4 180 11 337 16 308 11 397 23 488 66 l57 27 -58 8 c-119 17 -280 131 -488 345 -132 137 -189 209 -372 471 -172 245 -273 369 -394 483 -177 166 -353 282 -690 457 -100 52 -192 106 -203 120 -25 32 -46 89 -126 345 -46 150 -64 223 -61 248 2 19 21 73 42 119 34 76 38 93 38 167 l0 81 191 -219 c105 -121 201 -232 213 -247 13 -15 34 -71 49 -126 14 -55 36 -119 50 -141 20 -35 432 -452 646 -653 42 -40 76 -82 92 -116 17 -35 36 -60 56 -70 35 -18 114 -21 153 -6 16 6 53 11 83 11 88 0 120 23 199 146 57 88 73 102 183 159 76 40 155 116 150 144 -4 20 -54 30 -98 18 -19 -5 -60 -27 -90 -50 -55 -42 -96 -60 -162 -72 l-38 -7 0 40 c0 54 24 177 46 232 9 25 38 77 64 115 54 81 70 119 67 157 -5 61 -46 26 -148 -124 -46 -68 -93 -147 -105 -177 -22 -53 -23 -54 -30 -27 -11 45 3 197 24 256 24 70 33 123 22 140 -7 11 -15 6 -38 -18 -17 -18 -34 -32 -39 -32 -20 0 -114 -109 -138 -161 -14 -31 -33 -105 -43 -165 l-18 -109 -12 49 c-9 32 -11 77 -6 132 7 87 1 100 -29 66 -26 -29 -48 -90 -50 -142 l-2 -49 -22 27 c-12 15 -69 110 -127 212 -133 236 -178 296 -268 364 -98 72 -111 89 -146 176 -87 217 -449 992 -499 1068 -71 106 -133 132 -317 132 -111 1 -119 2 -101 16 17 14 47 15 215 9 246 -8 329 -22 590 -101 304 -93 273 -89 675 -88 252 0 369 4 390 12 30 12 29 12 -10 7 -88 -11 -325 -17 -370 -11 l-47 8 53 24 c29 14 93 55 143 91 50 37 124 91 165 120 40 29 67 53 60 53 -42 1 176 109 223 111 17 1 19 2 5 6 -27 7 -105 -22 -192 -73 -73 -41 -92 -47 -210 -66 -304 -47 -532 -1 -734 151 -66 49 -60 55 6 7 68 -48 176 -100 263 -127 59 -18 97 -23 175 -22 165 1 313 53 515 177 89 55 90 56 167 56 54 0 91 -6 119 -19 38 -17 42 -22 54 -80 7 -33 10 -77 7 -97 -7 -44 2 -37 25 19 l17 42 1 -70 c2 -62 3 -66 11 -37 6 21 7 80 1 160 -5 70 -8 129 -6 131 10 11 109 -47 141 -82 52 -58 67 -100 67 -194 1 -55 4 -75 9 -60 5 12 7 54 5 93 -8 123 -71 207 -186 250 -28 11 -66 37 -93 65 -49 50 -102 81 -183 107 -41 14 -86 16 -226 15 -117 -2 -210 2 -280 13 -104 15 -240 51 -240 63 0 8 232 -3 245 -11 6 -4 47 -11 92 -18 97 -13 297 0 447 30 128 26 169 25 257 -5 161 -54 229 -146 216 -290 -4 -38 -3 -53 3 -40 5 11 9 49 9 84 1 109 -53 187 -169 242 -63 30 -58 36 10 10 101 -38 172 -107 214 -206 l17 -40 -6 92 c-7 116 -26 179 -69 229 -80 93 -184 119 -541 134 -163 6 -225 13 -275 28 -112 35 -285 94 -292 101 -4 3 28 5 70 3 142 -7 265 54 377 185 119 140 158 249 136 381 -7 43 -20 91 -29 107 -18 35 -63 97 -68 92 -2 -1 4 -25 12 -52 24 -76 21 -226 -5 -299 -53 -148 -163 -256 -289 -284 l-42 -10 73 72 c83 81 126 139 167 229 32 69 60 167 59 207 0 14 -7 -6 -15 -45 -31 -149 -133 -313 -256 -412 l-69 -56 -98 6 c-54 4 -136 14 -182 23 -89 16 -232 55 -226 61 2 1 48 -4 103 -12 124 -19 200 -19 289 0 102 22 171 59 245 134 106 106 167 245 189 430 22 176 -19 361 -99 451 l-22 25 18 -30 c106 -176 124 -381 52 -605 -88 -278 -288 -417 -568 -396 -95 7 -297 39 -307 50 -3 3 19 6 49 6 263 0 502 271 533 605 8 77 -6 190 -31 258 -8 23 -22 71 -30 105 -30 136 -95 262 -170 332 -41 37 -30 19 23 -42 39 -45 95 -153 117 -227 9 -30 16 -56 16 -58 0 -2 -25 23 -56 57 -32 33 -66 66 -78 72 -12 5 0 -9 25 -33 25 -24 64 -71 85 -103 l39 -59 0 -136 c-1 -155 -15 -221 -73 -339 -77 -159 -260 -308 -427 -348 -25 -6 -20 0 30 38 33 25 94 81 136 125 124 130 179 266 179 441 0 241 -94 453 -276 619 -85 78 -186 153 -207 153 -6 0 4 -13 23 -30z m657 -729 c8 -134 -14 -237 -77 -368 -83 -169 -212 -280 -368 -312 -69 -14 -176 -13 -227 3 l-40 13 75 13 c179 30 285 85 410 210 65 65 94 103 123 161 50 102 77 214 78 323 2 119 19 90 26 -43z m-732 -641 c19 -8 19 -9 -2 -9 -12 -1 -25 4 -28 9 -7 12 2 12 30 0z m453 -604 c31 -8 75 -17 97 -21 78 -12 71 -24 -10 -18 -65 4 -90 11 -130 35 -27 16 -42 27 -32 24 10 -3 43 -12 75 -20z m-2510 -198 c15 -18 51 -59 81 -90 l54 -58 -6 -51 c-8 -61 -31 -91 -86 -108 -73 -21 -156 -7 -203 36 -46 41 -40 140 12 213 23 32 95 90 112 90 5 0 21 -15 36 -32z m1953 -72 c69 -56 149 -126 144 -126 -7 0 -215 151 -215 155 0 9 49 -11 71 -29z m234 -83 c147 -57 280 -83 424 -83 68 0 122 -2 119 -5 -14 -15 -244 -25 -338 -15 -190 19 -230 33 -325 111 -47 39 -85 72 -85 74 0 2 26 -8 58 -22 31 -14 98 -41 147 -60z m94 -4 c176 -57 282 -61 641 -22 68 7 62 -3 -9 -17 -109 -20 -318 -31 -413 -20 -94 10 -220 43 -313 79 -82 33 -40 24 94 -20z m981 16 c-26 -13 -179 -39 -188 -31 -8 9 139 42 193 44 17 1 16 -1 -5 -13z m164 -16 l21 -21 -25 7 c-14 5 -50 11 -80 15 -51 6 -53 7 -30 18 34 16 90 7 114 -19z m-312 -69 c-157 -100 -309 -155 -456 -166 -111 -9 -216 14 -331 71 -85 43 -163 94 -122 81 132 -42 416 -45 582 -6 111 27 296 58 350 59 l40 1 -63 -40z m-2101 -270 c15 -12 43 -26 61 -33 l33 -12 -55 -6 c-30 -3 -79 -4 -108 -1 l-53 5 32 33 c38 39 51 41 90 14z m149 1 c62 -7 64 -8 37 -19 -47 -20 -121 -9 -162 23 -19 14 -17 15 20 9 22 -3 69 -9 105 -13z"/></g></svg></svg></template>
+  <div class="bg-vignette"></div>
+</div>
+
+<!-- Auth overlay -->
+<div class="auth-overlay" id="authOverlay" style="display:none">
+  <div class="auth-box">
+    <h1>Brothel Search</h1>
+    <p id="authSubtitle">Sign in to continue</p>
+    <input class="auth-input" id="authName" type="text" placeholder="Profile Name" autocomplete="name" style="display:none">
+    <input class="auth-input" id="authEmail" type="email" placeholder="Email" autocomplete="email">
+    <input class="auth-input" id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
+    <input class="auth-input" id="authPasswordConfirm" type="password" placeholder="Confirm Password" autocomplete="new-password" style="display:none">
+    <div id="authPasswordReqs" style="display:none;font-size:12px;margin:4px 0 12px;line-height:1.8">
+      <div style="margin-bottom:4px;color:var(--gold)">Password must contain:</div>
+      <ul class="pw-reqs" style="margin:0;padding-left:20px">
+        <li id="reqLen" style="color:#dbb550">At least 8 characters</li>
+        <li id="reqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
+        <li id="reqLower" style="color:#dbb550">One lowercase letter (a-z)</li>
+        <li id="reqNum" style="color:#dbb550">One number (0-9)</li>
+        <li id="reqSpecial" style="color:#dbb550">One special character (!@#$%&*)</li>
+      </ul>
+    </div>
+    <p id="authReferralHint" style="display:none;font-size:12px;color:var(--gold);text-align:center;margin-bottom:8px">Have a friend's referral code? Enter it below to get 5 bonus days when you subscribe after signup.</p>
+    <input class="auth-input" type="text" id="authReferralCode" placeholder="Referral code (optional)" style="display:none" autocomplete="off">
+    <button class="auth-btn" id="authBtn">Sign In</button>
+    <div class="auth-error" id="authError"></div>
+    <div class="auth-link" id="authToggle">Don't have an account? Sign up for free to access all features.</div>
+    <div class="auth-link" id="authResetPw" onclick="resetPassword()">Forgot password?</div>
+  </div>
+</div>
+
+<!-- Profile Settings -->
+<div class="settings-overlay" id="settingsOverlay">
+  <div class="settings-container">
+    <button class="profile-close" id="settingsBack">&times;</button>
+    <div class="settings-title">Profile Settings</div>
+    <div class="settings-section">
+      <div class="settings-label">Profile Name</div>
+      <div class="settings-value" id="settingsName"></div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-label">Email</div>
+      <div class="settings-value" id="settingsEmail"></div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-label">Change Password</div>
+      <input class="settings-input" id="settingsNewPw" type="password" placeholder="New Password">
+      <input class="settings-input" id="settingsConfirmPw" type="password" placeholder="Confirm New Password">
+      <div id="settingsPwReqs" style="font-size:12px;margin:0 0 12px;line-height:1.8">
+        <div style="margin-bottom:4px;color:var(--gold)">Password must contain:</div>
+        <ul class="pw-reqs" style="margin:0;padding-left:20px">
+          <li id="sReqLen" style="color:#dbb550">At least 8 characters</li>
+          <li id="sReqUpper" style="color:#dbb550">One uppercase letter (A-Z)</li>
+          <li id="sReqLower" style="color:#dbb550">One lowercase letter (a-z)</li>
+          <li id="sReqNum" style="color:#dbb550">One number (0-9)</li>
+          <li id="sReqSpecial" style="color:#dbb550">One special character (!@#$%&*)</li>
+        </ul>
+      </div>
+      <button class="settings-btn" id="settingsChangePwBtn">Update Password</button>
+      <div class="settings-msg" id="settingsPwMsg"></div>
+    </div>
+
+    <div id="settingsReferral"></div>
+
+    <div class="settings-section">
+      <h3 class="settings-label gold-shimmer-text">Subscription</h3>
+      <div id="subscriptionInfo" style="margin-bottom:12px;color:var(--gold)"></div>
+      <button class="settings-btn" id="manageSubscriptionBtn" onclick="openPortal()">Manage Subscription</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Favorites Overlay -->
+<div class="settings-overlay" id="favoritesOverlay">
+  <div class="settings-container" style="max-width:95%;width:95%">
+    <button class="profile-close" id="favBack">&times;</button>
+    <div class="settings-title">Favorites</div>
+    <div class="settings-subtitle" id="favCount" style="margin-bottom:16px"></div>
+    <div id="favGrid" class="girls-grid" style="padding:0"></div>
+    <div id="favEmpty" style="text-align:center;padding:40px 0;color:var(--text-dim);display:none">No favorites yet. Click the heart icon on a profile to add one.</div>
+    <div id="favRoster" class="roster-container" style="margin-top:24px"></div>
+  </div>
+</div>
+
+<!-- Inactivity Warning Overlay -->
+<div class="auth-overlay" id="inactivityOverlay" style="display:none">
+  <div class="auth-box" style="text-align:center">
+    <h1>Session Timeout</h1>
+    <p>You will be logged out due to inactivity in</p>
+    <div id="inactivityCountdown" style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);margin:16px 0"></div>
+    <div style="display:flex;gap:12px;margin-top:20px">
+      <button class="auth-btn" id="inactivityStayBtn" style="flex:1">Stay Logged In</button>
+      <button class="auth-btn" id="inactivityLogoutBtn" style="flex:1">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Preferences Prompt Overlay -->
+<div class="auth-overlay" id="prefsPromptOverlay" style="display:none">
+  <div class="auth-box">
+    <h1>Set Your Preferences</h1>
+    <p>Setting preferences helps us find your best matches and personalise your experience.</p>
+    <button class="auth-btn" id="prefsPromptOpenBtn">Open Preferences</button>
+    <div class="auth-link" id="prefsPromptDismissBtn" style="margin-top:16px;cursor:pointer">Maybe Later</div>
+  </div>
+</div>
+
+<!-- Paywall Overlay -->
+<div class="auth-overlay" id="paywallOverlay" style="display:none">
+  <div class="auth-box" style="max-width:700px;width:90%">
+    <div style="text-align:center;margin-bottom:12px"><svg width="80" height="80" viewBox="0 0 200 200" fill="none"><defs><linearGradient id="pwLogoGold" x1="0%" y1="0%" x2="200%" y2="0%"><stop offset="0%" stop-color="#c9952c"/><stop offset="25%" stop-color="#f5e6a3"/><stop offset="50%" stop-color="#c9952c"/><stop offset="75%" stop-color="#e1b97e"/><stop offset="100%" stop-color="#f5e6a3"/></linearGradient></defs><circle cx="100" cy="100" r="90" stroke="url(#pwLogoGold)" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="80" stroke="url(#pwLogoGold)" stroke-width="1.5" fill="none" opacity="0.25"/><path d="M100 10V25M100 175V190M10 100H25M175 100H190" stroke="url(#pwLogoGold)" stroke-width="3" stroke-linecap="round"/><path d="M36 36L46 46M164 36L154 46M36 164L46 154M164 164L154 154" stroke="url(#pwLogoGold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/><svg x="55" y="35" width="80" height="130" viewBox="0 0 715 1280" overflow="hidden"><g transform="translate(0,1280) scale(0.1,-0.1)" fill="url(#pwLogoGold)" stroke="none"><path d="M5390 12760 c19 -16 38 -29 42 -30 20 -1 134 -164 178 -254 67 -137 93 -249 93 -396 0 -134 -21 -206 -81 -272 -41 -45 -51 -44 -23 3 11 19 32 70 47 114 24 71 26 90 21 170 -4 50 -11 106 -17 125 -6 19 -16 51 -21 70 -18 57 -151 289 -192 334 l-37 41 34 -65 c67 -127 114 -333 101 -444 -18 -162 -112 -249 -250 -231 -71 9 -187 39 -307 80 -153 53 -405 123 -504 140 -274 48 -540 -16 -810 -193 -205 -134 -314 -294 -314 -461 l0 -56 -68 -38 c-75 -42 -103 -76 -133 -163 -27 -75 -22 -136 18 -212 29 -57 29 -58 10 -77 -32 -33 -13 -182 37 -295 4 -11 -4 -21 -29 -34 -45 -24 -102 -87 -121 -132 -8 -18 -14 -57 -14 -85 0 -46 4 -55 38 -89 64 -64 162 -76 252 -30 l40 20 0 -39 c0 -49 -8 -52 -128 -53 -70 -1 -106 5 -187 30 -131 40 -169 45 -235 32 -72 -14 -184 -68 -239 -116 -55 -48 -137 -173 -382 -581 -104 -174 -200 -331 -215 -350 -14 -18 -74 -74 -132 -123 -103 -86 -146 -129 -283 -291 -183 -215 -290 -317 -475 -452 -104 -76 -144 -90 -175 -61 -23 21 -188 268 -234 349 -31 56 -83 115 -101 115 -38 0 -12 -93 63 -228 19 -34 31 -62 27 -62 -29 0 -192 147 -236 214 -51 77 -107 136 -129 136 -13 0 -15 -6 -9 -38 11 -64 54 -144 121 -226 35 -44 75 -93 89 -110 24 -30 23 -30 -30 9 -30 21 -70 50 -88 63 -18 14 -62 61 -98 106 -109 134 -174 180 -174 122 0 -74 73 -187 203 -313 46 -46 81 -83 76 -83 -5 0 -46 17 -91 39 -85 40 -122 64 -186 123 -93 84 -132 100 -132 53 0 -73 97 -163 360 -337 149 -98 230 -182 230 -237 0 -23 -9 -30 -62 -54 -133 -58 -231 -185 -202 -261 12 -31 46 -15 123 58 89 85 108 96 214 125 87 24 163 60 277 131 99 62 161 93 350 175 85 37 200 89 255 117 140 70 370 225 443 297 74 74 147 183 179 265 38 96 45 106 102 155 54 46 155 134 481 419 169 148 203 171 235 158 36 -13 6 -218 -61 -416 -47 -139 -49 -149 -48 -255 0 -128 18 -186 88 -288 32 -47 59 -72 109 -103 37 -22 74 -47 83 -55 8 -9 24 -50 34 -92 33 -133 85 -217 267 -431 48 -56 137 -153 198 -216 127 -131 148 -159 164 -215 11 -39 10 -40 -37 -90 -27 -27 -79 -88 -117 -134 -157 -191 -394 -338 -702 -436 -79 -25 -207 -65 -285 -90 -154 -49 -354 -143 -498 -235 -94 -60 -348 -236 -395 -274 l-30 -24 45 8 c102 20 551 6 704 -21 95 -17 219 -56 318 -100 126 -56 308 -159 308 -175 0 -24 -43 -200 -117 -484 -114 -435 -236 -791 -300 -880 -14 -19 -87 -96 -162 -170 -111 -109 -150 -156 -206 -245 -90 -144 -117 -204 -166 -366 -97 -322 -136 -520 -219 -1103 -32 -226 -65 -421 -90 -525 -22 -91 -47 -206 -55 -254 -29 -160 -51 -207 -150 -322 -62 -72 -146 -188 -168 -232 -13 -24 -16 -58 -15 -145 2 -121 -30 -333 -79 -538 -44 -184 -21 -319 66 -377 62 -42 243 -83 364 -83 29 0 74 7 99 16 39 13 49 22 62 55 24 59 20 159 -10 269 -26 93 -26 97 -15 241 25 338 101 787 177 1054 84 298 310 847 670 1627 252 547 287 629 332 770 23 70 48 140 56 156 23 44 325 450 437 587 54 66 153 179 219 250 67 72 136 149 153 173 29 39 35 42 67 37 19 -3 94 -8 166 -11 106 -5 147 -3 210 11 141 31 298 103 478 219 44 28 86 55 92 59 8 4 26 -35 54 -116 24 -67 85 -235 136 -373 50 -137 101 -281 112 -320 30 -99 129 -533 153 -671 30 -163 29 -387 0 -578 -80 -515 -82 -547 -57 -900 8 -110 17 -252 21 -315 11 -206 35 -551 51 -725 16 -173 15 -233 -11 -400 -8 -49 -17 -157 -20 -240 -9 -209 -23 -327 -51 -415 -26 -85 -56 -135 -145 -247 -110 -138 -135 -230 -84 -305 52 -77 182 -124 320 -115 86 5 129 19 213 70 62 37 92 89 93 163 1 78 13 136 29 145 8 4 32 15 52 24 21 10 41 27 45 38 4 12 7 96 8 187 l0 165 36 65 c49 87 61 163 44 261 -19 107 -59 199 -116 264 -71 81 -71 81 -59 187 25 207 62 406 135 713 45 188 84 386 126 630 28 162 33 215 33 360 0 200 -18 305 -89 496 -104 278 -104 312 -26 1124 52 529 71 816 71 1061 l0 202 53 6 c28 4 180 11 337 16 308 11 397 23 488 66 l57 27 -58 8 c-119 17 -280 131 -488 345 -132 137 -189 209 -372 471 -172 245 -273 369 -394 483 -177 166 -353 282 -690 457 -100 52 -192 106 -203 120 -25 32 -46 89 -126 345 -46 150 -64 223 -61 248 2 19 21 73 42 119 34 76 38 93 38 167 l0 81 191 -219 c105 -121 201 -232 213 -247 13 -15 34 -71 49 -126 14 -55 36 -119 50 -141 20 -35 432 -452 646 -653 42 -40 76 -82 92 -116 17 -35 36 -60 56 -70 35 -18 114 -21 153 -6 16 6 53 11 83 11 88 0 120 23 199 146 57 88 73 102 183 159 76 40 155 116 150 144 -4 20 -54 30 -98 18 -19 -5 -60 -27 -90 -50 -55 -42 -96 -60 -162 -72 l-38 -7 0 40 c0 54 24 177 46 232 9 25 38 77 64 115 54 81 70 119 67 157 -5 61 -46 26 -148 -124 -46 -68 -93 -147 -105 -177 -22 -53 -23 -54 -30 -27 -11 45 3 197 24 256 24 70 33 123 22 140 -7 11 -15 6 -38 -18 -17 -18 -34 -32 -39 -32 -20 0 -114 -109 -138 -161 -14 -31 -33 -105 -43 -165 l-18 -109 -12 49 c-9 32 -11 77 -6 132 7 87 1 100 -29 66 -26 -29 -48 -90 -50 -142 l-2 -49 -22 27 c-12 15 -69 110 -127 212 -133 236 -178 296 -268 364 -98 72 -111 89 -146 176 -87 217 -449 992 -499 1068 -71 106 -133 132 -317 132 -111 1 -119 2 -101 16 17 14 47 15 215 9 246 -8 329 -22 590 -101 304 -93 273 -89 675 -88 252 0 369 4 390 12 30 12 29 12 -10 7 -88 -11 -325 -17 -370 -11 l-47 8 53 24 c29 14 93 55 143 91 50 37 124 91 165 120 40 29 67 53 60 53 -42 1 176 109 223 111 17 1 19 2 5 6 -27 7 -105 -22 -192 -73 -73 -41 -92 -47 -210 -66 -304 -47 -532 -1 -734 151 -66 49 -60 55 6 7 68 -48 176 -100 263 -127 59 -18 97 -23 175 -22 165 1 313 53 515 177 89 55 90 56 167 56 54 0 91 -6 119 -19 38 -17 42 -22 54 -80 7 -33 10 -77 7 -97 -7 -44 2 -37 25 19 l17 42 1 -70 c2 -62 3 -66 11 -37 6 21 7 80 1 160 -5 70 -8 129 -6 131 10 11 109 -47 141 -82 52 -58 67 -100 67 -194 1 -55 4 -75 9 -60 5 12 7 54 5 93 -8 123 -71 207 -186 250 -28 11 -66 37 -93 65 -49 50 -102 81 -183 107 -41 14 -86 16 -226 15 -117 -2 -210 2 -280 13 -104 15 -240 51 -240 63 0 8 232 -3 245 -11 6 -4 47 -11 92 -18 97 -13 297 0 447 30 128 26 169 25 257 -5 161 -54 229 -146 216 -290 -4 -38 -3 -53 3 -40 5 11 9 49 9 84 1 109 -53 187 -169 242 -63 30 -58 36 10 10 101 -38 172 -107 214 -206 l17 -40 -6 92 c-7 116 -26 179 -69 229 -80 93 -184 119 -541 134 -163 6 -225 13 -275 28 -112 35 -285 94 -292 101 -4 3 28 5 70 3 142 -7 265 54 377 185 119 140 158 249 136 381 -7 43 -20 91 -29 107 -18 35 -63 97 -68 92 -2 -1 4 -25 12 -52 24 -76 21 -226 -5 -299 -53 -148 -163 -256 -289 -284 l-42 -10 73 72 c83 81 126 139 167 229 32 69 60 167 59 207 0 14 -7 -6 -15 -45 -31 -149 -133 -313 -256 -412 l-69 -56 -98 6 c-54 4 -136 14 -182 23 -89 16 -232 55 -226 61 2 1 48 -4 103 -12 124 -19 200 -19 289 0 102 22 171 59 245 134 106 106 167 245 189 430 22 176 -19 361 -99 451 l-22 25 18 -30 c106 -176 124 -381 52 -605 -88 -278 -288 -417 -568 -396 -95 7 -297 39 -307 50 -3 3 19 6 49 6 263 0 502 271 533 605 8 77 -6 190 -31 258 -8 23 -22 71 -30 105 -30 136 -95 262 -170 332 -41 37 -30 19 23 -42 39 -45 95 -153 117 -227 9 -30 16 -56 16 -58 0 -2 -25 23 -56 57 -32 33 -66 66 -78 72 -12 5 0 -9 25 -33 25 -24 64 -71 85 -103 l39 -59 0 -136 c-1 -155 -15 -221 -73 -339 -77 -159 -260 -308 -427 -348 -25 -6 -20 0 30 38 33 25 94 81 136 125 124 130 179 266 179 441 0 241 -94 453 -276 619 -85 78 -186 153 -207 153 -6 0 4 -13 23 -30z m657 -729 c8 -134 -14 -237 -77 -368 -83 -169 -212 -280 -368 -312 -69 -14 -176 -13 -227 3 l-40 13 75 13 c179 30 285 85 410 210 65 65 94 103 123 161 50 102 77 214 78 323 2 119 19 90 26 -43z m-732 -641 c19 -8 19 -9 -2 -9 -12 -1 -25 4 -28 9 -7 12 2 12 30 0z m453 -604 c31 -8 75 -17 97 -21 78 -12 71 -24 -10 -18 -65 4 -90 11 -130 35 -27 16 -42 27 -32 24 10 -3 43 -12 75 -20z m-2510 -198 c15 -18 51 -59 81 -90 l54 -58 -6 -51 c-8 -61 -31 -91 -86 -108 -73 -21 -156 -7 -203 36 -46 41 -40 140 12 213 23 32 95 90 112 90 5 0 21 -15 36 -32z m1953 -72 c69 -56 149 -126 144 -126 -7 0 -215 151 -215 155 0 9 49 -11 71 -29z m234 -83 c147 -57 280 -83 424 -83 68 0 122 -2 119 -5 -14 -15 -244 -25 -338 -15 -190 19 -230 33 -325 111 -47 39 -85 72 -85 74 0 2 26 -8 58 -22 31 -14 98 -41 147 -60z m94 -4 c176 -57 282 -61 641 -22 68 7 62 -3 -9 -17 -109 -20 -318 -31 -413 -20 -94 10 -220 43 -313 79 -82 33 -40 24 94 -20z m981 16 c-26 -13 -179 -39 -188 -31 -8 9 139 42 193 44 17 1 16 -1 -5 -13z m164 -16 l21 -21 -25 7 c-14 5 -50 11 -80 15 -51 6 -53 7 -30 18 34 16 90 7 114 -19z m-312 -69 c-157 -100 -309 -155 -456 -166 -111 -9 -216 14 -331 71 -85 43 -163 94 -122 81 132 -42 416 -45 582 -6 111 27 296 58 350 59 l40 1 -63 -40z m-2101 -270 c15 -12 43 -26 61 -33 l33 -12 -55 -6 c-30 -3 -79 -4 -108 -1 l-53 5 32 33 c38 39 51 41 90 14z m149 1 c62 -7 64 -8 37 -19 -47 -20 -121 -9 -162 23 -19 14 -17 15 20 9 22 -3 69 -9 105 -13z"/></g></svg></svg></div>
+    <div class="auth-subtitle" style="text-align:center">Choose a plan to continue</div>
+    <div style="display:flex;gap:16px;margin:24px 0;flex-wrap:wrap;justify-content:center">
+      <div class="paywall-plan" onclick="selectPlan('recurring')">
+        <div class="paywall-plan-name">Monthly</div>
+        <div class="paywall-plan-price">$15 <span>AUD / month</span></div>
+        <div class="paywall-plan-note">Recurring, cancel anytime</div>
+        <button class="auth-btn" data-plan="recurring" style="margin-top:12px">Select</button>
+      </div>
+      <div class="paywall-plan" onclick="selectPlan('one-time')">
+        <div class="paywall-plan-name">1 Month Pass</div>
+        <div class="paywall-plan-price">$20 <span>AUD</span></div>
+        <div class="paywall-plan-note">One-time, non-recurring</div>
+        <button class="auth-btn" data-plan="one-time" style="margin-top:12px">Select</button>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px">
+      <button class="auth-btn" onclick="signOut()" style="width:auto;padding:10px 40px">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Preferences Overlay -->
+<div class="settings-overlay" id="preferencesOverlay">
+  <div class="settings-container">
+    <button class="profile-close" id="prefBack">&times;</button>
+    <div class="settings-title">Preferences</div>
+
+    <div class="settings-section">
+      <div class="pref-group">
+        <div class="pref-label">Age Range</div>
+        <div class="pref-range-slider" id="prefAge">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="18" max="33" value="18" data-handle="min">
+            <input type="range" min="18" max="33" value="33" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">18</span> &ndash; <span class="pref-range-max">33</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Body Range</div>
+        <div class="pref-range-slider" id="prefBody">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="4" max="10" value="4" data-handle="min">
+            <input type="range" min="4" max="10" value="10" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">4</span> &ndash; <span class="pref-range-max">10</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Height Range (cm)</div>
+        <div class="pref-range-slider" id="prefHeight">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="150" max="175" value="150" data-handle="min">
+            <input type="range" min="150" max="175" value="175" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">150</span>cm &ndash; <span class="pref-range-max">175</span>cm</div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Cup Range</div>
+        <div class="pref-range-slider" id="prefCup" data-cup="true">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="7" value="0" data-handle="min">
+            <input type="range" min="0" max="7" value="7" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">A</span> &ndash; <span class="pref-range-max">G</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Country</div>
+        <div class="pref-checkboxes" id="prefCountries"></div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Services</div>
+        <div class="pref-checkboxes" id="prefServices"></div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Experience</div>
+        <div class="pref-checkboxes" id="prefExperience">
+          <label class="pref-cb"><input type="checkbox" value="Experienced"><span>Experienced</span></label>
+          <label class="pref-cb"><input type="checkbox" value="Inexperienced"><span>Inexperienced</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Unspecified)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Language</div>
+        <div class="pref-checkboxes" id="prefLanguage">
+          <label class="pref-cb"><input type="checkbox" value="English"><span>English</span></label>
+          <label class="pref-cb"><input type="checkbox" value="Limited English"><span>Limited English</span></label>
+          <label class="pref-cb"><input type="checkbox" value="No English"><span>No English</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Unspecified)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">AV / Pornstar</div>
+        <div class="pref-checkboxes" id="prefAV">
+          <label class="pref-cb"><input type="checkbox" value="Pornstar"><span>Pornstar</span></label>
+          <label class="pref-cb"><input type="checkbox" value=""><span>(Unspecified)</span></label>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">30 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice30">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="150" max="250" step="10" value="150" data-handle="min">
+            <input type="range" min="150" max="250" step="10" value="250" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">150</span> &ndash; $<span class="pref-range-max">250</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">45 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice45">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="200" max="310" step="10" value="200" data-handle="min">
+            <input type="range" min="200" max="310" step="10" value="310" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">200</span> &ndash; $<span class="pref-range-max">310</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">60 Min Price Range ($)</div>
+        <div class="pref-range-slider" id="prefPrice60">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="250" max="380" step="10" value="250" data-handle="min">
+            <input type="range" min="250" max="380" step="10" value="380" data-handle="max">
+          </div>
+          <div class="pref-range-values">$<span class="pref-range-min">250</span> &ndash; $<span class="pref-range-max">380</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Photos Shared Range</div>
+        <div class="pref-range-slider" id="prefPhotos">
+          <div class="range-slider">
+            <div class="range-slider-track"></div>
+            <div class="range-slider-fill"></div>
+            <input type="range" min="0" max="13" value="0" data-handle="min">
+            <input type="range" min="0" max="13" value="13" data-handle="max">
+          </div>
+          <div class="pref-range-values"><span class="pref-range-min">0</span> &ndash; <span class="pref-range-max">13</span></div>
+        </div>
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Last Rostered Within (days)</div>
+        <input class="settings-input" id="prefLastRosterDays" type="number" min="0" placeholder="e.g. 30">
+      </div>
+
+      <div class="pref-group">
+        <div class="pref-label">Date Started Within (days)</div>
+        <input class="settings-input" id="prefDateStartedDays" type="number" min="0" placeholder="e.g. 90">
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:20px">
+        <button class="settings-btn" id="prefSaveBtn">Save Preferences</button>
+        <button class="settings-btn" id="prefClearBtn">Clear Preferences</button>
+      </div>
+      <div class="settings-msg" id="prefMsg"></div>
+    </div>
+  </div>
+</div>
+
+<nav>
+<div class="logo" id="logoBtn" style="cursor:pointer"><svg width="32" height="32" viewBox="0 0 200 200" fill="none"><defs><linearGradient id="logoGold" x1="0%" y1="0%" x2="200%" y2="0%"><stop offset="0%" stop-color="#c9952c"/><stop offset="25%" stop-color="#f5e6a3"/><stop offset="50%" stop-color="#c9952c"/><stop offset="75%" stop-color="#e1b97e"/><stop offset="100%" stop-color="#f5e6a3"/></linearGradient></defs><circle cx="100" cy="100" r="90" stroke="url(#logoGold)" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="80" stroke="url(#logoGold)" stroke-width="1.5" fill="none" opacity="0.25"/><path d="M100 10V25M100 175V190M10 100H25M175 100H190" stroke="url(#logoGold)" stroke-width="3" stroke-linecap="round"/><path d="M36 36L46 46M164 36L154 46M36 164L46 154M164 164L154 154" stroke="url(#logoGold)" stroke-width="2" stroke-linecap="round" opacity="0.4"/><svg x="55" y="35" width="80" height="130" viewBox="0 0 715 1280" overflow="hidden"><g transform="translate(0,1280) scale(0.1,-0.1)" fill="url(#logoGold)" stroke="none"><path d="M5390 12760 c19 -16 38 -29 42 -30 20 -1 134 -164 178 -254 67 -137 93 -249 93 -396 0 -134 -21 -206 -81 -272 -41 -45 -51 -44 -23 3 11 19 32 70 47 114 24 71 26 90 21 170 -4 50 -11 106 -17 125 -6 19 -16 51 -21 70 -18 57 -151 289 -192 334 l-37 41 34 -65 c67 -127 114 -333 101 -444 -18 -162 -112 -249 -250 -231 -71 9 -187 39 -307 80 -153 53 -405 123 -504 140 -274 48 -540 -16 -810 -193 -205 -134 -314 -294 -314 -461 l0 -56 -68 -38 c-75 -42 -103 -76 -133 -163 -27 -75 -22 -136 18 -212 29 -57 29 -58 10 -77 -32 -33 -13 -182 37 -295 4 -11 -4 -21 -29 -34 -45 -24 -102 -87 -121 -132 -8 -18 -14 -57 -14 -85 0 -46 4 -55 38 -89 64 -64 162 -76 252 -30 l40 20 0 -39 c0 -49 -8 -52 -128 -53 -70 -1 -106 5 -187 30 -131 40 -169 45 -235 32 -72 -14 -184 -68 -239 -116 -55 -48 -137 -173 -382 -581 -104 -174 -200 -331 -215 -350 -14 -18 -74 -74 -132 -123 -103 -86 -146 -129 -283 -291 -183 -215 -290 -317 -475 -452 -104 -76 -144 -90 -175 -61 -23 21 -188 268 -234 349 -31 56 -83 115 -101 115 -38 0 -12 -93 63 -228 19 -34 31 -62 27 -62 -29 0 -192 147 -236 214 -51 77 -107 136 -129 136 -13 0 -15 -6 -9 -38 11 -64 54 -144 121 -226 35 -44 75 -93 89 -110 24 -30 23 -30 -30 9 -30 21 -70 50 -88 63 -18 14 -62 61 -98 106 -109 134 -174 180 -174 122 0 -74 73 -187 203 -313 46 -46 81 -83 76 -83 -5 0 -46 17 -91 39 -85 40 -122 64 -186 123 -93 84 -132 100 -132 53 0 -73 97 -163 360 -337 149 -98 230 -182 230 -237 0 -23 -9 -30 -62 -54 -133 -58 -231 -185 -202 -261 12 -31 46 -15 123 58 89 85 108 96 214 125 87 24 163 60 277 131 99 62 161 93 350 175 85 37 200 89 255 117 140 70 370 225 443 297 74 74 147 183 179 265 38 96 45 106 102 155 54 46 155 134 481 419 169 148 203 171 235 158 36 -13 6 -218 -61 -416 -47 -139 -49 -149 -48 -255 0 -128 18 -186 88 -288 32 -47 59 -72 109 -103 37 -22 74 -47 83 -55 8 -9 24 -50 34 -92 33 -133 85 -217 267 -431 48 -56 137 -153 198 -216 127 -131 148 -159 164 -215 11 -39 10 -40 -37 -90 -27 -27 -79 -88 -117 -134 -157 -191 -394 -338 -702 -436 -79 -25 -207 -65 -285 -90 -154 -49 -354 -143 -498 -235 -94 -60 -348 -236 -395 -274 l-30 -24 45 8 c102 20 551 6 704 -21 95 -17 219 -56 318 -100 126 -56 308 -159 308 -175 0 -24 -43 -200 -117 -484 -114 -435 -236 -791 -300 -880 -14 -19 -87 -96 -162 -170 -111 -109 -150 -156 -206 -245 -90 -144 -117 -204 -166 -366 -97 -322 -136 -520 -219 -1103 -32 -226 -65 -421 -90 -525 -22 -91 -47 -206 -55 -254 -29 -160 -51 -207 -150 -322 -62 -72 -146 -188 -168 -232 -13 -24 -16 -58 -15 -145 2 -121 -30 -333 -79 -538 -44 -184 -21 -319 66 -377 62 -42 243 -83 364 -83 29 0 74 7 99 16 39 13 49 22 62 55 24 59 20 159 -10 269 -26 93 -26 97 -15 241 25 338 101 787 177 1054 84 298 310 847 670 1627 252 547 287 629 332 770 23 70 48 140 56 156 23 44 325 450 437 587 54 66 153 179 219 250 67 72 136 149 153 173 29 39 35 42 67 37 19 -3 94 -8 166 -11 106 -5 147 -3 210 11 141 31 298 103 478 219 44 28 86 55 92 59 8 4 26 -35 54 -116 24 -67 85 -235 136 -373 50 -137 101 -281 112 -320 30 -99 129 -533 153 -671 30 -163 29 -387 0 -578 -80 -515 -82 -547 -57 -900 8 -110 17 -252 21 -315 11 -206 35 -551 51 -725 16 -173 15 -233 -11 -400 -8 -49 -17 -157 -20 -240 -9 -209 -23 -327 -51 -415 -26 -85 -56 -135 -145 -247 -110 -138 -135 -230 -84 -305 52 -77 182 -124 320 -115 86 5 129 19 213 70 62 37 92 89 93 163 1 78 13 136 29 145 8 4 32 15 52 24 21 10 41 27 45 38 4 12 7 96 8 187 l0 165 36 65 c49 87 61 163 44 261 -19 107 -59 199 -116 264 -71 81 -71 81 -59 187 25 207 62 406 135 713 45 188 84 386 126 630 28 162 33 215 33 360 0 200 -18 305 -89 496 -104 278 -104 312 -26 1124 52 529 71 816 71 1061 l0 202 53 6 c28 4 180 11 337 16 308 11 397 23 488 66 l57 27 -58 8 c-119 17 -280 131 -488 345 -132 137 -189 209 -372 471 -172 245 -273 369 -394 483 -177 166 -353 282 -690 457 -100 52 -192 106 -203 120 -25 32 -46 89 -126 345 -46 150 -64 223 -61 248 2 19 21 73 42 119 34 76 38 93 38 167 l0 81 191 -219 c105 -121 201 -232 213 -247 13 -15 34 -71 49 -126 14 -55 36 -119 50 -141 20 -35 432 -452 646 -653 42 -40 76 -82 92 -116 17 -35 36 -60 56 -70 35 -18 114 -21 153 -6 16 6 53 11 83 11 88 0 120 23 199 146 57 88 73 102 183 159 76 40 155 116 150 144 -4 20 -54 30 -98 18 -19 -5 -60 -27 -90 -50 -55 -42 -96 -60 -162 -72 l-38 -7 0 40 c0 54 24 177 46 232 9 25 38 77 64 115 54 81 70 119 67 157 -5 61 -46 26 -148 -124 -46 -68 -93 -147 -105 -177 -22 -53 -23 -54 -30 -27 -11 45 3 197 24 256 24 70 33 123 22 140 -7 11 -15 6 -38 -18 -17 -18 -34 -32 -39 -32 -20 0 -114 -109 -138 -161 -14 -31 -33 -105 -43 -165 l-18 -109 -12 49 c-9 32 -11 77 -6 132 7 87 1 100 -29 66 -26 -29 -48 -90 -50 -142 l-2 -49 -22 27 c-12 15 -69 110 -127 212 -133 236 -178 296 -268 364 -98 72 -111 89 -146 176 -87 217 -449 992 -499 1068 -71 106 -133 132 -317 132 -111 1 -119 2 -101 16 17 14 47 15 215 9 246 -8 329 -22 590 -101 304 -93 273 -89 675 -88 252 0 369 4 390 12 30 12 29 12 -10 7 -88 -11 -325 -17 -370 -11 l-47 8 53 24 c29 14 93 55 143 91 50 37 124 91 165 120 40 29 67 53 60 53 -42 1 176 109 223 111 17 1 19 2 5 6 -27 7 -105 -22 -192 -73 -73 -41 -92 -47 -210 -66 -304 -47 -532 -1 -734 151 -66 49 -60 55 6 7 68 -48 176 -100 263 -127 59 -18 97 -23 175 -22 165 1 313 53 515 177 89 55 90 56 167 56 54 0 91 -6 119 -19 38 -17 42 -22 54 -80 7 -33 10 -77 7 -97 -7 -44 2 -37 25 19 l17 42 1 -70 c2 -62 3 -66 11 -37 6 21 7 80 1 160 -5 70 -8 129 -6 131 10 11 109 -47 141 -82 52 -58 67 -100 67 -194 1 -55 4 -75 9 -60 5 12 7 54 5 93 -8 123 -71 207 -186 250 -28 11 -66 37 -93 65 -49 50 -102 81 -183 107 -41 14 -86 16 -226 15 -117 -2 -210 2 -280 13 -104 15 -240 51 -240 63 0 8 232 -3 245 -11 6 -4 47 -11 92 -18 97 -13 297 0 447 30 128 26 169 25 257 -5 161 -54 229 -146 216 -290 -4 -38 -3 -53 3 -40 5 11 9 49 9 84 1 109 -53 187 -169 242 -63 30 -58 36 10 10 101 -38 172 -107 214 -206 l17 -40 -6 92 c-7 116 -26 179 -69 229 -80 93 -184 119 -541 134 -163 6 -225 13 -275 28 -112 35 -285 94 -292 101 -4 3 28 5 70 3 142 -7 265 54 377 185 119 140 158 249 136 381 -7 43 -20 91 -29 107 -18 35 -63 97 -68 92 -2 -1 4 -25 12 -52 24 -76 21 -226 -5 -299 -53 -148 -163 -256 -289 -284 l-42 -10 73 72 c83 81 126 139 167 229 32 69 60 167 59 207 0 14 -7 -6 -15 -45 -31 -149 -133 -313 -256 -412 l-69 -56 -98 6 c-54 4 -136 14 -182 23 -89 16 -232 55 -226 61 2 1 48 -4 103 -12 124 -19 200 -19 289 0 102 22 171 59 245 134 106 106 167 245 189 430 22 176 -19 361 -99 451 l-22 25 18 -30 c106 -176 124 -381 52 -605 -88 -278 -288 -417 -568 -396 -95 7 -297 39 -307 50 -3 3 19 6 49 6 263 0 502 271 533 605 8 77 -6 190 -31 258 -8 23 -22 71 -30 105 -30 136 -95 262 -170 332 -41 37 -30 19 23 -42 39 -45 95 -153 117 -227 9 -30 16 -56 16 -58 0 -2 -25 23 -56 57 -32 33 -66 66 -78 72 -12 5 0 -9 25 -33 25 -24 64 -71 85 -103 l39 -59 0 -136 c-1 -155 -15 -221 -73 -339 -77 -159 -260 -308 -427 -348 -25 -6 -20 0 30 38 33 25 94 81 136 125 124 130 179 266 179 441 0 241 -94 453 -276 619 -85 78 -186 153 -207 153 -6 0 4 -13 23 -30z m657 -729 c8 -134 -14 -237 -77 -368 -83 -169 -212 -280 -368 -312 -69 -14 -176 -13 -227 3 l-40 13 75 13 c179 30 285 85 410 210 65 65 94 103 123 161 50 102 77 214 78 323 2 119 19 90 26 -43z m-732 -641 c19 -8 19 -9 -2 -9 -12 -1 -25 4 -28 9 -7 12 2 12 30 0z m453 -604 c31 -8 75 -17 97 -21 78 -12 71 -24 -10 -18 -65 4 -90 11 -130 35 -27 16 -42 27 -32 24 10 -3 43 -12 75 -20z m-2510 -198 c15 -18 51 -59 81 -90 l54 -58 -6 -51 c-8 -61 -31 -91 -86 -108 -73 -21 -156 -7 -203 36 -46 41 -40 140 12 213 23 32 95 90 112 90 5 0 21 -15 36 -32z m1953 -72 c69 -56 149 -126 144 -126 -7 0 -215 151 -215 155 0 9 49 -11 71 -29z m234 -83 c147 -57 280 -83 424 -83 68 0 122 -2 119 -5 -14 -15 -244 -25 -338 -15 -190 19 -230 33 -325 111 -47 39 -85 72 -85 74 0 2 26 -8 58 -22 31 -14 98 -41 147 -60z m94 -4 c176 -57 282 -61 641 -22 68 7 62 -3 -9 -17 -109 -20 -318 -31 -413 -20 -94 10 -220 43 -313 79 -82 33 -40 24 94 -20z m981 16 c-26 -13 -179 -39 -188 -31 -8 9 139 42 193 44 17 1 16 -1 -5 -13z m164 -16 l21 -21 -25 7 c-14 5 -50 11 -80 15 -51 6 -53 7 -30 18 34 16 90 7 114 -19z m-312 -69 c-157 -100 -309 -155 -456 -166 -111 -9 -216 14 -331 71 -85 43 -163 94 -122 81 132 -42 416 -45 582 -6 111 27 296 58 350 59 l40 1 -63 -40z m-2101 -270 c15 -12 43 -26 61 -33 l33 -12 -55 -6 c-30 -3 -79 -4 -108 -1 l-53 5 32 33 c38 39 51 41 90 14z m149 1 c62 -7 64 -8 37 -19 -47 -20 -121 -9 -162 23 -19 14 -17 15 20 9 22 -3 69 -9 105 -13z"/></g></svg></svg> BS</div>
+<div class="nav-links nav-links-desktop" id="navLinksDesktop">
+  <a href="/" class="nav-link" id="navHome">Home</a>
+  <a href="/profiles" class="nav-link" id="navProfiles">Profiles</a>
+  <a href="/working-now" class="nav-link" id="navWorkingNow">Working Now</a>
+  <a href="/compare" class="nav-link" id="navCompare">Compare</a>
+  <a href="/analytics" class="nav-link" id="navAnalytics">Analytics</a>
+  <div class="nav-dropdown" id="navBrothelsDropdown">
+    <button class="nav-link" id="navBrothels">Brothels <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" style="margin-left:4px;vertical-align:middle"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
+    <div class="nav-dropdown-panel" id="navBrothelsPanel">
+      <div class="nav-dropdown-group">
+        <a href="/sydney/" class="nav-dropdown-item nav-dropdown-city" onclick="event.preventDefault();navigateToLanding('/sydney/')">Sydney</a>
+        <div class="nav-dropdown-suburbs">
+          <a href="/sydney/cbdandcentral/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/cbdandcentral/')">CBD & Central</a>
+          <a href="/sydney/innerwest/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/innerwest/')">Inner West</a>
+          <a href="/sydney/westernsuburbs/" class="nav-dropdown-item nav-dropdown-suburb" onclick="event.preventDefault();navigateToLanding('/sydney/westernsuburbs/')">Western Suburbs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="/roadmap" class="nav-link" id="navRoadmap">Roadmap</a>
+  <a href="/data" class="nav-link admin-only" id="navData">Data</a>
+</div>
+<div class="nav-right-icons">
+<div class="notif-bell" id="notifBell" style="display:none">
+  <button class="notif-bell-btn" id="notifBellBtn">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
+    <span class="notif-badge" id="notifBadge" style="display:none">0</span>
+  </button>
+  <div class="notif-dropdown" id="notifDropdown">
+    <div class="notif-header">
+      <span>Notifications</span>
+      <button class="notif-mark-read" id="notifMarkAllRead">Mark all read</button>
+    </div>
+    <div class="notif-list" id="notifList">
+      <div class="notif-empty">No notifications</div>
+    </div>
+  </div>
+</div>
+<button class="user-menu-btn" id="loginBtn" onclick="document.getElementById('authOverlay').style.display='flex';document.body.style.overflow='hidden'"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></button>
+<div class="user-menu" id="userMenu" style="display:none">
+  <button class="user-menu-btn" id="userMenuBtn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></button>
+  <div class="user-menu-dropdown" id="userMenuDropdown">
+    <div class="user-menu-email" id="userMenuEmail"></div>
+    <div class="user-menu-role" id="userMenuRole"></div>
+    <div class="user-menu-divider"></div>
+    <button class="user-menu-item" onclick="navigateTo('profile/settings')">Settings</button>
+    <button class="user-menu-item" onclick="navigateTo('profile/preferences')">Preferences</button>
+    <button class="user-menu-item" onclick="navigateTo('profile/favourites')">Favourites</button>
+    <button class="user-menu-item" onclick="signOut()">Log Out</button>
+  </div>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Menu (outside nav to avoid stacking context issues) -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/')">Home</a>
+  <a href="/profiles" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/profiles')">Profiles</a>
+  <a href="/working-now" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/working-now')">Working Now</a>
+  <a href="/compare" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/compare')">Compare</a>
+  <a href="/analytics" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/analytics')">Analytics</a>
+  <a href="/sydney/" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/sydney/')">Brothels — Sydney</a>
+  <a href="/sydney/cbdandcentral/" class="mobile-menu-link mobile-menu-sub" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/sydney/cbdandcentral/')">CBD & Central</a>
+  <a href="/sydney/innerwest/" class="mobile-menu-link mobile-menu-sub" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/sydney/innerwest/')">Inner West</a>
+  <a href="/sydney/westernsuburbs/" class="mobile-menu-link mobile-menu-sub" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/sydney/westernsuburbs/')">Western Suburbs</a>
+  <a href="/roadmap" class="mobile-menu-link" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/roadmap')">Roadmap</a>
+  <a href="/data" class="mobile-menu-link admin-only" onclick="event.preventDefault();closeMobileMenu();navigateToLanding('/data')">Data</a>
+</div>
+
+<main>
+<div id="landingPage" style="display:none"></div>
+<div class="filter-sidebar" id="filterSortBar" style="display:none">
+<div class="filter-sidebar-toggle" id="filterExpandToggle" onclick="document.getElementById('filterSortBar').classList.toggle('open')">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+</div>
+<div class="filter-sidebar-content">
+<div class="filter-sidebar-title">Filters</div>
+<div id="sortRow"></div>
+<div id="filterRow"></div>
+<div id="dtPickerRow"></div>
+<div id="moreFiltersDropdowns"></div>
+<div id="rangeFiltersGrid"></div>
+<div id="filterPresetsRow"></div>
+<button class="clear-all-btn" id="clearAllBtn" disabled>Clear Filters</button>
+
+<!-- Filter Presets Overlay -->
+<div class="settings-overlay" id="presetsOverlay">
+  <div class="settings-container" style="max-width:420px">
+    <button class="profile-close" id="presetsBack">&times;</button>
+    <div class="settings-title">Saved Filters</div>
+    <div id="presetsOverlayList"></div>
+  </div>
+</div>
+</div>
+</div>
+<section class="section">
+<div class="section-header">
+<div class="section-line"></div>
+<div>
+<div class="section-tag">Brothel Search</div>
+<h1 class="section-title">Profiles</h1>
+</div>
+</div>
+<p class="landing-desc">A curated selection across Sydney's finest venues</p>
+
+<div id="filterChips" style="display:none;flex-wrap:wrap;gap:8px;margin-bottom:12px"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<div class="result-count" id="resultCount"></div>
+<div class="layout-toggle" id="layoutToggle">
+  <button id="layoutBento" class="active" title="Bento"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="9" rx="1"/><rect x="9" y="1" width="6" height="4" rx="1"/><rect x="1" y="12" width="6" height="3" rx="1"/><rect x="9" y="7" width="6" height="8" rx="1"/></svg></button>
+  <button id="layoutGrid" title="Grid"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
+  <button id="layoutCompact" title="Compact"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="3" height="3"/><rect x="6.5" y="1" width="3" height="3"/><rect x="12" y="1" width="3" height="3"/><rect x="1" y="6.5" width="3" height="3"/><rect x="6.5" y="6.5" width="3" height="3"/><rect x="12" y="6.5" width="3" height="3"/><rect x="1" y="12" width="3" height="3"/><rect x="6.5" y="12" width="3" height="3"/><rect x="12" y="12" width="3" height="3"/></svg></button>
+  <button id="layoutList" title="List"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="3" rx="1"/><rect x="1" y="6.5" width="14" height="3" rx="1"/><rect x="1" y="11" width="14" height="3" rx="1"/></svg></button>
+</div>
+</div>
+<article class="girls-grid bento" id="girlsGrid"><div class="loading">Loading profiles...</div></article>
+<hr class="gold-divider">
+</section>
+
+</main>
+<div class="profile-overlay" id="profileOverlay">
+<article class="profile-panel" id="profilePanel"></article>
+</div>
+<div class="profile-nav-strip" id="profileNavStrip" style="display:none">
+  <button class="profile-nav-arrow profile-nav-up" id="profileNavUp">&#8249;</button>
+  <div class="profile-nav-thumbs" id="profileNavThumbs"></div>
+  <button class="profile-nav-arrow profile-nav-down" id="profileNavDown">&#8250;</button>
+</div>
+
+<button class="back-to-top" id="backToTop" title="Back to top">
+<svg viewBox="0 0 24 24" width="14" height="14"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="currentColor"/></svg> Back to top
+</button>
+<button class="back-to-top" id="scrollDown" title="Scroll down">
+Scroll down <svg viewBox="0 0 24 24" width="14" height="14"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" fill="currentColor"/></svg>
+</button>
+
+<footer>Brothel Search &copy; 2026</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

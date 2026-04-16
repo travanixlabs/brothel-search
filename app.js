@@ -34,7 +34,8 @@ function applyPendingReferral() {
 // Country flag emoji mapping
 const COUNTRY_FLAGS = {
   'Japanese': '\ud83c\uddef\ud83c\uddf5', 'Korean': '\ud83c\uddf0\ud83c\uddf7', 'Chinese': '\ud83c\udde8\ud83c\uddf3',
-  'Thai': '\ud83c\uddf9\ud83c\udded', 'Vietnamese': '\ud83c\uddfb\ud83c\uddf3', 'Taiwanese': '\ud83c\uddf9\ud83c\uddfc',
+  'Thailandese': '\ud83c\uddf9\ud83c\udded', 'Vietnamese': '\ud83c\uddfb\ud83c\uddf3', 'Taiwanese': '\ud83c\uddf9\ud83c\uddfc',
+  'Sri Lankan': '\ud83c\uddf1\ud83c\uddf0',
   'Filipino': '\ud83c\uddf5\ud83c\udded', 'Malaysian': '\ud83c\uddf2\ud83c\uddfe', 'Indonesian': '\ud83c\uddee\ud83c\udde9',
   'Indian': '\ud83c\uddee\ud83c\uddf3', 'Singaporean': '\ud83c\uddf8\ud83c\uddec', 'Hong Kong': '\ud83c\udded\ud83c\uddf0',
   'Australian': '\ud83c\udde6\ud83c\uddfa', 'European': '\ud83c\uddea\ud83c\uddfa', 'Brazilian': '\ud83c\udde7\ud83c\uddf7',

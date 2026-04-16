@@ -347,7 +347,7 @@ function resolveDate(day, monthName) {
 /* ── Girls scraping (shared) ── */
 
 const COUNTRY_PREFIX = {
-  J: 'Japanese', K: 'Korean', T: 'Thai', C: 'Chinese',
+  J: 'Japanese', K: 'Korean', T: 'Thailandese', C: 'Chinese',
   V: 'Vietnamese', M: 'Malaysian', S: 'Singaporean',
   Jav: 'Japanese', JAV: 'Japanese',
 };
@@ -355,7 +355,7 @@ const COUNTRY_PREFIX = {
 const LANG_FROM_COUNTRY = {
   Japanese: 'Japanese, Limited English',
   Korean: 'Korean, Limited English',
-  Thai: 'Thai, Limited English',
+  Thailandese: 'Thai, Limited English',
   Chinese: 'Mandarin, Limited English',
   Vietnamese: 'Vietnamese, Limited English',
   Malaysian: 'English',
@@ -470,7 +470,7 @@ function parseGirlTitle(raw) {
     const prefix = words.slice(0, -1).join(' ').toLowerCase();
     if (prefix.includes('japan')) { country = ['Japanese']; countryIdx = 0; }
     else if (prefix.includes('korea')) { country = ['Korean']; countryIdx = 0; }
-    else if (prefix.includes('thai')) { country = ['Thai']; countryIdx = 0; }
+    else if (prefix.includes('thai')) { country = ['Thailandese']; countryIdx = 0; }
     else if (prefix.includes('chin')) { country = ['Chinese']; countryIdx = 0; }
     else if (prefix.includes('vietnam')) { country = ['Vietnamese']; countryIdx = 0; }
     else if (prefix.includes('brazil')) { country = ['Brazilian']; countryIdx = 0; }
@@ -588,7 +588,7 @@ async function scrapeGirlProfile(site, id) {
 
 const WP_COUNTRY_MAP = {
   japan: ['Japanese'], korea: ['Korean'], china: ['Chinese'],
-  thailand: ['Thai'], vietnam: ['Vietnamese'], indonesia: ['Indonesian'],
+  thailand: ['Thailandese'], 'sri lanka': ['Sri Lankan'], sri: ['Sri Lankan'], vietnam: ['Vietnamese'], indonesia: ['Indonesian'],
   malaysia: ['Malaysian'], singapore: ['Singaporean'], taiwan: ['Taiwanese'],
   'hong kong': ['Hong Konger'], latina: ['Latina'], eurasian: ['Euroasian'],
 };
@@ -625,7 +625,7 @@ function parseWpPageTitle(html) {
 
   // Handle Top 127 prefix format: "C Winnie", "J Momoko", "HK Maggie", "C K Nana"
   let country = [];
-  const top127Prefixes = { C: 'Chinese', J: 'Japanese', K: 'Korean', V: 'Vietnamese', HK: 'Hong Konger', T: 'Thai' };
+  const top127Prefixes = { C: 'Chinese', J: 'Japanese', K: 'Korean', V: 'Vietnamese', HK: 'Hong Konger', T: 'Thailandese' };
   const prefixMatch = name.match(/^([A-Z]{1,2})\s+(?:([A-Z])\s+)?([A-Z][a-z]+.*)$/);
   if (prefixMatch) {
     const [, p1, p2, rest] = prefixMatch;
@@ -1217,10 +1217,10 @@ async function syncPennys77Girls(env, site) {
         if (ogImg) photos.push(ogImg[1]);
       }
 
-      const countryMap = { thai: 'Thai', thailand: 'Thai', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', china: 'Chinese', japanese: 'Japanese', japan: 'Japanese', korean: 'Korean', korea: 'Korean', australian: 'Australian', aussie: 'Australian', polish: 'Polish', european: 'European', caucasian: 'Australian', indian: 'Indian' };
+      const countryMap = { thai: 'Thailandese', thailand: 'Thailandese', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', china: 'Chinese', japanese: 'Japanese', japan: 'Japanese', korean: 'Korean', korea: 'Korean', australian: 'Australian', aussie: 'Australian', polish: 'Polish', european: 'European', caucasian: 'Australian', indian: 'Indian' };
       const country = natMatch ? (countryMap[natMatch[1].toLowerCase()] || natMatch[1]) : '';
 
-      const asianNats = ['Thai','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
+      const asianNats = ['Thailandese','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
       const isAsian = asianNats.includes(country);
       const pricing = isAsian ? (site.pricingByCountry?.asian || {}) : (site.pricingByCountry?.other || site.defaultPricing || {});
       const entry = {
@@ -1349,7 +1349,7 @@ async function syncBellevue12Girls(env, site) {
       const cupMatch = textContent.match(/([A-Z])\s*(?:cup|cap)/i);
       const heightMatch = textContent.match(/(1[4-8]\d)\s*cm/i);
       const ageMatch = textContent.match(/(\d{2})\s*(?:yo|years? old|y\.o)/i) || textContent.match(/age\s*:?\s*(\d{2})/i);
-      const countryMap = { singapore: 'Singaporean', singaporean: 'Singaporean', china: 'Chinese', chinese: 'Chinese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', thailand: 'Thai', thai: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', hongkong: 'Hong Kong', 'hong kong': 'Hong Kong', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian' };
+      const countryMap = { singapore: 'Singaporean', singaporean: 'Singaporean', china: 'Chinese', chinese: 'Chinese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', thailand: 'Thailandese', thai: 'Thailandese', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', hongkong: 'Hong Kong', 'hong kong': 'Hong Kong', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian' };
       let country = '';
       for (const [key, val] of Object.entries(countryMap)) {
         if (textContent.toLowerCase().includes(key)) { country = val; break; }
@@ -1401,7 +1401,7 @@ async function syncGatewayClubGirls(env, site) {
   const addedNames = [];
   let siteChanged = false;
   const todayStr = fmtDate(getAEDTDate());
-  const countryMap = { aussie: 'Australian', australian: 'Australian', singaporean: 'Singaporean', chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', brazilian: 'Brazilian', kiwi: 'New Zealander', indian: 'Indian', european: 'European', filipina: 'Filipino', indonesian: 'Indonesian', persian: 'Persian', colombian: 'Colombian' };
+  const countryMap = { aussie: 'Australian', australian: 'Australian', singaporean: 'Singaporean', chinese: 'Chinese', thai: 'Thailandese', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', brazilian: 'Brazilian', kiwi: 'New Zealander', indian: 'Indian', european: 'European', filipina: 'Filipino', indonesian: 'Indonesian', persian: 'Persian', colombian: 'Colombian' };
 
   for (const block of blocks) {
     const nameMatch = block.match(/<h5>([^<]+)<\/h5>/);
@@ -1612,7 +1612,7 @@ async function syncMarrickvilleBrothelGirls(env, site) {
   const todayStr = fmtDate(getAEDTDate());
   let m;
 
-  const countryMap = { chinese: 'Chinese', thai: 'Thai', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', malaysian: 'Malaysian', singaporean: 'Singaporean', indonesian: 'Indonesian', taiwanese: 'Taiwanese', australian: 'Australian', indian: 'Indian', filipina: 'Filipino', 'hong kong': 'Hong Kong' };
+  const countryMap = { chinese: 'Chinese', thai: 'Thailandese', japanese: 'Japanese', korean: 'Korean', vietnamese: 'Vietnamese', malaysian: 'Malaysian', singaporean: 'Singaporean', indonesian: 'Indonesian', taiwanese: 'Taiwanese', australian: 'Australian', indian: 'Indian', filipina: 'Filipino', 'hong kong': 'Hong Kong' };
 
   while ((m = liRe.exec(html)) !== null) {
     const [, id, imgPath, rawName] = m;
@@ -1677,7 +1677,7 @@ async function syncSpringHouseGirls(env, site) {
   const blocks = html.split('class="item col-');
   const addedNames = [];
   const todayStr = fmtDate(getAEDTDate());
-  const countryMap = { china: 'Chinese', chinese: 'Chinese', singapore: 'Singaporean', singaporean: 'Singaporean', thai: 'Thai', thailand: 'Thai', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian', 'hong kong': 'Hong Kong' };
+  const countryMap = { china: 'Chinese', chinese: 'Chinese', singapore: 'Singaporean', singaporean: 'Singaporean', thai: 'Thailandese', thailand: 'Thailandese', japan: 'Japanese', japanese: 'Japanese', korea: 'Korean', korean: 'Korean', vietnam: 'Vietnamese', vietnamese: 'Vietnamese', taiwan: 'Taiwanese', taiwanese: 'Taiwanese', malaysia: 'Malaysian', malaysian: 'Malaysian', indonesia: 'Indonesian', indonesian: 'Indonesian', 'hong kong': 'Hong Kong' };
 
   // Collect profile URLs from listing
   const profileUrls = [];
@@ -2345,7 +2345,7 @@ async function syncJiniaGirls(env, site) {
   const articles = html.split("class='slide-entry flex_column");
   const profileUrls = [];
   const seenUrls = new Set();
-  const countryMap = { chinese: 'Chinese', vietnamese: 'Vietnamese', thai: 'Thai', greek: 'Greek', japanese: 'Japanese', korean: 'Korean', 'hong kong': 'Hong Kong', taiwanese: 'Taiwanese', australian: 'Australian', singaporean: 'Singaporean', malaysian: 'Malaysian', indonesian: 'Indonesian' };
+  const countryMap = { chinese: 'Chinese', vietnamese: 'Vietnamese', thai: 'Thailandese', greek: 'Greek', japanese: 'Japanese', korean: 'Korean', 'hong kong': 'Hong Kong', taiwanese: 'Taiwanese', australian: 'Australian', singaporean: 'Singaporean', malaysian: 'Malaysian', indonesian: 'Indonesian' };
 
   for (const article of articles) {
     const linkMatch = article.match(/href='(https:\/\/jinia\.com\.au\/[^']+)'\s+title='([^']+)'/);
@@ -2553,7 +2553,7 @@ async function scrapePennys77Roster(site, env) {
   // Parse article blocks for profile data
   const articles = html.split('<article ').slice(1);
   const rosterGirls = [];
-  const countryMap = { thai: 'Thai', thailand: 'Thai', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', australian: 'Australian', aussie: 'Australian', japanese: 'Japanese', korean: 'Korean', polish: 'Polish', european: 'European', indian: 'Indian', spanish: 'Spanish' };
+  const countryMap = { thai: 'Thailandese', thailand: 'Thailandese', vietnamese: 'Vietnamese', vietnam: 'Vietnamese', chinese: 'Chinese', australian: 'Australian', aussie: 'Australian', japanese: 'Japanese', korean: 'Korean', polish: 'Polish', european: 'European', indian: 'Indian', spanish: 'Spanish' };
 
   for (const article of articles) {
     if (!article.includes('tag-roster')) continue;
@@ -2609,7 +2609,7 @@ async function scrapePennys77Roster(site, env) {
       const added = [];
       for (const g of rosterGirls) {
         if (existingNames.has(g.name)) continue;
-        const asianNats2 = ['Thai','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
+        const asianNats2 = ['Thailandese','Japanese','Chinese','Korean','Vietnamese','Taiwanese','Filipino','Malaysian','Indonesian','Singaporean','Cambodian','Indian','Hong Kong'];
         const isAsian2 = asianNats2.includes(g.country);
         const pr = isAsian2 ? (site.pricingByCountry?.asian || {}) : (site.pricingByCountry?.other || site.defaultPricing || {});
         existing.push({

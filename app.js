@@ -3601,6 +3601,7 @@ function showProfile(g) {
           </div>
           <div class="profile-detail">
             ${detailRow('Start Date', g.startDate)}
+            ${g.lastModified ? detailRow('Last Modified', g.lastModified.split('T')[0]) : ''}
             ${(() => {
               if (!g.lastRostered) return '';
               const rd = new Date(g.lastRostered + 'T00:00:00');

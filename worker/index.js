@@ -1228,6 +1228,7 @@ async function syncPennys77Girls(env, site) {
         height: heightMatch ? heightMatch[1] : '', cup: cupMatch ? cupMatch[1].toUpperCase() : '',
         body: '', val1: pricing.val1 || '', val2: pricing.val2 || '', val3: pricing.val3 || '',
         startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+        lastModified: new Date().toISOString(),
       };
       existing.push(entry);
       addedNames.push(name);
@@ -1288,6 +1289,7 @@ async function syncBlackCatGirls(env, site) {
       height: heightCm, cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
       val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
       startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     };
     existing.push(entry);
     existingNames.add(name);
@@ -1363,6 +1365,7 @@ async function syncBellevue12Girls(env, site) {
         cup: cupMatch ? cupMatch[1].toUpperCase() : '', body: '',
         val1: dp.val1 || '', val2: dp.val2 || '', val3: dp.val3 || '',
         startDate, oldUrl: url, photos, labels: [], originalSite: 'Exists',
+        lastModified: new Date().toISOString(),
       };
       existing.push(entry);
       addedNames.push(name);
@@ -1524,6 +1527,7 @@ async function syncGatewayClubGirls(env, site) {
       val1: '260', val2: '320', val3: '400',
       startDate, lastRostered: startDate, oldUrl: p.profileUrl || site.girlsUrl,
       photos, labels, originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     };
     existing.push(entry);
     existingNames.add(p.name);
@@ -1644,6 +1648,7 @@ async function syncMarrickvilleBrothelGirls(env, site) {
       val1: '70', val2: '100', val3: '130',
       startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
       photos: [photo], labels: [], originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     };
     existing.push(entry);
     existingNames.add(name);
@@ -1726,6 +1731,7 @@ async function syncSpringHouseGirls(env, site) {
         val1: '110', val2: '140', val3: '170',
         startDate: todayStr, lastRostered: todayStr, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
+        lastModified: new Date().toISOString(),
       };
       existing.push(entry);
       existingNames.add(name);
@@ -1892,6 +1898,7 @@ async function syncStilettoGirls(env, site) {
       lastRostered: Object.keys(roster).length ? todayStr : '',
       oldUrl: p.profileUrl,
       photos, labels, originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     };
     existing.push(entry);
     existingNames.add(p.name);
@@ -2280,6 +2287,7 @@ async function syncWivesOnlyGirls(env, site) {
       val1: '250', val2: '320', val3: '400',
       startDate, lastRostered: startDate, oldUrl: p.url,
       photos: parsed.photos, labels: [], originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     };
     existing.push(entry);
     existingNames.add(p.name);
@@ -2515,6 +2523,7 @@ async function syncJiniaGirls(env, site) {
         val1, val2, val3,
         startDate, lastRostered: startDate, oldUrl: profileUrl,
         photos, labels: [], originalSite: 'Exists',
+        lastModified: new Date().toISOString(),
       };
       existing.push(entry);
       existingNames.add(name);
@@ -2672,6 +2681,7 @@ async function syncGoldenAppleGirls(env, site) {
       cup: bustMatch ? bustMatch[1].toUpperCase() : '', body: dressMatch ? dressMatch[1] : '',
       val1: (site.defaultPricing || {}).val1 || '', val2: (site.defaultPricing || {}).val2 || '', val3: (site.defaultPricing || {}).val3 || '',
       startDate: todayStr, oldUrl: site.girlsUrl, photos, labels: [], originalSite: 'Exists',
+      lastModified: new Date().toISOString(),
     });
     existingNames.add(name);
     addedNames.push(name);

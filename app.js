@@ -5341,7 +5341,6 @@ function renderWorkingNow() {
 
   let html = '<div class="landing-page" style="padding-top:20px">';
   html += sectionHeader('Who\u2019s Working Now');
-  html += '<div class="live-ticker" id="liveTicker"></div>';
   // Subtitle based on selected day
   const selectedDay = rosterDays[wnSelectedDay] || todayRoster;
   const selectedIsToday = selectedDay && selectedDay.dateStr === todayStr;
@@ -6667,22 +6666,8 @@ function initCardTilt() {
   });
 }
 
-// ── 8. Live Activity Ticker for Working Now ──
-function initLiveTicker() {
-  const container = document.getElementById('liveTicker');
-  if (!container) return;
-  const nowGirls = getFiltered().filter(g => {
-    const a = getAvailabilityText(g);
-    return a && a.startsWith('Available Now');
-  }).slice(0, 20);
-  if (!nowGirls.length) { container.style.display = 'none'; return; }
-  container.style.display = '';
-  // Duplicate items for seamless loop
-  const items = [...nowGirls, ...nowGirls];
-  container.innerHTML = '<div class="live-ticker-track">' + items.map(g =>
-    '<div class="live-ticker-item"><span class="live-ticker-dot"></span><span class="live-ticker-name">' + (g.name || '') + '</span><span class="live-ticker-venue">at ' + (g.venueName || '') + '</span></div>'
-  ).join('') + '</div>';
-}
+// ── 8. Live Activity Ticker (removed from Working Now, now on home page only) ──
+function initLiveTicker() {}
 
 // ── 9. Init all animations after page render ──
 function initAllAnimations() {

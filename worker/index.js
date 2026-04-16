@@ -3673,15 +3673,22 @@ async function sendDailyDigest(env) {
 
     if (!parts.length && !allFavGirls.length) continue;
 
-    // Insert single digest notification
+    // Insert single digest notification (skip if one already exists today)
     if (parts.length) {
-      const digestNotif = {
-        user_id: userId, type: 'favourite_rostered',
-        title: 'Daily Digest',
-        body: parts.join(', ') + '. Check your email for details.',
-        venue: null, girl_name: null,
-      };
-      await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify(digestNotif) });
+      const dupCheck = await fetch(
+        `${SB_URL}/rest/v1/notifications?user_id=eq.${userId}&title=eq.Daily%20Digest&created_at=gte.${todayStr}T00:00:00Z&select=id&limit=1`,
+        { headers }
+      );
+      const existing = await dupCheck.json();
+      if (!existing.length) {
+        const digestNotif = {
+          user_id: userId, type: 'favourite_rostered',
+          title: 'Daily Digest',
+          body: parts.join(', ') + '. Check your email for details.',
+          venue: null, girl_name: null,
+        };
+        await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify(digestNotif) });
+      }
     }
 
     // Send email via Resend (always send if user has favourites)

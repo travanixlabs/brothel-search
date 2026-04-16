@@ -413,6 +413,22 @@ async function openPortal() {
   } catch (e) { btn.textContent = 'Manage Subscription'; alert('Error: ' + e.message); }
 }
 
+function showPrefsPrompt() {
+  const overlay = document.getElementById('prefsPromptOverlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('prefsPromptOpenBtn').addEventListener('click', () => {
+  document.getElementById('prefsPromptOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+  navigateTo('profile/preferences');
+});
+document.getElementById('prefsPromptDismissBtn').addEventListener('click', () => {
+  document.getElementById('prefsPromptOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+});
+
 function showPreferences() {
   document.getElementById('userMenuDropdown').classList.remove('open');
   document.getElementById('prefMsg').textContent = '';
@@ -796,6 +812,8 @@ sbClient.auth.onAuthStateChange((event, session) => {
           computeMatchScores(); renderGrid();
           const p = window.location.pathname;
           if (p === '/' || p === '/index.html') handleLandingRoute('/');
+        } else {
+          showPrefsPrompt();
         }
       });
       loadFilterPresets().then(() => {
@@ -3923,6 +3941,7 @@ loadProfiles().then(() => {
 checkAuth().then(async (loggedIn) => {
   loadPreferences().then(() => {
     if (userPreferences) { computeMatchScores(); renderGrid(); }
+    else if (loggedIn) { showPrefsPrompt(); }
   });
   // Check subscription before resolving pending profile
   if (loggedIn) {

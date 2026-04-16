@@ -4134,7 +4134,7 @@ const compareList = [];
 function toggleCompare(venue, name) {
   const idx = compareList.findIndex(c => c.venue === venue && c.name === name);
   if (idx >= 0) { compareList.splice(idx, 1); }
-  else if (compareList.length < 5) { compareList.push({ venue, name }); }
+  else if (compareList.length < 10) { compareList.push({ venue, name }); }
   updateCompareTray();
 }
 function updateCompareTray() {

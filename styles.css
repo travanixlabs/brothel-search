@@ -358,8 +358,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .girls-grid.list .card-badges{position:absolute;top:6px;left:97px;flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px;z-index:3}
 .girls-grid.list .card-badges .country-badge{font-size:9px;padding:2px 6px}
 .girls-grid.list .card-info{padding-top:28px}
-.girls-grid.list .fav-heart,.girls-grid.list .hide-btn{opacity:0;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;position:static;flex-shrink:0}
-.girls-grid.list .girl-card:hover .fav-heart,.girls-grid.list .girl-card:hover .hide-btn{opacity:1}
+.girls-grid.list .fav-heart,.girls-grid.list .hide-btn,.girls-grid.list .compare-btn{opacity:0;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;position:static;flex-shrink:0;left:auto;top:auto}
+.girls-grid.list .girl-card:hover .fav-heart,.girls-grid.list .girl-card:hover .hide-btn,.girls-grid.list .girl-card:hover .compare-btn{opacity:1}
 .girls-grid.list .fav-heart svg,.girls-grid.list .hide-btn svg{width:16px;height:16px}
 .girls-grid.list .card-info{padding-left:14px;position:relative}
 .girls-grid.list .card-info .card-name{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}

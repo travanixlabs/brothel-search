@@ -2761,6 +2761,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-22"
+    },
+    {
+      "name": "Kehlani",
+      "country": [
+        "Australian"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-16",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/96ea3a6ca2c9a6dd972a00dccf58ba09.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4897,6 +4917,6 @@
     },
     "Dahlia ***": {}
   },
-  "lastGirlsSync": "2026-04-15T10:01:03.508Z",
+  "lastGirlsSync": "2026-04-16T04:01:12.939Z",
   "lastCalendarSync": "2026-04-16T03:53:49.429Z"
 }

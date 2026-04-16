@@ -4377,6 +4377,32 @@ function renderHomePage() {
     }
   }
 
+  // Live Roster Feed
+  {
+    const workingNowGirls = allGirls.filter(g => {
+      const a = getAvailabilityText(g);
+      return a && (a.startsWith('Available Now') || a.startsWith('Available Later'));
+    }).sort(() => Math.random() - 0.5).slice(0, 30);
+    if (workingNowGirls.length > 4) {
+      html += '<div class="venue-divider"><span>\u2014 LIVE ROSTER FEED \u2014</span></div>';
+      html += '<div class="live-ticker"><div class="live-ticker-track">';
+      const items = [...workingNowGirls, ...workingNowGirls]; // duplicate for seamless loop
+      for (const g of items) {
+        const avail = getAvailabilityText(g);
+        const isNow = avail && avail.startsWith('Available Now');
+        const dotColor = isNow ? '#00c864' : '#c9952c';
+        const photo = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 28) + '" style="width:28px;height:28px;border-radius:6px;object-fit:cover">' : '';
+        html += '<div class="live-ticker-item" style="cursor:pointer" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
+        html += '<span class="live-ticker-dot" style="background:' + dotColor + ';box-shadow:0 0 6px ' + dotColor + '60"></span>';
+        html += photo;
+        html += '<span class="live-ticker-name">' + (g.name || '') + '</span>';
+        html += '<span class="live-ticker-venue">' + (g.venueName || '') + '</span>';
+        html += '</div>';
+      }
+      html += '</div></div>';
+    }
+  }
+
   // Recent reviews placeholder
   html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';
   html += '<div id="homeRecentReviews" style="margin-bottom:40px"><div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">Loading reviews...</div></div>';

@@ -593,6 +593,16 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:10001;display:flex;align-item
 .back-to-top{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 24px;display:none;align-items:center;justify-content:center;gap:8px;cursor:pointer;z-index:90;transition:all .4s cubic-bezier(0.23,1,0.32,1);border-radius:24px;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:0}
 .back-to-top:hover{background:rgba(201,149,44,0.12);border-color:rgba(201,149,44,0.5);box-shadow:0 0 20px rgba(201,149,44,0.15)}
 .back-to-top.visible{display:flex;opacity:1;transform:translateX(-50%) translateY(0);transition:opacity .4s ease,transform .4s ease}
+.compare-tray{position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(12,12,20,0.95);border-top:1px solid rgba(201,149,44,0.2);backdrop-filter:blur(12px);padding:10px 20px;transition:transform .3s}
+.compare-tray-inner{display:flex;align-items:center;gap:12px;justify-content:center;max-width:600px;margin:0 auto}
+.compare-tray-label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;white-space:nowrap}
+.compare-tray-thumbs{display:flex;gap:6px}
+.compare-tray-thumbs img{width:36px;height:36px;border-radius:6px;object-fit:cover;border:1px solid rgba(201,149,44,0.2)}
+.compare-tray-clear{background:none;border:none;color:#888;font-size:20px;cursor:pointer;padding:0 4px}
+.compare-tray-clear:hover{color:var(--gold)}
+.compare-btn{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;z-index:2}
+.girl-card:hover .compare-btn{opacity:1}
+.compare-btn.in-compare{opacity:1;background:var(--gold);color:var(--bg-dark);border-color:var(--gold)}
 
 /* Footer */
 footer{text-align:center;padding:40px;font-size:12px;color:var(--text-dim);letter-spacing:2px;border-top:1px solid rgba(255,255,255,0.06)}

@@ -2530,6 +2530,7 @@ function renderCard(g, grid) {
     el.innerHTML = `
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${hideSvg}</div>
+      <button class="compare-btn${compareList.some(c => c.venue === g.venue && c.name === g.name) ? ' in-compare' : ''}" data-venue="${g.venue}" data-name="${(g.name||'').replace(/"/g,'&quot;')}" onclick="event.stopPropagation();toggleCompare('${g.venue}','${(g.name||'').replace(/'/g,"\\'")}')">${compareList.some(c => c.venue === g.venue && c.name === g.name) ? '\u2713' : '+'}</button>
       <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : isReturnProfile(g) ? '<span class="return-badge">Return</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-name-overlay"><span>${g.name || ''}</span></div>
@@ -4111,6 +4112,103 @@ window.addEventListener('scroll', () => {
 });
 btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 scrollDownBtn.onclick = () => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+
+// ── Side-by-Side Compare ──
+const compareList = [];
+function toggleCompare(venue, name) {
+  const idx = compareList.findIndex(c => c.venue === venue && c.name === name);
+  if (idx >= 0) { compareList.splice(idx, 1); }
+  else if (compareList.length < 5) { compareList.push({ venue, name }); }
+  updateCompareTray();
+}
+function updateCompareTray() {
+  const tray = document.getElementById('compareTray');
+  const thumbs = document.getElementById('compareTrayThumbs');
+  const count = document.getElementById('compareTrayCount');
+  tray.style.display = compareList.length > 0 ? '' : 'none';
+  count.textContent = compareList.length;
+  thumbs.innerHTML = compareList.map(c => {
+    const g = allGirls.find(gg => gg.venue === c.venue && gg.name === c.name);
+    return g && g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0], 36) + '" title="' + (g.name || '') + '">' : '';
+  }).join('');
+  // Update all compare buttons on cards
+  document.querySelectorAll('.compare-btn').forEach(btn => {
+    const inList = compareList.some(c => c.venue === btn.dataset.venue && c.name === btn.dataset.name);
+    btn.classList.toggle('in-compare', inList);
+    btn.textContent = inList ? '\u2713' : '+';
+  });
+}
+document.getElementById('compareTrayBtn').onclick = () => {
+  if (compareList.length < 2) return;
+  showSideBySideCompare();
+};
+document.getElementById('compareTrayClear').onclick = () => {
+  compareList.length = 0;
+  updateCompareTray();
+};
+
+function showSideBySideCompare() {
+  const girls = compareList.map(c => allGirls.find(g => g.venue === c.venue && g.name === c.name)).filter(Boolean);
+  if (girls.length < 2) return;
+
+  const fields = [
+    { key: 'venueName', label: 'Venue' },
+    { key: 'country', label: 'Country', fmt: v => Array.isArray(v) ? v.join(', ') : v || '' },
+    { key: 'age', label: 'Age' },
+    { key: 'body', label: 'Body' },
+    { key: 'height', label: 'Height' },
+    { key: 'cup', label: 'Cup' },
+    { key: 'val1', label: '30 Min', fmt: v => v ? '$' + v : '' },
+    { key: 'val2', label: '45 Min', fmt: v => v ? '$' + v : '' },
+    { key: 'val3', label: '60 Min', fmt: v => v ? '$' + v : '' },
+    { key: 'exp', label: 'Experience' },
+    { key: 'lang', label: 'Language' },
+    { key: 'startDate', label: 'Start Date' },
+    { key: 'lastRostered', label: 'Last Rostered' },
+  ];
+
+  let html = '<div class="auth-overlay" id="sideBySideOverlay" style="display:flex;z-index:1001;overflow-y:auto">';
+  html += '<div class="auth-box" style="max-width:' + Math.min(900, girls.length * 180 + 120) + 'px;width:95%;padding:24px;overflow-x:auto">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h1 style="font-size:16px;margin:0">Side-by-Side Compare</h1><button onclick="document.getElementById(\'sideBySideOverlay\').remove();document.body.style.overflow=\'\'" style="background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer">&times;</button></div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+
+  // Photo row
+  html += '<tr><td style="padding:8px 4px;color:var(--text-dim);font-weight:600;vertical-align:top;width:80px"></td>';
+  for (const g of girls) {
+    const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" style="width:100%;max-width:140px;height:180px;object-fit:cover;border-radius:8px;display:block;cursor:pointer" onclick="document.getElementById(\'sideBySideOverlay\').remove();document.body.style.overflow=\'\';showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g,"\\'") + '\'))">' : '';
+    html += '<td style="padding:8px 4px;text-align:center;vertical-align:top">' + img + '<div style="font-family:Playfair Display,serif;font-size:14px;font-weight:700;color:var(--gold);margin-top:6px">' + (g.name || '') + '</div></td>';
+  }
+  html += '</tr>';
+
+  // Match score row
+  if (userPreferences) {
+    html += '<tr style="border-top:1px solid rgba(201,149,44,0.1)"><td style="padding:6px 4px;color:var(--text-dim)">Match</td>';
+    for (const g of girls) {
+      const score = matchScores.get(g.venue + ':' + g.name) || 0;
+      const color = score >= 90 ? '#00c864' : score >= 70 ? '#c9952c' : '#888';
+      html += '<td style="padding:6px 4px;text-align:center;color:' + color + ';font-weight:700">' + (score > 0 ? score + '%' : '-') + '</td>';
+    }
+    html += '</tr>';
+  }
+
+  // Data rows
+  for (const f of fields) {
+    html += '<tr style="border-top:1px solid rgba(201,149,44,0.06)"><td style="padding:6px 4px;color:var(--text-dim)">' + f.label + '</td>';
+    const vals = girls.map(g => f.fmt ? f.fmt(g[f.key]) : (g[f.key] || ''));
+    // Highlight best value for numeric fields
+    const numVals = vals.map(v => parseFloat(String(v).replace('$', '')));
+    const isNumeric = numVals.every(v => !isNaN(v)) && numVals.some(v => v > 0);
+    for (let i = 0; i < girls.length; i++) {
+      html += '<td style="padding:6px 4px;text-align:center">' + (vals[i] || '<span style="color:#444">-</span>') + '</td>';
+    }
+    html += '</tr>';
+  }
+
+  html += '</table></div></div>';
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  document.body.style.overflow = 'hidden';
+}
 
 // More filters toggle handled in renderFilters()
 

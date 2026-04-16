@@ -3867,6 +3867,122 @@ function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, mat
   return html;
 }
 
+/* ── Weekly Wrap-Up Email ── */
+
+async function sendWeeklyWrapUp(env) {
+  const headers = sbHeaders(env);
+  const siteList = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
+  const siteNames = siteList.map(s => s.name);
+  const todayStr = fmtDate(getAEDTDate());
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const weekAgoStr = weekAgo.toISOString().split('T')[0];
+
+  // Load all venue data
+  let totalGirls = 0, newThisWeek = 0, totalRosteredToday = 0;
+  const venueStats = [];
+  for (const site of siteList) {
+    try {
+      const { data } = await loadData(env, site);
+      const girls = data.girls || [];
+      const cal = data.calendar || {};
+      const rosteredToday = girls.filter(g => cal[g.name] && cal[g.name][todayStr]).length;
+      const newGirls = girls.filter(g => g.startDate && g.startDate >= weekAgoStr);
+      totalGirls += girls.length;
+      newThisWeek += newGirls.length;
+      totalRosteredToday += rosteredToday;
+      venueStats.push({ name: site.name, total: girls.length, rostered: rosteredToday, newCount: newGirls.length, newNames: newGirls.map(g => g.name) });
+    } catch (e) { console.error(`[WeeklyWrap] Error loading ${site.name}:`, e); }
+  }
+
+  // Get top venues by roster size
+  const topVenues = [...venueStats].sort((a, b) => b.rostered - a.rostered).slice(0, 5);
+
+  // Load users with favourites + subscribed/admin
+  const favRes = await fetch(`${SB_URL}/rest/v1/user_favorites?select=user_id,old_url`, { headers });
+  const allFavs = await favRes.json();
+  const userFavs = {};
+  for (const f of allFavs) { if (!userFavs[f.user_id]) userFavs[f.user_id] = []; userFavs[f.user_id].push(f.old_url); }
+
+  const rolesRes = await fetch(`${SB_URL}/rest/v1/user_roles?select=id,role`, { headers });
+  const allRoles = await rolesRes.json();
+  const roleMap = {};
+  for (const r of allRoles) roleMap[r.id] = r.role;
+
+  const subsRes = await fetch(`${SB_URL}/rest/v1/user_subscriptions?status=eq.active&select=user_id`, { headers });
+  const allSubs = await subsRes.json();
+  const activeSubs = new Set((allSubs || []).map(s => s.user_id));
+
+  const userIds = Object.keys(userFavs);
+  let sent = 0;
+  for (const uid of userIds) {
+    const isAdmin = roleMap[uid] === 'admin';
+    const isSubscribed = activeSubs.has(uid);
+    if (!isAdmin && !isSubscribed) continue;
+
+    let email, name;
+    try {
+      const res = await fetch(`${SB_URL}/auth/v1/admin/users/${uid}`, { headers: { apikey: env.SUPABASE_SERVICE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}` } });
+      const u = await res.json();
+      if (!u.email) continue;
+      email = u.email;
+      name = u.user_metadata?.display_name || u.user_metadata?.name || u.email.split('@')[0];
+    } catch { continue; }
+
+    const favCount = (userFavs[uid] || []).length;
+
+    // Build email
+    let html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0e0e16;color:#e0d6c8;padding:32px;border-radius:12px">`;
+    html += `<div style="text-align:center;margin-bottom:24px"><span style="font-size:24px;font-weight:700;color:#c9952c;letter-spacing:2px">WEEKLY WRAP-UP</span></div>`;
+    html += `<p style="font-size:16px;margin-bottom:24px">Hi ${name}, here's your week in review.</p>`;
+
+    // Stats overview
+    html += `<div style="display:flex;gap:12px;margin-bottom:24px;text-align:center">`;
+    html += `<div style="flex:1;padding:16px;background:#1a1a2e;border-radius:8px;border:1px solid #c9952c22"><div style="font-size:28px;font-weight:700;color:#c9952c">${totalGirls}</div><div style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Total Profiles</div></div>`;
+    html += `<div style="flex:1;padding:16px;background:#1a1a2e;border-radius:8px;border:1px solid #00c86422"><div style="font-size:28px;font-weight:700;color:#00c864">${newThisWeek}</div><div style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">New This Week</div></div>`;
+    html += `<div style="flex:1;padding:16px;background:#1a1a2e;border-radius:8px;border:1px solid #4a9eff22"><div style="font-size:28px;font-weight:700;color:#4a9eff">${totalRosteredToday}</div><div style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Working Today</div></div>`;
+    html += `</div>`;
+
+    // New girls this week
+    if (newThisWeek > 0) {
+      html += `<div style="font-size:13px;font-weight:700;color:#00c864;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">New This Week</div>`;
+      const venuesWithNew = venueStats.filter(v => v.newCount > 0);
+      for (const v of venuesWithNew) {
+        html += `<div style="margin-bottom:8px"><span style="color:#c9952c;font-weight:600">${v.name}</span> <span style="color:#888">— ${v.newNames.join(', ')}</span></div>`;
+      }
+      html += `<div style="margin-bottom:24px"></div>`;
+    }
+
+    // Top venues
+    html += `<div style="font-size:13px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">Busiest Venues Today</div>`;
+    html += `<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px">`;
+    for (const v of topVenues) {
+      html += `<tr><td style="padding:6px 0;color:#e0d6c8">${v.name}</td><td style="padding:6px 0;text-align:right;color:#c9952c;font-weight:600">${v.rostered} rostered</td></tr>`;
+    }
+    html += `</table>`;
+
+    // Personal stats
+    html += `<div style="font-size:13px;font-weight:700;color:#4a9eff;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">Your Stats</div>`;
+    html += `<div style="margin-bottom:24px"><span style="color:#888">Favourites:</span> <span style="color:#c9952c;font-weight:600">${favCount}</span></div>`;
+
+    html += `<div style="text-align:center;margin-top:24px"><a href="https://brothelsearch.com/" style="display:inline-block;padding:12px 32px;background:#c9952c;color:#0e0e16;text-decoration:none;border-radius:8px;font-weight:700;letter-spacing:1px;font-size:14px">Browse Profiles</a></div>`;
+    html += `<p style="font-size:11px;color:#555;margin-top:24px;text-align:center">Your weekly summary from Brothel Search.</p>`;
+    html += `</div>`;
+
+    if (env.RESEND_API_KEY) {
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ from: 'Brothel Search <info@travanixlabs.com>', to: email, subject: `Weekly Wrap-Up — ${newThisWeek} new profiles, ${totalRosteredToday} working today`, html }),
+        });
+        sent++;
+      } catch (e) { console.error(`[WeeklyWrap] Email error for ${email}:`, e); }
+    }
+  }
+  console.log(`[WeeklyWrap] Sent ${sent} emails.`);
+}
+
 /* ── Social bot pre-rendering ── */
 
 const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|pinterest|snapchat/i;
@@ -4250,6 +4366,12 @@ export default {
     // ── Digest endpoint ──
     if (url.pathname === '/send-digest' && request.method === 'POST') {
       try { await sendDailyDigest(env); return json({ success: true }); }
+      catch (e) { return json({ error: e.message }); }
+    }
+
+    // ── Weekly wrap-up endpoint ──
+    if (url.pathname === '/send-weekly-wrapup' && request.method === 'POST') {
+      try { await sendWeeklyWrapUp(env); return json({ success: true }); }
       catch (e) { return json({ error: e.message }); }
     }
 

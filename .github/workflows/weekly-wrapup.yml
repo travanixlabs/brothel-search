@@ -1,0 +1,16 @@
+name: Weekly Wrap-Up
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'  # 8am AEST every Sunday
+  workflow_dispatch:
+
+env:
+  WORKER_URL: https://brothel-search-sync.travanixlabs.workers.dev
+
+jobs:
+  wrapup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send weekly wrap-up emails
+        run: curl -sf -X POST "$WORKER_URL/send-weekly-wrapup" --max-time 120 || echo "⚠ weekly wrap-up failed"

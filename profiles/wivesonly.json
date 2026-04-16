@@ -2413,6 +2413,50 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-01-01"
+    },
+    {
+      "name": "Amelia",
+      "country": [
+        "Indian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "B",
+      "body": "",
+      "desc": "Warm, confident, and effortlessly seductive, Amelia offers an intimate experience that blends passion with genuine connection. Her presence is captivating, her touch indulgent, and her attention completely focused on you. Whether you’re seeking relaxation, fantasy, or unforgettable chemistry, Amika knows exactly how to make every moment feel personal and deeply satisfying.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/amelia/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Brianna",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "5'8",
+      "cup": "D",
+      "body": "",
+      "desc": "Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/brianna/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3390,6 +3434,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-04T06:17:31.961Z",
+  "lastGirlsSync": "2026-04-16T17:03:20.363Z",
   "lastCalendarSync": "2026-04-16T14:20:35.747Z"
 }

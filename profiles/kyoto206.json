@@ -10811,7 +10811,7 @@
     "Molly": {
       "2026-04-16": {
         "start": "12:00",
-        "end": "22:00"
+        "end": "17:00"
       }
     },
     "Tomoyo": {
@@ -10822,7 +10822,7 @@
     }
   },
   "lastGirlsSync": "2026-04-15T10:00:53.760Z",
-  "lastCalendarSync": "2026-04-16T08:12:12.079Z",
+  "lastCalendarSync": "2026-04-16T09:57:31.522Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -3607,6 +3607,17 @@ async function sendDailyDigest(env) {
         g.venue = venueIds[i];
         g.venueName = siteList[i].name;
         g.rosteredToday = !!(calendar[g.name] && calendar[g.name][todayStr]);
+        // Compute days since previous roster appearance (before today) for "Back on Roster" detection
+        if (g.rosteredToday && calendar[g.name]) {
+          const prevDates = Object.keys(calendar[g.name]).filter(d => !d.startsWith('_') && d < todayStr).sort().reverse();
+          if (prevDates.length) {
+            const prevDate = new Date(prevDates[0] + 'T00:00:00');
+            const todayDate = new Date(todayStr + 'T00:00:00');
+            g.rosterGapDays = Math.round((todayDate - prevDate) / 86400000);
+          } else {
+            g.rosterGapDays = 999; // never rostered before — treat as new, not "back"
+          }
+        }
         allGirls.push(g);
       }
     } catch (e) { console.error(`[Digest] Error loading ${siteList[i].name}:`, e); }
@@ -3660,6 +3671,25 @@ async function sendDailyDigest(env) {
     const favWorking = allFavGirls.filter(g => g.rosteredToday);
     const favNotWorking = allFavGirls.filter(g => !g.rosteredToday);
 
+    // Back on Roster: favourites who returned after 14+ day absence
+    const backOnRoster = allFavGirls.filter(g => g.rosteredToday && g.rosterGapDays >= 14 && g.rosterGapDays < 999);
+    if (backOnRoster.length) {
+      for (const g of backOnRoster) {
+        const dupCheck = await fetch(
+          `${SB_URL}/rest/v1/notifications?user_id=eq.${userId}&title=eq.Back%20on%20Roster&girl_name=eq.${encodeURIComponent(g.name)}&created_at=gte.${todayStr}T00:00:00Z&select=id&limit=1`,
+          { headers }
+        );
+        const existing = await dupCheck.json();
+        if (!existing.length) {
+          await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify({
+            user_id: userId, type: 'back_on_roster', title: 'Back on Roster',
+            body: g.name + ' at ' + g.venueName + ' is back after ' + g.rosterGapDays + ' days away!',
+            venue: g.venue, girl_name: g.name,
+          })});
+        }
+      }
+    }
+
     // New girls matching >= 90%
     const prefs = prefsMap[userId];
     const matchesWorking = [];
@@ -3680,6 +3710,7 @@ async function sendDailyDigest(env) {
     if (favWorking.length) parts.push(favWorking.length + ' favourite' + (favWorking.length !== 1 ? 's' : '') + ' working today');
     if (matchesWorking.length) parts.push(matchesWorking.length + ' new match' + (matchesWorking.length !== 1 ? 'es' : '') + ' working today');
     if (matchesNotWorking.length) parts.push(matchesNotWorking.length + ' new match' + (matchesNotWorking.length !== 1 ? 'es' : ''));
+    if (backOnRoster.length) parts.push(backOnRoster.length + ' favourite' + (backOnRoster.length !== 1 ? 's' : '') + ' back on roster');
 
     if (!parts.length && !allFavGirls.length) continue;
 
@@ -3702,8 +3733,8 @@ async function sendDailyDigest(env) {
     }
 
     // Send email via Resend (always send if user has favourites)
-    if (env.RESEND_API_KEY && (favWorking.length || favNotWorking.length || matchesWorking.length || matchesNotWorking.length)) {
-      const emailHtml = buildDigestEmail(userInfo.name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking });
+    if (env.RESEND_API_KEY && (favWorking.length || favNotWorking.length || matchesWorking.length || matchesNotWorking.length || backOnRoster.length)) {
+      const emailHtml = buildDigestEmail(userInfo.name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster });
       const workingCount = favWorking.length + matchesWorking.length;
       const subject = workingCount > 0
         ? 'Daily Digest — ' + workingCount + ' working today'
@@ -3786,7 +3817,7 @@ function girlCardHtml(g, statusColor, statusText, extra) {
   </td></tr>`;
 }
 
-function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking }) {
+function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster }) {
   let html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0e0e16;color:#e0d6c8;padding:32px;border-radius:12px">`;
   html += `<div style="text-align:center;margin-bottom:24px"><span style="font-size:24px;font-weight:700;color:#c9952c;letter-spacing:2px">BROTHEL SEARCH</span></div>`;
   html += `<p style="font-size:16px;margin-bottom:24px">Hi ${name},</p>`;
@@ -3803,6 +3834,16 @@ function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, mat
     }
     for (const g of matchesWorking) {
       html += girlCardHtml(g, '#00c864', g.matchScore + '% MATCH', `<span style="font-size:10px;color:#00c864;margin-left:6px">NEW</span>`);
+    }
+    html += `</table>`;
+  }
+
+  // ── BACK ON ROSTER ──
+  if (backOnRoster && backOnRoster.length) {
+    html += `<div style="font-size:13px;font-weight:700;color:#4a9eff;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">&#9679; Back on Roster</div>`;
+    html += `<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px">`;
+    for (const g of backOnRoster) {
+      html += girlCardHtml(g, '#4a9eff', 'BACK AFTER ' + g.rosterGapDays + ' DAYS');
     }
     html += `</table>`;
   }

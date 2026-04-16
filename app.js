@@ -1641,6 +1641,18 @@ function dateToNum(d) { return d ? new Date(d + 'T00:00:00').getTime() : NaN; }
 function numToDate(n) { const d = new Date(n); return d.toISOString().slice(0,10); }
 function numToDateShort(n) { const d = new Date(n); return d.toISOString().slice(2,10); }
 function isNewProfile(g) { if (!g.startDate) return false; const diff = (Date.now() - new Date(g.startDate + 'T00:00:00').getTime()) / 86400000; return diff <= 30; }
+function isReturnProfile(g) {
+  if (!g.lastRostered || isNewProfile(g)) return false;
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
+  if (!cal) return false;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const todayStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+  if (!cal[todayStr]) return false;
+  const prevDates = Object.keys(cal).filter(d => !d.startsWith('_') && d < todayStr).sort().reverse();
+  if (!prevDates.length) return false;
+  const gap = Math.round((today - new Date(prevDates[0] + 'T00:00:00')) / 86400000);
+  return gap >= 7;
+}
 function imgProxy(url, w = 300) {
   if (!url) return '';
   return url;
@@ -2511,7 +2523,7 @@ function renderCard(g, grid) {
     el.innerHTML = `
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${hideSvg}</div>
-      <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
+      <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : isReturnProfile(g) ? '<span class="return-badge">Return</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-name-overlay"><span>${g.name || ''}</span></div>
       <div class="card-info">
@@ -3725,7 +3737,7 @@ function showProfile(g) {
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" id="profileHideBtn" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleHidden('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
       <div class="country-badge">${g.venueName}</div>
       ${(() => { const k = g.venue + ':' + g.name; const s = matchScores.get(k) || 0; return userPreferences && s > 0 ? '<div class="match-badge' + (s >= 90 ? ' match-gold' : '') + '" style="position:static;pointer-events:auto">' + s + '%</div>' : ''; })()}
-      ${isNewProfile(g) ? '<span class="new-badge">New</span>' : ''}
+      ${isNewProfile(g) ? '<span class="new-badge">New</span>' : isReturnProfile(g) ? '<span class="return-badge">Return</span>' : ''}
       ${g.pornstar ? '<span class="av-badge">AV</span>' : ''}
     </div>
     <div class="profile-name">${g.name || ''}</div>
@@ -5135,7 +5147,7 @@ function renderWorkingNowCard(g) {
   html += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g, '&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg + '</div>';
   html += '<div class="card-badges"><span class="country-badge">' + (g.venueName || '') + '</span>';
   if (showBadge) html += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
-  if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
+  if (isNewProfile(g)) html += '<span class="new-badge">New</span>'; else if (isReturnProfile(g)) html += '<span class="return-badge">Return</span>';
   if (g.pornstar) html += '<span class="av-badge">AV</span>';
   html += '</div>';
   html += '<div class="card-img">' + img + '</div>';
@@ -5580,7 +5592,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
     html += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg2 + '</div>';
     html += '<div class="card-badges">' + '<span class="country-badge">' + v.name + '</span>';
     if (showBadge) html += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
-    if (isNewProfile(g)) html += '<span class="new-badge">New</span>';
+    if (isNewProfile(g)) html += '<span class="new-badge">New</span>'; else if (isReturnProfile(g)) html += '<span class="return-badge">Return</span>';
     if (g.pornstar) html += '<span class="av-badge">AV</span>';
     html += '</div>';
     html += '<div class="card-img">' + img + '</div>';
@@ -5667,7 +5679,7 @@ function buildVenueCardHtml(g, v) {
   h += '<div class="hide-btn' + (isHidden(g) ? ' active' : '') + '" data-url="' + (g.oldUrl||'').replace(/"/g,'&quot;') + '" onclick="event.stopPropagation();toggleHidden(\'' + (g.oldUrl||'').replace(/'/g, "\\'") + '\',event)">' + hideSvg2 + '</div>';
   h += '<div class="card-badges"><span class="country-badge">' + v.name + '</span>';
   if (showBadge) h += '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>';
-  if (isNewProfile(g)) h += '<span class="new-badge">New</span>';
+  if (isNewProfile(g)) h += '<span class="new-badge">New</span>'; else if (isReturnProfile(g)) h += '<span class="return-badge">Return</span>';
   if (g.pornstar) h += '<span class="av-badge">AV</span>';
   h += '</div>';
   h += '<div class="card-img">' + img + '</div>';

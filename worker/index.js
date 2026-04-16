@@ -3672,7 +3672,7 @@ async function sendDailyDigest(env) {
     const favNotWorking = allFavGirls.filter(g => !g.rosteredToday);
 
     // Back on Roster: favourites who returned after 14+ day absence
-    const backOnRoster = allFavGirls.filter(g => g.rosteredToday && g.rosterGapDays >= 14 && g.rosterGapDays < 999);
+    const backOnRoster = allFavGirls.filter(g => g.rosteredToday && g.rosterGapDays >= 7 && g.rosterGapDays < 999);
     if (backOnRoster.length) {
       for (const g of backOnRoster) {
         const dupCheck = await fetch(

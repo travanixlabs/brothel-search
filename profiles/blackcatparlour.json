@@ -2780,7 +2780,8 @@
         "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/96ea3a6ca2c9a6dd972a00dccf58ba09.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-16"
     }
   ],
   "calendar": {
@@ -4915,8 +4916,14 @@
         "end": "06:00"
       }
     },
-    "Dahlia ***": {}
+    "Dahlia ***": {},
+    "Kehlani": {
+      "2026-04-16": {
+        "start": "06:00",
+        "end": "18:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-16T04:01:12.939Z",
-  "lastCalendarSync": "2026-04-16T03:53:49.429Z"
+  "lastCalendarSync": "2026-04-16T05:15:43.321Z"
 }

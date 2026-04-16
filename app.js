@@ -4208,14 +4208,30 @@ function showSideBySideCompare() {
   }
 
   // Data rows
+  const highlightFields = new Set(['age', 'body', 'height', 'cup', 'val1', 'val2', 'val3']);
+  const cupToNum = c => { const s = String(c || '').toUpperCase().charAt(0); return 'ABCDEFGH'.indexOf(s); };
   for (const f of fields) {
     html += '<tr style="border-top:1px solid rgba(201,149,44,0.06)"><td style="padding:6px 4px;color:var(--text-dim)">' + f.label + '</td>';
     const vals = girls.map(g => f.fmt ? f.fmt(g[f.key]) : (g[f.key] || ''));
-    // Highlight best value for numeric fields
-    const numVals = vals.map(v => parseFloat(String(v).replace('$', '')));
-    const isNumeric = numVals.every(v => !isNaN(v)) && numVals.some(v => v > 0);
+    // Compute min/max for highlighted fields
+    let minIdx = -1, maxIdx = -1;
+    if (highlightFields.has(f.key)) {
+      const numVals = f.key === 'cup'
+        ? girls.map(g => g.cup ? cupToNum(g.cup) : -1)
+        : girls.map(g => { const v = parseFloat(String(g[f.key] || '').replace('$', '')); return isNaN(v) ? -1 : v; });
+      const valid = numVals.filter(v => v >= 0);
+      if (valid.length >= 2) {
+        const minVal = Math.min(...valid);
+        const maxVal = Math.max(...valid);
+        if (minVal !== maxVal) {
+          minIdx = numVals.indexOf(minVal);
+          maxIdx = numVals.indexOf(maxVal);
+        }
+      }
+    }
     for (let i = 0; i < girls.length; i++) {
-      html += '<td style="padding:6px 4px;text-align:center">' + (vals[i] || '<span style="color:#444">-</span>') + '</td>';
+      const color = i === minIdx ? 'color:#00c864;font-weight:700' : i === maxIdx ? 'color:#e74c3c;font-weight:700' : '';
+      html += '<td style="padding:6px 4px;text-align:center;' + color + '">' + (vals[i] || '<span style="color:#444">-</span>') + '</td>';
     }
     html += '</tr>';
   }

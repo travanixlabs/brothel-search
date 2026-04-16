@@ -6107,7 +6107,7 @@ function closeMobileMenu() {
   }, 10000);
 
   // Button handlers
-  document.getElementById('inactivityStayBtn').addEventListener('click', () => { resetActivity(); });
+  document.getElementById('inactivityStayBtn').addEventListener('click', () => { hideWarning(); resetActivity(); });
   document.getElementById('inactivityLogoutBtn').addEventListener('click', () => { doLogout(); });
 })();
 

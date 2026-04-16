@@ -4624,7 +4624,14 @@ export default {
       const allSites = [SITES.empire, SITES.club, SITES.kyoto206, SITES.sakura57, SITES.top127, SITES.fantasyclub35, SITES.city429, SITES.pennys77, SITES.thegoldenapple, SITES.blackcatparlour, SITES.bellevue12, SITES.thegatewayclub, SITES.marrickvillebrothel, SITES.springhouse, SITES.stiletto, SITES.wivesonly, SITES.jinia];
       try {
         const { log } = await loadSyncLog(env);
-        const allRuns = log.runs || [];
+
+        // Read roster data
+        const now = new Date();
+        const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
+        const todayStr = aestNow.toISOString().split('T')[0];
+
+        // Filter runs to today only
+        const allRuns = (log.runs || []).filter(r => r.date === todayStr);
 
         // Aggregate per venue
         const agg = {};
@@ -4638,11 +4645,6 @@ export default {
             if (v.error) agg[name].errors.push(`${run.time}: ${v.error}`);
           }
         }
-
-        // Read roster data
-        const now = new Date();
-        const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
-        const todayStr = aestNow.toISOString().split('T')[0];
         const tomorrow = new Date(aestNow); tomorrow.setDate(tomorrow.getDate() + 1);
         const tomorrowStr = tomorrow.toISOString().split('T')[0];
 
@@ -4664,7 +4666,7 @@ export default {
         }));
 
         const timeLabel = now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney', dateStyle: 'medium', timeStyle: 'short' });
-        const runLabels = allRuns.length > 0 ? allRuns.map(r => r.time).join(', ') : 'none (test)';
+        const runLabels = allRuns.length > 0 ? allRuns.map(r => r.time).join(', ') : 'none yet today';
         const totalAdded = Object.values(agg).reduce((s, v) => s + v.added, 0);
         const totalRemoved = Object.values(agg).reduce((s, v) => s + v.removed, 0);
         const totalUpdated = Object.values(agg).reduce((s, v) => s + v.updated, 0);
@@ -4819,7 +4821,7 @@ export default {
           () => syncAllGirls(syncWpGirls, SITES.fantasyclub35),
           () => syncAllGirls(syncWpGirls, SITES.city429),
           () => syncAllGirls(syncPennys77Girls, SITES.pennys77),
-          () => (async () => { try { await syncGoldenAppleGirls(env, SITES.thegoldenapple); girlResults['The Golden Apple'] = { added: 0, updated: 0, error: null }; } catch(e) { girlResults['The Golden Apple'] = { added: 0, updated: 0, error: e.message }; } })(),
+          () => syncAllGirls(syncGoldenAppleGirls, SITES.thegoldenapple),
           () => syncAllGirls(syncBlackCatGirls, SITES.blackcatparlour),
           () => syncAllGirls(syncBellevue12Girls, SITES.bellevue12),
           () => syncAllGirls(syncGatewayClubGirls, SITES.thegatewayclub),
@@ -4856,7 +4858,9 @@ export default {
         }
 
         // Save run results to sync log
-        const runData = { time: aest[hour], venues: {} };
+        const syncNow = new Date();
+        const syncAest = new Date(syncNow.getTime() + 10 * 60 * 60 * 1000);
+        const runData = { time: aest[hour], date: syncAest.toISOString().split('T')[0], venues: {} };
         for (const s of allSites) {
           runData.venues[s.name] = {
             added: (girlResults[s.name] || {}).added || 0,
@@ -4877,9 +4881,16 @@ export default {
         if (hour === 10) {
           try {
             const { log, sha: logSha } = await loadSyncLog(env);
-            const allRuns = log.runs || [];
 
-            // Aggregate per venue across all runs
+            // Read roster data (today + tomorrow) from profile JSONs
+            const now = new Date(event.scheduledTime);
+            const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
+            const todayStr = aestNow.toISOString().split('T')[0];
+
+            // Filter runs to today only
+            const allRuns = (log.runs || []).filter(r => r.date === todayStr);
+
+            // Aggregate per venue across today's runs
             const agg = {};
             for (const s of allSites) agg[s.name] = { added: 0, updated: 0, removed: 0, errors: [] };
             for (const run of allRuns) {
@@ -4891,11 +4902,6 @@ export default {
                 if (v.error) agg[name].errors.push(`${run.time}: ${v.error}`);
               }
             }
-
-            // Read roster data (today + tomorrow) from profile JSONs
-            const now = new Date(event.scheduledTime);
-            const aestNow = new Date(now.getTime() + 10 * 60 * 60 * 1000);
-            const todayStr = aestNow.toISOString().split('T')[0];
             const tomorrow = new Date(aestNow); tomorrow.setDate(tomorrow.getDate() + 1);
             const tomorrowStr = tomorrow.toISOString().split('T')[0];
 
@@ -5016,8 +5022,11 @@ export default {
             });
             console.log('Daily sync summary email sent.');
 
-            // Clear the sync log after sending
-            try { await saveSyncLog(env, { runs: [] }, logSha); } catch(e) { console.error('[SyncLog] Clear error:', e); }
+            // Prune runs older than today (keep today's for the test endpoint)
+            try {
+              log.runs = (log.runs || []).filter(r => r.date === todayStr);
+              await saveSyncLog(env, log, logSha);
+            } catch(e) { console.error('[SyncLog] Prune error:', e); }
           } catch(e) {
             console.error('[Email] Daily sync summary error:', e);
           }

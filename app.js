@@ -2195,6 +2195,7 @@ function renderFilters() {
   const sorts = [
     { id: 'venue', label: 'Venue' },
     { id: 'name', label: 'Name' },
+    { id: 'country', label: 'Country' },
     { id: 'age', label: 'Age' },
     { id: 'body', label: 'Body' },
     { id: 'height', label: 'Height' },
@@ -2202,6 +2203,9 @@ function renderFilters() {
     { id: 'val1', label: '30 Min' },
     { id: 'val2', label: '45 Min' },
     { id: 'val3', label: '60 Min' },
+    { id: 'startDate', label: 'Start Date' },
+    { id: 'lastModified', label: 'Last Modified' },
+    { id: 'lastRostered', label: 'Latest Availability' },
     { id: 'preference', label: 'Preference' }
   ];
   const sortOpts = sorts.map(s => ({ value: s.id, label: s.label }));
@@ -2458,6 +2462,8 @@ function getFiltered() {
     return cmp(a, b) * dir;
   };
   if (activeSort === 'venue') list.sort((a, b) => (a.venueName || '').localeCompare(b.venueName || ''));
+  else if (activeSort === 'country') list.sort((a, b) => emptyLast(a, b, () => ((Array.isArray(a.country) ? a.country[0] : a.country) || '').localeCompare((Array.isArray(b.country) ? b.country[0] : b.country) || '')));
+  else if (activeSort === 'lastModified') list.sort((a, b) => emptyLast(a, b, () => (a.lastModified || '').localeCompare(b.lastModified || '')));
   else if (activeSort === 'age') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.age) || 999) - (parseFloat(b.age) || 999)));
   else if (activeSort === 'body') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.body) || 999) - (parseFloat(b.body) || 999)));
   else if (activeSort === 'height') list.sort((a, b) => emptyLast(a, b, () => (parseFloat(a.height) || 999) - (parseFloat(b.height) || 999)));

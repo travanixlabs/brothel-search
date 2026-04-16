@@ -299,10 +299,20 @@ async function signOut() {
   userRole = 'member';
   document.body.classList.remove('is-admin');
   hidePaywall();
+  // Close all overlays
+  ['settingsOverlay', 'preferencesOverlay', 'favoritesOverlay'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('open');
+  });
+  ['prefsPromptOverlay', 'inactivityOverlay'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
   document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
   document.getElementById('userMenu').style.display = 'none';
   document.getElementById('loginBtn').style.display = '';
   document.getElementById('notifBell').style.display = 'none';
+  window.location.hash = '';
   history.replaceState(null, '', '/');
   handleLandingRoute('/');
 }

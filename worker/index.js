@@ -3690,6 +3690,40 @@ async function sendDailyDigest(env) {
       }
     }
 
+    // Smart Alerts: check saved filter presets with notifyEnabled
+    try {
+      const presetsRes = await fetch(`${SB_URL}/rest/v1/user_filter_presets?user_id=eq.${userId}&select=name,filters`, { headers });
+      const presets = await presetsRes.json();
+      for (const preset of (presets || [])) {
+        if (!preset.filters || !preset.filters.notifyEnabled) continue;
+        const f = preset.filters;
+        // Check new girls (this week) that match the filter criteria
+        const matchingNew = newGirls.filter(g => {
+          if (f.activeVenue && f.activeVenue.include && f.activeVenue.include.length && !f.activeVenue.include.includes(g.venue)) return false;
+          if (f.activeVenue && f.activeVenue.exclude && f.activeVenue.exclude.includes(g.venue)) return false;
+          if (f.activeCountry && f.activeCountry.include && f.activeCountry.include.length) {
+            const gc = Array.isArray(g.country) ? g.country : [g.country || ''];
+            if (!gc.some(c => f.activeCountry.include.includes(c))) return false;
+          }
+          return true;
+        });
+        if (matchingNew.length) {
+          const dupCheck = await fetch(
+            `${SB_URL}/rest/v1/notifications?user_id=eq.${userId}&title=eq.Smart%20Alert&body=like.*${encodeURIComponent(preset.name)}*&created_at=gte.${todayStr}T00:00:00Z&select=id&limit=1`,
+            { headers }
+          );
+          const existing = await dupCheck.json();
+          if (!existing.length) {
+            await fetch(`${SB_URL}/rest/v1/notifications`, { method: 'POST', headers, body: JSON.stringify({
+              user_id: userId, type: 'smart_alert', title: 'Smart Alert',
+              body: matchingNew.length + ' new girl' + (matchingNew.length !== 1 ? 's' : '') + ' matching "' + preset.name + '": ' + matchingNew.slice(0, 3).map(g => g.name).join(', ') + (matchingNew.length > 3 ? ' +' + (matchingNew.length - 3) + ' more' : ''),
+              venue: null, girl_name: null,
+            })});
+          }
+        }
+      }
+    } catch (e) { console.error(`[Digest] Smart alert error for ${userId}:`, e); }
+
     // New girls matching >= 90%
     const prefs = prefsMap[userId];
     const matchesWorking = [];

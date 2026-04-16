@@ -1522,10 +1522,14 @@ function renderPresetsOverlayList() {
     <span class="preset-name">No Filter</span>
   </div>`;
 
-  html += userFilterPresets.map(p => `<div class="preset-item${p.is_active ? ' active' : ''}" data-id="${p.id}">
+  html += userFilterPresets.map(p => {
+    const notify = p.filters && p.filters.notifyEnabled;
+    return `<div class="preset-item${p.is_active ? ' active' : ''}" data-id="${p.id}">
     <span class="preset-name">${p.name}</span>
+    <button class="preset-notify${notify ? ' active' : ''}" data-id="${p.id}" title="${notify ? 'Notifications on' : 'Notifications off'}" style="background:none;border:1px solid ${notify ? '#00c864' : '#555'};border-radius:4px;padding:2px 6px;font-size:10px;cursor:pointer;color:${notify ? '#00c864' : '#555'};margin-right:4px">${notify ? '\ud83d\udd14' : '\ud83d\udd15'}</button>
     <button class="preset-delete" title="Delete preset">&times;</button>
-  </div>`).join('');
+  </div>`;
+  }).join('');
 
   html += `<button class="preset-save-btn" id="presetSaveBtnOverlay"${userFilterPresets.length >= 5 ? ' disabled' : ''}>
     + Save Current Filters${userFilterPresets.length > 0 ? ' (' + userFilterPresets.length + '/5)' : ''}
@@ -1539,6 +1543,18 @@ function renderPresetsOverlayList() {
       const id = el.parentElement.dataset.id;
       if (id === 'none') deactivateAllPresets();
       else activateFilterPreset(id);
+    };
+  });
+  container.querySelectorAll('.preset-notify').forEach(el => {
+    el.onclick = async (e) => {
+      e.stopPropagation();
+      const id = el.dataset.id;
+      const preset = userFilterPresets.find(p => p.id === id);
+      if (!preset) return;
+      const newVal = !(preset.filters && preset.filters.notifyEnabled);
+      preset.filters = { ...preset.filters, notifyEnabled: newVal };
+      await sbClient.from('user_filter_presets').update({ filters: preset.filters }).eq('id', id);
+      renderPresetsOverlayList();
     };
   });
   container.querySelectorAll('.preset-delete').forEach(el => {

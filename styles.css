@@ -38,7 +38,7 @@ html[style*="paused"] *{animation-play-state:paused!important}
 @keyframes heroLetterReveal{to{opacity:1;transform:translateY(0)}}
 .glass-stat{background:rgba(12,12,20,0.4);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(201,149,44,0.1);border-radius:12px;padding:16px 28px;transition:border-color .3s}
 .glass-stat:hover{border-color:rgba(201,149,44,0.3)}
-.hero-scroll-indicator{position:absolute;bottom:32px;left:50%;z-index:2;opacity:0;animation:scrollIndicatorIn 1s cubic-bezier(0.16,1,0.3,1) 2.2s both}
+.hero-scroll-indicator{position:absolute;bottom:32px;left:50%;z-index:2;opacity:0;animation:scrollIndicatorIn 1s cubic-bezier(0.16,1,0.3,1) 2.2s both;transition:opacity .4s ease}
 @keyframes scrollIndicatorIn{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .hero-scroll-arrow{width:24px;height:24px;border-right:2px solid rgba(201,149,44,0.4);border-bottom:2px solid rgba(201,149,44,0.4);transform:rotate(45deg);animation:heroScrollBounce 2s ease-in-out infinite}
 @keyframes heroScrollBounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:0.4}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}

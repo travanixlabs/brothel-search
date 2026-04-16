@@ -4083,7 +4083,10 @@ window.addEventListener('popstate', () => {
 // Back to top
 const btt = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
-  btt.classList.toggle('visible', window.scrollY > 400);
+  const scrolledDown = window.scrollY > 400;
+  btt.classList.toggle('visible', scrolledDown);
+  const scrollArrow = document.querySelector('.hero-scroll-indicator');
+  if (scrollArrow) scrollArrow.style.opacity = scrolledDown ? '0' : '';
 });
 btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -4303,7 +4306,7 @@ function renderHomePage() {
   html += '</div>';
   html += '<div class="home-search-wrap hero-enter" style="animation-delay:1.8s"><input type="text" class="home-search" id="homeSearch" placeholder="Search by name, country or venue..." autocomplete="off"></div>';
   html += '</div>';
-  html += '<div class="hero-scroll-indicator"><div class="hero-scroll-arrow"></div></div>';
+  html += '<div class="hero-scroll-indicator" style="cursor:pointer" onclick="window.scrollTo({top:window.innerHeight,behavior:\'smooth\'})"><div class="hero-scroll-arrow"></div></div>';
   html += '</section>';
 
   // ── Below-fold content ──

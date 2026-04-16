@@ -2546,7 +2546,7 @@ function renderCard(g, grid) {
     el.innerHTML = `
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${heartSvg}</div>
       <div class="hide-btn${isHidden(g) ? ' active' : ''}" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}">${hideSvg}</div>
-      <button class="compare-btn${compareList.some(c => c.venue === g.venue && c.name === g.name) ? ' in-compare' : ''}" data-venue="${g.venue}" data-name="${(g.name||'').replace(/"/g,'&quot;')}" onclick="event.stopPropagation();toggleCompare('${g.venue}','${(g.name||'').replace(/'/g,"\\'")}')">${compareList.some(c => c.venue === g.venue && c.name === g.name) ? '\u2713' : '+'}</button>
+      <button class="compare-btn${compareList.some(c => c.venue === g.venue && c.name === g.name) ? ' in-compare' : ''}" data-venue="${g.venue}" data-name="${(g.name||'').replace(/"/g,'&quot;')}" onclick="event.stopPropagation();toggleCompare('${g.venue}','${(g.name||'').replace(/'/g,"\\'")}')">${compareList.some(c => c.venue === g.venue && c.name === g.name) ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>'}</button>
       <div class="card-badges">${'<span class="country-badge">' + g.venueName + '</span>'}${showBadge ? '<div class="match-badge' + (girlScore >= 90 ? ' match-gold' : '') + '">' + girlScore + '%</div>' : ''}${isNewProfile(g) ? '<span class="new-badge">New</span>' : isReturnProfile(g) ? '<span class="return-badge">Return</span>' : ''}${g.pornstar ? '<span class="av-badge">AV</span>' : ''}</div>
       <div class="card-img">${img}</div>
       <div class="card-name-overlay"><span>${g.name || ''}</span></div>
@@ -4151,7 +4151,7 @@ function updateCompareTray() {
   document.querySelectorAll('.compare-btn').forEach(btn => {
     const inList = compareList.some(c => c.venue === btn.dataset.venue && c.name === btn.dataset.name);
     btn.classList.toggle('in-compare', inList);
-    btn.textContent = inList ? '\u2713' : '+';
+    btn.innerHTML = inList ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>';
   });
 }
 document.getElementById('compareTrayBtn').onclick = () => {

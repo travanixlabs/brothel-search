@@ -3808,6 +3808,7 @@ function showProfile(g) {
       </div>
     </div>
     ${buildProfileCalendar(g)}
+    ${buildRosterPredictions(g)}
     ${buildReviewSection(g, [])}
     ${buildSimilarGirls(g)}
     </div>
@@ -4280,6 +4281,150 @@ function buildSeasonalHighlights() {
   return html;
 }
 
+function buildMyTypeDiscovery() {
+  if (!isLoggedIn() || !userFavorites.length) return '';
+  // Analyse favourite girls to build a type profile
+  const favGirls = allGirls.filter(g => g.oldUrl && userFavorites.includes(g.oldUrl));
+  if (favGirls.length < 3) return '';
+
+  const countryCounts = {}, ageBuckets = [], bodyCounts = {};
+  for (const g of favGirls) {
+    const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
+    cs.forEach(c => { if (c) countryCounts[c] = (countryCounts[c] || 0) + 1; });
+    if (g.age) ageBuckets.push(parseInt(g.age));
+    if (g.body) bodyCounts[g.body] = (bodyCounts[g.body] || 0) + 1;
+  }
+
+  const topCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(e => e[0]);
+  const avgAge = ageBuckets.length ? Math.round(ageBuckets.reduce((a, b) => a + b, 0) / ageBuckets.length) : 0;
+
+  // Find girls matching the type who aren't favourited
+  const favSet = new Set(userFavorites);
+  const discoveries = allGirls.filter(g => {
+    if (!g.oldUrl || favSet.has(g.oldUrl)) return false;
+    if (isHidden(g)) return false;
+    const cs = Array.isArray(g.country) ? g.country : [g.country || ''];
+    const countryMatch = cs.some(c => topCountries.includes(c));
+    const ageMatch = g.age && avgAge ? Math.abs(parseInt(g.age) - avgAge) <= 5 : false;
+    return countryMatch && ageMatch && g.photos && g.photos.length;
+  }).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0)).slice(0, 8);
+
+  if (!discoveries.length) return '';
+
+  let html = '<div class="venue-divider"><span>\u2014 DISCOVER YOUR TYPE \u2014</span></div>';
+  html += '<div style="text-align:center;font-size:12px;color:var(--text-dim);margin-bottom:12px">Based on your favourites: ' + topCountries.join(', ') + (avgAge ? ', ~' + avgAge + ' years' : '') + '</div>';
+  html += '<div class="venue-carousel">';
+  for (const g of discoveries) {
+    const score = matchScores.get(g.venue + ':' + g.name) || 0;
+    const img = g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:120px;height:160px;object-fit:cover;display:block;border-radius:10px 10px 0 0">' : '';
+    html += '<div class="venue-carousel-item" style="width:120px;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">';
+    html += img + '<div class="venue-carousel-info"><div class="venue-carousel-name">' + (g.name||'') + '</div><div class="venue-carousel-meta">' + (g.venueName||'') + '</div>';
+    if (score > 0) html += '<div class="venue-carousel-meta" style="color:var(--gold)">' + score + '% match</div>';
+    html += '</div></div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildCrowdIndicator(venueId) {
+  const todayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const venueGirls = allGirls.filter(g => g.venue === venueId);
+  const rosteredToday = venueGirls.filter(g => {
+    const cal = calendarData[(g.venue || '') + ':' + g.name];
+    return cal && cal[todayStr];
+  }).length;
+
+  // Compute historical average
+  const dayOfWeek = new Date().getDay();
+  let totalForDay = 0, daysCount = 0;
+  for (const g of venueGirls) {
+    const cal = calendarData[(g.venue || '') + ':' + g.name];
+    if (!cal) continue;
+    for (const d of Object.keys(cal)) {
+      if (d.startsWith('_')) continue;
+      if (new Date(d + 'T00:00:00').getDay() === dayOfWeek && d < todayStr) { totalForDay++; }
+    }
+  }
+  // Count unique historical dates for this day of week
+  const uniqueDates = new Set();
+  for (const g of venueGirls) {
+    const cal = calendarData[(g.venue || '') + ':' + g.name];
+    if (!cal) continue;
+    for (const d of Object.keys(cal)) {
+      if (d.startsWith('_')) continue;
+      if (new Date(d + 'T00:00:00').getDay() === dayOfWeek && d < todayStr) uniqueDates.add(d);
+    }
+  }
+  const avgForDay = uniqueDates.size > 0 ? totalForDay / uniqueDates.size : 0;
+  if (avgForDay === 0 && rosteredToday === 0) return '';
+
+  const ratio = avgForDay > 0 ? rosteredToday / avgForDay : 1;
+  const level = ratio >= 1.2 ? 'Busy' : ratio >= 0.8 ? 'Moderate' : 'Quiet';
+  const color = level === 'Busy' ? '#00c864' : level === 'Moderate' ? '#c9952c' : '#888';
+  return '<span style="display:inline-block;padding:2px 8px;border-radius:4px;font-family:Orbitron,sans-serif;font-size:9px;letter-spacing:1px;color:' + color + ';border:1px solid ' + color + '40;text-transform:uppercase">' + level + '</span>';
+}
+
+function buildRosterPredictions(g) {
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
+  if (!cal) return '';
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const dayCounts = [0, 0, 0, 0, 0, 0, 0];
+  const dayTotals = [new Set(), new Set(), new Set(), new Set(), new Set(), new Set(), new Set()];
+  const todayStr = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+
+  for (const d of Object.keys(cal)) {
+    if (d.startsWith('_') || d >= todayStr) continue;
+    const date = new Date(d + 'T00:00:00');
+    const dow = date.getDay();
+    dayCounts[dow]++;
+    dayTotals[dow].add(d);
+  }
+
+  // Need at least 2 weeks of data
+  const totalDates = Object.keys(cal).filter(d => !d.startsWith('_') && d < todayStr).length;
+  if (totalDates < 5) return '';
+
+  // Calculate probability for each day (appearances / total weeks with that day in data)
+  const fourWeeksAgo = new Date(); fourWeeksAgo.setDate(fourWeeksAgo.getDate() - 28);
+  const fourWeeksStr = fourWeeksAgo.toISOString().split('T')[0];
+  const recentWeeks = new Set();
+  for (const d of Object.keys(cal)) {
+    if (d.startsWith('_') || d < fourWeeksStr || d >= todayStr) continue;
+    const weekNum = Math.floor((new Date(todayStr + 'T00:00:00') - new Date(d + 'T00:00:00')) / (7 * 86400000));
+    recentWeeks.add(weekNum);
+  }
+  const weeksOfData = Math.max(recentWeeks.size, 1);
+
+  // Count recent appearances per day
+  const recentDayCounts = [0, 0, 0, 0, 0, 0, 0];
+  for (const d of Object.keys(cal)) {
+    if (d.startsWith('_') || d < fourWeeksStr || d >= todayStr) continue;
+    recentDayCounts[new Date(d + 'T00:00:00').getDay()]++;
+  }
+
+  const probabilities = recentDayCounts.map(c => Math.min(100, Math.round((c / weeksOfData) * 100)));
+  const maxProb = Math.max(...probabilities);
+  if (maxProb === 0) return '';
+
+  let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
+  html += '<div class="venue-divider"><span>\u2014 ROSTER PREDICTION \u2014</span></div>';
+  html += '<div style="display:flex;gap:6px;justify-content:center;align-items:flex-end;height:80px;padding:0 12px">';
+  for (let i = 0; i < 7; i++) {
+    const pct = probabilities[i];
+    const height = Math.max(6, Math.round((pct / 100) * 60));
+    const color = pct >= 70 ? '#00c864' : pct >= 40 ? '#c9952c' : '#555';
+    html += '<div style="flex:1;text-align:center;max-width:50px">';
+    html += '<div style="font-size:11px;font-weight:600;color:' + color + ';margin-bottom:3px">' + pct + '%</div>';
+    html += '<div style="height:' + height + 'px;background:' + color + ';border-radius:3px 3px 0 0"></div>';
+    html += '<div style="font-size:10px;color:var(--text-dim);margin-top:3px">' + dayNames[i] + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);margin-top:6px">Likelihood of being rostered (based on last 4 weeks)</div>';
+  html += '</div>';
+  return html;
+}
+
 // ── Home Page ──
 
 function renderHomePage() {
@@ -4440,6 +4585,9 @@ function renderHomePage() {
     html += '</div>';
   }
   html += '</div>';
+
+  // My Type Auto-Discovery
+  html += buildMyTypeDiscovery();
 
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';
@@ -5406,7 +5554,7 @@ function renderRegionPage(regionSlug) {
     html += '<a href="/sydney/' + regionSlug + '/' + v.suburbSlug + '/' + v.id + '/" class="landing-card" onclick="event.preventDefault();navigateToLanding(\'/sydney/' + regionSlug + '/' + v.suburbSlug + '/' + v.id + '/\')">';
     html += '<h2 class="landing-card-title">' + v.name + '</h2>';
     html += '<div class="landing-card-address">' + v.address + '</div>';
-    html += '<div class="landing-card-stat">' + count + ' girls</div>';
+    html += '<div class="landing-card-stat">' + count + ' girls ' + buildCrowdIndicator(v.id) + '</div>';
     if (priceRange) html += '<div class="landing-card-stat">From ' + priceRange + ' (30min)</div>';
     html += '<div class="landing-card-link">View profiles \u2192</div>';
     html += '</a>';
@@ -5526,6 +5674,69 @@ function buildVenueTrends(venueId) {
   return html;
 }
 
+function buildTurnoverReport(venueId) {
+  const venueGirls = allGirls.filter(g => g.venue === venueId);
+  if (venueGirls.length < 3) return '';
+  const threeMonthsAgo = new Date(); threeMonthsAgo.setDate(threeMonthsAgo.getDate() - 90);
+  const threeMonthStr = threeMonthsAgo.toISOString().split('T')[0];
+  const oneMonthAgo = new Date(); oneMonthAgo.setDate(oneMonthAgo.getDate() - 30);
+  const oneMonthStr = oneMonthAgo.toISOString().split('T')[0];
+
+  const existedThreeMonths = venueGirls.filter(g => g.startDate && g.startDate <= threeMonthStr);
+  const stillActive = existedThreeMonths.filter(g => g.lastRostered && g.lastRostered >= oneMonthStr);
+  const retention = existedThreeMonths.length > 0 ? Math.round((stillActive.length / existedThreeMonths.length) * 100) : 0;
+
+  const newLastMonth = venueGirls.filter(g => g.startDate && g.startDate >= oneMonthStr).length;
+  const inactive = venueGirls.filter(g => !g.lastRostered || g.lastRostered < oneMonthStr).length;
+
+  const retColor = retention >= 70 ? '#00c864' : retention >= 40 ? '#c9952c' : '#e74c3c';
+  const retLabel = retention >= 70 ? 'High Stability' : retention >= 40 ? 'Moderate' : 'High Turnover';
+
+  let html = '<div style="margin:24px 0">';
+  html += '<div class="venue-divider"><span>\u2014 TURNOVER REPORT \u2014</span></div>';
+  html += '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:8px">';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(201,149,44,0.05);border:1px solid rgba(201,149,44,0.12);border-radius:8px;min-width:90px"><div style="font-size:22px;font-weight:700;color:' + retColor + '">' + retention + '%</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">3-Month Retention</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(0,200,100,0.05);border:1px solid rgba(0,200,100,0.12);border-radius:8px;min-width:90px"><div style="font-size:22px;font-weight:700;color:#00c864">' + newLastMonth + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">New (30d)</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(231,76,60,0.05);border:1px solid rgba(231,76,60,0.12);border-radius:8px;min-width:90px"><div style="font-size:22px;font-weight:700;color:#e74c3c">' + inactive + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Inactive (30d+)</div></div>';
+  html += '</div>';
+  html += '<div style="text-align:center;font-size:11px;color:' + retColor + ';font-weight:600">' + retLabel + ' \u2014 ' + stillActive.length + '/' + existedThreeMonths.length + ' girls from 3 months ago still active</div>';
+  html += '</div>';
+  return html;
+}
+
+function buildPriceIndex(venueId) {
+  const venueGirls = allGirls.filter(g => g.venue === venueId && g.val1);
+  if (venueGirls.length < 3) return '';
+
+  const prices30 = venueGirls.map(g => parseInt(g.val1)).filter(v => v > 0);
+  const prices45 = venueGirls.filter(g => g.val2).map(g => parseInt(g.val2)).filter(v => v > 0);
+  const prices60 = venueGirls.filter(g => g.val3).map(g => parseInt(g.val3)).filter(v => v > 0);
+
+  const avg = arr => arr.length ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : 0;
+  const min = arr => arr.length ? Math.min(...arr) : 0;
+  const max = arr => arr.length ? Math.max(...arr) : 0;
+
+  // Compare to all-venue average
+  const allPrices30 = allGirls.filter(g => g.val1).map(g => parseInt(g.val1)).filter(v => v > 0);
+  const globalAvg30 = avg(allPrices30);
+  const venueAvg30 = avg(prices30);
+  const diff = globalAvg30 > 0 ? Math.round(((venueAvg30 - globalAvg30) / globalAvg30) * 100) : 0;
+  const diffLabel = diff > 5 ? diff + '% above avg' : diff < -5 ? Math.abs(diff) + '% below avg' : 'Near average';
+  const diffColor = diff > 5 ? '#e74c3c' : diff < -5 ? '#00c864' : '#c9952c';
+
+  let html = '<div style="margin:24px 0">';
+  html += '<div class="venue-divider"><span>\u2014 PRICE INDEX \u2014</span></div>';
+  html += '<table style="width:100%;max-width:400px;margin:0 auto;border-collapse:collapse;font-size:13px">';
+  html += '<tr style="border-bottom:1px solid rgba(201,149,44,0.12)"><td style="padding:6px 0;color:var(--text-dim)">Duration</td><td style="padding:6px 8px;text-align:center;color:var(--text-dim)">Min</td><td style="padding:6px 8px;text-align:center;color:var(--text-dim)">Avg</td><td style="padding:6px 8px;text-align:center;color:var(--text-dim)">Max</td></tr>';
+  if (prices30.length) html += '<tr><td style="padding:6px 0;color:var(--gold)">30 min</td><td style="text-align:center">$' + min(prices30) + '</td><td style="text-align:center;font-weight:600;color:var(--gold)">$' + avg(prices30) + '</td><td style="text-align:center">$' + max(prices30) + '</td></tr>';
+  if (prices45.length) html += '<tr><td style="padding:6px 0;color:var(--gold)">45 min</td><td style="text-align:center">$' + min(prices45) + '</td><td style="text-align:center;font-weight:600;color:var(--gold)">$' + avg(prices45) + '</td><td style="text-align:center">$' + max(prices45) + '</td></tr>';
+  if (prices60.length) html += '<tr><td style="padding:6px 0;color:var(--gold)">60 min</td><td style="text-align:center">$' + min(prices60) + '</td><td style="text-align:center;font-weight:600;color:var(--gold)">$' + avg(prices60) + '</td><td style="text-align:center">$' + max(prices60) + '</td></tr>';
+  html += '</table>';
+  html += '<div style="text-align:center;font-size:11px;margin-top:8px;color:' + diffColor + ';font-weight:600">vs Sydney average (30 min): ' + diffLabel + '</div>';
+  html += '</div>';
+  return html;
+}
+
 function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const v = VENUE_DATA[venueId];
   if (!v) return null;
@@ -5559,7 +5770,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   const a30 = venueAvgPrice(venueId, 'val1');
   const a45 = venueAvgPrice(venueId, 'val2');
   const a60 = venueAvgPrice(venueId, 'val3');
-  html += '<p class="landing-desc">' + activeCount + '/' + girls.length + ' girls active in past month.';
+  html += '<p class="landing-desc">' + activeCount + '/' + girls.length + ' girls active in past month. ' + buildCrowdIndicator(venueId);
   if (a30) html += ' Average ' + a30 + ' for 30 min.';
   if (a45) html += ' Average ' + a45 + ' for 45 min.';
   if (a60) html += ' Average ' + a60 + ' for 60 min.';
@@ -5568,6 +5779,8 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   html += buildVenueReviewSection(venueId, []);
   html += buildBestTimeToVisit(venueId);
   html += buildVenueTrends(venueId);
+  html += buildTurnoverReport(venueId);
+  html += buildPriceIndex(venueId);
   html += '<hr class="gold-divider">';
   const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;
   const layoutSvgs = {

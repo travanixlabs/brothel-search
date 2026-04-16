@@ -141,26 +141,24 @@
 
 <!-- Inactivity Warning Overlay -->
 <div class="auth-overlay" id="inactivityOverlay" style="display:none">
-  <div class="auth-box" style="max-width:400px;text-align:center">
-    <h1 style="font-size:18px;margin-bottom:16px">Session Timeout</h1>
-    <p style="color:var(--text-dim);margin-bottom:8px">You will be logged out due to inactivity in</p>
+  <div class="auth-box" style="text-align:center">
+    <h1>Session Timeout</h1>
+    <p>You will be logged out due to inactivity in</p>
     <div id="inactivityCountdown" style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);margin:16px 0"></div>
-    <div style="display:flex;gap:12px;justify-content:center;margin-top:20px">
-      <button class="auth-submit" id="inactivityStayBtn" style="flex:1">Stay Logged In</button>
-      <button class="auth-submit" id="inactivityLogoutBtn" style="flex:1;background:transparent;border:1px solid rgba(201,149,44,0.3)">Log Out</button>
+    <div style="display:flex;gap:12px;margin-top:20px">
+      <button class="auth-btn" id="inactivityStayBtn" style="flex:1">Stay Logged In</button>
+      <button class="auth-btn" id="inactivityLogoutBtn" style="flex:1">Log Out</button>
     </div>
   </div>
 </div>
 
 <!-- Preferences Prompt Overlay -->
 <div class="auth-overlay" id="prefsPromptOverlay" style="display:none">
-  <div class="auth-box" style="max-width:420px;text-align:center">
-    <h1 style="font-size:18px;margin-bottom:12px">Set Your Preferences</h1>
-    <p style="color:var(--text-dim);margin-bottom:20px">You haven't set your preferences yet. Setting them helps us find your best matches and personalise your experience.</p>
-    <div style="display:flex;gap:12px;justify-content:center">
-      <button class="auth-submit" id="prefsPromptOpenBtn" style="flex:1">Open Preferences</button>
-      <button class="auth-submit" id="prefsPromptDismissBtn" style="flex:1;background:transparent;border:1px solid rgba(201,149,44,0.3)">Maybe Later</button>
-    </div>
+  <div class="auth-box">
+    <h1>Set Your Preferences</h1>
+    <p>Setting preferences helps us find your best matches and personalise your experience.</p>
+    <button class="auth-btn" id="prefsPromptOpenBtn">Open Preferences</button>
+    <div class="auth-link" id="prefsPromptDismissBtn" style="margin-top:16px;cursor:pointer">Maybe Later</div>
   </div>
 </div>
 

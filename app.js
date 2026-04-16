@@ -413,6 +413,15 @@ async function openPortal() {
   } catch (e) { btn.textContent = 'Manage Subscription'; alert('Error: ' + e.message); }
 }
 
+function hasPreferencesSet(p) {
+  if (!p) return false;
+  // Preferences row exists but check if anything meaningful was chosen
+  const arrays = [p.countries, p.services, p.experience, p.language, p.av];
+  if (arrays.some(a => a && a.length > 0)) return true;
+  if (p.last_roster_days || p.date_started_days) return true;
+  return false;
+}
+
 function showPrefsPrompt() {
   const overlay = document.getElementById('prefsPromptOverlay');
   overlay.style.display = 'flex';
@@ -808,7 +817,7 @@ sbClient.auth.onAuthStateChange((event, session) => {
     }
     fetchUserRole().then(() => {
       loadPreferences().then(() => {
-        if (userPreferences) {
+        if (hasPreferencesSet(userPreferences)) {
           computeMatchScores(); renderGrid();
           const p = window.location.pathname;
           if (p === '/' || p === '/index.html') handleLandingRoute('/');
@@ -3940,7 +3949,7 @@ loadProfiles().then(() => {
 });
 checkAuth().then(async (loggedIn) => {
   loadPreferences().then(() => {
-    if (userPreferences) { computeMatchScores(); renderGrid(); }
+    if (hasPreferencesSet(userPreferences)) { computeMatchScores(); renderGrid(); }
     else if (loggedIn) { showPrefsPrompt(); }
   });
   // Check subscription before resolving pending profile

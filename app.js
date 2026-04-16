@@ -261,6 +261,14 @@ async function handleAuth() {
   // Navigate to home after login
   history.replaceState(null, '', '/');
   handleLandingRoute('/');
+
+  // Prompt to set preferences if none exist
+  await loadPreferences();
+  if (!hasPreferencesSet(userPreferences)) {
+    showPrefsPrompt();
+  } else {
+    computeMatchScores(); renderGrid();
+  }
 }
 
 function toggleAuthMode() {

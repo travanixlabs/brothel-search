@@ -284,7 +284,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-16",
+      "lastRostered": "2026-04-19",
       "desc": "Cute and curvaceous, Clementine has a natural H cup bust and a large round booty. She loves to spoil a man and treat them to an experience they wont forget. Offering a large array of services Clementine is here for your pleasure."
     },
     {
@@ -2281,6 +2281,10 @@
       "2026-04-16": {
         "start": "06:00",
         "end": "18:00"
+      },
+      "2026-04-19": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Coco": {
@@ -2894,24 +2898,7 @@
         "end": "18:00"
       }
     },
-    "Daya": {
-      "2026-04-16": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-17": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-18": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-04-19": {
-        "start": "12:00",
-        "end": "06:00"
-      }
-    },
+    "Daya": {},
     "Veronica": {
       "2026-04-16": {
         "start": "06:00",
@@ -2924,5 +2911,5 @@
     }
   },
   "lastGirlsSync": "2026-04-16T06:04:42.315Z",
-  "lastCalendarSync": "2026-04-16T06:19:08.478Z"
+  "lastCalendarSync": "2026-04-16T09:57:54.723Z"
 }

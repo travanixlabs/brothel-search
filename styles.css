@@ -794,7 +794,8 @@ body.is-admin .admin-only{display:initial!important}
 .review-star{font-size:18px;color:rgba(255,255,255,0.15);transition:color .2s}
 .review-star.active{color:var(--gold)}
 .review-stars-interactive .review-star{cursor:pointer}
-.review-stars-interactive .review-star:hover,.review-stars-interactive .review-star:hover~.review-star{color:rgba(201,149,44,0.5)}
+.review-stars-interactive:hover .review-star{color:rgba(201,149,44,0.5)}
+.review-stars-interactive .review-star:hover~.review-star{color:rgba(255,255,255,0.15)}
 .review-textarea{width:100%;background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:12px;margin:12px 0;resize:vertical;min-height:60px;max-height:150px;outline:none}
 .review-textarea:focus{border-color:rgba(201,149,44,0.3)}
 .review-date-input{background:rgba(12,12,20,0.5);border:1px solid rgba(201,149,44,0.12);border-radius:8px;color:var(--gold);font-family:'Orbitron',sans-serif;font-size:11px;padding:8px 12px;outline:none;cursor:pointer;white-space:nowrap}

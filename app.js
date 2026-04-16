@@ -4102,6 +4102,7 @@ window.addEventListener('popstate', () => {
 // Back to top
 const btt = document.getElementById('backToTop');
 const scrollDownBtn = document.getElementById('scrollDown');
+if (window.scrollY <= 400) scrollDownBtn.classList.add('visible');
 window.addEventListener('scroll', () => {
   const scrolledDown = window.scrollY > 400;
   btt.classList.toggle('visible', scrolledDown);

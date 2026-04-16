@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13",
+      "lastRostered": "2026-04-17",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -1109,7 +1109,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Ella",
@@ -2308,7 +2308,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-21"
+      "lastRostered": "2026-04-22"
     },
     {
       "name": "Lena",
@@ -3266,7 +3266,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Rebecca",
@@ -5799,8 +5799,8 @@
     },
     "Eva": {
       "2026-04-16": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "11:00",
+        "end": "19:00"
       },
       "2026-04-17": {
         "start": "22:00",
@@ -5871,6 +5871,18 @@
       "2026-04-10": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-04-16": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-04-17": {
+        "start": "23:30",
+        "end": "07:30"
+      },
+      "2026-04-18": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Aria": {
@@ -6031,12 +6043,7 @@
       }
     },
     "Keisha": {},
-    "Daisy": {
-      "2026-04-16": {
-        "start": "11:00",
-        "end": "19:00"
-      }
-    },
+    "Daisy": {},
     "Hailey": {},
     "CeCe": {
       "2026-04-17": {
@@ -6154,7 +6161,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-04-17": {
+        "start": "10:00",
+        "end": "16:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6239,10 +6251,6 @@
       }
     },
     "Lacey": {
-      "2026-04-17": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-04-18": {
         "start": "10:00",
         "end": "18:00"
@@ -6258,6 +6266,10 @@
       "2026-04-21": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-04-22": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Peach": {
@@ -6277,8 +6289,18 @@
         "start": "22:00",
         "end": "04:00"
       }
+    },
+    "Raven": {
+      "2026-04-16": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "22:00",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-15T22:38:07.318Z",
-  "lastCalendarSync": "2026-04-15T23:25:10.776Z"
+  "lastCalendarSync": "2026-04-16T03:54:05.808Z"
 }

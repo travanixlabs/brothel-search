@@ -364,7 +364,7 @@ const LANG_FROM_COUNTRY = {
   Taiwanese: 'Mandarin, Limited English',
   'Hong Konger': 'Cantonese, Limited English',
   Latina: 'English',
-  Eurasian: 'English',
+  Euroasian: 'English',
 };
 
 const LABEL_RENAMES = {
@@ -590,7 +590,7 @@ const WP_COUNTRY_MAP = {
   japan: ['Japanese'], korea: ['Korean'], china: ['Chinese'],
   thailand: ['Thai'], vietnam: ['Vietnamese'], indonesia: ['Indonesian'],
   malaysia: ['Malaysian'], singapore: ['Singaporean'], taiwan: ['Taiwanese'],
-  'hong kong': ['Hong Konger'], latina: ['Latina'], eurasian: ['Eurasian'],
+  'hong kong': ['Hong Konger'], latina: ['Latina'], eurasian: ['Euroasian'],
 };
 
 function decodeHtmlEntities(str) {

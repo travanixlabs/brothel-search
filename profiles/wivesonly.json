@@ -2472,7 +2472,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-04-18",
       "oldUrl": "https://wivesonly.com.au/roxanne/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3507,8 +3507,14 @@
         "start": "11:00",
         "end": "04:00"
       }
+    },
+    "Roxanne": {
+      "2026-04-18": {
+        "start": "20:30",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-17T16:43:08.229Z",
-  "lastCalendarSync": "2026-04-17T15:35:18.131Z"
+  "lastCalendarSync": "2026-04-17T17:27:34.262Z"
 }

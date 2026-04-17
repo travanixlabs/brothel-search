@@ -8849,6 +8849,32 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Makena",
+      "country": [
+        "Africa"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "E",
+      "val1": "150",
+      "val2": "200",
+      "val3": "250",
+      "startDate": "2026-04-17",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/makena-africa/",
+      "desc": "",
+      "lang": "",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-17T05:13:54.907Z",
+      "lastRostered": "2026-04-17",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83051776400166_.pic_hd.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -10701,10 +10727,16 @@
         "start": "14:00",
         "end": "05:00"
       }
+    },
+    "Makena": {
+      "2026-04-17": {
+        "start": "14:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-17T04:00:18.285Z",
-  "lastCalendarSync": "2026-04-17T03:50:39.909Z",
+  "lastCalendarSync": "2026-04-17T05:13:54.907Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

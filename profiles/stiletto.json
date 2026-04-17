@@ -1422,7 +1422,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Gloria",
@@ -5466,6 +5466,10 @@
       "2026-04-05": {
         "start": "01:00",
         "end": "09:00"
+      },
+      "2026-04-18": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Tyler": {
@@ -6205,5 +6209,5 @@
     }
   },
   "lastGirlsSync": "2026-04-17T10:50:02.711Z",
-  "lastCalendarSync": "2026-04-17T14:07:49.496Z"
+  "lastCalendarSync": "2026-04-17T15:35:11.261Z"
 }

@@ -4608,9 +4608,6 @@ function renderHomePage() {
   // ── Below-fold content ──
   html += '<div class="landing-page" style="padding-top:20px">';
 
-  // Seasonal/Event Highlights
-  html += buildSeasonalHighlights();
-
   // Live Roster Feed
   {
     const workingNowGirls = allGirls.filter(g => {
@@ -4636,6 +4633,9 @@ function renderHomePage() {
       html += '</div></div>';
     }
   }
+
+  // Seasonal/Event Highlights
+  html += buildSeasonalHighlights();
 
   const thirtyDaysAgoDigest = new Date(); thirtyDaysAgoDigest.setDate(thirtyDaysAgoDigest.getDate() - 30);
   const thirtyDayStrDigest = thirtyDaysAgoDigest.toISOString().split('T')[0];

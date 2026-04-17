@@ -544,7 +544,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10",
+      "lastRostered": "2026-04-18",
       "desc": "With striking red hair, captivating hazel eyes, and a slim size-6 figure, Scarlette is the perfect blend of Australian charm and Turkish allure. In her mid-30s, she carries herself with confidence, warmth, and a touch of mystery that keeps you intrigued from the moment you meet."
     },
     {
@@ -2140,7 +2140,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Vanessa",
@@ -3318,6 +3318,10 @@
       "2026-04-10": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-18": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Celine": {
@@ -3334,6 +3338,10 @@
         "end": "18:00"
       },
       "2026-04-15": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-04-18": {
         "start": "12:00",
         "end": "18:00"
       }
@@ -3480,5 +3488,5 @@
     }
   },
   "lastGirlsSync": "2026-04-16T17:03:20.363Z",
-  "lastCalendarSync": "2026-04-17T14:07:54.813Z"
+  "lastCalendarSync": "2026-04-17T15:35:18.131Z"
 }

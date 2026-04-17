@@ -2782,6 +2782,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-16"
+    },
+    {
+      "name": "Sienna",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-17",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4936,6 +4954,6 @@
     "Dahlia ***": {},
     "Kehlani": {}
   },
-  "lastGirlsSync": "2026-04-16T04:01:12.939Z",
+  "lastGirlsSync": "2026-04-17T06:06:05.511Z",
   "lastCalendarSync": "2026-04-17T03:50:57.673Z"
 }

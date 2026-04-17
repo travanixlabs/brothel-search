@@ -4644,6 +4644,9 @@ function renderHomePage() {
   html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';
   html += '<div id="homeRecentReviews" style="margin-bottom:40px"><div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">Loading reviews...</div></div>';
 
+  // My Type Auto-Discovery (moved above Venues)
+  html += buildMyTypeDiscovery();
+
   // Venue showcase — sorted by preference match (or active count if no preferences)
   const thirtyDaysAgoHome = new Date(); thirtyDaysAgoHome.setDate(thirtyDaysAgoHome.getDate() - 30);
   const thirtyDayStrHome = thirtyDaysAgoHome.toISOString().split('T')[0];
@@ -4677,9 +4680,6 @@ function renderHomePage() {
     html += '</div>';
   }
   html += '</div>';
-
-  // My Type Auto-Discovery
-  html += buildMyTypeDiscovery();
 
   // Quick links
   html += '<div class="venue-divider"><span>\u2014 EXPLORE \u2014</span></div>';

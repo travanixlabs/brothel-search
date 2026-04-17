@@ -9269,6 +9269,36 @@
       "labels": [],
       "lastModified": "2026-04-15T10:00:53.760Z",
       "lastRostered": "2026-04-15"
+    },
+    {
+      "name": "Miree",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-17",
+      "oldUrl": "https://citybrothel.com.au/project/miree-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-17T09:56:09.919Z",
+      "lastRostered": "2026-04-18",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83171776411797_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83181776411801_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83141776411787_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83151776411790_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83161776411794_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -10886,10 +10916,20 @@
         "start": "12:00",
         "end": "18:00"
       }
+    },
+    "Miree": {
+      "2026-04-17": {
+        "start": "00:00",
+        "end": "05:00"
+      },
+      "2026-04-18": {
+        "start": "22:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-17T04:00:17.696Z",
-  "lastCalendarSync": "2026-04-17T08:10:41.416Z",
+  "lastCalendarSync": "2026-04-17T09:56:09.919Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

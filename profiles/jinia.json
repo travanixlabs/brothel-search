@@ -65,7 +65,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260330093634.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Hazel",
@@ -174,7 +174,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "Marissa",
+      "name": "🆕 Marissa",
       "country": [],
       "age": "25",
       "height": "165",
@@ -211,7 +211,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260307042350_107_20.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Helen",
@@ -1810,7 +1810,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250409100026.jpg"
       ],
       "labels": [],
-      "originalSite": ""
+      "originalSite": "Exists"
     },
     {
       "name": "Rina",
@@ -1834,7 +1834,7 @@
       "originalSite": ""
     },
     {
-      "name": "Cola",
+      "name": "🆕 Cola",
       "country": [
         "Chinese"
       ],
@@ -1871,6 +1871,48 @@
       "oldUrl": "https://jinia.com.au/sherry/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260409112813.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Rose",
+      "country": [
+        "Mixed taiwanese-vietnamese"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-04-16",
+      "lastRostered": "2026-04-16",
+      "oldUrl": "https://jinia.com.au/rose-4/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260417093310.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Marissa",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "A",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-12-16",
+      "lastRostered": "2025-12-16",
+      "oldUrl": "https://jinia.com.au/marissa/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/11/%E5%9B%BE%E7%89%87_20251122041514_455_2_%E5%89%AF%E6%9C%AC.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -2436,54 +2478,6 @@
       "2026-04-22",
       "2026-04-23"
     ],
-    "Marissa": {
-      "2026-04-05": {
-        "start": "18:00",
-        "end": "04:00"
-      },
-      "2026-04-14": {
-        "start": "18:30",
-        "end": "04:00"
-      },
-      "2026-04-15": {
-        "start": "18:30",
-        "end": "04:00"
-      },
-      "2026-04-16": {
-        "start": "18:30",
-        "end": "04:00"
-      }
-    },
-    "Cola": {
-      "2026-04-08": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-09": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-15": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-16": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-10": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-13": {
-        "start": "12:30",
-        "end": "04:00"
-      },
-      "2026-04-14": {
-        "start": "12:30",
-        "end": "04:00"
-      }
-    },
     "Sherry 7:pm-close": {
       "2026-04-10": {
         "start": "10:30",
@@ -2553,8 +2547,56 @@
         "start": "19:00",
         "end": "04:00"
       }
+    },
+    "🆕 Cola": {
+      "2026-04-08": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-09": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-15": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-10": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-13": {
+        "start": "12:30",
+        "end": "04:00"
+      },
+      "2026-04-14": {
+        "start": "12:30",
+        "end": "04:00"
+      }
+    },
+    "🆕 Marissa": {
+      "2026-04-05": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-04-14": {
+        "start": "18:30",
+        "end": "04:00"
+      },
+      "2026-04-15": {
+        "start": "18:30",
+        "end": "04:00"
+      },
+      "2026-04-16": {
+        "start": "18:30",
+        "end": "04:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-14T06:03:50.888Z",
+  "lastGirlsSync": "2026-04-17T06:07:15.462Z",
   "lastCalendarSync": "2026-04-17T03:51:24.085Z"
 }

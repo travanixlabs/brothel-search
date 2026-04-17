@@ -10527,14 +10527,6 @@
       "2026-04-16": {
         "start": "15:00",
         "end": "02:00"
-      },
-      "2026-04-17": {
-        "start": "15:00",
-        "end": "02:00"
-      },
-      "2026-04-18": {
-        "start": "15:00",
-        "end": "02:00"
       }
     },
     "Yujin": {
@@ -10897,7 +10889,7 @@
     }
   },
   "lastGirlsSync": "2026-04-17T04:00:17.696Z",
-  "lastCalendarSync": "2026-04-17T05:13:47.998Z",
+  "lastCalendarSync": "2026-04-17T08:10:41.416Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

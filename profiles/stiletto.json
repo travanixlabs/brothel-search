@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17",
+      "lastRostered": "2026-04-24",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -876,7 +876,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-11"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Daisy",
@@ -4409,7 +4409,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-04-17"
     },
     {
       "name": "Yvette",
@@ -5630,6 +5630,10 @@
       "2026-04-04": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-17": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Kiara": {
@@ -5690,6 +5694,30 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-04-20": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-04-21": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-04-22": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-04-23": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-04-24": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-04-25": {
+        "start": "05:00",
+        "end": "11:00"
       }
     },
     "Amelia": {
@@ -6146,7 +6174,12 @@
         "end": "04:00"
       }
     },
-    "Aurora": {},
+    "Aurora": {
+      "2026-04-24": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Lacey": {
       "2026-04-18": {
         "start": "10:00",
@@ -6198,9 +6231,13 @@
       "2026-04-20": {
         "start": "09:00",
         "end": "17:00"
+      },
+      "2026-04-17": {
+        "start": "10:00",
+        "end": "18:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-16T22:35:01.948Z",
-  "lastCalendarSync": "2026-04-16T23:12:13.908Z"
+  "lastCalendarSync": "2026-04-17T03:51:14.565Z"
 }

@@ -4637,46 +4637,8 @@ function renderHomePage() {
     }
   }
 
-  // Daily Digest section
-  const sevenDaysAgoDigest = new Date(); sevenDaysAgoDigest.setDate(sevenDaysAgoDigest.getDate() - 7);
-  const sevenDayStrDigest = sevenDaysAgoDigest.toISOString().split('T')[0];
   const thirtyDaysAgoDigest = new Date(); thirtyDaysAgoDigest.setDate(thirtyDaysAgoDigest.getDate() - 30);
   const thirtyDayStrDigest = thirtyDaysAgoDigest.toISOString().split('T')[0];
-
-  {
-    // Daily Digest: filtered by active filters, for all users logged in or not, with or without preferences
-    const filtered = getFiltered();
-    const sortByScore = (a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0);
-    const isAvailToday = g => { const avail = getAvailabilityText(g); return avail && (avail.startsWith('Available Now') || avail.startsWith('Available Later') || avail.startsWith('Available Future')); };
-
-    let digestGirls = [];
-
-    if (userPreferences) {
-      // Favourites first, then 90%+ new matches
-      const favs = filtered.filter(g => isFavorite(g) && isAvailToday(g)).sort(sortByScore);
-      const matches = filtered.filter(g => {
-        const score = matchScores.get(g.venue + ':' + g.name) || 0;
-        return !isFavorite(g) && score >= 90 && g.startDate && g.startDate >= thirtyDayStrDigest && isAvailToday(g);
-      }).sort(sortByScore);
-      digestGirls = [...favs, ...matches];
-    } else {
-      // New profiles sorted by date
-      digestGirls = filtered.filter(g => g.startDate && g.startDate >= thirtyDayStrDigest && g.photos && g.photos.length).sort((a, b) => (b.startDate || '').localeCompare(a.startDate || ''));
-    }
-    if (!isLoggedIn()) digestGirls = digestGirls.slice(0, 10);
-
-    if (digestGirls.length) {
-      html += '<div class="venue-divider"><span>\u2014 DAILY DIGEST AVAILABLE TODAY \u2014</span></div>';
-      html += '<div class="venue-carousel digest-carousel">';
-      for (const g of digestGirls) {
-        const score = matchScores.get(g.venue + ':' + g.name) || 0;
-        const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:120px;height:160px;object-fit:cover;display:block;border-radius:10px 10px 0 0">' : '';
-        const tag = isFavorite(g) ? '<div style="font-size:9px;color:#c9952c;font-weight:600">Favourite</div>' : (g.startDate && g.startDate >= thirtyDayStrDigest ? '<div style="font-size:9px;color:#00c864;font-weight:600">New</div>' : '');
-        html += '<div class="venue-carousel-item" style="width:120px;cursor:pointer;text-align:center" data-venue="' + g.venue + '" data-name="' + (g.name || '').replace(/"/g, '&quot;') + '">' + img + '<div class="venue-carousel-info"><div class="venue-carousel-name">' + (g.name||'') + '</div><div class="venue-carousel-meta">' + (g.venueName||'') + '</div>' + (userPreferences && score > 0 ? '<div class="venue-carousel-meta" style="color:var(--gold)">' + score + '% match</div>' : '') + tag + '</div></div>';
-      }
-      html += '</div>';
-    }
-  }
 
   // Recent reviews placeholder
   html += '<div class="venue-divider"><span>\u2014 RECENT REVIEWS \u2014</span></div>';

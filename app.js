@@ -810,6 +810,25 @@ window.addEventListener('hashchange', () => {
 });
 
 sbClient.auth.onAuthStateChange((event, session) => {
+  if (event === 'SIGNED_OUT') {
+    userRole = 'member';
+    document.body.classList.remove('is-admin');
+    hidePaywall();
+    ['settingsOverlay', 'preferencesOverlay', 'favoritesOverlay'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('open');
+    });
+    ['prefsPromptOverlay', 'inactivityOverlay'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+    document.getElementById('authOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+    const um = document.getElementById('userMenu'); if (um) um.style.display = 'none';
+    const lb = document.getElementById('loginBtn'); if (lb) lb.style.display = '';
+    const nb = document.getElementById('notifBell'); if (nb) nb.style.display = 'none';
+    return;
+  }
   if (event === 'PASSWORD_RECOVERY') {
     document.getElementById('authOverlay').style.display = 'none'; document.body.style.overflow = '';
     document.getElementById('userMenu').style.display = ''; document.getElementById('loginBtn').style.display = 'none';
@@ -6708,9 +6727,13 @@ function closeMobileMenu() {
 
   if (stored && Date.now() - stored >= LOGOUT_AT) {
     try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
-    sbClient.auth.getSession().then(({ data: { session } }) => {
-      if (session) sbClient.auth.signOut();
-    }).catch(() => {});
+    // Force sign-out. onAuthStateChange SIGNED_OUT handler will update the UI.
+    // We also call our custom signOut() if available for a complete reset.
+    if (typeof signOut === 'function') {
+      signOut().catch(() => {});
+    } else {
+      sbClient.auth.signOut().catch(() => {});
+    }
   }
 
   function persistActivity() {

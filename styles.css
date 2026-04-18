@@ -950,6 +950,7 @@ body.is-admin .admin-only{display:initial!important}
 .home-stat-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);display:block;line-height:1.1}
 .home-stat-label{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-top:6px;display:block}
 .venue-carousel{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;margin-bottom:40px;justify-content:center}
+.venue-carousel.wrap{flex-wrap:wrap;overflow-x:visible;row-gap:20px}
 .venue-carousel-item{flex-shrink:0;width:160px;cursor:pointer;border:1px solid rgba(201,149,44,0.12);border-radius:12px;overflow:hidden;transition:border-color .3s}
 .venue-carousel-item:hover{border-color:rgba(201,149,44,0.3)}
 .venue-carousel-item img{width:160px;height:120px;object-fit:cover;display:block}

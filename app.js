@@ -4462,7 +4462,7 @@ function buildMyTypeDiscovery() {
 
   let html = '<div class="venue-divider"><span>\u2014 DISCOVER YOUR TYPE \u2014</span></div>';
   html += '<div style="text-align:center;font-size:12px;color:var(--text-dim);margin-bottom:12px">Based on your favourites: ' + topCountries.join(', ') + (avgAge ? ', ~' + avgAge + ' years' : '') + '</div>';
-  html += '<div class="venue-carousel">';
+  html += '<div class="venue-carousel wrap">';
   for (const g of discoveries) {
     const score = matchScores.get(g.venue + ':' + g.name) || 0;
     const img = g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:120px;height:160px;object-fit:cover;display:block;border-radius:10px 10px 0 0">' : '';
@@ -4683,7 +4683,7 @@ function renderHomePage() {
   const moreCount = venuesSorted.length - 5;
 
   html += '<div class="venue-divider"><span>\u2014 VENUES \u2014</span></div>';
-  html += '<div class="venue-carousel">';
+  html += '<div class="venue-carousel wrap">';
   for (const v of topVenues) {
     const topGirl = allGirls.filter(g => g.venue === v.id && g.photos && g.photos.length).sort((a, b) => (matchScores.get(b.venue + ':' + b.name) || 0) - (matchScores.get(a.venue + ':' + a.name) || 0))[0];
     const thumb = topGirl ? imgProxy(topGirl.photos[0]) : '';
@@ -6229,7 +6229,7 @@ function initHomePageListeners() {
         reviewsContainer.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px 0">No reviews yet.</div>';
         return;
       }
-      let rhtml = '<div class="venue-carousel review-carousel">';
+      let rhtml = '<div class="venue-carousel review-carousel wrap">';
       for (const r of recentReviews) {
         const stars = '\u2605'.repeat(r.overall) + '\u2606'.repeat(5 - r.overall);
         const date = new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });

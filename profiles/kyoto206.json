@@ -9407,8 +9407,8 @@
         "end": "00:00"
       },
       "2026-04-19": {
-        "start": "11:00",
-        "end": "00:00"
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Sayu": {
@@ -10250,10 +10250,6 @@
       "2026-04-16": {
         "start": "10:00",
         "end": "17:00"
-      },
-      "2026-04-18": {
-        "start": "10:00",
-        "end": "20:00"
       }
     },
     "Skylar": {
@@ -10998,7 +10994,7 @@
     }
   },
   "lastGirlsSync": "2026-04-17T04:00:17.696Z",
-  "lastCalendarSync": "2026-04-18T03:35:52.333Z",
+  "lastCalendarSync": "2026-04-18T05:55:42.664Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

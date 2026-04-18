@@ -9656,10 +9656,6 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "22:00"
-      },
-      "2026-04-19": {
-        "start": "10:00",
-        "end": "22:00"
       }
     },
     "Izumi": {},
@@ -10875,7 +10871,7 @@
     },
     "Crystal": {
       "2026-04-18": {
-        "start": "14:00",
+        "start": "22:00",
         "end": "05:00"
       },
       "2026-04-19": {
@@ -10895,7 +10891,7 @@
     }
   },
   "lastGirlsSync": "2026-04-18T04:00:31.319Z",
-  "lastCalendarSync": "2026-04-18T05:55:45.310Z",
+  "lastCalendarSync": "2026-04-18T07:40:11.072Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

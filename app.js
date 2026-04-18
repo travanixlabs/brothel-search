@@ -2932,6 +2932,37 @@ async function loadReviews(venue, girlName) {
   return data || [];
 }
 
+let reviewerStatsCache = null;
+let reviewerStatsPromise = null;
+async function loadReviewerStats() {
+  if (reviewerStatsCache) return reviewerStatsCache;
+  if (reviewerStatsPromise) return reviewerStatsPromise;
+  reviewerStatsPromise = (async () => {
+    const { data } = await sbClient.from('reviews').select('user_id,created_at').limit(5000);
+    const stats = {};
+    for (const r of (data || [])) {
+      if (!stats[r.user_id]) stats[r.user_id] = { count: 0, oldest: r.created_at };
+      stats[r.user_id].count++;
+      if (r.created_at < stats[r.user_id].oldest) stats[r.user_id].oldest = r.created_at;
+    }
+    reviewerStatsCache = stats;
+    return stats;
+  })();
+  return reviewerStatsPromise;
+}
+
+function credibilityBadge(userId) {
+  if (!reviewerStatsCache || !reviewerStatsCache[userId]) return '';
+  const s = reviewerStatsCache[userId];
+  let score = Math.min(50, s.count * 10); // 5 reviews = max 50pts
+  const days = Math.floor((Date.now() - new Date(s.oldest).getTime()) / 86400000);
+  score += Math.min(50, Math.round(days * 0.5)); // 100 days = max 50pts
+  if (score >= 80) return '<span title="Trusted Reviewer (' + s.count + ' reviews, ' + days + ' days)" style="display:inline-block;margin-left:6px;padding:2px 6px;font-family:Orbitron,sans-serif;font-size:8px;letter-spacing:1px;color:#c9952c;border:1px solid rgba(201,149,44,0.5);border-radius:4px;text-transform:uppercase">\u2605 Trusted</span>';
+  if (score >= 50) return '<span title="Verified Reviewer (' + s.count + ' reviews, ' + days + ' days)" style="display:inline-block;margin-left:6px;padding:2px 6px;font-family:Orbitron,sans-serif;font-size:8px;letter-spacing:1px;color:#00c864;border:1px solid rgba(0,200,100,0.4);border-radius:4px;text-transform:uppercase">\u2713 Verified</span>';
+  if (score >= 25) return '<span title="Established Reviewer (' + s.count + ' reviews)" style="display:inline-block;margin-left:6px;padding:2px 6px;font-family:Orbitron,sans-serif;font-size:8px;letter-spacing:1px;color:#888;border:1px solid rgba(136,136,136,0.4);border-radius:4px;text-transform:uppercase">Established</span>';
+  return '';
+}
+
 async function submitReview(venue, girlName, ratings, comment) {
   const { data: { user } } = await sbClient.auth.getUser();
   if (!user) return { error: 'Not logged in' };
@@ -3029,7 +3060,7 @@ function averageRatings(reviews) {
 }
 
 function buildSimilarGirls(g) {
-  const scored = allGirls.filter(gg => gg !== g && gg.venue + gg.name !== g.venue + g.name).map(gg => {
+  const scoreGirl = gg => {
     let score = 0;
     const gc = Array.isArray(g.country) ? g.country : [g.country || ''];
     const ggc = Array.isArray(gg.country) ? gg.country : [gg.country || ''];
@@ -3039,24 +3070,36 @@ function buildSimilarGirls(g) {
     if (g.height && gg.height && Math.abs(parseInt(g.height) - parseInt(gg.height)) <= 5) score += 10;
     if (g.cup && gg.cup && g.cup.toUpperCase() === gg.cup.toUpperCase()) score += 10;
     if (g.val1 && gg.val1 && Math.abs(parseInt(g.val1) - parseInt(gg.val1)) <= 30) score += 15;
-    return { girl: gg, score };
-  }).filter(s => s.score >= 30).sort((a, b) => b.score - a.score).slice(0, 6);
+    return score;
+  };
 
-  if (!scored.length) return '';
+  const candidates = allGirls.filter(gg => gg !== g && gg.venue + gg.name !== g.venue + g.name).map(gg => ({ girl: gg, score: scoreGirl(gg) }));
+  const sameVenue = candidates.filter(s => s.girl.venue === g.venue && s.score >= 30).sort((a, b) => b.score - a.score).slice(0, 6);
+  const otherVenues = candidates.filter(s => s.girl.venue !== g.venue && s.score >= 30).sort((a, b) => b.score - a.score).slice(0, 6);
+
+  if (!sameVenue.length && !otherVenues.length) return '';
+
+  const renderRow = (title, items) => {
+    if (!items.length) return '';
+    let h = '<div class="venue-divider"><span>\u2014 ' + title + ' \u2014</span></div>';
+    h += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;justify-content:center;flex-wrap:wrap">';
+    for (const s of items) {
+      const gg = s.girl;
+      const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
+      h += '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">';
+      h += img;
+      h += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (gg.name||'') + '</div>';
+      h += '<div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div>';
+      h += '</div>';
+    }
+    h += '</div>';
+    return h;
+  };
 
   let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
-  html += '<div class="venue-divider"><span>\u2014 SIMILAR GIRLS \u2014</span></div>';
-  html += '<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;justify-content:center">';
-  for (const s of scored) {
-    const gg = s.girl;
-    const img = gg.photos && gg.photos[0] ? '<img src="' + imgProxy(gg.photos[0]) + '" alt="' + (gg.name||'') + '" style="width:100px;height:133px;object-fit:cover;border-radius:10px;display:block;border:1px solid rgba(201,149,44,0.15)">' : '';
-    html += '<div style="flex-shrink:0;cursor:pointer;text-align:center" onclick="showProfile(allGirls.find(g=>g.venue===\'' + gg.venue + '\'&&g.name===\'' + (gg.name||'').replace(/'/g, "\\'") + '\'))">';
-    html += img;
-    html += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (gg.name||'') + '</div>';
-    html += '<div style="font-size:9px;color:var(--text-dim)">' + (gg.venueName||'') + '</div>';
-    html += '</div>';
-  }
-  html += '</div></div>';
+  html += renderRow('SIMILAR AT ' + (g.venueName || 'THIS VENUE').toUpperCase(), sameVenue);
+  html += renderRow('SIMILAR AT OTHER VENUES', otherVenues);
+  html += '</div>';
   return html;
 }
 
@@ -3130,7 +3173,7 @@ function buildVenueReviewSection(venueId, reviews) {
 function renderVenueReviewCard(r, replies, currentUserId) {
   const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
   let html = '<div class="review-card" data-review-id="' + r.id + '">';
-  html += '<div class="review-card-header"><div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
+  html += '<div class="review-card-header"><div class="review-card-user">' + (r.user_name || 'Anonymous') + credibilityBadge(r.user_id) + '</div>';
   html += '<div class="review-card-date">' + new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) + '</div></div>';
   html += '<div class="review-card-ratings">';
   for (const cat of categories) {
@@ -3164,6 +3207,7 @@ function renderVenueReviewCard(r, replies, currentUserId) {
 }
 
 async function initVenueReviewSection(venueId) {
+  await loadReviewerStats();
   const reviews = await loadReviews(venueId, '__venue__');
   let container = document.querySelector('.venue-review-section');
   if (!container) return;
@@ -3261,7 +3305,7 @@ function renderReviewCard(r, replies, currentUserId) {
   const categories = ['overall', 'professionalism', 'experience', 'presentation', 'safety', 'transparency', 'room_quality'];
   let html = '<div class="review-card" data-review-id="' + r.id + '">';
   html += '<div class="review-card-header">';
-  html += '<div class="review-card-user">' + (r.user_name || 'Anonymous') + '</div>';
+  html += '<div class="review-card-user">' + (r.user_name || 'Anonymous') + credibilityBadge(r.user_id) + '</div>';
   html += '<div class="review-card-date">' + new Date(r.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) + '</div>';
   html += '</div>';
   html += '<div class="review-card-ratings">';
@@ -3314,6 +3358,7 @@ function renderReviewCard(r, replies, currentUserId) {
 }
 
 async function initReviewSection(g) {
+  await loadReviewerStats();
   const reviews = await loadReviews(g.venue, g.name);
   const rcEl = document.getElementById('profileReviewCount');
   if (rcEl) rcEl.textContent = reviews.length + ' review' + (reviews.length !== 1 ? 's' : '');
@@ -4801,6 +4846,73 @@ function sortCompareTable(col) {
   landing.innerHTML = renderComparePage();
 }
 
+function runVenueCalculator() {
+  const idA = document.getElementById('venueCalcA').value;
+  const idB = document.getElementById('venueCalcB').value;
+  const resultEl = document.getElementById('venueCalcResult');
+  if (!idA || !idB || idA === idB) { resultEl.innerHTML = '<div style="text-align:center;color:#e74c3c;font-size:12px">Please select two different venues</div>'; return; }
+
+  const today = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const thirtyAgo = thirtyDaysAgo.toISOString().split('T')[0];
+  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  const sevenAgo = sevenDaysAgo.toISOString().split('T')[0];
+
+  const stats = (id) => {
+    const v = VENUE_DATA[id];
+    const girls = allGirls.filter(g => g.venue === id);
+    const active = girls.filter(g => g.lastRostered && g.lastRostered >= thirtyAgo);
+    const rosteredToday = girls.filter(g => { const c = calendarData[(g.venue || '') + ':' + g.name]; return c && c[today]; }).length;
+    const newWeek = girls.filter(g => g.startDate && g.startDate >= sevenAgo).length;
+    const avg = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : 0; };
+    const avgMatch = userPreferences && active.length ? (() => { const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0); return scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0; })() : 0;
+    // Retention: girls from 3+ months ago still active
+    const threeMonthsAgo = new Date(); threeMonthsAgo.setDate(threeMonthsAgo.getDate() - 90);
+    const threeMonthStr = threeMonthsAgo.toISOString().split('T')[0];
+    const oldGirls = girls.filter(g => g.startDate && g.startDate <= threeMonthStr);
+    const stillActive = oldGirls.filter(g => g.lastRostered && g.lastRostered >= sevenAgo);
+    const retention = oldGirls.length > 0 ? Math.round((stillActive.length / oldGirls.length) * 100) : 0;
+    return { name: v.name, suburb: v.suburb, total: girls.length, active: active.length, rosteredToday, newWeek, avg30: avg('val1'), avg45: avg('val2'), avg60: avg('val3'), avgMatch, retention };
+  };
+
+  const a = stats(idA), b = stats(idB);
+  const cell = (va, vb, higherWins = true) => {
+    if (va === vb || va === 0 || vb === 0) return [va, vb, '', ''];
+    const aWins = higherWins ? va > vb : va < vb;
+    return [va, vb, aWins ? 'color:#00c864;font-weight:700' : '', aWins ? '' : 'color:#00c864;font-weight:700'];
+  };
+
+  const rows = [
+    { label: 'Suburb', vals: [a.suburb, b.suburb, '', ''] },
+    { label: 'Total Profiles', vals: cell(a.total, b.total, true) },
+    { label: 'Active (30d)', vals: cell(a.active, b.active, true) },
+    { label: 'Rostered Today', vals: cell(a.rosteredToday, b.rosteredToday, true) },
+    { label: 'New This Week', vals: cell(a.newWeek, b.newWeek, true) },
+    { label: 'Avg 30 min', vals: cell(a.avg30, b.avg30, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
+    { label: 'Avg 45 min', vals: cell(a.avg45, b.avg45, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
+    { label: 'Avg 60 min', vals: cell(a.avg60, b.avg60, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
+    { label: '3-Month Retention', vals: cell(a.retention, b.retention, true).map((v, i) => i < 2 ? (v ? v + '%' : '—') : v) },
+  ];
+  if (userPreferences) rows.push({ label: 'Avg Match Score', vals: cell(a.avgMatch, b.avgMatch, true).map((v, i) => i < 2 ? (v ? v + '%' : '—') : v) });
+
+  // Count wins
+  let aWins = 0, bWins = 0;
+  rows.forEach(r => { if (r.vals[2].includes('00c864')) aWins++; if (r.vals[3].includes('00c864')) bWins++; });
+
+  let html = '<div style="max-width:600px;margin:0 auto;border:1px solid rgba(201,149,44,0.2);border-radius:12px;padding:20px;background:rgba(12,12,20,0.3)">';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  html += '<tr><td></td><td style="text-align:center;padding:8px;color:var(--gold);font-weight:700;font-family:Playfair Display,serif;font-size:16px">' + a.name + '</td><td style="text-align:center;padding:8px;color:var(--gold);font-weight:700;font-family:Playfair Display,serif;font-size:16px">' + b.name + '</td></tr>';
+  for (const r of rows) {
+    html += '<tr style="border-top:1px solid rgba(201,149,44,0.1)"><td style="padding:8px;color:var(--text-dim)">' + r.label + '</td><td style="padding:8px;text-align:center;' + r.vals[2] + '">' + r.vals[0] + '</td><td style="padding:8px;text-align:center;' + r.vals[3] + '">' + r.vals[1] + '</td></tr>';
+  }
+  html += '</table>';
+  const winner = aWins > bWins ? a.name + ' wins (' + aWins + '-' + bWins + ')' : bWins > aWins ? b.name + ' wins (' + bWins + '-' + aWins + ')' : 'Tied (' + aWins + '-' + bWins + ')';
+  const winnerColor = aWins === bWins ? '#c9952c' : '#00c864';
+  html += '<div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,149,44,0.1);font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:2px;color:' + winnerColor + ';font-weight:700;text-transform:uppercase">' + winner + '</div>';
+  html += '</div>';
+  resultEl.innerHTML = html;
+}
+
 function renderComparePage() {
   const filtered = getFiltered();
   let venueIds = Object.keys(VENUE_DATA);
@@ -4853,6 +4965,18 @@ function renderComparePage() {
   html += sectionHeader('Compare Venues');
   html += '<p class="landing-desc">' + (userPreferences ? 'Ranked by your preferences' : 'Ranked by active girl count') + ' (rostered within 30 days).</p>';
   if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
+
+  // Venue Comparison Calculator — pick 2 venues head-to-head
+  html += '<div class="venue-divider"><span>\u2014 VENUE CALCULATOR \u2014</span></div>';
+  html += '<div style="text-align:center;margin-bottom:16px;font-size:12px;color:var(--text-dim)">Pick two venues to compare head-to-head</div>';
+  html += '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap">';
+  const venueOptsHtml = venueIds.map(id => '<option value="' + id + '">' + VENUE_DATA[id].name + '</option>').join('');
+  html += '<select id="venueCalcA" style="background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 14px;border-radius:8px;font-family:Rajdhani,sans-serif;font-size:13px;cursor:pointer">' + venueOptsHtml + '</select>';
+  html += '<span style="color:var(--gold);font-weight:700;display:flex;align-items:center">VS</span>';
+  html += '<select id="venueCalcB" style="background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 14px;border-radius:8px;font-family:Rajdhani,sans-serif;font-size:13px;cursor:pointer">' + venueOptsHtml + '</select>';
+  html += '<button class="auth-btn" id="venueCalcBtn" onclick="runVenueCalculator()" style="margin:0;width:auto;padding:8px 20px;font-size:11px">Compare</button>';
+  html += '</div>';
+  html += '<div id="venueCalcResult" style="margin-bottom:32px"></div>';
 
   const cmpCols = [
     { key: 'name', label: 'Venue' },

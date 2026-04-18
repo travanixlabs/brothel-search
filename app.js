@@ -4600,7 +4600,9 @@ function buildRosterHistory(g) {
   const sixMonthsAgoStr = sixMonthsAgo.toISOString().split('T')[0];
 
   const past = Object.keys(cal).filter(d => !d.startsWith('_') && d < today && d >= sixMonthsAgoStr).sort();
-  if (past.length < 2) return '';
+  // Include today's roster too for display completeness
+  const todayWorked = !!cal[today];
+  if (past.length === 0 && !todayWorked) return '';
 
   // Build 26-week grid (7 × 26 = 182 days)
   const days = [];

@@ -24,7 +24,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Candy",
@@ -67,7 +67,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Nana",
@@ -173,7 +173,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Coco",
@@ -239,7 +239,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Tiffany",
@@ -281,7 +281,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Wendy",
@@ -297,7 +297,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-19",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -315,7 +315,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-19",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -335,7 +335,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-19",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -355,7 +355,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-19",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -378,7 +378,8 @@
       "2026-04-15",
       "2026-04-16",
       "2026-04-17",
-      "2026-04-18"
+      "2026-04-18",
+      "2026-04-19"
     ],
     "Mimi": {
       "2026-04-03": {
@@ -438,6 +439,10 @@
         "end": "02:00"
       },
       "2026-04-18": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-19": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -502,6 +507,10 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Lisa": {
@@ -562,6 +571,10 @@
         "end": "02:00"
       },
       "2026-04-18": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-19": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -626,6 +639,10 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Nancy": {
@@ -688,6 +705,10 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Wendy": {
@@ -736,6 +757,10 @@
         "end": "02:00"
       },
       "2026-04-18": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-19": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -788,6 +813,10 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Linda": {
@@ -836,6 +865,10 @@
         "end": "02:00"
       },
       "2026-04-18": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-04-19": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -888,9 +921,13 @@
       "2026-04-18": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-04-19": {
+        "start": "10:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-04-17T14:07:35.222Z"
+  "lastCalendarSync": "2026-04-18T15:03:31.133Z"
 }

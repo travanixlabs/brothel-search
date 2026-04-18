@@ -8866,7 +8866,7 @@
       "desc": "",
       "lang": "",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-04-17T05:13:54.907Z",
       "lastRostered": "2026-04-17",
       "photos": [
@@ -8901,6 +8901,34 @@
       "pornstar": "",
       "englishLevel": "",
       "experienceLevel": ""
+    },
+    {
+      "name": "Hamy",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "165",
+      "cup": "E",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-18",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hamy-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83331776483587_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83351776483591_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83311776483578_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83321776483583_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83341776483589_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83361776483593_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-18T04:00:31.319Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -10848,7 +10876,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-17T04:00:18.285Z",
+  "lastGirlsSync": "2026-04-18T04:00:31.319Z",
   "lastCalendarSync": "2026-04-18T03:35:59.701Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

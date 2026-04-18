@@ -8786,7 +8786,7 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-04-12T04:00:21.654Z",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-04-19"
     },
     {
       "name": "Misaki",
@@ -10799,6 +10799,10 @@
       "2026-04-17": {
         "start": "11:00",
         "end": "23:00"
+      },
+      "2026-04-19": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Tammy": {
@@ -10891,7 +10895,7 @@
     }
   },
   "lastGirlsSync": "2026-04-18T04:00:31.319Z",
-  "lastCalendarSync": "2026-04-18T04:43:34.694Z",
+  "lastCalendarSync": "2026-04-18T05:55:45.310Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

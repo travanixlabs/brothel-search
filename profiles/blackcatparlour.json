@@ -1914,7 +1914,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Paris",
@@ -2983,6 +2983,10 @@
         "end": "06:00"
       },
       "2026-04-24": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4941,5 +4945,5 @@
     }
   },
   "lastGirlsSync": "2026-04-17T06:06:05.511Z",
-  "lastCalendarSync": "2026-04-18T17:07:58.638Z"
+  "lastCalendarSync": "2026-04-18T19:13:04.202Z"
 }

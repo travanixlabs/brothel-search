@@ -1499,7 +1499,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-18"
     },
     {
       "name": "Halo",
@@ -5919,7 +5919,12 @@
     },
     "Keisha": {},
     "Daisy": {},
-    "Hailey": {},
+    "Hailey": {
+      "2026-04-18": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "CeCe": {},
     "Erika": {},
     "Ginger": {
@@ -6116,5 +6121,5 @@
     }
   },
   "lastGirlsSync": "2026-04-17T22:33:09.635Z",
-  "lastCalendarSync": "2026-04-18T03:36:33.903Z"
+  "lastCalendarSync": "2026-04-18T04:44:07.308Z"
 }

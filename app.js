@@ -7,6 +7,34 @@
   }
 })();
 
+// Burn Link — 4-hour expiring share link. If expired, strip the param and reload URL.
+const BURN_WINDOW_MS = 4 * 60 * 60 * 1000;
+window._burnLinkActive = false;
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const burn = params.get('burn');
+  if (!burn) return;
+  const ts = parseInt(burn, 10);
+  if (!isNaN(ts) && Date.now() - ts < BURN_WINDOW_MS) {
+    window._burnLinkActive = true;
+  } else {
+    // Expired — strip the param and update URL
+    params.delete('burn');
+    const qs = params.toString();
+    history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+  }
+})();
+
+function generateBurnLink(btn) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('burn', Date.now().toString());
+  navigator.clipboard.writeText(url.toString()).then(() => {
+    const original = btn.textContent;
+    btn.textContent = 'Copied! (4hr link)';
+    setTimeout(() => { btn.textContent = original; }, 2000);
+  });
+}
+
 // Capture referral code from URL param
 (function() {
   const params = new URLSearchParams(window.location.search);
@@ -155,6 +183,11 @@ async function checkAuth() {
   // Don't block home or roadmap pages
   const path = window.location.pathname;
   if (path === '/' || path === '/index.html' || path === '/roadmap') {
+    document.getElementById('userMenu').style.display = 'none';
+    return false;
+  }
+  // Active burn link — bypass auth overlay so recipient can view profile
+  if (window._burnLinkActive) {
     document.getElementById('userMenu').style.display = 'none';
     return false;
   }
@@ -3818,7 +3851,7 @@ function showProfile(g) {
 
   // Render as dedicated page
   landingEl.innerHTML = `<div class="profile-panel${isFavorite(g) ? ' favorited' : ''}">
-    <button class="profile-share" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Share',1500)})" title="Copy link">Share</button>
+    <button class="profile-share" onclick="generateBurnLink(this)" title="Copy 4-hour burn link">Share</button>
     <div class="profile-body">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
       <div class="fav-heart${isFavorite(g) ? ' active' : ''}" id="profileFavHeart" data-url="${(g.oldUrl||'').replace(/"/g,'&quot;')}" onclick="toggleFavorite('${(g.oldUrl||'').replace(/'/g,"\\'")}',event)" style="position:relative;top:auto;left:auto"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
@@ -3890,6 +3923,7 @@ function showProfile(g) {
     </div>
     ${buildProfileCalendar(g)}
     ${buildRosterPredictions(g)}
+    ${buildRosterHistory(g)}
     ${buildReviewSection(g, [])}
     ${buildSimilarGirls(g)}
     </div>
@@ -4556,6 +4590,56 @@ function buildCrowdIndicator(venueId) {
   const level = ratio >= 1.2 ? 'Busy' : ratio >= 0.8 ? 'Moderate' : 'Quiet';
   const color = level === 'Busy' ? '#00c864' : level === 'Moderate' ? '#c9952c' : '#888';
   return '<span style="display:inline-block;padding:2px 8px;border-radius:4px;font-family:Orbitron,sans-serif;font-size:9px;letter-spacing:1px;color:' + color + ';border:1px solid ' + color + '40;text-transform:uppercase">' + level + '</span>';
+}
+
+function buildRosterHistory(g) {
+  const cal = calendarData[(g.venue || '') + ':' + g.name];
+  if (!cal) return '';
+  const today = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const sixMonthsAgo = new Date(); sixMonthsAgo.setDate(sixMonthsAgo.getDate() - 180);
+  const sixMonthsAgoStr = sixMonthsAgo.toISOString().split('T')[0];
+
+  const past = Object.keys(cal).filter(d => !d.startsWith('_') && d < today && d >= sixMonthsAgoStr).sort();
+  if (past.length < 2) return '';
+
+  // Build 26-week grid (7 × 26 = 182 days)
+  const days = [];
+  for (let i = 180; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    days.push({ date: ds, worked: !!cal[ds] });
+  }
+
+  // Stats
+  const workedDays = past.length;
+  const totalWeeks = 26;
+  const avgPerWeek = (workedDays / totalWeeks).toFixed(1);
+  const firstSeen = past[0];
+  const firstSeenLabel = new Date(firstSeen + 'T00:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+
+  // Build heatmap (columns = weeks, rows = days of week)
+  let html = '<div style="margin-top:20px;border-top:1px solid rgba(201,149,44,0.15);padding-top:16px">';
+  html += '<div class="venue-divider"><span>\u2014 ROSTER HISTORY \u2014</span></div>';
+  html += '<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">';
+  html += '<div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--gold)">' + workedDays + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Days Rostered (6mo)</div></div>';
+  html += '<div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--gold)">' + avgPerWeek + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Avg/Week</div></div>';
+  html += '<div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--gold)">' + firstSeenLabel + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">First Seen</div></div>';
+  html += '</div>';
+
+  // GitHub-style contribution heatmap
+  html += '<div style="overflow-x:auto"><div style="display:inline-grid;grid-template-columns:repeat(' + Math.ceil(days.length / 7) + ',10px);grid-auto-flow:column;grid-template-rows:repeat(7,10px);gap:2px;margin:0 auto;direction:ltr">';
+  // Align first day to correct day of week
+  const startDay = new Date(days[0].date + 'T00:00:00').getDay();
+  for (let i = 0; i < startDay; i++) html += '<div></div>';
+  for (const d of days) {
+    const color = d.worked ? '#c9952c' : 'rgba(255,255,255,0.05)';
+    const title = d.date + (d.worked ? ' \u2022 rostered' : '');
+    html += '<div title="' + title + '" style="width:10px;height:10px;background:' + color + ';border-radius:2px"></div>';
+  }
+  html += '</div></div>';
+  html += '<div style="display:flex;justify-content:center;gap:16px;margin-top:8px;font-size:10px;color:var(--text-dim)"><span><span style="display:inline-block;width:8px;height:8px;background:rgba(255,255,255,0.05);border-radius:2px;margin-right:4px;vertical-align:middle"></span>Not rostered</span><span><span style="display:inline-block;width:8px;height:8px;background:#c9952c;border-radius:2px;margin-right:4px;vertical-align:middle"></span>Rostered</span></div>';
+  html += '</div>';
+  return html;
 }
 
 function buildRosterPredictions(g) {

@@ -3751,12 +3751,36 @@ async function sendDailyDigest(env) {
     // Daily Digest is email-only — no bell notification inserted.
     // Granular bell notifications (Back on Roster, Smart Alerts) remain.
 
-    // Send email via Resend (always send if user has favourites)
-    if (env.RESEND_API_KEY && (favWorking.length || favNotWorking.length || matchesWorking.length || matchesNotWorking.length || backOnRoster.length)) {
-      const emailHtml = buildDigestEmail(userInfo.name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster });
+    // Don't Miss Weekly Picks — Monday only
+    const isMonday = getAEDTDate().getDay() === 1;
+    let dontMissPicks = [];
+    if (isMonday) {
+      const thirtyAgo = new Date(); thirtyAgo.setDate(thirtyAgo.getDate() - 30);
+      const thirtyAgoStr = thirtyAgo.toISOString().split('T')[0];
+      const pool = allGirls.filter(g => {
+        if (!g.oldUrl || favUrls.includes(g.oldUrl)) return false;
+        if (!g.photos || !g.photos.length) return false;
+        if (!g.lastRostered || g.lastRostered < thirtyAgoStr) return false;
+        return true;
+      });
+      if (prefs) {
+        // Score-based top picks
+        dontMissPicks = pool.map(g => ({ ...g, matchScore: scoreGirlWorker(g, prefs) })).filter(g => g.matchScore >= 80).sort((a, b) => b.matchScore - a.matchScore).slice(0, 5);
+      } else {
+        // Random sample of active girls with photos
+        dontMissPicks = pool.sort(() => Math.random() - 0.5).slice(0, 5);
+      }
+    }
+
+    // Send email via Resend (always send if user has favourites OR Don't Miss picks on Monday)
+    const hasContent = favWorking.length || favNotWorking.length || matchesWorking.length || matchesNotWorking.length || backOnRoster.length || dontMissPicks.length;
+    if (env.RESEND_API_KEY && hasContent) {
+      const emailHtml = buildDigestEmail(userInfo.name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster, dontMissPicks });
       const workingCount = favWorking.length + matchesWorking.length;
       const subject = workingCount > 0
         ? 'Daily Digest — ' + workingCount + ' working today'
+        : dontMissPicks.length && isMonday
+        ? "Don't Miss — " + dontMissPicks.length + ' picks for you this week'
         : 'Daily Digest — Your favourites update';
       try {
         await fetch('https://api.resend.com/emails', {
@@ -3836,7 +3860,7 @@ function girlCardHtml(g, statusColor, statusText, extra) {
   </td></tr>`;
 }
 
-function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster }) {
+function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, matchesNotWorking, backOnRoster, dontMissPicks }) {
   let html = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0e0e16;color:#e0d6c8;padding:32px;border-radius:12px">`;
   html += `<div style="text-align:center;margin-bottom:24px"><span style="font-size:24px;font-weight:700;color:#c9952c;letter-spacing:2px">BROTHEL SEARCH</span></div>`;
   html += `<p style="font-size:16px;margin-bottom:24px">Hi ${name},</p>`;
@@ -3876,6 +3900,18 @@ function buildDigestEmail(name, { favWorking, favNotWorking, matchesWorking, mat
     }
     for (const g of matchesNotWorking) {
       html += girlCardHtml(g, '#3c78ff', g.matchScore + '% MATCH', `<span style="font-size:10px;color:#3c78ff;margin-left:6px">NEW</span>`);
+    }
+    html += `</table>`;
+  }
+
+  // ── DON'T MISS (Monday weekly picks) ──
+  if (dontMissPicks && dontMissPicks.length) {
+    html += `<div style="font-size:13px;font-weight:700;color:#c9952c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e">\u2605 Don't Miss This Week</div>`;
+    html += `<div style="font-size:12px;color:#888;margin-bottom:12px;font-style:italic">Hand-picked recommendations based on your preferences.</div>`;
+    html += `<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px">`;
+    for (const g of dontMissPicks) {
+      const badge = g.matchScore ? g.matchScore + '% MATCH' : 'PICK FOR YOU';
+      html += girlCardHtml(g, '#c9952c', badge);
     }
     html += `</table>`;
   }

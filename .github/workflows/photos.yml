@@ -1,0 +1,32 @@
+name: Photo Freshness Check
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 2am AEST daily
+  workflow_dispatch:
+    inputs:
+      max_per_venue:
+        description: 'Max profiles to check per venue'
+        required: false
+        default: '30'
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check and refresh broken photos
+        env:
+          MAX_CHECKS_PER_VENUE: ${{ github.event.inputs.max_per_venue || '30' }}
+        run: node scripts/check-photos.js

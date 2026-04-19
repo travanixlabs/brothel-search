@@ -5994,6 +5994,152 @@ function buildVenueTrends(venueId) {
   return html;
 }
 
+function buildProfileRetention(venueId) {
+  const all = allGirls.filter(g => g.venue === venueId);
+  if (all.length < 3) return '';
+  const now = new Date();
+  const sevenAgo = new Date(); sevenAgo.setDate(sevenAgo.getDate() - 7);
+  const sevenStr = sevenAgo.toISOString().split('T')[0];
+  const msPerDay = 86400000;
+
+  const active = all.filter(g => g.deleted !== 'Yes' && g.lastRostered && g.lastRostered >= sevenStr);
+  const departed = all.filter(g => g.deleted === 'Yes' && g.deletedAt && g.startDate);
+
+  // Career / tenure calculations
+  const activeTenures = active.filter(g => g.startDate).map(g => Math.floor((now - new Date(g.startDate + 'T00:00:00')) / msPerDay));
+  const departedCareers = departed.map(g => Math.floor((new Date(g.deletedAt) - new Date(g.startDate + 'T00:00:00')) / msPerDay)).filter(d => d >= 0);
+
+  const avg = arr => arr.length ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : 0;
+  const avgActiveDays = avg(activeTenures);
+  const avgCareerDays = avg(departedCareers);
+  const totalEverSeen = all.length;
+  const churnRate = totalEverSeen > 0 ? Math.round((departed.length / totalEverSeen) * 100) : 0;
+
+  const daysLabel = d => {
+    if (d < 30) return d + ' days';
+    if (d < 365) return Math.round(d / 30) + ' mo';
+    const yr = Math.floor(d / 365); const rem = Math.round((d % 365) / 30);
+    return yr + ' yr' + (rem > 0 ? ' ' + rem + ' mo' : '');
+  };
+
+  // Tenure distribution — 5 buckets
+  const buckets = [
+    { label: '< 1mo', min: 0, max: 30, active: 0, departed: 0, color: '#e74c3c' },
+    { label: '1-3mo', min: 30, max: 90, active: 0, departed: 0, color: '#f39c12' },
+    { label: '3-6mo', min: 90, max: 180, active: 0, departed: 0, color: '#c9952c' },
+    { label: '6-12mo', min: 180, max: 365, active: 0, departed: 0, color: '#4a9eff' },
+    { label: '1yr+', min: 365, max: Infinity, active: 0, departed: 0, color: '#00c864' },
+  ];
+  for (const d of activeTenures) {
+    const b = buckets.find(bb => d >= bb.min && d < bb.max);
+    if (b) b.active++;
+  }
+  for (const d of departedCareers) {
+    const b = buckets.find(bb => d >= bb.min && d < bb.max);
+    if (b) b.departed++;
+  }
+  const maxBucket = Math.max(...buckets.map(b => b.active + b.departed), 1);
+
+  // Monthly churn timeline (last 6 months)
+  const churnByMonth = [];
+  for (let i = 5; i >= 0; i--) {
+    const mDate = new Date(now); mDate.setMonth(mDate.getMonth() - i); mDate.setDate(1);
+    const mStart = mDate.toISOString().substring(0, 7); // YYYY-MM
+    const mLabel = mDate.toLocaleDateString('en-AU', { month: 'short' });
+    const count = departed.filter(g => g.deletedAt && g.deletedAt.substring(0, 7) === mStart).length;
+    churnByMonth.push({ label: mLabel, count });
+  }
+  const maxChurn = Math.max(...churnByMonth.map(c => c.count), 1);
+
+  // Hall of Fame — current veterans (active, top 3 tenure)
+  const veterans = active.filter(g => g.startDate).map(g => ({ g, days: Math.floor((now - new Date(g.startDate + 'T00:00:00')) / msPerDay) })).sort((a, b) => b.days - a.days).slice(0, 3);
+
+  // Legends who left — top 3 longest careers of departed
+  const legends = departed.map(g => ({ g, days: Math.floor((new Date(g.deletedAt) - new Date(g.startDate + 'T00:00:00')) / msPerDay) })).filter(x => x.days >= 0).sort((a, b) => b.days - a.days).slice(0, 3);
+
+  let html = '<div style="margin:24px 0">';
+  html += '<div class="venue-divider"><span>\u2014 PROFILE RETENTION \u2014</span></div>';
+
+  // Stats row
+  html += '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(0,200,100,0.05);border:1px solid rgba(0,200,100,0.12);border-radius:8px;min-width:100px"><div style="font-size:18px;font-weight:700;color:#00c864">' + (avgActiveDays ? daysLabel(avgActiveDays) : '\u2014') + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Avg Active Tenure</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(201,149,44,0.05);border:1px solid rgba(201,149,44,0.12);border-radius:8px;min-width:100px"><div style="font-size:18px;font-weight:700;color:var(--gold)">' + (avgCareerDays ? daysLabel(avgCareerDays) : '\u2014') + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Avg Career (Departed)</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(231,76,60,0.05);border:1px solid rgba(231,76,60,0.12);border-radius:8px;min-width:100px"><div style="font-size:18px;font-weight:700;color:#e74c3c">' + churnRate + '%</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Churn Rate</div></div>';
+  html += '<div style="text-align:center;padding:12px 20px;background:rgba(74,158,255,0.05);border:1px solid rgba(74,158,255,0.12);border-radius:8px;min-width:100px"><div style="font-size:18px;font-weight:700;color:#4a9eff">' + departed.length + '</div><div style="font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px">Departed (All-Time)</div></div>';
+  html += '</div>';
+
+  // Tenure distribution chart
+  html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Tenure Distribution</div>';
+  html += '<div style="display:flex;gap:8px;justify-content:center;align-items:flex-end;height:120px;padding:0 12px;margin-bottom:8px">';
+  for (const b of buckets) {
+    const total = b.active + b.departed;
+    const pct = total / maxBucket;
+    const height = Math.max(6, Math.round(pct * 100));
+    const activeHeight = total > 0 ? Math.round((b.active / total) * height) : 0;
+    const departedHeight = height - activeHeight;
+    html += '<div style="flex:1;max-width:70px;text-align:center">';
+    html += '<div style="font-size:11px;color:var(--text-dim);margin-bottom:4px">' + total + '</div>';
+    html += '<div style="display:flex;flex-direction:column-reverse;height:' + height + 'px;background:rgba(255,255,255,0.05);border-radius:4px 4px 0 0;overflow:hidden">';
+    if (activeHeight > 0) html += '<div style="height:' + activeHeight + 'px;background:' + b.color + '" title="Active: ' + b.active + '"></div>';
+    if (departedHeight > 0) html += '<div style="height:' + departedHeight + 'px;background:rgba(136,136,136,0.5)" title="Departed: ' + b.departed + '"></div>';
+    html += '</div>';
+    html += '<div style="font-size:10px;color:var(--text-dim);margin-top:4px">' + b.label + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  html += '<div style="display:flex;gap:16px;justify-content:center;font-size:10px;color:var(--text-dim);margin-bottom:24px"><span><span style="display:inline-block;width:8px;height:8px;background:#c9952c;border-radius:2px;margin-right:4px;vertical-align:middle"></span>Active</span><span><span style="display:inline-block;width:8px;height:8px;background:rgba(136,136,136,0.5);border-radius:2px;margin-right:4px;vertical-align:middle"></span>Departed</span></div>';
+
+  // Monthly churn timeline
+  if (departed.length > 0) {
+    html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Departures (Last 6 Months)</div>';
+    html += '<div style="display:flex;gap:4px;justify-content:center;align-items:flex-end;height:40px;margin-bottom:8px">';
+    for (const m of churnByMonth) {
+      const h = Math.max(4, Math.round((m.count / maxChurn) * 36));
+      html += '<div style="flex:1;max-width:60px;text-align:center" title="' + m.label + ': ' + m.count + ' departures">';
+      html += '<div style="height:' + h + 'px;background:#e74c3c;border-radius:2px;margin:0 auto;width:60%"></div>';
+      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:2px">' + m.label + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '<div style="margin-bottom:24px"></div>';
+  }
+
+  // Current Veterans
+  if (veterans.length) {
+    html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">\u2605 Current Veterans</div>';
+    html += '<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">';
+    for (const v of veterans) {
+      const g = v.g;
+      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:80px;height:100px;object-fit:cover;border-radius:8px;border:1px solid rgba(201,149,44,0.3)">' : '';
+      html += '<div style="text-align:center;cursor:pointer" onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name||'').replace(/'/g,"\\'") + '\'))">';
+      html += img;
+      html += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--gold);margin-top:6px">' + (g.name || '') + '</div>';
+      html += '<div style="font-size:10px;color:#00c864;font-weight:600">' + daysLabel(v.days) + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  // Legends who left
+  if (legends.length) {
+    html += '<div style="text-align:center;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;margin-top:16px">Legends Who Left</div>';
+    html += '<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;opacity:0.75">';
+    for (const v of legends) {
+      const g = v.g;
+      const img = g.photos && g.photos[0] ? '<img src="' + imgProxy(g.photos[0]) + '" alt="' + (g.name||'') + '" style="width:80px;height:100px;object-fit:cover;border-radius:8px;border:1px solid rgba(136,136,136,0.3);filter:grayscale(30%)">' : '';
+      html += '<div style="text-align:center">';
+      html += img;
+      html += '<div style="font-family:Playfair Display,serif;font-size:12px;color:var(--text-dim);margin-top:6px">' + (g.name || '') + '</div>';
+      html += '<div style="font-size:10px;color:#888">' + daysLabel(v.days) + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function buildTurnoverReport(venueId) {
   const venueGirls = allGirls.filter(g => g.venue === venueId);
   if (venueGirls.length < 3) return '';
@@ -6099,7 +6245,7 @@ function renderVenuePage(regionSlug, suburbSlug, venueId) {
   html += buildVenueReviewSection(venueId, []);
   html += buildBestTimeToVisit(venueId);
   html += buildVenueTrends(venueId);
-  html += buildTurnoverReport(venueId);
+  html += buildProfileRetention(venueId);
   html += buildPriceIndex(venueId);
   html += '<hr class="gold-divider">';
   const venueBasePath = '/sydney/' + (regionSlug || VENUE_REGIONS[venueId] || 'other') + '/' + v.suburbSlug + '/' + venueId;

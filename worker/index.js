@@ -3049,8 +3049,10 @@ async function checkBrokenPhotos(env, site) {
     if (slots && typeof slots === 'object') rosteredNames.add(name);
   }
 
-  // Step 1: Flag dead profiles as deleted — oldUrl is 404 and not rostered
-  const removeCandidates = girls.filter(g => g.oldUrl && !rosteredNames.has(g.name) && g.originalSite !== 'Exists' && g.deleted !== 'Yes');
+  // Step 1: Flag dead profiles as deleted — oldUrl is 404 and not rostered.
+  // Check ALL non-deleted profiles (including originalSite:'Exists') so we
+  // catch profiles that were alive at last sync but have since been removed.
+  const removeCandidates = girls.filter(g => g.oldUrl && !rosteredNames.has(g.name) && g.deleted !== 'Yes');
   let removed = 0;
   for (const g of removeCandidates) {
     try {

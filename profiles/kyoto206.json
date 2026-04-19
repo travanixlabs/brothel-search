@@ -1219,7 +1219,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2022-09-01",
+      "lastRostered": "2026-04-20",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-07.jpeg",
@@ -2486,7 +2486,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2025-04-01",
+      "lastRostered": "2026-04-20",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Kana-Jp-01.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Kana-Jp-02.jpeg",
@@ -9288,7 +9288,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-17T09:56:09.919Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-20",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/83171776411797_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/83181776411801_.pic_.jpg",
@@ -10371,7 +10371,12 @@
         "end": "21:00"
       }
     },
-    "Nana": {},
+    "Nana": {
+      "2026-04-20": {
+        "start": "13:00",
+        "end": "23:00"
+      }
+    },
     "Olivia": {},
     "Masami": {
       "2026-04-02": {
@@ -11043,11 +11048,21 @@
       "2026-04-19": {
         "start": "22:00",
         "end": "05:00"
+      },
+      "2026-04-20": {
+        "start": "12:00",
+        "end": "03:00"
+      }
+    },
+    "Kirara": {
+      "2026-04-20": {
+        "start": "18:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-17T04:00:17.696Z",
-  "lastCalendarSync": "2026-04-19T03:54:33.784Z",
+  "lastCalendarSync": "2026-04-19T09:25:27.246Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

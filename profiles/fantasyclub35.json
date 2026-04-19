@@ -1483,6 +1483,31 @@
       "labels": [],
       "lastModified": "2026-04-14T04:35:26.811Z",
       "lastRostered": "2026-04-19"
+    },
+    {
+      "name": "Nozomi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "D",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-04-19",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/nozomijapanese/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Nozomi.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Nozomi-02.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Nozomi-01.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/Nozomi-03.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-19T06:00:32.662Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -2077,12 +2102,13 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-18T10:34:30.209Z",
+  "lastGirlsSync": "2026-04-19T06:00:32.662Z",
   "lastCalendarSync": "2026-04-14T05:08:46.262Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",
     "https://fantasyclub35.com.au/listing_type/kk-chinese/",
-    "https://fantasyclub35.com.au/listing_type/lucky-vietnamese/"
+    "https://fantasyclub35.com.au/listing_type/lucky-vietnamese/",
+    "https://fantasyclub35.com.au/listing_type/luckyhongkong/"
   ]
 }

@@ -261,7 +261,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-20",
       "desc": "A sexy & confident lover! Neena has a mesmerising way of bringing men to their knees. A session with her is always an erotic and memorable encounter."
     },
     {
@@ -1133,7 +1133,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-07-01",
+      "lastRostered": "2026-04-20",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -1860,7 +1860,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-08"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Maisie",
@@ -2157,7 +2157,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Dasha",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-19"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Katalina",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Cherry",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Victoria",
@@ -2596,6 +2596,10 @@
       "2026-04-18": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-04-20": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Desiree": {
@@ -2742,6 +2746,10 @@
       "2026-04-18": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-04-20": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Layla": {
@@ -3083,7 +3091,8 @@
       "2026-04-16",
       "2026-04-17",
       "2026-04-18",
-      "2026-04-19"
+      "2026-04-19",
+      "2026-04-20"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3291,6 +3300,10 @@
       "2026-04-08": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-20": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ivy": {
@@ -3347,6 +3360,10 @@
         "end": "04:00"
       },
       "2026-04-19": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-04-20": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -3517,6 +3534,10 @@
       "2026-04-18": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-04-20": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Neena": {
@@ -3526,6 +3547,10 @@
       },
       "2026-04-19": {
         "start": "12:00",
+        "end": "17:00"
+      },
+      "2026-04-20": {
+        "start": "11:00",
         "end": "17:00"
       }
     },
@@ -3550,8 +3575,14 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Lulu": {
+      "2026-04-20": {
+        "start": "11:00",
+        "end": "17:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-17T16:43:08.229Z",
-  "lastCalendarSync": "2026-04-19T06:13:58.269Z"
+  "lastCalendarSync": "2026-04-19T15:04:11.388Z"
 }

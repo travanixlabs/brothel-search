@@ -10172,8 +10172,8 @@
         "end": "04:00"
       },
       "2026-04-21": {
-        "start": "14:00",
-        "end": "04:00"
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Miyaka": {},
@@ -11041,7 +11041,7 @@
     }
   },
   "lastGirlsSync": "2026-04-18T04:00:31.319Z",
-  "lastCalendarSync": "2026-04-20T03:57:25.535Z",
+  "lastCalendarSync": "2026-04-20T06:30:51.215Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

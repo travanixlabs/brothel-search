@@ -5562,19 +5562,17 @@ function renderWnVenueView(day, isToday, now) {
     byVenue[vid].entries.push(e);
   }
   const venueIds = Object.keys(byVenue).sort((a, b) => byVenue[b].entries.length - byVenue[a].entries.length);
-  let html = '<div style="display:flex;flex-direction:column;gap:20px">';
+  let html = '<div style="display:flex;flex-direction:column;gap:16px">';
   for (const vid of venueIds) {
     const grp = byVenue[vid];
     const v = grp.venue;
     if (!v) continue;
     const count = grp.entries.length;
-    html += '<div style="border:1px solid rgba(201,149,44,0.12);border-radius:12px;padding:16px;background:rgba(12,12,20,0.3)">';
-    html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;cursor:pointer" onclick="navigateToLanding(\'/sydney/' + (VENUE_REGIONS[vid] || 'other') + '/' + v.suburbSlug + '/' + vid + '/\')">';
-    html += '<div><div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold)">' + v.name + '</div><div style="font-size:11px;color:var(--text-dim)">' + v.suburb + ' \u00b7 ' + count + ' working</div></div>';
-    html += '<span style="font-family:Orbitron,sans-serif;font-size:10px;color:var(--gold);letter-spacing:2px">VIEW \u2192</span>';
-    html += '</div>';
-    html += '<div class="venue-carousel wrap" style="margin-bottom:0">';
-    for (const e of grp.entries) html += wnGirlMiniCard(e.girl, e.slot);
+    const venuePath = '/sydney/' + (VENUE_REGIONS[vid] || 'other') + '/' + v.suburbSlug + '/' + vid + '/';
+    html += '<div>';
+    html += '<div class="venue-divider" style="cursor:pointer" onclick="navigateToLanding(\'' + venuePath + '\')"><span>\u2014 ' + v.name.toUpperCase() + ' \u00b7 ' + v.suburb.toUpperCase() + ' \u00b7 ' + count + ' GIRLS \u2014</span></div>';
+    html += '<div class="venue-carousel wrap">';
+    for (const e of grp.entries.sort((a, b) => a.order - b.order)) html += wnGirlMiniCard(e.girl, e.slot);
     html += '</div>';
     html += '</div>';
   }

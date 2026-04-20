@@ -5535,7 +5535,183 @@ window.deleteRoadmapItemUI = async function(id) {
 // ── Working Now ──
 
 let wnSelectedDay = 0;
+let wnView = 'timeline'; // timeline | venue | timewindow | price | duo
 function setWnDay(i) { wnSelectedDay = i; const landing = document.getElementById('landingPage'); if (landing) landing.innerHTML = renderWorkingNow(); }
+function setWnView(v) { wnView = v; const landing = document.getElementById('landingPage'); if (landing) landing.innerHTML = renderWorkingNow(); }
+
+function wnProfileClickAttr(g) {
+  return 'onclick="showProfile(allGirls.find(gg=>gg.venue===\'' + g.venue + '\'&&gg.name===\'' + (g.name || '').replace(/'/g, "\\'") + '\'))"';
+}
+
+function wnGirlMiniCard(g, slot) {
+  const thumb = g.photos && g.photos.length ? imgProxy(g.photos[0], 80) : '';
+  const timeStr = validSlot(slot) ? fmt24to12(slot.start) + ' - ' + fmt24to12(slot.end) : '';
+  return '<div class="venue-carousel-item" style="width:110px;cursor:pointer;text-align:center" ' + wnProfileClickAttr(g) + '>' +
+    (thumb ? '<img src="' + thumb + '" alt="' + (g.name||'') + '" style="width:110px;height:140px;object-fit:cover;display:block;border-radius:10px 10px 0 0">' : '') +
+    '<div class="venue-carousel-info"><div class="venue-carousel-name">' + (g.name||'') + '</div>' +
+    (timeStr ? '<div class="venue-carousel-meta" style="color:var(--gold)">' + timeStr + '</div>' : '') +
+    '</div></div>';
+}
+
+function renderWnVenueView(day, isToday, now) {
+  if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
+  const byVenue = {};
+  for (const e of day.entries) {
+    const vid = e.girl.venue;
+    if (!byVenue[vid]) byVenue[vid] = { venue: VENUE_DATA[vid], entries: [] };
+    byVenue[vid].entries.push(e);
+  }
+  const venueIds = Object.keys(byVenue).sort((a, b) => byVenue[b].entries.length - byVenue[a].entries.length);
+  let html = '<div style="display:flex;flex-direction:column;gap:20px">';
+  for (const vid of venueIds) {
+    const grp = byVenue[vid];
+    const v = grp.venue;
+    if (!v) continue;
+    const count = grp.entries.length;
+    html += '<div style="border:1px solid rgba(201,149,44,0.12);border-radius:12px;padding:16px;background:rgba(12,12,20,0.3)">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;cursor:pointer" onclick="navigateToLanding(\'/sydney/' + (VENUE_REGIONS[vid] || 'other') + '/' + v.suburbSlug + '/' + vid + '/\')">';
+    html += '<div><div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold)">' + v.name + '</div><div style="font-size:11px;color:var(--text-dim)">' + v.suburb + ' \u00b7 ' + count + ' working</div></div>';
+    html += '<span style="font-family:Orbitron,sans-serif;font-size:10px;color:var(--gold);letter-spacing:2px">VIEW \u2192</span>';
+    html += '</div>';
+    html += '<div class="venue-carousel wrap" style="margin-bottom:0">';
+    for (const e of grp.entries) html += wnGirlMiniCard(e.girl, e.slot);
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderWnTimeWindowView(day, isToday, now) {
+  if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
+  // Windows: 10am-2pm, 2pm-6pm, 6pm-10pm, 10pm-2am, 2am-6am
+  const windows = [
+    { label: 'Morning', range: '10am-2pm', startM: 10 * 60, endM: 14 * 60 },
+    { label: 'Afternoon', range: '2pm-6pm', startM: 14 * 60, endM: 18 * 60 },
+    { label: 'Evening', range: '6pm-10pm', startM: 18 * 60, endM: 22 * 60 },
+    { label: 'Late Night', range: '10pm-2am', startM: 22 * 60, endM: 26 * 60 },
+    { label: 'Overnight', range: '2am-6am', startM: 26 * 60, endM: 30 * 60 },
+  ];
+  const buckets = windows.map(w => ({ ...w, entries: [] }));
+  for (const e of day.entries) {
+    if (!validSlot(e.slot)) continue;
+    let sM = slotMins(e.slot.start);
+    let eM = slotMins(e.slot.end);
+    if (eM <= sM) eM += 24 * 60;
+    for (const b of buckets) {
+      // Check if girl's window overlaps with bucket
+      if (sM < b.endM && eM > b.startM) b.entries.push(e);
+    }
+  }
+  let html = '<div style="display:flex;flex-direction:column;gap:16px">';
+  for (const b of buckets) {
+    if (!b.entries.length) continue;
+    html += '<div>';
+    html += '<div class="venue-divider"><span>\u2014 ' + b.label.toUpperCase() + ' \u00b7 ' + b.range + ' \u00b7 ' + b.entries.length + ' GIRLS \u2014</span></div>';
+    html += '<div class="venue-carousel wrap">';
+    for (const e of b.entries.sort((a, b) => a.order - b.order)) html += wnGirlMiniCard(e.girl, e.slot);
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderWnPriceView(day) {
+  if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
+  // Brackets based on val3 (60 min)
+  const brackets = [
+    { label: 'Under $250', min: 0, max: 249, entries: [] },
+    { label: '$250 - $349', min: 250, max: 349, entries: [] },
+    { label: '$350 - $449', min: 350, max: 449, entries: [] },
+    { label: '$450 - $549', min: 450, max: 549, entries: [] },
+    { label: '$550+', min: 550, max: Infinity, entries: [] },
+    { label: 'No Price', min: -1, max: -1, entries: [] },
+  ];
+  for (const e of day.entries) {
+    const v = parseInt(e.girl.val3);
+    if (!v || isNaN(v)) { brackets[5].entries.push(e); continue; }
+    for (let i = 0; i < 5; i++) {
+      if (v >= brackets[i].min && v <= brackets[i].max) { brackets[i].entries.push(e); break; }
+    }
+  }
+  let html = '<div style="text-align:center;font-size:11px;color:var(--text-dim);margin-bottom:16px">Grouped by 60-minute rate</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:16px">';
+  for (const b of brackets) {
+    if (!b.entries.length) continue;
+    html += '<div>';
+    html += '<div class="venue-divider"><span>\u2014 ' + b.label.toUpperCase() + ' \u00b7 ' + b.entries.length + ' GIRLS \u2014</span></div>';
+    html += '<div class="venue-carousel wrap">';
+    for (const e of b.entries.sort((a, b) => (parseInt(a.girl.val3) || 0) - (parseInt(b.girl.val3) || 0))) {
+      const priceStr = e.girl.val3 ? '$' + e.girl.val3 + ' / 60min' : 'No price';
+      const card = wnGirlMiniCard(e.girl, e.slot).replace('</div></div></div>', '<div class="venue-carousel-meta" style="color:var(--gold)">' + priceStr + '</div></div></div>');
+      html += card;
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderWnDuoView(day) {
+  if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
+  // Filter to only girls with Double or Double Lesbian
+  const matchesDuo = g => {
+    const labels = (g.labels || []).map(s => s.toLowerCase());
+    const desc = (g.desc || '').toLowerCase();
+    const type = (g.type || '').toLowerCase();
+    const all = labels.join(' ') + ' ' + desc + ' ' + type;
+    return all.includes('double lesbian') || all.includes('2 men') || /\bdouble\b/.test(all) || /\bduo\b/.test(all);
+  };
+  const duoEntries = day.entries.filter(e => matchesDuo(e.girl));
+  if (!duoEntries.length) return '<div class="empty-msg"><div>No girls with Double or Double Lesbian services working this day.</div></div>';
+
+  // Group by venue
+  const byVenue = {};
+  for (const e of duoEntries) {
+    const vid = e.girl.venue;
+    if (!byVenue[vid]) byVenue[vid] = [];
+    byVenue[vid].push(e);
+  }
+  const venueIds = Object.keys(byVenue).filter(vid => byVenue[vid].length >= 2).sort((a, b) => byVenue[b].length - byVenue[a].length);
+  const singles = Object.keys(byVenue).filter(vid => byVenue[vid].length === 1);
+
+  let html = '<div style="text-align:center;font-size:12px;color:var(--text-dim);margin-bottom:16px">Girls offering Double or Double Lesbian services. Venues with 2+ shown first for easy pairing.</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:20px">';
+
+  // Venues with pairings
+  if (venueIds.length) {
+    html += '<div><div class="venue-divider"><span>\u2014 PAIR AT SAME VENUE \u2014</span></div>';
+    for (const vid of venueIds) {
+      const v = VENUE_DATA[vid];
+      const entries = byVenue[vid];
+      if (!v) continue;
+      html += '<div style="border:1px solid rgba(0,200,100,0.2);border-radius:12px;padding:16px;background:rgba(0,200,100,0.03);margin-bottom:12px">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">';
+      html += '<div style="font-family:Playfair Display,serif;font-size:16px;font-weight:700;color:#00c864">' + v.name + ' \u2014 ' + entries.length + ' available</div>';
+      html += '<span style="font-family:Orbitron,sans-serif;font-size:10px;color:#00c864;letter-spacing:2px">\u2605 DUO READY</span>';
+      html += '</div>';
+      html += '<div class="venue-carousel wrap">';
+      for (const e of entries) html += wnGirlMiniCard(e.girl, e.slot);
+      html += '</div></div>';
+    }
+    html += '</div>';
+  }
+
+  // Singles (would need cross-venue booking)
+  if (singles.length) {
+    html += '<div><div class="venue-divider"><span>\u2014 SOLO (NO PAIR AT SAME VENUE) \u2014</span></div>';
+    html += '<div class="venue-carousel wrap">';
+    for (const vid of singles) {
+      for (const e of byVenue[vid]) html += wnGirlMiniCard(e.girl, e.slot);
+    }
+    html += '</div></div>';
+  }
+
+  html += '</div>';
+  return html;
+}
 
 function renderWorkingNow() {
   const now = new Date();
@@ -5626,6 +5802,45 @@ function renderWorkingNow() {
     html += '<button class="roster-day-tab' + (i === wnSelectedDay ? ' active' : '') + '" onclick="setWnDay(' + i + ')">' + label + ' <span style="opacity:0.7">' + dateLabel + '</span><span class="tab-count">' + day.entries.length + '</span></button>';
   });
   html += '</div>';
+
+  // View switcher
+  const views = [
+    { id: 'timeline', label: 'Timeline' },
+    { id: 'venue', label: 'By Venue' },
+    { id: 'timewindow', label: 'Time Window' },
+    { id: 'price', label: 'Price Bracket' },
+    { id: 'duo', label: 'Duo Finder' },
+  ];
+  html += '<div style="display:flex;gap:8px;justify-content:center;margin:16px 0;flex-wrap:wrap">';
+  for (const v of views) {
+    const active = wnView === v.id;
+    html += '<button onclick="setWnView(\'' + v.id + '\')" style="padding:6px 14px;font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:' + (active ? 'rgba(201,149,44,0.2)' : 'transparent') + ';border:1px solid ' + (active ? 'var(--gold)' : 'rgba(201,149,44,0.25)') + ';color:var(--gold);border-radius:6px;cursor:pointer">' + v.label + '</button>';
+  }
+  html += '</div>';
+
+  // Branch to selected view
+  const selectedDayData = rosterDays[wnSelectedDay];
+  const selectedIsTodayForView = selectedDayData && selectedDayData.dateStr === todayStr;
+  if (wnView === 'venue') {
+    html += renderWnVenueView(selectedDayData, selectedIsTodayForView, now);
+    html += '</div>';
+    return html;
+  }
+  if (wnView === 'timewindow') {
+    html += renderWnTimeWindowView(selectedDayData, selectedIsTodayForView, now);
+    html += '</div>';
+    return html;
+  }
+  if (wnView === 'price') {
+    html += renderWnPriceView(selectedDayData);
+    html += '</div>';
+    return html;
+  }
+  if (wnView === 'duo') {
+    html += renderWnDuoView(selectedDayData);
+    html += '</div>';
+    return html;
+  }
 
   // Timeline
   const TIMELINE_START = 6, TIMELINE_HOURS = 24;

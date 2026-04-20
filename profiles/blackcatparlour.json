@@ -2080,7 +2080,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-20"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Sasha",
@@ -2820,7 +2820,8 @@
         "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/69c4ea4035ee2878e455d8e2a9dc6112.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Bree***",
@@ -2840,7 +2841,8 @@
         "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/32ebf9a9251cce06f6bd2abc1fe449c5.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-20"
     },
     {
       "name": "Taylor",
@@ -2860,7 +2862,8 @@
         "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/69c4ea4035ee2878e455d8e2a9dc6112.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-04-20"
     }
   ],
   "calendar": {
@@ -3044,6 +3047,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-04-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Pandora": {
@@ -3115,10 +3122,6 @@
       },
       "2026-04-15": {
         "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-04-21": {
-        "start": "06:00",
         "end": "06:00"
       },
       "2026-04-23": {
@@ -3265,10 +3268,6 @@
         "start": "06:00",
         "end": "18:00"
       },
-      "2026-04-20": {
-        "start": "06:00",
-        "end": "18:00"
-      },
       "2026-04-22": {
         "start": "06:00",
         "end": "18:00"
@@ -3321,10 +3320,6 @@
         "start": "06:00",
         "end": "18:00"
       },
-      "2026-04-20": {
-        "start": "06:00",
-        "end": "18:00"
-      },
       "2026-04-22": {
         "start": "06:00",
         "end": "18:00"
@@ -3348,10 +3343,6 @@
         "end": "18:00"
       },
       "2026-04-09": {
-        "start": "06:00",
-        "end": "18:00"
-      },
-      "2026-04-20": {
         "start": "06:00",
         "end": "18:00"
       },
@@ -3416,10 +3407,6 @@
       "2026-04-06": {
         "start": "06:00",
         "end": "06:00"
-      },
-      "2026-04-20": {
-        "start": "06:00",
-        "end": "18:00"
       },
       "2026-04-22": {
         "start": "06:00",
@@ -3490,7 +3477,7 @@
         "end": "06:00"
       },
       "2026-04-20": {
-        "start": "06:00",
+        "start": "18:00",
         "end": "06:00"
       },
       "2026-04-22": {
@@ -3548,10 +3535,6 @@
         "end": "18:00"
       },
       "2026-04-08": {
-        "start": "06:00",
-        "end": "18:00"
-      },
-      "2026-04-20": {
         "start": "06:00",
         "end": "18:00"
       },
@@ -3817,7 +3800,23 @@
         "start": "06:00",
         "end": "06:00"
       },
-      "2026-04-20": {
+      "2026-04-21": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-22": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-23": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-24": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-25": {
         "start": "06:00",
         "end": "18:00"
       }
@@ -3916,10 +3915,6 @@
         "end": "06:00"
       },
       "2026-04-23": {
-        "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-04-20": {
         "start": "18:00",
         "end": "06:00"
       },
@@ -4204,6 +4199,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-04-23": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Shannon": {
@@ -4476,6 +4475,10 @@
         "end": "06:00"
       },
       "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-04-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4817,6 +4820,10 @@
       },
       "2026-04-26": {
         "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-20": {
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -5345,6 +5352,10 @@
       "2026-04-26": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-04-21": {
+        "start": "06:00",
+        "end": "06:00"
       }
     },
     "Gia": {},
@@ -5374,7 +5385,7 @@
         "end": "06:00"
       },
       "2026-04-20": {
-        "start": "06:00",
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -5433,8 +5444,14 @@
         "start": "18:00",
         "end": "06:00"
       }
+    },
+    "Audrina": {
+      "2026-04-20": {
+        "start": "18:00",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-20T10:00:41.465Z",
-  "lastCalendarSync": "2026-04-20T08:33:00.420Z"
+  "lastCalendarSync": "2026-04-20T10:17:48.744Z"
 }

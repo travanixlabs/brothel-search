@@ -4932,71 +4932,129 @@ function sortCompareTable(col) {
   landing.innerHTML = renderComparePage();
 }
 
-function runVenueCalculator() {
-  const idA = document.getElementById('venueCalcA').value;
-  const idB = document.getElementById('venueCalcB').value;
-  const resultEl = document.getElementById('venueCalcResult');
-  if (!idA || !idB || idA === idB) { resultEl.innerHTML = '<div style="text-align:center;color:#e74c3c;font-size:12px">Please select two different venues</div>'; return; }
+// ── Venue Compare (multi-select) ──
+const venueCompareList = [];
+function toggleVenueCompare(venueId) {
+  const idx = venueCompareList.indexOf(venueId);
+  if (idx >= 0) venueCompareList.splice(idx, 1);
+  else if (venueCompareList.length < 5) venueCompareList.push(venueId);
+  updateVenueCompareTray();
+  // Refresh icons in the table
+  document.querySelectorAll('.compare-table .compare-btn').forEach(btn => {
+    const inList = venueCompareList.includes(btn.dataset.venueId);
+    btn.classList.toggle('in-compare', inList);
+    btn.innerHTML = inList
+      ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>'
+      : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>';
+  });
+}
 
-  const today = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
-  const thirtyDaysAgo = new Date(); thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  const thirtyAgo = thirtyDaysAgo.toISOString().split('T')[0];
-  const sevenDaysAgo = new Date(); sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-  const sevenAgo = sevenDaysAgo.toISOString().split('T')[0];
-
-  const stats = (id) => {
-    const v = VENUE_DATA[id];
-    const girls = allGirls.filter(g => g.venue === id);
-    const active = girls.filter(g => g.lastRostered && g.lastRostered >= thirtyAgo);
-    const rosteredToday = girls.filter(g => { const c = calendarData[(g.venue || '') + ':' + g.name]; return c && c[today]; }).length;
-    const newWeek = girls.filter(g => g.startDate && g.startDate >= sevenAgo).length;
-    const avg = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : 0; };
-    const avgMatch = userPreferences && active.length ? (() => { const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0); return scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0; })() : 0;
-    // Retention: girls from 3+ months ago still active
-    const threeMonthsAgo = new Date(); threeMonthsAgo.setDate(threeMonthsAgo.getDate() - 90);
-    const threeMonthStr = threeMonthsAgo.toISOString().split('T')[0];
-    const oldGirls = girls.filter(g => g.startDate && g.startDate <= threeMonthStr);
-    const stillActive = oldGirls.filter(g => g.lastRostered && g.lastRostered >= sevenAgo);
-    const retention = oldGirls.length > 0 ? Math.round((stillActive.length / oldGirls.length) * 100) : 0;
-    return { name: v.name, suburb: v.suburb, total: girls.length, active: active.length, rosteredToday, newWeek, avg30: avg('val1'), avg45: avg('val2'), avg60: avg('val3'), avgMatch, retention };
-  };
-
-  const a = stats(idA), b = stats(idB);
-  const cell = (va, vb, higherWins = true) => {
-    if (va === vb || va === 0 || vb === 0) return [va, vb, '', ''];
-    const aWins = higherWins ? va > vb : va < vb;
-    return [va, vb, aWins ? 'color:#00c864;font-weight:700' : '', aWins ? '' : 'color:#00c864;font-weight:700'];
-  };
-
-  const rows = [
-    { label: 'Suburb', vals: [a.suburb, b.suburb, '', ''] },
-    { label: 'Total Profiles', vals: cell(a.total, b.total, true) },
-    { label: 'Active (30d)', vals: cell(a.active, b.active, true) },
-    { label: 'Rostered Today', vals: cell(a.rosteredToday, b.rosteredToday, true) },
-    { label: 'New This Week', vals: cell(a.newWeek, b.newWeek, true) },
-    { label: 'Avg 30 min', vals: cell(a.avg30, b.avg30, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
-    { label: 'Avg 45 min', vals: cell(a.avg45, b.avg45, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
-    { label: 'Avg 60 min', vals: cell(a.avg60, b.avg60, false).map((v, i) => i < 2 ? (v ? '$' + v : '—') : v) },
-    { label: '3-Month Retention', vals: cell(a.retention, b.retention, true).map((v, i) => i < 2 ? (v ? v + '%' : '—') : v) },
-  ];
-  if (userPreferences) rows.push({ label: 'Avg Match Score', vals: cell(a.avgMatch, b.avgMatch, true).map((v, i) => i < 2 ? (v ? v + '%' : '—') : v) });
-
-  // Count wins
-  let aWins = 0, bWins = 0;
-  rows.forEach(r => { if (r.vals[2].includes('00c864')) aWins++; if (r.vals[3].includes('00c864')) bWins++; });
-
-  let html = '<div style="max-width:600px;margin:0 auto;border:1px solid rgba(201,149,44,0.2);border-radius:12px;padding:20px;background:rgba(12,12,20,0.3)">';
-  html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
-  html += '<tr><td></td><td style="text-align:center;padding:8px;color:var(--gold);font-weight:700;font-family:Playfair Display,serif;font-size:16px">' + a.name + '</td><td style="text-align:center;padding:8px;color:var(--gold);font-weight:700;font-family:Playfair Display,serif;font-size:16px">' + b.name + '</td></tr>';
-  for (const r of rows) {
-    html += '<tr style="border-top:1px solid rgba(201,149,44,0.1)"><td style="padding:8px;color:var(--text-dim)">' + r.label + '</td><td style="padding:8px;text-align:center;' + r.vals[2] + '">' + r.vals[0] + '</td><td style="padding:8px;text-align:center;' + r.vals[3] + '">' + r.vals[1] + '</td></tr>';
+function updateVenueCompareTray() {
+  let tray = document.getElementById('venueCompareTray');
+  if (!tray) {
+    tray = document.createElement('div');
+    tray.id = 'venueCompareTray';
+    tray.className = 'compare-tray';
+    tray.innerHTML = '<div class="compare-tray-inner"><span class="compare-tray-label">Compare (<span id="venueCompareCount">0</span>/5)</span><div class="compare-tray-thumbs" id="venueCompareTrayLabels"></div><button class="auth-btn" id="venueCompareBtn" style="padding:8px 20px;margin:0;width:auto;font-size:11px">Compare Now</button><button class="compare-tray-clear" id="venueCompareClear" title="Clear">&times;</button></div>';
+    document.body.appendChild(tray);
+    document.getElementById('venueCompareBtn').onclick = () => { if (venueCompareList.length >= 2) showVenueCompareOverlay(); };
+    document.getElementById('venueCompareClear').onclick = () => { venueCompareList.length = 0; updateVenueCompareTray(); document.querySelectorAll('.compare-table .compare-btn').forEach(btn => { btn.classList.remove('in-compare'); btn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>'; }); };
   }
-  html += '</table>';
-  const winner = aWins > bWins ? a.name + ' wins (' + aWins + '-' + bWins + ')' : bWins > aWins ? b.name + ' wins (' + bWins + '-' + aWins + ')' : 'Tied (' + aWins + '-' + bWins + ')';
-  const winnerColor = aWins === bWins ? '#c9952c' : '#00c864';
-  html += '<div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,149,44,0.1);font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:2px;color:' + winnerColor + ';font-weight:700;text-transform:uppercase">' + winner + '</div>';
-  html += '</div>';
-  resultEl.innerHTML = html;
+  tray.style.display = venueCompareList.length > 0 ? '' : 'none';
+  document.getElementById('venueCompareCount').textContent = venueCompareList.length;
+  document.getElementById('venueCompareTrayLabels').innerHTML = venueCompareList.map(id => '<span style="font-size:10px;color:var(--gold);border:1px solid rgba(201,149,44,0.3);padding:2px 8px;border-radius:4px;white-space:nowrap">' + (VENUE_DATA[id] ? VENUE_DATA[id].name : id) + '</span>').join('');
+}
+
+function venueStats(id) {
+  const today = (() => { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0'); })();
+  const thirtyAgo = new Date(); thirtyAgo.setDate(thirtyAgo.getDate() - 30);
+  const thirtyStr = thirtyAgo.toISOString().split('T')[0];
+  const sevenAgo = new Date(); sevenAgo.setDate(sevenAgo.getDate() - 7);
+  const sevenStr = sevenAgo.toISOString().split('T')[0];
+  const threeMonthsAgo = new Date(); threeMonthsAgo.setDate(threeMonthsAgo.getDate() - 90);
+  const threeMonthStr = threeMonthsAgo.toISOString().split('T')[0];
+
+  const v = VENUE_DATA[id];
+  const girls = allGirls.filter(g => g.venue === id);
+  const active = girls.filter(g => g.lastRostered && g.lastRostered >= thirtyStr);
+  const rosteredToday = girls.filter(g => { const c = calendarData[(g.venue || '') + ':' + g.name]; return c && c[today]; }).length;
+  const newWeek = girls.filter(g => g.startDate && g.startDate >= sevenStr).length;
+  const avgF = field => { const vals = active.map(g => parseInt(g[field])).filter(p => p > 0); return vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : 0; };
+  const avgMatch = userPreferences && active.length ? (() => { const scores = active.map(g => scoreGirl(g, userPreferences)).filter(s => s > 0); return scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0; })() : 0;
+  const oldGirls = girls.filter(g => g.startDate && g.startDate <= threeMonthStr);
+  const stillActive = oldGirls.filter(g => g.lastRostered && g.lastRostered >= sevenStr);
+  const retention = oldGirls.length > 0 ? Math.round((stillActive.length / oldGirls.length) * 100) : 0;
+  return { name: v.name, suburb: v.suburb, total: girls.length, active: active.length, rosteredToday, newWeek, avg30: avgF('val1'), avg45: avgF('val2'), avg60: avgF('val3'), avgMatch, retention };
+}
+
+function showVenueCompareOverlay() {
+  const stats = venueCompareList.map(venueStats);
+  const fields = [
+    { key: 'suburb', label: 'Suburb', fmt: v => v || '\u2014', numeric: false },
+    { key: 'total', label: 'Total Profiles', higher: true, numeric: true },
+    { key: 'active', label: 'Active (30d)', higher: true, numeric: true },
+    { key: 'rosteredToday', label: 'Rostered Today', higher: true, numeric: true },
+    { key: 'newWeek', label: 'New This Week', higher: true, numeric: true },
+    { key: 'avg30', label: 'Avg 30 min', higher: false, numeric: true, fmt: v => v ? '$' + v : '\u2014' },
+    { key: 'avg45', label: 'Avg 45 min', higher: false, numeric: true, fmt: v => v ? '$' + v : '\u2014' },
+    { key: 'avg60', label: 'Avg 60 min', higher: false, numeric: true, fmt: v => v ? '$' + v : '\u2014' },
+    { key: 'retention', label: '3-Month Retention', higher: true, numeric: true, fmt: v => v ? v + '%' : '\u2014' },
+  ];
+  if (userPreferences) fields.push({ key: 'avgMatch', label: 'Avg Match Score', higher: true, numeric: true, fmt: v => v ? v + '%' : '\u2014' });
+
+  let html = '<div class="auth-overlay" id="venueCompareOverlay" style="display:flex;z-index:1001;overflow-y:auto">';
+  html += '<div class="auth-box" style="max-width:' + Math.min(1000, stats.length * 160 + 180) + 'px;width:95%;padding:24px;overflow-x:auto">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h1 style="font-size:16px;margin:0">Venue Comparison</h1><button onclick="document.getElementById(\'venueCompareOverlay\').remove();document.body.style.overflow=\'\'" style="background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer">&times;</button></div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+
+  // Header row
+  html += '<tr><td style="padding:8px 4px;color:var(--text-dim);font-weight:600;width:140px"></td>';
+  for (const s of stats) html += '<td style="padding:8px 4px;text-align:center;font-family:Playfair Display,serif;font-size:15px;font-weight:700;color:var(--gold)">' + s.name + '</td>';
+  html += '</tr>';
+
+  // Wins tracker
+  const wins = new Array(stats.length).fill(0);
+
+  // Data rows
+  for (const f of fields) {
+    html += '<tr style="border-top:1px solid rgba(201,149,44,0.08)"><td style="padding:6px 4px;color:var(--text-dim)">' + f.label + '</td>';
+    const raw = stats.map(s => s[f.key]);
+    let bestIdx = -1, worstIdx = -1;
+    if (f.numeric) {
+      const valid = raw.map((v, i) => ({ v, i })).filter(x => x.v > 0);
+      if (valid.length >= 2) {
+        const bestVal = f.higher ? Math.max(...valid.map(x => x.v)) : Math.min(...valid.map(x => x.v));
+        const worstVal = f.higher ? Math.min(...valid.map(x => x.v)) : Math.max(...valid.map(x => x.v));
+        if (bestVal !== worstVal) {
+          bestIdx = raw.indexOf(bestVal);
+          worstIdx = raw.indexOf(worstVal);
+          wins[bestIdx]++;
+        }
+      }
+    }
+    for (let i = 0; i < stats.length; i++) {
+      const display = f.fmt ? f.fmt(raw[i]) : raw[i];
+      let style = '';
+      if (i === bestIdx) style = 'color:#00c864;font-weight:700';
+      else if (i === worstIdx) style = 'color:#e74c3c;font-weight:700';
+      html += '<td style="padding:6px 4px;text-align:center;' + style + '">' + display + '</td>';
+    }
+    html += '</tr>';
+  }
+
+  // Winner row
+  const maxWins = Math.max(...wins);
+  const winners = stats.map((s, i) => ({ s, w: wins[i] })).filter(x => x.w === maxWins);
+  html += '<tr style="border-top:2px solid rgba(201,149,44,0.2)"><td style="padding:10px 4px;color:var(--gold);font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase">Category Wins</td>';
+  for (let i = 0; i < stats.length; i++) {
+    const isTopWinner = wins[i] === maxWins && maxWins > 0 && winners.length === 1;
+    html += '<td style="padding:10px 4px;text-align:center;font-weight:700;color:' + (isTopWinner ? '#00c864' : 'var(--text-dim)') + '">' + wins[i] + (isTopWinner ? ' \u2605' : '') + '</td>';
+  }
+  html += '</tr>';
+  html += '</table></div></div>';
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  document.body.style.overflow = 'hidden';
 }
 
 function renderComparePage() {
@@ -5052,19 +5110,10 @@ function renderComparePage() {
   html += '<p class="landing-desc">' + (userPreferences ? 'Ranked by your preferences' : 'Ranked by active girl count') + ' (rostered within 30 days).</p>';
   if (!userPreferences) html += '<div style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Set your <a href="/#profile/preferences" style="color:var(--gold)">preferences</a> to see personalised rankings.</div>';
 
-  // Venue Comparison Calculator — pick 2 venues head-to-head
-  html += '<div class="venue-divider"><span>\u2014 VENUE CALCULATOR \u2014</span></div>';
-  html += '<div style="text-align:center;margin-bottom:16px;font-size:12px;color:var(--text-dim)">Pick two venues to compare head-to-head</div>';
-  html += '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap">';
-  const venueOptsHtml = venueIds.map(id => '<option value="' + id + '">' + VENUE_DATA[id].name + '</option>').join('');
-  html += '<select id="venueCalcA" style="background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 14px;border-radius:8px;font-family:Rajdhani,sans-serif;font-size:13px;cursor:pointer">' + venueOptsHtml + '</select>';
-  html += '<span style="color:var(--gold);font-weight:700;display:flex;align-items:center">VS</span>';
-  html += '<select id="venueCalcB" style="background:rgba(12,12,20,0.7);border:1px solid rgba(201,149,44,0.3);color:var(--gold);padding:8px 14px;border-radius:8px;font-family:Rajdhani,sans-serif;font-size:13px;cursor:pointer">' + venueOptsHtml + '</select>';
-  html += '<button class="auth-btn" id="venueCalcBtn" onclick="runVenueCalculator()" style="margin:0;width:auto;padding:8px 20px;font-size:11px">Compare</button>';
-  html += '</div>';
-  html += '<div id="venueCalcResult" style="margin-bottom:32px"></div>';
+  html += '<div style="text-align:center;margin-bottom:16px;font-size:12px;color:var(--text-dim)">Tap the <span style="color:var(--gold)">+</span> to select up to 5 venues for side-by-side comparison</div>';
 
   const cmpCols = [
+    { key: '_compare', label: '' },
     { key: 'name', label: 'Venue' },
     { key: 'rank', label: 'Rank' },
     { key: '_address', label: 'Address' },
@@ -5094,6 +5143,8 @@ function renderComparePage() {
   rankings.forEach((r, i) => {
     const v = VENUE_DATA[r.id];
     html += '<tr>';
+    const inList = venueCompareList.includes(r.id);
+    html += '<td style="width:32px;padding:4px;text-align:center"><button class="compare-btn' + (inList ? ' in-compare' : '') + '" data-venue-id="' + r.id + '" onclick="event.stopPropagation();toggleVenueCompare(\'' + r.id + '\')">' + (inList ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>') + '</button></td>';
     html += '<td class="compare-venue-header" onclick="navigateToLanding(\'/sydney/' + v.suburbSlug + '/' + r.id + '/\')">' + r.name + '</td>';
     html += '<td style="color:var(--gold);font-weight:700">#' + r.rank + '</td>';
     html += '<td style="font-size:11px"><a href="https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(v.address) + '" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">' + v.address + '</a></td>';
@@ -6693,6 +6744,9 @@ function handleLandingRoute(path) {
     window.scrollTo({ top: 0 });
     // Init map if on city page
     if (document.getElementById('venueMap')) setTimeout(initVenueMap, 50);
+    // Init venue compare tray on /compare
+    if (document.querySelector('.compare-table')) updateVenueCompareTray();
+    else { const vct = document.getElementById('venueCompareTray'); if (vct) vct.style.display = 'none'; }
     // Init venue reviews
     const vrs = document.querySelector('.venue-review-section');
     if (vrs) initVenueReviewSection(vrs.dataset.venueId);

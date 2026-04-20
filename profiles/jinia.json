@@ -1810,7 +1810,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250409100026.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Rina",
@@ -1913,6 +1913,27 @@
       "oldUrl": "https://jinia.com.au/marissa/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/11/%E5%9B%BE%E7%89%87_20251122041514_455_2_%E5%89%AF%E6%9C%AC.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Cindy",
+      "country": [
+        "Hongkong"
+      ],
+      "age": "24",
+      "height": "162",
+      "cup": "E",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-04-20",
+      "lastRostered": "2026-04-20",
+      "oldUrl": "https://jinia.com.au/cindy-4/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260420111414.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -2722,6 +2743,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-17T06:07:15.462Z",
+  "lastGirlsSync": "2026-04-20T06:19:44.979Z",
   "lastCalendarSync": "2026-04-20T03:58:17.549Z"
 }

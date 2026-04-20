@@ -5553,6 +5553,22 @@ function wnGirlMiniCard(g, slot) {
     '</div></div>';
 }
 
+function wnGroupCard(titleLine, subtitleLine, cornerLabel, entries, clickPath) {
+  const clickAttr = clickPath ? ' style="cursor:pointer" onclick="navigateToLanding(\'' + clickPath + '\')"' : '';
+  let html = '<div style="border:1px solid rgba(201,149,44,0.12);border-radius:12px;padding:16px;background:rgba(12,12,20,0.3)">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px"' + clickAttr + '>';
+  html += '<div><div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:var(--gold)">' + titleLine + '</div>';
+  if (subtitleLine) html += '<div style="font-size:11px;color:var(--text-dim)">' + subtitleLine + '</div>';
+  html += '</div>';
+  if (cornerLabel) html += '<span style="font-family:Orbitron,sans-serif;font-size:10px;color:var(--gold);letter-spacing:2px">' + cornerLabel + '</span>';
+  html += '</div>';
+  html += '<div class="venue-carousel wrap" style="margin-bottom:0">';
+  for (const e of entries) html += wnGirlMiniCard(e.girl, e.slot);
+  html += '</div>';
+  html += '</div>';
+  return html;
+}
+
 function renderWnVenueView(day, isToday, now) {
   if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
   const byVenue = {};
@@ -5562,19 +5578,14 @@ function renderWnVenueView(day, isToday, now) {
     byVenue[vid].entries.push(e);
   }
   const venueIds = Object.keys(byVenue).sort((a, b) => byVenue[b].entries.length - byVenue[a].entries.length);
-  let html = '<div style="display:flex;flex-direction:column;gap:16px">';
+  let html = '<div style="display:flex;flex-direction:column;gap:20px">';
   for (const vid of venueIds) {
     const grp = byVenue[vid];
     const v = grp.venue;
     if (!v) continue;
     const count = grp.entries.length;
-    const venuePath = '/sydney/' + (VENUE_REGIONS[vid] || 'other') + '/' + v.suburbSlug + '/' + vid + '/';
-    html += '<div>';
-    html += '<div class="venue-divider" style="cursor:pointer" onclick="navigateToLanding(\'' + venuePath + '\')"><span>\u2014 ' + v.name.toUpperCase() + ' \u00b7 ' + v.suburb.toUpperCase() + ' \u00b7 ' + count + ' GIRLS \u2014</span></div>';
-    html += '<div class="venue-carousel wrap">';
-    for (const e of grp.entries.sort((a, b) => a.order - b.order)) html += wnGirlMiniCard(e.girl, e.slot);
-    html += '</div>';
-    html += '</div>';
+    const path = '/sydney/' + (VENUE_REGIONS[vid] || 'other') + '/' + v.suburbSlug + '/' + vid + '/';
+    html += wnGroupCard(v.name, v.suburb + ' \u00b7 ' + count + ' working', 'VIEW \u2192', grp.entries.sort((a, b) => a.order - b.order), path);
   }
   html += '</div>';
   return html;
@@ -5601,15 +5612,10 @@ function renderWnTimeWindowView(day, isToday, now) {
       if (sM < b.endM && eM > b.startM) b.entries.push(e);
     }
   }
-  let html = '<div style="display:flex;flex-direction:column;gap:16px">';
+  let html = '<div style="display:flex;flex-direction:column;gap:20px">';
   for (const b of buckets) {
     if (!b.entries.length) continue;
-    html += '<div>';
-    html += '<div class="venue-divider"><span>\u2014 ' + b.label.toUpperCase() + ' \u00b7 ' + b.range + ' \u00b7 ' + b.entries.length + ' GIRLS \u2014</span></div>';
-    html += '<div class="venue-carousel wrap">';
-    for (const e of b.entries.sort((a, b) => a.order - b.order)) html += wnGirlMiniCard(e.girl, e.slot);
-    html += '</div>';
-    html += '</div>';
+    html += wnGroupCard(b.label, b.range + ' \u00b7 ' + b.entries.length + ' girls available', '', b.entries.sort((a, b) => a.order - b.order), null);
   }
   html += '</div>';
   return html;
@@ -5634,19 +5640,11 @@ function renderWnPriceView(day) {
     }
   }
   let html = '<div style="text-align:center;font-size:11px;color:var(--text-dim);margin-bottom:16px">Grouped by 60-minute rate</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:16px">';
+  html += '<div style="display:flex;flex-direction:column;gap:20px">';
   for (const b of brackets) {
     if (!b.entries.length) continue;
-    html += '<div>';
-    html += '<div class="venue-divider"><span>\u2014 ' + b.label.toUpperCase() + ' \u00b7 ' + b.entries.length + ' GIRLS \u2014</span></div>';
-    html += '<div class="venue-carousel wrap">';
-    for (const e of b.entries.sort((a, b) => (parseInt(a.girl.val3) || 0) - (parseInt(b.girl.val3) || 0))) {
-      const priceStr = e.girl.val3 ? '$' + e.girl.val3 + ' / 60min' : 'No price';
-      const card = wnGirlMiniCard(e.girl, e.slot).replace('</div></div></div>', '<div class="venue-carousel-meta" style="color:var(--gold)">' + priceStr + '</div></div></div>');
-      html += card;
-    }
-    html += '</div>';
-    html += '</div>';
+    const sorted = b.entries.sort((a, b) => (parseInt(a.girl.val3) || 0) - (parseInt(b.girl.val3) || 0));
+    html += wnGroupCard(b.label, b.entries.length + ' girls available', '', sorted, null);
   }
   html += '</div>';
   return html;

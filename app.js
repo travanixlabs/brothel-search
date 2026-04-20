@@ -5623,19 +5623,27 @@ function renderWnTimeWindowView(day, isToday, now) {
 
 function renderWnPriceView(day) {
   if (!day || !day.entries.length) return '<div class="empty-msg">No roster for this day</div>';
-  // Brackets based on val3 (60 min)
+  // Brackets based on val3 (60 min) — $50 intervals from $150 to $600+
   const brackets = [
-    { label: 'Under $250', min: 0, max: 249, entries: [] },
-    { label: '$250 - $349', min: 250, max: 349, entries: [] },
-    { label: '$350 - $449', min: 350, max: 449, entries: [] },
-    { label: '$450 - $549', min: 450, max: 549, entries: [] },
-    { label: '$550+', min: 550, max: Infinity, entries: [] },
+    { label: 'Under $150', min: 0, max: 149, entries: [] },
+    { label: '$150 - $199', min: 150, max: 199, entries: [] },
+    { label: '$200 - $249', min: 200, max: 249, entries: [] },
+    { label: '$250 - $299', min: 250, max: 299, entries: [] },
+    { label: '$300 - $349', min: 300, max: 349, entries: [] },
+    { label: '$350 - $399', min: 350, max: 399, entries: [] },
+    { label: '$400 - $449', min: 400, max: 449, entries: [] },
+    { label: '$450 - $499', min: 450, max: 499, entries: [] },
+    { label: '$500 - $549', min: 500, max: 549, entries: [] },
+    { label: '$550 - $599', min: 550, max: 599, entries: [] },
+    { label: '$600+', min: 600, max: Infinity, entries: [] },
     { label: 'No Price', min: -1, max: -1, entries: [] },
   ];
+  const noPriceIdx = brackets.length - 1;
+  const priceBucketCount = noPriceIdx; // all except 'No Price'
   for (const e of day.entries) {
     const v = parseInt(e.girl.val3);
-    if (!v || isNaN(v)) { brackets[5].entries.push(e); continue; }
-    for (let i = 0; i < 5; i++) {
+    if (!v || isNaN(v)) { brackets[noPriceIdx].entries.push(e); continue; }
+    for (let i = 0; i < priceBucketCount; i++) {
       if (v >= brackets[i].min && v <= brackets[i].max) { brackets[i].entries.push(e); break; }
     }
   }

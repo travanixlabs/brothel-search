@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17",
+      "lastRostered": "2026-04-21",
       "desc": "Welcome stunning Stella to Wives Only. Brunette Australian goddess, 26 years old, with gorgeous curves and captivating eyes that will lure you in! Stella is a sensual sweetheart but can also have a naughty side, book her to find out more."
     },
     {
@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-21",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1133,7 +1133,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-20",
+      "lastRostered": "2026-04-21",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Sara",
@@ -1724,7 +1724,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Madeleine",
@@ -2104,7 +2104,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-14"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Hennessy",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-16"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Clarisse",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-20"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Victoria",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Julia",
@@ -2472,7 +2472,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-21",
       "oldUrl": "https://wivesonly.com.au/roxanne/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2750,6 +2750,10 @@
       "2026-04-20": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-04-21": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Layla": {
@@ -2818,6 +2822,10 @@
       "2026-04-17": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-21": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Zeena": {
@@ -2872,6 +2880,10 @@
       "2026-04-18": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ximena": {
@@ -3036,6 +3048,10 @@
       "2026-04-18": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-04-21": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -3092,7 +3108,8 @@
       "2026-04-17",
       "2026-04-18",
       "2026-04-19",
-      "2026-04-20"
+      "2026-04-20",
+      "2026-04-21"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3192,6 +3209,10 @@
       "2026-04-15": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-21": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Iris": {
@@ -3290,6 +3311,10 @@
       "2026-04-17": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Emma": {
@@ -3326,6 +3351,10 @@
       "2026-04-16": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Sienna": {
@@ -3514,6 +3543,10 @@
       "2026-04-14": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Fox": {
@@ -3578,15 +3611,23 @@
       "2026-04-19": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Lulu": {
       "2026-04-20": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-04-21": {
+        "start": "11:00",
+        "end": "17:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-17T16:43:08.229Z",
-  "lastCalendarSync": "2026-04-20T08:33:21.401Z"
+  "lastCalendarSync": "2026-04-20T14:19:42.184Z"
 }

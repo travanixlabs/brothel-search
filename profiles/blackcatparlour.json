@@ -2801,6 +2801,66 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-24"
+    },
+    {
+      "name": "Audrina",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "B",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-20",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/69c4ea4035ee2878e455d8e2a9dc6112.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Bree***",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-20",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/32ebf9a9251cce06f6bd2abc1fe449c5.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Taylor",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "163",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-20",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [
+        "https://blackcatparlour.com.au/wp-content/themes/blackcatparlour/thumb.php?w=800&src=/wp-content/themes/blackcatparlour/images/ladies/69c4ea4035ee2878e455d8e2a9dc6112.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5375,6 +5435,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-17T06:06:05.511Z",
+  "lastGirlsSync": "2026-04-20T10:00:41.465Z",
   "lastCalendarSync": "2026-04-20T08:33:00.420Z"
 }

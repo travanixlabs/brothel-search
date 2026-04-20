@@ -4683,7 +4683,7 @@
         "CIM"
       ],
       "lastModified": "2026-04-13T08:27:01.534Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-20",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -7306,7 +7306,7 @@
       },
       "2026-04-20": {
         "start": "10:30",
-        "end": "20:00"
+        "end": "22:00"
       }
     },
     "Koharu": {
@@ -7335,6 +7335,10 @@
         "end": "04:00"
       },
       "2026-04-19": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-04-20": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -7448,5 +7452,5 @@
     }
   },
   "lastGirlsSync": "2026-04-15T04:00:53.245Z",
-  "lastCalendarSync": "2026-04-19T17:07:25.210Z"
+  "lastCalendarSync": "2026-04-20T03:57:16.050Z"
 }

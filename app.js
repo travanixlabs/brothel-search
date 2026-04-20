@@ -4937,7 +4937,7 @@ const venueCompareList = [];
 function toggleVenueCompare(venueId) {
   const idx = venueCompareList.indexOf(venueId);
   if (idx >= 0) venueCompareList.splice(idx, 1);
-  else if (venueCompareList.length < 5) venueCompareList.push(venueId);
+  else if (venueCompareList.length < 10) venueCompareList.push(venueId);
   updateVenueCompareTray();
   // Refresh icons in the table
   document.querySelectorAll('.compare-table .compare-btn').forEach(btn => {
@@ -4955,7 +4955,7 @@ function updateVenueCompareTray() {
     tray = document.createElement('div');
     tray.id = 'venueCompareTray';
     tray.className = 'compare-tray';
-    tray.innerHTML = '<div class="compare-tray-inner"><span class="compare-tray-label">Compare (<span id="venueCompareCount">0</span>/5)</span><div class="compare-tray-thumbs" id="venueCompareTrayLabels"></div><button class="auth-btn" id="venueCompareBtn" style="padding:8px 20px;margin:0;width:auto;font-size:11px">Compare Now</button><button class="compare-tray-clear" id="venueCompareClear" title="Clear">&times;</button></div>';
+    tray.innerHTML = '<div class="compare-tray-inner"><span class="compare-tray-label">Compare (<span id="venueCompareCount">0</span>/10)</span><div class="compare-tray-thumbs" id="venueCompareTrayLabels"></div><button class="auth-btn" id="venueCompareBtn" style="padding:8px 20px;margin:0;width:auto;font-size:11px">Compare Now</button><button class="compare-tray-clear" id="venueCompareClear" title="Clear">&times;</button></div>';
     document.body.appendChild(tray);
     document.getElementById('venueCompareBtn').onclick = () => { if (venueCompareList.length >= 2) showVenueCompareOverlay(); };
     document.getElementById('venueCompareClear').onclick = () => { venueCompareList.length = 0; updateVenueCompareTray(); document.querySelectorAll('.compare-table .compare-btn').forEach(btn => { btn.classList.remove('in-compare'); btn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l6 6"/></svg>'; }); };
@@ -5003,7 +5003,7 @@ function showVenueCompareOverlay() {
   if (userPreferences) fields.push({ key: 'avgMatch', label: 'Avg Match Score', higher: true, numeric: true, fmt: v => v ? v + '%' : '\u2014' });
 
   let html = '<div class="auth-overlay" id="venueCompareOverlay" style="display:flex;z-index:1001;overflow-y:auto">';
-  html += '<div class="auth-box" style="max-width:' + Math.min(1000, stats.length * 160 + 180) + 'px;width:95%;padding:24px;overflow-x:auto">';
+  html += '<div class="auth-box" style="max-width:' + Math.min(1600, stats.length * 140 + 180) + 'px;width:95%;padding:24px;overflow-x:auto">';
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h1 style="font-size:16px;margin:0">Venue Comparison</h1><button onclick="document.getElementById(\'venueCompareOverlay\').remove();document.body.style.overflow=\'\'" style="background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer">&times;</button></div>';
   html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
 

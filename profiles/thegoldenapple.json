@@ -1514,6 +1514,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-22"
+    },
+    {
+      "name": "Bree***",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-20",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/05/Bree.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2407,6 +2427,6 @@
     },
     "Dahlia ***": {}
   },
-  "lastGirlsSync": "2026-04-14T10:57:39.832Z",
+  "lastGirlsSync": "2026-04-20T10:00:37.888Z",
   "lastCalendarSync": "2026-04-20T08:32:52.253Z"
 }

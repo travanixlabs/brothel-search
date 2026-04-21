@@ -1454,7 +1454,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-04-21"
     },
     {
       "name": "Lola ***",
@@ -1534,7 +1534,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-20"
+      "lastRostered": "2026-04-21"
     }
   ],
   "calendar": {
@@ -2357,10 +2357,6 @@
       }
     },
     "Darcy": {
-      "2026-04-21": {
-        "start": "15:00",
-        "end": "00:00"
-      },
       "2026-04-23": {
         "start": "15:00",
         "end": "00:00"
@@ -2447,8 +2443,19 @@
         "end": "05:00"
       }
     },
-    "Dahlia ***": {}
+    "Dahlia ***": {
+      "2026-04-21": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
+    "Bree***": {
+      "2026-04-21": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-20T10:00:37.888Z",
-  "lastCalendarSync": "2026-04-20T23:12:39.857Z"
+  "lastCalendarSync": "2026-04-21T03:50:57.763Z"
 }

@@ -1531,7 +1531,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-21"
+      "lastRostered": "2026-04-22"
     },
     {
       "name": "Lola",
@@ -4880,6 +4880,10 @@
       "2026-04-21": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-04-22": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Bree": {},
@@ -5456,5 +5460,5 @@
     }
   },
   "lastGirlsSync": "2026-04-20T10:00:41.465Z",
-  "lastCalendarSync": "2026-04-21T10:03:07.708Z"
+  "lastCalendarSync": "2026-04-21T11:37:03.239Z"
 }

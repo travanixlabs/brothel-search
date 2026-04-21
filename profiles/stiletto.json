@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17",
+      "lastRostered": "2026-04-25",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -6195,10 +6195,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-04-22": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-04-23": {
         "start": "00:00",
         "end": "08:00"
@@ -6769,5 +6765,5 @@
     }
   },
   "lastGirlsSync": "2026-04-21T22:34:30.876Z",
-  "lastCalendarSync": "2026-04-21T19:43:59.748Z"
+  "lastCalendarSync": "2026-04-21T23:10:10.857Z"
 }

@@ -5815,7 +5815,7 @@ function renderWorkingNow() {
     { id: 'price', label: 'Price Bracket', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.2 2.6L12 2.4l-1.2 2.8L13.6 6l-2.4 1.4L12 10l-2.8-1.2L8 11l-1.2-2.2L4 10l.8-2.8L2.4 6l2.8-0.6L4 2.4l2.8 1.2L8 1z" opacity="0.3"/><text x="8" y="12" text-anchor="middle" font-size="9" font-weight="bold" fill="currentColor">$</text></svg>' },
     { id: 'duo', label: 'Duo Finder', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="5" cy="5" r="2.5"/><circle cx="11" cy="5" r="2.5"/><path d="M1 14c0-2.5 1.8-4 4-4s4 1.5 4 4H1zm6 0c0-2.5 1.8-4 4-4s4 1.5 4 4H7z"/></svg>' },
   ];
-  html += '<div style="display:flex;align-items:center;justify-content:center;margin:16px 0"><div class="layout-toggle">';
+  html += '<div style="display:flex;align-items:center;justify-content:flex-end;margin:12px 0 8px"><div class="layout-toggle">';
   for (const v of views) {
     html += '<button class="' + (wnView === v.id ? 'active' : '') + '" onclick="setWnView(\'' + v.id + '\')" title="' + v.label + '">' + v.svg + '</button>';
   }

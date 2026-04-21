@@ -5807,20 +5807,19 @@ function renderWorkingNow() {
   });
   html += '</div>';
 
-  // View switcher
+  // View switcher (icons matching layout-toggle style)
   const views = [
-    { id: 'timeline', label: 'Timeline' },
-    { id: 'venue', label: 'By Venue' },
-    { id: 'timewindow', label: 'Time Window' },
-    { id: 'price', label: 'Price Bracket' },
-    { id: 'duo', label: 'Duo Finder' },
+    { id: 'timeline', label: 'Timeline', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="3" width="14" height="2" rx="1"/><rect x="1" y="7" width="10" height="2" rx="1"/><rect x="1" y="11" width="12" height="2" rx="1"/></svg>' },
+    { id: 'venue', label: 'By Venue', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 13V6L8 2l6 4v7h-4v-4H6v4H2z"/></svg>' },
+    { id: 'timewindow', label: 'Time Window', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l2.5 2.5" stroke-linecap="round"/></svg>' },
+    { id: 'price', label: 'Price Bracket', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.2 2.6L12 2.4l-1.2 2.8L13.6 6l-2.4 1.4L12 10l-2.8-1.2L8 11l-1.2-2.2L4 10l.8-2.8L2.4 6l2.8-0.6L4 2.4l2.8 1.2L8 1z" opacity="0.3"/><text x="8" y="12" text-anchor="middle" font-size="9" font-weight="bold" fill="currentColor">$</text></svg>' },
+    { id: 'duo', label: 'Duo Finder', svg: '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="5" cy="5" r="2.5"/><circle cx="11" cy="5" r="2.5"/><path d="M1 14c0-2.5 1.8-4 4-4s4 1.5 4 4H1zm6 0c0-2.5 1.8-4 4-4s4 1.5 4 4H7z"/></svg>' },
   ];
-  html += '<div style="display:flex;gap:8px;justify-content:center;margin:16px 0;flex-wrap:wrap">';
+  html += '<div style="display:flex;align-items:center;justify-content:center;margin:16px 0"><div class="layout-toggle">';
   for (const v of views) {
-    const active = wnView === v.id;
-    html += '<button onclick="setWnView(\'' + v.id + '\')" style="padding:6px 14px;font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:' + (active ? 'rgba(201,149,44,0.2)' : 'transparent') + ';border:1px solid ' + (active ? 'var(--gold)' : 'rgba(201,149,44,0.25)') + ';color:var(--gold);border-radius:6px;cursor:pointer">' + v.label + '</button>';
+    html += '<button class="' + (wnView === v.id ? 'active' : '') + '" onclick="setWnView(\'' + v.id + '\')" title="' + v.label + '">' + v.svg + '</button>';
   }
-  html += '</div>';
+  html += '</div></div>';
 
   // Branch to selected view
   const selectedDayData = rosterDays[wnSelectedDay];

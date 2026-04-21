@@ -9299,6 +9299,34 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Hibika",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-21",
+      "oldUrl": "https://citybrothel.com.au/project/hibika-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-21T03:50:25.520Z",
+      "lastRostered": "2026-04-22",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83491776689333_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83511776689334_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83501776689333_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -9567,10 +9595,6 @@
         "end": "19:00"
       },
       "2026-04-20": {
-        "start": "10:00",
-        "end": "19:00"
-      },
-      "2026-04-21": {
         "start": "10:00",
         "end": "19:00"
       },
@@ -11169,13 +11193,23 @@
         "end": "05:00"
       },
       "2026-04-21": {
-        "start": "13:00",
+        "start": "15:00",
+        "end": "05:00"
+      }
+    },
+    "Hibika": {
+      "2026-04-21": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-04-22": {
+        "start": "12:00",
         "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-19T10:00:56.211Z",
-  "lastCalendarSync": "2026-04-20T21:05:59.719Z",
+  "lastCalendarSync": "2026-04-21T03:50:25.520Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

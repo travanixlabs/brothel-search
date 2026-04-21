@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2054,6 +2054,43 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Tatiana",
+      "country": [],
+      "age": "25",
+      "height": "156",
+      "cup": "E",
+      "body": "12",
+      "desc": "Only with us while touring, booking with Tatiana is something you don't want to miss. She is a fun and flirtatious lady with a knockout body and all the skills in the bedroom.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-11-01",
+      "lastRostered": "2025-11-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/tatiana-new-2/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2025/11/Tatiana3.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2025/11/Tatiana1.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2025/11/Tatiana2.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2025/11/Tatiana4.jpg"
+      ],
+      "labels": [
+        "DFK",
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "Golden Showers",
+        "Party Bookings",
+        "Anal",
+        "GFE",
+        "BDSM",
+        "BBBJ",
+        "DATY",
+        "Role Play",
+        "Squirting"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2625,7 +2662,7 @@
         "end": "06:00"
       },
       "2026-04-21": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       },
       "2026-04-27": {
@@ -2645,7 +2682,7 @@
         "end": "06:00"
       },
       "2026-04-24": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -2819,8 +2856,8 @@
         "end": "18:00"
       },
       "2026-04-22": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-26": {
         "start": "12:00",
@@ -3212,8 +3249,18 @@
         "start": "06:00",
         "end": "12:00"
       }
+    },
+    "Tatiana": {
+      "2026-04-24": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-04-25": {
+        "start": "06:00",
+        "end": "06:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-21T04:00:55.023Z",
+  "lastGirlsSync": "2026-04-21T06:05:25.805Z",
   "lastCalendarSync": "2026-04-21T05:12:52.469Z"
 }

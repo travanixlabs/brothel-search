@@ -6920,6 +6920,7 @@ function handleLandingRoute(path) {
   } else if (cleanPath === 'working-now') {
     restoreActivePresetOrClear();
     renderFilters(); renderGrid();
+    wnView = 'timeline'; wnSelectedDay = 0;
     html = renderWorkingNow();
   } else if (cleanPath === 'compare') {
     restoreActivePresetOrClear();

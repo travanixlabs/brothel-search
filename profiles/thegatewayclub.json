@@ -1514,7 +1514,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-22",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/cristina/",
       "photos": [],
       "labels": [
@@ -2266,6 +2266,10 @@
       "2026-04-18": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-22": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Layla": {
@@ -3342,5 +3346,5 @@
     }
   },
   "lastGirlsSync": "2026-04-21T16:50:00.716Z",
-  "lastCalendarSync": "2026-04-21T17:36:00.792Z"
+  "lastCalendarSync": "2026-04-21T19:43:48.337Z"
 }

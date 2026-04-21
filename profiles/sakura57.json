@@ -8929,6 +8929,34 @@
       "labels": [],
       "lastModified": "2026-04-18T04:00:31.319Z",
       "lastRostered": "2026-04-22"
+    },
+    {
+      "name": "Sana",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "C",
+      "val1": "210",
+      "val2": "270",
+      "val3": "330",
+      "startDate": "2026-04-21",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/sana-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-21T03:50:34.503Z",
+      "lastRostered": "2026-04-22",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83631776730968_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83611776730965_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/83621776730967_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -9964,7 +9992,7 @@
         "end": "00:00"
       },
       "2026-04-22": {
-        "start": "10:00",
+        "start": "13:00",
         "end": "00:00"
       }
     },
@@ -11119,10 +11147,20 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Sana": {
+      "2026-04-21": {
+        "start": "10:00",
+        "end": "04:00"
+      },
+      "2026-04-22": {
+        "start": "10:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-18T04:00:31.319Z",
-  "lastCalendarSync": "2026-04-20T21:06:03.280Z",
+  "lastCalendarSync": "2026-04-21T03:50:34.503Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

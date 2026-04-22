@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2129,6 +2129,32 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Nikita",
+      "country": [],
+      "age": "25",
+      "height": "",
+      "cup": "D",
+      "body": "8",
+      "desc": "Vivacious and effortlessly social, Nikita brings a warm, magnetic energy wherever she goes. With a beautifully curvaceous, womanly figure and striking, extensive body art, she’s as captivating as she is confident. Of Swedish and German heritage with an Aussie twist, Nikita embodies a stunning blend of exotic beauty and down-to-earth charm. Starting April 24th, make... View Article",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/nikita-new/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Double",
+        "Toys",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2720,7 +2746,7 @@
         "end": "06:00"
       },
       "2026-04-24": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -2898,8 +2924,8 @@
         "end": "18:00"
       },
       "2026-04-22": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-04-26": {
         "start": "12:00",
@@ -3343,8 +3369,14 @@
         "start": "12:00",
         "end": "18:00"
       }
+    },
+    "Nikita": {
+      "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-22T04:01:07.476Z",
+  "lastGirlsSync": "2026-04-22T06:02:55.424Z",
   "lastCalendarSync": "2026-04-22T05:11:29.905Z"
 }

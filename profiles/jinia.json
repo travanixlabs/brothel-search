@@ -123,7 +123,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-22",
-      "lastRostered": "2026-04-23",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/morika/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260324112505.jpg"
@@ -165,7 +165,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-14",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/angela-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260311025717_123_20.jpg"
@@ -372,7 +372,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-02-19",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/cassie-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250511130614.jpg"
@@ -496,7 +496,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-01-19",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/yumi-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/01/%E5%9B%BE%E7%89%87_20260331092631.jpg"
@@ -1846,7 +1846,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-08",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/cola/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260408111104.jpg"
@@ -1930,7 +1930,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-20",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://jinia.com.au/cindy-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260420111414.jpg"
@@ -2134,6 +2134,10 @@
         "end": "04:00"
       },
       "2026-04-23": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-04-29": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -2398,6 +2402,10 @@
       "2026-04-28": {
         "start": "11:00",
         "end": "01:00"
+      },
+      "2026-04-29": {
+        "start": "11:00",
+        "end": "01:00"
       }
     },
     "Cassie": {
@@ -2482,6 +2490,10 @@
         "end": "03:00"
       },
       "2026-04-28": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-04-29": {
         "start": "18:00",
         "end": "03:00"
       }
@@ -2602,7 +2614,8 @@
       "2026-04-25",
       "2026-04-26",
       "2026-04-27",
-      "2026-04-28"
+      "2026-04-28",
+      "2026-04-29"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -2714,6 +2727,10 @@
       "2026-04-28": {
         "start": "12:30",
         "end": "04:00"
+      },
+      "2026-04-29": {
+        "start": "12:30",
+        "end": "04:00"
       }
     },
     "🆕 Marissa": {
@@ -2792,6 +2809,10 @@
       "2026-04-23": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-04-29": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Monica": {
@@ -2802,9 +2823,13 @@
       "2026-04-23": {
         "start": "11:30",
         "end": "16:30"
+      },
+      "2026-04-29": {
+        "start": "11:30",
+        "end": "16:30"
       }
     }
   },
   "lastGirlsSync": "2026-04-20T06:19:44.979Z",
-  "lastCalendarSync": "2026-04-22T03:48:16.088Z"
+  "lastCalendarSync": "2026-04-22T14:15:47.276Z"
 }

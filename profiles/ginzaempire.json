@@ -334,7 +334,7 @@
       ],
       "lastModified": "2026-03-13T05:14:28.198Z",
       "originalSite": "Exists",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-04-22",
       "country": [
         "Japanese",
         "Korean"
@@ -5355,7 +5355,12 @@
       }
     },
     "Moka": {},
-    "Momo": {},
+    "Momo": {
+      "2026-04-22": {
+        "start": "18:00",
+        "end": "04:00"
+      }
+    },
     "Yume": {},
     "Amu": {},
     "Minami": {
@@ -7671,5 +7676,5 @@
     }
   },
   "lastGirlsSync": "2026-04-21T04:00:36.252Z",
-  "lastCalendarSync": "2026-04-21T08:15:52.063Z"
+  "lastCalendarSync": "2026-04-22T03:46:43.768Z"
 }

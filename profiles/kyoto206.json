@@ -9327,6 +9327,31 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Koharu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "B",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/koharujapan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/21776831216_.pic_hd-scaled.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/11776831214_.pic_hd-scaled.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/31776831218_.pic_hd-scaled.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-22T06:02:08.148Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -11277,7 +11302,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-19T10:00:56.211Z",
+  "lastGirlsSync": "2026-04-22T06:02:08.148Z",
   "lastCalendarSync": "2026-04-21T21:08:52.538Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

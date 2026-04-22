@@ -785,7 +785,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-22"
     },
     {
       "name": "Cindy",
@@ -1344,7 +1344,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Ginger",
@@ -2462,7 +2462,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05"
+      "lastRostered": "2026-05-06"
     },
     {
       "name": "Maddie",
@@ -2614,7 +2614,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-10"
+      "lastRostered": "2026-04-22"
     },
     {
       "name": "Mel",
@@ -5302,6 +5302,14 @@
       "2026-04-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-04-23": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-04-25": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Josie": {
@@ -5594,6 +5602,10 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-04-22": {
+        "start": "12:00",
+        "end": "19:00"
       }
     },
     "Victoria": {
@@ -6126,6 +6138,10 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-04-22": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Kelsey": {
@@ -6587,6 +6603,10 @@
       "2026-05-05": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-06": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Aspen": {
@@ -6765,5 +6785,5 @@
     }
   },
   "lastGirlsSync": "2026-04-21T22:34:30.876Z",
-  "lastCalendarSync": "2026-04-21T23:10:10.857Z"
+  "lastCalendarSync": "2026-04-22T03:48:07.661Z"
 }

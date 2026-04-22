@@ -485,7 +485,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-21",
+      "lastRostered": "2026-04-23",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2023/10/Wendy-Cn-03.jpeg"
       ],
@@ -1021,7 +1021,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-04-22",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-08.jpeg",
@@ -9351,7 +9351,35 @@
       ],
       "labels": [],
       "lastModified": "2026-04-22T06:02:08.148Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-23"
+    },
+    {
+      "name": "Kotona",
+      "country": [
+        "Japanese"
+      ],
+      "age": "23",
+      "height": "155",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-22",
+      "oldUrl": "https://citybrothel.com.au/project/kotona-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-22T08:14:22.383Z",
+      "lastRostered": "2026-04-23",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/21776836628_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/31776836634_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/41776836639_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -9856,6 +9884,14 @@
       "2026-04-21": {
         "start": "13:00",
         "end": "00:00"
+      },
+      "2026-04-22": {
+        "start": "13:00",
+        "end": "00:00"
+      },
+      "2026-04-23": {
+        "start": "13:00",
+        "end": "00:00"
       }
     },
     "Moca": {
@@ -9936,6 +9972,10 @@
         "end": "00:00"
       },
       "2026-04-19": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-04-22": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -10405,7 +10445,7 @@
         "end": "22:00"
       },
       "2026-04-22": {
-        "start": "10:00",
+        "start": "13:00",
         "end": "22:00"
       },
       "2026-04-23": {
@@ -11067,7 +11107,7 @@
         "end": "03:00"
       },
       "2026-04-22": {
-        "start": "12:00",
+        "start": "13:00",
         "end": "03:00"
       },
       "2026-04-23": {
@@ -11227,14 +11267,6 @@
       "2026-04-21": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-04-22": {
-        "start": "21:00",
-        "end": "05:00"
-      },
-      "2026-04-23": {
-        "start": "21:00",
-        "end": "05:00"
       }
     },
     "Rosie": {
@@ -11300,10 +11332,30 @@
         "start": "12:00",
         "end": "04:00"
       }
+    },
+    "Koharu": {
+      "2026-04-22": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-04-23": {
+        "start": "10:00",
+        "end": "01:00"
+      }
+    },
+    "Kotona": {
+      "2026-04-22": {
+        "start": "14:00",
+        "end": "03:00"
+      },
+      "2026-04-23": {
+        "start": "12:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-22T06:02:08.148Z",
-  "lastCalendarSync": "2026-04-21T21:08:52.538Z",
+  "lastCalendarSync": "2026-04-22T08:14:22.383Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

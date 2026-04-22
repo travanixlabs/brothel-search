@@ -68,5 +68,15 @@ jobs:
     needs: [sync-girls]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100  # need recent commits to derive today's counts
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Send sync summary email
-        run: curl -sf "$WORKER_URL/api/test-sync-email" --max-time 120 || echo "⚠ email failed"
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: node scripts/sync-summary-email.js

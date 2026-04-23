@@ -1830,7 +1830,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-04-25",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/sienna-new-4/",
       "photos": [],
       "labels": [],
@@ -3163,6 +3163,10 @@
       "2026-04-24": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-25": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Stevie": {},
@@ -3385,5 +3389,5 @@
     "Nikita": {}
   },
   "lastGirlsSync": "2026-04-22T22:42:08.204Z",
-  "lastCalendarSync": "2026-04-22T23:27:59.466Z"
+  "lastCalendarSync": "2026-04-23T03:53:59.243Z"
 }

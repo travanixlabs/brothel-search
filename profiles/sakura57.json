@@ -9454,7 +9454,7 @@
         "end": "02:00"
       },
       "2026-04-23": {
-        "start": "15:00",
+        "start": "17:00",
         "end": "02:00"
       },
       "2026-04-24": {
@@ -9872,10 +9872,6 @@
       "2026-04-21": {
         "start": "15:00",
         "end": "21:00"
-      },
-      "2026-04-23": {
-        "start": "11:00",
-        "end": "18:00"
       }
     },
     "Renata": {
@@ -11170,8 +11166,8 @@
         "end": "05:00"
       },
       "2026-04-23": {
-        "start": "11:00",
-        "end": "23:00"
+        "start": "14:00",
+        "end": "05:00"
       },
       "2026-04-24": {
         "start": "11:00",
@@ -11326,7 +11322,7 @@
     }
   },
   "lastGirlsSync": "2026-04-18T04:00:31.319Z",
-  "lastCalendarSync": "2026-04-22T21:13:12.450Z",
+  "lastCalendarSync": "2026-04-23T03:53:25.921Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

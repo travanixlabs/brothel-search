@@ -370,7 +370,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-18",
+      "lastRostered": "2026-04-23",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-07.jpeg",
@@ -9436,10 +9436,6 @@
         "start": "12:00",
         "end": "02:00"
       },
-      "2026-04-23": {
-        "start": "12:00",
-        "end": "02:00"
-      },
       "2026-04-24": {
         "start": "12:00",
         "end": "02:00"
@@ -10988,6 +10984,10 @@
       "2026-04-16": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-04-23": {
+        "start": "22:00",
+        "end": "05:00"
       }
     },
     "Ayani": {
@@ -11282,8 +11282,8 @@
         "end": "05:00"
       },
       "2026-04-24": {
-        "start": "15:00",
-        "end": "05:00"
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "Manon": {
@@ -11413,7 +11413,7 @@
       },
       "2026-04-24": {
         "start": "10:00",
-        "end": "01:00"
+        "end": "03:00"
       }
     },
     "Kotona": {
@@ -11432,7 +11432,7 @@
     }
   },
   "lastGirlsSync": "2026-04-22T09:38:24.954Z",
-  "lastCalendarSync": "2026-04-23T05:14:27.107Z",
+  "lastCalendarSync": "2026-04-23T08:17:29.408Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

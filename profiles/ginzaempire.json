@@ -4686,7 +4686,7 @@
         "CIM"
       ],
       "lastModified": "2026-04-21T17:03:45.978Z",
-      "lastRostered": "2026-04-23",
+      "lastRostered": "2026-04-24",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -4971,7 +4971,8 @@
         "Rimming",
         "GFE"
       ],
-      "lastModified": "2026-04-23T11:02:02.793Z"
+      "lastModified": "2026-04-23T11:02:02.793Z",
+      "lastRostered": "2026-04-24"
     }
   ],
   "calendar": {
@@ -7696,6 +7697,10 @@
       "2026-04-23": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-04-24": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Anju": {
@@ -7884,8 +7889,14 @@
         "start": "10:30",
         "end": "20:00"
       }
+    },
+    "Liora": {
+      "2026-04-24": {
+        "start": "10:30",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-23T11:02:02.793Z",
-  "lastCalendarSync": "2026-04-23T08:17:17.039Z"
+  "lastCalendarSync": "2026-04-23T11:36:32.483Z"
 }

@@ -129,7 +129,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:15.795Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-04-26",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/Sakura-N.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/Sakura-N1.jpg",
@@ -374,7 +374,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:36.399Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-04-25",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/02/Apple-1.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/02/Apple5.jpg"
@@ -1758,14 +1758,6 @@
       "2026-04-23": {
         "start": "11:00",
         "end": "05:00"
-      },
-      "2026-04-24": {
-        "start": "11:00",
-        "end": "05:00"
-      },
-      "2026-04-25": {
-        "start": "11:00",
-        "end": "05:00"
       }
     },
     "Ashvey": {
@@ -1917,7 +1909,20 @@
         "end": "05:00"
       }
     },
-    "Sakura": {},
+    "Sakura": {
+      "2026-04-24": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-04-25": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-04-26": {
+        "start": "17:00",
+        "end": "05:00"
+      }
+    },
     "Yuki": {
       "2026-03-27": {
         "start": "15:00",
@@ -2217,10 +2222,6 @@
         "start": "11:00",
         "end": "02:00"
       },
-      "2026-04-26": {
-        "start": "11:00",
-        "end": "02:00"
-      },
       "2026-04-20": {
         "start": "11:00",
         "end": "02:00"
@@ -2236,7 +2237,9 @@
       "2026-04-23": {
         "start": "11:00",
         "end": "02:00"
-      },
+      }
+    },
+    "Apple": {
       "2026-04-24": {
         "start": "11:00",
         "end": "02:00"
@@ -2248,7 +2251,7 @@
     }
   },
   "lastGirlsSync": "2026-04-23T16:00:20.923Z",
-  "lastCalendarSync": "2026-04-20T03:57:32.460Z",
+  "lastCalendarSync": "2026-04-24T03:57:30.649Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

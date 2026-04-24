@@ -9382,6 +9382,30 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Salala",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "153",
+      "cup": "E",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-24",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/salala-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84001777008745_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/83991777008744_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-24T11:01:00.480Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -11514,7 +11538,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-22T09:38:24.954Z",
+  "lastGirlsSync": "2026-04-24T11:01:00.480Z",
   "lastCalendarSync": "2026-04-23T21:11:39.945Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

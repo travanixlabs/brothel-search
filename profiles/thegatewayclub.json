@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-27",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-24",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2170,7 +2170,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2021-12-01",
-      "lastRostered": "2021-12-01",
+      "lastRostered": "2026-04-24",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/katia-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2021/12/Katia424-1.jpg",
@@ -2797,7 +2797,7 @@
         "end": "06:00"
       },
       "2026-04-24": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2987,7 +2987,7 @@
         "end": "06:00"
       },
       "2026-04-24": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -3087,12 +3087,7 @@
       }
     },
     "Megan": {},
-    "Mia": {
-      "2026-04-24": {
-        "start": "12:00",
-        "end": "06:00"
-      }
-    },
+    "Mia": {},
     "Mika": {
       "2026-04-10": {
         "start": "12:00",
@@ -3422,11 +3417,11 @@
     "Nikita": {},
     "Katia": {
       "2026-04-24": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-24T10:01:10.599Z",
-  "lastCalendarSync": "2026-04-24T06:25:41.167Z"
+  "lastCalendarSync": "2026-04-24T10:09:28.847Z"
 }

@@ -168,7 +168,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Amy",
@@ -227,7 +227,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Ari",
@@ -311,7 +311,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Aurora",
@@ -351,7 +351,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Belle",
@@ -511,7 +511,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Charlie",
@@ -593,7 +593,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-25"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Cleo",
@@ -713,7 +713,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Darcy",
@@ -869,7 +869,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Ellie",
@@ -972,7 +972,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Gabrielle",
@@ -993,7 +993,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Georgia",
@@ -1285,7 +1285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Jasmine",
@@ -1405,7 +1405,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Lana on holidays",
@@ -1672,7 +1672,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Melody",
@@ -1935,7 +1935,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Petra",
@@ -2059,7 +2059,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Samantha",
@@ -2099,7 +2099,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Scarlett",
@@ -2158,7 +2158,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Snow",
@@ -2419,7 +2419,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-25"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Winnie",
@@ -2800,7 +2800,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Audrina",
@@ -2821,7 +2821,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Bree***",
@@ -2896,7 +2896,8 @@
       "2026-04-28",
       "2026-04-29",
       "2026-04-30",
-      "2026-05-01"
+      "2026-05-01",
+      "2026-05-02"
     ],
     "Amany": {
       "2026-04-05": {
@@ -2950,6 +2951,10 @@
         "end": "06:00"
       },
       "2026-05-01": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -3132,6 +3137,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Rana": {
@@ -3186,6 +3195,10 @@
         "end": "06:00"
       },
       "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -3700,6 +3713,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Mira": {
@@ -3816,6 +3833,10 @@
       "2026-05-01": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Camilla": {
@@ -3880,6 +3901,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -3938,6 +3963,10 @@
         "end": "06:00"
       },
       "2026-05-01": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4014,6 +4043,10 @@
         "end": "06:00"
       },
       "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4178,6 +4211,10 @@
         "end": "06:00"
       },
       "2026-05-01": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4346,6 +4383,10 @@
       "2026-05-01": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Nora": {
@@ -4454,6 +4495,10 @@
       "2026-04-30": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Charlie": {
@@ -4500,6 +4545,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Georgia": {
@@ -4524,6 +4573,10 @@
         "end": "18:00"
       },
       "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -4963,6 +5016,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Sophia": {
@@ -5127,6 +5184,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Amber": {
@@ -5229,6 +5290,10 @@
         "end": "06:00"
       },
       "2026-04-25": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -5376,6 +5441,10 @@
       "2026-04-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Sabrina": {
@@ -5398,6 +5467,10 @@
       "2026-04-23": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Gabrielle": {
@@ -5414,6 +5487,10 @@
         "end": "06:00"
       },
       "2026-05-01": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -5438,6 +5515,10 @@
       "2026-04-24": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Bree***": {
@@ -5455,5 +5536,5 @@
     "Rose ****": {}
   },
   "lastGirlsSync": "2026-04-20T10:00:41.465Z",
-  "lastCalendarSync": "2026-04-25T11:09:44.951Z"
+  "lastCalendarSync": "2026-04-25T15:05:31.260Z"
 }

@@ -3439,7 +3439,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Ruby",
@@ -4352,7 +4352,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-04-25"
     },
     {
       "name": "Victoria",
@@ -5677,6 +5677,10 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-04-25": {
+        "start": "16:00",
+        "end": "21:00"
       }
     },
     "Lilith": {
@@ -5842,6 +5846,14 @@
         "end": "03:00"
       },
       "2026-04-30": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-01": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-02": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -6537,5 +6549,5 @@
     }
   },
   "lastGirlsSync": "2026-04-24T22:35:22.025Z",
-  "lastCalendarSync": "2026-04-25T03:39:44.807Z"
+  "lastCalendarSync": "2026-04-25T04:59:53.203Z"
 }

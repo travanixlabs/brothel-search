@@ -1508,6 +1508,53 @@
       "labels": [],
       "lastModified": "2026-04-19T06:00:32.662Z",
       "lastRostered": "2026-04-26"
+    },
+    {
+      "name": "Mimi",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "25",
+      "height": "160",
+      "cup": "D",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-04-25",
+      "lang": "Vietnamese, Limited English",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/mimivietnamese-2/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/MImiV.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/MimiV1.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/MimiV2.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-25T05:50:10.136Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Miya",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "25",
+      "height": "158",
+      "cup": "D",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-04-25",
+      "lang": "Vietnamese, Limited English",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/miyavietnamese/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/MiyaV.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/04/MiyaV1.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-25T05:50:10.136Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -2250,7 +2297,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-23T16:00:20.923Z",
+  "lastGirlsSync": "2026-04-25T05:50:10.136Z",
   "lastCalendarSync": "2026-04-24T03:57:30.649Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",

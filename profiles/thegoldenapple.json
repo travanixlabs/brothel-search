@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-25"
+      "lastRostered": "2026-04-26"
     },
     {
       "name": "Cammie",
@@ -1433,7 +1433,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-19"
+      "lastRostered": "2026-04-26"
     },
     {
       "name": "Dahlia ***",
@@ -2307,6 +2307,10 @@
       "2026-04-25": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-04-26": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Darcy": {
@@ -2370,6 +2374,10 @@
       "2026-04-19": {
         "start": "00:00",
         "end": "09:00"
+      },
+      "2026-04-26": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Amy": {},
@@ -2425,5 +2433,5 @@
     }
   },
   "lastGirlsSync": "2026-04-20T10:00:37.888Z",
-  "lastCalendarSync": "2026-04-25T19:14:31.448Z"
+  "lastCalendarSync": "2026-04-25T23:07:53.155Z"
 }

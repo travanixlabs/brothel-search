@@ -883,7 +883,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2025-11-01",
+      "lastRostered": "2026-04-26",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Soca-Jp-09-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Soca-Jp-07-scaled.jpeg",
@@ -11637,10 +11637,16 @@
         "start": "16:00",
         "end": "04:00"
       }
+    },
+    "Soca": {
+      "2026-04-26": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-24T11:01:00.480Z",
-  "lastCalendarSync": "2026-04-25T03:39:03.132Z",
+  "lastCalendarSync": "2026-04-25T04:58:43.521Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

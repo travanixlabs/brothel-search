@@ -2864,6 +2864,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-20"
+    },
+    {
+      "name": "Sarah",
+      "country": [
+        "Greek"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-04-26",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5535,6 +5553,6 @@
     },
     "Rose ****": {}
   },
-  "lastGirlsSync": "2026-04-20T10:00:41.465Z",
+  "lastGirlsSync": "2026-04-25T16:00:40.954Z",
   "lastCalendarSync": "2026-04-25T15:05:31.260Z"
 }

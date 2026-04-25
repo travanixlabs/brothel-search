@@ -718,7 +718,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-26",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-02.jpeg",
@@ -9417,7 +9417,16 @@
         "end": "05:00"
       }
     },
-    "Sarara": {},
+    "Sarara": {
+      "2026-04-25": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-04-26": {
+        "start": "15:00",
+        "end": "05:00"
+      }
+    },
     "Sora": {
       "2026-03-27": {
         "start": "13:00",
@@ -11468,7 +11477,7 @@
     }
   },
   "lastGirlsSync": "2026-04-24T06:10:35.452Z",
-  "lastCalendarSync": "2026-04-25T03:39:07.477Z",
+  "lastCalendarSync": "2026-04-25T04:58:47.402Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

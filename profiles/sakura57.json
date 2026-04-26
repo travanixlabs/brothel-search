@@ -718,7 +718,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-04-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-02.jpeg",
@@ -3955,7 +3955,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-04-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/04/Kuna-Jp-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/04/Kuna-Jp-05.jpeg",
@@ -4669,7 +4669,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-25",
+      "lastRostered": "2026-04-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-01.jpeg",
@@ -9092,6 +9092,10 @@
       "2026-04-26": {
         "start": "10:00",
         "end": "21:00"
+      },
+      "2026-04-27": {
+        "start": "10:00",
+        "end": "21:00"
       }
     },
     "Cocomi": {
@@ -9436,6 +9440,10 @@
         "end": "05:00"
       },
       "2026-04-26": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-04-27": {
         "start": "15:00",
         "end": "05:00"
       }
@@ -11190,10 +11198,6 @@
       "2026-04-24": {
         "start": "13:00",
         "end": "04:00"
-      },
-      "2026-04-26": {
-        "start": "11:00",
-        "end": "16:00"
       }
     },
     "Haru": {
@@ -11238,6 +11242,14 @@
         "end": "22:00"
       },
       "2026-04-25": {
+        "start": "10:00",
+        "end": "22:00"
+      },
+      "2026-04-26": {
+        "start": "10:00",
+        "end": "22:00"
+      },
+      "2026-04-27": {
         "start": "10:00",
         "end": "22:00"
       }
@@ -11519,10 +11531,6 @@
         "start": "21:00",
         "end": "04:00"
       },
-      "2026-04-26": {
-        "start": "10:00",
-        "end": "04:00"
-      },
       "2026-04-27": {
         "start": "10:00",
         "end": "04:00"
@@ -11530,7 +11538,7 @@
     }
   },
   "lastGirlsSync": "2026-04-24T06:10:35.452Z",
-  "lastCalendarSync": "2026-04-25T21:01:52.124Z",
+  "lastCalendarSync": "2026-04-26T04:01:40.603Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

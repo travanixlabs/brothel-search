@@ -9428,7 +9428,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-26T10:39:23.456Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-26"
     }
   ],
   "calendar": {
@@ -11719,10 +11719,16 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Sisley": {
+      "2026-04-26": {
+        "start": "21:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-26T10:39:23.456Z",
-  "lastCalendarSync": "2026-04-26T09:32:48.245Z",
+  "lastCalendarSync": "2026-04-26T11:09:09.168Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -483,7 +483,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-04-26",
       "desc": "Hey gorgeous, I’m Bambi, and just like my name, I bring a natural sweetness and playful charm that you won’t forget. I’m your blonde Australian beauty with striking blue eyes and a petite, feminine figure that will draw you in from the very first glance. With a soft, sensual nature and ..."
     },
     {
@@ -3078,7 +3078,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-21"
+      "lastRostered": "2026-04-26"
     },
     {
       "name": "Parker",
@@ -4931,10 +4931,6 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-04-26": {
-        "start": "09:30",
-        "end": "16:30"
-      },
       "2026-04-27": {
         "start": "10:00",
         "end": "16:00"
@@ -4968,6 +4964,10 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-04-26": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Bella": {
@@ -5470,10 +5470,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
-      },
-      "2026-04-26": {
-        "start": "10:00",
-        "end": "18:00"
       }
     },
     "Ella": {
@@ -5785,6 +5781,10 @@
       "2026-04-08": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-04-26": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Scarlett": {
@@ -5829,6 +5829,10 @@
       "2026-05-01": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-04-26": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Raelynn": {
@@ -6278,10 +6282,6 @@
       }
     },
     "Mercy": {
-      "2026-04-26": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-04-29": {
         "start": "10:00",
         "end": "18:00"
@@ -6400,5 +6400,5 @@
     "Piper": {}
   },
   "lastGirlsSync": "2026-04-26T06:10:22.674Z",
-  "lastCalendarSync": "2026-04-26T06:23:18.137Z"
+  "lastCalendarSync": "2026-04-26T08:00:19.002Z"
 }

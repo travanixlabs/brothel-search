@@ -8957,6 +8957,31 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Chiyoko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "160",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-04-26",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/chiyoko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/84081777196385_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/84091777196387_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/04/84101777196388_.pic_-1400x1050.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-26T10:00:54.227Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -11543,7 +11568,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-24T06:10:35.452Z",
+  "lastGirlsSync": "2026-04-26T10:00:54.227Z",
   "lastCalendarSync": "2026-04-26T05:23:05.699Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

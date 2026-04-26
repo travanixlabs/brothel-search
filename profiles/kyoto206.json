@@ -9406,6 +9406,29 @@
       "labels": [],
       "lastModified": "2026-04-24T11:01:00.480Z",
       "lastRostered": "2026-04-27"
+    },
+    {
+      "name": "Sisley",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "162",
+      "cup": "C",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-04-26",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/sisley-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84141777197418_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-26T10:39:23.456Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -11698,7 +11721,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-26T10:00:53.328Z",
+  "lastGirlsSync": "2026-04-26T10:39:23.456Z",
   "lastCalendarSync": "2026-04-26T09:32:48.245Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

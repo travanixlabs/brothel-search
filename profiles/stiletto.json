@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-23",
+      "lastRostered": "2026-04-26",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -5725,6 +5725,10 @@
       "2026-04-30": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-04-26": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Elizabeth": {
@@ -6383,9 +6387,14 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-04-26": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Piper": {}
   },
   "lastGirlsSync": "2026-04-25T22:31:20.234Z",
-  "lastCalendarSync": "2026-04-25T23:08:11.901Z"
+  "lastCalendarSync": "2026-04-26T04:02:22.690Z"
 }

@@ -2059,7 +2059,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Samantha",
@@ -2642,7 +2642,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Asia",
@@ -5788,6 +5788,10 @@
       "2026-04-26": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Vicki": {},
@@ -5933,6 +5937,10 @@
       "2026-04-29": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Gabrielle": {
@@ -5994,5 +6002,5 @@
     "Rose ****": {}
   },
   "lastGirlsSync": "2026-04-25T16:00:40.954Z",
-  "lastCalendarSync": "2026-04-26T15:06:24.579Z"
+  "lastCalendarSync": "2026-04-26T17:11:41.991Z"
 }

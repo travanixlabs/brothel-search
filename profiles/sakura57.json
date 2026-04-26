@@ -6630,7 +6630,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2024-05-01",
+      "lastRostered": "2026-04-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/05/Chiyoki-3-Jp-scaled.jpg"
       ],
@@ -11535,10 +11535,16 @@
         "start": "10:00",
         "end": "04:00"
       }
+    },
+    "Chiyoki": {
+      "2026-04-27": {
+        "start": "10:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-24T06:10:35.452Z",
-  "lastCalendarSync": "2026-04-26T04:01:40.603Z",
+  "lastCalendarSync": "2026-04-26T05:23:05.699Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

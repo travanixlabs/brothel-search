@@ -8981,7 +8981,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-26T10:00:54.227Z",
-      "lastRostered": ""
+      "lastRostered": "2026-04-27"
     }
   ],
   "calendar": {
@@ -11561,7 +11561,8 @@
         "end": "04:00"
       }
     },
-    "Chiyoki": {
+    "Chiyoki": {},
+    "Chiyoko": {
       "2026-04-27": {
         "start": "10:00",
         "end": "05:00"
@@ -11569,7 +11570,7 @@
     }
   },
   "lastGirlsSync": "2026-04-26T10:00:54.227Z",
-  "lastCalendarSync": "2026-04-26T05:23:05.699Z",
+  "lastCalendarSync": "2026-04-26T11:09:13.673Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -111,7 +111,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "Monica",
+      "name": "🆕 Monica",
       "country": [
         "Thailandese"
       ],
@@ -1789,7 +1789,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250413130103.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Sola",
@@ -1934,6 +1934,27 @@
       "oldUrl": "https://jinia.com.au/cindy-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260420111414.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Baby",
+      "country": [
+        "Hong Kong"
+      ],
+      "age": "25",
+      "height": "161",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-04-26",
+      "lastRostered": "2026-04-26",
+      "oldUrl": "https://jinia.com.au/7843-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260426084859_1029_2.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -2894,13 +2915,13 @@
         "end": "03:00"
       }
     },
-    "Monica": {
+    "🆕 Monica": {
       "2026-04-22": {
         "start": "11:30",
         "end": "16:30"
       }
     }
   },
-  "lastGirlsSync": "2026-04-20T06:19:44.979Z",
+  "lastGirlsSync": "2026-04-26T06:10:48.317Z",
   "lastCalendarSync": "2026-04-26T04:02:33.860Z"
 }

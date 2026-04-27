@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2228,6 +2228,28 @@
         "DATY",
         "Role Play"
       ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cassie",
+      "country": [],
+      "age": "22",
+      "height": "",
+      "cup": "B",
+      "body": "10",
+      "desc": "This Euro babe is guaranteed to turn heads! Cassie has a body to die for with the personality to match, She is new to The Gateway Club and we can already tell she will be a hit. Be sure to drop by and give her a warm welcome.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-04-01",
+      "lastRostered": "2026-04-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/cassie-new/",
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/e90fa8d6-cb2a-4b49-bb2e-733b63620190.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/f1df1a56-2b4e-47f6-a0c5-c28e08553d98.jpg",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/e6fd21cb-fcd3-4ee4-bb2f-9b877647ca36.jpg"
+      ],
+      "labels": [],
       "originalSite": "Exists"
     }
   ],
@@ -3686,8 +3708,14 @@
         "start": "12:00",
         "end": "18:00"
       }
+    },
+    "Cassie": {
+      "2026-04-28": {
+        "start": "06:00",
+        "end": "12:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-27T06:31:37.689Z",
+  "lastGirlsSync": "2026-04-27T10:00:52.076Z",
   "lastCalendarSync": "2026-04-27T07:13:39.153Z"
 }

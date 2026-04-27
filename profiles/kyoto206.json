@@ -9429,6 +9429,36 @@
       "labels": [],
       "lastModified": "2026-04-26T10:39:23.456Z",
       "lastRostered": "2026-04-26"
+    },
+    {
+      "name": "Migu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "158",
+      "cup": "D",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-04-27",
+      "oldUrl": "https://citybrothel.com.au/project/migu-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-04-27T05:37:40.946Z",
+      "lastRostered": "2026-04-27",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84251777265168_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84231777265163_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84241777265166_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84261777265171_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/04/84221777265162_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -11783,10 +11813,16 @@
         "start": "21:00",
         "end": "05:00"
       }
+    },
+    "Migu": {
+      "2026-04-27": {
+        "start": "17:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-26T10:39:23.456Z",
-  "lastCalendarSync": "2026-04-27T04:06:39.522Z",
+  "lastCalendarSync": "2026-04-27T05:37:40.946Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

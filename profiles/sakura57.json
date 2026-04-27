@@ -7113,7 +7113,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-23",
+      "lastRostered": "2026-04-28",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2023/07/Nisha-In-06-scaled.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2023/07/Nisha-In-07-scaled.jpeg",
@@ -9579,10 +9579,6 @@
         "start": "15:00",
         "end": "03:00"
       },
-      "2026-04-27": {
-        "start": "15:00",
-        "end": "02:00"
-      },
       "2026-04-28": {
         "start": "15:00",
         "end": "02:00"
@@ -10034,6 +10030,10 @@
       "2026-04-21": {
         "start": "15:00",
         "end": "21:00"
+      },
+      "2026-04-28": {
+        "start": "11:00",
+        "end": "15:00"
       }
     },
     "Renata": {
@@ -11444,8 +11444,8 @@
         "end": "05:00"
       },
       "2026-04-27": {
-        "start": "11:00",
-        "end": "18:00"
+        "start": "14:00",
+        "end": "05:00"
       }
     },
     "Tammy": {
@@ -11649,7 +11649,7 @@
     }
   },
   "lastGirlsSync": "2026-04-26T10:00:54.227Z",
-  "lastCalendarSync": "2026-04-26T21:02:00.085Z",
+  "lastCalendarSync": "2026-04-27T04:06:42.899Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

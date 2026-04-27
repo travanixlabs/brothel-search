@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-27",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1514,7 +1514,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-05-03",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/cristina/",
       "photos": [],
       "labels": [
@@ -1628,7 +1628,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-05-01",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/mayanew/",
       "photos": [],
       "labels": [],
@@ -1907,7 +1907,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-07-01",
-      "lastRostered": "2026-04-25",
+      "lastRostered": "2026-05-02",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/gia-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2024/07/Gia-1.jpg",
@@ -2207,7 +2207,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2022-07-01",
-      "lastRostered": "2022-07-01",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/emma-new-3/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2022/07/Emma1.jpg",
@@ -2262,8 +2262,12 @@
         "end": "06:00"
       },
       "2026-05-02": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Gemma": {
@@ -2388,8 +2392,24 @@
         "end": "06:00"
       },
       "2026-04-27": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
+      },
+      "2026-04-28": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-01": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Layla": {
@@ -2446,11 +2466,11 @@
         "end": "06:00"
       },
       "2026-04-28": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-30": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-05-02": {
@@ -2505,7 +2525,7 @@
       },
       "2026-04-30": {
         "start": "06:00",
-        "end": "12:00"
+        "end": "18:00"
       },
       "2026-05-01": {
         "start": "06:00",
@@ -2564,11 +2584,11 @@
         "end": "06:00"
       },
       "2026-04-27": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-28": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-04-30": {
@@ -2610,7 +2630,7 @@
         "end": "06:00"
       },
       "2026-04-29": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-05-02": {
@@ -2733,11 +2753,11 @@
         "end": "06:00"
       },
       "2026-05-01": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       },
       "2026-05-02": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2920,7 +2940,7 @@
         "end": "06:00"
       },
       "2026-04-27": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -2940,7 +2960,7 @@
         "end": "06:00"
       },
       "2026-05-01": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -3250,6 +3270,14 @@
       "2026-04-27": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-28": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Megan": {},
@@ -3449,6 +3477,26 @@
       "2026-04-25": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-27": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-04-28": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "_published": [
@@ -3507,7 +3555,7 @@
         "end": "06:00"
       },
       "2026-04-29": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -3631,15 +3679,15 @@
     },
     "Emma": {
       "2026-04-28": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-04-29": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-27T06:31:37.689Z",
-  "lastCalendarSync": "2026-04-27T04:07:17.193Z"
+  "lastCalendarSync": "2026-04-27T07:13:39.153Z"
 }

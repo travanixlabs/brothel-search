@@ -2538,7 +2538,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-04-27",
       "oldUrl": "https://wivesonly.com.au/?page_id=6172&preview=true",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3929,8 +3929,14 @@
         "end": "20:30"
       }
     },
-    "Hollie": {}
+    "Hollie": {},
+    "Paloma": {
+      "2026-04-27": {
+        "start": "23:00",
+        "end": "19:30"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-27T11:42:11.998Z",
-  "lastCalendarSync": "2026-04-27T04:07:34.221Z"
+  "lastCalendarSync": "2026-04-27T12:05:47.726Z"
 }

@@ -873,7 +873,9 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T16:00:32.518Z",
-      "lastRostered": "2026-04-25"
+      "lastRostered": "2026-04-25",
+      "deleted": "Yes",
+      "deletedAt": "2026-04-28T17:50:46.674Z"
     }
   ],
   "calendar": {

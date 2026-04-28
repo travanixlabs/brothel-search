@@ -8946,7 +8946,7 @@
       "desc": "",
       "lang": "Japanese, Limited English",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-04-21T03:50:34.503Z",
       "lastRostered": "2026-04-29",
       "photos": [
@@ -9010,6 +9010,32 @@
       "labels": [],
       "lastModified": "2026-04-27T06:30:50.528Z",
       "lastRostered": "2026-04-29"
+    },
+    {
+      "name": "Hikaru",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "167",
+      "cup": "C",
+      "val1": "210",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2025-05-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hikaru-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/05/Hikaru-Jp-01-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/05/Hikaru-Jp-02-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/05/Hikaru-Jp-03-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/05/Hikaru-Jp-04-160x160.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-28T04:00:35.839Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -11747,7 +11773,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-27T06:30:50.528Z",
+  "lastGirlsSync": "2026-04-28T04:00:35.839Z",
   "lastCalendarSync": "2026-04-27T23:29:30.280Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

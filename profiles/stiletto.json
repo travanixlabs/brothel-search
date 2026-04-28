@@ -4845,6 +4845,46 @@
         "Fingering"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Fendi",
+      "country": [
+        "European"
+      ],
+      "age": "19",
+      "height": "",
+      "cup": "E",
+      "body": "10",
+      "desc": "Hello there gentlemen. I'm Fendi and I am Stiletto's newest Spanish stunner. I have silky tanned skin, a gorgeous size 10 frame with a popping booty and a plentiful E cup bust that will make you want to follow me upstairs. When we meet you will be enchanted by my mysterious ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-04-28",
+      "oldUrl": "https://www.stilettosydney.com/workers/fendi-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "Double",
+        "COB",
+        "Adventurous Positions",
+        "Deep Throat",
+        "Anal",
+        "DFK",
+        "Golden Showers",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Strap on",
+        "Party Bookings",
+        "Stripping",
+        "BDSM",
+        "Social Escort",
+        "Fingering",
+        "Anal Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6560,8 +6600,14 @@
         "start": "13:00",
         "end": "21:00"
       }
+    },
+    "Fendi": {
+      "2026-04-28": {
+        "start": "17:00",
+        "end": "01:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-27T22:45:07.267Z",
+  "lastGirlsSync": "2026-04-28T06:33:35.803Z",
   "lastCalendarSync": "2026-04-28T05:43:03.561Z"
 }

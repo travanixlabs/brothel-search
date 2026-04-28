@@ -2242,7 +2242,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-04-29",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/cassie-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/e90fa8d6-cb2a-4b49-bb2e-733b63620190.jpg",
@@ -2547,7 +2547,7 @@
       },
       "2026-04-30": {
         "start": "06:00",
-        "end": "12:00"
+        "end": "18:00"
       },
       "2026-05-01": {
         "start": "06:00",
@@ -2986,7 +2986,7 @@
         "end": "06:00"
       },
       "2026-05-01": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -3445,6 +3445,10 @@
       "2026-05-01": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-04-29": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Stevie": {},
@@ -3729,9 +3733,13 @@
       "2026-04-28": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-04-29": {
+        "start": "12:00",
+        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-28T17:29:21.193Z",
-  "lastCalendarSync": "2026-04-28T18:07:07.520Z"
+  "lastCalendarSync": "2026-04-28T19:59:56.183Z"
 }

@@ -483,7 +483,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-04-30",
       "desc": "Hey gorgeous, I’m Bambi, and just like my name, I bring a natural sweetness and playful charm that you won’t forget. I’m your blonde Australian beauty with striking blue eyes and a petite, feminine figure that will draw you in from the very first glance. With a soft, sensual nature and ..."
     },
     {
@@ -4111,7 +4111,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-05"
     },
     {
       "name": "Tahlia",
@@ -4388,7 +4388,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-04-30"
     },
     {
       "name": "Viv",
@@ -5097,6 +5097,10 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Bella": {
@@ -5747,6 +5751,10 @@
       "2026-04-29": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-04-30": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Ella": {
@@ -5785,6 +5793,10 @@
       "2026-05-02": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-05-05": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Jamie": {
@@ -5811,10 +5823,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-04-29": {
-        "start": "11:30",
-        "end": "18:00"
       }
     },
     "Mara": {
@@ -5842,10 +5850,6 @@
       }
     },
     "Ruby": {
-      "2026-04-29": {
-        "start": "11:00",
-        "end": "18:00"
-      },
       "2026-04-30": {
         "start": "11:00",
         "end": "18:00"
@@ -6434,10 +6438,6 @@
     },
     "Karina": {},
     "Bree": {
-      "2026-04-29": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-05-04": {
         "start": "09:00",
         "end": "17:00"
@@ -6562,10 +6562,6 @@
       }
     },
     "Mercy": {
-      "2026-04-29": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-05-02": {
         "start": "10:00",
         "end": "18:00"
@@ -6677,5 +6673,5 @@
     }
   },
   "lastGirlsSync": "2026-04-29T06:27:53.450Z",
-  "lastCalendarSync": "2026-04-29T06:43:03.132Z"
+  "lastCalendarSync": "2026-04-29T08:37:43.527Z"
 }

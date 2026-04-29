@@ -511,7 +511,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-04-30",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Maniya-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Maniya-Jp-02.jpeg",
@@ -11810,10 +11810,20 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Maniya": {
+      "2026-04-29": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-04-30": {
+        "start": "15:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-28T04:00:35.839Z",
-  "lastCalendarSync": "2026-04-28T21:35:01.709Z",
+  "lastCalendarSync": "2026-04-29T04:08:45.452Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

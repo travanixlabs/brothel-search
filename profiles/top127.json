@@ -876,6 +876,30 @@
       "lastRostered": "2026-04-25",
       "deleted": "Yes",
       "deletedAt": "2026-04-28T17:50:46.674Z"
+    },
+    {
+      "name": "Hadid",
+      "country": [
+        "Chinese"
+      ],
+      "age": "26",
+      "height": "164",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "290",
+      "startDate": "2026-04-29",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://127city.com/c-hadid-new-10am-1am-diamond-diamond170-240-280-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/04/Hadid3-528x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/04/Hadid4-535x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-04-29T10:00:39.593Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -1782,7 +1806,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-28T04:00:36.382Z",
+  "lastGirlsSync": "2026-04-29T10:00:39.593Z",
   "lastCalendarSync": "2026-04-28T15:03:28.114Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

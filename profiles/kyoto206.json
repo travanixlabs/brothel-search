@@ -1140,7 +1140,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-27",
+      "lastRostered": "2026-04-29",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -10122,7 +10122,7 @@
         "end": "00:00"
       },
       "2026-04-29": {
-        "start": "16:00",
+        "start": "17:00",
         "end": "00:00"
       },
       "2026-04-30": {
@@ -10857,10 +10857,6 @@
       "2026-04-27": {
         "start": "15:00",
         "end": "00:00"
-      },
-      "2026-04-29": {
-        "start": "15:00",
-        "end": "00:00"
       }
     },
     "Olivia": {},
@@ -11136,6 +11132,10 @@
       "2026-04-27": {
         "start": "21:00",
         "end": "04:00"
+      },
+      "2026-04-29": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Otoha": {
@@ -11312,7 +11312,7 @@
         "end": "03:00"
       },
       "2026-04-29": {
-        "start": "12:00",
+        "start": "13:00",
         "end": "03:00"
       },
       "2026-04-30": {
@@ -11646,10 +11646,6 @@
       "2026-04-28": {
         "start": "22:00",
         "end": "05:00"
-      },
-      "2026-04-29": {
-        "start": "12:00",
-        "end": "03:00"
       }
     },
     "Manon": {
@@ -11828,6 +11824,10 @@
       "2026-04-30": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-04-29": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "Kotona": {
@@ -11964,7 +11964,7 @@
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-04-28T21:34:57.323Z",
+  "lastCalendarSync": "2026-04-29T04:08:41.859Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

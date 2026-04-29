@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-04",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2297,6 +2297,35 @@
         "Party Bookings",
         "Couple",
         "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Grace",
+      "country": [],
+      "age": "22",
+      "height": "173",
+      "cup": "D",
+      "body": "10",
+      "desc": "Grace is a young African lady who is only available while on tour. Don't miss your chance to spend some time with her. She offers a variety of extra services.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/grace-new-4/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "Party Bookings",
+        "GFE",
+        "BDSM",
         "BBBJ",
         "DATY",
         "Role Play"
@@ -3816,8 +3845,14 @@
         "end": "06:00"
       }
     },
-    "Alexis": {}
+    "Alexis": {},
+    "Grace": {
+      "2026-05-06": {
+        "start": "06:00",
+        "end": "06:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-04-29T16:00:59.390Z",
+  "lastGirlsSync": "2026-04-29T17:15:50.115Z",
   "lastCalendarSync": "2026-04-29T16:10:35.611Z"
 }

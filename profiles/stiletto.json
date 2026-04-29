@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-25",
+      "lastRostered": "2026-05-02",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -1109,7 +1109,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-05-01"
     },
     {
       "name": "Ella",
@@ -4017,7 +4017,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-04-29"
     },
     {
       "name": "Storm",
@@ -4937,6 +4937,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-05-02": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Anna": {
@@ -5511,6 +5515,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-05": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Cindy": {
@@ -5702,7 +5710,7 @@
         "start": "17:00",
         "end": "22:00"
       },
-      "2026-05-08": {
+      "2026-05-07": {
         "start": "14:00",
         "end": "22:00"
       }
@@ -5741,6 +5749,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-04-29": {
+        "start": "11:30",
+        "end": "18:00"
       }
     },
     "Mara": {
@@ -5862,10 +5874,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-04-29": {
-        "start": "08:00",
-        "end": "14:00"
-      },
       "2026-04-30": {
         "start": "08:00",
         "end": "14:00"
@@ -5983,6 +5991,18 @@
       "2026-04-22": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-04-29": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-04-30": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-01": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Aria": {
@@ -6256,10 +6276,6 @@
         "start": "16:00",
         "end": "22:00"
       },
-      "2026-04-29": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-05-01": {
         "start": "14:00",
         "end": "22:00"
@@ -6279,6 +6295,10 @@
       "2026-05-10": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-04-30": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Rebecca": {},
@@ -6494,10 +6514,6 @@
       }
     },
     "Brandy": {
-      "2026-04-29": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-04-30": {
         "start": "12:00",
         "end": "20:00"
@@ -6583,5 +6599,5 @@
     }
   },
   "lastGirlsSync": "2026-04-28T22:51:52.572Z",
-  "lastCalendarSync": "2026-04-28T23:30:56.892Z"
+  "lastCalendarSync": "2026-04-29T04:09:24.386Z"
 }

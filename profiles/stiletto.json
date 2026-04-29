@@ -4885,6 +4885,80 @@
         "Anal Play"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Lana",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "",
+      "cup": "C-D",
+      "body": "",
+      "desc": "Boys, My name is Lana & I embody a tantalising combination of innocence and allure.&nbsp; I have a tight, toned body adorned with a perfect D-cup bust, soft brunette locks and deep brown eyes that hold a playful twinkle. I effortlessly captivate sensuality, promising nights of uninhibited ecstasy and forbidden ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-04-01",
+      "lastRostered": "2026-04-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/lana/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/04/DSC08887.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2026/04/IMG_5963.jpg"
+      ],
+      "labels": [
+        "GFE",
+        "PSE",
+        "COB",
+        "Adventurous Positions",
+        "Deep Throat",
+        "BDSM",
+        "DFK",
+        "Disabled",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Body Slide",
+        "Stripping",
+        "Foot Fetish",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lorena",
+      "country": [
+        "South American"
+      ],
+      "age": "24",
+      "height": "",
+      "cup": "D",
+      "body": "",
+      "desc": "Hello, I&#039;m Jordan. I&#039;m a friendly, curvy and fit fun loving Aussie with a spicy European background. I&#039;m intelligent and fluent in several languages... I look forward to seducing you with my words and perfectly presented curves.",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-04-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/lorena-new-3/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "Double Lesbian",
+        "Adventurous Positions",
+        "Deep Throat",
+        "DFK",
+        "Disabled",
+        "Golden Showers",
+        "Escort",
+        "2 Men",
+        "Rimming",
+        "Strap on",
+        "Body Slide",
+        "Party Bookings",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6588,8 +6662,24 @@
         "start": "19:00",
         "end": "03:00"
       }
+    },
+    "Lana": {
+      "2026-05-01": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-05-02": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
+    "Lorena": {
+      "2026-04-29": {
+        "start": "14:00",
+        "end": "20:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-04-28T22:51:52.572Z",
+  "lastGirlsSync": "2026-04-29T06:27:53.450Z",
   "lastCalendarSync": "2026-04-29T05:38:35.797Z"
 }

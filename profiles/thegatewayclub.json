@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-04",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2251,6 +2251,57 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Alexis",
+      "country": [],
+      "age": "23",
+      "height": "182",
+      "cup": "B",
+      "body": "8",
+      "desc": "Meet Alexis! Only available when touring Sydney Alexis is a must see. With a slim figure, long legs and with a variety of body art Alexis, you wont be able to keep your hands off her. Check out what extra services she provides and come in for an unforgettable experience.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/alexis-new-2/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "BDSM",
+        "GFE",
+        "BBBJ",
+        "DATY"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sydney",
+      "country": [],
+      "age": "28",
+      "height": "165",
+      "cup": "D",
+      "body": "12",
+      "desc": "Sydney is a Hawaiian lady full of energy and loves to create a tailored experience for each client she sees. Come down and ask her about her extra services.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/sydney-new-2/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Toys",
+        "Party Bookings",
+        "Couple",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2547,7 +2598,7 @@
       },
       "2026-04-30": {
         "start": "06:00",
-        "end": "18:00"
+        "end": "12:00"
       },
       "2026-05-01": {
         "start": "06:00",
@@ -2990,7 +3041,7 @@
         "end": "06:00"
       },
       "2026-05-01": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -3750,8 +3801,23 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Sydney": {
+      "2026-04-30": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-05-01": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
+        "start": "06:00",
+        "end": "06:00"
+      }
+    },
+    "Alexis": {}
   },
-  "lastGirlsSync": "2026-04-29T04:00:29.373Z",
+  "lastGirlsSync": "2026-04-29T06:27:32.807Z",
   "lastCalendarSync": "2026-04-29T05:38:23.913Z"
 }

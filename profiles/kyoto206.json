@@ -652,7 +652,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-04-30",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-1-Cn-scaled.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-2-Cn-scaled.jpg",
@@ -9761,6 +9761,10 @@
       "2026-04-26": {
         "start": "10:00",
         "end": "19:00"
+      },
+      "2026-04-30": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Kiwi": {
@@ -10729,10 +10733,6 @@
         "end": "17:00"
       },
       "2026-04-23": {
-        "start": "11:00",
-        "end": "17:00"
-      },
-      "2026-04-30": {
         "start": "11:00",
         "end": "17:00"
       }
@@ -11827,7 +11827,7 @@
       },
       "2026-04-29": {
         "start": "13:00",
-        "end": "03:00"
+        "end": "18:00"
       }
     },
     "Kotona": {
@@ -11964,7 +11964,7 @@
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-04-29T04:08:41.859Z",
+  "lastCalendarSync": "2026-04-29T08:37:00.341Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-20",
+      "lastRostered": "2026-05-04",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -1611,7 +1611,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Honey",
@@ -1755,7 +1755,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Jayde",
@@ -2728,7 +2728,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-28"
+      "lastRostered": "2026-05-01"
     },
     {
       "name": "Miley",
@@ -3032,7 +3032,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Paloma",
@@ -4939,7 +4939,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-04-29",
+      "lastRostered": "2026-04-30",
       "oldUrl": "https://www.stilettosydney.com/workers/lorena-new-3/",
       "photos": [],
       "labels": [
@@ -5207,8 +5207,8 @@
         "end": "07:00"
       },
       "2026-04-30": {
-        "start": "14:00",
-        "end": "22:00"
+        "start": "20:00",
+        "end": "04:00"
       },
       "2026-05-01": {
         "start": "14:00",
@@ -5311,6 +5311,14 @@
       "2026-05-02": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-05-07": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Flora": {
@@ -5389,6 +5397,14 @@
       "2026-05-02": {
         "start": "18:00",
         "end": "03:00"
+      },
+      "2026-05-08": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "18:00",
+        "end": "03:00"
       }
     },
     "Tahnya": {
@@ -5464,7 +5480,7 @@
       },
       "2026-05-01": {
         "start": "19:00",
-        "end": "03:00"
+        "end": "07:00"
       },
       "2026-05-02": {
         "start": "22:00",
@@ -5603,6 +5619,10 @@
       "2026-05-08": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-04-30": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Queen": {
@@ -5661,6 +5681,18 @@
       "2026-05-02": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-05": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-08": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Maddie": {
@@ -5931,10 +5963,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-04-30": {
-        "start": "08:00",
-        "end": "14:00"
       },
       "2026-05-01": {
         "start": "08:00",
@@ -6308,7 +6336,16 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-05-02": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-05-04": {
+        "start": "11:00",
+        "end": "18:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6603,7 +6640,16 @@
         "end": "03:00"
       }
     },
-    "Mia": {},
+    "Mia": {
+      "2026-04-30": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-05-01": {
+        "start": "14:00",
+        "end": "22:00"
+      }
+    },
     "Fendi": {},
     "Lena": {
       "2026-05-05": {
@@ -6625,8 +6671,13 @@
         "end": "00:00"
       }
     },
-    "Lorena": {}
+    "Lorena": {
+      "2026-04-30": {
+        "start": "13:00",
+        "end": "21:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-29T22:53:11.320Z",
-  "lastCalendarSync": "2026-04-29T23:29:52.670Z"
+  "lastCalendarSync": "2026-04-30T04:11:30.176Z"
 }

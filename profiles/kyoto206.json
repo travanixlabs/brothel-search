@@ -106,7 +106,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:31:43.525Z",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-05-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/02/Masami-Jp-01.jpeg"
       ],
@@ -5733,7 +5733,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2024-05-01",
+      "lastRostered": "2026-04-30",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Yachi-1-Th.jpg"
       ],
@@ -9320,7 +9320,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-21T03:50:25.520Z",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-05-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/83491776689333_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/83511776689334_.pic_.jpg",
@@ -10917,6 +10917,10 @@
       "2026-04-28": {
         "start": "10:00",
         "end": "15:00"
+      },
+      "2026-05-01": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "Tomie": {
@@ -11831,6 +11835,14 @@
       "2026-04-26": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Koharu": {
@@ -12030,10 +12042,16 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Yachi": {
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-04-29T23:29:07.406Z",
+  "lastCalendarSync": "2026-04-30T04:10:39.954Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

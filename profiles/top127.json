@@ -1853,15 +1853,10 @@
         "end": "02:00"
       }
     },
-    "Freecia": {
-      "2026-04-30": {
-        "start": "12:00",
-        "end": "02:00"
-      }
-    }
+    "Freecia": {}
   },
   "lastGirlsSync": "2026-04-30T11:24:49.299Z",
-  "lastCalendarSync": "2026-04-30T08:38:30.617Z",
+  "lastCalendarSync": "2026-04-30T11:56:28.559Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

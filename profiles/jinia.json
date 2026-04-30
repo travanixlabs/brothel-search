@@ -1972,7 +1972,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-30",
-      "lastRostered": "2026-04-30",
+      "lastRostered": "2026-05-01",
       "oldUrl": "https://jinia.com.au/honey/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260430140548.jpg"
@@ -3075,8 +3075,18 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "🆕 Honey": {
+      "2026-04-30": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-30T06:32:03.326Z",
-  "lastCalendarSync": "2026-04-30T04:11:40.514Z"
+  "lastCalendarSync": "2026-04-30T07:09:24.236Z"
 }

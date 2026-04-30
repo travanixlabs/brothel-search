@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Amber",
@@ -975,7 +975,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2013-10-01"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Poppy",
@@ -1081,7 +1081,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-28"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Violet",
@@ -1219,7 +1219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Giselle",
@@ -1238,7 +1238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Mila",
@@ -1277,7 +1277,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Scarlett",
@@ -1296,7 +1296,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Snow",
@@ -1315,7 +1315,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Sophia",
@@ -1372,7 +1372,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Vivian",
@@ -1845,6 +1845,10 @@
       "2026-04-29": {
         "start": "21:00",
         "end": "04:00"
+      },
+      "2026-05-03": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Janelle": {
@@ -1901,10 +1905,6 @@
       "2026-04-28": {
         "start": "18:00",
         "end": "03:00"
-      },
-      "2026-05-01": {
-        "start": "20:00",
-        "end": "05:00"
       }
     },
     "Stacey": {
@@ -1983,6 +1983,10 @@
       "2026-04-13": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-05-03": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Mila": {
@@ -2029,6 +2033,10 @@
         "end": "15:00"
       },
       "2026-04-05": {
+        "start": "10:00",
+        "end": "15:00"
+      },
+      "2026-05-03": {
         "start": "10:00",
         "end": "15:00"
       }
@@ -2233,6 +2241,14 @@
       "2026-04-29": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-05-01": {
+        "start": "10:00",
+        "end": "22:00"
+      },
+      "2026-05-03": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Zoey": {
@@ -2291,6 +2307,10 @@
         "end": "06:00"
       },
       "2026-04-20": {
+        "start": "21:00",
+        "end": "06:00"
+      },
+      "2026-05-03": {
         "start": "21:00",
         "end": "06:00"
       }
@@ -2355,6 +2375,10 @@
       "2026-05-01": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-05-03": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Snow": {
@@ -2397,6 +2421,10 @@
       "2026-04-30": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Elise": {
@@ -2538,6 +2566,10 @@
       "2026-04-27": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Cammie": {},
@@ -2608,8 +2640,14 @@
         "start": "19:00",
         "end": "04:00"
       }
+    },
+    "Petra": {
+      "2026-05-03": {
+        "start": "730:00",
+        "end": "15:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-20T10:00:37.888Z",
-  "lastCalendarSync": "2026-04-30T19:54:43.234Z"
+  "lastCalendarSync": "2026-04-30T23:29:10.473Z"
 }

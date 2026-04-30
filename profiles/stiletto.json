@@ -4974,7 +4974,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-04-30",
+      "lastRostered": "2026-05-02",
       "oldUrl": "https://www.stilettosydney.com/workers/yasmin-new/",
       "photos": [],
       "labels": [
@@ -5889,10 +5889,6 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-04-30": {
-        "start": "09:00",
-        "end": "16:00"
-      },
       "2026-05-01": {
         "start": "15:00",
         "end": "23:00"
@@ -5922,10 +5918,6 @@
       "2026-04-20": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-04-30": {
-        "start": "09:00",
-        "end": "17:00"
       }
     },
     "Ruby": {
@@ -6736,5 +6728,5 @@
     }
   },
   "lastGirlsSync": "2026-04-30T06:31:35.010Z",
-  "lastCalendarSync": "2026-04-30T05:42:46.783Z"
+  "lastCalendarSync": "2026-04-30T07:09:16.140Z"
 }

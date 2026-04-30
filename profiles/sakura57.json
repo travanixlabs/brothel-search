@@ -718,7 +718,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-29",
+      "lastRostered": "2026-04-30",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/01/Sarara-Jp-02.jpeg",
@@ -3409,7 +3409,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-11",
+      "lastRostered": "2026-05-01",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Suka-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Suka-Jp-02.jpeg"
@@ -9589,6 +9589,10 @@
       "2026-04-29": {
         "start": "15:00",
         "end": "05:00"
+      },
+      "2026-04-30": {
+        "start": "10:00",
+        "end": "15:00"
       }
     },
     "Sora": {
@@ -9731,6 +9735,10 @@
         "end": "00:00"
       },
       "2026-04-11": {
+        "start": "11:00",
+        "end": "00:00"
+      },
+      "2026-05-01": {
         "start": "11:00",
         "end": "00:00"
       }
@@ -11871,11 +11879,11 @@
       },
       "2026-04-30": {
         "start": "10:00",
-        "end": "00:00"
+        "end": "22:00"
       },
       "2026-05-01": {
         "start": "10:00",
-        "end": "00:00"
+        "end": "22:00"
       }
     },
     "Hikaru": {
@@ -11899,7 +11907,7 @@
     "Maniya": {}
   },
   "lastGirlsSync": "2026-04-28T04:00:35.839Z",
-  "lastCalendarSync": "2026-04-29T21:37:02.612Z",
+  "lastCalendarSync": "2026-04-30T04:10:43.203Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

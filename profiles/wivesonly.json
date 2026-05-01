@@ -2545,6 +2545,30 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "London",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "27",
+      "height": "5'1",
+      "cup": "D",
+      "body": "",
+      "desc": "Welcome one of our lovely new lady London. Our classy seductress with beautiful  tanned skin, shoulder length brown hair and a slender figure. Full of experience, with her warm friendly persona you will definitely feel at ease! come in and book her today!",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-05-01",
+      "lastRostered": "2026-05-01",
+      "oldUrl": "https://wivesonly.com.au/london/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/05/659758B4-F8DC-4000-8467-5E0224026AEE.jpeg",
+        "https://wivesonly.com.au/wp-content/uploads/2026/05/BB4372C0-40B0-4DBB-B0FE-D80412B05EDF.jpeg",
+        "https://wivesonly.com.au/wp-content/uploads/2026/05/045FED5B-321F-4DB4-9CC1-A2ADA5D7D7C5.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4178,6 +4202,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-27T11:42:11.998Z",
+  "lastGirlsSync": "2026-05-01T22:44:21.778Z",
   "lastCalendarSync": "2026-05-01T17:35:03.952Z"
 }

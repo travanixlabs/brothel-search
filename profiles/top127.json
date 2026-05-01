@@ -53,7 +53,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-05-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Chanel2-532x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Chanel3-470x705.jpg"
@@ -590,7 +590,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Jojo-462x705.jpg"
       ],
@@ -616,7 +616,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-05-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Annie-396x705.jpg"
       ],
@@ -745,7 +745,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Layla",
@@ -952,7 +952,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-30T16:00:22.548Z",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-02"
     }
   ],
   "calendar": {
@@ -991,7 +991,8 @@
       "2026-04-27",
       "2026-04-28",
       "2026-04-30",
-      "2026-05-01"
+      "2026-05-01",
+      "2026-05-02"
     ],
     "Sana": {
       "2026-03-26": {
@@ -1066,6 +1067,10 @@
       "2026-04-28": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Alice": {
@@ -1202,6 +1207,10 @@
       "2026-04-23": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Angela": {
@@ -1652,6 +1661,10 @@
       "2026-05-01": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Momoko": {
@@ -1750,6 +1763,10 @@
         "end": "02:00"
       },
       "2026-05-01": {
+        "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-05-02": {
         "start": "12:00",
         "end": "03:00"
       }
@@ -1897,10 +1914,16 @@
       }
     },
     "Freecia": {},
-    "Hadid": {}
+    "Hadid": {},
+    "Asuka": {
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-30T16:00:22.548Z",
-  "lastCalendarSync": "2026-04-30T23:28:47.806Z",
+  "lastCalendarSync": "2026-05-01T13:58:25.544Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

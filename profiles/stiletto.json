@@ -5005,7 +5005,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "oldUrl": "https://www.stilettosydney.com/workers/chloe-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/05/IMG_2412-e1777662712195.jpg"
@@ -6205,10 +6205,6 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-05-02": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-05-03": {
         "start": "00:00",
         "end": "08:00"
@@ -6502,12 +6498,7 @@
     },
     "Brittney": {},
     "Stacy": {},
-    "Molly": {
-      "2026-05-02": {
-        "start": "00:30",
-        "end": "08:30"
-      }
-    },
+    "Molly": {},
     "Chloe": {
       "2026-05-03": {
         "start": "16:00",
@@ -6516,5 +6507,5 @@
     }
   },
   "lastGirlsSync": "2026-05-01T22:43:58.457Z",
-  "lastCalendarSync": "2026-05-01T21:12:18.059Z"
+  "lastCalendarSync": "2026-05-01T23:30:04.481Z"
 }

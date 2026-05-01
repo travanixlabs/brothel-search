@@ -945,7 +945,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-02",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2022/09/Paris-Cn-01-1-scaled.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2022/09/Paris-Cn-02.png"
@@ -10633,8 +10633,8 @@
         "end": "05:00"
       },
       "2026-05-01": {
-        "start": "14:00",
-        "end": "00:00"
+        "start": "13:00",
+        "end": "05:00"
       },
       "2026-05-02": {
         "start": "13:00",
@@ -11931,6 +11931,10 @@
       "2026-05-01": {
         "start": "14:00",
         "end": "00:00"
+      },
+      "2026-05-02": {
+        "start": "14:00",
+        "end": "00:00"
       }
     },
     "Koi": {
@@ -11980,7 +11984,7 @@
     "Maniya": {}
   },
   "lastGirlsSync": "2026-05-01T04:00:47.516Z",
-  "lastCalendarSync": "2026-05-01T04:35:08.108Z",
+  "lastCalendarSync": "2026-05-01T05:51:52.734Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

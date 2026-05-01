@@ -2157,7 +2157,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-05-01"
     },
     {
       "name": "Dasha",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26"
+      "lastRostered": "2026-05-01"
     },
     {
       "name": "Katalina",
@@ -3715,6 +3715,10 @@
       "2026-04-26": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-01": {
+        "start": "12:00",
+        "end": "19:30"
       }
     },
     "Talia": {
@@ -4015,6 +4019,10 @@
       "2026-04-24": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-01": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Neena": {
@@ -4108,11 +4116,11 @@
         "end": "19:30"
       },
       "2026-05-01": {
-        "start": "23:00",
-        "end": "19:30"
+        "start": "11:00",
+        "end": "20:30"
       }
     }
   },
   "lastGirlsSync": "2026-04-27T11:42:11.998Z",
-  "lastCalendarSync": "2026-04-30T14:34:02.374Z"
+  "lastCalendarSync": "2026-05-01T05:52:42.073Z"
 }

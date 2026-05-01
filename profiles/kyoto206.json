@@ -11230,10 +11230,6 @@
       "2026-04-29": {
         "start": "19:00",
         "end": "04:00"
-      },
-      "2026-05-01": {
-        "start": "20:00",
-        "end": "04:00"
       }
     },
     "Otoha": {
@@ -11980,14 +11976,6 @@
       "2026-04-29": {
         "start": "12:00",
         "end": "03:00"
-      },
-      "2026-05-01": {
-        "start": "12:00",
-        "end": "03:00"
-      },
-      "2026-05-02": {
-        "start": "12:00",
-        "end": "03:00"
       }
     },
     "Salala": {
@@ -12132,7 +12120,7 @@
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-05-01T05:51:48.474Z",
+  "lastCalendarSync": "2026-05-01T07:12:17.573Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

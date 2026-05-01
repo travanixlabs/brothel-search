@@ -3023,7 +3023,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-05-01",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/03/Jolin-Vn-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/03/Jolin-Vn-02.jpeg",
@@ -10796,6 +10796,10 @@
       "2026-04-13": {
         "start": "12:00",
         "end": "22:00"
+      },
+      "2026-05-01": {
+        "start": "13:00",
+        "end": "22:00"
       }
     },
     "Mikiyo": {
@@ -11913,14 +11917,6 @@
       "2026-04-30": {
         "start": "10:00",
         "end": "05:00"
-      },
-      "2026-05-01": {
-        "start": "10:00",
-        "end": "05:00"
-      },
-      "2026-05-02": {
-        "start": "10:00",
-        "end": "05:00"
       }
     },
     "Paris": {
@@ -11984,7 +11980,7 @@
     "Maniya": {}
   },
   "lastGirlsSync": "2026-05-01T04:00:47.516Z",
-  "lastCalendarSync": "2026-04-30T21:31:02.113Z",
+  "lastCalendarSync": "2026-05-01T04:35:08.108Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

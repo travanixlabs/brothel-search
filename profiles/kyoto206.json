@@ -9428,7 +9428,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-26T10:39:23.456Z",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Migu",
@@ -12092,6 +12092,10 @@
       "2026-05-01": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-05-02": {
+        "start": "10:00",
+        "end": "05:00"
       }
     },
     "Migu": {
@@ -12124,7 +12128,7 @@
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-05-01T08:28:11.660Z",
+  "lastCalendarSync": "2026-05-01T11:36:11.854Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

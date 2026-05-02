@@ -144,7 +144,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-05-02",
       "desc": "Aussie Blonde bombshell Billie is waiting to meet you! Let her show you an experience like no other. She has a friendly and flirty personality and provides a variety of extras."
     },
     {
@@ -2565,7 +2565,7 @@
       },
       "2026-05-02": {
         "start": "12:00",
-        "end": "06:00"
+        "end": "18:00"
       },
       "2026-04-29": {
         "start": "18:00",
@@ -2642,6 +2642,10 @@
       "2026-04-26": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Bonnie": {},
@@ -3003,6 +3007,10 @@
         "end": "06:00"
       },
       "2026-05-03": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-02": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -3886,5 +3894,5 @@
     }
   },
   "lastGirlsSync": "2026-05-01T16:43:50.044Z",
-  "lastCalendarSync": "2026-05-02T09:43:29.877Z"
+  "lastCalendarSync": "2026-05-02T11:14:06.987Z"
 }

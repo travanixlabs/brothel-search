@@ -1499,7 +1499,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-28"
+      "lastRostered": "2026-05-02"
     },
     {
       "name": "Halo",
@@ -4352,7 +4352,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Victoria",
@@ -5872,9 +5872,9 @@
         "start": "13:00",
         "end": "21:00"
       },
-      "2026-05-02": {
+      "2026-05-03": {
         "start": "11:00",
-        "end": "19:00"
+        "end": "11:00"
       }
     },
     "Lilith": {
@@ -6135,6 +6135,10 @@
       "2026-04-22": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-05-02": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "CeCe": {},
@@ -6482,5 +6486,5 @@
     }
   },
   "lastGirlsSync": "2026-05-02T06:11:17.453Z",
-  "lastCalendarSync": "2026-05-02T08:06:19.277Z"
+  "lastCalendarSync": "2026-05-02T09:43:38.565Z"
 }

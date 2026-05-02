@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-05-03",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -5077,10 +5077,6 @@
         "start": "16:00",
         "end": "00:00"
       },
-      "2026-05-02": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-05-03": {
         "start": "16:30",
         "end": "00:30"
@@ -5597,10 +5593,6 @@
         "start": "18:00",
         "end": "02:00"
       },
-      "2026-05-02": {
-        "start": "19:00",
-        "end": "03:00"
-      },
       "2026-05-08": {
         "start": "19:00",
         "end": "03:00"
@@ -6069,10 +6061,6 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
-      },
-      "2026-05-02": {
-        "start": "18:00",
-        "end": "02:00"
       }
     },
     "Simone": {
@@ -6437,12 +6425,7 @@
       }
     },
     "Piper": {},
-    "Felicity": {
-      "2026-05-02": {
-        "start": "19:00",
-        "end": "03:00"
-      }
-    },
+    "Felicity": {},
     "Mia": {},
     "Fendi": {},
     "Lena": {
@@ -6478,5 +6461,5 @@
     }
   },
   "lastGirlsSync": "2026-05-02T16:36:34.597Z",
-  "lastCalendarSync": "2026-05-02T15:10:35.741Z"
+  "lastCalendarSync": "2026-05-02T17:26:45.430Z"
 }

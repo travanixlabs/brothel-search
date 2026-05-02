@@ -9459,6 +9459,36 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Akii",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "val1": "210",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-02",
+      "oldUrl": "https://citybrothel.com.au/project/akii-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-05-02T06:24:12.160Z",
+      "lastRostered": "2026-05-03",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/84771777701764_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/84721777700037_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/84731777700045_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/84751777700102_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/84741777700070_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -12198,10 +12228,20 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Akii": {
+      "2026-05-02": {
+        "start": "16:00",
+        "end": "01:00"
+      },
+      "2026-05-03": {
+        "start": "11:00",
+        "end": "01:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-02T06:09:36.932Z",
-  "lastCalendarSync": "2026-05-02T03:59:05.719Z",
+  "lastCalendarSync": "2026-05-02T06:24:12.160Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

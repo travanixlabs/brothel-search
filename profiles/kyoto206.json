@@ -626,7 +626,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/09/Kaori-Jp-04-scaled.jpeg"
       ],
@@ -1221,7 +1221,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-07.jpeg",
@@ -9373,7 +9373,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-22T08:14:22.383Z",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/21776836628_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/31776836634_.pic_.jpg",
@@ -10161,7 +10161,7 @@
         "end": "00:00"
       },
       "2026-05-02": {
-        "start": "16:00",
+        "start": "12:00",
         "end": "00:00"
       },
       "2026-05-03": {
@@ -10965,7 +10965,7 @@
         "start": "15:00",
         "end": "00:00"
       },
-      "2026-05-02": {
+      "2026-05-03": {
         "start": "15:00",
         "end": "00:00"
       }
@@ -11127,6 +11127,10 @@
       "2026-05-02": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-05-03": {
+        "start": "19:00",
+        "end": "00:00"
       }
     },
     "Saiki": {
@@ -12017,6 +12021,14 @@
       "2026-04-29": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Salala": {
@@ -12189,7 +12201,7 @@
     }
   },
   "lastGirlsSync": "2026-04-27T06:30:45.909Z",
-  "lastCalendarSync": "2026-05-01T21:11:21.011Z",
+  "lastCalendarSync": "2026-05-02T03:59:05.719Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -1792,7 +1792,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2020-10-01",
+      "lastRostered": "2026-05-02",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/samantha-new/",
       "photos": [],
       "labels": [],
@@ -2734,10 +2734,6 @@
       "2026-05-01": {
         "start": "12:00",
         "end": "06:00"
-      },
-      "2026-05-03": {
-        "start": "12:00",
-        "end": "06:00"
       }
     },
     "Diamond": {
@@ -3495,7 +3491,12 @@
       }
     },
     "Salem": {},
-    "Samantha": {},
+    "Samantha": {
+      "2026-05-02": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Shy": {},
     "Sienna": {
       "2026-04-04": {
@@ -3885,5 +3886,5 @@
     }
   },
   "lastGirlsSync": "2026-05-01T16:43:50.044Z",
-  "lastCalendarSync": "2026-05-02T03:59:55.091Z"
+  "lastCalendarSync": "2026-05-02T09:43:29.877Z"
 }

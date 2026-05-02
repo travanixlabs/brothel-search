@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-03",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-03",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-03",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Sara",
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Sophia",
@@ -2034,7 +2034,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Vera",
@@ -2068,7 +2068,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Amy",
@@ -2140,7 +2140,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Vanessa",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Victoria",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Julia",
@@ -2472,7 +2472,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "oldUrl": "https://wivesonly.com.au/roxanne/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2560,7 +2560,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-03",
       "oldUrl": "https://wivesonly.com.au/london/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/659758B4-F8DC-4000-8467-5E0224026AEE.jpeg",
@@ -2660,6 +2660,10 @@
       "2026-05-02": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Delilah": {
@@ -2936,6 +2940,10 @@
       "2026-05-02": {
         "start": "22:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "22:30",
+        "end": "06:00"
       }
     },
     "Layla": {
@@ -3102,6 +3110,10 @@
       "2026-05-02": {
         "start": "20:00",
         "end": "00:00"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Ximena": {
@@ -3172,6 +3184,10 @@
       "2026-05-02": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Dasha": {
@@ -3370,6 +3386,10 @@
       "2026-04-30": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "_published": [
@@ -3406,7 +3426,8 @@
       "2026-04-29",
       "2026-04-30",
       "2026-05-01",
-      "2026-05-02"
+      "2026-05-02",
+      "2026-05-03"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3480,6 +3501,10 @@
       "2026-05-01": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Tara": {
@@ -3534,6 +3559,10 @@
       "2026-04-29": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Iris": {
@@ -3604,6 +3633,10 @@
       "2026-05-01": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -3850,6 +3883,10 @@
       "2026-04-29": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-05-03": {
+        "start": "00:00",
+        "end": "18:00"
       }
     },
     "Sarah": {
@@ -3960,6 +3997,10 @@
       "2026-05-02": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Luna": {
@@ -4066,6 +4107,10 @@
       "2026-05-01": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -4164,6 +4209,10 @@
       "2026-05-02": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Lulu": {
@@ -4206,8 +4255,14 @@
         "start": "20:30",
         "end": "06:00"
       }
+    },
+    "London": {
+      "2026-05-03": {
+        "start": "20:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-01T22:44:21.778Z",
-  "lastCalendarSync": "2026-05-02T08:06:24.878Z"
+  "lastCalendarSync": "2026-05-02T15:10:41.155Z"
 }

@@ -11631,7 +11631,7 @@
         "end": "22:00"
       },
       "2026-05-02": {
-        "start": "10:00",
+        "start": "12:00",
         "end": "22:00"
       }
     },
@@ -12041,7 +12041,7 @@
     "Maniya": {}
   },
   "lastGirlsSync": "2026-05-01T04:00:47.516Z",
-  "lastCalendarSync": "2026-05-01T21:11:25.620Z",
+  "lastCalendarSync": "2026-05-02T03:59:08.410Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

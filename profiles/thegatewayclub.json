@@ -144,7 +144,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "desc": "Aussie Blonde bombshell Billie is waiting to meet you! Let her show you an experience like no other. She has a friendly and flirty personality and provides a variety of extras."
     },
     {
@@ -2124,7 +2124,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-05-03",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/bianca-new/",
       "photos": [],
       "labels": [],
@@ -2646,6 +2646,10 @@
       "2026-05-02": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-03": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Bonnie": {},
@@ -3006,10 +3010,6 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-03": {
-        "start": "12:00",
-        "end": "06:00"
-      },
       "2026-05-02": {
         "start": "12:00",
         "end": "06:00"
@@ -3154,10 +3154,6 @@
       "2026-05-02": {
         "start": "18:00",
         "end": "06:00"
-      },
-      "2026-05-03": {
-        "start": "06:00",
-        "end": "12:00"
       }
     },
     "Summer": {},
@@ -3259,7 +3255,7 @@
         "end": "18:00"
       },
       "2026-05-03": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "18:00"
       }
     },
@@ -3815,6 +3811,10 @@
       "2026-04-23": {
         "start": "06:00",
         "end": "12:00"
+      },
+      "2026-05-03": {
+        "start": "06:00",
+        "end": "18:00"
       }
     },
     "Nikita": {
@@ -3886,13 +3886,9 @@
       "2026-05-01": {
         "start": "12:00",
         "end": "06:00"
-      },
-      "2026-05-03": {
-        "start": "18:00",
-        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-01T16:43:50.044Z",
-  "lastCalendarSync": "2026-05-02T11:14:06.987Z"
+  "lastCalendarSync": "2026-05-03T04:28:01.321Z"
 }

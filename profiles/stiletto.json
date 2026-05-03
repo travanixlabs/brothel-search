@@ -483,7 +483,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-05-03",
       "desc": "Hey gorgeous, I’m Bambi, and just like my name, I bring a natural sweetness and playful charm that you won’t forget. I’m your blonde Australian beauty with striking blue eyes and a petite, feminine figure that will draw you in from the very first glance. With a soft, sensual nature and ..."
     },
     {
@@ -2308,7 +2308,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-22"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Lena",
@@ -5133,10 +5133,6 @@
       "2026-04-23": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-05-03": {
-        "start": "09:00",
-        "end": "17:00"
       }
     },
     "Audrey": {
@@ -5173,6 +5169,10 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-05-03": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Bella": {
@@ -5566,10 +5566,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-05-03": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
@@ -5729,12 +5725,12 @@
         "end": "18:00"
       },
       "2026-05-04": {
-        "start": "10:00",
+        "start": "08:00",
         "end": "18:00"
       },
       "2026-05-06": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Ella": {
@@ -5781,10 +5777,6 @@
       "2026-05-05": {
         "start": "07:00",
         "end": "15:00"
-      },
-      "2026-05-03": {
-        "start": "11:00",
-        "end": "16:00"
       }
     },
     "Jamie": {
@@ -6071,10 +6063,6 @@
       }
     },
     "Blake": {
-      "2026-05-03": {
-        "start": "11:00",
-        "end": "16:00"
-      },
       "2026-05-04": {
         "start": "11:00",
         "end": "16:00"
@@ -6250,7 +6238,16 @@
       }
     },
     "Aurora": {},
-    "Lacey": {},
+    "Lacey": {
+      "2026-05-05": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-05-08": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
     "Peach": {
       "2026-04-27": {
         "start": "22:00",
@@ -6413,5 +6410,5 @@
     }
   },
   "lastGirlsSync": "2026-05-03T06:30:01.737Z",
-  "lastCalendarSync": "2026-05-03T05:42:11.585Z"
+  "lastCalendarSync": "2026-05-03T07:05:35.063Z"
 }

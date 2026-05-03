@@ -12090,6 +12090,10 @@
       "2026-05-03": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-05-04": {
+        "start": "18:00",
+        "end": "05:00"
       }
     },
     "Hikaru": {
@@ -12135,7 +12139,7 @@
     }
   },
   "lastGirlsSync": "2026-05-03T04:00:59.870Z",
-  "lastCalendarSync": "2026-05-03T05:41:14.791Z",
+  "lastCalendarSync": "2026-05-03T15:09:39.395Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -108,7 +108,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Rita",
@@ -1320,6 +1320,10 @@
       "2026-04-23": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sabrina": {
@@ -1366,5 +1370,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-03T05:41:44.720Z"
+  "lastCalendarSync": "2026-05-03T09:50:29.665Z"
 }

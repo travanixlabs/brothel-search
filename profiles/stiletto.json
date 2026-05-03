@@ -312,7 +312,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17",
+      "lastRostered": "2026-05-08",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -604,7 +604,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-25",
+      "lastRostered": "2026-05-09",
       "desc": "Oh so cute! Hello Gentlemen, my name is Cali x I am 22, seductive, and easy on the eyes. My petite frame, gorgeous curves, and sweet, girl-next-door looks will captivate you. I have a C-cup bust and long dark locks. Whether you desire a sensual girlfriend experience or something more dominant, I am ..."
     },
     {
@@ -3078,7 +3078,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-26"
+      "lastRostered": "2026-05-03"
     },
     {
       "name": "Parker",
@@ -5627,6 +5627,22 @@
       "2026-04-15": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-03": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-05": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-07": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-09": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ophelia": {
@@ -5811,11 +5827,15 @@
     },
     "Ruby": {
       "2026-05-06": {
-        "start": "00:00",
-        "end": "18:00"
+        "start": "11:00",
+        "end": "19:00"
       },
       "2026-05-07": {
         "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-05-05": {
+        "start": "10:00",
         "end": "18:00"
       }
     },
@@ -5986,6 +6006,18 @@
       "2026-04-07": {
         "start": "02:00",
         "end": "08:00"
+      },
+      "2026-05-06": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-05-07": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-05-08": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Roxi": {
@@ -5998,6 +6030,10 @@
       "2026-04-08": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-03": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Scarlett": {
@@ -6376,5 +6412,5 @@
     }
   },
   "lastGirlsSync": "2026-05-03T10:49:53.995Z",
-  "lastCalendarSync": "2026-05-03T11:11:32.530Z"
+  "lastCalendarSync": "2026-05-03T13:54:40.609Z"
 }

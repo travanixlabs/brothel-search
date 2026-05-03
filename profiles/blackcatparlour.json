@@ -2883,6 +2883,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-04-26"
+    },
+    {
+      "name": "Rose",
+      "country": [
+        "Indian"
+      ],
+      "age": "22",
+      "height": "157",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6128,6 +6146,6 @@
     },
     "Rose ****": {}
   },
-  "lastGirlsSync": "2026-04-25T16:00:40.954Z",
+  "lastGirlsSync": "2026-05-03T06:29:16.824Z",
   "lastCalendarSync": "2026-05-02T23:13:04.134Z"
 }

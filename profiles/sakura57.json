@@ -9040,6 +9040,33 @@
       "labels": [],
       "lastModified": "2026-04-28T04:00:35.839Z",
       "lastRostered": "2026-05-03"
+    },
+    {
+      "name": "Sachiko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "B",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-03",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/sachiko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84841777713794_.pic_-1.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84801777713750_.pic_-1.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84811777713760_.pic_-1.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84821777713788_.pic_-1.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84831777713793_.pic_-1.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-03T04:00:59.870Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12040,7 +12067,7 @@
     },
     "Maniya": {}
   },
-  "lastGirlsSync": "2026-05-01T04:00:47.516Z",
+  "lastGirlsSync": "2026-05-03T04:00:59.870Z",
   "lastCalendarSync": "2026-05-02T03:59:08.410Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

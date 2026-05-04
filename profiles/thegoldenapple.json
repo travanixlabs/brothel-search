@@ -806,7 +806,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-05-06"
     },
     {
       "name": "Maddison",
@@ -2552,6 +2552,10 @@
       "2026-04-10": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-05-06": {
+        "start": "17:00",
+        "end": "02:00"
       }
     },
     "Amber": {},
@@ -2737,5 +2741,5 @@
     "Petra": {}
   },
   "lastGirlsSync": "2026-04-20T10:00:37.888Z",
-  "lastCalendarSync": "2026-05-03T21:07:34.879Z"
+  "lastCalendarSync": "2026-05-04T04:27:31.126Z"
 }

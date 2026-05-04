@@ -2902,6 +2902,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-08"
+    },
+    {
+      "name": "Dallas",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-04",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6697,6 +6715,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-03T06:29:16.824Z",
+  "lastGirlsSync": "2026-05-04T06:42:25.112Z",
   "lastCalendarSync": "2026-05-04T05:47:11.724Z"
 }

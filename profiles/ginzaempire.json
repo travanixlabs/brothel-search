@@ -5662,7 +5662,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-05-04T16:00:53.396Z"
+      "lastModified": "2026-05-04T16:00:53.396Z",
+      "lastRostered": "2026-05-05"
     }
   ],
   "calendar": {
@@ -9509,8 +9510,14 @@
         "start": "14:00",
         "end": "04:00"
       }
+    },
+    "Monica": {
+      "2026-05-05": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-04T16:00:53.396Z",
-  "lastCalendarSync": "2026-05-04T12:08:59.186Z"
+  "lastCalendarSync": "2026-05-04T16:16:33.113Z"
 }

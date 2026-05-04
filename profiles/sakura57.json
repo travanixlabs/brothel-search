@@ -10021,6 +10021,10 @@
       "2026-05-05": {
         "start": "19:00",
         "end": "00:00"
+      },
+      "2026-05-04": {
+        "start": "19:00",
+        "end": "00:00"
       }
     },
     "Bunny": {
@@ -12237,7 +12241,7 @@
     }
   },
   "lastGirlsSync": "2026-05-04T04:01:02.359Z",
-  "lastCalendarSync": "2026-05-04T04:27:12.785Z",
+  "lastCalendarSync": "2026-05-04T07:31:46.158Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

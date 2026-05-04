@@ -5164,7 +5164,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-01",
+      "lastRostered": "2026-05-04",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/08/Anna-Th-01.png",
         "https://citybrothel.com.au/wp-content/uploads/2024/08/Anna-Th-02.jpeg",
@@ -11665,6 +11665,10 @@
       "2026-04-01": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-04": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Kazu": {
@@ -12319,7 +12323,7 @@
         "end": "05:00"
       },
       "2026-05-04": {
-        "start": "19:00",
+        "start": "22:00",
         "end": "05:00"
       },
       "2026-05-05": {
@@ -12387,7 +12391,7 @@
     }
   },
   "lastGirlsSync": "2026-05-02T10:44:08.844Z",
-  "lastCalendarSync": "2026-05-04T07:31:41.428Z",
+  "lastCalendarSync": "2026-05-04T10:33:08.170Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

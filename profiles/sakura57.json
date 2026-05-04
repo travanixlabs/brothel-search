@@ -9067,6 +9067,33 @@
       "labels": [],
       "lastModified": "2026-05-03T04:00:59.870Z",
       "lastRostered": "2026-05-05"
+    },
+    {
+      "name": "Kikumi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-04",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kikumi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85001777810242_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84991777810241_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84981777810239_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84971777810238_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84961777810232_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-04T04:01:02.359Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12203,7 +12230,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-03T04:00:59.870Z",
+  "lastGirlsSync": "2026-05-04T04:01:02.359Z",
   "lastCalendarSync": "2026-05-03T21:07:21.262Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -23,7 +23,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-06-23",
+      "lastRostered": "2026-05-04",
       "deleted": "Yes",
       "deletedAt": "2026-04-12T00:00:00Z"
     },
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-29"
+      "lastRostered": "2026-05-04"
     },
     {
       "name": "Hana",
@@ -630,7 +630,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/08/29.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-04"
     }
   ],
   "calendar": {
@@ -1255,6 +1256,10 @@
       "2026-04-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Irene": {
@@ -1404,8 +1409,20 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Bella": {
+      "2026-05-04": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    },
+    "Tea": {
+      "2026-05-04": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-03T15:10:07.779Z"
+  "lastCalendarSync": "2026-05-04T04:27:28.601Z"
 }

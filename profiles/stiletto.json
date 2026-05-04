@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-12",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -634,7 +634,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-17"
     },
     {
       "name": "Carmen",
@@ -1130,7 +1130,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Erika",
@@ -1321,7 +1321,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Gaia",
@@ -1611,7 +1611,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-15"
     },
     {
       "name": "Honey",
@@ -4730,7 +4730,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-12",
       "oldUrl": "https://www.stilettosydney.com/workers/bree-new/",
       "photos": [],
       "labels": [
@@ -5094,7 +5094,8 @@
       "2026-05-13",
       "2026-05-14",
       "2026-05-15",
-      "2026-05-16"
+      "2026-05-16",
+      "2026-05-17"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -5356,6 +5357,14 @@
       "2026-05-08": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-05-14": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-15": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Flora": {
@@ -5404,6 +5413,22 @@
       "2026-04-27": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-05-05": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-05-06": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-08": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-09": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Jasmine": {
@@ -5770,6 +5795,10 @@
       "2026-05-07": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-05-08": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Kay": {
@@ -5879,6 +5908,22 @@
       "2026-05-08": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-15": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-16": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-17": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Halo": {
@@ -6085,10 +6130,6 @@
         "start": "17:00",
         "end": "01:00"
       },
-      "2026-05-04": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-05-05": {
         "start": "18:00",
         "end": "02:00"
@@ -6115,7 +6156,12 @@
       }
     },
     "Raelynn": {},
-    "Blake": {},
+    "Blake": {
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Kennedy": {
       "2026-04-13": {
         "start": "21:00",
@@ -6282,6 +6328,10 @@
       "2026-05-10": {
         "start": "09:00",
         "end": "17:00"
+      },
+      "2026-05-12": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Gloria": {},
@@ -6379,5 +6429,5 @@
     "Chloe": {}
   },
   "lastGirlsSync": "2026-05-04T11:44:45.206Z",
-  "lastCalendarSync": "2026-05-04T14:39:26.374Z"
+  "lastCalendarSync": "2026-05-04T16:17:58.888Z"
 }

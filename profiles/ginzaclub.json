@@ -1719,7 +1719,7 @@
       ],
       "lastModified": "2026-03-13T06:25:32.902Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05",
+      "lastRostered": "2026-05-06",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -3715,6 +3715,10 @@
       "2026-05-05": {
         "start": "10:30",
         "end": "21:00"
+      },
+      "2026-05-06": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Julia": {
@@ -6925,5 +6929,5 @@
     }
   },
   "lastGirlsSync": "2026-05-02T16:35:20.511Z",
-  "lastCalendarSync": "2026-05-05T08:31:14.043Z"
+  "lastCalendarSync": "2026-05-05T10:20:24.449Z"
 }

@@ -9489,6 +9489,31 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Kiko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-05",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/kiko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/85121777956851_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/85151777956863_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/85141777956856_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-05T06:19:39.750Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12473,7 +12498,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-02T10:44:08.844Z",
+  "lastGirlsSync": "2026-05-05T06:19:39.750Z",
   "lastCalendarSync": "2026-05-04T21:35:23.022Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

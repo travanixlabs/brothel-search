@@ -11739,11 +11739,11 @@
       },
       "2026-05-05": {
         "start": "10:00",
-        "end": "13:00"
+        "end": "01:00"
       },
       "2026-05-06": {
         "start": "10:00",
-        "end": "13:00"
+        "end": "01:00"
       }
     },
     "Himeka": {
@@ -12372,7 +12372,7 @@
     }
   },
   "lastGirlsSync": "2026-05-04T04:01:02.359Z",
-  "lastCalendarSync": "2026-05-05T03:56:20.881Z",
+  "lastCalendarSync": "2026-05-05T05:26:27.739Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

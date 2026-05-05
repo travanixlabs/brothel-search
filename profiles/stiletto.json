@@ -1930,7 +1930,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-05-06"
     },
     {
       "name": "Julietta",
@@ -6136,10 +6136,6 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-05-06": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-05-07": {
         "start": "10:00",
         "end": "18:00"
@@ -6520,12 +6516,7 @@
         "end": "15:00"
       }
     },
-    "Sonya": {
-      "2026-05-06": {
-        "start": "00:00",
-        "end": "08:00"
-      }
-    },
+    "Sonya": {},
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -6558,8 +6549,14 @@
     "Brittney": {},
     "Stacy": {},
     "Molly": {},
-    "Chloe": {}
+    "Chloe": {},
+    "Julia": {
+      "2026-05-06": {
+        "start": "08:00",
+        "end": "16:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-05-05T22:51:53.873Z",
-  "lastCalendarSync": "2026-05-05T18:01:08.248Z"
+  "lastCalendarSync": "2026-05-05T23:27:44.122Z"
 }

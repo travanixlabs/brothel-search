@@ -451,7 +451,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05",
+      "lastRostered": "2026-05-08",
       "desc": "Our new addition Ezra is a young, tall and slim South American &#8211; European beauty with sun kissed skin that glows with a perfect tan. She has long blonde hair cascading down her back and striking brown eyes. Effortlessly radiant, She embodies an exotic mix of warmth and elegance."
     },
     {
@@ -2986,6 +2986,10 @@
       "2026-05-05": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-08": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Ginger": {
@@ -3152,6 +3156,10 @@
         "end": "06:00"
       },
       "2026-05-10": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-06": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4179,5 +4187,5 @@
     }
   },
   "lastGirlsSync": "2026-05-05T17:13:16.859Z",
-  "lastCalendarSync": "2026-05-05T18:00:56.882Z"
+  "lastCalendarSync": "2026-05-05T19:56:51.985Z"
 }

@@ -1993,7 +1993,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-06",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-07",
       "oldUrl": "https://jinia.com.au/wendy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260506111256.jpg"
@@ -3244,8 +3244,18 @@
         "start": "13:00",
         "end": "03:00"
       }
+    },
+    "🆕 Wendy": {
+      "2026-05-06": {
+        "start": "12:00",
+        "end": "00:00"
+      },
+      "2026-05-07": {
+        "start": "12:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-06T06:34:07.215Z",
-  "lastCalendarSync": "2026-05-06T04:13:15.442Z"
+  "lastCalendarSync": "2026-05-06T07:15:45.431Z"
 }

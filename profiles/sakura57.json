@@ -9124,6 +9124,56 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Kila",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-06",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kila-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85341778027164_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85351778027166_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-06T04:00:39.729Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Moro",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "155",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-06",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/moro-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85411778035177_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85401778035174_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85421778035178_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85431778035179_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-06T04:00:39.729Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12456,7 +12506,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-04T04:01:02.359Z",
+  "lastGirlsSync": "2026-05-06T04:00:39.729Z",
   "lastCalendarSync": "2026-05-05T21:32:03.387Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

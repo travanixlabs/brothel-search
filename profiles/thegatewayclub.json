@@ -788,7 +788,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2025-07-01",
+      "lastRostered": "2026-05-10",
       "desc": "Do not miss out on your chance to spend an intimate session with Mary who is touring with us at The Gateway Club. Cute, blonde and petite, you won't be able to keep your eyes off her&#8230; let alone your hands. Let her show you a great time while she is in town!"
     },
     {
@@ -3165,7 +3165,20 @@
       }
     },
     "Madison": {},
-    "Mary": {},
+    "Mary": {
+      "2026-05-08": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-09": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Melissa": {},
     "Misty": {},
     "Natasha": {},
@@ -3683,15 +3696,15 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-06": {
-        "start": "12:00",
-        "end": "06:00"
-      },
       "2026-05-08": {
         "start": "12:00",
         "end": "06:00"
       },
       "2026-05-09": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-07": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4001,6 +4014,10 @@
       "2026-05-01": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-06": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Daya": {
@@ -4187,5 +4204,5 @@
     }
   },
   "lastGirlsSync": "2026-05-05T22:51:29.329Z",
-  "lastCalendarSync": "2026-05-05T23:27:34.445Z"
+  "lastCalendarSync": "2026-05-06T08:44:02.513Z"
 }

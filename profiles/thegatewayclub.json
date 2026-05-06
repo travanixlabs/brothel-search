@@ -1967,7 +1967,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-05-07",
+      "lastRostered": "2026-05-12",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/pixie-new-3/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/IMG_9407-002-1.jpeg"
@@ -4010,7 +4010,8 @@
       "2026-05-07",
       "2026-05-08",
       "2026-05-09",
-      "2026-05-10"
+      "2026-05-10",
+      "2026-05-12"
     ],
     "Hennessy": {
       "2026-04-08": {
@@ -4078,6 +4079,10 @@
         "end": "06:00"
       },
       "2026-05-06": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-12": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4269,5 +4274,5 @@
     "Sadie": {}
   },
   "lastGirlsSync": "2026-05-06T11:45:25.143Z",
-  "lastCalendarSync": "2026-05-06T12:15:06.493Z"
+  "lastCalendarSync": "2026-05-06T15:11:38.820Z"
 }

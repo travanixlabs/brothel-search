@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2350,6 +2350,64 @@
       "labels": [
         "GFE"
       ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Julia",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "168",
+      "cup": "H",
+      "body": "12",
+      "desc": "",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/julia-new-2/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Audi",
+      "country": [],
+      "age": "",
+      "height": "164",
+      "cup": "D",
+      "body": "8",
+      "desc": "",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/audi-new/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sadie",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "168",
+      "cup": "E",
+      "body": "10",
+      "desc": "",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/sadie-new-2/",
+      "photos": [],
+      "labels": [],
       "originalSite": "Exists"
     }
   ],
@@ -4205,8 +4263,11 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Julia": {},
+    "Audi": {},
+    "Sadie": {}
   },
-  "lastGirlsSync": "2026-05-05T22:51:29.329Z",
+  "lastGirlsSync": "2026-05-06T11:45:25.143Z",
   "lastCalendarSync": "2026-05-06T10:35:25.953Z"
 }

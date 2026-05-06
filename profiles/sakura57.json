@@ -9147,7 +9147,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-06T04:00:39.729Z",
-      "lastRostered": "2026-05-06"
+      "lastRostered": "2026-05-07"
     },
     {
       "name": "Moro",
@@ -12485,6 +12485,10 @@
       "2026-05-06": {
         "start": "11:00",
         "end": "18:00"
+      },
+      "2026-05-07": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Moro": {
@@ -12499,7 +12503,7 @@
     }
   },
   "lastGirlsSync": "2026-05-06T04:00:39.729Z",
-  "lastCalendarSync": "2026-05-06T05:41:03.475Z",
+  "lastCalendarSync": "2026-05-06T07:14:47.656Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

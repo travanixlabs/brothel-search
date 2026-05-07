@@ -9056,7 +9056,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/sachiko-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84841777713794_.pic_-1.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84801777713750_.pic_-1.jpg",
@@ -9083,7 +9083,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/kikumi-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85001777810242_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/84991777810241_.pic_.jpg",
@@ -9174,6 +9174,57 @@
       "labels": [],
       "lastModified": "2026-05-06T04:00:39.729Z",
       "lastRostered": "2026-05-08"
+    },
+    {
+      "name": "Miyoko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-07",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/miyoko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85561778114852_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85551778114851_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85571778114853_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-07T04:00:45.703Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Hinaka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-07",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hinaka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85591778114984_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85601778114985_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85611778114986_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/85621778114987_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-07T04:00:45.703Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12575,7 +12626,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-06T04:00:39.729Z",
+  "lastGirlsSync": "2026-05-07T04:00:45.703Z",
   "lastCalendarSync": "2026-05-06T20:06:45.415Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

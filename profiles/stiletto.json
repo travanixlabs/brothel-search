@@ -312,7 +312,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-11",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -5933,8 +5933,8 @@
         "end": "17:00"
       },
       "2026-05-08": {
-        "start": "06:00",
-        "end": "14:00"
+        "start": "11:00",
+        "end": "18:00"
       }
     },
     "Stella": {
@@ -6044,10 +6044,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-05-07": {
-        "start": "08:00",
-        "end": "15:00"
       },
       "2026-05-08": {
         "start": "08:00",
@@ -6230,6 +6226,10 @@
       "2026-05-08": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-11": {
+        "start": "09:00",
+        "end": "16:30"
       }
     },
     "Roxi": {
@@ -6524,12 +6524,7 @@
     "Aspen": {},
     "Mercy": {},
     "Brandy": {},
-    "Yvette": {
-      "2026-05-07": {
-        "start": "07:00",
-        "end": "15:00"
-      }
-    },
+    "Yvette": {},
     "Sonya": {},
     "Zarina": {
       "2026-04-22": {
@@ -6581,5 +6576,5 @@
     }
   },
   "lastGirlsSync": "2026-05-06T22:44:04.808Z",
-  "lastCalendarSync": "2026-05-07T04:12:28.830Z"
+  "lastCalendarSync": "2026-05-07T05:44:33.187Z"
 }

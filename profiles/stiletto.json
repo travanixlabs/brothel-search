@@ -5087,6 +5087,36 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Eden",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "desc": "Boys, My name is Eden & I embody a tantalising combination of innocence and allure.&nbsp; I have a tight, toned body adorned with perfect curves, soft brunette locks and sparkling blue eyes that hold a playful twinkle. I effortlessly captivate sensuality, promising nights of uninhibited ecstasy and forbidden pleasures. Come ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2022-02-01",
+      "lastRostered": "2026-05-07",
+      "oldUrl": "https://www.stilettosydney.com/workers/eden/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-6.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-2.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-11.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-9.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-5.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-10.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-4.jpg"
+      ],
+      "labels": [
+        "GFE"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6573,8 +6603,14 @@
         "start": "08:00",
         "end": "16:00"
       }
+    },
+    "Eden": {
+      "2026-05-07": {
+        "start": "18:00",
+        "end": "02:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-06T22:44:04.808Z",
+  "lastGirlsSync": "2026-05-07T06:40:08.323Z",
   "lastCalendarSync": "2026-05-07T05:44:33.187Z"
 }

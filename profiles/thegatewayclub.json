@@ -72,7 +72,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-14",
       "desc": "You're not ready for this gorgeous, petite, Singaporean babe. Not only is Allie absolutely stunning she has a great personality and provides an even better service, she loves to please and will have you in complete bliss!"
     },
     {
@@ -105,7 +105,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-14",
       "desc": "Are you looking for a good time? Spend some time with Ava and you will be more than satisfied. Providing all sorts of services, Ava will keep you entertained for as long as you wish!"
     },
     {
@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-13",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1198,7 +1198,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-05-09",
       "desc": "New Australian lady starting at The Gateway Club. Providing a fun and flirty girlfriend experience, you will love your time spent with this gorgeous girl next door!"
     },
     {
@@ -1682,7 +1682,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-10",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/mika/",
       "photos": [],
       "labels": [],
@@ -2718,8 +2718,8 @@
         "end": "18:00"
       },
       "2026-05-09": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-05-11": {
         "start": "06:00",
@@ -2753,7 +2753,7 @@
       },
       "2026-05-08": {
         "start": "06:00",
-        "end": "12:00"
+        "end": "18:00"
       },
       "2026-05-14": {
         "start": "06:00",
@@ -2991,7 +2991,7 @@
         "end": "06:00"
       },
       "2026-05-09": {
-        "start": "18:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -3259,12 +3259,7 @@
     },
     "Melissa": {},
     "Misty": {},
-    "Natasha": {
-      "2026-05-07": {
-        "start": "12:00",
-        "end": "06:00"
-      }
-    },
+    "Natasha": {},
     "Noa": {
       "2026-04-06": {
         "start": "12:00",
@@ -3516,6 +3511,10 @@
       "2026-04-19": {
         "start": "06:00",
         "end": "12:00"
+      },
+      "2026-05-09": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Zoey": {
@@ -3579,7 +3578,7 @@
         "end": "06:00"
       },
       "2026-05-08": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -3783,11 +3782,11 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-09": {
+      "2026-05-07": {
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-07": {
+      "2026-05-10": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4106,6 +4105,10 @@
       "2026-05-12": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-08": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Daya": {
@@ -4299,10 +4302,10 @@
       },
       "2026-05-08": {
         "start": "12:00",
-        "end": "06:00"
+        "end": "18:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-07T16:01:06.761Z",
-  "lastCalendarSync": "2026-05-07T12:16:16.118Z"
+  "lastCalendarSync": "2026-05-07T16:21:42.819Z"
 }

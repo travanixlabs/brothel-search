@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07",
+      "lastRostered": "2026-05-08",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -5220,10 +5220,6 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-05-08": {
-        "start": "10:00",
-        "end": "15:30"
-      },
       "2026-05-09": {
         "start": "10:00",
         "end": "15:30"
@@ -6446,7 +6442,7 @@
     "Aurora": {},
     "Lacey": {
       "2026-05-08": {
-        "start": "10:00",
+        "start": "08:00",
         "end": "18:00"
       }
     },
@@ -6540,5 +6536,5 @@
     "Eden": {}
   },
   "lastGirlsSync": "2026-05-07T22:56:50.177Z",
-  "lastCalendarSync": "2026-05-07T21:30:03.299Z"
+  "lastCalendarSync": "2026-05-07T23:29:20.856Z"
 }

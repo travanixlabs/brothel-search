@@ -1535,6 +1535,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-03"
+    },
+    {
+      "name": "Bambi",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "170",
+      "cup": "C",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-07",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2792,6 +2810,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-20T10:00:37.888Z",
+  "lastGirlsSync": "2026-05-07T10:01:02.379Z",
   "lastCalendarSync": "2026-05-07T09:10:02.626Z"
 }

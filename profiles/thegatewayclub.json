@@ -520,7 +520,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-05-08",
       "desc": "Honey has a unique background with a mix of English, Taiwanese and Serbian bringing her striking looks. She offers a variety of extras with a fun and friendly personality."
     },
     {
@@ -2384,7 +2384,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-08",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/audi-new/",
       "photos": [],
       "labels": [],
@@ -2404,7 +2404,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-08",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/sadie-new-2/",
       "photos": [],
       "labels": [],
@@ -3094,6 +3094,14 @@
         "end": "06:00"
       },
       "2026-04-17": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-07": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-08": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4270,9 +4278,23 @@
       }
     },
     "Julia": {},
-    "Audi": {},
-    "Sadie": {}
+    "Audi": {
+      "2026-05-08": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
+    "Sadie": {
+      "2026-05-07": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-08": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-05-06T22:43:42.613Z",
-  "lastCalendarSync": "2026-05-07T04:12:18.470Z"
+  "lastCalendarSync": "2026-05-07T05:44:23.396Z"
 }

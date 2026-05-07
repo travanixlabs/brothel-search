@@ -2940,6 +2940,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-14"
+    },
+    {
+      "name": "Pepper",
+      "country": [
+        "Caribbean"
+      ],
+      "age": "26",
+      "height": "163",
+      "cup": "B",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-08",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6803,6 +6821,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-07T06:39:24.118Z",
+  "lastGirlsSync": "2026-05-07T22:00:12.560Z",
   "lastCalendarSync": "2026-05-07T21:29:48.140Z"
 }

@@ -2921,6 +2921,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-13"
+    },
+    {
+      "name": "Bambi",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "170",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-07",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6753,6 +6771,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-04T06:42:25.112Z",
+  "lastGirlsSync": "2026-05-07T06:39:24.118Z",
   "lastCalendarSync": "2026-05-06T23:29:25.232Z"
 }

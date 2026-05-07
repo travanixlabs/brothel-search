@@ -544,7 +544,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07",
+      "lastRostered": "2026-05-08",
       "desc": "With striking red hair, captivating hazel eyes, and a slim size-6 figure, Scarlette is the perfect blend of Australian charm and Turkish allure. In her mid-30s, she carries herself with confidence, warmth, and a touch of mystery that keeps you intrigued from the moment you meet."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-08",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-08",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Sara",
@@ -1792,7 +1792,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Belinda",
@@ -2068,7 +2068,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Amy",
@@ -2140,7 +2140,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Vanessa",
@@ -2157,7 +2157,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-04"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Dasha",
@@ -2208,7 +2208,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-12"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Ivy",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Katalina",
@@ -2538,7 +2538,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-08",
       "oldUrl": "https://wivesonly.com.au/?page_id=6172&preview=true",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2560,7 +2560,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-03",
+      "lastRostered": "2026-05-08",
       "oldUrl": "https://wivesonly.com.au/london/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/659758B4-F8DC-4000-8467-5E0224026AEE.jpeg",
@@ -3154,6 +3154,10 @@
       "2026-05-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-08": {
+        "start": "17:00",
+        "end": "03:00"
       }
     },
     "Ximena": {
@@ -3232,6 +3236,10 @@
       "2026-05-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-08": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Dasha": {
@@ -3495,7 +3503,8 @@
       "2026-05-04",
       "2026-05-05",
       "2026-05-06",
-      "2026-05-07"
+      "2026-05-07",
+      "2026-05-08"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3577,6 +3586,10 @@
       "2026-05-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-08": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Tara": {
@@ -3905,6 +3918,10 @@
       "2026-05-07": {
         "start": "21:00",
         "end": "04:00"
+      },
+      "2026-05-08": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Talia": {
@@ -3939,6 +3956,10 @@
         "end": "18:00"
       },
       "2026-05-07": {
+        "start": "11:00",
+        "end": "17:00"
+      },
+      "2026-05-08": {
         "start": "11:00",
         "end": "17:00"
       }
@@ -3993,6 +4014,10 @@
         "end": "17:00"
       },
       "2026-05-07": {
+        "start": "11:00",
+        "end": "17:00"
+      },
+      "2026-05-08": {
         "start": "11:00",
         "end": "17:00"
       }
@@ -4131,6 +4156,10 @@
       "2026-04-12": {
         "start": "00:00",
         "end": "20:00"
+      },
+      "2026-05-08": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Madeleine": {
@@ -4251,6 +4280,10 @@
       "2026-05-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-08": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Vanessa": {
@@ -4277,6 +4310,10 @@
       "2026-05-02": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Neena": {
@@ -4396,6 +4433,10 @@
       "2026-05-06": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-08": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Gina": {
@@ -4416,9 +4457,19 @@
       "2026-05-03": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-08": {
+        "start": "20:30",
+        "end": "06:00"
+      }
+    },
+    "Paris": {
+      "2026-05-08": {
+        "start": "20:30",
+        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-01T22:44:21.778Z",
-  "lastCalendarSync": "2026-05-07T10:42:15.277Z"
+  "lastCalendarSync": "2026-05-07T15:12:20.314Z"
 }

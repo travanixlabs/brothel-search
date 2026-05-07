@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-04",
+      "lastRostered": "2026-05-07",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -604,7 +604,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-17",
       "desc": "Oh so cute! Hello Gentlemen, my name is Cali x I am 22, seductive, and easy on the eyes. My petite frame, gorgeous curves, and sweet, girl-next-door looks will captivate you. I have a C-cup bust and long dark locks. Whether you desire a sensual girlfriend experience or something more dominant, I am ..."
     },
     {
@@ -1817,7 +1817,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-16"
     },
     {
       "name": "Jojo",
@@ -2728,7 +2728,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05"
+      "lastRostered": "2026-05-08"
     },
     {
       "name": "Miley",
@@ -4017,7 +4017,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06"
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Storm",
@@ -4642,7 +4642,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-05",
+      "lastRostered": "2026-05-12",
       "oldUrl": "https://www.stilettosydney.com/workers/poppy/",
       "photos": [],
       "labels": [
@@ -5757,6 +5757,18 @@
       "2026-05-09": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-12": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-17": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ophelia": {
@@ -5848,10 +5860,6 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-05-07": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-05-08": {
         "start": "16:00",
         "end": "00:00"
@@ -5933,6 +5941,14 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-07": {
+        "start": "13:00",
+        "end": "19:00"
+      },
+      "2026-05-14": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Mara": {
@@ -6070,6 +6086,10 @@
     },
     "Jess": {
       "2026-05-09": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-05-16": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -6404,7 +6424,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-05-07": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6418,6 +6443,10 @@
       "2026-04-13": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-05-12": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Julietta": {
@@ -6438,6 +6467,10 @@
       "2026-05-08": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-05-07": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Peach": {
@@ -6511,7 +6544,16 @@
     "Alice": {},
     "Piper": {},
     "Felicity": {},
-    "Mia": {},
+    "Mia": {
+      "2026-05-07": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-05-08": {
+        "start": "17:00",
+        "end": "01:00"
+      }
+    },
     "Fendi": {},
     "Lena": {
       "2026-05-07": {
@@ -6539,5 +6581,5 @@
     }
   },
   "lastGirlsSync": "2026-05-06T22:44:04.808Z",
-  "lastCalendarSync": "2026-05-06T23:29:40.011Z"
+  "lastCalendarSync": "2026-05-07T04:12:28.830Z"
 }

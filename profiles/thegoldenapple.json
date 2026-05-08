@@ -1554,6 +1554,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-07"
+    },
+    {
+      "name": "Tina",
+      "country": [
+        "Caribbean"
+      ],
+      "age": "20",
+      "height": "170",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-08",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2817,6 +2835,6 @@
     },
     "Bambi": {}
   },
-  "lastGirlsSync": "2026-05-07T10:01:02.379Z",
+  "lastGirlsSync": "2026-05-08T06:00:26.316Z",
   "lastCalendarSync": "2026-05-08T05:14:59.096Z"
 }

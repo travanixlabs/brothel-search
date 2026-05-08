@@ -505,7 +505,7 @@
       ],
       "lastModified": "2026-03-13T05:15:17.255Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-09",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -5881,7 +5881,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-08T08:06:36.432Z",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-09",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -5919,7 +5919,8 @@
         "Rimming",
         "GFE"
       ],
-      "lastModified": "2026-05-08T10:00:10.240Z"
+      "lastModified": "2026-05-08T10:00:10.240Z",
+      "lastRostered": "2026-05-09"
     }
   ],
   "calendar": {
@@ -6408,6 +6409,10 @@
       "2026-05-08": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-05-09": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Kaya": {
@@ -10151,9 +10156,23 @@
       "2026-05-08": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "10:30",
+        "end": "01:00"
+      }
+    },
+    "Asa": {
+      "2026-05-08": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "10:30",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-08T10:00:10.240Z",
-  "lastCalendarSync": "2026-05-08T08:06:36.432Z"
+  "lastCalendarSync": "2026-05-08T10:05:12.142Z"
 }

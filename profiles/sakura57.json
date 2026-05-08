@@ -1034,7 +1034,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-26",
+      "lastRostered": "2026-05-09",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/12/Naika-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/12/Naika-Jp-02.jpeg",
@@ -11192,10 +11192,6 @@
       "2026-05-08": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-05-09": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Mayo": {
@@ -12346,6 +12342,14 @@
       "2026-04-26": {
         "start": "14:00",
         "end": "05:00"
+      },
+      "2026-05-08": {
+        "start": "16:00",
+        "end": "05:00"
+      },
+      "2026-05-09": {
+        "start": "16:00",
+        "end": "05:00"
       }
     },
     "Makena": {
@@ -12700,7 +12704,7 @@
     }
   },
   "lastGirlsSync": "2026-05-07T04:00:45.703Z",
-  "lastCalendarSync": "2026-05-07T21:29:18.410Z",
+  "lastCalendarSync": "2026-05-08T03:58:25.079Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

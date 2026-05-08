@@ -1300,7 +1300,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30",
+      "lastRostered": "2026-05-09",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Sophia",
@@ -1741,7 +1741,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Desiree",
@@ -1792,7 +1792,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Belinda",
@@ -2174,7 +2174,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-27"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Sienna",
@@ -2208,7 +2208,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Ivy",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Katalina",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Cherry",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Victoria",
@@ -2538,7 +2538,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-09",
       "oldUrl": "https://wivesonly.com.au/?page_id=6172&preview=true",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2560,7 +2560,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-09",
       "oldUrl": "https://wivesonly.com.au/london/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/659758B4-F8DC-4000-8467-5E0224026AEE.jpeg",
@@ -2672,6 +2672,10 @@
       "2026-05-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Delilah": {
@@ -2766,6 +2770,10 @@
       "2026-05-07": {
         "start": "11:00",
         "end": "18:30"
+      },
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Desiree": {
@@ -2870,6 +2878,10 @@
       "2026-04-30": {
         "start": "15:00",
         "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "17:00",
+        "end": "05:00"
       }
     },
     "Cherry": {
@@ -2972,6 +2984,10 @@
       "2026-05-07": {
         "start": "20:30",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Layla": {
@@ -3286,6 +3302,10 @@
       "2026-04-27": {
         "start": "14:30",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -3512,7 +3532,8 @@
       "2026-05-05",
       "2026-05-06",
       "2026-05-07",
-      "2026-05-08"
+      "2026-05-08",
+      "2026-05-09"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3930,6 +3951,10 @@
       "2026-05-08": {
         "start": "21:00",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Talia": {
@@ -4168,6 +4193,10 @@
       "2026-05-08": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-09": {
+        "start": "12:00",
+        "end": "22:00"
       }
     },
     "Madeleine": {
@@ -4194,6 +4223,10 @@
       "2026-05-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Evie": {
@@ -4449,6 +4482,10 @@
       "2026-05-08": {
         "start": "15:00",
         "end": "23:00"
+      },
+      "2026-05-09": {
+        "start": "15:00",
+        "end": "00:00"
       }
     },
     "Gina": {
@@ -4473,10 +4510,19 @@
       "2026-05-08": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
-    "Paris": {}
+    "Paris": {
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-05-01T22:44:21.778Z",
-  "lastCalendarSync": "2026-05-08T11:50:53.723Z"
+  "lastCalendarSync": "2026-05-08T14:23:15.855Z"
 }

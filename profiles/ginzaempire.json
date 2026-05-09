@@ -90,7 +90,7 @@
       ],
       "lastModified": "2026-03-13T05:13:03.217Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07",
+      "lastRostered": "2026-05-09",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Experienced"
@@ -6451,6 +6451,10 @@
       "2026-05-07": {
         "start": "10:30",
         "end": "22:00"
+      },
+      "2026-05-09": {
+        "start": "10:30",
+        "end": "22:00"
       }
     },
     "Jenny": {
@@ -10170,5 +10174,5 @@
     }
   },
   "lastGirlsSync": "2026-05-08T10:00:10.240Z",
-  "lastCalendarSync": "2026-05-08T23:30:33.078Z"
+  "lastCalendarSync": "2026-05-09T04:02:19.923Z"
 }

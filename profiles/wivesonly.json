@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-10",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-10",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-10",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1275,7 +1275,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-08-01",
+      "lastRostered": "2026-05-10",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Sophia",
@@ -1673,7 +1673,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Shell",
@@ -1792,7 +1792,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Belinda",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Brooke",
@@ -2174,7 +2174,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Sienna",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Katalina",
@@ -2310,7 +2310,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Delilah",
@@ -2344,7 +2344,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Victoria",
@@ -2378,7 +2378,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-10"
     },
     {
       "name": "Tara",
@@ -2694,6 +2694,10 @@
       "2026-05-09": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Delilah": {
@@ -3010,6 +3014,10 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Layla": {
@@ -3328,6 +3336,10 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Giselle": {
@@ -3357,6 +3369,10 @@
       },
       "2026-04-05": {
         "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "20:30",
         "end": "06:00"
       }
     },
@@ -3555,7 +3571,8 @@
       "2026-05-06",
       "2026-05-07",
       "2026-05-08",
-      "2026-05-09"
+      "2026-05-09",
+      "2026-05-10"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3641,6 +3658,10 @@
       "2026-05-08": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Tara": {
@@ -3781,6 +3802,10 @@
       "2026-05-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-10": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -3815,6 +3840,10 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Frankie": {
@@ -3984,6 +4013,10 @@
       },
       "2026-05-09": {
         "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "21:00",
         "end": "06:00"
       }
     },
@@ -4359,6 +4392,10 @@
       "2026-05-08": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -4530,6 +4567,10 @@
       "2026-05-05": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "London": {
@@ -4550,6 +4591,10 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Natalia": {
@@ -4568,9 +4613,19 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-10": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
+    "Veronika": {
+      "2026-05-10": {
+        "start": "12:00",
+        "end": "20:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-09T11:25:44.797Z"
+  "lastCalendarSync": "2026-05-09T15:28:45.458Z"
 }

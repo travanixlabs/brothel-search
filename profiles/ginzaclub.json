@@ -1634,7 +1634,7 @@
       ],
       "lastModified": "2026-03-13T06:25:07.734Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-04-28",
+      "lastRostered": "2026-05-09",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -3714,7 +3714,8 @@
         "Filming",
         "GFE"
       ],
-      "lastModified": "2026-05-09T04:00:08.777Z"
+      "lastModified": "2026-05-09T04:00:08.777Z",
+      "lastRostered": "2026-05-09"
     }
   ],
   "calendar": {
@@ -4509,6 +4510,10 @@
       },
       "2026-04-28": {
         "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-05-09": {
+        "start": "17:00",
         "end": "02:00"
       }
     },
@@ -7336,8 +7341,14 @@
         "start": "10:30",
         "end": "00:00"
       }
+    },
+    "Waka": {
+      "2026-05-09": {
+        "start": "16:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-09T04:00:08.777Z",
-  "lastCalendarSync": "2026-05-08T08:06:40.609Z"
+  "lastCalendarSync": "2026-05-09T04:02:24.001Z"
 }

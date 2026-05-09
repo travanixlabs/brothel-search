@@ -5102,7 +5102,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-02-01",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-09",
       "oldUrl": "https://www.stilettosydney.com/workers/eden/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/02/EDEN-6.jpg",
@@ -6287,10 +6287,6 @@
       "2026-05-12": {
         "start": "11:00",
         "end": "19:00"
-      },
-      "2026-05-09": {
-        "start": "11:00",
-        "end": "19:00"
       }
     },
     "Kennedy": {
@@ -6542,7 +6538,12 @@
       }
     },
     "Julia": {},
-    "Eden": {},
+    "Eden": {
+      "2026-05-09": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Alena": {
       "2026-05-09": {
         "start": "20:00",
@@ -6551,5 +6552,5 @@
     }
   },
   "lastGirlsSync": "2026-05-09T06:20:27.597Z",
-  "lastCalendarSync": "2026-05-09T08:15:53.652Z"
+  "lastCalendarSync": "2026-05-09T09:54:09.740Z"
 }

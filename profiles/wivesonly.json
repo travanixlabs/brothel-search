@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-01-01",
+      "lastRostered": "2026-05-09",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-17"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Cartier",
@@ -1758,7 +1758,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Layla",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Brooke",
@@ -2191,7 +2191,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-04"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Luna",
@@ -2293,7 +2293,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Giselle",
@@ -2378,7 +2378,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05"
+      "lastRostered": "2026-05-09"
     },
     {
       "name": "Tara",
@@ -2838,6 +2838,10 @@
       "2026-05-02": {
         "start": "15:00",
         "end": "23:00"
+      },
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Jess": {
@@ -3807,6 +3811,10 @@
       "2026-04-05": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Frankie": {
@@ -3915,6 +3923,10 @@
       "2026-05-04": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Jasmine": {
@@ -4097,6 +4109,10 @@
       "2026-04-17": {
         "start": "18:00",
         "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Maisie": {
@@ -4539,8 +4555,26 @@
         "start": "20:30",
         "end": "06:00"
       }
+    },
+    "Natalia": {
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "20:30"
+      }
+    },
+    "Katalina": {
+      "2026-05-09": {
+        "start": "11:00",
+        "end": "20:30"
+      }
+    },
+    "Caroline": {
+      "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-08T14:23:15.855Z"
+  "lastCalendarSync": "2026-05-09T04:03:10.709Z"
 }

@@ -379,7 +379,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-16",
       "desc": "Dillan is unapologetically feminine with voluptuous curves that invite touch, An E Cup bust that perfectly compliments her full figure and mischievous smile that will lure you in! This Aussie babe is playful, flirty and will leave you breathless. &nbsp;"
     },
     {
@@ -2738,10 +2738,6 @@
       "2026-05-13": {
         "start": "06:00",
         "end": "12:00"
-      },
-      "2026-05-16": {
-        "start": "06:00",
-        "end": "12:00"
       }
     },
     "Ava": {
@@ -3005,6 +3001,10 @@
         "end": "06:00"
       },
       "2026-05-15": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-16": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4032,7 +4032,8 @@
       "2026-05-11",
       "2026-05-12",
       "2026-05-14",
-      "2026-05-15"
+      "2026-05-15",
+      "2026-05-16"
     ],
     "Hennessy": {
       "2026-04-08": {
@@ -4317,5 +4318,5 @@
     }
   },
   "lastGirlsSync": "2026-05-09T16:40:28.263Z",
-  "lastCalendarSync": "2026-05-09T17:30:28.983Z"
+  "lastCalendarSync": "2026-05-09T21:07:32.301Z"
 }

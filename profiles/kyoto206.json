@@ -8339,7 +8339,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-10",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/01/Rosie-4-Cn-scaled.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2022/01/Rosie-3-Cn-scaled.jpg",
@@ -12199,6 +12199,10 @@
       "2026-05-09": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-05-10": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Miree": {
@@ -12801,7 +12805,7 @@
     }
   },
   "lastGirlsSync": "2026-05-06T10:00:40.008Z",
-  "lastCalendarSync": "2026-05-09T08:15:13.604Z",
+  "lastCalendarSync": "2026-05-09T09:53:29.167Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

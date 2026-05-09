@@ -8257,7 +8257,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-18T08:38:51.159Z",
-      "lastRostered": "2026-04-25",
+      "lastRostered": "2026-05-10",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -10990,6 +10990,14 @@
       "2026-04-25": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-05-09": {
+        "start": "17:00",
+        "end": "05:00"
+      },
+      "2026-05-10": {
+        "start": "15:00",
+        "end": "05:00"
       }
     },
     "Zona": {
@@ -11267,10 +11275,6 @@
         "end": "22:00"
       },
       "2026-05-06": {
-        "start": "13:00",
-        "end": "22:00"
-      },
-      "2026-05-09": {
         "start": "13:00",
         "end": "22:00"
       },
@@ -12599,10 +12603,6 @@
         "start": "10:00",
         "end": "22:00"
       },
-      "2026-05-09": {
-        "start": "10:00",
-        "end": "22:00"
-      },
       "2026-05-10": {
         "start": "10:00",
         "end": "22:00"
@@ -12773,7 +12773,7 @@
     }
   },
   "lastGirlsSync": "2026-05-07T04:00:45.703Z",
-  "lastCalendarSync": "2026-05-08T21:32:26.330Z",
+  "lastCalendarSync": "2026-05-09T04:02:31.721Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

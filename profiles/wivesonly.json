@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-11",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-11",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1673,7 +1673,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Shell",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Brooke",
@@ -2174,7 +2174,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Sienna",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Katalina",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Cherry",
@@ -2796,6 +2796,10 @@
       "2026-05-09": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-05-11": {
+        "start": "11:00",
+        "end": "18:30"
       }
     },
     "Desiree": {
@@ -3340,6 +3344,10 @@
       "2026-05-10": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-11": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Giselle": {
@@ -3468,6 +3476,10 @@
       "2026-05-08": {
         "start": "00:00",
         "end": "06:00"
+      },
+      "2026-05-11": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -3572,7 +3584,8 @@
       "2026-05-07",
       "2026-05-08",
       "2026-05-09",
-      "2026-05-10"
+      "2026-05-10",
+      "2026-05-11"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -4018,6 +4031,10 @@
       "2026-05-10": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-05-11": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Talia": {
@@ -4571,6 +4588,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-11": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "London": {
@@ -4601,6 +4622,10 @@
       "2026-05-09": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-11": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Katalina": {
@@ -4617,6 +4642,10 @@
       "2026-05-10": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-11": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Veronika": {
@@ -4627,5 +4656,5 @@
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-09T15:28:45.458Z"
+  "lastCalendarSync": "2026-05-10T14:00:17.719Z"
 }

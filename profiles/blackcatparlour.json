@@ -2978,6 +2978,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-15"
+    },
+    {
+      "name": "Mona",
+      "country": [
+        "English"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "B",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-10",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6986,6 +7004,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-08T10:00:18.208Z",
+  "lastGirlsSync": "2026-05-10T04:00:22.336Z",
   "lastCalendarSync": "2026-05-09T23:27:02.456Z"
 }

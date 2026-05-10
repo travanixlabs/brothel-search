@@ -1750,7 +1750,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/04/%E5%9B%BE%E7%89%87_20250425024756.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Emily",
@@ -2018,6 +2018,27 @@
       "oldUrl": "https://jinia.com.au/mia-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260509053240_1049_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Mimi",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "24",
+      "height": "155",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-08",
+      "lastRostered": "2026-05-08",
+      "oldUrl": "https://jinia.com.au/mimi-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260510071742_1057_2.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -3371,6 +3392,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-09T16:41:19.377Z",
+  "lastGirlsSync": "2026-05-10T06:37:22.729Z",
   "lastCalendarSync": "2026-05-10T04:31:58.769Z"
 }

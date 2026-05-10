@@ -766,7 +766,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-03"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "ChiChi",
@@ -5522,6 +5522,10 @@
       "2026-04-04": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-05-11": {
+        "start": "01:00",
+        "end": "04:00"
       }
     },
     "Diamond": {
@@ -6471,5 +6475,5 @@
     "Alena": {}
   },
   "lastGirlsSync": "2026-05-10T10:57:35.780Z",
-  "lastCalendarSync": "2026-05-10T14:00:12.658Z"
+  "lastCalendarSync": "2026-05-10T15:29:48.388Z"
 }

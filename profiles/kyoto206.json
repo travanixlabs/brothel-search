@@ -9057,7 +9057,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-11",
       "photos": [],
       "deleted": "Yes",
       "deletedAt": "2026-04-11T00:00:00Z"
@@ -12610,6 +12610,10 @@
       "2026-05-10": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-05-11": {
+        "start": "12:00",
+        "end": "16:00"
       }
     },
     "Soca": {
@@ -12866,7 +12870,7 @@
     }
   },
   "lastGirlsSync": "2026-05-06T10:00:40.008Z",
-  "lastCalendarSync": "2026-05-10T08:25:14.058Z",
+  "lastCalendarSync": "2026-05-10T09:55:42.131Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

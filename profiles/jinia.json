@@ -2035,7 +2035,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-08",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-13",
       "oldUrl": "https://jinia.com.au/mimi-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260510071742_1057_2.jpg"
@@ -3390,8 +3390,18 @@
         "start": "12:00",
         "end": "03:00"
       }
+    },
+    "🆕 Mimi": {
+      "2026-05-13": {
+        "start": "18:30",
+        "end": "03:00"
+      },
+      "2026-05-10": {
+        "start": "18:30",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-10T06:37:22.729Z",
-  "lastCalendarSync": "2026-05-10T04:31:58.769Z"
+  "lastCalendarSync": "2026-05-10T07:11:11.307Z"
 }

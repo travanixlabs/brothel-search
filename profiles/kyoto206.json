@@ -626,7 +626,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-11",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/09/Kaori-Jp-04-scaled.jpeg"
       ],
@@ -883,7 +883,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-11",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Soca-Jp-09-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Soca-Jp-07-scaled.jpeg",
@@ -8812,7 +8812,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-23T08:00:32.119Z",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Babi",
@@ -8861,7 +8861,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-27T06:00:38.021Z",
-      "lastRostered": "2026-04-18"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Yujin",
@@ -8928,7 +8928,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-03T07:00:56.415Z",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-11",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/81001775172637_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/80991775172635_.pic_.jpg",
@@ -9377,7 +9377,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-22T08:14:22.383Z",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-11",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/21776836628_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/31776836634_.pic_.jpg",
@@ -9894,10 +9894,6 @@
         "start": "10:00",
         "end": "14:00"
       },
-      "2026-05-10": {
-        "start": "10:00",
-        "end": "07:00"
-      },
       "2026-05-11": {
         "start": "10:00",
         "end": "19:00"
@@ -10307,10 +10303,6 @@
       },
       "2026-05-05": {
         "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-05-10": {
-        "start": "12:00",
         "end": "00:00"
       }
     },
@@ -11069,10 +11061,6 @@
       "2026-05-09": {
         "start": "10:00",
         "end": "22:00"
-      },
-      "2026-05-10": {
-        "start": "10:00",
-        "end": "22:00"
       }
     },
     "Skylar": {
@@ -11456,6 +11444,14 @@
       "2026-05-09": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-05-10": {
+        "start": "19:00",
+        "end": "01:00"
+      },
+      "2026-05-11": {
+        "start": "19:00",
+        "end": "02:00"
       }
     },
     "Saiki": {
@@ -11545,6 +11541,10 @@
       },
       "2026-05-10": {
         "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-05-11": {
+        "start": "11:00",
         "end": "03:00"
       }
     },
@@ -11648,6 +11648,14 @@
         "end": "02:00"
       },
       "2026-04-16": {
+        "start": "15:00",
+        "end": "02:00"
+      },
+      "2026-05-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-11": {
         "start": "15:00",
         "end": "02:00"
       }
@@ -12022,6 +12030,10 @@
         "end": "03:00"
       },
       "2026-05-09": {
+        "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-05-11": {
         "start": "12:00",
         "end": "03:00"
       }
@@ -12466,6 +12478,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-05-11": {
+        "start": "11:00",
+        "end": "02:00"
       }
     },
     "Salala": {
@@ -12530,6 +12546,10 @@
         "end": "02:00"
       },
       "2026-05-11": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-05-10": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -12648,6 +12668,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-05-11": {
+        "start": "10:00",
+        "end": "15:00"
       }
     },
     "Sisley": {
@@ -12838,7 +12862,7 @@
     }
   },
   "lastGirlsSync": "2026-05-06T10:00:40.008Z",
-  "lastCalendarSync": "2026-05-09T21:06:49.046Z",
+  "lastCalendarSync": "2026-05-10T04:30:56.085Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

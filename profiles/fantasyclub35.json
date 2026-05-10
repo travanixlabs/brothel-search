@@ -212,7 +212,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:22.878Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-05-17",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/LisaCN.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/07/LisaCN1.jpg"
@@ -2483,6 +2483,10 @@
       "2026-05-17": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-11": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Aya": {
@@ -2726,10 +2730,40 @@
         "start": "11:00",
         "end": "05:00"
       }
+    },
+    "Lisa": {
+      "2026-05-11": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-12": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-13": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-14": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-15": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-16": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-05-17": {
+        "start": "13:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-10T16:00:15.503Z",
-  "lastCalendarSync": "2026-05-10T15:29:18.438Z",
+  "lastCalendarSync": "2026-05-10T17:30:36.112Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

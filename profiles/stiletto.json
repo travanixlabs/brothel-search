@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08",
+      "lastRostered": "2026-05-11",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -1930,7 +1930,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-13"
     },
     {
       "name": "Julietta",
@@ -6467,10 +6467,23 @@
         "end": "04:00"
       }
     },
-    "Julia": {},
+    "Julia": {
+      "2026-05-11": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-05-12": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-05-13": {
+        "start": "08:00",
+        "end": "16:00"
+      }
+    },
     "Eden": {},
     "Alena": {}
   },
   "lastGirlsSync": "2026-05-10T22:40:37.207Z",
-  "lastCalendarSync": "2026-05-10T19:38:45.080Z"
+  "lastCalendarSync": "2026-05-10T23:30:45.685Z"
 }

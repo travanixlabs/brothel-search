@@ -2997,6 +2997,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-10"
+    },
+    {
+      "name": "Addie",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "160",
+      "cup": "C",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7300,6 +7318,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-10T04:00:22.336Z",
+  "lastGirlsSync": "2026-05-11T07:48:12.320Z",
   "lastCalendarSync": "2026-05-11T06:11:16.967Z"
 }

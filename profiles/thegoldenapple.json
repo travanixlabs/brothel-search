@@ -1573,6 +1573,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-08"
+    },
+    {
+      "name": "Sidney",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-11",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2912,6 +2930,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-08T06:00:26.316Z",
+  "lastGirlsSync": "2026-05-11T04:00:19.258Z",
   "lastCalendarSync": "2026-05-10T23:30:22.256Z"
 }

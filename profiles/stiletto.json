@@ -676,7 +676,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-16"
+      "lastRostered": "2026-05-22"
     },
     {
       "name": "Carol",
@@ -3078,7 +3078,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-11"
     },
     {
       "name": "Parker",
@@ -4730,7 +4730,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-12",
+      "lastRostered": "2026-05-18",
       "oldUrl": "https://www.stilettosydney.com/workers/bree-new/",
       "photos": [],
       "labels": [
@@ -5699,6 +5699,18 @@
       "2026-05-16": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-19": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-21": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-22": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Cindy": {
@@ -6274,6 +6286,10 @@
       "2026-04-08": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-11": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Scarlett": {
@@ -6440,12 +6456,7 @@
         "end": "05:00"
       }
     },
-    "Alisa": {
-      "2026-05-11": {
-        "start": "12:30",
-        "end": "18:30"
-      }
-    },
+    "Alisa": {},
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6504,6 +6515,10 @@
     "Bree": {
       "2026-05-12": {
         "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-05-18": {
+        "start": "10:00",
         "end": "17:00"
       }
     },
@@ -6611,5 +6626,5 @@
     "Alena": {}
   },
   "lastGirlsSync": "2026-05-11T07:48:57.352Z",
-  "lastCalendarSync": "2026-05-11T08:00:45.672Z"
+  "lastCalendarSync": "2026-05-11T10:06:19.652Z"
 }

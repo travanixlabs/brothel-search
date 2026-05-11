@@ -960,7 +960,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Dallas",
@@ -6023,6 +6023,10 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-12": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Stella": {
@@ -6654,5 +6658,5 @@
     "Alena": {}
   },
   "lastGirlsSync": "2026-05-11T22:49:01.153Z",
-  "lastCalendarSync": "2026-05-11T21:47:36.646Z"
+  "lastCalendarSync": "2026-05-11T23:32:24.731Z"
 }

@@ -3016,6 +3016,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-11"
+    },
+    {
+      "name": "Sidney",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "163",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7319,6 +7337,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-11T07:48:12.320Z",
+  "lastGirlsSync": "2026-05-11T12:36:26.404Z",
   "lastCalendarSync": "2026-05-11T11:43:50.258Z"
 }

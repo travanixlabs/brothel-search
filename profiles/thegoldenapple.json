@@ -1590,7 +1590,8 @@
       "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-11"
     }
   ],
   "calendar": {
@@ -2928,8 +2929,14 @@
         "start": "15:00",
         "end": "00:00"
       }
+    },
+    "Sidney": {
+      "2026-05-11": {
+        "start": "10:00",
+        "end": "19:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-11T04:00:19.258Z",
-  "lastCalendarSync": "2026-05-10T23:30:22.256Z"
+  "lastCalendarSync": "2026-05-11T04:43:46.132Z"
 }

@@ -8488,7 +8488,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-03T06:00:54.230Z",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Momoko",
@@ -11847,6 +11847,14 @@
       "2026-04-15": {
         "start": "17:00",
         "end": "05:00"
+      },
+      "2026-05-11": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-05-12": {
+        "start": "17:00",
+        "end": "05:00"
       }
     },
     "Momoko": {
@@ -12907,7 +12915,7 @@
     }
   },
   "lastGirlsSync": "2026-05-11T07:47:50.459Z",
-  "lastCalendarSync": "2026-05-11T04:43:17.222Z",
+  "lastCalendarSync": "2026-05-11T10:05:31.716Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

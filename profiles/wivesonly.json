@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-05-12",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Sara",
@@ -1673,7 +1673,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Shell",
@@ -2157,7 +2157,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Dasha",
@@ -2225,7 +2225,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-06"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Clarisse",
@@ -2276,7 +2276,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Katalina",
@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Julia",
@@ -2582,7 +2582,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-09",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-12",
       "oldUrl": "https://wivesonly.com.au/lina/",
       "photos": [],
       "labels": [],
@@ -3212,6 +3212,10 @@
       "2026-05-08": {
         "start": "17:00",
         "end": "03:00"
+      },
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ximena": {
@@ -3480,6 +3484,10 @@
       "2026-05-11": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -3585,7 +3593,8 @@
       "2026-05-08",
       "2026-05-09",
       "2026-05-10",
-      "2026-05-11"
+      "2026-05-11",
+      "2026-05-12"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3735,6 +3744,10 @@
         "end": "20:00"
       },
       "2026-05-05": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-05-12": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -3951,6 +3964,10 @@
       "2026-05-06": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Sienna": {
@@ -4034,6 +4051,10 @@
       },
       "2026-05-11": {
         "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-05-12": {
+        "start": "21:00",
         "end": "04:00"
       }
     },
@@ -4443,6 +4464,10 @@
       "2026-05-08": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "14:00"
       }
     },
     "Neena": {
@@ -4592,6 +4617,10 @@
       "2026-05-11": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "London": {
@@ -4657,8 +4686,14 @@
         "start": "12:00",
         "end": "20:00"
       }
+    },
+    "Lina": {
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-11T10:06:24.807Z"
+  "lastCalendarSync": "2026-05-11T15:44:34.176Z"
 }

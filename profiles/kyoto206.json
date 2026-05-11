@@ -12735,10 +12735,6 @@
       "2026-05-11": {
         "start": "10:00",
         "end": "15:00"
-      },
-      "2026-05-12": {
-        "start": "12:00",
-        "end": "00:00"
       }
     },
     "Sisley": {
@@ -12945,7 +12941,7 @@
     }
   },
   "lastGirlsSync": "2026-05-11T04:00:15.596Z",
-  "lastCalendarSync": "2026-05-11T08:00:00.681Z",
+  "lastCalendarSync": "2026-05-11T10:05:28.386Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

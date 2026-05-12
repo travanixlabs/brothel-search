@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-05"
+      "lastRostered": "2026-05-13"
     },
     {
       "name": "Anjali",
@@ -1307,6 +1307,10 @@
       "2026-05-05": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-13": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -1641,5 +1645,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-12T16:36:11.997Z"
+  "lastCalendarSync": "2026-05-12T20:13:14.048Z"
 }

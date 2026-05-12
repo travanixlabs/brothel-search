@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-13",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-07",
+      "lastRostered": "2026-05-13",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-13",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -786,7 +786,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-12",
+      "lastRostered": "2026-05-13",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-13",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-13"
     },
     {
       "name": "Sophia",
@@ -2191,7 +2191,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-13"
     },
     {
       "name": "Luna",
@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-13"
     },
     {
       "name": "Cherry",
@@ -2538,7 +2538,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-13",
       "oldUrl": "https://wivesonly.com.au/?page_id=6172&preview=true",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2698,6 +2698,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-13": {
+        "start": "14:30",
+        "end": "23:00"
       }
     },
     "Delilah": {
@@ -2798,6 +2802,10 @@
         "end": "17:00"
       },
       "2026-05-11": {
+        "start": "11:00",
+        "end": "18:30"
+      },
+      "2026-05-13": {
         "start": "11:00",
         "end": "18:30"
       }
@@ -3594,7 +3602,8 @@
       "2026-05-09",
       "2026-05-10",
       "2026-05-11",
-      "2026-05-12"
+      "2026-05-12",
+      "2026-05-13"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -3683,6 +3692,10 @@
       },
       "2026-05-10": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-13": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -3831,6 +3844,10 @@
       },
       "2026-05-10": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-13": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -3984,6 +4001,10 @@
         "end": "19:30"
       },
       "2026-05-09": {
+        "start": "20:30",
+        "end": "06:00"
+      },
+      "2026-05-13": {
         "start": "20:30",
         "end": "06:00"
       }
@@ -4288,6 +4309,10 @@
       "2026-05-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-13": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Luna": {
@@ -4437,6 +4462,10 @@
       },
       "2026-05-10": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-13": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -4599,6 +4628,10 @@
       "2026-05-09": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-05-13": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Gina": {
@@ -4719,9 +4752,13 @@
       "2026-05-12": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-13": {
+        "start": "19:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-12T04:14:01.800Z"
+  "lastCalendarSync": "2026-05-12T15:20:49.144Z"
 }

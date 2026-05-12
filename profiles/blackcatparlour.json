@@ -3035,6 +3035,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-18"
+    },
+    {
+      "name": "Selina",
+      "country": [
+        "Brazilian"
+      ],
+      "age": "33",
+      "height": "163",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-12",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7372,6 +7390,6 @@
     },
     "Sidney": {}
   },
-  "lastGirlsSync": "2026-05-11T12:36:26.404Z",
+  "lastGirlsSync": "2026-05-12T10:00:12.472Z",
   "lastCalendarSync": "2026-05-12T07:22:54.044Z"
 }

@@ -4671,7 +4671,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-05-12",
+      "lastRostered": "2026-05-13",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/12/Haru-Jp-01.jpeg",
@@ -12316,6 +12316,10 @@
       "2026-05-12": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-05-13": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Yuna": {
@@ -13002,7 +13006,7 @@
     }
   },
   "lastGirlsSync": "2026-05-12T04:00:03.002Z",
-  "lastCalendarSync": "2026-05-12T05:49:44.470Z",
+  "lastCalendarSync": "2026-05-12T12:23:31.644Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

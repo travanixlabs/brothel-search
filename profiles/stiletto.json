@@ -806,7 +806,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-05-18"
     },
     {
       "name": "Clara",
@@ -2496,7 +2496,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-17"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Malibu",
@@ -3032,7 +3032,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-16"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Paloma",
@@ -3621,7 +3621,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-30"
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Sasha",
@@ -4226,7 +4226,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Trinity",
@@ -4642,7 +4642,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-12",
+      "lastRostered": "2026-05-26",
       "oldUrl": "https://www.stilettosydney.com/workers/poppy/",
       "photos": [],
       "labels": [
@@ -5028,7 +5028,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-23",
       "oldUrl": "https://www.stilettosydney.com/workers/chloe-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/05/IMG_2412-e1777662712195.jpg"
@@ -5191,7 +5191,8 @@
       "2026-05-21",
       "2026-05-22",
       "2026-05-23",
-      "2026-05-24"
+      "2026-05-24",
+      "2026-05-26"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -5581,6 +5582,10 @@
       "2026-04-23": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-05-12": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Chanel": {
@@ -5773,6 +5778,10 @@
       "2026-04-10": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-05-18": {
+        "start": "07:00",
+        "end": "14:00"
       }
     },
     "Queen": {
@@ -5855,6 +5864,18 @@
       "2026-05-16": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-19": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-05-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-23": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Maddie": {
@@ -5917,6 +5938,18 @@
       "2026-05-17": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-05-21": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-05-22": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-05-23": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Giselle": {
@@ -6057,6 +6090,18 @@
       "2026-04-20": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-12": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-05-13": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-05-14": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Ruby": {
@@ -6514,6 +6559,10 @@
       "2026-05-12": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-05-26": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Julietta": {
@@ -6556,6 +6605,10 @@
       "2026-05-18": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-05-16": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Gloria": {},
@@ -6643,7 +6696,16 @@
     "Brittney": {},
     "Stacy": {},
     "Molly": {},
-    "Chloe": {},
+    "Chloe": {
+      "2026-05-22": {
+        "start": "16:00",
+        "end": "04:00"
+      },
+      "2026-05-23": {
+        "start": "16:00",
+        "end": "04:00"
+      }
+    },
     "Julia": {
       "2026-05-12": {
         "start": "08:00",
@@ -6658,5 +6720,5 @@
     "Alena": {}
   },
   "lastGirlsSync": "2026-05-11T22:49:01.153Z",
-  "lastCalendarSync": "2026-05-11T23:32:24.731Z"
+  "lastCalendarSync": "2026-05-12T04:13:56.876Z"
 }

@@ -25,7 +25,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2024-11-01",
+      "lastRostered": "2026-05-12",
       "desc": "Kayla is a Scottish blonde with light skin and big green eyes. She has beautiful long legs and a size 10 figure. Kayla loves to pamper and please , she is a playful seductress and enjoys seeing her clients smile.... make your booking now with the perfect girl next door"
     },
     {
@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-05-12",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -786,7 +786,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-04-01",
+      "lastRostered": "2026-05-12",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -1275,7 +1275,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-12",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Cartier",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-12"
     },
     {
       "name": "Brooke",
@@ -4184,6 +4184,10 @@
       "2026-05-09": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maisie": {
@@ -4659,6 +4663,10 @@
       "2026-05-11": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Katalina": {
@@ -4679,12 +4687,20 @@
       "2026-05-11": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Veronika": {
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lina": {
@@ -4692,8 +4708,20 @@
         "start": "19:30",
         "end": "04:00"
       }
+    },
+    "Kayla": {
+      "2026-05-12": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Rachel": {
+      "2026-05-12": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-11T15:44:34.176Z"
+  "lastCalendarSync": "2026-05-12T04:14:01.800Z"
 }

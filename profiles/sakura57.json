@@ -9225,6 +9225,30 @@
       "labels": [],
       "lastModified": "2026-05-07T04:00:45.703Z",
       "lastRostered": "2026-05-13"
+    },
+    {
+      "name": "Hitami",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-12",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hitami-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86021778550823_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86031778550824_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-12T04:00:03.002Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -12971,7 +12995,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-11T07:47:50.459Z",
+  "lastGirlsSync": "2026-05-12T04:00:03.002Z",
   "lastCalendarSync": "2026-05-11T20:11:05.918Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

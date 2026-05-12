@@ -9248,7 +9248,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-12T04:00:03.002Z",
-      "lastRostered": ""
+      "lastRostered": "2026-05-13"
     }
   ],
   "calendar": {
@@ -10040,10 +10040,6 @@
       "2026-05-10": {
         "start": "19:00",
         "end": "03:00"
-      },
-      "2026-05-12": {
-        "start": "18:00",
-        "end": "02:00"
       }
     },
     "Suka": {
@@ -10706,12 +10702,12 @@
         "end": "20:00"
       },
       "2026-05-12": {
-        "start": "11:00",
-        "end": "03:00"
+        "start": "12:00",
+        "end": "15:00"
       },
       "2026-05-13": {
-        "start": "11:00",
-        "end": "03:00"
+        "start": "12:00",
+        "end": "15:00"
       }
     },
     "Renata": {
@@ -12993,10 +12989,20 @@
         "start": "12:00",
         "end": "04:00"
       }
+    },
+    "Hitami": {
+      "2026-05-12": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-05-13": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-12T04:00:03.002Z",
-  "lastCalendarSync": "2026-05-11T20:11:05.918Z",
+  "lastCalendarSync": "2026-05-12T04:13:18.790Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

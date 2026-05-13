@@ -9554,6 +9554,32 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Momoka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "18",
+      "height": "158",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/momoka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86181778632819_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86191778632820_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86201778632822_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86211778632828_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-13T04:00:06.571Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13091,7 +13117,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-12T04:00:01.869Z",
+  "lastGirlsSync": "2026-05-13T04:00:06.571Z",
   "lastCalendarSync": "2026-05-12T20:12:44.436Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
@@ -13129,6 +13155,7 @@
     "https://citybrothel.com.au/project/rosie-korea/",
     "https://citybrothel.com.au/project/kirara-japan/",
     "https://citybrothel.com.au/project/kirara-japan-old/",
-    "https://citybrothel.com.au/project/koharu-japan/"
+    "https://citybrothel.com.au/project/koharu-japan/",
+    "https://citybrothel.com.au/project/momoka-japan-old/"
   ]
 }

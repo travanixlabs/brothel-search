@@ -9580,6 +9580,32 @@
       "labels": [],
       "lastModified": "2026-05-13T04:00:06.571Z",
       "lastRostered": "2026-05-14"
+    },
+    {
+      "name": "Jade",
+      "country": [
+        "Chinese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "C",
+      "val1": "170",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-05-13",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/jade-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86321778671616_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86331778671625_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86341778671631_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/86311778671606_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-13T11:58:12.720Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13129,7 +13155,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-13T04:00:06.571Z",
+  "lastGirlsSync": "2026-05-13T11:58:12.720Z",
   "lastCalendarSync": "2026-05-13T11:10:01.887Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

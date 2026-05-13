@@ -105,7 +105,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Amany",
@@ -1159,7 +1159,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-18"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Isabella",
@@ -1180,7 +1180,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-18"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Isla",
@@ -2059,7 +2059,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Samantha",
@@ -2118,7 +2118,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Shannon",
@@ -3053,7 +3053,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-05-20"
     },
     {
       "name": "Cherry",
@@ -3071,7 +3071,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-20"
     }
   ],
   "calendar": {
@@ -4039,6 +4040,10 @@
       "2026-05-15": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-05-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Isabella": {
@@ -4080,6 +4085,10 @@
       },
       "2026-05-15": {
         "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-05-20": {
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -5905,6 +5914,10 @@
       "2026-05-19": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Ruby": {
@@ -6103,6 +6116,10 @@
         "end": "06:00"
       },
       "2026-05-19": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -7256,6 +7273,10 @@
       "2026-05-14": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-05-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Gabrielle": {
@@ -7467,9 +7488,19 @@
       "2026-05-13": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-20": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Cherry": {
+      "2026-05-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-13T16:01:12.596Z",
-  "lastCalendarSync": "2026-05-13T15:23:17.690Z"
+  "lastCalendarSync": "2026-05-13T16:37:23.478Z"
 }

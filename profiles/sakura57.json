@@ -9249,6 +9249,58 @@
       "labels": [],
       "lastModified": "2026-05-12T04:00:03.002Z",
       "lastRostered": "2026-05-14"
+    },
+    {
+      "name": "Yuriko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "178",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yuriko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86071778631494_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86081778631495_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-13T04:00:08.115Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Konato",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/konato-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86101778632476_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86111778632478_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86121778632479_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86131778632480_.pic_-1400x1050.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86141778632482_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86151778632483_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-13T04:00:08.115Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13070,7 +13122,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-12T04:00:03.002Z",
+  "lastGirlsSync": "2026-05-13T04:00:08.115Z",
   "lastCalendarSync": "2026-05-12T20:12:49.209Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

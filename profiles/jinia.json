@@ -1731,7 +1731,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250523094245.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Maggie",
@@ -2044,7 +2044,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 Lina",
+      "name": "🆕 Lin",
       "country": [
         "Vietnamese"
       ],
@@ -2060,6 +2060,27 @@
       "oldUrl": "https://jinia.com.au/lin-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260512104551.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Linna",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "25",
+      "height": "158",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-13",
+      "lastRostered": "2026-05-13",
+      "oldUrl": "https://jinia.com.au/linna/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260513105807.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -3505,13 +3526,13 @@
         "end": "00:00"
       }
     },
-    "🆕 Lina": {
+    "🆕 Lin": {
       "2026-05-12": {
         "start": "15:00",
         "end": "03:00"
       }
     }
   },
-  "lastGirlsSync": "2026-05-12T06:41:19.868Z",
+  "lastGirlsSync": "2026-05-13T06:52:17.827Z",
   "lastCalendarSync": "2026-05-13T04:29:22.077Z"
 }

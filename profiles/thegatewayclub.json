@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2476,6 +2476,28 @@
         "Role Play"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Lexi",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "8",
+      "desc": "Aussie Babe Lexi is a gorgeous, dark-haired powerhouse who pairs a flawless look with a raw, modern style. She is the perfect choice for those seeking a high-energy, unforgettable encounter with a bold spirit.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/lexinew/",
+      "photos": [],
+      "labels": [
+        "GFE"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2809,14 +2831,18 @@
         "end": "18:00"
       },
       "2026-05-15": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-05-16": {
-        "start": "12:00",
-        "end": "18:00"
+        "start": "06:00",
+        "end": "12:00"
       },
       "2026-05-18": {
+        "start": "06:00",
+        "end": "12:00"
+      },
+      "2026-05-20": {
         "start": "06:00",
         "end": "12:00"
       }
@@ -2844,11 +2870,11 @@
       },
       "2026-05-14": {
         "start": "06:00",
-        "end": "18:00"
+        "end": "12:00"
       },
       "2026-05-15": {
         "start": "06:00",
-        "end": "18:00"
+        "end": "12:00"
       }
     },
     "Billie": {
@@ -3056,7 +3082,7 @@
         "end": "06:00"
       },
       "2026-05-16": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       },
       "2026-05-17": {
@@ -3505,7 +3531,7 @@
         "end": "06:00"
       },
       "2026-05-14": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       },
       "2026-05-17": {
@@ -3537,7 +3563,7 @@
         "end": "06:00"
       },
       "2026-05-15": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -4652,8 +4678,9 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Lexi": {}
   },
-  "lastGirlsSync": "2026-05-13T11:58:59.433Z",
+  "lastGirlsSync": "2026-05-13T17:54:31.088Z",
   "lastCalendarSync": "2026-05-13T15:23:25.011Z"
 }

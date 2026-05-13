@@ -144,7 +144,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-15",
       "desc": "Aussie Blonde bombshell Billie is waiting to meet you! Let her show you an experience like no other. She has a friendly and flirty personality and provides a variety of extras."
     },
     {
@@ -485,7 +485,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-16",
       "desc": "Meet Ginger. With her captivating presence and alluring charm, she is sure to leave you breathless. Be enchanted by her radiant energy and irresistible allure. Indulge in unforgettable, sensual moments and let her take you on a journey of pleasure and desire."
     },
     {
@@ -1628,7 +1628,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-16",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/mayanew/",
       "photos": [],
       "labels": [],
@@ -2464,7 +2464,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-16",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/mikayla-new/",
       "photos": [],
       "labels": [
@@ -2887,6 +2887,10 @@
       "2026-05-14": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-15": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Bonnie": {},
@@ -3022,10 +3026,6 @@
         "end": "06:00"
       },
       "2026-05-10": {
-        "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-05-13": {
         "start": "18:00",
         "end": "06:00"
       },
@@ -3253,6 +3253,10 @@
       "2026-05-08": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-16": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Honey": {
@@ -3417,6 +3421,10 @@
         "end": "06:00"
       },
       "2026-05-17": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-13": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -3991,9 +3999,17 @@
       },
       "2026-05-13": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       },
       "2026-05-15": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-14": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-16": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -4631,8 +4647,13 @@
     },
     "Hazel": {},
     "Ella": {},
-    "Mikayla": {}
+    "Mikayla": {
+      "2026-05-16": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-05-13T11:58:59.433Z",
-  "lastCalendarSync": "2026-05-13T12:27:34.456Z"
+  "lastCalendarSync": "2026-05-13T15:23:25.011Z"
 }

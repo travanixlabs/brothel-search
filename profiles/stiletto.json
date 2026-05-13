@@ -5137,6 +5137,83 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Selena",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "D",
+      "body": "",
+      "desc": "Playful with a twist of seduction Gentlemen, I see you have found your way to my profile&#8230; hello! Well, let me tell you that I am a 22-year-old newcomer here at Stiletto & with that I invite you to come in and give me a warm juicy welcome! I am a petite, slender ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "",
+      "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "COB",
+        "Adventurous Positions",
+        "COF",
+        "Deep Throat",
+        "DFK",
+        "Fetish",
+        "Prostate Massage",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Stripping",
+        "Foot Fetish",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Tori",
+      "country": [
+        "Australian"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "HOT LEGGY BRUNETTE Hello gentlemen, my name is Tori and you will feel as though you've been taken away from Stiletto and to the front row of a Victoria Secret's fashion show. I have beautiful brunette locks that perfectly frame my brown doe eyes and modelesque features. I have a beautiful tanned skin, ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-13",
+      "oldUrl": "https://www.stilettosydney.com/workers/tori-new-2/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "COB",
+        "Deep Throat",
+        "DFK",
+        "Prostate Massage",
+        "Escort",
+        "Rimming",
+        "Strap on",
+        "Body Slide",
+        "Party Bookings",
+        "Stripping",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6813,8 +6890,14 @@
         "end": "07:00"
       }
     },
-    "Selene": {}
+    "Selene": {},
+    "Tori": {
+      "2026-05-13": {
+        "start": "14:00",
+        "end": "22:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-05-12T22:54:58.576Z",
+  "lastGirlsSync": "2026-05-13T06:51:48.755Z",
   "lastCalendarSync": "2026-05-13T06:00:55.983Z"
 }

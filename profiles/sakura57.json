@@ -106,7 +106,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-14",
+      "lastRostered": "2026-05-14",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/Como-Jp-01.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/02/Como-Jp-02.jpeg",
@@ -9272,7 +9272,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-13T04:00:08.115Z",
-      "lastRostered": ""
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Konato",
@@ -9300,7 +9300,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-13T04:00:08.115Z",
-      "lastRostered": ""
+      "lastRostered": "2026-05-14"
     }
   ],
   "calendar": {
@@ -10781,10 +10781,6 @@
       "2026-05-12": {
         "start": "12:00",
         "end": "15:00"
-      },
-      "2026-05-13": {
-        "start": "12:00",
-        "end": "17:00"
       }
     },
     "Renata": {
@@ -11927,6 +11923,14 @@
         "end": "05:00"
       },
       "2026-04-14": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-05-13": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-05-14": {
         "start": "10:00",
         "end": "05:00"
       }
@@ -13120,10 +13124,30 @@
         "start": "10:00",
         "end": "02:00"
       }
+    },
+    "Konato": {
+      "2026-05-13": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-05-14": {
+        "start": "10:00",
+        "end": "05:00"
+      }
+    },
+    "Yuriko": {
+      "2026-05-13": {
+        "start": "10:00",
+        "end": "01:00"
+      },
+      "2026-05-14": {
+        "start": "10:00",
+        "end": "01:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-13T04:00:08.115Z",
-  "lastCalendarSync": "2026-05-12T20:12:49.209Z",
+  "lastCalendarSync": "2026-05-13T04:28:26.485Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

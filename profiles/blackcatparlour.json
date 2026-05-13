@@ -3054,6 +3054,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-19"
+    },
+    {
+      "name": "Cherry",
+      "country": [
+        "English"
+      ],
+      "age": "25",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7452,6 +7470,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-12T10:00:12.472Z",
+  "lastGirlsSync": "2026-05-13T16:01:12.596Z",
   "lastCalendarSync": "2026-05-13T15:23:17.690Z"
 }

@@ -3884,7 +3884,8 @@
         "Couple",
         "GFE"
       ],
-      "lastModified": "2026-05-13T04:00:06.586Z"
+      "lastModified": "2026-05-13T04:00:06.586Z",
+      "lastRostered": "2026-02-01"
     }
   ],
   "calendar": {
@@ -7905,5 +7906,5 @@
     }
   },
   "lastGirlsSync": "2026-05-13T04:00:06.586Z",
-  "lastCalendarSync": "2026-05-12T07:22:12.306Z"
+  "lastCalendarSync": "2026-05-13T04:28:19.956Z"
 }

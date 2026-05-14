@@ -3073,6 +3073,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-20"
+    },
+    {
+      "name": "Faith",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7447,6 +7465,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-13T16:01:12.596Z",
+  "lastGirlsSync": "2026-05-14T06:48:41.649Z",
   "lastCalendarSync": "2026-05-14T06:00:36.674Z"
 }

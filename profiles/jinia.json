@@ -1712,7 +1712,7 @@
         "https://jinia.com.au/wp-content/uploads/2024/12/%E5%9B%BE%E7%89%87_20241205101228.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Zulin",
@@ -2079,6 +2079,48 @@
       "startDate": "2026-05-13",
       "lastRostered": "2026-05-20",
       "oldUrl": "https://jinia.com.au/linna/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260513105807.jpg"
+      ],
+      "labels": [],
+      "originalSite": ""
+    },
+    {
+      "name": "🆕 Sofia",
+      "country": [
+        "Beauty"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-14",
+      "lastRostered": "2026-05-14",
+      "oldUrl": "https://jinia.com.au/sofia-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260514104607.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 leena",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "25",
+      "height": "158",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-13",
+      "lastRostered": "2026-05-13",
+      "oldUrl": "https://jinia.com.au/leena/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260513105807.jpg"
       ],
@@ -3568,6 +3610,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-13T06:52:17.827Z",
+  "lastGirlsSync": "2026-05-14T06:49:56.059Z",
   "lastCalendarSync": "2026-05-14T04:28:48.102Z"
 }

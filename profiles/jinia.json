@@ -2098,7 +2098,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-14",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-15",
       "oldUrl": "https://jinia.com.au/sofia-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260514104607.jpg"
@@ -2119,7 +2119,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-13",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-20",
       "oldUrl": "https://jinia.com.au/leena/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260513105807.jpg"
@@ -3608,8 +3608,28 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "🆕 leena": {
+      "2026-05-20": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-05-15": {
+        "start": "10:30",
+        "end": "04:00"
+      }
+    },
+    "🆕 Sofia": {
+      "2026-05-14": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-05-15": {
+        "start": "10:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-14T06:49:56.059Z",
-  "lastCalendarSync": "2026-05-14T04:28:48.102Z"
+  "lastCalendarSync": "2026-05-14T07:28:41.376Z"
 }

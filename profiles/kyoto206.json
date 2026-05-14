@@ -2979,7 +2979,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/10/Mei-Jp-04.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/10/Mei-Jp-01.jpeg",
@@ -13219,6 +13219,10 @@
       "2026-05-14": {
         "start": "14:00",
         "end": "02:00"
+      },
+      "2026-05-15": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Jade": {
@@ -13239,7 +13243,7 @@
     }
   },
   "lastGirlsSync": "2026-05-13T11:58:12.720Z",
-  "lastCalendarSync": "2026-05-14T05:59:58.965Z",
+  "lastCalendarSync": "2026-05-14T16:24:15.600Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

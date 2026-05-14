@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-12",
+      "lastRostered": "2026-05-14",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -2378,7 +2378,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-10"
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Tara",
@@ -3908,6 +3908,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-14": {
+        "start": "19:30",
+        "end": "16:00"
       }
     },
     "Frankie": {
@@ -4745,6 +4749,10 @@
       "2026-05-12": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-05-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Katalina": {
@@ -4805,5 +4813,5 @@
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-14T06:00:56.440Z"
+  "lastCalendarSync": "2026-05-14T09:14:19.088Z"
 }

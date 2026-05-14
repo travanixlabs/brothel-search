@@ -2560,7 +2560,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-09",
+      "lastRostered": "2026-05-14",
       "oldUrl": "https://wivesonly.com.au/london/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/659758B4-F8DC-4000-8467-5E0224026AEE.jpeg",
@@ -4721,6 +4721,10 @@
       "2026-05-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Paris": {
@@ -4813,5 +4817,5 @@
     }
   },
   "lastGirlsSync": "2026-05-08T17:01:51.497Z",
-  "lastCalendarSync": "2026-05-14T09:14:19.088Z"
+  "lastCalendarSync": "2026-05-14T10:59:16.507Z"
 }

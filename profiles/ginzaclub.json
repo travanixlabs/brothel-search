@@ -4007,7 +4007,8 @@
         "2 Men",
         "Filming"
       ],
-      "lastModified": "2026-05-14T10:00:14.753Z"
+      "lastModified": "2026-05-14T10:00:14.753Z",
+      "lastRostered": "2026-05-15"
     }
   ],
   "calendar": {
@@ -8223,8 +8224,14 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Hinami": {
+      "2026-05-15": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-14T10:00:14.753Z",
-  "lastCalendarSync": "2026-05-14T07:27:40.034Z"
+  "lastCalendarSync": "2026-05-14T10:58:20.166Z"
 }

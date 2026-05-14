@@ -9301,6 +9301,33 @@
       "labels": [],
       "lastModified": "2026-05-13T04:00:08.115Z",
       "lastRostered": "2026-05-15"
+    },
+    {
+      "name": "Moki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-14",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/moki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86381778717702_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86391778717703_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86401778717704_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86411778717706_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86421778717707_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-14T04:00:17.968Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13227,7 +13254,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-13T04:00:08.115Z",
+  "lastGirlsSync": "2026-05-14T04:00:17.968Z",
   "lastCalendarSync": "2026-05-13T20:15:51.609Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

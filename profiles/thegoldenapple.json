@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Charlie",
@@ -1611,7 +1611,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2024/10/Amaya.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-14"
     },
     {
       "name": "Faith",
@@ -1631,7 +1632,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2021/12/sugar-15.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-14"
     }
   ],
   "calendar": {
@@ -1756,6 +1758,10 @@
       "2026-05-16": {
         "start": "05:00",
         "end": "13:00"
+      },
+      "2026-05-15": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Icra": {
@@ -1853,6 +1859,10 @@
       },
       "2026-05-15": {
         "start": "10:00",
+        "end": "19:00"
+      },
+      "2026-05-14": {
+        "start": "11:00",
         "end": "19:00"
       }
     },
@@ -2713,7 +2723,12 @@
       }
     },
     "Lily": {},
-    "Bree": {},
+    "Bree": {
+      "2026-05-14": {
+        "start": "09:00",
+        "end": "16:00"
+      }
+    },
     "Jessica": {
       "2026-04-10": {
         "start": "12:00",
@@ -2769,10 +2784,6 @@
       "2026-05-07": {
         "start": "22:00",
         "end": "05:00"
-      },
-      "2026-05-14": {
-        "start": "08:00",
-        "end": "17:00"
       },
       "2026-05-15": {
         "start": "13:00",
@@ -2981,10 +2992,6 @@
       "2026-05-13": {
         "start": "19:00",
         "end": "04:00"
-      },
-      "2026-05-14": {
-        "start": "10:00",
-        "end": "22:00"
       }
     },
     "Alexa": {
@@ -3031,8 +3038,20 @@
         "start": "19:00",
         "end": "04:00"
       }
+    },
+    "Destiny": {
+      "2026-05-14": {
+        "start": "10:00",
+        "end": "19:00"
+      }
+    },
+    "Faith": {
+      "2026-05-14": {
+        "start": "10:00",
+        "end": "19:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-14T04:00:22.713Z",
-  "lastCalendarSync": "2026-05-13T23:38:19.235Z"
+  "lastCalendarSync": "2026-05-14T04:28:15.553Z"
 }

@@ -1592,6 +1592,46 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-12"
+    },
+    {
+      "name": "Destiny",
+      "country": [
+        "Middle eastern"
+      ],
+      "age": "18",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-14",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2024/10/Amaya.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Faith",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-14",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/12/sugar-15.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -2993,6 +3033,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-11T04:00:19.258Z",
+  "lastGirlsSync": "2026-05-14T04:00:22.713Z",
   "lastCalendarSync": "2026-05-13T23:38:19.235Z"
 }

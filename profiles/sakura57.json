@@ -13316,10 +13316,6 @@
       "2026-05-15": {
         "start": "10:00",
         "end": "02:00"
-      },
-      "2026-05-16": {
-        "start": "10:00",
-        "end": "02:00"
       }
     },
     "Konato": {
@@ -13384,7 +13380,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:39.690Z",
-  "lastCalendarSync": "2026-05-15T04:33:55.397Z",
+  "lastCalendarSync": "2026-05-15T06:07:21.862Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

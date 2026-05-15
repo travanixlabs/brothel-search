@@ -1221,7 +1221,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-16",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-07.jpeg",
@@ -11483,6 +11483,10 @@
       "2026-05-15": {
         "start": "12:00",
         "end": "23:00"
+      },
+      "2026-05-16": {
+        "start": "12:00",
+        "end": "23:00"
       }
     },
     "Olivia": {},
@@ -13329,7 +13333,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-15T07:40:22.840Z",
+  "lastCalendarSync": "2026-05-15T09:27:57.692Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

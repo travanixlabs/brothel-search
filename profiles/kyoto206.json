@@ -1168,7 +1168,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2025-04-01",
+      "lastRostered": "2026-05-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Jina-Kr-03.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/04/Jina-Kr-01.jpeg"
@@ -13325,10 +13325,16 @@
         "start": "17:00",
         "end": "02:00"
       }
+    },
+    "Jina": {
+      "2026-05-15": {
+        "start": "12:00",
+        "end": "20:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-15T04:33:52.188Z",
+  "lastCalendarSync": "2026-05-15T06:07:18.470Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

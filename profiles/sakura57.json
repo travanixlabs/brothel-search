@@ -9328,6 +9328,30 @@
       "labels": [],
       "lastModified": "2026-05-14T04:00:17.968Z",
       "lastRostered": "2026-05-16"
+    },
+    {
+      "name": "Aora",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "B",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/aora-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86721778803476_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86711778803474_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-15T04:00:39.690Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13349,7 +13373,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-14T04:00:17.968Z",
+  "lastGirlsSync": "2026-05-15T04:00:39.690Z",
   "lastCalendarSync": "2026-05-14T20:11:16.988Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

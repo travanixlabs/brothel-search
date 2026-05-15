@@ -3963,7 +3963,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-13T15:22:34.247Z",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-16",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -8316,6 +8316,10 @@
       "2026-05-14": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-05-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Hinami": {
@@ -8326,5 +8330,5 @@
     }
   },
   "lastGirlsSync": "2026-05-14T10:00:14.753Z",
-  "lastCalendarSync": "2026-05-15T07:40:19.260Z"
+  "lastCalendarSync": "2026-05-15T09:27:54.318Z"
 }

@@ -2602,7 +2602,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2024-11-01",
+      "lastRostered": "2026-05-16",
       "oldUrl": "https://wivesonly.com.au/belle/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -4964,8 +4964,14 @@
         "start": "19:30",
         "end": "04:00"
       }
+    },
+    "Belle": {
+      "2026-05-16": {
+        "start": "11:00",
+        "end": "20:30"
+      }
     }
   },
   "lastGirlsSync": "2026-05-15T22:50:17.730Z",
-  "lastCalendarSync": "2026-05-15T15:00:05.753Z"
+  "lastCalendarSync": "2026-05-15T23:30:16.929Z"
 }

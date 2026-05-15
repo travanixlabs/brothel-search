@@ -487,7 +487,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2023/10/Wendy-Cn-03.jpeg"
       ],
@@ -1140,7 +1140,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -1221,7 +1221,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-07.jpeg",
@@ -9786,10 +9786,6 @@
       }
     },
     "Renna": {
-      "2026-05-15": {
-        "start": "12:00",
-        "end": "03:00"
-      },
       "2026-05-16": {
         "start": "12:00",
         "end": "03:00"
@@ -10282,6 +10278,10 @@
         "end": "22:00"
       },
       "2026-05-13": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-05-15": {
         "start": "12:00",
         "end": "22:00"
       }
@@ -11479,6 +11479,10 @@
       "2026-05-10": {
         "start": "15:00",
         "end": "02:00"
+      },
+      "2026-05-15": {
+        "start": "12:00",
+        "end": "23:00"
       }
     },
     "Olivia": {},
@@ -11868,6 +11872,10 @@
         "end": "04:00"
       },
       "2026-05-13": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-05-15": {
         "start": "18:00",
         "end": "04:00"
       }
@@ -13214,7 +13222,7 @@
         "end": "00:00"
       },
       "2026-05-15": {
-        "start": "14:00",
+        "start": "17:00",
         "end": "00:00"
       },
       "2026-05-16": {
@@ -13320,7 +13328,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-14T21:41:29.489Z",
+  "lastCalendarSync": "2026-05-15T04:33:52.188Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

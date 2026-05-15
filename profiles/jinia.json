@@ -2140,7 +2140,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-15",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-16",
       "oldUrl": "https://jinia.com.au/andy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260515104110.jpg"
@@ -3690,8 +3690,18 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "🆕 Andy": {
+      "2026-05-15": {
+        "start": "20:00",
+        "end": "03:00"
+      },
+      "2026-05-16": {
+        "start": "20:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-15T06:59:27.050Z",
-  "lastCalendarSync": "2026-05-15T04:34:52.020Z"
+  "lastCalendarSync": "2026-05-15T07:41:23.588Z"
 }

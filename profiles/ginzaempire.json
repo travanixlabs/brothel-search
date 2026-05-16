@@ -4686,7 +4686,7 @@
         "CIM"
       ],
       "lastModified": "2026-04-21T17:03:45.978Z",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-17",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -10392,6 +10392,10 @@
       "2026-05-14": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-05-17": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Anju": {
@@ -11652,5 +11656,5 @@
     }
   },
   "lastGirlsSync": "2026-05-16T04:00:58.007Z",
-  "lastCalendarSync": "2026-05-16T08:21:53.458Z"
+  "lastCalendarSync": "2026-05-16T14:04:02.195Z"
 }

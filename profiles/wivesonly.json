@@ -2646,7 +2646,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-05-17",
       "oldUrl": "https://wivesonly.com.au/naomi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/IMG_1400.jpg"
@@ -5033,8 +5033,14 @@
         "start": "11:00",
         "end": "20:30"
       }
+    },
+    "Naomi": {
+      "2026-05-17": {
+        "start": "18:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-16T16:44:50.465Z",
-  "lastCalendarSync": "2026-05-16T14:05:11.110Z"
+  "lastCalendarSync": "2026-05-16T17:31:55.573Z"
 }

@@ -788,7 +788,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-16",
+      "lastRostered": "2026-05-17",
       "desc": "Do not miss out on your chance to spend an intimate session with Mary who is touring with us at The Gateway Club. Cute, blonde and petite, you won't be able to keep your eyes off her&#8230; let alone your hands. Let her show you a great time while she is in town!"
     },
     {
@@ -1101,7 +1101,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-16",
+      "lastRostered": "2026-05-17",
       "desc": "Sophia is va-va- voom this Brazilian beauty has curves, boobs and a killer booty.  You will be pleasantly surprised so make a booking with the lovely Sophia she's waiting for you."
     },
     {
@@ -3504,6 +3504,10 @@
       "2026-05-16": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-17": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Melissa": {},
@@ -3723,6 +3727,10 @@
       "2026-05-16": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-17": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Summer": {},
@@ -4712,5 +4720,5 @@
     }
   },
   "lastGirlsSync": "2026-05-16T16:01:14.885Z",
-  "lastCalendarSync": "2026-05-16T17:31:42.523Z"
+  "lastCalendarSync": "2026-05-16T23:30:38.563Z"
 }

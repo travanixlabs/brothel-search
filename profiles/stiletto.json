@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-03",
+      "lastRostered": "2026-05-17",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -1422,7 +1422,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-15"
+      "lastRostered": "2026-05-17"
     },
     {
       "name": "Gloria",
@@ -5504,10 +5504,6 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-05-16": {
-        "start": "21:00",
-        "end": "05:00"
-      },
       "2026-05-17": {
         "start": "21:00",
         "end": "05:00"
@@ -5804,10 +5800,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-05-16": {
-        "start": "20:00",
-        "end": "04:00"
-      },
       "2026-05-19": {
         "start": "20:00",
         "end": "04:00"
@@ -5873,10 +5865,6 @@
       "2026-04-04": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-05-16": {
-        "start": "21:00",
-        "end": "05:00"
       },
       "2026-05-19": {
         "start": "20:00",
@@ -6061,6 +6049,10 @@
       "2026-04-05": {
         "start": "01:00",
         "end": "09:00"
+      },
+      "2026-05-17": {
+        "start": "03:00",
+        "end": "11:00"
       }
     },
     "Tyler": {
@@ -6291,10 +6283,6 @@
       }
     },
     "Jess": {
-      "2026-05-16": {
-        "start": "20:00",
-        "end": "04:00"
-      },
       "2026-05-23": {
         "start": "20:00",
         "end": "04:00"
@@ -6714,7 +6702,12 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-05-17": {
+        "start": "03:00",
+        "end": "11:00"
+      }
+    },
     "Piper": {},
     "Felicity": {},
     "Mia": {
@@ -6816,5 +6809,5 @@
     }
   },
   "lastGirlsSync": "2026-05-16T16:44:29.014Z",
-  "lastCalendarSync": "2026-05-16T17:31:50.583Z"
+  "lastCalendarSync": "2026-05-16T19:38:12.582Z"
 }

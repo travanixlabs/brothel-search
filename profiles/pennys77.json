@@ -505,7 +505,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-15"
+      "lastRostered": "2026-05-16"
     },
     {
       "name": "Sora",
@@ -1208,6 +1208,10 @@
       "2026-05-14": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-16": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Taylor": {
@@ -1720,5 +1724,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-16T04:08:59.742Z"
+  "lastCalendarSync": "2026-05-16T05:38:16.681Z"
 }

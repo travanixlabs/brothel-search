@@ -6262,7 +6262,7 @@
         "CIM"
       ],
       "lastModified": "2026-05-12T15:19:43.039Z",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-17",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -11586,6 +11586,10 @@
       "2026-05-15": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-05-17": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Kisa": {
@@ -11658,5 +11662,5 @@
     }
   },
   "lastGirlsSync": "2026-05-16T04:00:58.007Z",
-  "lastCalendarSync": "2026-05-16T14:04:02.195Z"
+  "lastCalendarSync": "2026-05-16T19:37:20.423Z"
 }

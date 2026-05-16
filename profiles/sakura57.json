@@ -9241,7 +9241,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/hitami-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86021778550823_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86031778550824_.pic_.jpg"
@@ -9352,6 +9352,30 @@
       "labels": [],
       "lastModified": "2026-05-15T04:00:39.690Z",
       "lastRostered": "2026-05-17"
+    },
+    {
+      "name": "Miyoo",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "166",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-16",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/miyoo-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86811778897738_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86821778897764_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-16T04:00:58.848Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13448,7 +13472,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-15T04:00:39.690Z",
+  "lastGirlsSync": "2026-05-16T04:00:58.848Z",
   "lastCalendarSync": "2026-05-15T21:31:52.281Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -4375,7 +4375,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-16"
+      "lastRostered": "2026-05-24"
     },
     {
       "name": "Victoria",
@@ -6270,6 +6270,10 @@
       "2026-05-16": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-24": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Lilith": {
@@ -6811,12 +6815,7 @@
         "end": "04:00"
       }
     },
-    "Julia": {
-      "2026-05-16": {
-        "start": "08:00",
-        "end": "16:00"
-      }
-    },
+    "Julia": {},
     "Eden": {},
     "Alena": {
       "2026-05-16": {
@@ -6861,5 +6860,5 @@
     "Salina": {}
   },
   "lastGirlsSync": "2026-05-16T06:26:04.047Z",
-  "lastCalendarSync": "2026-05-16T05:38:39.622Z"
+  "lastCalendarSync": "2026-05-16T06:40:40.874Z"
 }

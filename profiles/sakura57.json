@@ -10240,10 +10240,6 @@
       "2026-05-16": {
         "start": "19:00",
         "end": "02:00"
-      },
-      "2026-05-17": {
-        "start": "15:00",
-        "end": "02:00"
       }
     },
     "Suka": {
@@ -12662,7 +12658,7 @@
         "end": "22:00"
       },
       "2026-05-17": {
-        "start": "10:00",
+        "start": "19:00",
         "end": "22:00"
       }
     },
@@ -13411,7 +13407,7 @@
       },
       "2026-05-17": {
         "start": "12:00",
-        "end": "20:00"
+        "end": "17:00"
       }
     },
     "Hitami": {
@@ -13450,7 +13446,7 @@
         "end": "05:00"
       },
       "2026-05-17": {
-        "start": "10:00",
+        "start": "15:00",
         "end": "05:00"
       },
       "2026-05-18": {
@@ -13534,7 +13530,7 @@
     }
   },
   "lastGirlsSync": "2026-05-17T04:00:51.033Z",
-  "lastCalendarSync": "2026-05-16T21:08:11.794Z",
+  "lastCalendarSync": "2026-05-17T04:38:15.721Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

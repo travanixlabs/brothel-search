@@ -3092,6 +3092,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-22"
+    },
+    {
+      "name": "Mae",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "173",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-17",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7823,6 +7841,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-14T06:48:41.649Z",
+  "lastGirlsSync": "2026-05-17T10:59:43.924Z",
   "lastCalendarSync": "2026-05-17T10:09:59.517Z"
 }

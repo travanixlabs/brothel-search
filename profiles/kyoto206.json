@@ -9288,7 +9288,9 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-04-15T10:00:53.760Z",
-      "lastRostered": "2026-04-15"
+      "lastRostered": "2026-04-15",
+      "deleted": "Yes",
+      "deletedAt": "2026-05-17T16:59:17.072Z"
     },
     {
       "name": "Miree",

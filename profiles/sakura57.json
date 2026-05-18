@@ -8896,7 +8896,7 @@
       "desc": "",
       "lang": "",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-04-18T03:35:59.701Z",
       "lastRostered": "2026-04-19",
       "photos": [
@@ -9376,6 +9376,31 @@
       "labels": [],
       "lastModified": "2026-05-16T04:00:58.848Z",
       "lastRostered": "2026-05-17"
+    },
+    {
+      "name": "Chiko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "161",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-18",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/chiko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86921779011640_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86911779011639_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86901779011638_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-18T04:01:05.635Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13606,7 +13631,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-17T04:00:51.033Z",
+  "lastGirlsSync": "2026-05-18T04:01:05.635Z",
   "lastCalendarSync": "2026-05-17T21:11:46.599Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

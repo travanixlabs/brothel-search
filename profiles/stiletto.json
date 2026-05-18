@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-21",
+      "lastRostered": "2026-05-22",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -1883,7 +1883,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-23"
+      "lastRostered": "2026-05-30"
     },
     {
       "name": "Julia",
@@ -5849,6 +5849,26 @@
       "2026-05-23": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-26": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-27": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-28": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-05-29": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Claudia": {
@@ -6305,10 +6325,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-05-18": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-05-19": {
         "start": "07:30",
         "end": "15:30"
@@ -6539,6 +6555,10 @@
     "Raelynn": {},
     "Blake": {
       "2026-05-21": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-05-22": {
         "start": "11:00",
         "end": "19:00"
       }
@@ -6869,5 +6889,5 @@
     }
   },
   "lastGirlsSync": "2026-05-18T08:10:20.421Z",
-  "lastCalendarSync": "2026-05-18T08:32:05.233Z"
+  "lastCalendarSync": "2026-05-18T10:45:47.396Z"
 }

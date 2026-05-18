@@ -6604,7 +6604,8 @@
         "2 Men",
         "Couple"
       ],
-      "lastModified": "2026-05-18T13:39:29.290Z"
+      "lastModified": "2026-05-18T13:39:29.290Z",
+      "lastRostered": "2026-05-19"
     }
   ],
   "calendar": {
@@ -11973,8 +11974,14 @@
         "start": "10:30",
         "end": "03:00"
       }
+    },
+    "Bailey": {
+      "2026-05-19": {
+        "start": "16:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-18T13:39:29.290Z",
-  "lastCalendarSync": "2026-05-18T10:44:55.007Z"
+  "lastCalendarSync": "2026-05-18T14:03:48.492Z"
 }

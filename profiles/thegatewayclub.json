@@ -144,7 +144,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-24",
       "desc": "Aussie Blonde bombshell Billie is waiting to meet you! Let her show you an experience like no other. She has a friendly and flirty personality and provides a variety of extras."
     },
     {
@@ -1967,7 +1967,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-05-14",
+      "lastRostered": "2026-05-21",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/pixie-new-3/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/04/IMG_9407-002-1.jpeg"
@@ -2809,6 +2809,10 @@
       "2026-05-23": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-22": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Alex": {
@@ -2965,6 +2969,22 @@
       "2026-05-15": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-21": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-22": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-24": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Bonnie": {},
@@ -4199,16 +4219,16 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-18": {
-        "start": "06:00",
-        "end": "12:00"
-      },
       "2026-05-20": {
         "start": "12:00",
         "end": "18:00"
       },
       "2026-05-22": {
         "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-19": {
+        "start": "06:00",
         "end": "18:00"
       }
     },
@@ -4659,6 +4679,14 @@
       "2026-05-14": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-18": {
+        "start": "06:00",
+        "end": "18:00"
+      },
+      "2026-05-21": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Daya": {
@@ -4882,6 +4910,10 @@
       "2026-05-23": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-22": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Audi": {},
@@ -4929,9 +4961,13 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-22": {
+        "start": "12:00",
+        "end": "18:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-18T04:01:25.504Z",
-  "lastCalendarSync": "2026-05-18T04:50:20.948Z"
+  "lastCalendarSync": "2026-05-18T06:36:18.663Z"
 }

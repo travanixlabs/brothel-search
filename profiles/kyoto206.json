@@ -8847,7 +8847,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-26T07:00:30.227Z",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-19",
       "deleted": "Yes",
       "deletedAt": "2026-05-13T18:03:52.423Z"
     },
@@ -9798,7 +9798,7 @@
         "end": "03:00"
       },
       "2026-05-18": {
-        "start": "12:00",
+        "start": "11:00",
         "end": "03:00"
       },
       "2026-05-19": {
@@ -13199,8 +13199,8 @@
         "end": "00:00"
       },
       "2026-05-18": {
-        "start": "10:00",
-        "end": "22:00"
+        "start": "02:00",
+        "end": "01:00"
       },
       "2026-05-19": {
         "start": "13:00",
@@ -13519,7 +13519,16 @@
         "end": "05:00"
       }
     },
-    "Babi": {},
+    "Babi": {
+      "2026-05-18": {
+        "start": "20:00",
+        "end": "02:00"
+      },
+      "2026-05-19": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Jina": {
       "2026-05-16": {
         "start": "12:00",
@@ -13528,7 +13537,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-17T21:11:41.761Z",
+  "lastCalendarSync": "2026-05-18T04:49:34.955Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

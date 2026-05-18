@@ -1084,7 +1084,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-17",
+      "lastRostered": "2026-05-18",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Nako-Jp-03-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Nako-Jp-04-scaled.jpeg"
@@ -10895,6 +10895,10 @@
       "2026-05-16": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-05-18": {
+        "start": "19:00",
+        "end": "00:00"
       }
     },
     "Amy": {
@@ -13537,7 +13541,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-18T08:30:25.453Z",
+  "lastCalendarSync": "2026-05-18T10:45:03.128Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

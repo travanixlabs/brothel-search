@@ -3324,7 +3324,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2025-07-01",
+      "lastRostered": "2026-05-19",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Connie-Cn-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Connie-Cn-05.jpeg"
@@ -9401,6 +9401,34 @@
       "labels": [],
       "lastModified": "2026-05-18T04:01:05.635Z",
       "lastRostered": "2026-05-19"
+    },
+    {
+      "name": "Miki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-18",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/miki-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-05-18T10:45:10.498Z",
+      "lastRostered": "2026-05-19",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86981779083882_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86991779083883_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87001779083885_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -13157,10 +13185,6 @@
       "2026-05-16": {
         "start": "14:00",
         "end": "22:00"
-      },
-      "2026-05-19": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Koi": {
@@ -13623,10 +13647,26 @@
         "start": "10:00",
         "end": "02:00"
       }
+    },
+    "Miki": {
+      "2026-05-18": {
+        "start": "16:00",
+        "end": "02:00"
+      },
+      "2026-05-19": {
+        "start": "10:00",
+        "end": "02:00"
+      }
+    },
+    "Connie": {
+      "2026-05-19": {
+        "start": "14:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-18T04:01:05.635Z",
-  "lastCalendarSync": "2026-05-18T06:35:51.911Z",
+  "lastCalendarSync": "2026-05-18T10:45:10.498Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

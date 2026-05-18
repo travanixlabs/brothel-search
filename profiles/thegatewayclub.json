@@ -451,7 +451,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-18",
+      "lastRostered": "2026-05-19",
       "desc": "Our new addition Ezra is a young, tall and slim South American &#8211; European beauty with sun kissed skin that glows with a perfect tan. She has long blonde hair cascading down her back and striking brown eyes. Effortlessly radiant, She embodies an exotic mix of warmth and elegance."
     },
     {
@@ -1848,7 +1848,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2020-10-01",
+      "lastRostered": "2026-05-19",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/stevie-new-2/",
       "photos": [],
       "labels": [],
@@ -3357,6 +3357,10 @@
       "2026-05-18": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-19": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Ginger": {
@@ -3913,7 +3917,7 @@
       },
       "2026-05-19": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       },
       "2026-05-20": {
         "start": "12:00",
@@ -4228,7 +4232,7 @@
         "end": "18:00"
       },
       "2026-05-19": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "18:00"
       }
     },
@@ -4442,7 +4446,12 @@
         "end": "06:00"
       }
     },
-    "Stevie": {},
+    "Stevie": {
+      "2026-05-19": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
     "Storm": {},
     "Valentina": {
       "2026-04-04": {
@@ -4969,5 +4978,5 @@
     }
   },
   "lastGirlsSync": "2026-05-18T10:01:13.262Z",
-  "lastCalendarSync": "2026-05-18T10:45:37.167Z"
+  "lastCalendarSync": "2026-05-18T14:04:26.679Z"
 }

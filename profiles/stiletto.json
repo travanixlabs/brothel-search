@@ -5284,7 +5284,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-22",
       "oldUrl": "https://www.stilettosydney.com/workers/cameron-new-2/",
       "photos": [],
       "labels": [
@@ -6890,8 +6890,22 @@
         "start": "10:00",
         "end": "18:00"
       }
+    },
+    "Cameron": {
+      "2026-05-20": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-05-21": {
+        "start": "17:00",
+        "end": "23:00"
+      },
+      "2026-05-22": {
+        "start": "18:00",
+        "end": "23:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-19T17:57:02.422Z",
-  "lastCalendarSync": "2026-05-19T20:10:43.066Z"
+  "lastCalendarSync": "2026-05-19T21:52:16.107Z"
 }

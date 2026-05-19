@@ -1591,7 +1591,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-18"
+      "lastRostered": "2026-05-19"
     },
     {
       "name": "Destiny",
@@ -3083,7 +3083,12 @@
         "end": "00:00"
       }
     },
-    "Sidney": {},
+    "Sidney": {
+      "2026-05-19": {
+        "start": "10:00",
+        "end": "19:00"
+      }
+    },
     "Abbie": {},
     "Destiny": {
       "2026-05-20": {
@@ -3113,5 +3118,5 @@
     }
   },
   "lastGirlsSync": "2026-05-14T04:00:22.713Z",
-  "lastCalendarSync": "2026-05-18T21:43:31.054Z"
+  "lastCalendarSync": "2026-05-19T04:41:27.311Z"
 }

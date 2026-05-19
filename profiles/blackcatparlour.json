@@ -3111,6 +3111,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-17"
+    },
+    {
+      "name": "Kitty",
+      "country": [
+        "Japanese"
+      ],
+      "age": "27",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-19",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8069,6 +8087,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-17T10:59:43.924Z",
+  "lastGirlsSync": "2026-05-19T07:51:33.453Z",
   "lastCalendarSync": "2026-05-19T06:31:27.703Z"
 }

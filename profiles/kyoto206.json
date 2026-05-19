@@ -513,7 +513,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-03-31",
+      "lastRostered": "2026-05-20",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Sayu-Jp-03.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Sayu-Jp-04.jpeg",
@@ -9793,6 +9793,10 @@
       "2026-03-31": {
         "start": "12:00",
         "end": "01:00"
+      },
+      "2026-05-20": {
+        "start": "12:00",
+        "end": "01:00"
       }
     },
     "Renna": {
@@ -13616,7 +13620,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-19T04:41:11.119Z",
+  "lastCalendarSync": "2026-05-19T06:31:05.546Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

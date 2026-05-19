@@ -2472,7 +2472,7 @@
         "Filming"
       ],
       "lastModified": "2026-03-19T08:00:18.395Z",
-      "lastRostered": "2026-04-22",
+      "lastRostered": "2026-05-20",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -4133,7 +4133,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-05-19T12:35:22.742Z"
+      "lastModified": "2026-05-19T12:35:22.742Z",
+      "lastRostered": "2026-05-20"
     }
   ],
   "calendar": {
@@ -6485,6 +6486,10 @@
       "2026-04-22": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-05-20": {
+        "start": "14:00",
+        "end": "02:00"
       }
     },
     "Paris": {
@@ -8744,8 +8749,14 @@
         "start": "11:00",
         "end": "02:00"
       }
+    },
+    "Lucy": {
+      "2026-05-20": {
+        "start": "10:30",
+        "end": "18:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-19T12:35:22.742Z",
-  "lastCalendarSync": "2026-05-19T08:01:22.849Z"
+  "lastCalendarSync": "2026-05-19T13:39:07.782Z"
 }

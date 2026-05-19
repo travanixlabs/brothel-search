@@ -4692,7 +4692,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-24",
       "oldUrl": "https://www.stilettosydney.com/workers/inanna-lux-new/",
       "photos": [],
       "labels": [
@@ -6433,10 +6433,6 @@
       "2026-04-10": {
         "start": "14:30",
         "end": "06:00"
-      },
-      "2026-05-19": {
-        "start": "13:00",
-        "end": "21:00"
       }
     },
     "Ria": {
@@ -6712,6 +6708,14 @@
       "2026-04-12": {
         "start": "16:00",
         "end": "22:00"
+      },
+      "2026-05-22": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-05-24": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Rebecca": {},
@@ -6917,5 +6921,5 @@
     }
   },
   "lastGirlsSync": "2026-05-19T07:52:21.728Z",
-  "lastCalendarSync": "2026-05-19T10:12:59.459Z"
+  "lastCalendarSync": "2026-05-19T11:41:05.692Z"
 }

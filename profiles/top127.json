@@ -616,7 +616,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-05-16",
+      "lastRostered": "2026-05-20",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Annie-396x705.jpg"
       ],
@@ -1110,10 +1110,6 @@
       "2026-05-19": {
         "start": "12:00",
         "end": "02:00"
-      },
-      "2026-05-20": {
-        "start": "12:00",
-        "end": "02:00"
       }
     },
     "Chanel": {
@@ -1408,6 +1404,10 @@
       "2026-05-16": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-05-20": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Angela": {
@@ -2432,7 +2432,7 @@
     }
   },
   "lastGirlsSync": "2026-05-07T06:39:01.452Z",
-  "lastCalendarSync": "2026-05-19T13:39:16.875Z",
+  "lastCalendarSync": "2026-05-19T15:56:44.080Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

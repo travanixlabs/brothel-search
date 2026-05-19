@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-13",
+      "lastRostered": "2026-05-20",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -5324,7 +5324,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/annabelle-new/",
       "photos": [],
       "labels": [
@@ -6244,6 +6244,10 @@
       "2026-05-21": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-05-20": {
+        "start": "10:30",
+        "end": "17:00"
       }
     },
     "Jamie": {
@@ -6381,10 +6385,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-05-20": {
-        "start": "07:30",
-        "end": "15:30"
       },
       "2026-05-21": {
         "start": "08:00",
@@ -6728,7 +6728,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-05-20": {
+        "start": "11:00",
+        "end": "17:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6956,5 +6961,5 @@
     }
   },
   "lastGirlsSync": "2026-05-19T22:59:23.216Z",
-  "lastCalendarSync": "2026-05-19T21:52:16.107Z"
+  "lastCalendarSync": "2026-05-19T23:42:38.083Z"
 }

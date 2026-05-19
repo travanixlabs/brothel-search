@@ -3948,7 +3948,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-01"
+      "lastRostered": "2026-05-19"
     },
     {
       "name": "Star",
@@ -6160,10 +6160,6 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-05-19": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-05-21": {
         "start": "11:00",
         "end": "19:00"
@@ -6844,7 +6840,12 @@
       }
     },
     "Brittney": {},
-    "Stacy": {},
+    "Stacy": {
+      "2026-05-19": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
     "Molly": {},
     "Chloe": {
       "2026-05-22": {
@@ -6921,5 +6922,5 @@
     }
   },
   "lastGirlsSync": "2026-05-19T12:36:51.874Z",
-  "lastCalendarSync": "2026-05-19T11:41:05.692Z"
+  "lastCalendarSync": "2026-05-19T13:39:54.793Z"
 }

@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-17",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -2526,6 +2526,36 @@
         "GFE"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Selena",
+      "country": [],
+      "age": "23",
+      "height": "167",
+      "cup": "B",
+      "body": "6-8",
+      "desc": "Come in and meet Selena who is brand new to Gateway Club. This lady has a bubbly personality which will put you at ease.. Selena loves to play and is keen to pay special attention to you. She will fulfil your sexual desires. Make some time to see Selena today! &nbsp;",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/selena-new-5/",
+      "photos": [],
+      "labels": [
+        "DFK",
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "BDSM",
+        "Party Bookings",
+        "Couple",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3194,7 +3224,7 @@
         "end": "06:00"
       },
       "2026-05-21": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       },
       "2026-05-26": {
@@ -3715,7 +3745,7 @@
         "end": "06:00"
       },
       "2026-05-22": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -4979,8 +5009,14 @@
         "start": "12:00",
         "end": "18:00"
       }
+    },
+    "Selena": {
+      "2026-05-21": {
+        "start": "06:00",
+        "end": "06:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-20T04:01:03.842Z",
+  "lastGirlsSync": "2026-05-20T07:50:42.525Z",
   "lastCalendarSync": "2026-05-20T04:45:25.259Z"
 }

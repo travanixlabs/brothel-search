@@ -634,7 +634,8 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-05-31",
+      "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
       "name": "Carmen",
@@ -5434,6 +5435,14 @@
       "2026-05-20": {
         "start": "11:00",
         "end": "18:00"
+      },
+      "2026-05-21": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-05-23": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Anna": {
@@ -6980,6 +6989,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-19T22:59:23.216Z",
+  "lastGirlsSync": "2026-05-20T07:51:04.736Z",
   "lastCalendarSync": "2026-05-20T06:31:22.337Z"
 }

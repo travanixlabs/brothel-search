@@ -372,7 +372,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-05-21",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-07.jpeg",
@@ -12323,6 +12323,10 @@
       "2026-05-10": {
         "start": "12:00",
         "end": "01:00"
+      },
+      "2026-05-21": {
+        "start": "15:00",
+        "end": "03:00"
       }
     },
     "Ayani": {
@@ -13705,7 +13709,7 @@
     }
   },
   "lastGirlsSync": "2026-05-15T04:00:38.386Z",
-  "lastCalendarSync": "2026-05-20T08:00:35.923Z",
+  "lastCalendarSync": "2026-05-20T09:58:50.564Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

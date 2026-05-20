@@ -286,7 +286,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-16",
+      "lastRostered": "2026-05-21",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2022/11/Feifei-Cn-01.jpeg"
       ],
@@ -11382,6 +11382,14 @@
       "2026-04-16": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-20": {
+        "start": "10:00",
+        "end": "19:00"
+      },
+      "2026-05-21": {
+        "start": "10:00",
+        "end": "19:00"
       }
     },
     "Kiyomi": {},
@@ -13788,7 +13796,7 @@
     }
   },
   "lastGirlsSync": "2026-05-19T04:01:00.744Z",
-  "lastCalendarSync": "2026-05-19T20:10:03.038Z",
+  "lastCalendarSync": "2026-05-20T04:44:56.946Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

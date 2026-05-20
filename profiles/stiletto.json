@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-20",
+      "lastRostered": "2026-05-23",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -5432,10 +5432,6 @@
         "start": "16:00",
         "end": "00:00"
       },
-      "2026-05-20": {
-        "start": "11:00",
-        "end": "18:00"
-      },
       "2026-05-21": {
         "start": "12:00",
         "end": "20:00"
@@ -6253,10 +6249,6 @@
       "2026-05-21": {
         "start": "10:00",
         "end": "18:00"
-      },
-      "2026-05-20": {
-        "start": "10:30",
-        "end": "17:00"
       }
     },
     "Jamie": {
@@ -6757,12 +6749,7 @@
         "end": "05:00"
       }
     },
-    "Alisa": {
-      "2026-05-20": {
-        "start": "11:00",
-        "end": "17:00"
-      }
-    },
+    "Alisa": {},
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -6990,5 +6977,5 @@
     }
   },
   "lastGirlsSync": "2026-05-20T07:51:04.736Z",
-  "lastCalendarSync": "2026-05-20T06:31:22.337Z"
+  "lastCalendarSync": "2026-05-20T08:01:14.085Z"
 }

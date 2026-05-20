@@ -105,7 +105,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26"
+      "lastRostered": "2026-05-27"
     },
     {
       "name": "Amany",
@@ -1552,7 +1552,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-05-27"
     },
     {
       "name": "Lucy",
@@ -3440,6 +3440,10 @@
         "end": "06:00"
       },
       "2026-05-22": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -6350,6 +6354,10 @@
       "2026-05-26": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Ruby": {
@@ -8161,5 +8169,5 @@
     }
   },
   "lastGirlsSync": "2026-05-19T07:51:33.453Z",
-  "lastCalendarSync": "2026-05-20T16:04:59.954Z"
+  "lastCalendarSync": "2026-05-20T17:36:51.483Z"
 }

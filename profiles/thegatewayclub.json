@@ -1101,7 +1101,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-05-24",
       "desc": "Sophia is va-va- voom this Brazilian beauty has curves, boobs and a killer booty.  You will be pleasantly surprised so make a booking with the lovely Sophia she's waiting for you."
     },
     {
@@ -1272,7 +1272,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2020-10-01",
+      "lastRostered": "2026-05-23",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/bella-new-9/",
       "photos": [],
       "labels": [
@@ -2837,7 +2837,7 @@
         "end": "06:00"
       },
       "2026-05-24": {
-        "start": "18:00",
+        "start": "06:00",
         "end": "06:00"
       }
     },
@@ -2945,10 +2945,6 @@
       "2026-05-21": {
         "start": "06:00",
         "end": "12:00"
-      },
-      "2026-05-22": {
-        "start": "06:00",
-        "end": "12:00"
       }
     },
     "Billie": {
@@ -2989,14 +2985,6 @@
         "end": "06:00"
       },
       "2026-05-15": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-05-23": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-05-24": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -3805,6 +3793,10 @@
       "2026-05-23": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-22": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Sasha": {
@@ -3871,12 +3863,16 @@
         "end": "12:00"
       },
       "2026-05-23": {
-        "start": "12:00",
+        "start": "06:00",
         "end": "06:00"
       },
       "2026-05-22": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-05-24": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Summer": {},
@@ -4035,7 +4031,12 @@
       }
     },
     "Aisha": {},
-    "Bella": {},
+    "Bella": {
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Bunny": {},
     "Chloe": {
       "2026-04-14": {
@@ -5017,7 +5018,7 @@
         "end": "06:00"
       },
       "2026-05-24": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -5029,5 +5030,5 @@
     }
   },
   "lastGirlsSync": "2026-05-21T04:01:16.028Z",
-  "lastCalendarSync": "2026-05-21T06:33:08.801Z"
+  "lastCalendarSync": "2026-05-21T08:07:45.074Z"
 }

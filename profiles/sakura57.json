@@ -9429,6 +9429,34 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Yokina",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "155",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-21",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yokina-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87341779355546_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87331779355544_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87361779355549_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87351779355548_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87321779355542_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87311779355541_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-21T10:00:51.451Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13872,7 +13900,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-19T04:01:00.744Z",
+  "lastGirlsSync": "2026-05-21T10:00:51.451Z",
   "lastCalendarSync": "2026-05-21T04:51:55.408Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

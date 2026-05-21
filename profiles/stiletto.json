@@ -5359,6 +5359,70 @@
         "Fingering"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Clover",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "desc": "Boys, My name is Clover & I embody a tantalising combination of innocence and allure.  I have a tight, toned body adorned with perfect curves, soft brunette locks and sparkling blue eyes that hold a playful twinkle. I effortlessly captivate sensuality, promising nights of uninhibited ecstasy and forbidden pleasures. Come ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-21",
+      "oldUrl": "https://www.stilettosydney.com/workers/clover/",
+      "photos": [],
+      "labels": [
+        "GFE"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Nessa",
+      "country": [
+        "South American"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "C",
+      "body": "10",
+      "desc": "Brazilian sensation Hi boys, My name is Nessa, I'm 27 years old, from Brazil and I'm brand new to Stiletto Sydney. I have a stunning size 10 frame, blonde hair, and a perky C cup bust. I’m very sweet and very bubbly. I will have you talking to me like we’ve known each ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-21",
+      "oldUrl": "https://www.stilettosydney.com/workers/nessa-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Fantasy",
+        "Toys",
+        "COB",
+        "Adventurous Positions",
+        "COF",
+        "Deep Throat",
+        "BDSM",
+        "Anal",
+        "DFK",
+        "Disabled",
+        "Fetish",
+        "Golden Showers",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Party Bookings",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6968,8 +7032,28 @@
         "start": "18:00",
         "end": "23:00"
       }
+    },
+    "Clover": {
+      "2026-05-25": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-26": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-27": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
+    "Nessa": {
+      "2026-05-21": {
+        "start": "17:00",
+        "end": "01:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-20T23:08:52.336Z",
+  "lastGirlsSync": "2026-05-21T07:58:10.441Z",
   "lastCalendarSync": "2026-05-21T06:33:21.684Z"
 }

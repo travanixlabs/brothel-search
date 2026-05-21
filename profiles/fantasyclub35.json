@@ -348,7 +348,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:34.157Z",
-      "lastRostered": "2026-05-10",
+      "lastRostered": "2026-05-24",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/05/Bobo.jpg"
       ],
@@ -2104,6 +2104,30 @@
       "2026-04-05": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-19": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-20": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-21": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-22": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-23": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-24": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Coco": {
@@ -2805,7 +2829,7 @@
     "Lisa": {}
   },
   "lastGirlsSync": "2026-05-21T10:00:52.085Z",
-  "lastCalendarSync": "2026-05-18T08:31:15.740Z",
+  "lastCalendarSync": "2026-05-21T10:09:10.393Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

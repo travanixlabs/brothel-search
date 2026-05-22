@@ -487,7 +487,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-15",
+      "lastRostered": "2026-05-23",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2023/10/Wendy-Cn-03.jpeg"
       ],
@@ -7078,7 +7078,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2023-08-01",
+      "lastRostered": "2026-05-23",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/03/Ayumi-1-Jp.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2024/03/Ayumi-2-Jp.jpg"
@@ -9668,7 +9668,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-22T04:00:50.113Z",
-      "lastRostered": ""
+      "lastRostered": "2026-05-23"
     }
   ],
   "calendar": {
@@ -10417,6 +10417,10 @@
       "2026-05-15": {
         "start": "12:00",
         "end": "22:00"
+      },
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "00:00"
       }
     },
     "Moca": {
@@ -10881,11 +10885,11 @@
         "end": "05:00"
       },
       "2026-05-22": {
-        "start": "13:00",
+        "start": "15:00",
         "end": "05:00"
       },
       "2026-05-23": {
-        "start": "13:00",
+        "start": "15:00",
         "end": "05:00"
       }
     },
@@ -11754,10 +11758,6 @@
         "end": "01:00"
       },
       "2026-05-21": {
-        "start": "13:00",
-        "end": "01:00"
-      },
-      "2026-05-22": {
         "start": "13:00",
         "end": "01:00"
       },
@@ -13451,7 +13451,7 @@
         "end": "00:00"
       },
       "2026-05-22": {
-        "start": "15:00",
+        "start": "19:00",
         "end": "00:00"
       },
       "2026-05-23": {
@@ -13787,7 +13787,7 @@
         "end": "00:00"
       },
       "2026-05-22": {
-        "start": "14:00",
+        "start": "15:00",
         "end": "00:00"
       },
       "2026-05-23": {
@@ -13855,10 +13855,6 @@
         "end": "04:00"
       },
       "2026-05-21": {
-        "start": "21:00",
-        "end": "04:00"
-      },
-      "2026-05-22": {
         "start": "21:00",
         "end": "04:00"
       },
@@ -13962,10 +13958,30 @@
         "start": "17:00",
         "end": "05:00"
       }
+    },
+    "Hina": {
+      "2026-05-22": {
+        "start": "17:00",
+        "end": "00:00"
+      },
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "00:00"
+      }
+    },
+    "Ayumi": {
+      "2026-05-22": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-21T21:54:55.627Z",
+  "lastCalendarSync": "2026-05-22T06:29:44.208Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

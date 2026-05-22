@@ -5423,6 +5423,71 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Angelina",
+      "country": [
+        "Australian"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "DD",
+      "body": "",
+      "desc": "SAY HI NEXT TIME YOU'RE BY Hi Handsome, I'm in my early 20's and new to Stiletto. I am blonde Aussie/European girl with gorgeous sultry hazel eyes. My dress size is 8 with a natural DD-cup bust. I am petite with curves in all the right places. I am sensually passionate, and I ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2022-09-01",
+      "lastRostered": "2026-05-22",
+      "oldUrl": "https://www.stilettosydney.com/workers/angelina/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2022/09/Angelina-1.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2022/09/Angelina-3.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Isabel",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Aussie/Dutch seductress Hi Handsome,&nbsp; My name is Isabel and I'm brand new to Stiletto. I'm a natural D-cup beauty, half Australian, half Dutch. With dirty-blonde hair and a petite, size-8 body, I'm the pocket rocket that will rock your world! I bring a wealth of experience to create passionate, warm moments. I love ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2024-08-01",
+      "lastRostered": "2026-05-22",
+      "oldUrl": "https://www.stilettosydney.com/workers/isabel/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2024/08/Isabel-1-scaled.jpg"
+      ],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Double Lesbian",
+        "COB",
+        "Adventurous Positions",
+        "Deep Throat",
+        "BDSM",
+        "DFK",
+        "Disabled",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Party Bookings",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6996,8 +7061,24 @@
     },
     "Nessa": {},
     "Iris": {},
-    "Selena": {}
+    "Selena": {},
+    "Angelina": {
+      "2026-05-22": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
+    "Isabel": {
+      "2026-05-22": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-05-23": {
+        "start": "15:00",
+        "end": "23:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-05-21T22:59:57.279Z",
+  "lastGirlsSync": "2026-05-22T07:49:58.531Z",
   "lastCalendarSync": "2026-05-22T06:30:40.845Z"
 }

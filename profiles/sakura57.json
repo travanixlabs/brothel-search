@@ -9482,7 +9482,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-22T04:00:51.154Z",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Tomoha",
@@ -9511,7 +9511,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-22T04:00:51.154Z",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-23"
     }
   ],
   "calendar": {
@@ -13937,14 +13937,6 @@
       "2026-05-21": {
         "start": "12:00",
         "end": "05:00"
-      },
-      "2026-05-22": {
-        "start": "12:00",
-        "end": "05:00"
-      },
-      "2026-05-23": {
-        "start": "12:00",
-        "end": "05:00"
       }
     },
     "Aora": {
@@ -14040,10 +14032,26 @@
         "start": "14:00",
         "end": "05:00"
       }
+    },
+    "Tomoha": {
+      "2026-05-22": {
+        "start": "14:00",
+        "end": "01:00"
+      },
+      "2026-05-23": {
+        "start": "10:00",
+        "end": "01:00"
+      }
+    },
+    "Asani": {
+      "2026-05-23": {
+        "start": "12:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:51.154Z",
-  "lastCalendarSync": "2026-05-22T04:43:53.931Z",
+  "lastCalendarSync": "2026-05-22T06:29:48.193Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

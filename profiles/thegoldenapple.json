@@ -785,7 +785,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-20"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Lucy",
@@ -1766,10 +1766,6 @@
       "2026-05-15": {
         "start": "10:00",
         "end": "22:00"
-      },
-      "2026-05-22": {
-        "start": "17:00",
-        "end": "00:00"
       },
       "2026-05-21": {
         "start": "17:00",
@@ -3190,9 +3186,14 @@
     },
     "Destiny": {},
     "Faith": {},
-    "Lola": {},
+    "Lola": {
+      "2026-05-23": {
+        "start": "17:00",
+        "end": "02:00"
+      }
+    },
     "Kismet": {}
   },
   "lastGirlsSync": "2026-05-22T04:00:58.820Z",
-  "lastCalendarSync": "2026-05-22T15:30:16.391Z"
+  "lastCalendarSync": "2026-05-22T18:17:35.667Z"
 }

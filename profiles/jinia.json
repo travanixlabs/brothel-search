@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-23",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -3931,8 +3931,14 @@
         "start": "20:00",
         "end": "03:00"
       }
+    },
+    "🆕 Joanna": {
+      "2026-05-23": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-22T07:50:26.171Z",
-  "lastCalendarSync": "2026-05-22T06:30:48.827Z"
+  "lastCalendarSync": "2026-05-22T07:58:40.126Z"
 }

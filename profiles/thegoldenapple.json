@@ -1199,7 +1199,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Dylan",
@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-21"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Cammie",
@@ -1653,7 +1653,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2020/09/Jennifer.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-22"
     }
   ],
   "calendar": {
@@ -2890,6 +2891,10 @@
       "2026-05-23": {
         "start": "08:00",
         "end": "17:00"
+      },
+      "2026-05-22": {
+        "start": "09:00",
+        "end": "18:00"
       }
     },
     "Lucy": {
@@ -2931,6 +2936,14 @@
       "2026-05-07": {
         "start": "22:00",
         "end": "05:00"
+      },
+      "2026-05-22": {
+        "start": "08:00",
+        "end": "17:00"
+      },
+      "2026-05-23": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Darcy": {
@@ -2942,13 +2955,13 @@
         "start": "15:00",
         "end": "00:00"
       },
-      "2026-05-22": {
-        "start": "15:00",
-        "end": "00:00"
-      },
       "2026-05-21": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-05-23": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Nadia": {
@@ -3220,14 +3233,15 @@
       }
     },
     "Destiny": {},
-    "Faith": {
+    "Faith": {},
+    "Lola": {},
+    "Kismet": {
       "2026-05-22": {
         "start": "10:00",
         "end": "19:00"
       }
-    },
-    "Lola": {}
+    }
   },
   "lastGirlsSync": "2026-05-22T04:00:58.820Z",
-  "lastCalendarSync": "2026-05-21T21:55:15.379Z"
+  "lastCalendarSync": "2026-05-22T04:44:25.383Z"
 }

@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-26",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -1376,7 +1376,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-14"
+      "lastRostered": "2026-05-24"
     },
     {
       "name": "Giselle",
@@ -2729,7 +2729,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-23"
     },
     {
       "name": "Miley",
@@ -5461,7 +5461,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2024-08-01",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-23",
       "oldUrl": "https://www.stilettosydney.com/workers/isabel/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2024/08/Isabel-1-scaled.jpg"
@@ -5896,10 +5896,6 @@
       "2026-05-09": {
         "start": "18:00",
         "end": "06:00"
-      },
-      "2026-05-22": {
-        "start": "18:00",
-        "end": "02:00"
       },
       "2026-05-23": {
         "start": "18:00",
@@ -6711,6 +6707,10 @@
       "2026-05-22": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-26": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Kennedy": {
@@ -6773,6 +6773,14 @@
     "Erika": {},
     "Ginger": {
       "2026-04-28": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-05-24": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -6933,6 +6941,10 @@
       "2026-05-22": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-05-23": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Fendi": {},
@@ -7039,12 +7051,7 @@
         "end": "08:00"
       }
     },
-    "Cameron": {
-      "2026-05-22": {
-        "start": "21:30",
-        "end": "05:30"
-      }
-    },
+    "Cameron": {},
     "Clover": {
       "2026-05-25": {
         "start": "18:00",
@@ -7080,5 +7087,5 @@
     }
   },
   "lastGirlsSync": "2026-05-22T07:49:58.531Z",
-  "lastCalendarSync": "2026-05-22T06:30:40.845Z"
+  "lastCalendarSync": "2026-05-22T07:58:30.902Z"
 }

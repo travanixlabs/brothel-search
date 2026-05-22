@@ -1634,6 +1634,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-22"
+    },
+    {
+      "name": "Kismet",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "A",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-22",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/09/Jennifer.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3208,6 +3228,6 @@
     },
     "Lola": {}
   },
-  "lastGirlsSync": "2026-05-14T04:00:22.713Z",
+  "lastGirlsSync": "2026-05-22T04:00:58.820Z",
   "lastCalendarSync": "2026-05-21T21:55:15.379Z"
 }

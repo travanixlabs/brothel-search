@@ -5488,6 +5488,28 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Cherry",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "20",
+      "height": "",
+      "cup": "B",
+      "body": "10",
+      "desc": "Sexy! My name is Cherry, I'm 20 years young and the German/Australian beauty of your dreams! I am a stunning blonde with sparkling green eyes, a soft natural B-cup bust, and a sexy size 10 figure that’s made for close encounters. Playful, flirty, and effortlessly charming, I have been told ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-22",
+      "oldUrl": "https://www.stilettosydney.com/workers/cherry/",
+      "photos": [],
+      "labels": [
+        "GFE"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7071,8 +7093,14 @@
         "start": "15:00",
         "end": "23:00"
       }
+    },
+    "Cherry": {
+      "2026-05-22": {
+        "start": "18:00",
+        "end": "02:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-22T07:49:58.531Z",
+  "lastGirlsSync": "2026-05-22T12:15:08.208Z",
   "lastCalendarSync": "2026-05-22T09:55:41.313Z"
 }

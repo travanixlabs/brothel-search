@@ -9457,6 +9457,61 @@
       "labels": [],
       "lastModified": "2026-05-21T10:00:51.451Z",
       "lastRostered": "2026-05-23"
+    },
+    {
+      "name": "Asani",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "160",
+      "cup": "B",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/asani-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87511779412943_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87491779412940_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87501779412941_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87521779412945_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-22T04:00:51.154Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Tomoha",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-05-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/tomoha-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87761779421719_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87771779421720_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87781779421721_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87791779421723_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87801779421725_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87811779421727_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87821779421728_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-22T04:00:51.154Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -13987,7 +14042,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-21T10:00:51.451Z",
+  "lastGirlsSync": "2026-05-22T04:00:51.154Z",
   "lastCalendarSync": "2026-05-21T20:16:59.055Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

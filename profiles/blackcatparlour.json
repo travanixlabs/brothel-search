@@ -3130,6 +3130,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-28"
+    },
+    {
+      "name": "Kismet",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-23",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8334,6 +8352,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-19T07:51:33.453Z",
+  "lastGirlsSync": "2026-05-22T16:01:06.445Z",
   "lastCalendarSync": "2026-05-22T15:30:22.385Z"
 }

@@ -158,7 +158,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T02:30:18.186Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-05-24",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2024/12/Vivian-1.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2024/12/Vivian01.jpg"
@@ -2826,10 +2826,24 @@
         "end": "05:00"
       }
     },
-    "Lisa": {}
+    "Lisa": {},
+    "Vivian": {
+      "2026-05-22": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-23": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-24": {
+        "start": "11:00",
+        "end": "05:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.336Z",
-  "lastCalendarSync": "2026-05-21T10:09:10.393Z",
+  "lastCalendarSync": "2026-05-22T04:44:15.928Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

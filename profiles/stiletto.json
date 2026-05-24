@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-29"
     },
     {
       "name": "Daisy",
@@ -1442,7 +1442,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Grace",
@@ -2136,7 +2136,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-14"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Kianna",
@@ -4464,7 +4464,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Zara",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-05-26",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-25",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -6350,14 +6350,6 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-05-25": {
-        "start": "10:00",
-        "end": "17:00"
-      },
-      "2026-05-26": {
-        "start": "10:00",
-        "end": "17:00"
-      },
       "2026-05-28": {
         "start": "10:00",
         "end": "17:00"
@@ -6482,6 +6474,22 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-05-26": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-05-27": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-05-28": {
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "2026-05-29": {
+        "start": "08:00",
+        "end": "14:00"
       }
     },
     "Amelia": {
@@ -6684,6 +6692,10 @@
       "2026-04-28": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ava": {
@@ -6843,7 +6855,12 @@
         "end": "17:00"
       }
     },
-    "Gloria": {},
+    "Gloria": {
+      "2026-05-25": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Valerie": {},
     "Sabrina": {
       "2026-04-27": {
@@ -6869,8 +6886,18 @@
     "Aspen": {},
     "Mercy": {},
     "Brandy": {},
-    "Yvette": {},
-    "Sonya": {},
+    "Yvette": {
+      "2026-05-25": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
+    "Sonya": {
+      "2026-05-26": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -6980,6 +7007,10 @@
       "2026-05-22": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-05-25": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Angelina": {},
@@ -6987,5 +7018,5 @@
     "Cherry": {}
   },
   "lastGirlsSync": "2026-05-24T22:52:59.852Z",
-  "lastCalendarSync": "2026-05-24T21:27:37.577Z"
+  "lastCalendarSync": "2026-05-24T23:35:23.788Z"
 }

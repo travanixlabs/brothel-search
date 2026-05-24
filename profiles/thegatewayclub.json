@@ -725,7 +725,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "desc": "Meet Lola. Now working at The Gateway Club, Lola is a stunning Russian lady with a petite figure and an F Cup bust. Rocking a plethora of body art, she is a sight to be seen and your ultimate play toy! She provides an amazing girlfriend experience or a very naughty porn star experience. Come... View Article",
       "pornstar": true
     },
@@ -1198,7 +1198,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "desc": "New Australian lady starting at The Gateway Club. Providing a fun and flirty girlfriend experience, you will love your time spent with this gorgeous girl next door!"
     },
     {
@@ -1830,7 +1830,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/sienna-new-4/",
       "photos": [],
       "labels": [],
@@ -2513,7 +2513,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/demi-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/05/DEMI-2.jpg",
@@ -2539,7 +2539,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/selena-new-5/",
       "photos": [],
       "labels": [
@@ -3683,6 +3683,10 @@
       "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Madison": {},
@@ -3777,8 +3781,8 @@
         "end": "18:00"
       },
       "2026-05-31": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Rachel": {},
@@ -4096,6 +4100,10 @@
         "end": "12:00"
       },
       "2026-05-30": {
+        "start": "06:00",
+        "end": "12:00"
+      },
+      "2026-05-31": {
         "start": "06:00",
         "end": "12:00"
       }
@@ -4631,6 +4639,10 @@
       "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Stevie": {
@@ -4807,7 +4819,8 @@
       "2026-05-27",
       "2026-05-28",
       "2026-05-29",
-      "2026-05-30"
+      "2026-05-30",
+      "2026-05-31"
     ],
     "Hennessy": {
       "2026-04-08": {
@@ -5219,6 +5232,10 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Selena": {
@@ -5233,9 +5250,13 @@
       "2026-05-29": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-24T16:50:57.851Z",
-  "lastCalendarSync": "2026-05-24T17:33:15.393Z"
+  "lastCalendarSync": "2026-05-24T19:45:55.115Z"
 }

@@ -2233,7 +2233,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-25",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Eileen-Cn-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/07/Eileen-Cn-01.jpeg"
@@ -8790,7 +8790,7 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-04-12T04:00:21.654Z",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Misaki",
@@ -9540,7 +9540,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-24T04:00:36.117Z",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-05-25"
     }
   ],
   "calendar": {
@@ -10148,6 +10148,10 @@
       "2026-05-22": {
         "start": "11:00",
         "end": "21:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "18:00"
       }
     },
     "Amanda": {
@@ -13225,6 +13229,10 @@
       "2026-05-11": {
         "start": "14:00",
         "end": "20:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "23:00"
       }
     },
     "Tammy": {
@@ -14197,11 +14205,15 @@
       "2026-05-24": {
         "start": "14:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "14:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-24T04:00:36.117Z",
-  "lastCalendarSync": "2026-05-24T04:46:57.170Z",
+  "lastCalendarSync": "2026-05-24T06:13:48.095Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

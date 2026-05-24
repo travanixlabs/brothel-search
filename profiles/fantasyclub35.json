@@ -158,7 +158,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:18.186Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2024/12/Vivian-1.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2024/12/Vivian01.jpg"
@@ -321,7 +321,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:31.912Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/Selena.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/08/Selena1.jpg"
@@ -348,7 +348,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:34.157Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/05/Bobo.jpg"
       ],
@@ -1455,7 +1455,7 @@
       "val2": "",
       "val3": "",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://fantasyclub35.com.au/listing_type/lucky-vietnamese/",
       "photos": [],
       "labels": [],
@@ -1531,7 +1531,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T05:50:10.136Z",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Miya",
@@ -1554,7 +1554,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T05:50:10.136Z",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "RinReal Photos",
@@ -1643,7 +1643,14 @@
       "2026-05-21",
       "2026-05-22",
       "2026-05-23",
-      "2026-05-24"
+      "2026-05-24",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-05-27",
+      "2026-05-28",
+      "2026-05-29",
+      "2026-05-30",
+      "2026-05-31"
     ],
     "Selena": {
       "2026-03-26": {
@@ -1897,6 +1904,34 @@
       "2026-05-24": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-26": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-27": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-28": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Amy": {
@@ -2126,6 +2161,30 @@
         "end": "05:00"
       },
       "2026-05-24": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-26": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-27": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-28": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
         "start": "11:00",
         "end": "05:00"
       }
@@ -2574,6 +2633,34 @@
       "2026-05-24": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-26": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-27": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-28": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Aya": {
@@ -2726,6 +2813,10 @@
       "2026-05-18": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Miya": {
@@ -2824,6 +2915,10 @@
       "2026-05-18": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "05:00"
       }
     },
     "Lisa": {},
@@ -2839,11 +2934,23 @@
       "2026-05-24": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "11:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "11:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-24T11:10:27.931Z",
-  "lastCalendarSync": "2026-05-22T04:44:15.928Z",
+  "lastCalendarSync": "2026-05-24T14:07:48.172Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

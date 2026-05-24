@@ -9512,6 +9512,35 @@
       "labels": [],
       "lastModified": "2026-05-22T04:00:51.154Z",
       "lastRostered": "2026-05-24"
+    },
+    {
+      "name": "Moi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "165",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-24",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/moi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87991779535566_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87971779535563_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87951779535559_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87961779535560_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87981779535564_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88001779535567_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88011779535569_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-24T04:00:36.117Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14115,7 +14144,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-22T04:00:51.154Z",
+  "lastGirlsSync": "2026-05-24T04:00:36.117Z",
   "lastCalendarSync": "2026-05-23T05:50:13.875Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

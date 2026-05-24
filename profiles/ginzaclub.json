@@ -882,7 +882,7 @@
       ],
       "lastModified": "2026-03-13T06:19:58.736Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-04-13",
+      "lastRostered": "2026-05-25",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -6713,6 +6713,10 @@
       "2026-04-13": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-05-25": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Sonata": {},
@@ -9295,5 +9299,5 @@
     }
   },
   "lastGirlsSync": "2026-05-22T07:48:43.842Z",
-  "lastCalendarSync": "2026-05-24T07:36:13.800Z"
+  "lastCalendarSync": "2026-05-24T09:04:26.093Z"
 }

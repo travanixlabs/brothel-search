@@ -6959,7 +6959,8 @@
         "Double",
         "GFE"
       ],
-      "lastModified": "2026-05-24T10:00:34.399Z"
+      "lastModified": "2026-05-24T10:00:34.399Z",
+      "lastRostered": "2026-05-25"
     }
   ],
   "calendar": {
@@ -12970,8 +12971,14 @@
         "start": "18:00",
         "end": "04:00"
       }
+    },
+    "Neon": {
+      "2026-05-25": {
+        "start": "16:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-24T10:00:34.399Z",
-  "lastCalendarSync": "2026-05-24T09:04:21.584Z"
+  "lastCalendarSync": "2026-05-24T10:19:25.693Z"
 }

@@ -1543,7 +1543,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/layla-new-4/",
       "photos": [],
       "labels": [
@@ -2838,6 +2838,18 @@
       },
       "2026-05-24": {
         "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-28": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -5221,5 +5233,5 @@
     }
   },
   "lastGirlsSync": "2026-05-24T11:11:02.337Z",
-  "lastCalendarSync": "2026-05-24T11:47:25.211Z"
+  "lastCalendarSync": "2026-05-24T15:41:14.464Z"
 }

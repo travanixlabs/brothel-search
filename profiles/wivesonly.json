@@ -2742,6 +2742,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Maggie",
+      "country": [
+        "Exotic Asian"
+      ],
+      "age": "22",
+      "height": "165cm",
+      "cup": "D",
+      "body": "",
+      "desc": "Maggie is an elegant and captivating companion known for her warm personality, effortless charm, and unforgettable presence. With her long brown hair, fair skin, and petite figure accentuated by soft, feminine curves, she brings a blend of sophistication and playful energy to every encounter.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-05-01",
+      "lastRostered": "2026-05-01",
+      "oldUrl": "https://wivesonly.com.au/maggie/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/05/maggie-temp-photo.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5598,6 +5620,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-22T22:53:31.210Z",
+  "lastGirlsSync": "2026-05-24T16:51:52.782Z",
   "lastCalendarSync": "2026-05-24T14:08:28.547Z"
 }

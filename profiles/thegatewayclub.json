@@ -72,7 +72,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-05-30",
       "desc": "You're not ready for this gorgeous, petite, Singaporean babe. Not only is Allie absolutely stunning she has a great personality and provides an even better service, she loves to please and will have you in complete bliss!"
     },
     {
@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-25",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-22",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1907,7 +1907,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-07-01",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/gia-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2024/07/Gia-1.jpg",
@@ -2917,12 +2917,12 @@
         "end": "12:00"
       },
       "2026-05-29": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-05-30": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Ava": {
@@ -3203,7 +3203,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Diamond": {
@@ -3670,7 +3670,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Madison": {},
@@ -3760,13 +3760,9 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-24": {
-        "start": "06:00",
-        "end": "12:00"
-      },
       "2026-05-25": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Rachel": {},
@@ -3956,7 +3952,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Summer": {},
@@ -4133,7 +4129,7 @@
         "end": "06:00"
       },
       "2026-05-30": {
-        "start": "06:00",
+        "start": "12:00",
         "end": "06:00"
       }
     },
@@ -4384,7 +4380,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Megan": {},
@@ -4472,7 +4468,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Misha": {
@@ -4618,7 +4614,7 @@
       },
       "2026-05-30": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       }
     },
     "Stevie": {
@@ -4732,6 +4728,10 @@
         "end": "18:00"
       },
       "2026-05-29": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-30": {
         "start": "12:00",
         "end": "18:00"
       }
@@ -5221,5 +5221,5 @@
     }
   },
   "lastGirlsSync": "2026-05-24T07:24:09.553Z",
-  "lastCalendarSync": "2026-05-24T06:14:24.011Z"
+  "lastCalendarSync": "2026-05-24T07:36:59.672Z"
 }

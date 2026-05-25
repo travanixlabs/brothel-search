@@ -1253,7 +1253,7 @@
         "PSE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-06-06"
     },
     {
       "name": "Flora",
@@ -7182,7 +7182,7 @@
     "Alice": {},
     "Piper": {},
     "Felicity": {
-      "2026-05-30": {
+      "2026-06-06": {
         "start": "19:00",
         "end": "03:00"
       }
@@ -7402,5 +7402,5 @@
     }
   },
   "lastGirlsSync": "2026-05-25T08:24:42.801Z",
-  "lastCalendarSync": "2026-05-25T08:45:15.541Z"
+  "lastCalendarSync": "2026-05-25T10:55:59.261Z"
 }

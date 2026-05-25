@@ -652,7 +652,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-23"
+      "lastRostered": "2026-05-25"
     }
   ],
   "calendar": {
@@ -1334,10 +1334,6 @@
       "2026-05-24": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-05-25": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Taylor": {
@@ -1928,8 +1924,13 @@
         "end": "03:00"
       }
     },
-    "Dewi": {}
+    "Dewi": {
+      "2026-05-25": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-24T23:35:02.970Z"
+  "lastCalendarSync": "2026-05-25T05:02:40.005Z"
 }

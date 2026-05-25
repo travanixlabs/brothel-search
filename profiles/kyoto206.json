@@ -1023,7 +1023,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-25",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-08.jpeg",
@@ -10349,10 +10349,6 @@
       "2026-05-21": {
         "start": "10:00",
         "end": "16:00"
-      },
-      "2026-05-26": {
-        "start": "10:00",
-        "end": "02:00"
       }
     },
     "Mari": {},
@@ -10610,6 +10606,10 @@
       "2026-05-22": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-05-25": {
+        "start": "16:00",
+        "end": "20:00"
       }
     },
     "Ada": {
@@ -12868,7 +12868,7 @@
         "end": "03:00"
       },
       "2026-05-25": {
-        "start": "12:00",
+        "start": "13:00",
         "end": "03:00"
       }
     },
@@ -13020,14 +13020,6 @@
       "2026-05-24": {
         "start": "14:00",
         "end": "05:00"
-      },
-      "2026-05-25": {
-        "start": "12:00",
-        "end": "00:00"
-      },
-      "2026-05-26": {
-        "start": "12:00",
-        "end": "00:00"
       }
     },
     "Manon": {
@@ -13976,10 +13968,6 @@
       "2026-05-24": {
         "start": "14:00",
         "end": "00:00"
-      },
-      "2026-05-25": {
-        "start": "14:00",
-        "end": "00:00"
       }
     },
     "Kiko": {
@@ -14202,7 +14190,7 @@
         "end": "03:00"
       },
       "2026-05-25": {
-        "start": "12:00",
+        "start": "15:00",
         "end": "03:00"
       },
       "2026-05-26": {
@@ -14212,7 +14200,7 @@
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-24T21:26:35.098Z",
+  "lastCalendarSync": "2026-05-25T05:02:06.997Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

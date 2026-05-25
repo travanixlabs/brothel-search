@@ -917,7 +917,7 @@
       "lang": "Japanese, Limited English",
       "desc": "YORIKA (JAPAN) D - 30 minutes Age: 21 Height: 162cm Bust: C Service: Diamond 30mins $180 45mins $250 60mins $300",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T07:50:01.623Z",
       "lastRostered": "2025-12-01",
       "photos": [
@@ -9265,7 +9265,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/yuriko-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86071778631494_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86081778631495_.pic_.jpg"
@@ -9392,7 +9392,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/chiko-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86921779011640_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/86911779011639_.pic_.jpg",
@@ -9541,6 +9541,52 @@
       "labels": [],
       "lastModified": "2026-05-24T04:00:36.117Z",
       "lastRostered": "2026-05-26"
+    },
+    {
+      "name": "Myla",
+      "country": [
+        "Malaysian"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-25",
+      "lang": "English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/myla-malaysia/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88121779670343_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88131779670344_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88141779670346_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-25T04:01:02.381Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Yoriko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-25",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yoriko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [],
+      "labels": [],
+      "lastModified": "2026-05-25T04:01:02.381Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14297,7 +14343,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-24T04:00:36.117Z",
+  "lastGirlsSync": "2026-05-25T04:01:02.381Z",
   "lastCalendarSync": "2026-05-24T21:26:39.159Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

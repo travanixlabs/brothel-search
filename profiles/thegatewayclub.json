@@ -105,7 +105,7 @@
         "Squirting"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-29",
       "desc": "Are you looking for a good time? Spend some time with Ava and you will be more than satisfied. Providing all sorts of services, Ava will keep you entertained for as long as you wish!"
     },
     {
@@ -1848,7 +1848,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-22",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/stevie-new-2/",
       "photos": [],
       "labels": [],
@@ -2366,7 +2366,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-25",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/julia-new-2/",
       "photos": [],
       "labels": [],
@@ -2963,6 +2963,10 @@
         "end": "18:00"
       },
       "2026-05-21": {
+        "start": "06:00",
+        "end": "12:00"
+      },
+      "2026-05-29": {
         "start": "06:00",
         "end": "12:00"
       }
@@ -4653,6 +4657,22 @@
       "2026-05-22": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-27": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-28": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Storm": {},
@@ -4923,10 +4943,6 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-25": {
-        "start": "12:00",
-        "end": "18:00"
-      },
       "2026-05-28": {
         "start": "12:00",
         "end": "18:00"
@@ -5165,6 +5181,10 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-25": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Audi": {},
@@ -5258,5 +5278,5 @@
     }
   },
   "lastGirlsSync": "2026-05-24T22:52:31.794Z",
-  "lastCalendarSync": "2026-05-24T23:35:13.636Z"
+  "lastCalendarSync": "2026-05-25T06:51:07.175Z"
 }

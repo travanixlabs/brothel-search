@@ -726,7 +726,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:45:03.480Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-05-30",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/01/Jojo01.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/01/Jojo02.jpg"
@@ -2955,10 +2955,16 @@
         "start": "11:00",
         "end": "05:00"
       }
+    },
+    "Jojo": {
+      "2026-05-30": {
+        "start": "19:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-25T10:00:49.461Z",
-  "lastCalendarSync": "2026-05-25T08:44:45.993Z",
+  "lastCalendarSync": "2026-05-25T10:55:26.391Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

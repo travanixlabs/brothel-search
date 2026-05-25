@@ -2638,10 +2638,6 @@
         "start": "11:00",
         "end": "05:00"
       },
-      "2026-05-25": {
-        "start": "11:00",
-        "end": "05:00"
-      },
       "2026-05-26": {
         "start": "11:00",
         "end": "05:00"
@@ -2962,7 +2958,7 @@
     }
   },
   "lastGirlsSync": "2026-05-25T08:23:45.481Z",
-  "lastCalendarSync": "2026-05-25T05:02:32.492Z",
+  "lastCalendarSync": "2026-05-25T08:44:45.993Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

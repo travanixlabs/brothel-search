@@ -9894,8 +9894,8 @@
         "end": "03:00"
       },
       "2026-05-26": {
-        "start": "12:00",
-        "end": "03:00"
+        "start": "13:00",
+        "end": "02:00"
       }
     },
     "Kurume": {},
@@ -14189,10 +14189,6 @@
         "start": "13:00",
         "end": "03:00"
       },
-      "2026-05-25": {
-        "start": "15:00",
-        "end": "03:00"
-      },
       "2026-05-26": {
         "start": "12:00",
         "end": "03:00"
@@ -14200,7 +14196,7 @@
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-25T05:02:06.997Z",
+  "lastCalendarSync": "2026-05-25T06:50:22.497Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

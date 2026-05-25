@@ -9198,7 +9198,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-07T04:00:45.703Z",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-05-25"
     },
     {
       "name": "Hinaka",
@@ -13950,6 +13950,10 @@
       "2026-05-24": {
         "start": "15:00",
         "end": "05:00"
+      },
+      "2026-05-25": {
+        "start": "15:00",
+        "end": "05:00"
       }
     },
     "Hinaka": {
@@ -14330,7 +14334,7 @@
     }
   },
   "lastGirlsSync": "2026-05-25T04:01:02.381Z",
-  "lastCalendarSync": "2026-05-25T05:02:11.115Z",
+  "lastCalendarSync": "2026-05-25T06:50:25.798Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

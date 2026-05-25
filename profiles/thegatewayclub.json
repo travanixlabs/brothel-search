@@ -451,7 +451,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-25",
+      "lastRostered": "2026-05-26",
       "desc": "Our new addition Ezra is a young, tall and slim South American &#8211; European beauty with sun kissed skin that glows with a perfect tan. She has long blonde hair cascading down her back and striking brown eyes. Effortlessly radiant, She embodies an exotic mix of warmth and elegance."
     },
     {
@@ -485,7 +485,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-29",
       "desc": "Meet Ginger. With her captivating presence and alluring charm, she is sure to leave you breathless. Be enchanted by her radiant energy and irresistible allure. Indulge in unforgettable, sensual moments and let her take you on a journey of pleasure and desire."
     },
     {
@@ -1164,7 +1164,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-21",
+      "lastRostered": "2026-05-28",
       "desc": "Come and visit our resident Greek goddess Venus. She's a young curvy lady with natural beauty. Venus is soft and gentle and is here to spoil you and give you an experience you wont forget. Let her gentle touch turn into a passionate and sensual encounter that will keep you wanting more."
     },
     {
@@ -1700,7 +1700,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-18",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/misha-new/",
       "photos": [],
       "labels": [],
@@ -2366,7 +2366,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-25",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/julia-new-2/",
       "photos": [],
       "labels": [],
@@ -3415,6 +3415,10 @@
       "2026-05-25": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-26": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Ginger": {
@@ -3461,6 +3465,10 @@
       "2026-05-26": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Honey": {
@@ -3971,7 +3979,7 @@
         "end": "06:00"
       },
       "2026-05-29": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "06:00"
       },
       "2026-05-30": {
@@ -4052,6 +4060,18 @@
       "2026-05-21": {
         "start": "06:00",
         "end": "12:00"
+      },
+      "2026-05-26": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-27": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-28": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Violet": {
@@ -4507,6 +4527,14 @@
       "2026-05-18": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Nyx": {
@@ -4946,6 +4974,10 @@
       "2026-05-28": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-26": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Daya": {
@@ -5185,6 +5217,22 @@
       "2026-05-25": {
         "start": "12:00",
         "end": "18:00"
+      },
+      "2026-05-26": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-27": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Audi": {},
@@ -5269,7 +5317,7 @@
       },
       "2026-05-29": {
         "start": "12:00",
-        "end": "18:00"
+        "end": "06:00"
       },
       "2026-05-31": {
         "start": "12:00",
@@ -5278,5 +5326,5 @@
     }
   },
   "lastGirlsSync": "2026-05-25T12:57:54.480Z",
-  "lastCalendarSync": "2026-05-25T13:45:18.694Z"
+  "lastCalendarSync": "2026-05-25T15:37:15.260Z"
 }

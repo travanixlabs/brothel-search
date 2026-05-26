@@ -5613,6 +5613,41 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Kat",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "DD",
+      "body": "",
+      "desc": "Hello there, my name is Kat. I am a stunning Australian brunette with legs for days, naturally beautiful features, and a delectable DD-bust. Sexy, seductive, demure, and here to cater to your every need. The epitome of your perfect sweet yet naughty girl, I really know how to have a good ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-26",
+      "oldUrl": "https://www.stilettosydney.com/workers/kat-new-2/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Toys",
+        "Double Lesbian",
+        "COB",
+        "COF",
+        "Rimming",
+        "Deep Throat",
+        "Anal",
+        "DFK",
+        "2 Men",
+        "BBBJ"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7476,8 +7511,18 @@
         "start": "05:00",
         "end": "13:00"
       }
+    },
+    "Kat": {
+      "2026-05-28": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
+        "end": "20:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-25T22:54:36.769Z",
+  "lastGirlsSync": "2026-05-26T07:55:13.191Z",
   "lastCalendarSync": "2026-05-26T06:30:42.162Z"
 }

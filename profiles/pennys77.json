@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-22"
+      "lastRostered": "2026-05-27"
     },
     {
       "name": "Nana",
@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-20"
+      "lastRostered": "2026-05-27"
     },
     {
       "name": "Ami",
@@ -960,6 +960,10 @@
       "2026-05-21": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-27": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Nana": {
@@ -1048,6 +1052,10 @@
         "end": "03:00"
       },
       "2026-05-19": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-05-27": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -1974,5 +1982,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-26T16:23:35.392Z"
+  "lastCalendarSync": "2026-05-26T17:40:56.189Z"
 }

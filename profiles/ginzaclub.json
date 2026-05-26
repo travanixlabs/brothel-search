@@ -42,7 +42,7 @@
       ],
       "lastModified": "2026-03-13T06:15:57.133Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -171,7 +171,7 @@
       ],
       "lastModified": "2026-03-13T06:16:27.537Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -534,7 +534,7 @@
       ],
       "lastModified": "2026-03-13T06:18:15.285Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -621,7 +621,7 @@
       ],
       "lastModified": "2026-03-13T06:18:40.786Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -882,7 +882,7 @@
       ],
       "lastModified": "2026-03-13T06:19:58.736Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -1211,7 +1211,7 @@
       ],
       "lastModified": "2026-03-13T06:22:17.643Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -1719,7 +1719,7 @@
       ],
       "lastModified": "2026-03-13T06:25:32.902Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
@@ -1844,7 +1844,7 @@
       ],
       "lastModified": "2026-03-13T06:26:33.523Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Experienced"
@@ -1887,7 +1887,7 @@
       ],
       "lastModified": "2026-03-13T06:26:59.579Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -2020,7 +2020,7 @@
       ],
       "lastModified": "2026-03-13T06:27:34.650Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": ""
@@ -2669,7 +2669,7 @@
         "GFE"
       ],
       "lastModified": "2026-03-31T10:00:24.420Z",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Experienced",
@@ -2748,7 +2748,7 @@
         "GFE"
       ],
       "lastModified": "2026-04-05T09:18:24.583Z",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "cup": "A-B"
     },
     {
@@ -3795,7 +3795,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-09T09:53:26.398Z",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -4097,7 +4097,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-19T07:51:04.279Z",
-      "lastRostered": "2026-05-26"
+      "lastRostered": "2026-05-27"
     },
     {
       "name": "Lucy",
@@ -4174,7 +4174,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-21T13:41:57.567Z",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -4299,7 +4299,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-25T06:50:19.623Z",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-27",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Experienced"
@@ -4546,6 +4546,10 @@
         "end": "21:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -4934,6 +4938,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Rosie": {
@@ -5034,6 +5042,10 @@
         "end": "20:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "20:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "20:00"
       }
@@ -5236,6 +5248,10 @@
         "end": "02:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -5576,6 +5592,10 @@
         "end": "02:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "01:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "01:00"
       }
@@ -6075,6 +6095,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Ruby": {
@@ -6295,7 +6319,8 @@
       "2026-05-23",
       "2026-05-24",
       "2026-05-25",
-      "2026-05-26"
+      "2026-05-26",
+      "2026-05-27"
     ],
     "Rum": {
       "2026-03-26": {
@@ -6431,6 +6456,10 @@
         "end": "18:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -6804,6 +6833,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Sonata": {},
@@ -7116,6 +7149,10 @@
       "2026-05-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-05-27": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Ibuki": {
@@ -7236,6 +7273,10 @@
         "end": "22:00"
       },
       "2026-05-24": {
+        "start": "10:30",
+        "end": "22:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "22:00"
       }
@@ -7592,6 +7633,10 @@
         "end": "02:00"
       },
       "2026-05-26": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-27": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -8124,6 +8169,10 @@
         "end": "02:00"
       },
       "2026-05-26": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-05-27": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -9230,6 +9279,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Erin": {
@@ -9358,6 +9411,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Lucy": {
@@ -9394,6 +9451,10 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "23:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "23:00"
       }
     },
     "Haruka": {
@@ -9428,9 +9489,13 @@
       "2026-05-26": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "18:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-25T04:01:00.263Z",
-  "lastCalendarSync": "2026-05-25T12:05:05.152Z"
+  "lastCalendarSync": "2026-05-26T08:05:41.292Z"
 }

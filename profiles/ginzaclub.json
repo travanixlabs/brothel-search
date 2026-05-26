@@ -4343,7 +4343,8 @@
         "Swallow",
         "2 Men"
       ],
-      "lastModified": "2026-05-26T10:00:58.611Z"
+      "lastModified": "2026-05-26T10:00:58.611Z",
+      "lastRostered": "2026-05-27"
     }
   ],
   "calendar": {
@@ -9535,8 +9536,14 @@
         "start": "10:30",
         "end": "18:00"
       }
+    },
+    "Mayu": {
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-26T10:00:58.611Z",
-  "lastCalendarSync": "2026-05-26T08:05:41.292Z"
+  "lastCalendarSync": "2026-05-26T10:32:29.049Z"
 }

@@ -4382,7 +4382,8 @@
         "CIM",
         "2 Men"
       ],
-      "lastModified": "2026-05-26T16:00:59.442Z"
+      "lastModified": "2026-05-26T16:00:59.442Z",
+      "lastRostered": "2026-05-27"
     }
   ],
   "calendar": {
@@ -9580,8 +9581,14 @@
         "start": "10:30",
         "end": "02:00"
       }
+    },
+    "Anju": {
+      "2026-05-27": {
+        "start": "10:30",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-26T16:00:59.442Z",
-  "lastCalendarSync": "2026-05-26T10:32:29.049Z"
+  "lastCalendarSync": "2026-05-26T16:22:58.471Z"
 }

@@ -254,7 +254,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2024-10-01",
+      "lastRostered": "2026-05-27",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/10/Yamato-Jp-07-scaled.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/10/Yamato-Jp-05-scaled.jpeg",
@@ -14313,11 +14313,11 @@
         "end": "05:00"
       },
       "2026-05-26": {
-        "start": "13:00",
+        "start": "14:00",
         "end": "05:00"
       },
       "2026-05-27": {
-        "start": "13:00",
+        "start": "14:00",
         "end": "05:00"
       }
     },
@@ -14392,10 +14392,20 @@
         "start": "12:00",
         "end": "20:00"
       }
+    },
+    "Yamato": {
+      "2026-05-26": {
+        "start": "15:00",
+        "end": "03:00"
+      },
+      "2026-05-27": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-25T04:01:02.381Z",
-  "lastCalendarSync": "2026-05-25T20:06:18.404Z",
+  "lastCalendarSync": "2026-05-26T04:42:28.861Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27",
+      "lastRostered": "2026-06-04",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -1699,7 +1699,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-21"
+      "lastRostered": "2026-06-07"
     },
     {
       "name": "Jamie",
@@ -5628,7 +5628,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.stilettosydney.com/workers/kat-new-2/",
       "photos": [],
       "labels": [
@@ -6543,10 +6543,6 @@
       }
     },
     "Sydney": {
-      "2026-05-26": {
-        "start": "11:00",
-        "end": "18:00"
-      },
       "2026-05-30": {
         "start": "10:00",
         "end": "18:00"
@@ -6635,10 +6631,6 @@
       }
     },
     "Ruby": {
-      "2026-05-26": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-05-27": {
         "start": "10:00",
         "end": "18:00"
@@ -6719,10 +6711,6 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
-      },
-      "2026-05-26": {
-        "start": "10:00",
-        "end": "18:00"
       },
       "2026-05-28": {
         "start": "10:00",
@@ -7007,6 +6995,10 @@
       "2026-05-27": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-06-04": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Kennedy": {
@@ -7065,10 +7057,6 @@
         "end": "05:00"
       },
       "2026-05-18": {
-        "start": "18:00",
-        "end": "02:00"
-      },
-      "2026-05-26": {
         "start": "18:00",
         "end": "02:00"
       },
@@ -7441,7 +7429,60 @@
       }
     },
     "Nessa": {},
-    "Iris": {},
+    "Iris": {
+      "2026-05-26": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-27": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-28": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-29": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-30": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-05-31": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-01": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-02": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-03": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-04": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-05": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-06": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-07": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Selena": {
       "2026-05-22": {
         "start": "23:00",
@@ -7524,5 +7565,5 @@
     }
   },
   "lastGirlsSync": "2026-05-26T07:55:13.191Z",
-  "lastCalendarSync": "2026-05-26T06:30:42.162Z"
+  "lastCalendarSync": "2026-05-26T08:06:37.221Z"
 }

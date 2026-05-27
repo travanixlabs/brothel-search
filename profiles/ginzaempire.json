@@ -7042,7 +7042,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-05-27T16:00:42.399Z"
+      "lastModified": "2026-05-27T16:00:42.399Z",
+      "lastRostered": "2025-09-01"
     },
     {
       "name": "Hinano",
@@ -7082,7 +7083,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-05-27T16:00:42.399Z"
+      "lastModified": "2026-05-27T16:00:42.399Z",
+      "lastRostered": "2026-01-01"
     }
   ],
   "calendar": {
@@ -9343,7 +9345,7 @@
       },
       "2026-05-28": {
         "start": "12:00",
-        "end": "02:00"
+        "end": "04:00"
       }
     },
     "Asuka": {
@@ -13404,5 +13406,5 @@
     }
   },
   "lastGirlsSync": "2026-05-27T16:00:42.399Z",
-  "lastCalendarSync": "2026-05-27T13:54:54.308Z"
+  "lastCalendarSync": "2026-05-27T16:22:44.013Z"
 }

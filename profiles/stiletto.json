@@ -1500,7 +1500,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Halo",
@@ -1931,7 +1931,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-25"
+      "lastRostered": "2026-05-28"
     },
     {
       "name": "Julietta",
@@ -7139,6 +7139,22 @@
       "2026-05-29": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-06-01": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-02": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-04": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-06-05": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "CeCe": {},
@@ -7405,7 +7421,12 @@
     "Stacy": {},
     "Molly": {},
     "Chloe": {},
-    "Julia": {},
+    "Julia": {
+      "2026-05-28": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    },
     "Eden": {},
     "Alena": {
       "2026-05-19": {
@@ -7613,5 +7634,5 @@
     "Brenda": {}
   },
   "lastGirlsSync": "2026-05-27T18:17:44.193Z",
-  "lastCalendarSync": "2026-05-27T18:40:32.998Z"
+  "lastCalendarSync": "2026-05-27T22:15:27.605Z"
 }

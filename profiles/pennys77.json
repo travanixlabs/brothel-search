@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27"
+      "lastRostered": "2026-05-28"
     },
     {
       "name": "Hana",
@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27"
+      "lastRostered": "2026-05-28"
     },
     {
       "name": "Anjali",
@@ -1579,6 +1579,10 @@
       "2026-05-26": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-05-28": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -1643,6 +1647,10 @@
         "end": "03:00"
       },
       "2026-05-26": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-05-28": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -1995,5 +2003,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-27T16:23:58.192Z"
+  "lastCalendarSync": "2026-05-28T04:49:45.559Z"
 }

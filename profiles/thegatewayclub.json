@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-06-03",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-05-22",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1756,7 +1756,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-04-06",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/riley-new/",
       "photos": [],
       "labels": [],
@@ -2954,12 +2954,12 @@
         "end": "12:00"
       },
       "2026-05-29": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       },
       "2026-05-30": {
-        "start": "06:00",
-        "end": "12:00"
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Ava": {
@@ -4471,10 +4471,6 @@
         "start": "12:00",
         "end": "18:00"
       },
-      "2026-05-28": {
-        "start": "12:00",
-        "end": "06:00"
-      },
       "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
@@ -4566,6 +4562,10 @@
       "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-28": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Misha": {
@@ -4625,6 +4625,22 @@
     "Riley": {
       "2026-04-06": {
         "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-05-30": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -4740,10 +4756,6 @@
         "end": "06:00"
       },
       "2026-05-27": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-05-28": {
         "start": "12:00",
         "end": "06:00"
       },
@@ -5021,10 +5033,6 @@
         "end": "18:00"
       },
       "2026-05-21": {
-        "start": "12:00",
-        "end": "06:00"
-      },
-      "2026-05-28": {
         "start": "12:00",
         "end": "06:00"
       },
@@ -5389,5 +5397,5 @@
     }
   },
   "lastGirlsSync": "2026-05-28T08:05:05.518Z",
-  "lastCalendarSync": "2026-05-27T23:45:59.634Z"
+  "lastCalendarSync": "2026-05-28T08:26:31.481Z"
 }

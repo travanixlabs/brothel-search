@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-28",
+      "lastRostered": "2026-05-30",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -2463,7 +2463,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-08"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Maddie",
@@ -6886,16 +6886,7 @@
         "end": "16:00"
       }
     },
-    "Jess": {
-      "2026-05-30": {
-        "start": "19:00",
-        "end": "03:00"
-      },
-      "2026-06-06": {
-        "start": "19:00",
-        "end": "03:00"
-      }
-    },
+    "Jess": {},
     "Sasha": {},
     "Clara": {
       "2026-04-14": {
@@ -7095,13 +7086,13 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-05-29": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-06-02": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-05-31": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Kennedy": {
@@ -7363,7 +7354,16 @@
     },
     "Zara": {},
     "Quinn": {},
-    "London": {},
+    "London": {
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-01": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Aspen": {},
     "Mercy": {},
     "Brandy": {},
@@ -7654,5 +7654,5 @@
     }
   },
   "lastGirlsSync": "2026-05-28T23:10:16.140Z",
-  "lastCalendarSync": "2026-05-28T20:41:02.908Z"
+  "lastCalendarSync": "2026-05-28T23:51:58.904Z"
 }

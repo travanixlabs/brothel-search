@@ -7166,7 +7166,8 @@
         "Couple",
         "GFE"
       ],
-      "lastModified": "2026-05-28T10:00:13.658Z"
+      "lastModified": "2026-05-28T10:00:13.658Z",
+      "lastRostered": "2026-05-29"
     }
   ],
   "calendar": {
@@ -13609,8 +13610,14 @@
         "start": "10:30",
         "end": "00:00"
       }
+    },
+    "Ria": {
+      "2026-05-29": {
+        "start": "10:30",
+        "end": "01:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-28T10:00:13.658Z",
-  "lastCalendarSync": "2026-05-28T08:25:56.797Z"
+  "lastCalendarSync": "2026-05-28T10:36:59.326Z"
 }

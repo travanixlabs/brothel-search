@@ -2182,7 +2182,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-28",
-      "lastRostered": "2026-05-28",
+      "lastRostered": "2026-05-29",
       "oldUrl": "https://jinia.com.au/kaia/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260528111146.jpg"
@@ -4134,8 +4134,18 @@
         "start": "17:00",
         "end": "02:00"
       }
+    },
+    "🆕 Kaia": {
+      "2026-05-28": {
+        "start": "11:00",
+        "end": "23:00"
+      },
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "23:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-28T08:05:56.655Z",
-  "lastCalendarSync": "2026-05-28T04:50:19.676Z"
+  "lastCalendarSync": "2026-05-28T08:26:48.193Z"
 }

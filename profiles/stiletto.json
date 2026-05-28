@@ -5748,6 +5748,37 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Tequila",
+      "country": [
+        "European"
+      ],
+      "age": "28",
+      "height": "",
+      "cup": "DD",
+      "body": "",
+      "desc": "Come and meet me Hey there, my name is Tequila & I am a beautiful tall brunette with an amazing figure & deep brown eyes. I have a perky DD cup busy matched with a figure to die for. I'm Albanian and Italian so you know I have a firey side that you ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-28",
+      "oldUrl": "https://www.stilettosydney.com/workers/tequila-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Deep Throat",
+        "DFK",
+        "Escort",
+        "Party Bookings",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7714,8 +7745,18 @@
         "end": "20:00"
       }
     },
-    "Brenda": {}
+    "Brenda": {},
+    "Tequila": {
+      "2026-05-29": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-05-30": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-05-27T23:12:54.935Z",
+  "lastGirlsSync": "2026-05-28T08:05:28.770Z",
   "lastCalendarSync": "2026-05-28T06:35:55.273Z"
 }

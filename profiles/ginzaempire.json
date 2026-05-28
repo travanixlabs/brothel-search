@@ -136,7 +136,7 @@
       ],
       "lastModified": "2026-03-13T05:13:28.331Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-03-01",
+      "lastRostered": "2026-05-28",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -7044,7 +7044,7 @@
         "CIM"
       ],
       "lastModified": "2026-05-27T16:00:42.399Z",
-      "lastRostered": "2025-09-01"
+      "lastRostered": "2026-05-28"
     },
     {
       "name": "Hinano",
@@ -7085,7 +7085,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-27T16:00:42.399Z",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-05-28"
     }
   ],
   "calendar": {
@@ -7094,7 +7094,12 @@
     "Towa": {},
     "Kanami": {},
     "Honoka": {},
-    "Karin": {},
+    "Karin": {
+      "2026-05-28": {
+        "start": "12:00",
+        "end": "03:00"
+      }
+    },
     "Maki": {
       "2026-03-26": {
         "start": "12:00",
@@ -13404,8 +13409,20 @@
         "start": "10:30",
         "end": "02:00"
       }
+    },
+    "Ivy": {
+      "2026-05-28": {
+        "start": "14:00",
+        "end": "04:00"
+      }
+    },
+    "Hinano": {
+      "2026-05-28": {
+        "start": "16:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-28T04:00:41.894Z",
-  "lastCalendarSync": "2026-05-27T16:22:44.013Z"
+  "lastCalendarSync": "2026-05-28T04:49:08.667Z"
 }

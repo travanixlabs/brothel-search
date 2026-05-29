@@ -1792,7 +1792,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2020-10-01",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/samantha-new/",
       "photos": [],
       "labels": [],
@@ -4482,6 +4482,10 @@
       "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Megan": {},
@@ -4654,7 +4658,7 @@
         "start": "12:00",
         "end": "06:00"
       },
-      "2026-05-29": {
+      "2026-05-30": {
         "start": "12:00",
         "end": "06:00"
       }
@@ -5400,5 +5404,5 @@
     "Lana": {}
   },
   "lastGirlsSync": "2026-05-29T08:02:07.898Z",
-  "lastCalendarSync": "2026-05-29T08:14:00.969Z"
+  "lastCalendarSync": "2026-05-29T10:29:09.442Z"
 }

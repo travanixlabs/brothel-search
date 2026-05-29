@@ -749,7 +749,7 @@
       ],
       "lastModified": "2026-03-13T06:19:30.886Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-05-30",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Experienced"
@@ -4578,7 +4578,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-05-29T08:01:09.792Z"
+      "lastModified": "2026-05-29T08:01:09.792Z",
+      "lastRostered": "2026-05-30"
     }
   ],
   "calendar": {
@@ -6834,6 +6835,10 @@
         "end": "18:00"
       },
       "2026-05-23": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-05-30": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -10008,7 +10013,7 @@
         "end": "02:00"
       },
       "2026-05-30": {
-        "start": "12:00",
+        "start": "18:00",
         "end": "02:00"
       }
     },
@@ -10021,8 +10026,14 @@
         "start": "10:30",
         "end": "00:00"
       }
+    },
+    "Soda": {
+      "2026-05-30": {
+        "start": "10:30",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-29T08:01:09.792Z",
-  "lastCalendarSync": "2026-05-29T06:35:29.067Z"
+  "lastCalendarSync": "2026-05-29T08:13:14.134Z"
 }

@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-30",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -6580,10 +6580,6 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-05-30": {
-        "start": "10:00",
-        "end": "20:00"
-      },
       "2026-05-31": {
         "start": "10:00",
         "end": "18:00"
@@ -7196,7 +7192,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-05-30": {
+        "start": "09:30",
+        "end": "14:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -7567,5 +7568,5 @@
     }
   },
   "lastGirlsSync": "2026-05-29T23:08:36.040Z",
-  "lastCalendarSync": "2026-05-29T20:41:23.441Z"
+  "lastCalendarSync": "2026-05-29T23:51:32.014Z"
 }

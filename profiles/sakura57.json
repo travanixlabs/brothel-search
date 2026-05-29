@@ -9587,6 +9587,31 @@
       "labels": [],
       "lastModified": "2026-05-25T04:01:02.381Z",
       "lastRostered": "2026-05-25"
+    },
+    {
+      "name": "Aori",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "155",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-29",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/aori-japan-old/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88191779770859_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88201779770860_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/88181779770857_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-29T08:01:17.512Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14615,7 +14640,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-27T04:00:43.731Z",
+  "lastGirlsSync": "2026-05-29T08:01:17.512Z",
   "lastCalendarSync": "2026-05-28T20:40:11.204Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
@@ -14641,6 +14666,7 @@
     "https://www.surryhillsbrothel.com.au/project/myka-japan/",
     "https://www.surryhillsbrothel.com.au/project/momoko-japan-old/",
     "https://www.surryhillsbrothel.com.au/project/haru-japan-ole/",
-    "https://www.surryhillsbrothel.com.au/project/marina-malaysia/"
+    "https://www.surryhillsbrothel.com.au/project/marina-malaysia/",
+    "https://www.surryhillsbrothel.com.au/project/aori-japan/"
   ]
 }

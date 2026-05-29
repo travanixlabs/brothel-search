@@ -2764,6 +2764,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Chrissy",
+      "country": [
+        "Australian"
+      ],
+      "age": "35",
+      "height": "Age",
+      "cup": "C",
+      "body": "",
+      "desc": "Photos coming soon. Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-11-01",
+      "lastRostered": "2024-11-01",
+      "oldUrl": "https://wivesonly.com.au/chrissy/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5836,6 +5858,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-24T16:51:52.782Z",
+  "lastGirlsSync": "2026-05-29T12:46:01.132Z",
   "lastCalendarSync": "2026-05-29T06:36:14.447Z"
 }

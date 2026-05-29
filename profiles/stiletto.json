@@ -5779,6 +5779,26 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Luanna",
+      "country": [
+        "South American"
+      ],
+      "age": "26",
+      "height": "",
+      "cup": "D",
+      "body": "6",
+      "desc": "Hot, Hot, Hot!!! Hey boys, my name is Luanna. I am every man’s fantasy come to life. I have shiny brunette hair, pretty doll-like features, an incredible tight body like you've never seen, perky bust, and a popping booty. I have a teeny tiny size 6 waist to match 😉 You’ll notice as ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-05-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7660,8 +7680,14 @@
         "start": "18:00",
         "end": "02:00"
       }
+    },
+    "Luanna": {
+      "2026-05-29": {
+        "start": "12:00",
+        "end": "20:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-05-28T23:10:16.140Z",
+  "lastGirlsSync": "2026-05-29T08:02:28.905Z",
   "lastCalendarSync": "2026-05-29T06:36:10.199Z"
 }

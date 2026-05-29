@@ -672,7 +672,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/12/IMG_0541-1.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-29"
     }
   ],
   "calendar": {
@@ -2041,8 +2042,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Jiwoo": {
+      "2026-05-29": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-29T04:52:36.404Z"
+  "lastCalendarSync": "2026-05-29T06:35:46.873Z"
 }

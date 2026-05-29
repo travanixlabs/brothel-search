@@ -2646,7 +2646,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-29",
       "oldUrl": "https://wivesonly.com.au/naomi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/IMG_1400.jpg"
@@ -2779,7 +2779,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2024-11-01",
+      "lastRostered": "2026-05-29",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -5775,6 +5775,10 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-29": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Katerina": {
@@ -5856,8 +5860,14 @@
         "start": "20:30",
         "end": "06:00"
       }
+    },
+    "Chrissy": {
+      "2026-05-29": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-29T12:46:01.132Z",
-  "lastCalendarSync": "2026-05-29T06:36:14.447Z"
+  "lastCalendarSync": "2026-05-29T13:42:13.364Z"
 }

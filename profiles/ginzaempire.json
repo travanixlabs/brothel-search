@@ -7244,7 +7244,8 @@
         "2 Men",
         "Couple"
       ],
-      "lastModified": "2026-05-29T16:00:09.413Z"
+      "lastModified": "2026-05-29T16:00:09.413Z",
+      "lastRostered": "2026-05-30"
     }
   ],
   "calendar": {
@@ -13826,8 +13827,14 @@
         "start": "10:30",
         "end": "23:00"
       }
+    },
+    "Rami": {
+      "2026-05-30": {
+        "start": "10:30",
+        "end": "23:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-29T16:00:09.413Z",
-  "lastCalendarSync": "2026-05-29T10:28:18.589Z"
+  "lastCalendarSync": "2026-05-29T16:13:27.329Z"
 }

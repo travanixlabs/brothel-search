@@ -1792,7 +1792,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-05-29"
     },
     {
       "name": "Belinda",
@@ -5531,6 +5531,10 @@
       "2026-05-11": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-29": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Natalia": {
@@ -5833,5 +5837,5 @@
     }
   },
   "lastGirlsSync": "2026-05-24T16:51:52.782Z",
-  "lastCalendarSync": "2026-05-28T14:09:43.831Z"
+  "lastCalendarSync": "2026-05-29T06:36:14.447Z"
 }

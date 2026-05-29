@@ -5751,7 +5751,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-05-29",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Yachi-1-Th.jpg"
       ],
@@ -14084,6 +14084,10 @@
       "2026-05-11": {
         "start": "16:00",
         "end": "05:00"
+      },
+      "2026-05-29": {
+        "start": "20:00",
+        "end": "02:00"
       }
     },
     "Akii": {
@@ -14504,7 +14508,7 @@
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-29T04:52:06.064Z",
+  "lastCalendarSync": "2026-05-29T11:49:18.597Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

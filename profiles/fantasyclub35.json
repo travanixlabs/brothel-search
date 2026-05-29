@@ -49,7 +49,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-15T02:30:08.285Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-05-31",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/Coco.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2026/03/Coco1.jpg"
@@ -1531,7 +1531,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T05:50:10.136Z",
-      "lastRostered": "2026-05-25"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Miya",
@@ -2225,6 +2225,14 @@
       "2026-04-11": {
         "start": "17:00",
         "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Chole": {
@@ -2813,6 +2821,14 @@
       "2026-05-18": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-05-30": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Miya": {
@@ -2964,7 +2980,7 @@
     }
   },
   "lastGirlsSync": "2026-05-29T22:00:13.158Z",
-  "lastCalendarSync": "2026-05-25T10:55:26.391Z",
+  "lastCalendarSync": "2026-05-29T22:11:10.234Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

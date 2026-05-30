@@ -372,7 +372,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Kasume-Jp-07.jpeg",
@@ -652,7 +652,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-1-Cn-scaled.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-2-Cn-scaled.jpg",
@@ -5506,7 +5506,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/06/Chaya-3-Cn.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2024/06/Chaya-1-Cn.jpg",
@@ -8353,7 +8353,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-01",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/01/Rosie-4-Cn-scaled.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2022/01/Rosie-3-Cn-scaled.jpg",
@@ -8826,7 +8826,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-23T08:00:32.119Z",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Babi",
@@ -9587,7 +9587,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-13T04:00:06.571Z",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Jade",
@@ -9668,7 +9668,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-22T04:00:50.113Z",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Amica",
@@ -9770,7 +9770,8 @@
       "2026-05-28",
       "2026-05-29",
       "2026-05-30",
-      "2026-05-31"
+      "2026-05-31",
+      "2026-06-01"
     ],
     "Muku": {
       "2026-04-17": {
@@ -10237,6 +10238,10 @@
         "end": "19:00"
       },
       "2026-05-31": {
+        "start": "10:00",
+        "end": "19:00"
+      },
+      "2026-06-01": {
         "start": "10:00",
         "end": "19:00"
       }
@@ -12500,6 +12505,10 @@
       "2026-05-31": {
         "start": "11:00",
         "end": "02:00"
+      },
+      "2026-06-01": {
+        "start": "11:00",
+        "end": "02:00"
       }
     },
     "Sue": {
@@ -12878,6 +12887,10 @@
         "end": "01:00"
       },
       "2026-05-31": {
+        "start": "12:00",
+        "end": "01:00"
+      },
+      "2026-06-01": {
         "start": "12:00",
         "end": "01:00"
       }
@@ -13396,6 +13409,10 @@
         "end": "18:00"
       },
       "2026-05-31": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-01": {
         "start": "10:00",
         "end": "18:00"
       }
@@ -14328,6 +14345,10 @@
       "2026-05-31": {
         "start": "14:00",
         "end": "00:00"
+      },
+      "2026-06-01": {
+        "start": "13:00",
+        "end": "00:00"
       }
     },
     "Kiko": {
@@ -14502,6 +14523,10 @@
       "2026-05-31": {
         "start": "10:00",
         "end": "01:00"
+      },
+      "2026-06-01": {
+        "start": "10:00",
+        "end": "01:00"
       }
     },
     "Mei": {
@@ -14578,6 +14603,10 @@
       "2026-05-27": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-06-01": {
+        "start": "11:00",
+        "end": "00:00"
       }
     },
     "Ayumi": {
@@ -14598,7 +14627,7 @@
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-30T08:43:16.274Z",
+  "lastCalendarSync": "2026-05-30T21:30:04.859Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

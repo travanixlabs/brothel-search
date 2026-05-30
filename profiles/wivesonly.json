@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-31",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -763,7 +763,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-31",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -786,7 +786,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -830,7 +830,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-31",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1639,7 +1639,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Cartier",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Brooke",
@@ -2034,7 +2034,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Vera",
@@ -2051,7 +2051,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Ximena",
@@ -2494,7 +2494,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://wivesonly.com.au/zoe/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2668,7 +2668,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-03-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://wivesonly.com.au/maddison/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/03/Amira-temp1.jpg",
@@ -2691,7 +2691,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-25",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://wivesonly.com.au//brittney/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/Screen-Shot-2026-05-20-at-10.21.51-pm.png"
@@ -4027,6 +4027,10 @@
       "2026-05-30": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "_published": [
@@ -4091,7 +4095,8 @@
       "2026-05-27",
       "2026-05-28",
       "2026-05-29",
-      "2026-05-30"
+      "2026-05-30",
+      "2026-05-31"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -4209,6 +4214,10 @@
       "2026-05-29": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Tara": {
@@ -4401,6 +4410,10 @@
       "2026-05-29": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -4881,6 +4894,10 @@
       "2026-05-29": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Maisie": {
@@ -5291,6 +5308,10 @@
       "2026-05-29": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -5453,6 +5474,10 @@
       "2026-05-29": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Hollie": {},
@@ -5628,6 +5653,10 @@
       "2026-05-30": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Katalina": {
@@ -5680,6 +5709,10 @@
       "2026-05-30": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Veronika": {
@@ -5764,6 +5797,10 @@
       "2026-05-30": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Belle": {
@@ -5862,6 +5899,10 @@
       "2026-05-30": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "16:00"
       }
     },
     "VV": {
@@ -5874,11 +5915,19 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Brittney": {
       "2026-05-25": {
         "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-05-31": {
+        "start": "20:00",
         "end": "04:00"
       }
     },
@@ -5922,5 +5971,5 @@
     }
   },
   "lastGirlsSync": "2026-05-29T12:46:01.132Z",
-  "lastCalendarSync": "2026-05-29T16:14:36.139Z"
+  "lastCalendarSync": "2026-05-30T14:12:57.499Z"
 }

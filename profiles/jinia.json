@@ -2203,7 +2203,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-30",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://jinia.com.au/christina/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260530074227_1092_2.jpg"
@@ -4223,8 +4223,14 @@
         "start": "11:00",
         "end": "23:00"
       }
+    },
+    "🆕 Christina": {
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-30T06:50:35.864Z",
-  "lastCalendarSync": "2026-05-30T04:34:03.586Z"
+  "lastCalendarSync": "2026-05-30T07:26:21.340Z"
 }

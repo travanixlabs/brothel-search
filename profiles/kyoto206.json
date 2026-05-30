@@ -1140,7 +1140,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-05-30",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -9669,6 +9669,37 @@
       "labels": [],
       "lastModified": "2026-05-22T04:00:50.113Z",
       "lastRostered": "2026-05-30"
+    },
+    {
+      "name": "Amica",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-05-30",
+      "oldUrl": "https://citybrothel.com.au/project/amica-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-05-30T08:43:16.274Z",
+      "lastRostered": "2026-05-30",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88451780126457_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88441780126455_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88471780126994_.pic_-1400x1051.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88501780129443_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88511780129445_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/05/88521780129447_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -11483,14 +11514,6 @@
       "2026-05-29": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-05-30": {
-        "start": "21:00",
-        "end": "05:00"
-      },
-      "2026-05-31": {
-        "start": "21:00",
-        "end": "05:00"
       }
     },
     "Alisa": {
@@ -12549,6 +12572,10 @@
         "end": "04:00"
       },
       "2026-05-29": {
+        "start": "19:00",
+        "end": "04:00"
+      },
+      "2026-05-30": {
         "start": "19:00",
         "end": "04:00"
       }
@@ -14562,10 +14589,16 @@
         "start": "13:00",
         "end": "03:00"
       }
+    },
+    "Amica": {
+      "2026-05-30": {
+        "start": "19:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-22T04:00:50.113Z",
-  "lastCalendarSync": "2026-05-30T07:25:18.791Z",
+  "lastCalendarSync": "2026-05-30T08:43:16.274Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

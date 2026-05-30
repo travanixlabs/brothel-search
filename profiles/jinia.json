@@ -1674,7 +1674,7 @@
         "https://jinia.com.au/wp-content/uploads/2024/06/%E5%9B%BE%E7%89%87_20250518202316.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Mina",
@@ -2186,6 +2186,27 @@
       "oldUrl": "https://jinia.com.au/kaia/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260528111146.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Christina",
+      "country": [
+        "Taiwan"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-30",
+      "lastRostered": "2026-05-30",
+      "oldUrl": "https://jinia.com.au/christina/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260530074227_1092_2.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -4204,6 +4225,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-28T08:05:56.655Z",
+  "lastGirlsSync": "2026-05-30T06:50:35.864Z",
   "lastCalendarSync": "2026-05-30T04:34:03.586Z"
 }

@@ -693,7 +693,8 @@
         "https://pennys77.com.au/wp-content/uploads/2023/11/58.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-05-30"
     }
   ],
   "calendar": {
@@ -2014,10 +2015,6 @@
       "2026-05-29": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-05-30": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Tea": {
@@ -2089,8 +2086,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Bell": {
+      "2026-05-30": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-05-29T17:47:37.579Z"
+  "lastCalendarSync": "2026-05-30T08:43:49.527Z"
 }

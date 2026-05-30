@@ -1577,6 +1577,30 @@
       "labels": [],
       "lastModified": "2026-05-06T10:00:44.279Z",
       "lastRostered": "2023-04-01"
+    },
+    {
+      "name": "Qq",
+      "country": [
+        "Hk"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-05-30",
+      "lang": "",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/qqhk/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/05/QQ100.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/05/QQ200.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/05/QQ300.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-05-30T04:00:14.434Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -2979,7 +3003,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-29T22:00:13.158Z",
+  "lastGirlsSync": "2026-05-30T04:00:14.434Z",
   "lastCalendarSync": "2026-05-29T22:11:10.234Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",

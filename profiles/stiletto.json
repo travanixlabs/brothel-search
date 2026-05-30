@@ -2497,7 +2497,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Malibu",
@@ -6567,6 +6567,10 @@
       "2026-05-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "21:30",
+        "end": "05:30"
       }
     },
     "Giselle": {
@@ -7554,5 +7558,5 @@
     }
   },
   "lastGirlsSync": "2026-05-30T11:16:34.059Z",
-  "lastCalendarSync": "2026-05-30T10:25:15.875Z"
+  "lastCalendarSync": "2026-05-30T11:50:28.088Z"
 }

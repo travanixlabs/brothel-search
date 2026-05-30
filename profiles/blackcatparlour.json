@@ -3149,6 +3149,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-29"
+    },
+    {
+      "name": "Mimi",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "26",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-05-31",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9164,6 +9182,6 @@
     },
     "Kismet": {}
   },
-  "lastGirlsSync": "2026-05-22T16:01:06.445Z",
+  "lastGirlsSync": "2026-05-30T16:00:49.375Z",
   "lastCalendarSync": "2026-05-30T15:44:31.427Z"
 }

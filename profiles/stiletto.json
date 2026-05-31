@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-06-01",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04",
+      "lastRostered": "2026-06-11",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -4731,7 +4731,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-08",
       "oldUrl": "https://www.stilettosydney.com/workers/bree-new/",
       "photos": [],
       "labels": [
@@ -5870,6 +5870,7 @@
       "2026-06-06",
       "2026-06-07",
       "2026-06-08",
+      "2026-06-11",
       "2026-06-14"
     ],
     "Allegra": {
@@ -6126,6 +6127,14 @@
         "end": "04:00"
       },
       "2026-06-06": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-06-03": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-05": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -6729,7 +6738,7 @@
         "end": "21:00"
       },
       "2026-06-01": {
-        "start": "09:00",
+        "start": "09:30",
         "end": "17:00"
       },
       "2026-06-02": {
@@ -6994,6 +7003,10 @@
       "2026-06-02": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-06-11": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Kennedy": {
@@ -7198,6 +7211,10 @@
       "2026-06-05": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-06-08": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Gloria": {},
@@ -7463,5 +7480,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T22:55:02.376Z",
-  "lastCalendarSync": "2026-05-31T19:47:37.618Z"
+  "lastCalendarSync": "2026-05-31T23:40:00.447Z"
 }

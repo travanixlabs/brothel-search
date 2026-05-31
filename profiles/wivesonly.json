@@ -2786,6 +2786,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Lena",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "168cm",
+      "cup": "D",
+      "body": "10",
+      "desc": "Meet Lena, a stunning Aussie beauty in her late 20s with striking blue eyes, glossy black hair, and a naturally confident presence. With a curvy size 10–12 figure and a voluptuous DD bust, she effortlessly combines sophistication with a warm, approachable charm.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/lena/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6017,6 +6039,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-29T12:46:01.132Z",
+  "lastGirlsSync": "2026-05-31T16:55:43.855Z",
   "lastCalendarSync": "2026-05-31T14:17:33.603Z"
 }

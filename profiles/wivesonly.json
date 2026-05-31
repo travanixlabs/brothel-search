@@ -2395,7 +2395,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Julia",
@@ -2779,7 +2779,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -4296,6 +4296,10 @@
       "2026-05-27": {
         "start": "11:00",
         "end": "18:00"
+      },
+      "2026-05-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Iris": {
@@ -5474,10 +5478,6 @@
       "2026-05-29": {
         "start": "11:00",
         "end": "20:30"
-      },
-      "2026-05-31": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Hollie": {},
@@ -5915,10 +5915,6 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-05-31": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Brittney": {
@@ -5967,9 +5963,13 @@
       "2026-05-30": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-05-31": {
+        "start": "16:00",
+        "end": "00:00"
       }
     }
   },
   "lastGirlsSync": "2026-05-29T12:46:01.132Z",
-  "lastCalendarSync": "2026-05-30T14:12:57.499Z"
+  "lastCalendarSync": "2026-05-31T04:59:46.806Z"
 }

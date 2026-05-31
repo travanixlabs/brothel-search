@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-28"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Skye",
@@ -6982,6 +6982,10 @@
       "2026-04-08": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-05-31": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Raelynn": {},
@@ -7465,5 +7469,5 @@
     }
   },
   "lastGirlsSync": "2026-05-30T22:53:48.368Z",
-  "lastCalendarSync": "2026-05-31T04:59:41.614Z"
+  "lastCalendarSync": "2026-05-31T06:38:45.552Z"
 }

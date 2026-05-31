@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-05-31",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Daisy",
@@ -3949,7 +3949,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Star",
@@ -6008,6 +6008,10 @@
       "2026-05-24": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-05-31": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Opal": {
@@ -6382,6 +6386,10 @@
       "2026-06-05": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-05-31": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Cindy": {
@@ -6791,6 +6799,14 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-06-01": {
+        "start": "09:00",
+        "end": "15:30"
+      },
+      "2026-06-02": {
+        "start": "09:00",
+        "end": "09:00"
       }
     },
     "Amelia": {
@@ -7150,10 +7166,6 @@
       "2026-04-12": {
         "start": "16:00",
         "end": "22:00"
-      },
-      "2026-05-31": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Rebecca": {},
@@ -7317,7 +7329,12 @@
       }
     },
     "Brittney": {},
-    "Stacy": {},
+    "Stacy": {
+      "2026-05-31": {
+        "start": "23:00",
+        "end": "05:00"
+      }
+    },
     "Molly": {},
     "Chloe": {},
     "Julia": {},
@@ -7437,8 +7454,8 @@
     },
     "Annabelle": {
       "2026-05-31": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "21:00",
+        "end": "05:00"
       },
       "2026-06-02": {
         "start": "14:00",
@@ -7474,5 +7491,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T11:39:53.559Z",
-  "lastCalendarSync": "2026-05-31T11:54:54.063Z"
+  "lastCalendarSync": "2026-05-31T14:17:29.699Z"
 }

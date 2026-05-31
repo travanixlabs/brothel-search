@@ -3033,7 +3033,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-05-31"
     },
     {
       "name": "Paloma",
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-24"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Riley",
@@ -6446,6 +6446,10 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-05-31": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Maddie": {
@@ -6861,6 +6865,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-06-01": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Jayde": {
@@ -7466,5 +7474,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T11:39:53.559Z",
-  "lastCalendarSync": "2026-05-31T10:31:51.465Z"
+  "lastCalendarSync": "2026-05-31T11:54:54.063Z"
 }

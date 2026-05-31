@@ -1653,7 +1653,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250520094032.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Jessica",
@@ -2207,6 +2207,27 @@
       "oldUrl": "https://jinia.com.au/christina/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260530074227_1092_2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Sisily",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-05-27",
+      "lastRostered": "2026-05-27",
+      "oldUrl": "https://jinia.com.au/sisily/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260531080619_1104_2.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -4264,6 +4285,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-30T06:50:35.864Z",
+  "lastGirlsSync": "2026-05-31T04:00:56.474Z",
   "lastCalendarSync": "2026-05-30T15:45:09.462Z"
 }

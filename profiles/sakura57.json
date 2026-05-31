@@ -3957,7 +3957,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-01",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/04/Kuna-Jp-04.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/04/Kuna-Jp-05.jpeg",
@@ -9874,6 +9874,10 @@
       "2026-05-31": {
         "start": "10:00",
         "end": "21:00"
+      },
+      "2026-06-01": {
+        "start": "10:00",
+        "end": "21:00"
       }
     },
     "Cocomi": {
@@ -14171,10 +14175,6 @@
       "2026-05-30": {
         "start": "15:00",
         "end": "03:00"
-      },
-      "2026-06-01": {
-        "start": "15:00",
-        "end": "03:00"
       }
     },
     "Miyoko": {
@@ -14639,10 +14639,6 @@
       "2026-05-31": {
         "start": "10:00",
         "end": "01:00"
-      },
-      "2026-06-01": {
-        "start": "10:00",
-        "end": "01:00"
       }
     },
     "Asani": {
@@ -14743,7 +14739,7 @@
         "end": "05:00"
       },
       "2026-05-31": {
-        "start": "10:00",
+        "start": "15:00",
         "end": "05:00"
       },
       "2026-06-01": {
@@ -14753,7 +14749,7 @@
     }
   },
   "lastGirlsSync": "2026-05-29T08:01:17.512Z",
-  "lastCalendarSync": "2026-05-30T21:30:09.207Z",
+  "lastCalendarSync": "2026-05-31T04:59:04.707Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

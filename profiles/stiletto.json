@@ -1861,7 +1861,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Josie",
@@ -7235,6 +7235,10 @@
       "2026-04-20": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-02": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Aurora": {},
@@ -7571,5 +7575,5 @@
     }
   },
   "lastGirlsSync": "2026-06-01T09:29:37.758Z",
-  "lastCalendarSync": "2026-06-01T12:16:02.702Z"
+  "lastCalendarSync": "2026-06-01T14:38:11.568Z"
 }

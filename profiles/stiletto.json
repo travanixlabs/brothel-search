@@ -42,7 +42,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06",
+      "lastRostered": "2026-06-13",
       "desc": "Sweet & Classy Stunner Hello Gentlemen, I’m Alena, a Korean Canadian with long dark hair, a bright smile, and a natural, playful charm. With a slim yet curvy figure, adorned with a DD+ bust, I bring a mix of confidence, warmth, and a little cheeky fun. Whether you’re looking for easy company, lighthearted ..."
     },
     {
@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Cindy",
@@ -1131,7 +1131,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Erika",
@@ -1345,7 +1345,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-04"
     },
     {
       "name": "Ginger",
@@ -1573,7 +1573,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Hennessy",
@@ -1720,7 +1720,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Jasmine",
@@ -2283,7 +2283,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Lacey",
@@ -3491,7 +3491,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-03"
+      "lastRostered": "2026-06-10"
     },
     {
       "name": "Sabrina",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-01"
     },
     {
       "name": "Viv",
@@ -5870,7 +5870,11 @@
       "2026-06-06",
       "2026-06-07",
       "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
       "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
       "2026-06-14"
     ],
     "Allegra": {
@@ -6085,6 +6089,14 @@
       "2026-06-04": {
         "start": "09:30",
         "end": "19:30"
+      },
+      "2026-06-10": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-12": {
+        "start": "12:00",
+        "end": "01:00"
       }
     },
     "Carol": {
@@ -6275,6 +6287,10 @@
       "2026-05-21": {
         "start": "20:00",
         "end": "08:00"
+      },
+      "2026-06-04": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Josie": {
@@ -6363,6 +6379,10 @@
         "end": "04:00"
       },
       "2026-06-07": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-06-12": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -6547,12 +6567,20 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-06-01": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Victoria": {
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-06-01": {
+        "start": "15:00",
+        "end": "17:00"
       }
     },
     "Ella": {
@@ -6573,15 +6601,31 @@
         "end": "00:00"
       },
       "2026-06-04": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "16:00",
+        "end": "00:00"
       },
       "2026-06-05": {
         "start": "15:00",
-        "end": "00:00"
+        "end": "03:00"
       },
       "2026-06-06": {
-        "start": "18:00",
+        "start": "15:00",
+        "end": "03:00"
+      },
+      "2026-06-09": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-06-11": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-06-12": {
+        "start": "13:00",
+        "end": "03:00"
+      },
+      "2026-06-13": {
+        "start": "15:00",
         "end": "03:00"
       }
     },
@@ -6600,11 +6644,11 @@
       }
     },
     "Sydney": {
-      "2026-06-01": {
+      "2026-06-07": {
         "start": "10:00",
         "end": "18:00"
       },
-      "2026-06-07": {
+      "2026-06-02": {
         "start": "10:00",
         "end": "18:00"
       }
@@ -6629,6 +6673,18 @@
       "2026-06-06": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-06-09": {
+        "start": "13:00",
+        "end": "19:00"
+      },
+      "2026-06-12": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-06-14": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Dakota": {
@@ -6680,12 +6736,20 @@
       }
     },
     "Ruby": {
-      "2026-06-02": {
+      "2026-06-03": {
         "start": "11:00",
         "end": "18:00"
       },
-      "2026-06-03": {
-        "start": "11:00",
+      "2026-06-04": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-06-09": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-10": {
+        "start": "10:00",
         "end": "18:00"
       }
     },
@@ -7368,6 +7432,26 @@
       "2026-06-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-09": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-10": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-11": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-12": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-13": {
+        "start": "22:00",
+        "end": "05:00"
       }
     },
     "Selene": {},
@@ -7480,5 +7564,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T22:55:02.376Z",
-  "lastCalendarSync": "2026-05-31T23:40:00.447Z"
+  "lastCalendarSync": "2026-06-01T05:25:04.031Z"
 }

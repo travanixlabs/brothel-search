@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-27",
+      "lastRostered": "2026-06-01",
       "desc": "Welcome stunning Stella to Wives Only. Brunette Australian goddess, 26 years old, with gorgeous curves and captivating eyes that will lure you in! Stella is a sensual sweetheart but can also have a naughty side, book her to find out more."
     },
     {
@@ -3479,6 +3479,10 @@
       "2026-05-27": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-01": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Zeena": {
@@ -6022,10 +6026,6 @@
       "2026-05-31": {
         "start": "16:00",
         "end": "00:00"
-      },
-      "2026-06-01": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Lisa": {
@@ -6036,5 +6036,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T16:55:43.855Z",
-  "lastCalendarSync": "2026-06-01T05:25:08.085Z"
+  "lastCalendarSync": "2026-06-01T07:28:06.747Z"
 }

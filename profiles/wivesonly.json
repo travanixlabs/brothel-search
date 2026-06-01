@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-06-02",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "desc": "Say hello to Lisa, a bold American beauty with smooth brown skin and a perfect bubble booty! Lisa has brown eyes, 32D cup, small waist and soft sculpted thighs. Lisa ia a passionate lover and cant wait to indulge your wildest fantasies, leaving you in pure bliss."
     },
     {
@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -786,7 +786,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -995,7 +995,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1435,7 +1435,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Sara",
@@ -1520,7 +1520,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Sophia",
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Brooke",
@@ -2034,7 +2034,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Vera",
@@ -2104,7 +2104,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01"
+      "lastRostered": "2026-06-02"
     },
     {
       "name": "Hennessy",
@@ -2646,7 +2646,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-02",
       "oldUrl": "https://wivesonly.com.au/naomi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/IMG_1400.jpg"
@@ -2967,6 +2967,10 @@
       "2026-05-30": {
         "start": "23:30",
         "end": "06:00"
+      },
+      "2026-06-02": {
+        "start": "14:30",
+        "end": "22:30"
       }
     },
     "Delilah": {
@@ -3609,6 +3613,10 @@
       "2026-05-29": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-06-02": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ximena": {
@@ -3977,6 +3985,10 @@
       "2026-06-01": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-06-02": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -4065,6 +4077,10 @@
       "2026-06-01": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-02": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "_published": [
@@ -4131,7 +4147,8 @@
       "2026-05-29",
       "2026-05-30",
       "2026-05-31",
-      "2026-06-01"
+      "2026-06-01",
+      "2026-06-02"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -5089,6 +5106,10 @@
       "2026-05-29": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-06-02": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Luna": {
@@ -5267,6 +5288,10 @@
         "end": "04:00"
       },
       "2026-06-01": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-06-02": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -5453,6 +5478,10 @@
         "end": "04:00"
       },
       "2026-06-01": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-06-02": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -5704,6 +5733,10 @@
       "2026-06-01": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-02": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Katalina": {
@@ -5762,6 +5795,10 @@
         "end": "20:00"
       },
       "2026-06-01": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-06-02": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -5856,6 +5893,10 @@
       "2026-06-01": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-06-02": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Belle": {
@@ -5914,6 +5955,10 @@
         "end": "06:00"
       },
       "2026-06-01": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-06-02": {
         "start": "12:00",
         "end": "18:00"
       }
@@ -6032,9 +6077,13 @@
       "2026-06-01": {
         "start": "16:30",
         "end": "22:30"
+      },
+      "2026-06-02": {
+        "start": "13:00",
+        "end": "21:30"
       }
     }
   },
   "lastGirlsSync": "2026-05-31T16:55:43.855Z",
-  "lastCalendarSync": "2026-06-01T07:28:06.747Z"
+  "lastCalendarSync": "2026-06-01T14:38:15.906Z"
 }

@@ -312,7 +312,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-11",
+      "lastRostered": "2026-06-09",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -6984,6 +6984,26 @@
       "2026-04-07": {
         "start": "02:00",
         "end": "08:00"
+      },
+      "2026-06-02": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-03": {
+        "start": "10:30",
+        "end": "16:30"
+      },
+      "2026-06-07": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-08": {
+        "start": "09:30",
+        "end": "17:00"
+      },
+      "2026-06-09": {
+        "start": "09:30",
+        "end": "17:00"
       }
     },
     "Roxi": {
@@ -7157,10 +7177,6 @@
       "2026-04-26": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-06-02": {
-        "start": "00:00",
-        "end": "08:00"
       }
     },
     "Kianna": {
@@ -7231,10 +7247,6 @@
       "2026-04-20": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-06-02": {
-        "start": "00:00",
-        "end": "08:00"
       }
     },
     "Aurora": {},
@@ -7330,12 +7342,7 @@
         "end": "19:00"
       }
     },
-    "Sonya": {
-      "2026-06-02": {
-        "start": "00:00",
-        "end": "08:00"
-      }
-    },
+    "Sonya": {},
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -7563,5 +7570,5 @@
     "Alex": {}
   },
   "lastGirlsSync": "2026-06-01T20:09:39.253Z",
-  "lastCalendarSync": "2026-06-01T20:45:27.210Z"
+  "lastCalendarSync": "2026-06-01T22:39:48.338Z"
 }

@@ -2292,7 +2292,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2025-02-01",
+      "lastRostered": "2026-06-02",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/02/Liya-Jp-03-scaled.jpeg"
       ],
@@ -10975,6 +10975,10 @@
       "2026-06-02": {
         "start": "19:00",
         "end": "00:00"
+      },
+      "2026-06-01": {
+        "start": "19:00",
+        "end": "00:00"
       }
     },
     "Bunny": {
@@ -14286,10 +14290,6 @@
       "2026-05-25": {
         "start": "15:00",
         "end": "05:00"
-      },
-      "2026-06-01": {
-        "start": "15:00",
-        "end": "05:00"
       }
     },
     "Hinaka": {
@@ -14776,10 +14776,6 @@
       "2026-05-28": {
         "start": "10:00",
         "end": "02:00"
-      },
-      "2026-06-02": {
-        "start": "15:00",
-        "end": "03:00"
       }
     },
     "Aori": {
@@ -14803,10 +14799,20 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Liya": {
+      "2026-06-01": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-06-02": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-01T04:00:48.646Z",
-  "lastCalendarSync": "2026-05-31T21:30:21.307Z",
+  "lastCalendarSync": "2026-06-01T05:24:22.235Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

@@ -1023,7 +1023,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-02",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-08.jpeg",
@@ -1111,7 +1111,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-05-06",
+      "lastRostered": "2026-06-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/07/Tomie-Jp-03-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/07/Tomie-Jp-04-scaled.jpeg",
@@ -9996,13 +9996,9 @@
         "start": "18:00",
         "end": "02:00"
       },
-      "2026-06-02": {
-        "start": "13:00",
-        "end": "02:00"
-      },
       "2026-06-03": {
-        "start": "11:00",
-        "end": "17:00"
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Kurume": {},
@@ -10765,6 +10761,10 @@
       "2026-05-29": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-06-02": {
+        "start": "16:00",
+        "end": "19:00"
       }
     },
     "Ada": {
@@ -12215,6 +12215,10 @@
       "2026-05-06": {
         "start": "11:00",
         "end": "02:00"
+      },
+      "2026-06-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Kaori": {
@@ -14787,7 +14791,7 @@
     }
   },
   "lastGirlsSync": "2026-06-02T04:00:37.628Z",
-  "lastCalendarSync": "2026-06-02T05:10:06.426Z",
+  "lastCalendarSync": "2026-06-02T08:51:14.058Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-24",
+      "lastRostered": "2026-06-06",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -1884,7 +1884,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Julia",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-03"
     },
     {
       "name": "Viv",
@@ -5934,10 +5934,6 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-06-02": {
-        "start": "09:30",
-        "end": "16:30"
-      },
       "2026-06-03": {
         "start": "09:30",
         "end": "16:30"
@@ -6315,8 +6311,8 @@
         "end": "04:00"
       },
       "2026-06-02": {
-        "start": "20:00",
-        "end": "04:00"
+        "start": "22:00",
+        "end": "06:00"
       },
       "2026-06-03": {
         "start": "20:00",
@@ -6330,7 +6326,7 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-06-06": {
+      "2026-06-13": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -6597,6 +6593,10 @@
       "2026-06-02": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-06-03": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Ella": {
@@ -6704,10 +6704,6 @@
         "start": "11:00",
         "end": "19:00"
       },
-      "2026-06-03": {
-        "start": "09:00",
-        "end": "16:00"
-      },
       "2026-06-04": {
         "start": "09:00",
         "end": "16:00"
@@ -6812,10 +6808,6 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
-      },
-      "2026-06-02": {
-        "start": "09:00",
-        "end": "17:00"
       },
       "2026-06-04": {
         "start": "09:00",
@@ -7285,7 +7277,20 @@
         "end": "04:00"
       }
     },
-    "Aurora": {},
+    "Aurora": {
+      "2026-06-04": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-06-05": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-06-06": {
+        "start": "13:00",
+        "end": "21:00"
+      }
+    },
     "Lacey": {},
     "Peach": {
       "2026-04-27": {
@@ -7442,12 +7447,7 @@
     "Stacy": {},
     "Molly": {},
     "Chloe": {},
-    "Julia": {
-      "2026-06-02": {
-        "start": "09:00",
-        "end": "17:00"
-      }
-    },
+    "Julia": {},
     "Eden": {},
     "Alena": {
       "2026-05-19": {
@@ -7606,5 +7606,5 @@
     "Alex": {}
   },
   "lastGirlsSync": "2026-06-01T23:23:23.309Z",
-  "lastCalendarSync": "2026-06-02T05:10:50.306Z"
+  "lastCalendarSync": "2026-06-02T07:05:35.450Z"
 }

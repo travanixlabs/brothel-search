@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-06-06",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -1110,7 +1110,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-28"
+      "lastRostered": "2026-06-06"
     },
     {
       "name": "Ella",
@@ -5885,6 +5885,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-06-06": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -6608,10 +6612,6 @@
         "start": "15:00",
         "end": "12:00"
       },
-      "2026-06-02": {
-        "start": "15:00",
-        "end": "00:00"
-      },
       "2026-06-04": {
         "start": "16:00",
         "end": "00:00"
@@ -6639,6 +6639,10 @@
       "2026-06-13": {
         "start": "15:00",
         "end": "03:00"
+      },
+      "2026-06-03": {
+        "start": "13:00",
+        "end": "19:00"
       }
     },
     "Kay": {
@@ -6998,6 +7002,22 @@
       "2026-05-23": {
         "start": "23:30",
         "end": "07:30"
+      },
+      "2026-06-02": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-06-04": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-06-05": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-06": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Aria": {
@@ -7062,10 +7082,6 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
-      },
-      "2026-06-02": {
-        "start": "07:00",
-        "end": "15:00"
       }
     },
     "Simone": {
@@ -7590,5 +7606,5 @@
     "Alex": {}
   },
   "lastGirlsSync": "2026-06-01T23:23:23.309Z",
-  "lastCalendarSync": "2026-06-01T23:53:18.520Z"
+  "lastCalendarSync": "2026-06-02T05:10:50.306Z"
 }

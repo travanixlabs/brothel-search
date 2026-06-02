@@ -9700,6 +9700,30 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Tami",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-06-02",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/tami-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88661780364261_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88671780364267_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-02T04:00:37.628Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14748,7 +14772,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-22T04:00:50.113Z",
+  "lastGirlsSync": "2026-06-02T04:00:37.628Z",
   "lastCalendarSync": "2026-06-01T20:44:35.327Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

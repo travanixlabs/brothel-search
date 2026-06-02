@@ -5799,6 +5799,43 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Gemma",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "Petite & Dazzling Australian Gem Hello there, Petite, blonde, and effortlessly captivating, I’m an Australian beauty with sparkling blue eyes, a radiant smile, and a naturally feminine size 6 figure. My combination of girl-next-door charm and confident sophistication creates an experience that is both exciting and genuine. I’m warm, engaging, and love making ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-06-02",
+      "oldUrl": "https://www.stilettosydney.com/workers/gemma-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Fantasy",
+        "Toys",
+        "Double Lesbian",
+        "Adventurous Positions",
+        "BDSM",
+        "DFK",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Party Bookings",
+        "Stripping",
+        "Foot Fetish",
+        "Fingering",
+        "BBBJ"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7617,8 +7654,14 @@
         "end": "21:00"
       }
     },
-    "Alex": {}
+    "Alex": {},
+    "Gemma": {
+      "2026-06-02": {
+        "start": "23:00",
+        "end": "06:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-06-02T08:40:48.203Z",
+  "lastGirlsSync": "2026-06-02T13:55:57.613Z",
   "lastCalendarSync": "2026-06-02T12:27:12.696Z"
 }

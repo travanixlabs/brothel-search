@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-03"
     },
     {
       "name": "Daisy",
@@ -3622,7 +3622,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-11"
     },
     {
       "name": "Sasha",
@@ -6863,6 +6863,18 @@
       "2026-06-05": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-06-09": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-10": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-11": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Ruby": {
@@ -6970,6 +6982,10 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-06-03": {
+        "start": "11:00",
+        "end": "16:00"
       }
     },
     "Amelia": {
@@ -7722,5 +7738,5 @@
     }
   },
   "lastGirlsSync": "2026-06-02T23:30:14.796Z",
-  "lastCalendarSync": "2026-06-02T22:32:30.862Z"
+  "lastCalendarSync": "2026-06-03T00:13:41.992Z"
 }

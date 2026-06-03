@@ -786,7 +786,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02",
+      "lastRostered": "2026-06-03",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-03"
     },
     {
       "name": "Brooke",
@@ -2104,7 +2104,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-03"
     },
     {
       "name": "Hennessy",
@@ -5327,6 +5327,10 @@
       "2026-06-02": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-03": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Fox": {
@@ -5842,6 +5846,10 @@
       "2026-06-02": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-06-03": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Veronika": {
@@ -5938,6 +5946,10 @@
       "2026-06-01": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-06-03": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -6140,5 +6152,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T16:55:43.855Z",
-  "lastCalendarSync": "2026-06-03T05:25:29.629Z"
+  "lastCalendarSync": "2026-06-03T09:13:32.698Z"
 }

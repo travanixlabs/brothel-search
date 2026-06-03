@@ -4299,7 +4299,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-25T06:50:19.623Z",
-      "lastRostered": "2026-05-27",
+      "lastRostered": "2026-06-04",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Experienced"
@@ -10279,6 +10279,10 @@
       "2026-05-27": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-06-04": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Mayu": {
@@ -10467,5 +10471,5 @@
     }
   },
   "lastGirlsSync": "2026-05-30T06:48:48.567Z",
-  "lastCalendarSync": "2026-06-03T07:19:04.262Z"
+  "lastCalendarSync": "2026-06-03T09:12:46.462Z"
 }

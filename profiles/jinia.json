@@ -2231,6 +2231,27 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Zoe",
+      "country": [
+        "Chinese"
+      ],
+      "age": "21",
+      "height": "161",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-08-20",
+      "lastRostered": "2025-08-20",
+      "oldUrl": "https://jinia.com.au/zoe-chinese-4pm-3am/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2023/04/Image_20230405145909.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4346,6 +4367,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-31T04:00:56.474Z",
+  "lastGirlsSync": "2026-06-03T08:58:19.619Z",
   "lastCalendarSync": "2026-06-03T05:25:34.578Z"
 }

@@ -1140,7 +1140,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-02",
+      "lastRostered": "2026-06-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -9235,7 +9235,7 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-03-15T01:10:27.578Z",
-      "lastRostered": "2026-03-01",
+      "lastRostered": "2026-06-04",
       "deleted": "Yes",
       "deletedAt": "2026-04-11T00:00:00Z"
     },
@@ -9748,7 +9748,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-03T04:00:38.118Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-04"
     },
     {
       "name": "Maria",
@@ -9773,7 +9773,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-03T04:00:38.118Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-04"
     }
   ],
   "calendar": {
@@ -10048,7 +10048,7 @@
         "end": "02:00"
       },
       "2026-06-04": {
-        "start": "13:00",
+        "start": "10:00",
         "end": "02:00"
       }
     },
@@ -12292,7 +12292,7 @@
         "end": "02:00"
       },
       "2026-06-03": {
-        "start": "11:00",
+        "start": "13:00",
         "end": "03:00"
       },
       "2026-06-04": {
@@ -12780,6 +12780,10 @@
       "2026-06-02": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-06-03": {
+        "start": "17:00",
+        "end": "02:00"
       }
     },
     "Otoha": {
@@ -14296,6 +14300,10 @@
       "2026-06-04": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-06-03": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Sisley": {
@@ -14778,7 +14786,7 @@
         "end": "01:00"
       },
       "2026-06-03": {
-        "start": "12:00",
+        "start": "13:00",
         "end": "01:00"
       },
       "2026-06-04": {
@@ -14911,10 +14919,40 @@
         "start": "10:00",
         "end": "01:00"
       }
+    },
+    "Maria": {
+      "2026-06-03": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-06-04": {
+        "start": "11:00",
+        "end": "02:00"
+      }
+    },
+    "Yeri": {
+      "2026-06-03": {
+        "start": "12:00",
+        "end": "00:00"
+      },
+      "2026-06-04": {
+        "start": "12:00",
+        "end": "00:00"
+      }
+    },
+    "Ran": {
+      "2026-06-03": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-06-04": {
+        "start": "15:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-03T00:13:03.663Z",
+  "lastCalendarSync": "2026-06-03T05:24:45.781Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

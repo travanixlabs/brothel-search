@@ -9612,6 +9612,31 @@
       "labels": [],
       "lastModified": "2026-05-29T08:01:17.512Z",
       "lastRostered": "2026-06-04"
+    },
+    {
+      "name": "Sophie",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "165",
+      "cup": "B",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-06-03",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/sophie-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/88981780448400_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/88971780448386_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/88961780448377_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-03T04:00:39.025Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14917,7 +14942,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-01T04:00:48.646Z",
+  "lastGirlsSync": "2026-06-03T04:00:39.025Z",
   "lastCalendarSync": "2026-06-03T00:13:07.694Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

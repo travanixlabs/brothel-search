@@ -9231,7 +9231,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://citybrothel.com.au/project/ran-japan/",
       "desc": "",
-      "originalSite": "",
+      "originalSite": "Exists",
       "photos": [],
       "labels": [],
       "lastModified": "2026-03-15T01:10:27.578Z",
@@ -9724,6 +9724,56 @@
       "labels": [],
       "lastModified": "2026-06-02T04:00:37.628Z",
       "lastRostered": "2026-06-04"
+    },
+    {
+      "name": "Yeri",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-03",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yeri-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88741780402310_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88721780402298_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88731780402300_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-03T04:00:38.118Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Maria",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "162",
+      "cup": "C",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-06-03",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/maria-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88811780447793_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88831780447797_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/88821780447795_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-03T04:00:38.118Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -14863,7 +14913,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-02T04:00:37.628Z",
+  "lastGirlsSync": "2026-06-03T04:00:38.118Z",
   "lastCalendarSync": "2026-06-03T00:13:03.663Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

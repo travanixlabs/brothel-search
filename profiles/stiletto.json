@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-03",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -3949,7 +3949,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-03"
     },
     {
       "name": "Star",
@@ -5285,7 +5285,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-04",
+      "lastRostered": "2026-06-06",
       "oldUrl": "https://www.stilettosydney.com/workers/cameron-new-2/",
       "photos": [],
       "labels": [
@@ -6123,6 +6123,10 @@
       "2026-05-31": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-03": {
+        "start": "21:30",
+        "end": "05:30"
       }
     },
     "Opal": {
@@ -6804,14 +6808,6 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-06-04": {
-        "start": "20:00",
-        "end": "05:00"
-      },
-      "2026-06-06": {
-        "start": "21:00",
-        "end": "06:00"
-      },
       "2026-06-09": {
         "start": "13:00",
         "end": "19:00"
@@ -6822,6 +6818,10 @@
       },
       "2026-06-14": {
         "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-06-05": {
+        "start": "21:00",
         "end": "05:00"
       }
     },
@@ -7051,7 +7051,7 @@
         "end": "05:30"
       },
       "2026-06-03": {
-        "start": "21:00",
+        "start": "21:30",
         "end": "05:00"
       },
       "2026-06-04": {
@@ -7615,7 +7615,12 @@
       }
     },
     "Brittney": {},
-    "Stacy": {},
+    "Stacy": {
+      "2026-06-03": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Molly": {},
     "Chloe": {},
     "Julia": {},
@@ -7702,6 +7707,10 @@
       "2026-06-04": {
         "start": "17:00",
         "end": "01:00"
+      },
+      "2026-06-06": {
+        "start": "18:00",
+        "end": "00:00"
       }
     },
     "Clover": {},
@@ -7778,5 +7787,5 @@
     "Gemma": {}
   },
   "lastGirlsSync": "2026-06-03T08:57:51.725Z",
-  "lastCalendarSync": "2026-06-03T09:13:28.289Z"
+  "lastCalendarSync": "2026-06-03T11:26:30.094Z"
 }

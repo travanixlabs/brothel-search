@@ -9637,6 +9637,32 @@
       "labels": [],
       "lastModified": "2026-06-03T04:00:39.025Z",
       "lastRostered": "2026-06-04"
+    },
+    {
+      "name": "Kiyome",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "163",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-06-04",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kiyome-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89081780566722_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89051780566718_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89061780566720_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89071780566721_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-04T10:00:29.852Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15013,7 +15039,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-04T08:22:17.357Z",
+  "lastGirlsSync": "2026-06-04T10:00:29.852Z",
   "lastCalendarSync": "2026-06-04T05:20:12.435Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

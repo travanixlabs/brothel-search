@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06",
+      "lastRostered": "2026-06-13",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -712,7 +712,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "CeCe",
@@ -1345,7 +1345,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Ginger",
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Riley",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-07"
     },
     {
       "name": "Viv",
@@ -6055,6 +6055,26 @@
       "2026-06-06": {
         "start": "09:30",
         "end": "17:30"
+      },
+      "2026-06-08": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-06-09": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-06-10": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-06-12": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-06-13": {
+        "start": "09:30",
+        "end": "16:30"
       }
     },
     "Bambi": {
@@ -6225,6 +6245,18 @@
       "2026-06-06": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-06-10": {
+        "start": "19:00",
+        "end": "04:00"
+      },
+      "2026-06-12": {
+        "start": "19:00",
+        "end": "04:00"
+      },
+      "2026-06-13": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Hennessy": {
@@ -6393,6 +6425,10 @@
       "2026-06-04": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-06-05": {
+        "start": "19:00",
+        "end": "05:00"
       }
     },
     "Josie": {
@@ -6715,6 +6751,14 @@
       "2026-06-05": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-06-06": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-06-07": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -7057,9 +7101,9 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-06-04": {
-        "start": "10:00",
-        "end": "18:00"
+      "2026-06-05": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Jayde": {
@@ -7230,10 +7274,6 @@
     },
     "Raelynn": {},
     "Blake": {
-      "2026-06-04": {
-        "start": "11:00",
-        "end": "19:00"
-      },
       "2026-06-11": {
         "start": "11:00",
         "end": "19:00"
@@ -7740,5 +7780,5 @@
     "Gemma": {}
   },
   "lastGirlsSync": "2026-06-03T23:29:07.607Z",
-  "lastCalendarSync": "2026-06-04T00:15:33.199Z"
+  "lastCalendarSync": "2026-06-04T05:20:50.391Z"
 }

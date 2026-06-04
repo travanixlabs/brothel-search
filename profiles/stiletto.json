@@ -1931,7 +1931,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-03"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Julietta",
@@ -3014,7 +3014,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-04"
     },
     {
       "name": "Ophelia",
@@ -6137,6 +6137,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
+      },
+      "2026-06-04": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Grace": {
@@ -7576,7 +7580,12 @@
     "Stacy": {},
     "Molly": {},
     "Chloe": {},
-    "Julia": {},
+    "Julia": {
+      "2026-06-05": {
+        "start": "08:00",
+        "end": "18:00"
+      }
+    },
     "Eden": {},
     "Alena": {
       "2026-05-19": {
@@ -7726,15 +7735,10 @@
     "Brenda": {},
     "Tequila": {},
     "Luanna": {},
-    "Rosie": {
-      "2026-06-04": {
-        "start": "08:00",
-        "end": "14:00"
-      }
-    },
+    "Rosie": {},
     "Alex": {},
     "Gemma": {}
   },
   "lastGirlsSync": "2026-06-03T23:29:07.607Z",
-  "lastCalendarSync": "2026-06-03T22:35:44.646Z"
+  "lastCalendarSync": "2026-06-04T00:15:33.199Z"
 }

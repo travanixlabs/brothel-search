@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Ally",
@@ -1554,6 +1554,10 @@
       "2026-05-31": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sora": {
@@ -2248,5 +2252,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-04T15:57:50.408Z"
+  "lastCalendarSync": "2026-06-04T17:27:02.029Z"
 }

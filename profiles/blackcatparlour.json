@@ -3168,6 +3168,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-08"
+    },
+    {
+      "name": "Harlow",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "163",
+      "cup": "C",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-05",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9791,6 +9809,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-05-30T16:00:49.375Z",
+  "lastGirlsSync": "2026-06-04T16:00:38.301Z",
   "lastCalendarSync": "2026-06-04T15:57:57.694Z"
 }

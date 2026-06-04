@@ -7474,7 +7474,8 @@
         "Double",
         "GFE"
       ],
-      "lastModified": "2026-06-04T16:00:28.641Z"
+      "lastModified": "2026-06-04T16:00:28.641Z",
+      "lastRostered": "2025-08-01"
     },
     {
       "name": "Naho",
@@ -7514,7 +7515,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-06-04T16:00:28.641Z"
+      "lastModified": "2026-06-04T16:00:28.641Z",
+      "lastRostered": "2026-06-04"
     }
   ],
   "calendar": {
@@ -14212,5 +14214,5 @@
     }
   },
   "lastGirlsSync": "2026-06-04T16:00:28.641Z",
-  "lastCalendarSync": "2026-06-04T13:37:17.287Z"
+  "lastCalendarSync": "2026-06-04T17:26:40.465Z"
 }

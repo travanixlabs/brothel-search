@@ -634,7 +634,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-13",
       "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
@@ -1931,7 +1931,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-09"
     },
     {
       "name": "Julietta",
@@ -6461,7 +6461,7 @@
         "end": "06:00"
       },
       "2026-06-04": {
-        "start": "20:00",
+        "start": "22:00",
         "end": "04:00"
       },
       "2026-06-05": {
@@ -6857,10 +6857,6 @@
       "2026-04-07": {
         "start": "11:00",
         "end": "19:00"
-      },
-      "2026-06-04": {
-        "start": "10:00",
-        "end": "16:00"
       }
     },
     "Stella": {
@@ -6974,6 +6970,22 @@
       "2026-06-06": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-06-10": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-06-11": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-06-12": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-06-13": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Halo": {
@@ -7623,7 +7635,11 @@
     "Julia": {
       "2026-06-05": {
         "start": "08:00",
-        "end": "18:00"
+        "end": "16:00"
+      },
+      "2026-06-09": {
+        "start": "09:00",
+        "end": "19:00"
       }
     },
     "Eden": {},
@@ -7780,5 +7796,5 @@
     "Gemma": {}
   },
   "lastGirlsSync": "2026-06-03T23:29:07.607Z",
-  "lastCalendarSync": "2026-06-04T05:20:50.391Z"
+  "lastCalendarSync": "2026-06-04T06:59:39.289Z"
 }

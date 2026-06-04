@@ -7433,7 +7433,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-06-04T12:40:24.205Z"
+      "lastModified": "2026-06-04T12:40:24.205Z",
+      "lastRostered": "2026-06-04"
     }
   ],
   "calendar": {
@@ -14131,5 +14132,5 @@
     }
   },
   "lastGirlsSync": "2026-06-04T12:40:24.205Z",
-  "lastCalendarSync": "2026-06-02T14:35:10.324Z"
+  "lastCalendarSync": "2026-06-04T13:37:17.287Z"
 }

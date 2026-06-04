@@ -12729,10 +12729,6 @@
       "2026-06-04": {
         "start": "11:00",
         "end": "02:00"
-      },
-      "2026-06-05": {
-        "start": "11:00",
-        "end": "02:00"
       }
     },
     "Sue": {
@@ -15027,7 +15023,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-04T06:59:02.876Z",
+  "lastCalendarSync": "2026-06-04T08:37:34.716Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

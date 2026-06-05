@@ -3187,6 +3187,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-11"
+    },
+    {
+      "name": "Emily",
+      "country": [
+        "english"
+      ],
+      "age": "29",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-05",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9818,6 +9836,6 @@
     },
     "Harlow": {}
   },
-  "lastGirlsSync": "2026-06-04T16:00:38.301Z",
+  "lastGirlsSync": "2026-06-05T12:32:41.667Z",
   "lastCalendarSync": "2026-06-05T10:30:05.440Z"
 }

@@ -3223,7 +3223,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-06"
     }
   ],
   "calendar": {
@@ -9925,5 +9926,5 @@
     "Harlow": {}
   },
   "lastGirlsSync": "2026-06-05T17:45:54.560Z",
-  "lastCalendarSync": "2026-06-05T16:45:26.996Z"
+  "lastCalendarSync": "2026-06-05T18:23:32.656Z"
 }

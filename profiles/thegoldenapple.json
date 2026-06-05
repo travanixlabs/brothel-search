@@ -1655,6 +1655,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-05-22"
+    },
+    {
+      "name": "Emily",
+      "country": [
+        "english/spanish"
+      ],
+      "age": "29",
+      "height": "170",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-05",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2021/03/Samantha.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3517,6 +3537,6 @@
     "Lola": {},
     "Kismet": {}
   },
-  "lastGirlsSync": "2026-05-22T04:00:58.820Z",
+  "lastGirlsSync": "2026-06-05T10:01:01.838Z",
   "lastCalendarSync": "2026-06-05T08:29:30.104Z"
 }

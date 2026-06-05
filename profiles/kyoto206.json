@@ -1025,7 +1025,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-06",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/03/Moca-Jp-08.jpeg",
@@ -10832,6 +10832,10 @@
       "2026-06-05": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-06-06": {
+        "start": "10:00",
+        "end": "15:00"
       }
     },
     "Ada": {
@@ -15100,7 +15104,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-05T06:46:53.090Z",
+  "lastCalendarSync": "2026-06-05T08:29:13.665Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

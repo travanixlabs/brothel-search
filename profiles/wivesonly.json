@@ -1962,7 +1962,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Brooke",
@@ -2104,7 +2104,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Hennessy",
@@ -2242,7 +2242,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Isabella",
@@ -2713,7 +2713,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-06-05",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2757,7 +2757,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-29",
+      "lastRostered": "2026-06-05",
       "oldUrl": "https://wivesonly.com.au/maggie/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/maggie-temp-photo.jpg"
@@ -5297,10 +5297,6 @@
       "2026-05-26": {
         "start": "19:30",
         "end": "04:00"
-      },
-      "2026-06-05": {
-        "start": "20:30",
-        "end": "06:00"
       }
     },
     "Evie": {
@@ -5408,6 +5404,10 @@
       },
       "2026-06-04": {
         "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-06-05": {
+        "start": "11:00",
         "end": "04:00"
       }
     },
@@ -5964,6 +5964,10 @@
       "2026-06-04": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-05": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Veronika": {
@@ -6196,6 +6200,10 @@
       "2026-05-23": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-06-05": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Maddison": {
@@ -6224,6 +6232,10 @@
         "end": "19:30"
       },
       "2026-05-29": {
+        "start": "11:00",
+        "end": "20:30"
+      },
+      "2026-06-05": {
         "start": "11:00",
         "end": "20:30"
       }
@@ -6285,8 +6297,14 @@
         "start": "19:30",
         "end": "04:00"
       }
+    },
+    "Clarisse": {
+      "2026-06-05": {
+        "start": "20:30",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-31T16:55:43.855Z",
-  "lastCalendarSync": "2026-06-04T15:58:19.081Z"
+  "lastCalendarSync": "2026-06-05T04:56:31.273Z"
 }

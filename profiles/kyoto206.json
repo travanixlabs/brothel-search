@@ -1142,7 +1142,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-03",
+      "lastRostered": "2026-06-05",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -12352,7 +12352,7 @@
         "end": "03:00"
       },
       "2026-06-05": {
-        "start": "11:00",
+        "start": "12:00",
         "end": "03:00"
       },
       "2026-06-06": {
@@ -12850,6 +12850,10 @@
         "end": "04:00"
       },
       "2026-06-03": {
+        "start": "17:00",
+        "end": "02:00"
+      },
+      "2026-06-05": {
         "start": "17:00",
         "end": "02:00"
       }
@@ -15014,7 +15018,7 @@
         "end": "01:00"
       },
       "2026-06-05": {
-        "start": "12:00",
+        "start": "11:00",
         "end": "01:00"
       },
       "2026-06-06": {
@@ -15036,7 +15040,7 @@
         "end": "01:00"
       },
       "2026-06-05": {
-        "start": "10:00",
+        "start": "12:00",
         "end": "01:00"
       },
       "2026-06-06": {
@@ -15090,7 +15094,7 @@
         "end": "05:00"
       },
       "2026-06-05": {
-        "start": "15:00",
+        "start": "17:00",
         "end": "05:00"
       },
       "2026-06-06": {
@@ -15100,7 +15104,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-04T21:57:41.328Z",
+  "lastCalendarSync": "2026-06-05T04:55:47.186Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

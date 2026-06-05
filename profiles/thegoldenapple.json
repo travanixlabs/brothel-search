@@ -1674,7 +1674,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2021/03/Samantha.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-05"
     }
   ],
   "calendar": {
@@ -3535,8 +3536,14 @@
     },
     "Faith": {},
     "Lola": {},
-    "Kismet": {}
+    "Kismet": {},
+    "Emily": {
+      "2026-06-05": {
+        "start": "12:00",
+        "end": "21:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-06-05T10:01:01.838Z",
-  "lastCalendarSync": "2026-06-05T08:29:30.104Z"
+  "lastCalendarSync": "2026-06-05T10:30:00.075Z"
 }

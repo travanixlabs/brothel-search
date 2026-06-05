@@ -5913,6 +5913,46 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Naomi",
+      "country": [
+        "European"
+      ],
+      "age": "19",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Naughty &#8211; and nice! Hi Boys, I'm Naomi, a petite Portuguese pocket rocket, new to Stiletto. I have a deliciously slender yet feminine physique, with a perky C-cup bust and luscious brunette hair. I'm 19 years young, but I assure you I have confidence where it counts. I can be your sweet sexy ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-06-05",
+      "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Double Lesbian",
+        "Adventurous Positions",
+        "Rimming",
+        "BDSM",
+        "DFK",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Party Bookings",
+        "Stripping",
+        "Social Escort",
+        "Anal Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7685,8 +7725,18 @@
     "Luanna": {},
     "Rosie": {},
     "Alex": {},
-    "Gemma": {}
+    "Gemma": {},
+    "Naomi": {
+      "2026-06-08": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-09": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-06-04T23:04:47.656Z",
+  "lastGirlsSync": "2026-06-05T08:10:45.159Z",
   "lastCalendarSync": "2026-06-05T06:47:28.687Z"
 }

@@ -3186,7 +3186,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-11"
     }
   ],
   "calendar": {
@@ -9626,7 +9626,12 @@
         "end": "06:00"
       }
     },
-    "Pepper": {},
+    "Pepper": {
+      "2026-06-11": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
     "Tina": {
       "2026-05-08": {
         "start": "18:00",
@@ -9815,8 +9820,14 @@
         "start": "18:00",
         "end": "06:00"
       }
+    },
+    "Harlow": {
+      "2026-06-11": {
+        "start": "18:00",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-04T16:00:38.301Z",
-  "lastCalendarSync": "2026-06-04T18:35:39.903Z"
+  "lastCalendarSync": "2026-06-05T06:47:15.188Z"
 }

@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-06-05",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-05"
     },
     {
       "name": "Daisy",
@@ -6279,6 +6279,10 @@
       "2026-06-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-05": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Flora": {
@@ -6720,10 +6724,6 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-06-05": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-06-06": {
         "start": "08:00",
         "end": "16:00"
@@ -6982,6 +6982,10 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-06-05": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Amelia": {
@@ -7360,7 +7364,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-06-05": {
+        "start": "10:30",
+        "end": "18:30"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -7509,12 +7518,7 @@
         "end": "22:00"
       }
     },
-    "Felicity": {
-      "2026-06-06": {
-        "start": "19:00",
-        "end": "03:00"
-      }
-    },
+    "Felicity": {},
     "Mia": {
       "2026-06-05": {
         "start": "14:00",
@@ -7700,5 +7704,5 @@
     "Gemma": {}
   },
   "lastGirlsSync": "2026-06-04T23:04:47.656Z",
-  "lastCalendarSync": "2026-06-04T23:47:33.819Z"
+  "lastCalendarSync": "2026-06-05T04:56:27.296Z"
 }

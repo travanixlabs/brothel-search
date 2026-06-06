@@ -3225,6 +3225,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-12"
+    },
+    {
+      "name": "Malena",
+      "country": [
+        "Italian"
+      ],
+      "age": "26",
+      "height": "152",
+      "cup": "D",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-07",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sara",
+      "country": [
+        "Italian"
+      ],
+      "age": "25",
+      "height": "155",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-07",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9935,6 +9971,6 @@
     "Harlow": {},
     "Zariah": {}
   },
-  "lastGirlsSync": "2026-06-05T17:45:54.560Z",
+  "lastGirlsSync": "2026-06-06T16:00:15.318Z",
   "lastCalendarSync": "2026-06-06T15:47:44.471Z"
 }

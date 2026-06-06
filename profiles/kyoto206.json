@@ -9670,7 +9670,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-22T04:00:50.113Z",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-07"
     },
     {
       "name": "Amica",
@@ -10837,10 +10837,6 @@
       "2026-06-05": {
         "start": "10:00",
         "end": "18:00"
-      },
-      "2026-06-06": {
-        "start": "10:00",
-        "end": "15:00"
       }
     },
     "Ada": {
@@ -15037,6 +15033,10 @@
       "2026-05-27": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-06-07": {
+        "start": "11:00",
+        "end": "00:00"
       }
     },
     "Ayumi": {
@@ -15125,14 +15125,6 @@
       "2026-06-05": {
         "start": "11:00",
         "end": "02:00"
-      },
-      "2026-06-06": {
-        "start": "11:00",
-        "end": "02:00"
-      },
-      "2026-06-07": {
-        "start": "11:00",
-        "end": "02:00"
       }
     },
     "Yeri": {
@@ -15181,7 +15173,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-05T20:20:36.218Z",
+  "lastCalendarSync": "2026-06-06T04:35:49.515Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -426,7 +426,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Renna-Jp-05.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/11/Renna-Jp-06.jpeg",
@@ -10051,6 +10051,10 @@
       "2026-05-31": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-06-07": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Kurume": {},
@@ -15173,7 +15177,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-06T04:35:49.515Z",
+  "lastCalendarSync": "2026-06-06T06:05:51.860Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

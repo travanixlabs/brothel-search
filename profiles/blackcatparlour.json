@@ -3242,7 +3242,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Sara",
@@ -3260,7 +3261,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-13"
     }
   ],
   "calendar": {
@@ -9969,8 +9971,20 @@
       }
     },
     "Harlow": {},
-    "Zariah": {}
+    "Zariah": {},
+    "Malena": {
+      "2026-06-13": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Sara": {
+      "2026-06-13": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-06-06T16:00:15.318Z",
-  "lastCalendarSync": "2026-06-06T15:47:44.471Z"
+  "lastCalendarSync": "2026-06-06T17:44:12.913Z"
 }

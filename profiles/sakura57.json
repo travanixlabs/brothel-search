@@ -9663,6 +9663,31 @@
       "labels": [],
       "lastModified": "2026-06-04T10:00:29.852Z",
       "lastRostered": "2026-06-07"
+    },
+    {
+      "name": "Miley",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "158",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-06",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/miley-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89311780708407_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89301780708406_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89321780708573_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-06T04:01:00.862Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15171,7 +15196,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-04T10:00:29.852Z",
+  "lastGirlsSync": "2026-06-06T04:01:00.862Z",
   "lastCalendarSync": "2026-06-05T23:47:19.656Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -9688,6 +9688,32 @@
       "labels": [],
       "lastModified": "2026-06-06T04:01:00.862Z",
       "lastRostered": "2026-06-07"
+    },
+    {
+      "name": "mimori",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-06",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mimori-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89391780728224_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89361780728219_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89371780728221_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89381780728223_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-06T06:55:18.000Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15206,7 +15232,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-06T04:01:00.862Z",
+  "lastGirlsSync": "2026-06-06T06:55:18.000Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

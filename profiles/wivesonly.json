@@ -2327,7 +2327,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-06"
     },
     {
       "name": "Cherry",
@@ -3124,6 +3124,10 @@
       },
       "2026-06-05": {
         "start": "12:00",
+        "end": "17:00"
+      },
+      "2026-06-06": {
+        "start": "11:00",
         "end": "17:00"
       }
     },
@@ -6363,5 +6367,5 @@
     }
   },
   "lastGirlsSync": "2026-05-31T16:55:43.855Z",
-  "lastCalendarSync": "2026-06-05T15:34:14.718Z"
+  "lastCalendarSync": "2026-06-06T07:31:11.646Z"
 }

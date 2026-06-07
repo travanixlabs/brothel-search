@@ -3263,6 +3263,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-14"
+    },
+    {
+      "name": "Chelsea",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "168",
+      "cup": "E",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-08",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Halo",
+      "country": [
+        "Maori"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-08",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10204,6 +10240,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-06T16:00:15.318Z",
+  "lastGirlsSync": "2026-06-07T22:58:19.337Z",
   "lastCalendarSync": "2026-06-07T21:42:37.730Z"
 }

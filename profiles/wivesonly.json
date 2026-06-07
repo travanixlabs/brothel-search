@@ -1375,20 +1375,25 @@
     },
     {
       "name": "Morgan",
-      "country": [],
+      "country": [
+        "Au/\nEast European"
+      ],
       "age": "32",
       "height": "160",
-      "cup": "",
+      "cup": "F",
       "body": "",
       "val1": "250",
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
       "oldUrl": "https://wivesonly.com.au/morgan/",
-      "photos": [],
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/09/B484BC92-74A5-4135-A34F-D72898FE89DA.jpeg"
+      ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-01-01",
+      "desc": "Welcome Morgan, our newest stunner at Wives Only"
     },
     {
       "name": "Kim",
@@ -6415,6 +6420,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-07T07:57:49.616Z",
+  "lastGirlsSync": "2026-06-07T11:45:14.324Z",
   "lastCalendarSync": "2026-06-07T05:06:51.826Z"
 }

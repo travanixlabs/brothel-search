@@ -3546,7 +3546,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-02T08:05:15.558Z",
-      "lastRostered": "2026-05-26",
+      "lastRostered": "2026-06-07",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -9970,6 +9970,10 @@
       "2026-05-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-06-07": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Kimi": {
@@ -10714,5 +10718,5 @@
     }
   },
   "lastGirlsSync": "2026-05-30T06:48:48.567Z",
-  "lastCalendarSync": "2026-06-06T07:30:03.165Z"
+  "lastCalendarSync": "2026-06-07T05:05:39.493Z"
 }

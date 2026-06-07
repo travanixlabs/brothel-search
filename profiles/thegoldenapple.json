@@ -1676,6 +1676,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-10"
+    },
+    {
+      "name": "Chelsea",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "168",
+      "cup": "E",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-08",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3554,6 +3572,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-05T10:01:01.838Z",
+  "lastGirlsSync": "2026-06-07T22:00:05.826Z",
   "lastCalendarSync": "2026-06-07T17:49:26.016Z"
 }

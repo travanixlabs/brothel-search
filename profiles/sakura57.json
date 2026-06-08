@@ -9738,6 +9738,30 @@
       "labels": [],
       "lastModified": "2026-06-08T04:00:22.379Z",
       "lastRostered": ""
+    },
+    {
+      "name": "ari",
+      "country": [
+        "Chinese"
+      ],
+      "age": "28",
+      "height": "160",
+      "cup": "C",
+      "val1": "160",
+      "val2": "230",
+      "val3": "270",
+      "startDate": "2026-06-08",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/ari-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89501780893315_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89491780893313_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-08T08:57:05.417Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15256,7 +15280,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-08T04:00:22.379Z",
+  "lastGirlsSync": "2026-06-08T08:57:05.417Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

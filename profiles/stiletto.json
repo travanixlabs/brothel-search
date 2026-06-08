@@ -1861,7 +1861,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-08"
     },
     {
       "name": "Josie",
@@ -5503,7 +5503,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-08",
       "oldUrl": "https://www.stilettosydney.com/workers/cherry/",
       "photos": [],
       "labels": [
@@ -7423,6 +7423,10 @@
       "2026-04-20": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-08": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Aurora": {
@@ -7453,12 +7457,7 @@
       }
     },
     "Karina": {},
-    "Bree": {
-      "2026-06-08": {
-        "start": "15:00",
-        "end": "23:00"
-      }
-    },
+    "Bree": {},
     "Gloria": {},
     "Valerie": {
       "2026-06-06": {
@@ -7652,7 +7651,12 @@
     },
     "Angelina": {},
     "Isabel": {},
-    "Cherry": {},
+    "Cherry": {
+      "2026-06-08": {
+        "start": "22:00",
+        "end": "05:00"
+      }
+    },
     "Annabelle": {},
     "Ash": {},
     "Cookie": {
@@ -7672,12 +7676,7 @@
         "end": "14:00"
       }
     },
-    "Alex": {
-      "2026-06-08": {
-        "start": "22:00",
-        "end": "04:00"
-      }
-    },
+    "Alex": {},
     "Gemma": {},
     "Naomi": {
       "2026-06-08": {
@@ -7691,5 +7690,5 @@
     }
   },
   "lastGirlsSync": "2026-06-08T14:02:27.055Z",
-  "lastCalendarSync": "2026-06-08T12:47:52.610Z"
+  "lastCalendarSync": "2026-06-08T14:33:20.403Z"
 }

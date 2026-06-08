@@ -1434,7 +1434,7 @@
       ],
       "lastModified": "2026-03-13T05:20:37.835Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-09",
       "country": [
         "French"
       ],
@@ -1952,7 +1952,7 @@
       ],
       "lastModified": "2026-03-13T05:23:12.224Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-06-09",
       "country": [
         "Japanese"
       ],
@@ -7927,6 +7927,10 @@
       "2026-05-31": {
         "start": "10:30",
         "end": "19:00"
+      },
+      "2026-06-09": {
+        "start": "14:00",
+        "end": "19:00"
       }
     },
     "Sweety": {
@@ -9840,6 +9844,10 @@
         "end": "00:00"
       },
       "2026-05-31": {
+        "start": "20:00",
+        "end": "00:00"
+      },
+      "2026-06-09": {
         "start": "20:00",
         "end": "00:00"
       }
@@ -14578,5 +14586,5 @@
     "Nanami": {}
   },
   "lastGirlsSync": "2026-06-08T08:56:56.409Z",
-  "lastCalendarSync": "2026-06-08T07:10:49.054Z"
+  "lastCalendarSync": "2026-06-08T09:10:59.677Z"
 }

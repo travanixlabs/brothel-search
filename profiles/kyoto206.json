@@ -626,7 +626,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-08",
+      "lastRostered": "2026-06-09",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/09/Kaori-Jp-04-scaled.jpeg"
       ],
@@ -1086,7 +1086,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-09",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Nako-Jp-03-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2024/05/Nako-Jp-04-scaled.jpeg"
@@ -11529,6 +11529,10 @@
       "2026-06-07": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-06-09": {
+        "start": "19:00",
+        "end": "02:00"
       }
     },
     "Amy": {
@@ -12656,7 +12660,7 @@
         "start": "19:00",
         "end": "02:00"
       },
-      "2026-06-08": {
+      "2026-06-09": {
         "start": "19:00",
         "end": "01:00"
       }
@@ -15287,7 +15291,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-08T07:10:56.462Z",
+  "lastCalendarSync": "2026-06-08T09:11:08.853Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -2722,7 +2722,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-08",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6344,6 +6344,10 @@
       "2026-06-05": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-06-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddison": {
@@ -6470,5 +6474,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-07T14:28:36.606Z"
+  "lastCalendarSync": "2026-06-08T05:12:50.658Z"
 }

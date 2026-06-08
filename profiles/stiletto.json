@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-08",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13",
+      "lastRostered": "2026-06-20",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-08"
     },
     {
       "name": "Riley",
@@ -3491,7 +3491,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-17"
     },
     {
       "name": "Sabrina",
@@ -3658,7 +3658,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-19"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Savana",
@@ -3850,7 +3850,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-20"
     },
     {
       "name": "Simone",
@@ -5710,7 +5710,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-06-04",
+      "lastRostered": "2026-06-18",
       "oldUrl": "https://www.stilettosydney.com/workers/rosie-new-2/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/04/Edit-DSCF0052-1.jpeg",
@@ -6029,7 +6029,14 @@
       "2026-06-11",
       "2026-06-12",
       "2026-06-13",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6110,6 +6117,26 @@
       },
       "2026-06-13": {
         "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-06-15": {
+        "start": "10:00",
+        "end": "16:30"
+      },
+      "2026-06-16": {
+        "start": "10:00",
+        "end": "16:30"
+      },
+      "2026-06-17": {
+        "start": "10:00",
+        "end": "16:30"
+      },
+      "2026-06-19": {
+        "start": "10:00",
+        "end": "16:30"
+      },
+      "2026-06-20": {
+        "start": "10:00",
         "end": "16:30"
       }
     },
@@ -6229,10 +6256,6 @@
       "2026-04-22": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-06-08": {
-        "start": "03:30",
-        "end": "11:30"
       }
     },
     "Kiyomi": {
@@ -6783,10 +6806,6 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-06-08": {
-        "start": "11:00",
-        "end": "19:00"
-      },
       "2026-06-09": {
         "start": "10:00",
         "end": "17:00"
@@ -6834,6 +6853,14 @@
         "end": "18:00"
       },
       "2026-06-10": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-16": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-17": {
         "start": "10:00",
         "end": "18:00"
       }
@@ -6914,7 +6941,36 @@
       }
     },
     "Jess": {},
-    "Sasha": {},
+    "Sasha": {
+      "2026-06-15": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-16": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-17": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-18": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-19": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-20": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-21": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    },
     "Clara": {
       "2026-04-14": {
         "start": "22:00",
@@ -6971,6 +7027,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-06-08": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Jayde": {
@@ -7111,6 +7171,22 @@
         "end": "02:00"
       },
       "2026-06-13": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-15": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-16": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-17": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-20": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -7279,7 +7355,12 @@
         "end": "05:00"
       }
     },
-    "Alisa": {},
+    "Alisa": {
+      "2026-06-08": {
+        "start": "13:00",
+        "end": "18:00"
+      }
+    },
     "Inanna Lux": {
       "2026-04-12": {
         "start": "16:00",
@@ -7338,8 +7419,8 @@
     "Karina": {},
     "Bree": {
       "2026-06-08": {
-        "start": "09:00",
-        "end": "17:00"
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Gloria": {},
@@ -7549,7 +7630,12 @@
     "Brenda": {},
     "Tequila": {},
     "Luanna": {},
-    "Rosie": {},
+    "Rosie": {
+      "2026-06-18": {
+        "start": "08:00",
+        "end": "14:00"
+      }
+    },
     "Alex": {},
     "Gemma": {},
     "Naomi": {
@@ -7564,5 +7650,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T22:58:45.615Z",
-  "lastCalendarSync": "2026-06-07T23:38:42.931Z"
+  "lastCalendarSync": "2026-06-08T05:12:45.210Z"
 }

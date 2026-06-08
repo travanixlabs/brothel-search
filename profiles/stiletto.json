@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06",
+      "lastRostered": "2026-06-09",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-09",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -6870,10 +6870,6 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-06-09": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-06-10": {
         "start": "10:00",
         "end": "18:00"
@@ -7194,10 +7190,6 @@
         "start": "17:00",
         "end": "01:00"
       },
-      "2026-06-08": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-06-09": {
         "start": "18:00",
         "end": "02:00"
@@ -7282,10 +7274,6 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-06-08": {
-        "start": "18:00",
-        "end": "02:00"
       },
       "2026-06-10": {
         "start": "18:00",
@@ -7506,7 +7494,12 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-06-09": {
+        "start": "01:00",
+        "end": "09:00"
+      }
+    },
     "Piper": {
       "2026-06-11": {
         "start": "14:00",
@@ -7647,6 +7640,10 @@
       "2026-06-07": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-09": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Angelina": {},
@@ -7679,10 +7676,6 @@
     "Alex": {},
     "Gemma": {},
     "Naomi": {
-      "2026-06-08": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-06-09": {
         "start": "18:00",
         "end": "02:00"
@@ -7690,5 +7683,5 @@
     }
   },
   "lastGirlsSync": "2026-06-08T14:02:27.055Z",
-  "lastCalendarSync": "2026-06-08T14:33:20.403Z"
+  "lastCalendarSync": "2026-06-08T16:35:54.781Z"
 }

@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-06-14",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -358,7 +358,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-20",
       "desc": "Boys, Please allow me to introduce myself. I'm Aspen. I am gorgeous, fun, energetic, curious and sexually charged. I have beautiful red hair, sparkling eyes, a sexy, slim size 8 body, and a perky B cup bust. My service ensures that I provide the ultimate girlfriend experience but also like ..."
     },
     {
@@ -574,7 +574,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-13",
       "desc": "Beautiful brandy Hello Gentlemen, My name is Brandy, I am in my mid 20's and new to Stiletto. I am an energetic pocket rocket. My dress size is 6 and my bust is a natural B-cup. I have gorgeous brown eyes with blonde luscious hair to match. I specialise in a genuine girlfriend ..."
     },
     {
@@ -1150,7 +1150,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Eva",
@@ -1376,7 +1376,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Giselle",
@@ -1442,7 +1442,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-10"
     },
     {
       "name": "Grace",
@@ -2172,7 +2172,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Kiara",
@@ -2463,7 +2463,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Maddie",
@@ -2700,7 +2700,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Mia",
@@ -3104,7 +3104,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Piper",
@@ -3219,7 +3219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Raelynn",
@@ -3238,7 +3238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Raven",
@@ -3267,7 +3267,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Rebecca",
@@ -3385,7 +3385,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Roxi",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-10",
+      "lastRostered": "2026-06-15",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -6850,6 +6850,10 @@
       "2026-06-13": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-06-10": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "ChiChi": {
@@ -7360,6 +7364,14 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-06-10": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-13": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Simone": {
@@ -7368,7 +7380,16 @@
         "end": "03:00"
       }
     },
-    "Raelynn": {},
+    "Raelynn": {
+      "2026-06-11": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-06-14": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Blake": {
       "2026-06-11": {
         "start": "11:00",
@@ -7456,7 +7477,20 @@
       }
     },
     "CeCe": {},
-    "Erika": {},
+    "Erika": {
+      "2026-06-11": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-13": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-14": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Ginger": {
       "2026-04-28": {
         "start": "21:00",
@@ -7467,6 +7501,22 @@
         "end": "05:00"
       },
       "2026-06-09": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-11": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-12": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-13": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-14": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -7491,6 +7541,22 @@
       "2026-06-10": {
         "start": "00:00",
         "end": "08:00"
+      },
+      "2026-06-11": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-12": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-13": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-14": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Kianna": {
@@ -7517,6 +7583,22 @@
       "2026-06-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-11": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-06-12": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-06-13": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-06-14": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Trinity": {},
@@ -7564,7 +7646,11 @@
     },
     "Rebecca": {},
     "Arizona": {
-      "2026-06-09": {
+      "2026-06-13": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-06-14": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -7618,12 +7704,28 @@
       "2026-05-09": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-11": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-12": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-13": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Karina": {},
     "Bree": {},
     "Gloria": {
-      "2026-06-09": {
+      "2026-06-10": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -7657,16 +7759,80 @@
       }
     },
     "Zara": {},
-    "Quinn": {},
-    "London": {},
-    "Aspen": {},
+    "Quinn": {
+      "2026-06-10": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-11": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-06-12": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
+    "London": {
+      "2026-06-10": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-12": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
+    "Aspen": {
+      "2026-06-10": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-06-12": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-06-13": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-06-20": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Mercy": {
       "2026-06-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-10": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-13": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-14": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
-    "Brandy": {},
+    "Brandy": {
+      "2026-06-10": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-06-11": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-13": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Yvette": {
       "2026-06-11": {
         "start": "07:00",
@@ -7683,6 +7849,10 @@
     },
     "Sonya": {
       "2026-06-10": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-06-15": {
         "start": "00:00",
         "end": "08:00"
       }
@@ -7877,5 +8047,5 @@
     }
   },
   "lastGirlsSync": "2026-06-09T12:32:32.100Z",
-  "lastCalendarSync": "2026-06-09T13:23:18.928Z"
+  "lastCalendarSync": "2026-06-09T15:38:32.097Z"
 }

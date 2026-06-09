@@ -3318,7 +3318,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-09"
     },
     {
       "name": "Sugar",
@@ -3336,7 +3337,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-09"
     }
   ],
   "calendar": {
@@ -10422,5 +10424,5 @@
     }
   },
   "lastGirlsSync": "2026-06-09T07:53:27.806Z",
-  "lastCalendarSync": "2026-06-09T06:31:04.738Z"
+  "lastCalendarSync": "2026-06-09T08:06:53.521Z"
 }

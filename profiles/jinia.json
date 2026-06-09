@@ -1615,7 +1615,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250528234115.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Hasha",
@@ -2249,6 +2249,25 @@
       "oldUrl": "https://jinia.com.au/zoe-chinese-4pm-3am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2023/04/Image_20230405145909.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Daisy",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-06-09",
+      "lastRostered": "2026-06-09",
+      "oldUrl": "https://jinia.com.au/daisy%f0%9f%87%b9-300-pm-1100-pm/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260609104506.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -4543,6 +4562,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-04T04:00:34.965Z",
+  "lastGirlsSync": "2026-06-09T07:54:25.886Z",
   "lastCalendarSync": "2026-06-09T04:45:49.253Z"
 }

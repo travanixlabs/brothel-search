@@ -8946,7 +8946,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-03T07:00:56.415Z",
-      "lastRostered": "2026-05-25",
+      "lastRostered": "2026-06-10",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/81001775172637_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/80991775172635_.pic_.jpg",
@@ -13588,6 +13588,10 @@
       "2026-05-25": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-06-10": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Yiika": {
@@ -15364,7 +15368,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-09T04:44:29.616Z",
+  "lastCalendarSync": "2026-06-09T10:07:24.649Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

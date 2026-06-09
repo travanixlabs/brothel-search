@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-08",
+      "lastRostered": "2026-06-09",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -5056,10 +5056,6 @@
       "2026-06-05": {
         "start": "11:00",
         "end": "20:30"
-      },
-      "2026-06-09": {
-        "start": "11:00",
-        "end": "17:00"
       }
     },
     "Sarah": {
@@ -6265,6 +6261,10 @@
       "2026-06-08": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-09": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -6523,5 +6523,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-08T14:33:25.108Z"
+  "lastCalendarSync": "2026-06-09T04:45:43.716Z"
 }

@@ -3339,6 +3339,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-09"
+    },
+    {
+      "name": "Hope",
+      "country": [
+        "Australian"
+      ],
+      "age": "18",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-09",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10423,6 +10441,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-09T07:53:27.806Z",
+  "lastGirlsSync": "2026-06-09T12:31:59.324Z",
   "lastCalendarSync": "2026-06-09T08:06:53.521Z"
 }

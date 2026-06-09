@@ -3301,6 +3301,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-08"
+    },
+    {
+      "name": "Bee",
+      "country": [
+        "Tongan"
+      ],
+      "age": "18",
+      "height": "178",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-09",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Sugar",
+      "country": [
+        "Eurasian"
+      ],
+      "age": "18",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-09",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10385,6 +10421,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-07T22:58:19.337Z",
+  "lastGirlsSync": "2026-06-09T07:53:27.806Z",
   "lastCalendarSync": "2026-06-09T06:31:04.738Z"
 }

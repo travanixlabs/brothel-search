@@ -7750,7 +7750,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-06-09T12:31:25.736Z"
+      "lastModified": "2026-06-09T12:31:25.736Z",
+      "lastRostered": "2026-06-10"
     },
     {
       "name": "OMG",
@@ -7786,7 +7787,8 @@
         "CIM",
         "Rimming"
       ],
-      "lastModified": "2026-06-09T12:31:25.736Z"
+      "lastModified": "2026-06-09T12:31:25.736Z",
+      "lastRostered": "2025-10-01"
     }
   ],
   "calendar": {
@@ -14801,8 +14803,18 @@
         "start": "10:30",
         "end": "18:00"
       }
+    },
+    "Madoka": {
+      "2026-06-09": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-06-10": {
+        "start": "12:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-09T12:31:25.736Z",
-  "lastCalendarSync": "2026-06-09T06:30:05.178Z"
+  "lastCalendarSync": "2026-06-09T13:21:51.929Z"
 }

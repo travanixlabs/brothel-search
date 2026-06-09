@@ -290,7 +290,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02",
+      "lastRostered": "2026-06-09",
       "desc": "Hello gentlemen my name is Annika. I have beautiful soft skin and enchanting brown eyes. I am effortless sophisticated and intelligent. I can be the epitome of elegance and glamour, but only if that’s the type of girlfriend you want. Seemingly normal girl in the streets and naughty playmate in the ..."
     },
     {
@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-09",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -989,7 +989,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-02"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Darcie",
@@ -1376,7 +1376,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-09"
     },
     {
       "name": "Giselle",
@@ -1442,7 +1442,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-02"
+      "lastRostered": "2026-06-09"
     },
     {
       "name": "Grace",
@@ -2136,7 +2136,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-09"
     },
     {
       "name": "Kianna",
@@ -3104,7 +3104,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-10"
     },
     {
       "name": "Piper",
@@ -3547,7 +3547,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-06-10"
     },
     {
       "name": "Sadie",
@@ -4280,7 +4280,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Valerie",
@@ -4464,7 +4464,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Zara",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-10",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -6463,10 +6463,6 @@
         "start": "17:00",
         "end": "22:00"
       },
-      "2026-06-09": {
-        "start": "15:00",
-        "end": "22:00"
-      },
       "2026-06-10": {
         "start": "20:00",
         "end": "00:00"
@@ -6844,6 +6840,14 @@
     },
     "Tyler": {
       "2026-04-05": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-06-11": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-13": {
         "start": "07:00",
         "end": "15:00"
       }
@@ -7395,6 +7399,10 @@
       "2026-06-02": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-09": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ava": {
@@ -7457,6 +7465,10 @@
       "2026-05-24": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-06-09": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Parker": {
@@ -7475,6 +7487,10 @@
       "2026-06-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-10": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Kianna": {
@@ -7504,8 +7520,26 @@
       }
     },
     "Trinity": {},
-    "Dallas": {},
-    "Annika": {},
+    "Dallas": {
+      "2026-06-11": {
+        "start": "07:00",
+        "end": "07:00"
+      },
+      "2026-06-12": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-06-13": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
+    "Annika": {
+      "2026-06-09": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Audrina": {
       "2026-04-13": {
         "start": "21:00",
@@ -7588,7 +7622,12 @@
     },
     "Karina": {},
     "Bree": {},
-    "Gloria": {},
+    "Gloria": {
+      "2026-06-09": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Valerie": {
       "2026-06-06": {
         "start": "22:00",
@@ -7611,6 +7650,10 @@
       "2026-05-13": {
         "start": "23:58",
         "end": "07:58"
+      },
+      "2026-06-10": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Zara": {},
@@ -7624,8 +7667,26 @@
       }
     },
     "Brandy": {},
-    "Yvette": {},
-    "Sonya": {},
+    "Yvette": {
+      "2026-06-11": {
+        "start": "07:00",
+        "end": "07:00"
+      },
+      "2026-06-12": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-13": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
+    "Sonya": {
+      "2026-06-10": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -7656,12 +7717,7 @@
       }
     },
     "Felicity": {},
-    "Mia": {
-      "2026-06-09": {
-        "start": "15:00",
-        "end": "23:00"
-      }
-    },
+    "Mia": {},
     "Fendi": {},
     "Lena": {
       "2026-06-09": {
@@ -7821,5 +7877,5 @@
     }
   },
   "lastGirlsSync": "2026-06-09T12:32:32.100Z",
-  "lastCalendarSync": "2026-06-09T11:42:22.047Z"
+  "lastCalendarSync": "2026-06-09T13:23:18.928Z"
 }

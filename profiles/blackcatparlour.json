@@ -3358,6 +3358,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-16"
+    },
+    {
+      "name": "Erika",
+      "country": [
+        "Australian"
+      ],
+      "age": "26",
+      "height": "168",
+      "cup": "E",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-10",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10451,6 +10469,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-09T12:31:59.324Z",
+  "lastGirlsSync": "2026-06-10T12:50:43.220Z",
   "lastCalendarSync": "2026-06-10T11:55:05.555Z"
 }

@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11",
+      "lastRostered": "2026-06-14",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -3200,7 +3200,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-31"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Quinn",
@@ -4731,7 +4731,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-08",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://www.stilettosydney.com/workers/bree-new/",
       "photos": [],
       "labels": [
@@ -5194,7 +5194,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-05",
+      "lastRostered": "2026-06-12",
       "oldUrl": "https://www.stilettosydney.com/workers/tori-new-2/",
       "photos": [],
       "labels": [
@@ -6036,7 +6036,8 @@
       "2026-06-18",
       "2026-06-19",
       "2026-06-20",
-      "2026-06-21"
+      "2026-06-21",
+      "2026-06-22"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6692,6 +6693,18 @@
       "2026-04-26": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-12": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-13": {
+        "start": "22:00",
+        "end": "05:00"
+      },
+      "2026-06-14": {
+        "start": "22:00",
+        "end": "05:00"
       }
     },
     "Cali": {
@@ -7617,7 +7630,7 @@
         "end": "04:00"
       },
       "2026-06-10": {
-        "start": "09:00",
+        "start": "12:00",
         "end": "17:00"
       }
     },
@@ -7663,11 +7676,11 @@
       }
     },
     "Aurora": {
-      "2026-06-10": {
+      "2026-06-11": {
         "start": "13:00",
         "end": "21:00"
       },
-      "2026-06-11": {
+      "2026-06-14": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -7706,7 +7719,16 @@
       }
     },
     "Karina": {},
-    "Bree": {},
+    "Bree": {
+      "2026-06-19": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-06-22": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
     "Gloria": {
       "2026-06-10": {
         "start": "16:00",
@@ -7945,7 +7967,12 @@
       }
     },
     "Selene": {},
-    "Tori": {},
+    "Tori": {
+      "2026-06-12": {
+        "start": "19:00",
+        "end": "03:00"
+      }
+    },
     "Layla": {
       "2026-05-22": {
         "start": "23:00",
@@ -8013,5 +8040,5 @@
     "Naomi": {}
   },
   "lastGirlsSync": "2026-06-09T23:15:12.778Z",
-  "lastCalendarSync": "2026-06-09T23:54:47.507Z"
+  "lastCalendarSync": "2026-06-10T04:57:40.982Z"
 }

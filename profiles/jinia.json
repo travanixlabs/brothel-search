@@ -393,7 +393,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-02-13",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/linda/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251205095125_%E5%89%AF%E6%9C%AC-1.jpg"
@@ -622,7 +622,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-22",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/madoka/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251223072516_547_2.jpg"
@@ -1545,7 +1545,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-05-30",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/baby-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20250610211954.jpg"
@@ -1888,7 +1888,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-16",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/rose-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260417093310.jpg"
@@ -1951,7 +1951,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-26",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/7843-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260426084859_1029_2.jpg"
@@ -2035,7 +2035,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-08",
-      "lastRostered": "2026-06-14",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/mimi-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260510071742_1057_2.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2182,7 +2182,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-28",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://jinia.com.au/kaia/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260528111146.jpg"
@@ -2944,6 +2944,10 @@
       "2026-06-10": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-06-17": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "Yumi": {
@@ -3603,7 +3607,8 @@
       "2026-06-13",
       "2026-06-14",
       "2026-06-15",
-      "2026-06-16"
+      "2026-06-16",
+      "2026-06-17"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -3731,6 +3736,10 @@
         "end": "02:00"
       },
       "2026-06-11": {
+        "start": "11:00",
+        "end": "02:00"
+      },
+      "2026-06-17": {
         "start": "11:00",
         "end": "02:00"
       }
@@ -4035,6 +4044,10 @@
       "2026-06-11": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-06-17": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "🆕 Mia": {
@@ -4093,6 +4106,10 @@
         "end": "04:00"
       },
       "2026-06-10": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-06-17": {
         "start": "11:00",
         "end": "04:00"
       }
@@ -4296,6 +4313,10 @@
         "end": "04:00"
       },
       "2026-06-16": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-06-17": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -4542,6 +4563,10 @@
       "2026-06-16": {
         "start": "11:00",
         "end": "23:00"
+      },
+      "2026-06-17": {
+        "start": "11:00",
+        "end": "23:00"
       }
     },
     "🆕 Christina": {
@@ -4596,6 +4621,10 @@
       "2026-06-11": {
         "start": "13:00",
         "end": "02:00"
+      },
+      "2026-06-17": {
+        "start": "13:00",
+        "end": "02:00"
       }
     },
     "🆕 Daisy": {
@@ -4610,5 +4639,5 @@
     }
   },
   "lastGirlsSync": "2026-06-09T07:54:25.886Z",
-  "lastCalendarSync": "2026-06-10T04:57:50.313Z"
+  "lastCalendarSync": "2026-06-10T16:15:06.366Z"
 }

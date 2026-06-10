@@ -1113,7 +1113,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-06-07",
+      "lastRostered": "2026-06-11",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/07/Tomie-Jp-03-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/07/Tomie-Jp-04-scaled.jpeg",
@@ -12503,6 +12503,14 @@
       "2026-06-07": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-10": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-06-11": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "Kaori": {
@@ -15437,7 +15445,7 @@
     }
   },
   "lastGirlsSync": "2026-06-03T04:00:38.118Z",
-  "lastCalendarSync": "2026-06-10T04:56:12.112Z",
+  "lastCalendarSync": "2026-06-10T10:38:48.457Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

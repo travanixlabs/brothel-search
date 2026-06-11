@@ -23,7 +23,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Alexa",
@@ -66,7 +66,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Amanda",
@@ -129,7 +129,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Athena",
@@ -150,7 +150,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Audrey",
@@ -276,7 +276,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Cola",
@@ -361,7 +361,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Elise",
@@ -403,7 +403,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Gabrielle",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Hallie",
@@ -869,7 +869,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Miley",
@@ -1017,7 +1017,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Sierra",
@@ -1102,7 +1102,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Zoey",
@@ -1161,7 +1161,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Brielle",
@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-13"
     },
     {
       "name": "Cammie",
@@ -1553,7 +1553,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Tina",
@@ -1612,7 +1612,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Faith",
@@ -1712,7 +1712,8 @@
       "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-11"
     }
   ],
   "calendar": {
@@ -1788,7 +1789,8 @@
       "2026-06-10",
       "2026-06-11",
       "2026-06-12",
-      "2026-06-13"
+      "2026-06-13",
+      "2026-06-14"
     ],
     "Belle": {
       "2026-04-03": {
@@ -1864,6 +1866,14 @@
       "2026-06-05": {
         "start": "02:00",
         "end": "23:00"
+      },
+      "2026-06-13": {
+        "start": "05:00",
+        "end": "12:00"
+      },
+      "2026-06-14": {
+        "start": "05:00",
+        "end": "12:00"
       }
     },
     "Icra": {
@@ -1965,6 +1975,10 @@
       },
       "2026-06-11": {
         "start": "10:00",
+        "end": "19:00"
+      },
+      "2026-06-12": {
+        "start": "12:00",
         "end": "19:00"
       }
     },
@@ -2292,6 +2306,10 @@
       "2026-06-12": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-06-13": {
+        "start": "21:00",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -2484,6 +2502,10 @@
       "2026-06-11": {
         "start": "13:00",
         "end": "20:00"
+      },
+      "2026-06-13": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Tasha": {
@@ -2612,6 +2634,10 @@
       "2026-06-11": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-06-13": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Charlie": {
@@ -2656,6 +2682,10 @@
       "2026-06-12": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-06-13": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Georgia": {
@@ -2698,6 +2728,10 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "16:00"
+      },
+      "2026-06-14": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Davina": {
@@ -2708,6 +2742,10 @@
       "2026-06-11": {
         "start": "12:00",
         "end": "21:00"
+      },
+      "2026-06-14": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Melody": {
@@ -3200,6 +3238,10 @@
       "2026-06-11": {
         "start": "09:00",
         "end": "18:00"
+      },
+      "2026-06-13": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Lucy": {
@@ -3258,9 +3300,13 @@
         "start": "17:00",
         "end": "07:00"
       },
-      "2026-06-11": {
-        "start": "08:00",
-        "end": "17:00"
+      "2026-06-12": {
+        "start": "16:00",
+        "end": "01:00"
+      },
+      "2026-06-13": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Darcy": {
@@ -3309,6 +3355,10 @@
         "end": "04:00"
       },
       "2026-05-27": {
+        "start": "19:00",
+        "end": "04:00"
+      },
+      "2026-06-13": {
         "start": "19:00",
         "end": "04:00"
       }
@@ -3480,6 +3530,10 @@
       "2026-06-12": {
         "start": "01:00",
         "end": "10:00"
+      },
+      "2026-06-13": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Audrey": {
@@ -3614,6 +3668,10 @@
       "2026-06-13": {
         "start": "12:00",
         "end": "21:00"
+      },
+      "2026-06-14": {
+        "start": "12:00",
+        "end": "21:00"
       }
     },
     "Tina": {
@@ -3632,19 +3690,24 @@
       "2026-06-13": {
         "start": "17:00",
         "end": "01:00"
+      },
+      "2026-06-14": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
-    "Destiny": {},
+    "Destiny": {
+      "2026-06-14": {
+        "start": "10:00",
+        "end": "19:00"
+      }
+    },
     "Faith": {},
     "Lola": {},
     "Kismet": {},
     "Emily": {
       "2026-06-10": {
         "start": "13:00",
-        "end": "22:00"
-      },
-      "2026-06-11": {
-        "start": "10:00",
         "end": "22:00"
       }
     },
@@ -3653,8 +3716,14 @@
         "start": "21:00",
         "end": "06:00"
       }
+    },
+    "Bailey": {
+      "2026-06-11": {
+        "start": "12:00",
+        "end": "21:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-11T04:00:34.617Z",
-  "lastCalendarSync": "2026-06-10T21:05:26.139Z"
+  "lastCalendarSync": "2026-06-11T05:08:53.546Z"
 }

@@ -42,7 +42,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13",
+      "lastRostered": "2026-06-20",
       "desc": "Sweet & Classy Stunner Hello Gentlemen, I’m Alena, a Korean Canadian with long dark hair, a bright smile, and a natural, playful charm. With a slim yet curvy figure, adorned with a DD+ bust, I bring a mix of confidence, warmth, and a little cheeky fun. Whether you’re looking for easy company, lighthearted ..."
     },
     {
@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11",
+      "lastRostered": "2026-06-18",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -6880,10 +6880,6 @@
         "start": "07:00",
         "end": "15:00"
       },
-      "2026-06-11": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-06-13": {
         "start": "07:00",
         "end": "15:00"
@@ -6991,10 +6987,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-06-11": {
-        "start": "17:00",
-        "end": "01:00"
       },
       "2026-06-12": {
         "start": "18:00",
@@ -7190,10 +7182,6 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-06-11": {
-        "start": "13:00",
-        "end": "18:00"
-      },
       "2026-06-13": {
         "start": "18:00",
         "end": "02:00"
@@ -7381,6 +7369,14 @@
     },
     "Blake": {
       "2026-06-11": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-06-16": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-18": {
         "start": "11:00",
         "end": "19:00"
       }
@@ -7904,6 +7900,14 @@
       "2026-06-17": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-19": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-20": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Selene": {},
@@ -8004,5 +8008,5 @@
     }
   },
   "lastGirlsSync": "2026-06-11T08:49:25.285Z",
-  "lastCalendarSync": "2026-06-11T07:13:15.898Z"
+  "lastCalendarSync": "2026-06-11T08:59:17.455Z"
 }

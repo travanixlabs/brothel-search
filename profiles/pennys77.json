@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-11"
     },
     {
       "name": "Hana",
@@ -1890,6 +1890,10 @@
       "2026-06-09": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-11": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Irene": {
@@ -2366,5 +2370,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-10T22:24:00.201Z"
+  "lastCalendarSync": "2026-06-11T05:08:51.060Z"
 }

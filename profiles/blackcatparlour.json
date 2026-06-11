@@ -3377,6 +3377,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-17"
+    },
+    {
+      "name": "Bailey",
+      "country": [
+        "Australian"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Cairo",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-11",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10541,6 +10577,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-10T12:50:43.220Z",
+  "lastGirlsSync": "2026-06-11T04:00:44.064Z",
   "lastCalendarSync": "2026-06-10T23:58:53.788Z"
 }

@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Amber",
@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Charlie",
@@ -616,7 +616,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Jane",
@@ -637,7 +637,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Janelle",
@@ -764,7 +764,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Lola",
@@ -912,7 +912,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Natalie",
@@ -1081,7 +1081,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Violet",
@@ -1123,7 +1123,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Amy",
@@ -1161,7 +1161,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Brielle",
@@ -1238,7 +1238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Mila",
@@ -1257,7 +1257,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Ruby",
@@ -1277,7 +1277,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Scarlett",
@@ -1296,7 +1296,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Snow",
@@ -1315,7 +1315,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Sophia",
@@ -1372,7 +1372,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Vivian",
@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Cammie",
@@ -2294,6 +2294,10 @@
       "2026-06-13": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-06-14": {
+        "start": "21:00",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -2370,6 +2374,10 @@
         "end": "07:00"
       },
       "2026-06-11": {
+        "start": "22:00",
+        "end": "07:00"
+      },
+      "2026-06-14": {
         "start": "22:00",
         "end": "07:00"
       }
@@ -2466,6 +2474,10 @@
       "2026-06-09": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-06-14": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Valerie": {
@@ -2474,6 +2486,10 @@
         "end": "15:00"
       },
       "2026-04-05": {
+        "start": "10:00",
+        "end": "15:00"
+      },
+      "2026-06-14": {
         "start": "10:00",
         "end": "15:00"
       }
@@ -2830,6 +2846,10 @@
       "2026-06-09": {
         "start": "23:00",
         "end": "08:00"
+      },
+      "2026-06-14": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Zoey": {
@@ -2884,6 +2904,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-06-14": {
+        "start": "16:00",
+        "end": "23:00"
       }
     },
     "Ruby": {
@@ -2924,6 +2948,10 @@
         "end": "06:00"
       },
       "2026-06-08": {
+        "start": "21:00",
+        "end": "06:00"
+      },
+      "2026-06-14": {
         "start": "21:00",
         "end": "06:00"
       }
@@ -3052,6 +3080,10 @@
       "2026-06-09": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-14": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Snow": {
@@ -3146,6 +3178,10 @@
       "2026-06-08": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-06-14": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Elise": {
@@ -3192,10 +3228,24 @@
       "2026-06-13": {
         "start": "07:00",
         "end": "16:00"
+      },
+      "2026-06-14": {
+        "start": "11:00",
+        "end": "18:00"
       }
     },
-    "Lily": {},
-    "Bree": {},
+    "Lily": {
+      "2026-06-14": {
+        "start": "19:00",
+        "end": "22:00"
+      }
+    },
+    "Bree": {
+      "2026-06-12": {
+        "start": "07:00",
+        "end": "16:00"
+      }
+    },
     "Jessica": {
       "2026-04-10": {
         "start": "12:00",
@@ -3275,6 +3325,10 @@
       "2026-06-13": {
         "start": "01:00",
         "end": "10:00"
+      },
+      "2026-06-14": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Darcy": {
@@ -3299,12 +3353,16 @@
         "end": "00:00"
       },
       "2026-06-12": {
-        "start": "15:00",
-        "end": "00:00"
+        "start": "17:00",
+        "end": "02:00"
       }
     },
     "Nadia": {
       "2026-06-12": {
+        "start": "12:00",
+        "end": "19:00"
+      },
+      "2026-06-14": {
         "start": "12:00",
         "end": "19:00"
       }
@@ -3381,6 +3439,10 @@
       "2026-06-07": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-06-14": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Tiffany": {
@@ -3435,6 +3497,10 @@
       "2026-06-09": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-06-14": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Cammie": {},
@@ -3698,5 +3764,5 @@
     }
   },
   "lastGirlsSync": "2026-06-11T04:00:34.617Z",
-  "lastCalendarSync": "2026-06-11T14:14:42.156Z"
+  "lastCalendarSync": "2026-06-11T22:21:28.427Z"
 }

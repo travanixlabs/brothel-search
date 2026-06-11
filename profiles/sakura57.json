@@ -9815,6 +9815,31 @@
       "labels": [],
       "lastModified": "2026-06-11T04:00:24.287Z",
       "lastRostered": ""
+    },
+    {
+      "name": "rinko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-11",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/rinko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89951781159578_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89921781159567_.pic_-1400x1147.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/89931781159571_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-11T08:48:19.564Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15333,7 +15358,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-11T04:00:24.287Z",
+  "lastGirlsSync": "2026-06-11T08:48:19.564Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

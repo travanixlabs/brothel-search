@@ -7959,7 +7959,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-06-11T16:00:22.515Z"
+      "lastModified": "2026-06-11T16:00:22.515Z",
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Kinako",
@@ -7994,7 +7995,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-06-11T16:00:22.515Z"
+      "lastModified": "2026-06-11T16:00:22.515Z",
+      "lastRostered": "2026-06-11"
     }
   ],
   "calendar": {
@@ -15229,8 +15231,14 @@
         "start": "10:30",
         "end": "22:00"
       }
+    },
+    "Nami": {
+      "2026-06-12": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-11T16:00:22.515Z",
-  "lastCalendarSync": "2026-06-11T07:12:01.529Z"
+  "lastCalendarSync": "2026-06-11T16:33:53.437Z"
 }

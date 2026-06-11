@@ -9791,6 +9791,30 @@
       "labels": [],
       "lastModified": "2026-06-08T10:00:26.299Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Sachika",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-06-11",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/sachika-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/14604.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/14605.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-11T04:00:24.287Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15309,7 +15333,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-09T04:00:23.387Z",
+  "lastGirlsSync": "2026-06-11T04:00:24.287Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
@@ -15336,6 +15360,7 @@
     "https://www.surryhillsbrothel.com.au/project/momoko-japan-old/",
     "https://www.surryhillsbrothel.com.au/project/haru-japan-ole/",
     "https://www.surryhillsbrothel.com.au/project/marina-malaysia/",
-    "https://www.surryhillsbrothel.com.au/project/aori-japan/"
+    "https://www.surryhillsbrothel.com.au/project/aori-japan/",
+    "https://www.surryhillsbrothel.com.au/project/sandra-malaysia/"
   ]
 }

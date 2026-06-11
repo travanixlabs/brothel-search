@@ -352,7 +352,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:53:12.016Z",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-06-11",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2026/01/图片_20260121011428_446_56-807x1030.jpg",
         "https://www.429city.com/wp-content/uploads/2026/01/图片_20260121011436_447_56.jpg"
@@ -13291,6 +13291,10 @@
       "2026-06-09": {
         "start": "10:00",
         "end": "05:00"
+      },
+      "2026-06-11": {
+        "start": "10:00",
+        "end": "05:00"
       }
     },
     "Summer": {
@@ -16009,5 +16013,5 @@
     "Angel 2": {}
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-06-10T17:41:01.322Z"
+  "lastCalendarSync": "2026-06-11T05:08:48.578Z"
 }

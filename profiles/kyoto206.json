@@ -9776,6 +9776,30 @@
       "labels": [],
       "lastModified": "2026-06-03T04:00:38.118Z",
       "lastRostered": "2026-06-07"
+    },
+    {
+      "name": "mizzu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "162",
+      "cup": "E",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-12",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/mizzu-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/89981781229910_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/89991781229915_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-12T04:00:24.301Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15602,7 +15626,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-03T04:00:38.118Z",
+  "lastGirlsSync": "2026-06-12T04:00:24.301Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

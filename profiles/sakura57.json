@@ -9840,6 +9840,29 @@
       "labels": [],
       "lastModified": "2026-06-11T08:48:19.564Z",
       "lastRostered": ""
+    },
+    {
+      "name": "moya",
+      "country": [
+        "Japanese"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "B",
+      "val1": "170",
+      "val2": "240",
+      "val3": "280",
+      "startDate": "2026-06-12",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/moya-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90011781230455_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-12T04:00:25.117Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15358,7 +15381,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-11T08:48:19.564Z",
+  "lastGirlsSync": "2026-06-12T04:00:25.117Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "Cindy",
@@ -1931,7 +1931,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Julietta",
@@ -6899,6 +6899,10 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-06-12": {
+        "start": "23:30",
+        "end": "07:30"
       }
     },
     "Victoria": {
@@ -7784,12 +7788,7 @@
       }
     },
     "Felicity": {},
-    "Mia": {
-      "2026-06-12": {
-        "start": "15:30",
-        "end": "23:30"
-      }
-    },
+    "Mia": {},
     "Fendi": {},
     "Lena": {
       "2026-06-12": {
@@ -7818,7 +7817,12 @@
     },
     "Molly": {},
     "Chloe": {},
-    "Julia": {},
+    "Julia": {
+      "2026-06-14": {
+        "start": "08:00",
+        "end": "16:00"
+      }
+    },
     "Eden": {},
     "Alena": {
       "2026-05-19": {
@@ -7964,5 +7968,5 @@
     }
   },
   "lastGirlsSync": "2026-06-12T12:51:49.547Z",
-  "lastCalendarSync": "2026-06-12T12:01:45.154Z"
+  "lastCalendarSync": "2026-06-12T13:46:26.235Z"
 }

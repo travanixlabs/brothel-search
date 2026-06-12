@@ -4661,7 +4661,7 @@
         "GFE"
       ],
       "lastModified": "2026-06-09T04:44:26.292Z",
-      "lastRostered": "2026-06-10",
+      "lastRostered": "2026-06-12",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -11241,6 +11241,10 @@
       "2026-06-10": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-06-12": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Momoka": {
@@ -11269,5 +11273,5 @@
     }
   },
   "lastGirlsSync": "2026-06-10T10:00:29.028Z",
-  "lastCalendarSync": "2026-06-11T12:28:46.249Z"
+  "lastCalendarSync": "2026-06-12T05:13:16.454Z"
 }

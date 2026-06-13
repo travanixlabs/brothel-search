@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-06-14",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -1423,7 +1423,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Gloria",
@@ -4324,7 +4324,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "Venus",
@@ -6354,6 +6354,14 @@
       "2026-05-01": {
         "start": "17:00",
         "end": "23:00"
+      },
+      "2026-06-18": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-21": {
+        "start": "10:00",
+        "end": "10:00"
       }
     },
     "Carol": {
@@ -6876,6 +6884,10 @@
       "2026-04-05": {
         "start": "01:00",
         "end": "09:00"
+      },
+      "2026-06-14": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Tyler": {
@@ -6920,10 +6932,6 @@
       "2026-06-01": {
         "start": "15:00",
         "end": "12:00"
-      },
-      "2026-06-13": {
-        "start": "17:00",
-        "end": "01:00"
       },
       "2026-06-16": {
         "start": "11:00",
@@ -7672,6 +7680,10 @@
       "2026-06-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-14": {
+        "start": "01:00",
+        "end": "07:00"
       }
     },
     "Sabrina": {
@@ -7733,7 +7745,12 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-06-14": {
+        "start": "01:00",
+        "end": "09:00"
+      }
+    },
     "Piper": {
       "2026-06-14": {
         "start": "14:00",
@@ -7942,5 +7959,5 @@
     }
   },
   "lastGirlsSync": "2026-06-13T11:51:27.819Z",
-  "lastCalendarSync": "2026-06-13T14:38:49.194Z"
+  "lastCalendarSync": "2026-06-13T15:55:59.060Z"
 }

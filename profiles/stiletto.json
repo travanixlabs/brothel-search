@@ -42,7 +42,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20",
+      "lastRostered": "2026-06-26",
       "desc": "Sweet & Classy Stunner Hello Gentlemen, I’m Alena, a Korean Canadian with long dark hair, a bright smile, and a natural, playful charm. With a slim yet curvy figure, adorned with a DD+ bust, I bring a mix of confidence, warmth, and a little cheeky fun. Whether you’re looking for easy company, lighthearted ..."
     },
     {
@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10",
+      "lastRostered": "2026-06-13",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -5572,7 +5572,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-30",
+      "lastRostered": "2026-06-18",
       "oldUrl": "https://www.stilettosydney.com/workers/cookie/",
       "photos": [],
       "labels": [
@@ -6182,10 +6182,6 @@
         "start": "10:00",
         "end": "16:30"
       },
-      "2026-06-17": {
-        "start": "10:00",
-        "end": "16:30"
-      },
       "2026-06-19": {
         "start": "10:00",
         "end": "16:30"
@@ -6193,6 +6189,10 @@
       "2026-06-20": {
         "start": "10:00",
         "end": "16:30"
+      },
+      "2026-06-18": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Bambi": {
@@ -6885,10 +6885,6 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
-      },
-      "2026-06-13": {
-        "start": "07:00",
-        "end": "15:00"
       }
     },
     "ChiChi": {
@@ -6929,8 +6925,8 @@
         "end": "12:00"
       },
       "2026-06-13": {
-        "start": "15:00",
-        "end": "03:00"
+        "start": "17:00",
+        "end": "01:00"
       },
       "2026-06-16": {
         "start": "11:00",
@@ -7601,12 +7597,7 @@
       }
     },
     "Trinity": {},
-    "Dallas": {
-      "2026-06-13": {
-        "start": "07:00",
-        "end": "15:00"
-      }
-    },
+    "Dallas": {},
     "Annika": {},
     "Audrina": {
       "2026-04-13": {
@@ -7618,6 +7609,10 @@
       "2026-06-08": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-06-13": {
+        "start": "12:00",
+        "end": "16:00"
       }
     },
     "Inanna Lux": {
@@ -7728,10 +7723,6 @@
     "Quinn": {},
     "London": {},
     "Aspen": {
-      "2026-06-13": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-06-20": {
         "start": "07:00",
         "end": "15:00"
@@ -7871,6 +7862,18 @@
       "2026-06-20": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-06-23": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-24": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-26": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Selene": {},
@@ -7941,6 +7944,10 @@
       "2026-05-25": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-06-18": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Lulu": {},
@@ -7969,40 +7976,12 @@
     "Malibu": {},
     "Suki": {},
     "Mel": {
-      "2026-06-13": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-17": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-18": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-19": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-20": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-24": {
-        "start": "22:00",
-        "end": "06:00"
-      },
       "2026-06-25": {
-        "start": "22:00",
-        "end": "06:00"
-      },
-      "2026-06-26": {
         "start": "22:00",
         "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-12T23:11:56.484Z",
-  "lastCalendarSync": "2026-06-13T00:03:53.985Z"
+  "lastCalendarSync": "2026-06-13T05:01:21.082Z"
 }

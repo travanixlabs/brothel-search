@@ -3434,6 +3434,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-13"
+    },
+    {
+      "name": "Xyra",
+      "country": [
+        "European"
+      ],
+      "age": "22",
+      "height": "173",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10973,6 +10991,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-12T17:57:52.120Z",
+  "lastGirlsSync": "2026-06-13T16:00:08.965Z",
   "lastCalendarSync": "2026-06-13T14:38:32.413Z"
 }

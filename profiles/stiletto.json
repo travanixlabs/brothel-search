@@ -232,7 +232,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-14",
+      "lastRostered": "2026-06-19",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1931,7 +1931,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-14"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Julietta",
@@ -6932,6 +6932,10 @@
       "2026-06-21": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-06-15": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Jamie": {
@@ -7626,12 +7630,7 @@
     },
     "Brandy": {},
     "Yvette": {},
-    "Sonya": {
-      "2026-06-15": {
-        "start": "00:00",
-        "end": "08:00"
-      }
-    },
+    "Sonya": {},
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -7670,7 +7669,20 @@
     },
     "Molly": {},
     "Chloe": {},
-    "Julia": {},
+    "Julia": {
+      "2026-06-16": {
+        "start": "09:00",
+        "end": "19:00"
+      },
+      "2026-06-17": {
+        "start": "09:00",
+        "end": "19:00"
+      },
+      "2026-06-19": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Eden": {},
     "Alena": {
       "2026-05-19": {
@@ -7832,5 +7844,5 @@
     }
   },
   "lastGirlsSync": "2026-06-14T23:02:55.350Z",
-  "lastCalendarSync": "2026-06-14T21:49:39.566Z"
+  "lastCalendarSync": "2026-06-14T23:48:25.383Z"
 }

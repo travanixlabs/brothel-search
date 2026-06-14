@@ -1714,6 +1714,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-12"
+    },
+    {
+      "name": "Cherry",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "168",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-14",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -3667,6 +3685,6 @@
     },
     "Bailey": {}
   },
-  "lastGirlsSync": "2026-06-11T04:00:34.617Z",
+  "lastGirlsSync": "2026-06-14T04:00:05.378Z",
   "lastCalendarSync": "2026-06-13T20:00:18.472Z"
 }

@@ -9800,6 +9800,31 @@
       "labels": [],
       "lastModified": "2026-06-12T04:00:24.301Z",
       "lastRostered": ""
+    },
+    {
+      "name": "aoii",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "156",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-14",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/aoii-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/90171781406639_.pic_hd-scaled.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/90191781406988_.pic_hd-scaled.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/90141781401079_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-14T04:00:02.252Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15626,7 +15651,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-12T04:00:24.301Z",
+  "lastGirlsSync": "2026-06-14T04:00:02.252Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

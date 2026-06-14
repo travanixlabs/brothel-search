@@ -5928,7 +5928,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-06-15",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -7643,12 +7643,7 @@
       }
     },
     "Alice": {},
-    "Piper": {
-      "2026-06-14": {
-        "start": "14:00",
-        "end": "22:00"
-      }
-    },
+    "Piper": {},
     "Felicity": {},
     "Mia": {},
     "Fendi": {},
@@ -7816,7 +7811,12 @@
     },
     "Alex": {},
     "Gemma": {},
-    "Naomi": {},
+    "Naomi": {
+      "2026-06-15": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Malibu": {},
     "Suki": {},
     "Mel": {
@@ -7827,5 +7827,5 @@
     }
   },
   "lastGirlsSync": "2026-06-14T11:52:24.398Z",
-  "lastCalendarSync": "2026-06-14T11:16:11.248Z"
+  "lastCalendarSync": "2026-06-14T12:21:22.150Z"
 }

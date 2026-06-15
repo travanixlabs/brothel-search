@@ -977,7 +977,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2025-09-01",
+      "lastRostered": "2026-06-15",
       "desc": "Welcome one of our lovely new ladies, Aven. Don’t let her petite tight body fool you. Her striking features and matching porcelain skin is to be desired. Aven's sensual side will leave you wanting more."
     },
     {
@@ -2268,7 +2268,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-06-15"
     },
     {
       "name": "Jasmine",
@@ -2611,7 +2611,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-06-15",
       "oldUrl": "https://wivesonly.com.au/belle/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2722,7 +2722,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-06-14",
+      "lastRostered": "2026-06-15",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6545,6 +6545,10 @@
       "2026-05-24": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-15": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Naomi": {
@@ -6675,6 +6679,10 @@
       "2026-06-14": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-06-15": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddison": {
@@ -6842,8 +6850,20 @@
         "start": "11:00",
         "end": "19:30"
       }
+    },
+    "Aven": {
+      "2026-06-15": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Isabella": {
+      "2026-06-15": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-14T14:41:15.172Z"
+  "lastCalendarSync": "2026-06-15T05:38:00.490Z"
 }

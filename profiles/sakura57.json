@@ -9863,6 +9863,55 @@
       "labels": [],
       "lastModified": "2026-06-12T04:00:25.117Z",
       "lastRostered": ""
+    },
+    {
+      "name": "monata",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "B",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/monata-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90241781480965_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90271781480970_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90261781480969_.pic_-1400x1050.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90251781480967_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-15T04:01:04.131Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "nazumi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "B",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/nazumi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90401781489631_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-15T04:01:04.131Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15381,7 +15430,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-12T04:00:25.117Z",
+  "lastGirlsSync": "2026-06-15T04:01:04.131Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
@@ -15409,6 +15458,7 @@
     "https://www.surryhillsbrothel.com.au/project/haru-japan-ole/",
     "https://www.surryhillsbrothel.com.au/project/marina-malaysia/",
     "https://www.surryhillsbrothel.com.au/project/aori-japan/",
-    "https://www.surryhillsbrothel.com.au/project/sandra-malaysia/"
+    "https://www.surryhillsbrothel.com.au/project/sandra-malaysia/",
+    "https://www.surryhillsbrothel.com.au/project/mimo-japan-ole/"
   ]
 }

@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-14",
+      "lastRostered": "2026-06-16",
       "desc": "Say hello to Lisa, a bold American beauty with smooth brown skin and a perfect bubble booty! Lisa has brown eyes, 32D cup, small waist and soft sculpted thighs. Lisa ia a passionate lover and cant wait to indulge your wildest fantasies, leaving you in pure bliss."
     },
     {
@@ -2788,7 +2788,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-06-15",
+      "lastRostered": "2026-06-16",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6822,6 +6822,10 @@
       "2026-06-15": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-06-16": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Lisa": {
@@ -6860,6 +6864,10 @@
       "2026-06-14": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-06-16": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Lena": {
@@ -6914,5 +6922,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-15T14:45:44.229Z"
+  "lastCalendarSync": "2026-06-15T18:50:12.052Z"
 }

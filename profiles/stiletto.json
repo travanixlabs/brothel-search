@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-13",
+      "lastRostered": "2026-06-20",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -1131,7 +1131,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-27"
     },
     {
       "name": "Erika",
@@ -1322,7 +1322,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-14"
+      "lastRostered": "2026-06-20"
     },
     {
       "name": "Gaia",
@@ -1573,7 +1573,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19"
+      "lastRostered": "2026-06-27"
     },
     {
       "name": "Hennessy",
@@ -1818,7 +1818,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-20"
     },
     {
       "name": "Jojo",
@@ -1861,7 +1861,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-08"
+      "lastRostered": "2026-06-22"
     },
     {
       "name": "Josie",
@@ -2283,7 +2283,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-21"
+      "lastRostered": "2026-06-28"
     },
     {
       "name": "Lacey",
@@ -2615,7 +2615,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Mel",
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-15"
+      "lastRostered": "2026-06-18"
     },
     {
       "name": "Riley",
@@ -5572,7 +5572,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-18",
+      "lastRostered": "2026-06-25",
       "oldUrl": "https://www.stilettosydney.com/workers/cookie/",
       "photos": [],
       "labels": [
@@ -5928,7 +5928,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-15",
+      "lastRostered": "2026-06-28",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -6088,7 +6088,8 @@
       "2026-06-24",
       "2026-06-25",
       "2026-06-26",
-      "2026-06-27"
+      "2026-06-27",
+      "2026-06-28"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6098,6 +6099,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-06-20": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Anna": {
@@ -6362,6 +6367,14 @@
       "2026-06-21": {
         "start": "10:00",
         "end": "10:00"
+      },
+      "2026-06-22": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-06-28": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Carol": {
@@ -6460,6 +6473,22 @@
         "end": "06:00"
       },
       "2026-06-06": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-06-17": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-06-18": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-06-19": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-06-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -6664,6 +6693,14 @@
         "end": "04:00"
       },
       "2026-06-19": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-06-24": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-06-27": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -6908,6 +6945,18 @@
       "2026-06-20": {
         "start": "15:00",
         "end": "06:00"
+      },
+      "2026-06-23": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-06-26": {
+        "start": "13:00",
+        "end": "06:00"
+      },
+      "2026-06-27": {
+        "start": "15:00",
+        "end": "06:00"
       }
     },
     "Kay": {
@@ -6929,12 +6978,16 @@
         "start": "10:00",
         "end": "18:00"
       },
-      "2026-06-21": {
+      "2026-06-15": {
         "start": "10:00",
         "end": "18:00"
       },
-      "2026-06-15": {
-        "start": "10:00",
+      "2026-06-16": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-06-18": {
+        "start": "12:00",
         "end": "18:00"
       }
     },
@@ -7061,7 +7114,12 @@
         "end": "16:00"
       }
     },
-    "Jess": {},
+    "Jess": {
+      "2026-06-20": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Sasha": {
       "2026-06-16": {
         "start": "09:00",
@@ -7148,6 +7206,10 @@
       "2026-06-15": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-06-18": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Jayde": {
@@ -7383,6 +7445,14 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-18": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-06-19": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Kelsey": {
@@ -7551,6 +7621,10 @@
       },
       "2026-06-08": {
         "start": "22:00",
+        "end": "04:00"
+      },
+      "2026-06-22": {
+        "start": "20:00",
         "end": "04:00"
       }
     },
@@ -7813,6 +7887,10 @@
       "2026-06-18": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-06-25": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Lulu": {},
@@ -7829,20 +7907,23 @@
     "Alex": {},
     "Gemma": {},
     "Naomi": {
-      "2026-06-15": {
-        "start": "20:00",
-        "end": "04:00"
+      "2026-06-16": {
+        "start": "18:00",
+        "end": "00:00"
+      },
+      "2026-06-22": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-06-28": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Malibu": {},
     "Suki": {},
-    "Mel": {
-      "2026-06-25": {
-        "start": "22:00",
-        "end": "06:00"
-      }
-    }
+    "Mel": {}
   },
   "lastGirlsSync": "2026-06-14T23:02:55.350Z",
-  "lastCalendarSync": "2026-06-14T23:48:25.383Z"
+  "lastCalendarSync": "2026-06-15T05:37:53.456Z"
 }

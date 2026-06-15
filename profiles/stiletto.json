@@ -6001,7 +6001,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "Amber Lane",
+      "name": "Amber",
       "country": [
         "Australian"
       ],
@@ -8063,7 +8063,8 @@
     "Malibu": {},
     "Suki": {},
     "Mel": {},
-    "Amber Lane": {
+    "Lexy": {},
+    "Amber": {
       "2026-06-16": {
         "start": "14:00",
         "end": "22:00"
@@ -8088,9 +8089,8 @@
         "start": "14:00",
         "end": "22:00"
       }
-    },
-    "Lexy": {}
+    }
   },
-  "lastGirlsSync": "2026-06-15T10:26:41.548Z",
+  "lastGirlsSync": "2026-06-15T15:40:29.006Z",
   "lastCalendarSync": "2026-06-15T14:45:39.893Z"
 }

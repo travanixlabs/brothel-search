@@ -184,7 +184,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-13",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://jinia.com.au/marissa-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260314014410_139_20.jpg"
@@ -580,7 +580,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-01-11",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://jinia.com.au/mia-7/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/01/%E5%9B%BE%E7%89%87_20260111090141_609_2.jpg"
@@ -1545,7 +1545,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-05-30",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://jinia.com.au/baby-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20250610211954.jpg"
@@ -1888,7 +1888,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-16",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://jinia.com.au/rose-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260417093310.jpg"
@@ -1951,7 +1951,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-26",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "oldUrl": "https://jinia.com.au/7843-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260426084859_1029_2.jpg"
@@ -3588,7 +3588,8 @@
       "2026-06-18",
       "2026-06-19",
       "2026-06-20",
-      "2026-06-21"
+      "2026-06-21",
+      "2026-06-22"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -3700,6 +3701,10 @@
       "2026-06-16": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-06-22": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "🆕 Rose": {
@@ -3784,6 +3789,10 @@
         "end": "04:00"
       },
       "2026-06-21": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-06-22": {
         "start": "12:00",
         "end": "04:00"
       }
@@ -4106,6 +4115,10 @@
         "end": "04:00"
       },
       "2026-06-21": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-06-22": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -4659,9 +4672,13 @@
       "2026-06-16": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-06-22": {
+        "start": "10:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-09T07:54:25.886Z",
-  "lastCalendarSync": "2026-06-15T05:38:07.920Z"
+  "lastCalendarSync": "2026-06-15T14:45:49.367Z"
 }

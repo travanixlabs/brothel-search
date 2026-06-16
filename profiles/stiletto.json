@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-28",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -1699,7 +1699,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-16"
     },
     {
       "name": "Jamie",
@@ -1978,7 +1978,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-06-16"
     },
     {
       "name": "Kay",
@@ -3658,7 +3658,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-21"
+      "lastRostered": "2026-06-27"
     },
     {
       "name": "Savana",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-15",
+      "lastRostered": "2026-06-17",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -6397,6 +6397,22 @@
       "2026-06-21": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-06-25": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-26": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-06-27": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-28": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Opal": {
@@ -7247,10 +7263,6 @@
       }
     },
     "Sasha": {
-      "2026-06-16": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-06-17": {
         "start": "09:00",
         "end": "17:00"
@@ -7268,6 +7280,30 @@
         "end": "17:00"
       },
       "2026-06-21": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-22": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-23": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-24": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-25": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-26": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-06-27": {
         "start": "09:00",
         "end": "17:00"
       }
@@ -7772,7 +7808,12 @@
         "end": "06:00"
       }
     },
-    "Karina": {},
+    "Karina": {
+      "2026-06-16": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    },
     "Bree": {
       "2026-06-19": {
         "start": "10:00",
@@ -7825,7 +7866,12 @@
     },
     "Brandy": {},
     "Yvette": {},
-    "Sonya": {},
+    "Sonya": {
+      "2026-06-17": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -7992,7 +8038,12 @@
     "Cameron": {},
     "Clover": {},
     "Nessa": {},
-    "Iris": {},
+    "Iris": {
+      "2026-06-16": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Selena": {
       "2026-05-22": {
         "start": "23:00",
@@ -8128,5 +8179,5 @@
     }
   },
   "lastGirlsSync": "2026-06-15T23:30:08.126Z",
-  "lastCalendarSync": "2026-06-15T22:34:03.510Z"
+  "lastCalendarSync": "2026-06-16T00:14:40.008Z"
 }

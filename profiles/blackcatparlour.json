@@ -3472,6 +3472,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-23"
+    },
+    {
+      "name": "Verona",
+      "country": [
+        "Sicilian"
+      ],
+      "age": "25",
+      "height": "157",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-17",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11424,6 +11442,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-15T15:39:51.285Z",
+  "lastGirlsSync": "2026-06-16T19:26:28.619Z",
   "lastCalendarSync": "2026-06-16T18:42:27.951Z"
 }

@@ -9912,6 +9912,107 @@
       "labels": [],
       "lastModified": "2026-06-15T04:01:04.131Z",
       "lastRostered": ""
+    },
+    {
+      "name": "hikaro",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-16",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hikaro-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90531781525809_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90521781525808_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90491781525799_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90501781525804_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90511781525806_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-16T04:01:02.983Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Leona",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "21",
+      "height": "155",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-06-16",
+      "lang": "Vietnamese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/leona-vietnam/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90561781526945_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90551781526943_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-16T04:01:02.983Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "mizuri",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-16",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mizuri-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90621781570242_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/90611781570241_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-16T04:01:02.983Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Mizuri",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2025-11-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mizuri-japan-old/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Mizuri-Jp-01-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Mizuri-Jp-02-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Mizuri-Jp-03-160x160.jpeg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Mizuri-Jp-04-160x160.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-16T04:01:02.983Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15430,7 +15531,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-15T10:01:06.154Z",
+  "lastGirlsSync": "2026-06-16T04:01:02.983Z",
   "lastCalendarSync": "2026-06-06T04:35:52.628Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

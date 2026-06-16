@@ -1137,7 +1137,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-10",
+      "lastRostered": "2026-06-16",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -3173,7 +3173,7 @@
       },
       "2026-06-16": {
         "start": "11:00",
-        "end": "17:00"
+        "end": "19:00"
       }
     },
     "Desiree": {
@@ -6035,6 +6035,10 @@
       "2026-06-10": {
         "start": "11:00",
         "end": "17:30"
+      },
+      "2026-06-16": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Zoe": {
@@ -6864,10 +6868,6 @@
       "2026-06-14": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-06-16": {
-        "start": "11:00",
-        "end": "19:30"
       }
     },
     "Lena": {
@@ -6922,5 +6922,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-15T18:50:12.052Z"
+  "lastCalendarSync": "2026-06-16T06:06:30.976Z"
 }

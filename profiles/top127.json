@@ -976,7 +976,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-05-09T13:57:44.449Z",
-      "lastRostered": "2026-05-27",
+      "lastRostered": "2026-06-17",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/03/Akiko19-469x705.jpg",
         "https://127city.com/wp-content/uploads/2026/03/Akiko17-469x705.jpg",
@@ -3157,6 +3157,10 @@
       "2026-05-27": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-06-17": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Midori": {
@@ -3309,7 +3313,7 @@
     }
   },
   "lastGirlsSync": "2026-05-28T13:43:11.619Z",
-  "lastCalendarSync": "2026-06-16T15:26:34.854Z",
+  "lastCalendarSync": "2026-06-17T07:31:56.708Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

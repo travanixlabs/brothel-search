@@ -3491,6 +3491,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-23"
+    },
+    {
+      "name": "Julie",
+      "country": [
+        "Brazilian"
+      ],
+      "age": "23",
+      "height": "170",
+      "cup": "",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-17",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11444,6 +11462,6 @@
     },
     "Verona": {}
   },
-  "lastGirlsSync": "2026-06-16T19:26:28.619Z",
+  "lastGirlsSync": "2026-06-17T13:37:43.862Z",
   "lastCalendarSync": "2026-06-17T12:38:12.790Z"
 }

@@ -6085,6 +6085,62 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Serena",
+      "country": [
+        "African"
+      ],
+      "age": "25",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Handsome, My name is Serena and I’m not just a woman, I’m an exotic, divine experience. An American goddess with smooth, dark brown skin, soft to the touch, and a petite, fit body sculpted to be worshipped. I have the cutest curly dark hair and eyes that sparkle with ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-06-01",
+      "lastRostered": "2026-06-17",
+      "oldUrl": "https://www.stilettosydney.com/workers/serena-new/",
+      "photos": [
+        "https://www.stilettosydney.com/wp-content/uploads/2026/06/Serena-Jun26.jpg"
+      ],
+      "labels": [
+        "GFE",
+        "Couple",
+        "Double",
+        "COB",
+        "DFK"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yamila",
+      "country": [
+        "South American"
+      ],
+      "age": "23",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Hey boys, my name is Yamila. I am every man’s fantasy come to life. I have shiny brunette hair, pretty doll-like features, an incredibly petite, tight body, perky bust, and a popping booty. You’ll notice as soon as we meet how warm and friendly I am. I love to chat ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-06-17",
+      "oldUrl": "https://www.stilettosydney.com/workers/yamila-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "COB",
+        "Adventurous Positions",
+        "DFK",
+        "Prostate Massage",
+        "Body Slide",
+        "Foot Fetish"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8256,7 +8312,12 @@
     },
     "Luanna": {},
     "Rosie": {},
-    "Alex": {},
+    "Alex": {
+      "2026-06-22": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Gemma": {},
     "Naomi": {
       "2026-06-22": {
@@ -8289,8 +8350,20 @@
         "start": "14:00",
         "end": "22:00"
       }
+    },
+    "Serena": {
+      "2026-06-17": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
+    "Yamila": {
+      "2026-06-17": {
+        "start": "17:00",
+        "end": "01:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-06-16T23:19:43.282Z",
+  "lastGirlsSync": "2026-06-17T09:05:17.481Z",
   "lastCalendarSync": "2026-06-17T07:32:49.223Z"
 }

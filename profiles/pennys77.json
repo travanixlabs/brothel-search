@@ -756,7 +756,8 @@
         "https://pennys77.com.au/wp-content/uploads/2026/02/IMG_2314.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-06-19"
     }
   ],
   "calendar": {
@@ -2035,10 +2036,6 @@
       "2026-06-18": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-06-19": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Irene": {
@@ -2562,8 +2559,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Rio": {
+      "2026-06-19": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-18T17:40:03.266Z"
+  "lastCalendarSync": "2026-06-18T22:29:56.927Z"
 }

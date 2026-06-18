@@ -9825,6 +9825,31 @@
       "labels": [],
       "lastModified": "2026-06-14T04:00:02.252Z",
       "lastRostered": ""
+    },
+    {
+      "name": "yulia",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "169",
+      "cup": "E",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-18",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yulia-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/a04ff8e67cbd7c17a4a68ee091048ff9.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/c412dc09c4bbed98b2248c28333872d5.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/fcde5e49c3f832f86ce72c5f86ff572d.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-18T04:01:01.331Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15651,7 +15676,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-14T04:00:02.252Z",
+  "lastGirlsSync": "2026-06-18T04:01:01.331Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

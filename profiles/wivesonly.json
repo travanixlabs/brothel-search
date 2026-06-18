@@ -1920,7 +1920,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-04"
+      "lastRostered": "2026-06-18"
     },
     {
       "name": "Vixen",
@@ -2700,7 +2700,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-06-17",
+      "lastRostered": "2026-06-18",
       "oldUrl": "https://wivesonly.com.au//brittney/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/Screen-Shot-2026-05-20-at-10.21.51-pm.png"
@@ -4953,8 +4953,8 @@
         "end": "18:30"
       },
       "2026-06-18": {
-        "start": "11:00",
-        "end": "17:30"
+        "start": "11:30",
+        "end": "19:30"
       }
     },
     "Sienna": {
@@ -6846,6 +6846,10 @@
       "2026-06-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-18": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Maggie": {
@@ -6990,6 +6994,10 @@
       "2026-06-04": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-06-18": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Clarisse": {
@@ -7032,5 +7040,5 @@
     }
   },
   "lastGirlsSync": "2026-06-07T11:45:14.324Z",
-  "lastCalendarSync": "2026-06-17T14:07:58.891Z"
+  "lastCalendarSync": "2026-06-18T05:17:15.434Z"
 }

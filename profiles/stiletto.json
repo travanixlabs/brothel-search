@@ -1720,7 +1720,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-17"
+      "lastRostered": "2026-06-18"
     },
     {
       "name": "Jasmine",
@@ -1793,7 +1793,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-18"
     },
     {
       "name": "Jess",
@@ -7119,6 +7119,10 @@
       "2026-06-16": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-06-18": {
+        "start": "21:00",
+        "end": "07:00"
       }
     },
     "Victoria": {
@@ -7215,6 +7219,10 @@
         "end": "07:00"
       },
       "2026-06-16": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-18": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -7495,6 +7503,10 @@
       "2026-06-07": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-18": {
+        "start": "22:30",
+        "end": "06:30"
       }
     },
     "Elizabeth": {
@@ -8303,5 +8315,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-18T08:50:07.418Z",
-  "lastCalendarSync": "2026-06-18T10:54:05.367Z"
+  "lastCalendarSync": "2026-06-18T12:06:03.463Z"
 }

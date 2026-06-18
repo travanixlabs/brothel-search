@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-15"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Ally",
@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-18"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Sonia",
@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-16"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Irene",
@@ -1371,6 +1371,10 @@
       "2026-06-14": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-19": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sonia": {
@@ -1689,6 +1693,10 @@
       "2026-06-14": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-19": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sora": {
@@ -1753,6 +1761,10 @@
         "end": "03:00"
       },
       "2026-06-15": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-06-19": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2533,5 +2545,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-18T16:00:10.960Z"
+  "lastCalendarSync": "2026-06-18T17:40:03.266Z"
 }

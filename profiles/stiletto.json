@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-14",
+      "lastRostered": "2026-06-19",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -2365,7 +2365,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-16"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Lilith",
@@ -4998,7 +4998,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-02",
+      "lastRostered": "2026-06-19",
       "oldUrl": "https://www.stilettosydney.com/workers/yasmin-new/",
       "photos": [],
       "labels": [
@@ -6710,10 +6710,6 @@
         "start": "17:00",
         "end": "22:00"
       },
-      "2026-06-18": {
-        "start": "20:00",
-        "end": "01:00"
-      },
       "2026-06-19": {
         "start": "20:00",
         "end": "04:00"
@@ -7163,10 +7159,6 @@
       "2026-06-27": {
         "start": "15:00",
         "end": "06:00"
-      },
-      "2026-06-18": {
-        "start": "18:00",
-        "end": "02:00"
       }
     },
     "Kay": {
@@ -7272,10 +7264,6 @@
       }
     },
     "Ruby": {
-      "2026-06-19": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-06-23": {
         "start": "10:00",
         "end": "18:00"
@@ -7321,10 +7309,6 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
-      },
-      "2026-06-18": {
-        "start": "14:00",
-        "end": "01:00"
       }
     },
     "Lilith": {
@@ -7682,8 +7666,8 @@
         "end": "03:00"
       },
       "2026-06-19": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Kelsey": {
@@ -8039,12 +8023,13 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-06-19": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Piper": {
-      "2026-06-18": {
-        "start": "17:00",
-        "end": "01:00"
-      },
       "2026-06-25": {
         "start": "17:00",
         "end": "01:00"
@@ -8060,13 +8045,9 @@
     },
     "Felicity": {},
     "Mia": {
-      "2026-06-18": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-06-19": {
         "start": "16:00",
-        "end": "00:00"
+        "end": "03:00"
       },
       "2026-06-22": {
         "start": "16:00",
@@ -8099,6 +8080,10 @@
       "2026-06-15": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-19": {
+        "start": "00:00",
+        "end": "06:00"
       }
     },
     "Lana": {},
@@ -8106,6 +8091,10 @@
     "Yasmin": {
       "2026-04-30": {
         "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-06-19": {
+        "start": "00:00",
         "end": "06:00"
       }
     },
@@ -8227,10 +8216,6 @@
         "start": "22:00",
         "end": "05:00"
       },
-      "2026-06-18": {
-        "start": "17:00",
-        "end": "01:00"
-      },
       "2026-06-19": {
         "start": "21:00",
         "end": "05:00"
@@ -8327,5 +8312,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-18T12:48:01.231Z",
-  "lastCalendarSync": "2026-06-18T13:47:24.534Z"
+  "lastCalendarSync": "2026-06-18T16:00:53.608Z"
 }

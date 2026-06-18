@@ -1652,7 +1652,7 @@
       ],
       "lastModified": "2026-05-14T17:51:15.889Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-06-17",
+      "lastRostered": "2026-06-19",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -14891,6 +14891,10 @@
       "2026-06-17": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-06-19": {
+        "start": "14:00",
+        "end": "04:00"
       }
     },
     "Iris": {
@@ -16407,5 +16411,5 @@
     }
   },
   "lastGirlsSync": "2026-06-18T08:48:59.087Z",
-  "lastCalendarSync": "2026-06-18T10:52:22.754Z"
+  "lastCalendarSync": "2026-06-18T13:45:43.474Z"
 }

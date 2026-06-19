@@ -1699,7 +1699,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-16"
+      "lastRostered": "2026-06-19"
     },
     {
       "name": "Jamie",
@@ -7629,10 +7629,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-06-19": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-06-21": {
         "start": "19:00",
         "end": "03:00"
@@ -8115,7 +8111,12 @@
     "Cameron": {},
     "Clover": {},
     "Nessa": {},
-    "Iris": {},
+    "Iris": {
+      "2026-06-19": {
+        "start": "23:00",
+        "end": "07:00"
+      }
+    },
     "Selena": {
       "2026-05-22": {
         "start": "23:00",
@@ -8237,5 +8238,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-19T09:08:40.972Z",
-  "lastCalendarSync": "2026-06-19T11:03:27.635Z"
+  "lastCalendarSync": "2026-06-19T12:34:00.270Z"
 }

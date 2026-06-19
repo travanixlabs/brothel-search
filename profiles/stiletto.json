@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19",
+      "lastRostered": "2026-06-20",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -554,7 +554,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-18",
+      "lastRostered": "2026-06-25",
       "desc": "Hey handsome, I'm Blake, a 25-year-old ivory skinned beauty who is new to Stiletto. With a natural C-Cup bust and slim-thick size 10 figure, I am the one you're sure to have the best time with. I give an exciting but sensual girlfriend experience. I’d love to connect with you ..."
     },
     {
@@ -6318,10 +6318,6 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-06-19": {
-        "start": "12:30",
-        "end": "16:30"
-      },
       "2026-06-20": {
         "start": "10:00",
         "end": "16:30"
@@ -6535,8 +6531,8 @@
         "end": "23:00"
       },
       "2026-06-21": {
-        "start": "10:00",
-        "end": "10:00"
+        "start": "09:30",
+        "end": "17:30"
       },
       "2026-06-28": {
         "start": "12:00",
@@ -7320,10 +7316,6 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
-      },
-      "2026-06-19": {
-        "start": "09:00",
-        "end": "17:00"
       }
     },
     "Amelia": {
@@ -7343,10 +7335,6 @@
       }
     },
     "Sasha": {
-      "2026-06-19": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-06-20": {
         "start": "09:00",
         "end": "17:00"
@@ -7602,7 +7590,12 @@
         "end": "08:00"
       }
     },
-    "Blake": {},
+    "Blake": {
+      "2026-06-25": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Kennedy": {
       "2026-04-13": {
         "start": "21:00",
@@ -7801,6 +7794,10 @@
       "2026-06-19": {
         "start": "12:30",
         "end": "18:30"
+      },
+      "2026-06-20": {
+        "start": "10:00",
+        "end": "17:00"
       }
     },
     "Inanna Lux": {
@@ -7867,10 +7864,6 @@
     },
     "Karina": {},
     "Bree": {
-      "2026-06-19": {
-        "start": "10:00",
-        "end": "17:00"
-      },
       "2026-06-22": {
         "start": "10:00",
         "end": "17:00"
@@ -7999,6 +7992,14 @@
       "2026-06-19": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-06-20": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-06-21": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Felicity": {},
@@ -8258,5 +8259,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-18T23:30:35.810Z",
-  "lastCalendarSync": "2026-06-19T05:34:18.487Z"
+  "lastCalendarSync": "2026-06-19T07:35:58.815Z"
 }

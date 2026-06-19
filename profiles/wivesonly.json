@@ -2817,6 +2817,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Vivianna",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "5'7",
+      "cup": "D",
+      "body": "",
+      "desc": "Call us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/vIvianna/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7161,6 +7183,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-07T11:45:14.324Z",
+  "lastGirlsSync": "2026-06-19T22:50:13.326Z",
   "lastCalendarSync": "2026-06-19T15:52:49.520Z"
 }

@@ -8026,12 +8026,7 @@
     "Cameron": {},
     "Clover": {},
     "Nessa": {},
-    "Iris": {
-      "2026-06-19": {
-        "start": "23:00",
-        "end": "07:00"
-      }
-    },
+    "Iris": {},
     "Selena": {
       "2026-05-22": {
         "start": "23:00",
@@ -8145,5 +8140,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-19T17:47:12.269Z",
-  "lastCalendarSync": "2026-06-19T20:12:13.242Z"
+  "lastCalendarSync": "2026-06-19T21:42:15.233Z"
 }

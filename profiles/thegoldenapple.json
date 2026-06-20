@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-15"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Charlie",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Hallie",
@@ -531,7 +531,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Icra",
@@ -933,7 +933,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Natasha",
@@ -2023,6 +2023,10 @@
         "end": "09:00"
       },
       "2026-06-19": {
+        "start": "22:00",
+        "end": "07:00"
+      },
+      "2026-06-21": {
         "start": "22:00",
         "end": "07:00"
       }
@@ -3337,7 +3341,12 @@
         "end": "21:00"
       }
     },
-    "Bree": {},
+    "Bree": {
+      "2026-06-21": {
+        "start": "05:00",
+        "end": "14:00"
+      }
+    },
     "Jessica": {
       "2026-04-10": {
         "start": "12:00",
@@ -3487,6 +3496,10 @@
       "2026-06-20": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-06-21": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Jane": {
@@ -3662,6 +3675,10 @@
       "2026-06-20": {
         "start": "23:00",
         "end": "09:00"
+      },
+      "2026-06-21": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Audrey": {
@@ -3847,5 +3864,5 @@
     "Julie": {}
   },
   "lastGirlsSync": "2026-06-17T13:37:36.183Z",
-  "lastCalendarSync": "2026-06-20T21:45:21.189Z"
+  "lastCalendarSync": "2026-06-20T23:47:20.083Z"
 }

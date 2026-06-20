@@ -1682,7 +1682,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-21"
+      "lastRostered": "2026-06-20"
     },
     {
       "name": "Shell",
@@ -6308,6 +6308,10 @@
       "2026-05-21": {
         "start": "15:00",
         "end": "23:30"
+      },
+      "2026-06-20": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "London": {
@@ -7184,5 +7188,5 @@
     }
   },
   "lastGirlsSync": "2026-06-19T22:50:13.326Z",
-  "lastCalendarSync": "2026-06-20T04:51:49.075Z"
+  "lastCalendarSync": "2026-06-20T11:00:52.203Z"
 }

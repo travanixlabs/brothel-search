@@ -3949,7 +3949,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-07"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Star",
@@ -7938,6 +7938,10 @@
       "2026-06-07": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-06-21": {
+        "start": "21:00",
+        "end": "03:00"
       }
     },
     "Molly": {},
@@ -8126,5 +8130,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-21T08:37:25.208Z",
-  "lastCalendarSync": "2026-06-21T10:10:18.609Z"
+  "lastCalendarSync": "2026-06-21T11:33:55.120Z"
 }

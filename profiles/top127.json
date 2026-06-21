@@ -749,7 +749,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Layla",
@@ -1245,10 +1245,6 @@
       "2026-06-20": {
         "start": "12:00",
         "end": "03:00"
-      },
-      "2026-06-21": {
-        "start": "12:00",
-        "end": "02:00"
       }
     },
     "Chanel": {
@@ -2737,6 +2733,10 @@
       "2026-06-20": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-06-21": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Winnie": {
@@ -3435,7 +3435,7 @@
     }
   },
   "lastGirlsSync": "2026-05-28T13:43:11.619Z",
-  "lastCalendarSync": "2026-06-20T14:41:07.100Z",
+  "lastCalendarSync": "2026-06-21T05:25:26.717Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

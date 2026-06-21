@@ -6014,7 +6014,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-06-01",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-27",
       "oldUrl": "https://www.stilettosydney.com/workers/amber-lane/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/06/1000015539.jpg",
@@ -6722,6 +6722,10 @@
       "2026-06-26": {
         "start": "20:00",
         "end": "16:00"
+      },
+      "2026-06-22": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Chanel": {
@@ -7517,8 +7521,8 @@
         "end": "05:00"
       },
       "2026-06-22": {
-        "start": "02:30",
-        "end": "06:30"
+        "start": "18:00",
+        "end": "02:00"
       },
       "2026-06-23": {
         "start": "18:00",
@@ -8127,10 +8131,27 @@
     "Suki": {},
     "Mel": {},
     "Lexy": {},
-    "Amber": {},
+    "Amber": {
+      "2026-06-22": {
+        "start": "12:00",
+        "end": "19:00"
+      },
+      "2026-06-23": {
+        "start": "12:00",
+        "end": "19:00"
+      },
+      "2026-06-26": {
+        "start": "17:00",
+        "end": "00:00"
+      },
+      "2026-06-27": {
+        "start": "05:00",
+        "end": "12:00"
+      }
+    },
     "Serena": {},
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-21T17:17:30.491Z",
-  "lastCalendarSync": "2026-06-21T20:10:30.793Z"
+  "lastCalendarSync": "2026-06-21T21:51:01.522Z"
 }

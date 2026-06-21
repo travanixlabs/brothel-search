@@ -4053,7 +4053,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-17T15:33:49.672Z",
-      "lastRostered": "2026-06-20",
+      "lastRostered": "2026-06-22",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -11560,6 +11560,10 @@
       "2026-06-20": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-06-22": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Honoka": {
@@ -12296,5 +12300,5 @@
     }
   },
   "lastGirlsSync": "2026-06-18T08:49:02.341Z",
-  "lastCalendarSync": "2026-06-21T07:13:54.412Z"
+  "lastCalendarSync": "2026-06-21T08:45:11.925Z"
 }

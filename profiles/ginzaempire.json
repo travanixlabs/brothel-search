@@ -1952,7 +1952,7 @@
       ],
       "lastModified": "2026-03-13T05:23:12.224Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-22",
       "country": [
         "Japanese"
       ],
@@ -11087,6 +11087,10 @@
       "2026-06-21": {
         "start": "20:00",
         "end": "00:00"
+      },
+      "2026-06-22": {
+        "start": "20:00",
+        "end": "00:00"
       }
     },
     "Dolce": {
@@ -16877,5 +16881,5 @@
     }
   },
   "lastGirlsSync": "2026-06-21T08:36:14.474Z",
-  "lastCalendarSync": "2026-06-21T10:08:39.079Z"
+  "lastCalendarSync": "2026-06-21T11:32:17.071Z"
 }

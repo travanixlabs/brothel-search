@@ -3510,6 +3510,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-17"
+    },
+    {
+      "name": "Maya",
+      "country": [
+        "Australian"
+      ],
+      "age": "33",
+      "height": "165",
+      "cup": "E",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-22",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -12032,6 +12050,6 @@
     },
     "Verona": {}
   },
-  "lastGirlsSync": "2026-06-17T13:37:43.862Z",
+  "lastGirlsSync": "2026-06-21T22:00:53.327Z",
   "lastCalendarSync": "2026-06-21T21:50:45.923Z"
 }

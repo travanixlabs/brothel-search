@@ -272,7 +272,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20"
+      "lastRostered": "2026-06-21"
     },
     {
       "name": "Nina",
@@ -1544,6 +1544,10 @@
       "2026-06-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-21": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Leah": {
@@ -2597,5 +2601,5 @@
     "Rio": {}
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-20T17:56:52.008Z"
+  "lastCalendarSync": "2026-06-21T05:25:35.636Z"
 }

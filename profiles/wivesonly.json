@@ -2788,7 +2788,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-06-18",
+      "lastRostered": "2026-06-21",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6787,10 +6787,6 @@
       "2026-06-20": {
         "start": "11:00",
         "end": "20:30"
-      },
-      "2026-06-21": {
-        "start": "20:00",
-        "end": "04:00"
       }
     },
     "Belle": {
@@ -7109,6 +7105,10 @@
       "2026-06-18": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-06-21": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Lisa": {
@@ -7235,5 +7235,5 @@
     }
   },
   "lastGirlsSync": "2026-06-19T22:50:13.326Z",
-  "lastCalendarSync": "2026-06-21T07:15:38.894Z"
+  "lastCalendarSync": "2026-06-21T08:46:53.817Z"
 }

@@ -10013,6 +10013,34 @@
       "labels": [],
       "lastModified": "2026-06-16T04:01:02.983Z",
       "lastRostered": "2025-11-01"
+    },
+    {
+      "name": "Yuka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "168",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/yuka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91251782087440_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91301782088430_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91291782088429_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91231782087437_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91221782087436_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91241782087438_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-22T04:00:49.135Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15531,7 +15559,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-18T08:49:09.987Z",
+  "lastGirlsSync": "2026-06-22T04:00:49.135Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -6648,7 +6648,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-20T09:58:44.652Z",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-06-23",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -15950,6 +15950,10 @@
       "2026-06-21": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-06-23": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Cloudia": {
@@ -17095,5 +17099,5 @@
     }
   },
   "lastGirlsSync": "2026-06-22T04:00:47.013Z",
-  "lastCalendarSync": "2026-06-22T08:33:10.773Z"
+  "lastCalendarSync": "2026-06-22T14:13:23.157Z"
 }

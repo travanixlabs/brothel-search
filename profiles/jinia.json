@@ -184,7 +184,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-13",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/marissa-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260314014410_139_20.jpg"
@@ -622,7 +622,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-22",
-      "lastRostered": "2026-06-28",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/madoka/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251223072516_547_2.jpg"
@@ -1141,7 +1141,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-09-12",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/apple-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141943.jpg"
@@ -1909,7 +1909,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-16",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/marissa/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/11/%E5%9B%BE%E7%89%87_20251122041514_455_2_%E5%89%AF%E6%9C%AC.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2285,7 +2285,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-21",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/lucy-300-pm-300-am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260621075753_1139_2.jpg",
@@ -2307,7 +2307,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-23",
-      "lastRostered": "2026-06-24",
+      "lastRostered": "2026-06-30",
       "oldUrl": "https://jinia.com.au/sakura-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260623112617.jpg"
@@ -3667,7 +3667,8 @@
       "2026-06-26",
       "2026-06-27",
       "2026-06-28",
-      "2026-06-29"
+      "2026-06-29",
+      "2026-06-30"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -3753,6 +3754,10 @@
         "end": "04:00"
       },
       "2026-06-29": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-06-30": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -4466,6 +4471,10 @@
       "2026-06-29": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-06-30": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Wendy": {
@@ -4808,6 +4817,10 @@
       "2026-06-28": {
         "start": "11:30",
         "end": "03:00"
+      },
+      "2026-06-30": {
+        "start": "11:30",
+        "end": "03:00"
       }
     },
     "🆕 Apple": {
@@ -4842,6 +4855,10 @@
       "2026-06-29": {
         "start": "13:00",
         "end": "04:00"
+      },
+      "2026-06-30": {
+        "start": "13:00",
+        "end": "04:00"
       }
     },
     "🆕 Lucy": {
@@ -4868,6 +4885,10 @@
       "2026-06-24": {
         "start": "15:00",
         "end": "03:00"
+      },
+      "2026-06-30": {
+        "start": "15:00",
+        "end": "03:00"
       }
     },
     "🆕 Sakura": {
@@ -4878,9 +4899,13 @@
       "2026-06-24": {
         "start": "15:00",
         "end": "03:00"
+      },
+      "2026-06-30": {
+        "start": "15:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-06-23T08:04:05.124Z"
+  "lastCalendarSync": "2026-06-23T15:33:42.633Z"
 }

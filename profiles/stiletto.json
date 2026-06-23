@@ -6100,7 +6100,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-06-01",
-      "lastRostered": "2026-06-17",
+      "lastRostered": "2026-06-26",
       "oldUrl": "https://www.stilettosydney.com/workers/serena-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/06/Serena-Jun26.jpg"
@@ -7019,10 +7019,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-06-23": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-06-25": {
         "start": "14:00",
         "end": "22:00"
@@ -7262,8 +7258,8 @@
         "end": "05:00"
       },
       "2026-06-23": {
-        "start": "22:00",
-        "end": "03:00"
+        "start": "23:00",
+        "end": "04:00"
       }
     },
     "Dakota": {
@@ -7545,6 +7541,10 @@
       "2026-06-27": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-23": {
+        "start": "23:00",
+        "end": "05:00"
       }
     },
     "Elizabeth": {
@@ -8342,10 +8342,6 @@
       }
     },
     "Amber": {
-      "2026-06-23": {
-        "start": "12:00",
-        "end": "22:00"
-      },
       "2026-06-26": {
         "start": "17:00",
         "end": "00:00"
@@ -8355,9 +8351,14 @@
         "end": "12:00"
       }
     },
-    "Serena": {},
+    "Serena": {
+      "2026-06-26": {
+        "start": "22:00",
+        "end": "04:00"
+      }
+    },
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-23T12:29:41.367Z",
-  "lastCalendarSync": "2026-06-23T11:41:39.902Z"
+  "lastCalendarSync": "2026-06-23T13:21:56.682Z"
 }

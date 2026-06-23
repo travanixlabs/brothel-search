@@ -9850,6 +9850,30 @@
       "labels": [],
       "lastModified": "2026-06-18T04:01:01.331Z",
       "lastRostered": ""
+    },
+    {
+      "name": "yuua",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "168",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-06-23",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yuua-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91371782178378_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91381782178382_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-23T04:00:47.486Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15676,7 +15700,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-21T08:36:19.665Z",
+  "lastGirlsSync": "2026-06-23T04:00:47.486Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

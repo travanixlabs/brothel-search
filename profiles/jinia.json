@@ -2307,7 +2307,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-23",
-      "lastRostered": "2026-06-23",
+      "lastRostered": "2026-06-24",
       "oldUrl": "https://jinia.com.au/sakura-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260623112617.jpg"
@@ -4869,8 +4869,18 @@
         "start": "15:00",
         "end": "03:00"
       }
+    },
+    "🆕 Sakura": {
+      "2026-06-23": {
+        "start": "15:00",
+        "end": "03:00"
+      },
+      "2026-06-24": {
+        "start": "15:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-06-23T06:32:20.217Z"
+  "lastCalendarSync": "2026-06-23T08:04:05.124Z"
 }

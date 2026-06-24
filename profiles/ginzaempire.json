@@ -1478,7 +1478,7 @@
       ],
       "lastModified": "2026-06-17T18:17:41.244Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19",
+      "lastRostered": "2026-06-26",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -8125,7 +8125,7 @@
         "GFE"
       ],
       "lastModified": "2026-06-13T11:50:15.108Z",
-      "lastRostered": "2026-06-23"
+      "lastRostered": "2026-06-26"
     },
     {
       "name": "Bibi",
@@ -8862,6 +8862,10 @@
         "end": "04:00"
       },
       "2026-06-19": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-06-26": {
         "start": "12:00",
         "end": "04:00"
       }
@@ -17065,6 +17069,10 @@
       "2026-06-23": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-06-26": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Bibi": {
@@ -17337,5 +17345,5 @@
     }
   },
   "lastGirlsSync": "2026-06-23T07:52:16.381Z",
-  "lastCalendarSync": "2026-06-24T07:58:09.963Z"
+  "lastCalendarSync": "2026-06-24T15:17:03.276Z"
 }

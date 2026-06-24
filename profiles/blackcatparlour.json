@@ -3529,6 +3529,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-28"
+    },
+    {
+      "name": "Kendall",
+      "country": [
+        "Australian"
+      ],
+      "age": "32",
+      "height": "163",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-24",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -12221,6 +12239,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-21T22:00:53.327Z",
+  "lastGirlsSync": "2026-06-24T07:44:16.094Z",
   "lastCalendarSync": "2026-06-24T06:28:40.763Z"
 }

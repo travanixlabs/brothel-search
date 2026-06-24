@@ -5096,7 +5096,7 @@
         "GFE"
       ],
       "lastModified": "2026-06-23T07:52:21.942Z",
-      "lastRostered": "2026-06-23"
+      "lastRostered": "2026-06-25"
     }
   ],
   "calendar": {
@@ -12590,8 +12590,14 @@
         "start": "10:30",
         "end": "01:00"
       }
+    },
+    "Hamy": {
+      "2026-06-25": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-23T12:28:45.794Z",
-  "lastCalendarSync": "2026-06-24T12:31:05.772Z"
+  "lastCalendarSync": "2026-06-24T15:17:08.209Z"
 }

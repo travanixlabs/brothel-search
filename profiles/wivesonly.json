@@ -2839,6 +2839,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Gia",
+      "country": [
+        "British"
+      ],
+      "age": "28",
+      "height": "165cm",
+      "cup": "D",
+      "body": "8",
+      "desc": "Gia is a striking British beauty whose timeless elegance is matched only by her warm, captivating charm. With her vibrant red hair, piercing blue eyes, and naturally slim size 8 figure, she embodies a classic yet alluring femininity. Her soft curves and confident presence create an unforgettable first impression, while her genuine personality keeps attention lingering long after.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-06-01",
+      "lastRostered": "2025-06-01",
+      "oldUrl": "https://wivesonly.com.au/gia/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -7385,6 +7407,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-19T22:50:13.326Z",
+  "lastGirlsSync": "2026-06-24T12:15:56.057Z",
   "lastCalendarSync": "2026-06-24T09:57:15.301Z"
 }

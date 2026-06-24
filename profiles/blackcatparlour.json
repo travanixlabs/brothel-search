@@ -3548,6 +3548,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-30"
+    },
+    {
+      "name": "Kyra",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "173",
+      "cup": "B",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-25",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -12399,6 +12417,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-24T07:44:16.094Z",
+  "lastGirlsSync": "2026-06-24T22:00:56.443Z",
   "lastCalendarSync": "2026-06-24T21:52:40.336Z"
 }

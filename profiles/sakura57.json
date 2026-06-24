@@ -9737,7 +9737,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-08T04:00:22.379Z",
-      "lastRostered": "2026-06-08"
+      "lastRostered": "2026-06-08",
+      "deleted": "Yes",
+      "deletedAt": "2026-06-24T17:57:26.767Z"
     },
     {
       "name": "ari",
@@ -9761,7 +9763,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-08T08:57:05.417Z",
-      "lastRostered": "2026-06-08"
+      "lastRostered": "2026-06-08",
+      "deleted": "Yes",
+      "deletedAt": "2026-06-24T17:57:31.159Z"
     },
     {
       "name": "kia",
@@ -9862,7 +9866,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-12T04:00:25.117Z",
-      "lastRostered": "2026-06-12"
+      "lastRostered": "2026-06-12",
+      "deleted": "Yes",
+      "deletedAt": "2026-06-24T17:57:28.585Z"
     },
     {
       "name": "monata",
@@ -9888,7 +9894,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-15T04:01:04.131Z",
-      "lastRostered": "2026-06-15"
+      "lastRostered": "2026-06-15",
+      "deleted": "Yes",
+      "deletedAt": "2026-06-24T17:57:25.557Z"
     },
     {
       "name": "nazumi",

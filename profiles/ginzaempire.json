@@ -8739,7 +8739,8 @@
         "CIM",
         "Double"
       ],
-      "lastModified": "2026-06-25T04:00:50.141Z"
+      "lastModified": "2026-06-25T04:00:50.141Z",
+      "lastRostered": "2026-06-25"
     }
   ],
   "calendar": {
@@ -17489,8 +17490,14 @@
         "start": "12:00",
         "end": "04:00"
       }
+    },
+    "Aisha": {
+      "2026-06-25": {
+        "start": "15:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-06-25T04:00:50.141Z",
-  "lastCalendarSync": "2026-06-24T18:18:50.905Z"
+  "lastCalendarSync": "2026-06-25T04:43:55.397Z"
 }

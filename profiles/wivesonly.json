@@ -2113,7 +2113,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-23"
+      "lastRostered": "2026-06-25"
     },
     {
       "name": "Hennessy",
@@ -6022,6 +6022,10 @@
       "2026-06-23": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-06-25": {
+        "start": "14:30",
+        "end": "20:00"
       }
     },
     "Fox": {
@@ -7461,5 +7465,5 @@
     }
   },
   "lastGirlsSync": "2026-06-24T12:15:56.057Z",
-  "lastCalendarSync": "2026-06-24T15:18:57.504Z"
+  "lastCalendarSync": "2026-06-25T04:45:46.126Z"
 }

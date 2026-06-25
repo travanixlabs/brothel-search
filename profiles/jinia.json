@@ -622,7 +622,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-22",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/madoka/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251223072516_547_2.jpg"
@@ -1141,7 +1141,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-09-12",
-      "lastRostered": "2026-06-30",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/apple-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141943.jpg"
@@ -1545,7 +1545,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-05-30",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/baby-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20250610211954.jpg"
@@ -1888,7 +1888,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-16",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/rose-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260417093310.jpg"
@@ -1951,7 +1951,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-26",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/7843-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260426084859_1029_2.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2285,7 +2285,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-21",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-02",
       "oldUrl": "https://jinia.com.au/lucy-300-pm-300-am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260621075753_1139_2.jpg",
@@ -3673,7 +3673,8 @@
       "2026-06-28",
       "2026-06-29",
       "2026-06-30",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-02"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -3861,6 +3862,10 @@
         "end": "04:00"
       },
       "2026-06-25": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-07-02": {
         "start": "12:00",
         "end": "04:00"
       }
@@ -4209,6 +4214,10 @@
       "2026-07-01": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-07-02": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "🆕 Mia": {
@@ -4494,6 +4503,10 @@
         "end": "04:00"
       },
       "2026-07-01": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-07-02": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -4838,6 +4851,10 @@
       "2026-07-01": {
         "start": "11:30",
         "end": "03:00"
+      },
+      "2026-07-02": {
+        "start": "11:30",
+        "end": "03:00"
       }
     },
     "🆕 Apple": {
@@ -4874,6 +4891,10 @@
         "end": "04:00"
       },
       "2026-06-30": {
+        "start": "13:00",
+        "end": "04:00"
+      },
+      "2026-07-02": {
         "start": "13:00",
         "end": "04:00"
       }
@@ -4918,6 +4939,10 @@
       "2026-06-26": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-07-02": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "🆕 Sakura": {
@@ -4932,5 +4957,5 @@
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-06-25T04:45:50.742Z"
+  "lastCalendarSync": "2026-06-25T15:24:25.657Z"
 }

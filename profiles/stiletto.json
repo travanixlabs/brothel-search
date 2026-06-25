@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-15",
+      "lastRostered": "2026-07-04",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -2615,7 +2615,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-26"
+      "lastRostered": "2026-06-28"
     },
     {
       "name": "Mel",
@@ -5928,7 +5928,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-28",
+      "lastRostered": "2026-07-01",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -7719,11 +7719,11 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-06-25": {
+      "2026-06-26": {
         "start": "14:00",
         "end": "22:00"
       },
-      "2026-06-26": {
+      "2026-06-28": {
         "start": "14:00",
         "end": "22:00"
       }
@@ -7902,7 +7902,24 @@
         "end": "04:00"
       }
     },
-    "Aurora": {},
+    "Aurora": {
+      "2026-06-28": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-06-29": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-06-30": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-04": {
+        "start": "13:00",
+        "end": "21:00"
+      }
+    },
     "Lacey": {},
     "Peach": {
       "2026-04-27": {
@@ -8291,7 +8308,16 @@
     },
     "Alex": {},
     "Gemma": {},
-    "Naomi": {},
+    "Naomi": {
+      "2026-06-25": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-01": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Malibu": {},
     "Suki": {},
     "Mel": {},
@@ -8352,5 +8378,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-24T23:01:05.057Z",
-  "lastCalendarSync": "2026-06-25T04:45:42.243Z"
+  "lastCalendarSync": "2026-06-25T06:32:07.549Z"
 }

@@ -3567,6 +3567,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-28"
+    },
+    {
+      "name": "Blondie",
+      "country": [
+        "European"
+      ],
+      "age": "27",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-25",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Dior",
+      "country": [
+        "Russian"
+      ],
+      "age": "20",
+      "height": "175",
+      "cup": "",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-25",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -12312,6 +12348,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-24T22:00:56.443Z",
+  "lastGirlsSync": "2026-06-25T12:13:14.988Z",
   "lastCalendarSync": "2026-06-25T04:45:25.050Z"
 }

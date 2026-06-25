@@ -1771,6 +1771,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-06-25"
+    },
+    {
+      "name": "Blondie",
+      "country": [
+        "European"
+      ],
+      "age": "27",
+      "height": "170",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-06-25",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4068,6 +4086,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-25T07:49:27.551Z",
+  "lastGirlsSync": "2026-06-25T12:13:07.534Z",
   "lastCalendarSync": "2026-06-25T11:17:56.598Z"
 }

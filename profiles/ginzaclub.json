@@ -5059,7 +5059,9 @@
         "GFE"
       ],
       "lastModified": "2026-06-23T07:52:21.942Z",
-      "lastRostered": "2026-06-23"
+      "lastRostered": "2026-06-23",
+      "deleted": "Yes",
+      "deletedAt": "2026-06-25T18:11:25.562Z"
     },
     {
       "name": "Hamy",

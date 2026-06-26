@@ -9890,7 +9890,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://citybrothel.com.au/project/peka-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/06/91721782450009_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/06/91731782450010_.pic_.jpg",
@@ -9900,6 +9900,33 @@
       ],
       "labels": [],
       "lastModified": "2026-06-26T07:56:33.435Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "peko",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-06-26",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/peko-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91721782450009_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91731782450010_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91691782450004_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91701782450005_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/06/91711782450007_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-26T10:00:50.626Z",
       "lastRostered": ""
     }
   ],
@@ -15727,7 +15754,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-26T07:56:33.435Z",
+  "lastGirlsSync": "2026-06-26T10:00:50.626Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

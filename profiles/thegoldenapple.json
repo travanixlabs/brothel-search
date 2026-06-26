@@ -700,7 +700,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-26"
+      "lastRostered": "2026-06-27"
     },
     {
       "name": "Lara",
@@ -2012,6 +2012,10 @@
         "end": "00:00"
       },
       "2026-06-26": {
+        "start": "14:00",
+        "end": "23:00"
+      },
+      "2026-06-27": {
         "start": "14:00",
         "end": "23:00"
       }
@@ -4110,5 +4114,5 @@
     }
   },
   "lastGirlsSync": "2026-06-25T12:13:07.534Z",
-  "lastCalendarSync": "2026-06-26T04:50:06.718Z"
+  "lastCalendarSync": "2026-06-26T06:34:00.890Z"
 }

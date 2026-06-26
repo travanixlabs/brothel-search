@@ -5126,7 +5126,8 @@
         "Double",
         "GFE"
       ],
-      "lastModified": "2026-06-26T04:00:50.100Z"
+      "lastModified": "2026-06-26T04:00:50.100Z",
+      "lastRostered": "2026-06-26"
     }
   ],
   "calendar": {
@@ -12694,5 +12695,5 @@
     }
   },
   "lastGirlsSync": "2026-06-26T04:00:50.100Z",
-  "lastCalendarSync": "2026-06-25T09:50:24.378Z"
+  "lastCalendarSync": "2026-06-26T04:48:49.747Z"
 }

@@ -685,7 +685,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/rose-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251202094000_%E5%89%AF%E6%9C%AC.jpg"
@@ -872,7 +872,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-10-28",
-      "lastRostered": "2026-06-28",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/anna-5/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
@@ -1141,7 +1141,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-09-12",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/apple-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141943.jpg"
@@ -1545,7 +1545,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-05-30",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/baby-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/06/%E5%9B%BE%E7%89%87_20250610211954.jpg"
@@ -1951,7 +1951,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-04-26",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/7843-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/04/%E5%9B%BE%E7%89%87_20260426084859_1029_2.jpg"
@@ -2285,7 +2285,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-21",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://jinia.com.au/lucy-300-pm-300-am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260621075753_1139_2.jpg",
@@ -3555,6 +3555,10 @@
       "2026-06-28": {
         "start": "17:00",
         "end": "04:00"
+      },
+      "2026-07-04": {
+        "start": "17:00",
+        "end": "04:00"
       }
     },
     "Bobo": {
@@ -3667,7 +3671,8 @@
       "2026-06-30",
       "2026-07-01",
       "2026-07-02",
-      "2026-07-03"
+      "2026-07-03",
+      "2026-07-04"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4205,6 +4210,10 @@
         "end": "04:00"
       },
       "2026-07-03": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-07-04": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -4846,6 +4855,10 @@
       "2026-07-03": {
         "start": "13:00",
         "end": "04:00"
+      },
+      "2026-07-04": {
+        "start": "13:00",
+        "end": "04:00"
       }
     },
     "🆕 Lucy": {
@@ -4900,6 +4913,10 @@
       "2026-07-03": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-07-04": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "🆕 Sakura": {
@@ -4932,9 +4949,13 @@
       "2026-06-27": {
         "start": "12:00",
         "end": "04:00"
+      },
+      "2026-07-04": {
+        "start": "12:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-06-27T04:34:56.475Z"
+  "lastCalendarSync": "2026-06-27T14:14:15.261Z"
 }

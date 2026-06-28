@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-20",
+      "lastRostered": "2026-06-29",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -3014,7 +3014,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-28"
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "Ophelia",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-28"
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "Viv",
@@ -6100,7 +6100,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-06-01",
-      "lastRostered": "2026-06-27",
+      "lastRostered": "2026-06-29",
       "oldUrl": "https://www.stilettosydney.com/workers/serena-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/06/Serena-Jun26.jpg"
@@ -6435,9 +6435,9 @@
         "start": "08:00",
         "end": "20:00"
       },
-      "2026-06-28": {
-        "start": "08:00",
-        "end": "18:00"
+      "2026-06-29": {
+        "start": "10:00",
+        "end": "10:00"
       }
     },
     "Grace": {
@@ -7045,9 +7045,9 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-06-28": {
-        "start": "08:00",
-        "end": "16:00"
+      "2026-06-29": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Ella": {
@@ -7551,10 +7551,6 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-06-28": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Kelsey": {
@@ -7706,6 +7702,10 @@
       "2026-06-14": {
         "start": "21:00",
         "end": "22:00"
+      },
+      "2026-06-29": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Inanna Lux": {
@@ -7754,15 +7754,11 @@
         "start": "13:00",
         "end": "21:00"
       },
-      "2026-06-29": {
-        "start": "13:00",
-        "end": "21:00"
-      },
-      "2026-06-30": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-07-04": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-03": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -7855,12 +7851,7 @@
     "Zara": {},
     "Quinn": {},
     "London": {},
-    "Aspen": {
-      "2026-06-28": {
-        "start": "07:00",
-        "end": "15:00"
-      }
-    },
+    "Aspen": {},
     "Mercy": {
       "2026-06-07": {
         "start": "22:00",
@@ -7931,12 +7922,7 @@
         "end": "07:00"
       }
     },
-    "Lana": {
-      "2026-06-28": {
-        "start": "17:00",
-        "end": "01:00"
-      }
-    },
+    "Lana": {},
     "Lorena": {},
     "Yasmin": {
       "2026-04-30": {
@@ -8080,12 +8066,7 @@
         "end": "05:00"
       }
     },
-    "Lulu": {
-      "2026-06-28": {
-        "start": "07:00",
-        "end": "15:00"
-      }
-    },
+    "Lulu": {},
     "Kat": {
       "2026-06-29": {
         "start": "08:00",
@@ -8160,10 +8141,18 @@
       "2026-06-27": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-28": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-06-29": {
+        "start": "11:00",
+        "end": "16:00"
       }
     },
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-27T22:58:12.039Z",
-  "lastCalendarSync": "2026-06-27T23:36:34.095Z"
+  "lastCalendarSync": "2026-06-28T05:00:34.499Z"
 }

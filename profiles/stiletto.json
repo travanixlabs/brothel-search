@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-18"
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "Cindy",
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-06-29",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -7030,6 +7030,10 @@
       "2026-06-18": {
         "start": "21:00",
         "end": "07:00"
+      },
+      "2026-06-29": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Victoria": {
@@ -7882,10 +7886,6 @@
       "2026-07-02": {
         "start": "16:00",
         "end": "00:00"
-      },
-      "2026-06-28": {
-        "start": "17:00",
-        "end": "01:00"
       }
     },
     "Felicity": {},
@@ -8019,6 +8019,10 @@
       "2026-06-07": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-06-29": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Angelina": {},
@@ -8138,5 +8142,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-28T11:44:40.593Z",
-  "lastCalendarSync": "2026-06-28T14:22:51.927Z"
+  "lastCalendarSync": "2026-06-28T15:47:27.999Z"
 }

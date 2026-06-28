@@ -1212,7 +1212,7 @@
       ],
       "lastModified": "2026-03-13T06:22:17.643Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-06-25",
+      "lastRostered": "2026-06-28",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -5937,6 +5937,10 @@
         "end": "18:00"
       },
       "2026-06-25": {
+        "start": "10:30",
+        "end": "18:00"
+      },
+      "2026-06-28": {
         "start": "10:30",
         "end": "18:00"
       }
@@ -12821,5 +12825,5 @@
     }
   },
   "lastGirlsSync": "2026-06-26T04:00:50.100Z",
-  "lastCalendarSync": "2026-06-27T07:34:23.237Z"
+  "lastCalendarSync": "2026-06-28T04:58:56.688Z"
 }

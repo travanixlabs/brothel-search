@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-22"
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "Alice",
@@ -234,7 +234,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-27"
+      "lastRostered": "2026-06-28"
     },
     {
       "name": "Charlotte",
@@ -2877,6 +2877,10 @@
       "2026-06-26": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-06-28": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Claire": {
@@ -4034,6 +4038,10 @@
       "2026-06-22": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-06-29": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Bambi": {
@@ -4054,12 +4062,7 @@
         "end": "05:00"
       }
     },
-    "Abbie": {
-      "2026-06-28": {
-        "start": "18:00",
-        "end": "01:00"
-      }
-    },
+    "Abbie": {},
     "Destiny": {
       "2026-06-29": {
         "start": "10:00",
@@ -4137,5 +4140,5 @@
     }
   },
   "lastGirlsSync": "2026-06-25T12:13:07.534Z",
-  "lastCalendarSync": "2026-06-28T14:22:30.449Z"
+  "lastCalendarSync": "2026-06-28T17:46:49.719Z"
 }

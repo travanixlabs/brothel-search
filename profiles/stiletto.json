@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19",
+      "lastRostered": "2026-06-28",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -2409,7 +2409,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-30"
+      "lastRostered": "2026-07-04"
     },
     {
       "name": "Lilly",
@@ -7215,6 +7215,22 @@
       "2026-06-30": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-07-01": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-02": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-03": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-04": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Coco": {
@@ -7740,10 +7756,6 @@
       }
     },
     "Aurora": {
-      "2026-06-28": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-07-04": {
         "start": "13:00",
         "end": "21:00"
@@ -7857,7 +7869,12 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-06-28": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
     "Piper": {
       "2026-06-29": {
         "start": "16:00",
@@ -8067,12 +8084,7 @@
         "end": "21:00"
       }
     },
-    "Alex": {
-      "2026-06-29": {
-        "start": "20:00",
-        "end": "04:00"
-      }
-    },
+    "Alex": {},
     "Gemma": {},
     "Naomi": {
       "2026-07-01": {
@@ -8135,5 +8147,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-28T11:44:40.593Z",
-  "lastCalendarSync": "2026-06-28T10:42:35.332Z"
+  "lastCalendarSync": "2026-06-28T12:02:15.240Z"
 }

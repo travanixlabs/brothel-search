@@ -1032,7 +1032,7 @@
       "lang": "Japanese, Limited English",
       "desc": "NAIKA (JAPAN) D - 30 minutes Age: 20 Height: 162cm Bust: C Service: Diamond 30mins $200 45mins $260 60mins $320",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T07:50:01.623Z",
       "lastRostered": "2026-05-12",
       "photos": [
@@ -6683,7 +6683,7 @@
       "lang": "Japanese, Limited English",
       "desc": "IROKA (JAPAN) D - 30 minutes Age: 21 Height: 165cm Bust: D Service: Diamond 30mins $190 45mins $250 60mins $300",
       "labels": [],
-      "originalSite": "Exists",
+      "originalSite": "",
       "lastModified": "2026-03-14T07:50:01.623Z",
       "lastRostered": "2024-07-01",
       "photos": [
@@ -10075,6 +10075,33 @@
       ],
       "labels": [],
       "lastModified": "2026-06-25T07:49:06.115Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "iroha",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "150",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-06-29",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/iroha-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91851782645745_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91821782645741_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91831782645743_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91841782645744_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/06/91861782645747_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-06-29T04:00:09.602Z",
       "lastRostered": ""
     }
   ],
@@ -15594,7 +15621,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-26T07:56:39.332Z",
+  "lastGirlsSync": "2026-06-29T04:00:09.602Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
@@ -15623,6 +15650,8 @@
     "https://www.surryhillsbrothel.com.au/project/marina-malaysia/",
     "https://www.surryhillsbrothel.com.au/project/aori-japan/",
     "https://www.surryhillsbrothel.com.au/project/sandra-malaysia/",
-    "https://www.surryhillsbrothel.com.au/project/mimo-japan-ole/"
+    "https://www.surryhillsbrothel.com.au/project/mimo-japan-ole/",
+    "https://www.surryhillsbrothel.com.au/project/iroka-japan-ole/",
+    "https://www.surryhillsbrothel.com.au/project/kari-japan-ole/"
   ]
 }

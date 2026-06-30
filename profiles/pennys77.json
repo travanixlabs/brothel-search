@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-28"
+      "lastRostered": "2026-06-30"
     },
     {
       "name": "Irene",
@@ -673,7 +673,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09"
+      "lastRostered": "2026-06-30"
     },
     {
       "name": "Bell",
@@ -1863,6 +1863,10 @@
       "2026-06-27": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Hana": {
@@ -2667,6 +2671,10 @@
       "2026-06-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-06-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bell": {
@@ -2778,5 +2786,5 @@
     "Rio": {}
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-06-29T14:32:43.377Z"
+  "lastCalendarSync": "2026-06-30T04:44:27.921Z"
 }

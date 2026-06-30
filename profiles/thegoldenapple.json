@@ -339,7 +339,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-09"
+      "lastRostered": "2026-06-30"
     },
     {
       "name": "Davina",
@@ -2081,6 +2081,10 @@
       "2026-04-03": {
         "start": "09:00",
         "end": "16:00"
+      },
+      "2026-06-30": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Hennessy": {
@@ -4227,5 +4231,5 @@
     }
   },
   "lastGirlsSync": "2026-06-25T12:13:07.534Z",
-  "lastCalendarSync": "2026-06-29T21:50:18.297Z"
+  "lastCalendarSync": "2026-06-30T04:44:30.124Z"
 }

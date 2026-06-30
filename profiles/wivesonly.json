@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-06-30",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -6892,6 +6892,10 @@
       "2026-06-29": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-06-30": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Katalina": {
@@ -7770,5 +7774,5 @@
     }
   },
   "lastGirlsSync": "2026-06-26T17:29:17.128Z",
-  "lastCalendarSync": "2026-06-29T14:33:31.847Z"
+  "lastCalendarSync": "2026-06-30T04:44:52.549Z"
 }

@@ -5029,7 +5029,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://www.stilettosydney.com/workers/chloe-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/05/IMG_2412-e1777662712195.jpg"
@@ -7309,10 +7309,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-06-30": {
-        "start": "09:00",
-        "end": "16:00"
-      },
       "2026-07-01": {
         "start": "09:00",
         "end": "16:00"
@@ -7946,10 +7942,6 @@
     },
     "Alice": {},
     "Piper": {
-      "2026-06-30": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-07-01": {
         "start": "16:00",
         "end": "00:00"
@@ -8005,7 +7997,16 @@
       }
     },
     "Molly": {},
-    "Chloe": {},
+    "Chloe": {
+      "2026-07-03": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-04": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Julia": {},
     "Eden": {},
     "Alena": {
@@ -8129,12 +8130,7 @@
       }
     },
     "Lulu": {},
-    "Kat": {
-      "2026-06-30": {
-        "start": "08:00",
-        "end": "16:00"
-      }
-    },
+    "Kat": {},
     "Brenda": {},
     "Tequila": {
       "2026-06-17": {
@@ -8232,5 +8228,5 @@
     "Yamila": {}
   },
   "lastGirlsSync": "2026-06-29T22:50:53.640Z",
-  "lastCalendarSync": "2026-06-30T04:44:48.774Z"
+  "lastCalendarSync": "2026-06-30T06:37:39.830Z"
 }

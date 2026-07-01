@@ -1807,7 +1807,8 @@
       "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-01"
     }
   ],
   "calendar": {
@@ -4274,8 +4275,14 @@
         "start": "18:00",
         "end": "03:00"
       }
+    },
+    "Taylor": {
+      "2026-07-01": {
+        "start": "14:00",
+        "end": "23:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-01T06:50:25.713Z"
+  "lastCalendarSync": "2026-07-01T08:36:12.243Z"
 }

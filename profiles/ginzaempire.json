@@ -8944,7 +8944,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-07-01T12:28:59.469Z"
+      "lastModified": "2026-07-01T12:28:59.469Z",
+      "lastRostered": "2026-07-01"
     }
   ],
   "calendar": {
@@ -18269,5 +18270,5 @@
     }
   },
   "lastGirlsSync": "2026-07-01T12:28:59.469Z",
-  "lastCalendarSync": "2026-07-01T08:34:52.709Z"
+  "lastCalendarSync": "2026-07-01T13:14:47.707Z"
 }

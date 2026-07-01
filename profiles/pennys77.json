@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-25"
+      "lastRostered": "2026-07-02"
     },
     {
       "name": "Sonia",
@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-01"
+      "lastRostered": "2026-07-02"
     },
     {
       "name": "Irene",
@@ -1457,6 +1457,10 @@
       "2026-06-24": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-02": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sonia": {
@@ -1875,6 +1879,10 @@
         "end": "03:00"
       },
       "2026-06-30": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-02": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2828,5 +2836,5 @@
     "Rio": {}
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-01T15:19:18.768Z"
+  "lastCalendarSync": "2026-07-01T20:21:49.946Z"
 }

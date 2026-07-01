@@ -8868,7 +8868,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-07-01T04:00:06.049Z"
+      "lastModified": "2026-07-01T04:00:06.049Z",
+      "lastRostered": "2026-07-01"
     },
     {
       "name": "Lizzie",
@@ -8905,7 +8906,8 @@
         "69",
         "CIM"
       ],
-      "lastModified": "2026-07-01T04:00:06.049Z"
+      "lastModified": "2026-07-01T04:00:06.049Z",
+      "lastRostered": "2026-07-01"
     }
   ],
   "calendar": {
@@ -18118,8 +18120,20 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Millea": {
+      "2026-07-01": {
+        "start": "16:00",
+        "end": "04:00"
+      }
+    },
+    "Lizzie": {
+      "2026-07-01": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-01T04:00:06.049Z",
-  "lastCalendarSync": "2026-06-30T08:05:14.340Z"
+  "lastCalendarSync": "2026-07-01T05:04:56.141Z"
 }

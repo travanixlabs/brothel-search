@@ -1071,6 +1071,32 @@
       "labels": [],
       "lastModified": "2026-06-28T16:00:16.655Z",
       "lastRostered": "2026-06-28"
+    },
+    {
+      "name": "Koharu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "156",
+      "cup": "B",
+      "val1": "200",
+      "val2": "270",
+      "val3": "310",
+      "startDate": "2026-07-02",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-koharu-new-diamond-diamond200-270-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Koharu2-469x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Koharu-529x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Koharu1-469x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Koharu3-469x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-02T12:05:19.673Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -3795,7 +3821,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-06-28T16:00:16.655Z",
+  "lastGirlsSync": "2026-07-02T12:05:19.673Z",
   "lastCalendarSync": "2026-07-01T13:16:01.637Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

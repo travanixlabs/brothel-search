@@ -685,7 +685,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-08",
+      "lastRostered": "2026-07-09",
       "oldUrl": "https://jinia.com.au/rose-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251202094000_%E5%89%AF%E6%9C%AC.jpg"
@@ -872,7 +872,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-10-28",
-      "lastRostered": "2026-07-08",
+      "lastRostered": "2026-07-09",
       "oldUrl": "https://jinia.com.au/anna-5/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
@@ -1141,7 +1141,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-09-12",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-09",
       "oldUrl": "https://jinia.com.au/apple-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250912141943.jpg"
@@ -2285,7 +2285,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-06-21",
-      "lastRostered": "2026-07-08",
+      "lastRostered": "2026-07-09",
       "oldUrl": "https://jinia.com.au/lucy-300-pm-300-am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260621075753_1139_2.jpg",
@@ -3583,6 +3583,10 @@
       "2026-07-02": {
         "start": "17:00",
         "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "17:00",
+        "end": "04:00"
       }
     },
     "Bobo": {
@@ -3700,7 +3704,8 @@
       "2026-07-05",
       "2026-07-06",
       "2026-07-07",
-      "2026-07-08"
+      "2026-07-08",
+      "2026-07-09"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4891,6 +4896,10 @@
       "2026-07-02": {
         "start": "13:00",
         "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "13:00",
+        "end": "04:00"
       }
     },
     "🆕 Lucy": {
@@ -4965,6 +4974,10 @@
       "2026-07-08": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-07-09": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "🆕 Sakura": {
@@ -4997,9 +5010,13 @@
       "2026-07-08": {
         "start": "12:00",
         "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "12:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-07-02T04:40:27.870Z"
+  "lastCalendarSync": "2026-07-02T14:39:30.168Z"
 }

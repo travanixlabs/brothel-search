@@ -848,7 +848,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-01"
+      "lastRostered": "2026-07-02"
     },
     {
       "name": "Mia",
@@ -3068,6 +3068,10 @@
       "2026-04-05": {
         "start": "18:00",
         "end": "00:00"
+      },
+      "2026-07-02": {
+        "start": "15:00",
+        "end": "22:00"
       }
     },
     "Amanda": {
@@ -3667,7 +3671,7 @@
     "Bree": {
       "2026-07-02": {
         "start": "07:00",
-        "end": "16:00"
+        "end": "19:00"
       }
     },
     "Jessica": {
@@ -4310,5 +4314,5 @@
     "Taylor": {}
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-02T04:39:58.376Z"
+  "lastCalendarSync": "2026-07-02T07:50:39.269Z"
 }

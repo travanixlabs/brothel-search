@@ -9959,6 +9959,31 @@
       "labels": [],
       "lastModified": "2026-06-29T04:00:08.510Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Minase",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "171",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-02",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/minase-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/32bc42353009a90098ae835ff577b74b.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/e0ecd0c06840219f45686cf8a42fa8d4-1400x1082.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/9dba1257ffcf109e384c96c0731908cd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-02T07:35:05.196Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15785,7 +15810,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-01T10:00:23.019Z",
+  "lastGirlsSync": "2026-07-02T07:35:05.196Z",
   "lastCalendarSync": "2026-06-12T00:05:31.176Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

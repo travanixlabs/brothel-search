@@ -42,7 +42,7 @@
       ],
       "lastModified": "2026-03-13T06:15:57.133Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-07-02",
+      "lastRostered": "2026-07-03",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -9340,6 +9340,10 @@
       "2026-07-02": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-07-03": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Ibuki": {
@@ -13320,5 +13324,5 @@
     }
   },
   "lastGirlsSync": "2026-07-01T08:15:26.783Z",
-  "lastCalendarSync": "2026-07-02T07:49:20.490Z"
+  "lastCalendarSync": "2026-07-02T12:25:10.941Z"
 }

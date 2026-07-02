@@ -999,7 +999,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-30",
+      "lastRostered": "2026-07-02",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -4496,6 +4496,10 @@
       "2026-06-30": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-02": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -7872,5 +7876,5 @@
     }
   },
   "lastGirlsSync": "2026-06-26T17:29:17.128Z",
-  "lastCalendarSync": "2026-07-01T15:19:53.252Z"
+  "lastCalendarSync": "2026-07-02T04:40:23.086Z"
 }

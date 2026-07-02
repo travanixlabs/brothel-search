@@ -232,7 +232,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-26",
+      "lastRostered": "2026-07-12",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1884,7 +1884,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-03"
+      "lastRostered": "2026-07-10"
     },
     {
       "name": "Julia",
@@ -2729,7 +2729,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-27"
+      "lastRostered": "2026-07-04"
     },
     {
       "name": "Miley",
@@ -5325,7 +5325,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-04",
+      "lastRostered": "2026-07-11",
       "oldUrl": "https://www.stilettosydney.com/workers/annabelle-new/",
       "photos": [],
       "labels": [
@@ -6381,6 +6381,30 @@
       "2026-06-21": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-03": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-04": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-07-10": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-07-11": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-07-12": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Audrey": {
@@ -6869,6 +6893,22 @@
         "end": "04:00"
       },
       "2026-07-03": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-07": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-08": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-10": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -8141,7 +8181,20 @@
       }
     },
     "Felicity": {},
-    "Mia": {},
+    "Mia": {
+      "2026-07-02": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-07-03": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-07-04": {
+        "start": "17:00",
+        "end": "01:00"
+      }
+    },
     "Fendi": {
       "2026-06-19": {
         "start": "18:00",
@@ -8355,6 +8408,18 @@
       "2026-07-04": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-07": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-07-10": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-07-11": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Ash": {},
@@ -8374,12 +8439,7 @@
       }
     },
     "Luanna": {},
-    "Rosie": {
-      "2026-07-02": {
-        "start": "07:00",
-        "end": "12:00"
-      }
-    },
+    "Rosie": {},
     "Alex": {},
     "Gemma": {},
     "Naomi": {
@@ -8490,5 +8550,5 @@
     }
   },
   "lastGirlsSync": "2026-07-01T23:07:38.144Z",
-  "lastCalendarSync": "2026-07-01T23:53:41.391Z"
+  "lastCalendarSync": "2026-07-02T04:40:19.082Z"
 }

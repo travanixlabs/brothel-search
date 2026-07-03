@@ -3605,6 +3605,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-03"
+    },
+    {
+      "name": "Carly",
+      "country": [
+        "Australian"
+      ],
+      "age": "19",
+      "height": "165",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-04",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Porsha",
+      "country": [
+        "Mauritanian"
+      ],
+      "age": "28",
+      "height": "165",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-04",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13306,6 +13342,6 @@
     },
     "Taylor": {}
   },
-  "lastGirlsSync": "2026-06-25T12:13:14.988Z",
+  "lastGirlsSync": "2026-07-03T22:00:43.847Z",
   "lastCalendarSync": "2026-07-03T19:56:48.544Z"
 }

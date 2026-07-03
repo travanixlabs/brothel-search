@@ -1580,7 +1580,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-01-01"
+      "lastRostered": "2026-07-03"
     },
     {
       "name": "River",
@@ -2285,7 +2285,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-02"
+      "lastRostered": "2026-07-03"
     },
     {
       "name": "Katalina",
@@ -5516,6 +5516,10 @@
       "2026-07-02": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-07-03": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Talia": {
@@ -7938,8 +7942,14 @@
         "start": "11:00",
         "end": "20:30"
       }
+    },
+    "Ella": {
+      "2026-07-03": {
+        "start": "11:00",
+        "end": "20:30"
+      }
     }
   },
   "lastGirlsSync": "2026-06-26T17:29:17.128Z",
-  "lastCalendarSync": "2026-07-03T04:26:19.480Z"
+  "lastCalendarSync": "2026-07-03T07:46:29.300Z"
 }

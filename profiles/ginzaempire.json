@@ -8544,7 +8544,7 @@
         "GFE"
       ],
       "lastModified": "2026-06-20T15:56:50.760Z",
-      "lastRostered": "2026-07-02",
+      "lastRostered": "2026-07-03",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -18260,6 +18260,10 @@
       "2026-07-02": {
         "start": "16:00",
         "end": "04:00"
+      },
+      "2026-07-03": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Moon": {
@@ -18452,5 +18456,5 @@
     }
   },
   "lastGirlsSync": "2026-07-02T12:05:05.356Z",
-  "lastCalendarSync": "2026-07-02T12:25:06.814Z"
+  "lastCalendarSync": "2026-07-03T04:24:31.942Z"
 }

@@ -772,7 +772,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-10"
     },
     {
       "name": "Diamond",
@@ -12678,6 +12678,10 @@
       "2026-07-03": {
         "start": "06:00",
         "end": "18:00"
+      },
+      "2026-07-10": {
+        "start": "06:00",
+        "end": "18:00"
       }
     },
     "Faith": {
@@ -13335,5 +13339,5 @@
     "Taylor": {}
   },
   "lastGirlsSync": "2026-06-25T12:13:14.988Z",
-  "lastCalendarSync": "2026-07-03T16:04:21.273Z"
+  "lastCalendarSync": "2026-07-03T17:59:25.894Z"
 }

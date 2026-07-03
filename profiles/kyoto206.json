@@ -9801,7 +9801,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-12T04:00:24.301Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-12"
     },
     {
       "name": "aoii",
@@ -9826,7 +9826,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-14T04:00:02.252Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-14"
     },
     {
       "name": "yulia",
@@ -9851,7 +9851,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-18T04:01:01.331Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-18"
     },
     {
       "name": "yuua",
@@ -9875,7 +9875,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-23T04:00:47.486Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-23"
     },
     {
       "name": "peka",
@@ -9902,7 +9902,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-26T07:56:33.435Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-26"
     },
     {
       "name": "peko",
@@ -9929,7 +9929,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-26T10:00:50.626Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-26"
     },
     {
       "name": "shizu",
@@ -9958,7 +9958,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-29T04:00:08.510Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "Minase",
@@ -9983,7 +9983,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-02T07:35:05.196Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-02"
     }
   ],
   "calendar": {
@@ -15811,7 +15811,7 @@
     }
   },
   "lastGirlsSync": "2026-07-02T07:35:05.196Z",
-  "lastCalendarSync": "2026-06-12T00:05:31.176Z",
+  "lastCalendarSync": "2026-07-03T11:11:34.282Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

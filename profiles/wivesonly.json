@@ -2901,6 +2901,28 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Bambi",
+      "country": [
+        "Carribean"
+      ],
+      "age": "19",
+      "height": "165cm",
+      "cup": "B",
+      "body": "",
+      "desc": "Hi i’m new &#8211; Pictures coming soon.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-11-01",
+      "lastRostered": "2024-11-01",
+      "oldUrl": "https://wivesonly.com.au/bambi/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8039,6 +8061,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-03T12:05:05.604Z",
+  "lastGirlsSync": "2026-07-03T22:57:37.872Z",
   "lastCalendarSync": "2026-07-03T14:41:32.776Z"
 }

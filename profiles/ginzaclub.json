@@ -2393,7 +2393,7 @@
         "CIM"
       ],
       "lastModified": "2026-03-19T08:00:18.395Z",
-      "lastRostered": "2026-06-27",
+      "lastRostered": "2026-07-04",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -8989,6 +8989,10 @@
       "2026-06-27": {
         "start": "10:30",
         "end": "01:00"
+      },
+      "2026-07-04": {
+        "start": "15:00",
+        "end": "02:00"
       }
     },
     "Ruka": {},
@@ -13442,5 +13446,5 @@
     }
   },
   "lastGirlsSync": "2026-07-03T17:10:29.502Z",
-  "lastCalendarSync": "2026-07-03T07:44:47.368Z"
+  "lastCalendarSync": "2026-07-04T04:10:10.884Z"
 }

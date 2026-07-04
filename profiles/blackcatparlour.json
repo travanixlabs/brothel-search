@@ -3643,6 +3643,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-11"
+    },
+    {
+      "name": "Tanya",
+      "country": [
+        "Polish"
+      ],
+      "age": "28",
+      "height": "168",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-05",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13412,6 +13430,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-03T22:00:43.847Z",
+  "lastGirlsSync": "2026-07-04T22:51:49.695Z",
   "lastCalendarSync": "2026-07-04T21:26:19.336Z"
 }

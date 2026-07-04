@@ -3345,7 +3345,7 @@
       ],
       "labels": [],
       "lastModified": "2026-03-18T08:38:36.012Z",
-      "lastRostered": "2026-04-23",
+      "lastRostered": "2026-07-04",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced",
@@ -12468,6 +12468,10 @@
       "2026-04-23": {
         "start": "10:30",
         "end": "22:00"
+      },
+      "2026-07-04": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Lina": {},
@@ -18555,5 +18559,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T04:00:37.943Z",
-  "lastCalendarSync": "2026-07-03T07:44:43.516Z"
+  "lastCalendarSync": "2026-07-04T04:10:07.290Z"
 }

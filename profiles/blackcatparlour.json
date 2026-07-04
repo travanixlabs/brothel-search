@@ -3660,7 +3660,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-05"
     }
   ],
   "calendar": {
@@ -13431,5 +13432,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T22:51:49.695Z",
-  "lastCalendarSync": "2026-07-04T21:26:19.336Z"
+  "lastCalendarSync": "2026-07-04T23:35:14.774Z"
 }

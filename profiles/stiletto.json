@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-29"
+      "lastRostered": "2026-07-05"
     },
     {
       "name": "Cindy",
@@ -1322,7 +1322,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-02"
+      "lastRostered": "2026-07-05"
     },
     {
       "name": "Gaia",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-28",
+      "lastRostered": "2026-07-06",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-29",
+      "lastRostered": "2026-07-05",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -6750,6 +6750,10 @@
       "2026-06-27": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-07-05": {
+        "start": "01:00",
+        "end": "06:00"
       }
     },
     "Jasmine": {
@@ -6972,6 +6976,10 @@
       "2026-07-11": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-05": {
+        "start": "00:30",
+        "end": "08:30"
       }
     },
     "Cindy": {
@@ -7164,6 +7172,10 @@
       "2026-06-18": {
         "start": "21:00",
         "end": "07:00"
+      },
+      "2026-07-05": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Victoria": {
@@ -8043,7 +8055,12 @@
         "end": "20:00"
       }
     },
-    "Sonya": {},
+    "Sonya": {
+      "2026-07-06": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -8078,12 +8095,7 @@
       }
     },
     "Felicity": {},
-    "Mia": {
-      "2026-07-04": {
-        "start": "17:00",
-        "end": "01:00"
-      }
-    },
+    "Mia": {},
     "Fendi": {
       "2026-06-19": {
         "start": "18:00",
@@ -8261,6 +8273,10 @@
       "2026-06-07": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-05": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Angelina": {},
@@ -8401,5 +8417,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T11:21:50.685Z",
-  "lastCalendarSync": "2026-07-04T14:09:57.850Z"
+  "lastCalendarSync": "2026-07-04T15:39:43.357Z"
 }

@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-10",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-10"
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "Daisy",
@@ -7367,23 +7367,27 @@
       },
       "2026-07-06": {
         "start": "09:00",
-        "end": "16:00"
+        "end": "17:00"
       },
       "2026-07-07": {
         "start": "09:00",
-        "end": "16:00"
+        "end": "14:00"
       },
       "2026-07-08": {
         "start": "09:00",
-        "end": "16:00"
+        "end": "17:00"
       },
       "2026-07-09": {
         "start": "09:00",
-        "end": "16:00"
+        "end": "17:00"
       },
       "2026-07-10": {
         "start": "09:00",
-        "end": "16:00"
+        "end": "17:00"
+      },
+      "2026-07-11": {
+        "start": "05:00",
+        "end": "23:00"
       }
     },
     "Amelia": {
@@ -7878,12 +7882,7 @@
         "end": "06:00"
       }
     },
-    "Dallas": {
-      "2026-07-04": {
-        "start": "07:00",
-        "end": "15:00"
-      }
-    },
+    "Dallas": {},
     "Annika": {},
     "Audrina": {
       "2026-04-13": {
@@ -7947,6 +7946,14 @@
         "end": "21:00"
       },
       "2026-07-05": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-07": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-10": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -8041,10 +8048,6 @@
     "Quinn": {},
     "London": {},
     "Aspen": {
-      "2026-07-04": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-07-05": {
         "start": "07:00",
         "end": "15:00"
@@ -8054,10 +8057,6 @@
       "2026-06-07": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-07-04": {
-        "start": "07:00",
-        "end": "15:00"
       },
       "2026-07-05": {
         "start": "07:00",
@@ -8461,5 +8460,5 @@
     }
   },
   "lastGirlsSync": "2026-07-03T22:57:17.685Z",
-  "lastCalendarSync": "2026-07-04T04:11:46.440Z"
+  "lastCalendarSync": "2026-07-04T05:58:29.785Z"
 }

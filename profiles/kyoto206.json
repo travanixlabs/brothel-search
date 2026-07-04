@@ -9984,6 +9984,31 @@
       "labels": [],
       "lastModified": "2026-07-02T07:35:05.196Z",
       "lastRostered": "2026-07-02"
+    },
+    {
+      "name": "yurisa",
+      "country": [
+        "Japanese"
+      ],
+      "age": "18",
+      "height": "158",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-04",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yurisa-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92471783128739_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92461783128738_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92451783128735_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-04T04:00:37.672Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15810,7 +15835,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-02T07:35:05.196Z",
+  "lastGirlsSync": "2026-07-04T04:00:37.672Z",
   "lastCalendarSync": "2026-07-03T11:11:34.282Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

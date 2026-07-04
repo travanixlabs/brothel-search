@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-28",
+      "lastRostered": "2026-07-05",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -4324,7 +4324,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-03"
+      "lastRostered": "2026-07-04"
     },
     {
       "name": "Venus",
@@ -6386,8 +6386,8 @@
         "end": "06:00"
       },
       "2026-07-04": {
-        "start": "20:00",
-        "end": "04:00"
+        "start": "23:00",
+        "end": "07:00"
       },
       "2026-07-09": {
         "start": "23:00",
@@ -7196,10 +7196,6 @@
       "2026-06-27": {
         "start": "15:00",
         "end": "06:00"
-      },
-      "2026-07-04": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Kay": {
@@ -7340,10 +7336,6 @@
         "end": "00:00"
       },
       "2026-04-08": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-07-04": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -7844,8 +7836,8 @@
         "end": "06:00"
       },
       "2026-07-05": {
-        "start": "00:00",
-        "end": "08:00"
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Trinity": {
@@ -7887,7 +7879,12 @@
       }
     },
     "Rebecca": {},
-    "Arizona": {},
+    "Arizona": {
+      "2026-07-05": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Imogen": {},
     "Poppy": {
       "2026-04-13": {
@@ -7970,16 +7967,15 @@
         "end": "17:00"
       }
     },
-    "Gloria": {
-      "2026-07-04": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
+    "Gloria": {},
     "Valerie": {
       "2026-06-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-04": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Sabrina": {
@@ -8072,13 +8068,13 @@
         "start": "14:00",
         "end": "22:00"
       },
-      "2026-07-04": {
-        "start": "13:00",
-        "end": "00:00"
-      },
       "2026-07-11": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-07-05": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Felicity": {},
@@ -8340,10 +8336,6 @@
       }
     },
     "Lexy": {
-      "2026-07-04": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-07-05": {
         "start": "16:00",
         "end": "00:00"
@@ -8409,5 +8401,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T11:21:50.685Z",
-  "lastCalendarSync": "2026-07-04T11:50:32.227Z"
+  "lastCalendarSync": "2026-07-04T14:09:57.850Z"
 }

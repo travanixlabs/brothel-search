@@ -2938,7 +2938,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-07-04",
       "oldUrl": "https://wivesonly.com.au/ella-2/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -8083,8 +8083,14 @@
         "start": "11:00",
         "end": "20:30"
       }
+    },
+    "Ava": {
+      "2026-07-04": {
+        "start": "11:00",
+        "end": "20:30"
+      }
     }
   },
   "lastGirlsSync": "2026-07-04T06:50:13.253Z",
-  "lastCalendarSync": "2026-07-04T04:11:51.534Z"
+  "lastCalendarSync": "2026-07-04T07:22:16.989Z"
 }

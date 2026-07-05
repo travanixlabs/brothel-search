@@ -1097,6 +1097,30 @@
       "labels": [],
       "lastModified": "2026-07-02T12:05:19.673Z",
       "lastRostered": "2026-07-05"
+    },
+    {
+      "name": "Pink",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "152",
+      "cup": "B",
+      "val1": "200",
+      "val2": "270",
+      "val3": "310",
+      "startDate": "2026-07-05",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-pink-new-diamond-diamond200-270-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Pink-529x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Pink3-526x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-05T07:29:45.625Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -3910,7 +3934,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-02T12:05:19.673Z",
+  "lastGirlsSync": "2026-07-05T07:29:45.625Z",
   "lastCalendarSync": "2026-07-04T14:09:22.559Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

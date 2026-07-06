@@ -9902,7 +9902,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-26T07:56:33.435Z",
-      "lastRostered": "2026-06-26"
+      "lastRostered": "2026-06-26",
+      "deleted": "Yes",
+      "deletedAt": "2026-07-06T18:12:33.929Z"
     },
     {
       "name": "peko",

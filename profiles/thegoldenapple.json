@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Alice",
@@ -4239,9 +4239,9 @@
         "start": "18:00",
         "end": "03:00"
       },
-      "2026-07-06": {
+      "2026-07-07": {
         "start": "20:00",
-        "end": "05:00"
+        "end": "04:00"
       }
     },
     "Bambi": {
@@ -4341,5 +4341,5 @@
     "Taylor": {}
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-06T16:00:11.803Z"
+  "lastCalendarSync": "2026-07-06T18:28:13.146Z"
 }

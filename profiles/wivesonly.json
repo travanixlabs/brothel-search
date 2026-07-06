@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-07",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06",
+      "lastRostered": "2026-07-07",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -999,7 +999,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06",
+      "lastRostered": "2026-07-07",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1444,7 +1444,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-04"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Sara",
@@ -1886,7 +1886,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Chicago",
@@ -1971,7 +1971,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Brooke",
@@ -2183,7 +2183,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Sienna",
@@ -2336,7 +2336,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Cherry",
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-07",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-07-04",
+      "lastRostered": "2026-07-07",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -2896,7 +2896,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-03",
-      "lastRostered": "2026-07-06",
+      "lastRostered": "2026-07-07",
       "oldUrl": "https://wivesonly.com.au/nicki/",
       "photos": [],
       "labels": [],
@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-04",
+      "lastRostered": "2026-07-07",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3396,6 +3396,10 @@
         "end": "17:00"
       },
       "2026-07-06": {
+        "start": "11:00",
+        "end": "17:00"
+      },
+      "2026-07-07": {
         "start": "11:00",
         "end": "17:00"
       }
@@ -4102,6 +4106,10 @@
       "2026-07-04": {
         "start": "14:00",
         "end": "00:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ximena": {
@@ -4344,6 +4352,10 @@
         "end": "04:00"
       },
       "2026-07-06": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-07-07": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -4630,6 +4642,10 @@
       "2026-07-06": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-07-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -4843,7 +4859,8 @@
       "2026-07-03",
       "2026-07-04",
       "2026-07-05",
-      "2026-07-06"
+      "2026-07-06",
+      "2026-07-07"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -6019,6 +6036,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Chanel": {
@@ -6204,6 +6225,10 @@
       },
       "2026-07-05": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-07": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -6803,6 +6828,10 @@
       "2026-07-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Roxanne": {
@@ -7336,6 +7365,10 @@
       "2026-07-05": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Veronika": {
@@ -7868,6 +7901,10 @@
       "2026-07-05": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Chrissy": {
@@ -8150,6 +8187,10 @@
       "2026-07-04": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Ella": {
@@ -8166,12 +8207,20 @@
       "2026-07-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Bambi": {
       "2026-07-04": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-07-07": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Ava": {
@@ -8186,5 +8235,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T06:50:13.253Z",
-  "lastCalendarSync": "2026-07-06T11:12:45.125Z"
+  "lastCalendarSync": "2026-07-06T14:05:24.366Z"
 }

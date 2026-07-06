@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Ally",
@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Nana",
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Hana",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Tea",
@@ -673,7 +673,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Bell",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "Siya",
@@ -777,7 +777,8 @@
         "https://pennys77.com.au/wp-content/uploads/2026/02/IMG_2354.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-07"
     }
   ],
   "calendar": {
@@ -1063,7 +1064,8 @@
       "2026-07-03",
       "2026-07-04",
       "2026-07-05",
-      "2026-07-06"
+      "2026-07-06",
+      "2026-07-07"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -1287,6 +1289,10 @@
         "end": "03:00"
       },
       "2026-07-06": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-07": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -1851,6 +1857,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sora": {
@@ -2253,6 +2263,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Irene": {
@@ -2649,6 +2663,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -2805,6 +2823,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bell": {
@@ -2919,6 +2941,10 @@
       "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Siya": {
@@ -2937,8 +2963,14 @@
         "end": "03:00"
       }
     },
-    "Rio": {}
+    "Rio": {},
+    "Sammy": {
+      "2026-07-07": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-06T04:51:33.920Z"
+  "lastCalendarSync": "2026-07-06T16:00:08.822Z"
 }

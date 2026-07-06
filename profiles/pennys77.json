@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05"
+      "lastRostered": "2026-07-06"
     },
     {
       "name": "Ally",
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-04"
+      "lastRostered": "2026-07-06"
     },
     {
       "name": "Hana",
@@ -1827,6 +1827,10 @@
       "2026-07-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-06": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sora": {
@@ -2223,6 +2227,10 @@
         "end": "03:00"
       },
       "2026-07-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-06": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2912,5 +2920,5 @@
     "Rio": {}
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-05T14:16:46.174Z"
+  "lastCalendarSync": "2026-07-06T04:51:33.920Z"
 }

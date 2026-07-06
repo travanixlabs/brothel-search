@@ -1047,7 +1047,7 @@
       ],
       "lastModified": "2026-03-13T06:21:13.787Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-07-04",
+      "lastRostered": "2026-07-07",
       "country": [
         "Macanese"
       ],
@@ -7991,6 +7991,10 @@
       "2026-07-04": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-07-07": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Emma": {
@@ -13701,5 +13705,5 @@
     }
   },
   "lastGirlsSync": "2026-07-06T08:23:57.896Z",
-  "lastCalendarSync": "2026-07-06T06:50:04.004Z"
+  "lastCalendarSync": "2026-07-06T15:58:50.595Z"
 }

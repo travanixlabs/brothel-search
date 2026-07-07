@@ -3658,7 +3658,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-09"
+      "lastRostered": "2026-07-10"
     },
     {
       "name": "Savana",
@@ -7428,6 +7428,10 @@
       "2026-07-09": {
         "start": "09:00",
         "end": "17:00"
+      },
+      "2026-07-10": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Clara": {
@@ -8662,5 +8666,5 @@
     }
   },
   "lastGirlsSync": "2026-07-07T17:50:44.530Z",
-  "lastCalendarSync": "2026-07-07T18:32:00.883Z"
+  "lastCalendarSync": "2026-07-07T21:50:59.638Z"
 }

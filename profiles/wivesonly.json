@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-08",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06",
+      "lastRostered": "2026-07-08",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -767,7 +767,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-08",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-08",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -834,7 +834,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-08",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1137,7 +1137,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-16",
+      "lastRostered": "2026-07-08",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -1304,7 +1304,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-07-08",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -1682,7 +1682,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-08"
     },
     {
       "name": "Shell",
@@ -2113,7 +2113,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-30"
+      "lastRostered": "2026-07-08"
     },
     {
       "name": "Hennessy",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-08"
     },
     {
       "name": "Clarisse",
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-07",
+      "lastRostered": "2026-07-08",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2788,7 +2788,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-07",
+      "lastRostered": "2026-07-08",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2896,7 +2896,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-03",
-      "lastRostered": "2026-07-07",
+      "lastRostered": "2026-07-08",
       "oldUrl": "https://wivesonly.com.au/nicki/",
       "photos": [],
       "labels": [],
@@ -3646,6 +3646,10 @@
       "2026-07-03": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-07-08": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Cherry": {
@@ -4860,7 +4864,8 @@
       "2026-07-04",
       "2026-07-05",
       "2026-07-06",
-      "2026-07-07"
+      "2026-07-07",
+      "2026-07-08"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -5009,6 +5014,10 @@
       },
       "2026-07-05": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-08": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -5262,6 +5271,10 @@
       "2026-07-05": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -5492,6 +5505,10 @@
         "end": "17:30"
       },
       "2026-07-06": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-07-08": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -6482,6 +6499,10 @@
       "2026-06-30": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-07-08": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Fox": {
@@ -6623,6 +6644,10 @@
       },
       "2026-07-05": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-08": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -6900,6 +6925,10 @@
       "2026-06-16": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Zoe": {
@@ -7019,6 +7048,10 @@
       "2026-07-06": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-07-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "London": {
@@ -7223,6 +7256,10 @@
         "end": "04:00"
       },
       "2026-07-06": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-07-08": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -7561,6 +7598,10 @@
       "2026-07-05": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -7905,6 +7946,10 @@
       "2026-07-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Chrissy": {
@@ -7987,6 +8032,10 @@
       "2026-07-07": {
         "start": "16:30",
         "end": "12:30"
+      },
+      "2026-07-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Lisa": {
@@ -8215,6 +8264,10 @@
       "2026-07-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Bambi": {
@@ -8239,5 +8292,5 @@
     }
   },
   "lastGirlsSync": "2026-07-04T06:50:13.253Z",
-  "lastCalendarSync": "2026-07-07T04:33:07.366Z"
+  "lastCalendarSync": "2026-07-07T15:26:12.821Z"
 }

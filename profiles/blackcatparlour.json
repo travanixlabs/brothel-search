@@ -3110,7 +3110,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-09"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Kitty",
@@ -9141,10 +9141,6 @@
       "2026-07-12": {
         "start": "06:00",
         "end": "18:00"
-      },
-      "2026-07-15": {
-        "start": "18:00",
-        "end": "06:00"
       }
     },
     "Amelia": {
@@ -13955,8 +13951,13 @@
       }
     },
     "Tanya": {},
-    "Mae": {}
+    "Mae": {
+      "2026-07-15": {
+        "start": "06:00",
+        "end": "18:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-07-04T22:51:49.695Z",
-  "lastCalendarSync": "2026-07-08T14:56:22.069Z"
+  "lastCalendarSync": "2026-07-08T16:14:18.785Z"
 }

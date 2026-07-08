@@ -1063,7 +1063,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://127city.com/j-ariel-new-diamond-diamond190-260-300-30-45-60/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/06/Ariel-475x705.jpg",
         "https://127city.com/wp-content/uploads/2026/06/Ariel1-477x705.jpg"
@@ -1121,6 +1121,32 @@
       "labels": [],
       "lastModified": "2026-07-05T07:29:45.625Z",
       "lastRostered": "2026-07-05"
+    },
+    {
+      "name": "Clara",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "270",
+      "val3": "310",
+      "startDate": "2026-07-08",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-clara-new-diamond-diamond200-270-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Clara-471x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Clara1-472x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Clara2-471x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Clara3-471x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-08T04:00:27.505Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -4017,7 +4043,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-05T07:29:45.625Z",
+  "lastGirlsSync": "2026-07-08T04:00:27.505Z",
   "lastCalendarSync": "2026-07-07T15:25:11.927Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

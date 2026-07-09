@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-10",
+      "lastRostered": "2026-07-14",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -2444,7 +2444,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-19"
     },
     {
       "name": "London",
@@ -3033,7 +3033,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12"
+      "lastRostered": "2026-07-13"
     },
     {
       "name": "Paloma",
@@ -6202,7 +6202,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-09",
+      "lastRostered": "2026-07-19",
       "oldUrl": "https://www.stilettosydney.com/workers/veronica/",
       "photos": [],
       "labels": [
@@ -6623,6 +6623,18 @@
       "2026-07-11": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-17": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-18": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-07-19": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Kiyomi": {
@@ -6769,10 +6781,6 @@
       "2026-07-08": {
         "start": "22:00",
         "end": "07:00"
-      },
-      "2026-07-09": {
-        "start": "18:00",
-        "end": "04:00"
       },
       "2026-07-10": {
         "start": "18:00",
@@ -7095,6 +7103,10 @@
       "2026-07-12": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-13": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Maddie": {
@@ -7185,10 +7197,6 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
-      },
-      "2026-07-09": {
-        "start": "10:00",
-        "end": "18:00"
       },
       "2026-07-12": {
         "start": "07:00",
@@ -7420,10 +7428,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-07-09": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-07-10": {
         "start": "09:00",
         "end": "17:00"
@@ -7446,10 +7450,6 @@
       }
     },
     "Sasha": {
-      "2026-07-09": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-07-10": {
         "start": "09:00",
         "end": "17:00"
@@ -7511,10 +7511,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-07-09": {
-        "start": "09:00",
-        "end": "18:00"
       },
       "2026-07-10": {
         "start": "10:00",
@@ -8047,6 +8043,14 @@
     },
     "Aurora": {
       "2026-07-10": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-13": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-14": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -8660,9 +8664,17 @@
       "2026-07-12": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-16": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-07-19": {
+        "start": "12:00",
+        "end": "20:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-09T07:40:07.180Z",
-  "lastCalendarSync": "2026-07-09T06:26:17.399Z"
+  "lastCalendarSync": "2026-07-09T08:00:01.184Z"
 }

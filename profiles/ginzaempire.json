@@ -1440,7 +1440,7 @@
       ],
       "lastModified": "2026-03-13T05:20:37.835Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-07-09",
+      "lastRostered": "2026-07-10",
       "country": [
         "French"
       ],
@@ -1569,7 +1569,7 @@
       ],
       "lastModified": "2026-03-13T05:21:00.424Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-04-05",
+      "lastRostered": "2026-07-10",
       "pornstar": "Pornstar",
       "englishLevel": "English",
       "experienceLevel": "Experienced"
@@ -9242,7 +9242,8 @@
         "Couple",
         "GFE"
       ],
-      "lastModified": "2026-07-09T10:00:09.290Z"
+      "lastModified": "2026-07-09T10:00:09.290Z",
+      "lastRostered": "2026-07-10"
     }
   ],
   "calendar": {
@@ -9690,6 +9691,10 @@
       "2026-07-09": {
         "start": "10:30",
         "end": "19:00"
+      },
+      "2026-07-10": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Sweety": {
@@ -10492,6 +10497,14 @@
       "2026-04-05": {
         "start": "12:00",
         "end": "04:00"
+      },
+      "2026-07-09": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-07-10": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Moka": {},
@@ -19402,8 +19415,14 @@
         "start": "10:30",
         "end": "19:00"
       }
+    },
+    "Helen": {
+      "2026-07-10": {
+        "start": "12:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-09T10:00:09.290Z",
-  "lastCalendarSync": "2026-07-09T07:58:20.384Z"
+  "lastCalendarSync": "2026-07-09T10:02:16.300Z"
 }

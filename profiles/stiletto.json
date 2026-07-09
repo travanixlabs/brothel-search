@@ -6187,6 +6187,47 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Veronica",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "C-D",
+      "body": "8",
+      "desc": "English/French Beauty Hi Handsome, Elegant and demure, I am a 27-year-old brunette with an irresistible size 8 frame, naturally pretty features, and a sultry energy that will keep you wanting more. New to Stiletto, I'm here to create magic moments with you and leave a lasting impression. So, care to give me the ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-07-09",
+      "oldUrl": "https://www.stilettosydney.com/workers/veronica/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "PSE",
+        "Fantasy",
+        "Toys",
+        "Adventurous Positions",
+        "Deep Throat",
+        "Anal",
+        "DFK",
+        "Disabled",
+        "Fetish",
+        "Prostate Massage",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Strap on",
+        "Foot Fetish",
+        "Fingering",
+        "Anal Play"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8610,8 +8651,18 @@
         "start": "18:00",
         "end": "02:00"
       }
+    },
+    "Veronica": {
+      "2026-07-09": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-07-12": {
+        "start": "12:00",
+        "end": "20:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-07-08T17:17:58.818Z",
+  "lastGirlsSync": "2026-07-09T07:40:07.180Z",
   "lastCalendarSync": "2026-07-09T06:26:17.399Z"
 }

@@ -10011,6 +10011,57 @@
       "labels": [],
       "lastModified": "2026-07-04T04:00:37.672Z",
       "lastRostered": "2026-07-04"
+    },
+    {
+      "name": "Ayamo",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "161",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-09",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/ayamo-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92961783559874_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92981783559878_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92971783559877_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-09T07:39:00.473Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "kikiya",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-09",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/kikiya-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/93011783564197_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/93001783564195_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92921783555806_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/92911783555805_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-09T07:39:00.473Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15949,7 +16000,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-04T04:00:37.672Z",
+  "lastGirlsSync": "2026-07-09T07:39:00.473Z",
   "lastCalendarSync": "2026-07-07T06:27:18.112Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

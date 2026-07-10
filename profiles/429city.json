@@ -3576,7 +3576,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:56:55.023Z",
-      "lastRostered": "2023-01-01",
+      "lastRostered": "2026-07-10",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2023/01/图片_20230406171416-760x1030.jpg",
         "https://www.429city.com/wp-content/uploads/2023/01/图片_20230406171420-687x1030.jpg",
@@ -5420,7 +5420,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:58:50.161Z",
-      "lastRostered": "2019-05-01",
+      "lastRostered": "2026-07-10",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2019/05/Katy-1-1-579x1030.jpg",
         "https://www.429city.com/wp-content/uploads/2019/05/Katy-4.jpg"
@@ -18463,8 +18463,20 @@
       }
     },
     "Suger": {},
-    "Angel 2": {}
+    "Angel 2": {},
+    "Bee": {
+      "2026-07-10": {
+        "start": "10:00",
+        "end": "05:00"
+      }
+    },
+    "Katy": {
+      "2026-07-10": {
+        "start": "10:00",
+        "end": "05:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-07-09T15:41:13.916Z"
+  "lastCalendarSync": "2026-07-10T04:33:28.898Z"
 }

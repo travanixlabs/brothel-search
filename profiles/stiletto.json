@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-24",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -3014,7 +3014,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-07-12"
     },
     {
       "name": "Ophelia",
@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-07"
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "Skye",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-10"
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "Viv",
@@ -5710,7 +5710,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-07-08",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://www.stilettosydney.com/workers/rosie-new-2/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/04/Edit-DSCF0052-1.jpeg",
@@ -6339,7 +6339,8 @@
       "2026-07-16",
       "2026-07-17",
       "2026-07-18",
-      "2026-07-19"
+      "2026-07-19",
+      "2026-07-24"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6569,6 +6570,14 @@
         "end": "20:00"
       },
       "2026-04-05": {
+        "start": "08:00",
+        "end": "20:00"
+      },
+      "2026-07-11": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "2026-07-12": {
         "start": "08:00",
         "end": "20:00"
       }
@@ -7229,6 +7238,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-07-11": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -7697,6 +7710,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-11": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Raelynn": {
@@ -8027,6 +8044,10 @@
         "end": "21:00"
       },
       "2026-07-14": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-24": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -8443,10 +8464,6 @@
       }
     },
     "Annabelle": {
-      "2026-07-10": {
-        "start": "15:00",
-        "end": "23:00"
-      },
       "2026-07-11": {
         "start": "19:00",
         "end": "03:00"
@@ -8481,7 +8498,12 @@
       }
     },
     "Luanna": {},
-    "Rosie": {},
+    "Rosie": {
+      "2026-07-15": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
     "Alex": {},
     "Gemma": {},
     "Naomi": {
@@ -8624,5 +8646,5 @@
     }
   },
   "lastGirlsSync": "2026-07-09T23:06:16.307Z",
-  "lastCalendarSync": "2026-07-09T23:48:48.173Z"
+  "lastCalendarSync": "2026-07-10T04:33:53.761Z"
 }

@@ -3662,6 +3662,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-11"
+    },
+    {
+      "name": "Ember",
+      "country": [
+        "English"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-10",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Koda",
+      "country": [
+        "Australian"
+      ],
+      "age": "19",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-10",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -14011,6 +14047,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-04T22:51:49.695Z",
+  "lastGirlsSync": "2026-07-10T12:21:26.262Z",
   "lastCalendarSync": "2026-07-10T09:59:57.777Z"
 }

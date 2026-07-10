@@ -2945,6 +2945,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Roxi",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "30",
+      "height": "5'2",
+      "cup": "B",
+      "body": "",
+      "desc": "Call us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/Roxi/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8470,6 +8492,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-04T06:50:13.253Z",
+  "lastGirlsSync": "2026-07-10T22:55:57.320Z",
   "lastCalendarSync": "2026-07-10T15:12:27.431Z"
 }

@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-09",
+      "lastRostered": "2026-07-10",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-09"
+      "lastRostered": "2026-07-10"
     },
     {
       "name": "Cindy",
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-05",
+      "lastRostered": "2026-07-10",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -6737,10 +6737,6 @@
         "start": "18:00",
         "end": "02:00"
       },
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-07-11": {
         "start": "16:00",
         "end": "00:00"
@@ -7232,6 +7228,10 @@
       "2026-07-09": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-10": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Victoria": {
@@ -7405,10 +7405,6 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
-      },
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
       }
     },
     "Lilith": {
@@ -7417,10 +7413,6 @@
         "end": "00:00"
       },
       "2026-04-08": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-07-10": {
         "start": "16:00",
         "end": "00:00"
       },
@@ -8155,18 +8147,8 @@
       }
     },
     "Zara": {},
-    "Quinn": {
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
-    "London": {
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
+    "Quinn": {},
+    "London": {},
     "Aspen": {
       "2026-07-11": {
         "start": "07:00",
@@ -8192,10 +8174,6 @@
       }
     },
     "Brandy": {
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-07-12": {
         "start": "16:00",
         "end": "00:00"
@@ -8223,7 +8201,12 @@
         "end": "07:45"
       }
     },
-    "Alice": {},
+    "Alice": {
+      "2026-07-10": {
+        "start": "23:00",
+        "end": "07:00"
+      }
+    },
     "Piper": {
       "2026-07-11": {
         "start": "14:00",
@@ -8417,6 +8400,10 @@
       "2026-06-07": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-10": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Angelina": {},
@@ -8493,10 +8480,6 @@
       }
     },
     "Lexy": {
-      "2026-07-10": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-07-11": {
         "start": "16:00",
         "end": "00:00"
@@ -8539,10 +8522,6 @@
       "2026-06-27": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-07-10": {
-        "start": "22:00",
-        "end": "04:00"
       },
       "2026-07-11": {
         "start": "22:00",
@@ -8618,5 +8597,5 @@
     }
   },
   "lastGirlsSync": "2026-07-10T12:22:06.478Z",
-  "lastCalendarSync": "2026-07-10T12:40:34.497Z"
+  "lastCalendarSync": "2026-07-10T15:12:18.840Z"
 }

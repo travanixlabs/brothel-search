@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-12",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-10"
+      "lastRostered": "2026-07-13"
     },
     {
       "name": "Riley",
@@ -6455,13 +6455,13 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-07-10": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-07-11": {
-        "start": "10:00",
-        "end": "16:00"
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-12": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Bambi": {
@@ -7432,10 +7432,6 @@
       "2026-07-10": {
         "start": "09:00",
         "end": "17:00"
-      },
-      "2026-07-11": {
-        "start": "05:00",
-        "end": "23:00"
       }
     },
     "Amelia": {
@@ -7514,6 +7510,10 @@
         "end": "20:00"
       },
       "2026-07-10": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-13": {
         "start": "10:00",
         "end": "18:00"
       }
@@ -7967,10 +7967,6 @@
       }
     },
     "Dallas": {
-      "2026-07-10": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-07-11": {
         "start": "07:00",
         "end": "15:00"
@@ -8192,10 +8188,6 @@
       }
     },
     "Aspen": {
-      "2026-07-10": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-07-11": {
         "start": "07:00",
         "end": "15:00"
@@ -8646,5 +8638,5 @@
     }
   },
   "lastGirlsSync": "2026-07-09T23:06:16.307Z",
-  "lastCalendarSync": "2026-07-10T04:33:53.761Z"
+  "lastCalendarSync": "2026-07-10T06:25:08.960Z"
 }

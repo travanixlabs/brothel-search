@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-29"
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "Ami",
@@ -1411,6 +1411,10 @@
         "end": "03:00"
       },
       "2026-05-28": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-11": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3068,5 +3072,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-11T03:52:07.687Z"
+  "lastCalendarSync": "2026-07-11T08:19:39.135Z"
 }

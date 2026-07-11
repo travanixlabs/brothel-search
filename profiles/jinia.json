@@ -38,7 +38,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-30",
-      "lastRostered": "2026-07-17",
+      "lastRostered": "2026-07-18",
       "oldUrl": "https://jinia.com.au/lucy-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260401094425.jpg"
@@ -853,7 +853,7 @@
       "val2": "",
       "val3": "250",
       "startDate": "2025-10-30",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-18",
       "oldUrl": "https://jinia.com.au/june/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124.jpg"
@@ -872,7 +872,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-10-28",
-      "lastRostered": "2026-07-17",
+      "lastRostered": "2026-07-18",
       "oldUrl": "https://jinia.com.au/anna-5/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
@@ -1993,7 +1993,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-06",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-18",
       "oldUrl": "https://jinia.com.au/wendy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260506111256.jpg"
@@ -2203,7 +2203,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-30",
-      "lastRostered": "2026-07-17",
+      "lastRostered": "2026-07-18",
       "oldUrl": "https://jinia.com.au/christina/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260530074227_1092_2.jpg"
@@ -3477,6 +3477,10 @@
       "2026-07-14": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-07-18": {
+        "start": "15:00",
+        "end": "00:00"
       }
     },
     "Eva": {
@@ -3519,6 +3523,10 @@
         "end": "03:00"
       },
       "2026-07-12": {
+        "start": "13:00",
+        "end": "03:00"
+      },
+      "2026-07-18": {
         "start": "13:00",
         "end": "03:00"
       }
@@ -3637,6 +3645,10 @@
         "end": "04:00"
       },
       "2026-07-17": {
+        "start": "17:00",
+        "end": "04:00"
+      },
+      "2026-07-18": {
         "start": "17:00",
         "end": "04:00"
       }
@@ -3765,7 +3777,8 @@
       "2026-07-14",
       "2026-07-15",
       "2026-07-16",
-      "2026-07-17"
+      "2026-07-17",
+      "2026-07-18"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4694,6 +4707,10 @@
       "2026-07-11": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-07-18": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Lin": {
@@ -4848,6 +4865,10 @@
         "end": "00:30"
       },
       "2026-07-17": {
+        "start": "12:30",
+        "end": "00:30"
+      },
+      "2026-07-18": {
         "start": "12:30",
         "end": "00:30"
       }
@@ -5142,5 +5163,5 @@
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-07-11T10:02:54.290Z"
+  "lastCalendarSync": "2026-07-11T14:02:03.248Z"
 }

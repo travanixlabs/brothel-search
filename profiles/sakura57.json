@@ -10126,7 +10126,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-30T04:00:09.667Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-07-11T17:01:19.851Z"
     },
     {
       "name": "Naoka",

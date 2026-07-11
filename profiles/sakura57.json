@@ -10255,6 +10255,32 @@
       "labels": [],
       "lastModified": "2026-07-07T04:00:41.397Z",
       "lastRostered": ""
+    },
+    {
+      "name": "chocoo",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "150",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-11",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/chocoo-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93191783746013_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93181783746012_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93201783746014_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93211783746015_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-11T06:16:46.271Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15773,7 +15799,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-10T04:00:04.736Z",
+  "lastGirlsSync": "2026-07-11T06:16:46.271Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

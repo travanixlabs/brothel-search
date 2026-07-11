@@ -9406,7 +9406,8 @@
         "2 Men",
         "Couple"
       ],
-      "lastModified": "2026-07-11T16:40:44.737Z"
+      "lastModified": "2026-07-11T16:40:44.737Z",
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "misaka",
@@ -9446,7 +9447,8 @@
         "2 Men",
         "Couple"
       ],
-      "lastModified": "2026-07-11T16:40:44.737Z"
+      "lastModified": "2026-07-11T16:40:44.737Z",
+      "lastRostered": "2026-07-11"
     }
   ],
   "calendar": {
@@ -19859,5 +19861,5 @@
     }
   },
   "lastGirlsSync": "2026-07-11T16:40:44.737Z",
-  "lastCalendarSync": "2026-07-11T10:00:52.483Z"
+  "lastCalendarSync": "2026-07-11T17:31:29.208Z"
 }

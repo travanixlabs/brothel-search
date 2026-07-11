@@ -234,7 +234,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-12"
     },
     {
       "name": "Charlotte",
@@ -403,7 +403,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-12"
     },
     {
       "name": "Gabrielle",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-12"
     },
     {
       "name": "Hallie",
@@ -1985,6 +1985,10 @@
       "2026-07-11": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-07-12": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Icra": {
@@ -2993,6 +2997,10 @@
         "end": "09:00"
       },
       "2026-07-11": {
+        "start": "10:00",
+        "end": "22:00"
+      },
+      "2026-07-12": {
         "start": "10:00",
         "end": "22:00"
       }
@@ -4132,6 +4140,10 @@
       "2026-07-11": {
         "start": "13:00",
         "end": "09:00"
+      },
+      "2026-07-12": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Audrey": {
@@ -4400,5 +4412,5 @@
     "Taylor": {}
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-11T19:38:57.710Z"
+  "lastCalendarSync": "2026-07-11T23:31:34.150Z"
 }

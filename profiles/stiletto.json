@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-17",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -3658,7 +3658,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12"
+      "lastRostered": "2026-07-19"
     },
     {
       "name": "Savana",
@@ -7414,7 +7414,36 @@
       }
     },
     "Jess": {},
-    "Sasha": {},
+    "Sasha": {
+      "2026-07-13": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-14": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-15": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-16": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-17": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-18": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-19": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    },
     "Clara": {
       "2026-04-14": {
         "start": "22:00",
@@ -7655,12 +7684,7 @@
         "end": "07:00"
       }
     },
-    "Raelynn": {
-      "2026-07-13": {
-        "start": "00:00",
-        "end": "08:00"
-      }
-    },
+    "Raelynn": {},
     "Blake": {},
     "Kennedy": {
       "2026-04-13": {
@@ -8077,12 +8101,7 @@
     },
     "Brandy": {},
     "Yvette": {},
-    "Sonya": {
-      "2026-07-13": {
-        "start": "00:00",
-        "end": "08:00"
-      }
-    },
+    "Sonya": {},
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -8442,5 +8461,5 @@
     "Georgina": {}
   },
   "lastGirlsSync": "2026-07-12T22:41:08.584Z",
-  "lastCalendarSync": "2026-07-12T21:12:57.124Z"
+  "lastCalendarSync": "2026-07-12T23:30:44.746Z"
 }

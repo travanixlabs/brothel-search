@@ -5529,7 +5529,8 @@
         "2 Men",
         "GFE"
       ],
-      "lastModified": "2026-07-12T04:00:21.564Z"
+      "lastModified": "2026-07-12T04:00:21.564Z",
+      "lastRostered": "2026-07-12"
     }
   ],
   "calendar": {
@@ -14268,8 +14269,14 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Sumire": {
+      "2026-07-12": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-12T04:00:21.564Z",
-  "lastCalendarSync": "2026-07-11T08:18:18.795Z"
+  "lastCalendarSync": "2026-07-12T04:05:50.556Z"
 }

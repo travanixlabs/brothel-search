@@ -1449,7 +1449,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:54:26.376Z",
-      "lastRostered": "2025-08-01",
+      "lastRostered": "2026-07-12",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2025/08/mmexport1772524266686.jpg",
         "https://www.429city.com/wp-content/uploads/2025/08/图片_20250819145657-579x1030.jpg"
@@ -18561,8 +18561,14 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Maya": {
+      "2026-07-12": {
+        "start": "10:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-07-11T14:01:01.445Z"
+  "lastCalendarSync": "2026-07-12T04:07:04.753Z"
 }

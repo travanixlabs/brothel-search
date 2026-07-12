@@ -3700,6 +3700,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-12"
+    },
+    {
+      "name": "Vanessa",
+      "country": [
+        "Australian"
+      ],
+      "age": "28",
+      "height": "160",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-12",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -14154,6 +14172,6 @@
     },
     "Koda": {}
   },
-  "lastGirlsSync": "2026-07-10T12:21:26.262Z",
+  "lastGirlsSync": "2026-07-12T10:00:27.562Z",
   "lastCalendarSync": "2026-07-12T08:38:17.815Z"
 }

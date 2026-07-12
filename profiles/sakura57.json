@@ -10283,6 +10283,33 @@
       "labels": [],
       "lastModified": "2026-07-11T06:16:46.271Z",
       "lastRostered": ""
+    },
+    {
+      "name": "hakimi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "165",
+      "cup": "C",
+      "val1": "180",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-07-12",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/hakimi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93331783771116_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93311783771114_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93321783771115_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93341783771117_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93351783771118_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-12T04:00:23.066Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15801,7 +15828,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-11T06:16:46.271Z",
+  "lastGirlsSync": "2026-07-12T04:00:23.066Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

@@ -2967,6 +2967,50 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Dallas",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "30",
+      "height": "5'2",
+      "cup": "B",
+      "body": "",
+      "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/dallas/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Blaze",
+      "country": [
+        "English"
+      ],
+      "age": "24",
+      "height": "162cm",
+      "cup": "C",
+      "body": "",
+      "desc": "Open-minded and fun, can cater to fetishes and fantasies upon request",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-07-01",
+      "lastRostered": "2026-07-01",
+      "oldUrl": "https://wivesonly.com.au/blaze/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/07/blaze-new.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8587,6 +8631,6 @@
     },
     "Roxi": {}
   },
-  "lastGirlsSync": "2026-07-10T22:55:57.320Z",
+  "lastGirlsSync": "2026-07-12T16:44:45.172Z",
   "lastCalendarSync": "2026-07-12T14:04:18.017Z"
 }

@@ -10310,6 +10310,32 @@
       "labels": [],
       "lastModified": "2026-07-12T04:00:23.066Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Akino",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/akino-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93611783926825_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93581783926821_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93591783926822_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93601783926824_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-13T10:00:55.930Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15828,7 +15854,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-13T04:00:58.829Z",
+  "lastGirlsSync": "2026-07-13T10:00:55.930Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

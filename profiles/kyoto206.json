@@ -10064,6 +10064,31 @@
       "labels": [],
       "lastModified": "2026-07-09T07:39:00.473Z",
       "lastRostered": ""
+    },
+    {
+      "name": "nomi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "163",
+      "cup": "E",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/nomi-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/93501783912271_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/93521783912273_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/93511783912272_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-13T04:01:00.652Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16002,7 +16027,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-09T07:39:00.473Z",
+  "lastGirlsSync": "2026-07-13T04:01:00.652Z",
   "lastCalendarSync": "2026-07-07T06:27:18.112Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

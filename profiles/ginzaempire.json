@@ -3765,7 +3765,7 @@
         "GFE"
       ],
       "lastModified": "2026-03-28T10:00:21.385Z",
-      "lastRostered": "2026-05-28",
+      "lastRostered": "2026-07-14",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced",
@@ -14049,6 +14049,10 @@
       "2026-05-28": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-07-14": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Plum": {
@@ -20106,5 +20110,5 @@
     }
   },
   "lastGirlsSync": "2026-07-13T16:00:53.496Z",
-  "lastCalendarSync": "2026-07-13T09:51:57.380Z"
+  "lastCalendarSync": "2026-07-14T03:43:31.290Z"
 }

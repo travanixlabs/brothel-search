@@ -9488,7 +9488,7 @@
         "GFE"
       ],
       "lastModified": "2026-07-13T09:51:57.380Z",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-15",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -20257,6 +20257,10 @@
       "2026-07-14": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-07-15": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Nonoha": {
@@ -20271,5 +20275,5 @@
     }
   },
   "lastGirlsSync": "2026-07-14T04:00:41.157Z",
-  "lastCalendarSync": "2026-07-14T08:33:31.293Z"
+  "lastCalendarSync": "2026-07-14T14:22:31.235Z"
 }

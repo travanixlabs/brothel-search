@@ -6274,7 +6274,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://www.stilettosydney.com/workers/adeline-new/",
       "photos": [],
       "labels": [
@@ -6541,10 +6541,6 @@
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
-      },
-      "2026-07-14": {
-        "start": "10:30",
-        "end": "16:30"
       },
       "2026-07-16": {
         "start": "10:30",
@@ -8669,5 +8665,5 @@
     }
   },
   "lastGirlsSync": "2026-07-14T06:13:49.681Z",
-  "lastCalendarSync": "2026-07-14T03:45:15.022Z"
+  "lastCalendarSync": "2026-07-14T06:34:57.693Z"
 }

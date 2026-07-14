@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-07-28",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-14"
     },
     {
       "name": "Cindy",
@@ -5133,7 +5133,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-20",
+      "lastRostered": "2026-07-25",
       "oldUrl": "https://www.stilettosydney.com/workers/pia-new/",
       "photos": [],
       "labels": [],
@@ -6377,7 +6377,8 @@
       "2026-07-23",
       "2026-07-24",
       "2026-07-25",
-      "2026-07-26"
+      "2026-07-26",
+      "2026-07-28"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -7285,6 +7286,10 @@
       "2026-07-13": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-14": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Victoria": {
@@ -7362,10 +7367,6 @@
       "2026-07-03": {
         "start": "21:00",
         "end": "06:00"
-      },
-      "2026-07-14": {
-        "start": "13:00",
-        "end": "19:00"
       },
       "2026-07-17": {
         "start": "20:00",
@@ -8066,6 +8067,10 @@
       "2026-07-26": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-07-28": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Lacey": {},
@@ -8220,8 +8225,8 @@
     },
     "Piper": {
       "2026-07-14": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "12:00",
+        "end": "20:00"
       },
       "2026-07-15": {
         "start": "10:00",
@@ -8586,6 +8591,26 @@
       "2026-07-20": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-21": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-22": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-23": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-24": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-25": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Veronica": {
@@ -8601,5 +8626,5 @@
     "Georgina": {}
   },
   "lastGirlsSync": "2026-07-13T22:50:31.542Z",
-  "lastCalendarSync": "2026-07-13T23:28:30.382Z"
+  "lastCalendarSync": "2026-07-14T03:45:15.022Z"
 }

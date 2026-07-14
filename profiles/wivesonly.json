@@ -97,7 +97,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-15",
       "desc": "Iris is your classic vintage vixen, a professional burlesque dancer learned in the art of tease, and an expert at turning you on. A blonde bombshell with perky D cups on two very long legs, Iris is sure to make anyone feel spoiled!"
     },
     {
@@ -521,7 +521,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-15",
       "desc": "She might look sweet, but Evie is a cheeky little redhead with a bit of a wild side. She specialises in a naught girlfriend experience and loves to create a space for you to explore your most passionate and adventurous self. With her DD bust and playful smile, Evie will have you hooked and wanting more."
     },
     {
@@ -767,7 +767,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-15",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -834,7 +834,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-15",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -928,7 +928,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-15",
       "desc": "Vivacious sassy Savannah, very open in the bedroom, where you can feel comfortable to play out your fantasies in a safe space. Loves to party & indulge in a variety of doubles."
     },
     {
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Samira",
@@ -2217,7 +2217,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Ivy",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Clarisse",
@@ -2336,7 +2336,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Cherry",
@@ -2788,7 +2788,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://wivesonly.com.au/chrissy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2896,7 +2896,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-03",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://wivesonly.com.au/nicki/",
       "photos": [],
       "labels": [],
@@ -2938,7 +2938,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-13",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://wivesonly.com.au/ella-2/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3004,7 +3004,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-01",
-      "lastRostered": "2026-07-01",
+      "lastRostered": "2026-07-15",
       "oldUrl": "https://wivesonly.com.au/blaze/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/07/blaze-new.jpg"
@@ -3496,6 +3496,10 @@
       "2026-07-14": {
         "start": "12:00",
         "end": "19:30"
+      },
+      "2026-07-15": {
+        "start": "12:00",
+        "end": "17:00"
       }
     },
     "Desiree": {
@@ -5013,7 +5017,8 @@
       "2026-07-11",
       "2026-07-12",
       "2026-07-13",
-      "2026-07-14"
+      "2026-07-14",
+      "2026-07-15"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -5174,6 +5179,10 @@
       },
       "2026-07-12": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -5439,6 +5448,10 @@
       "2026-07-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Hazel": {
@@ -5681,6 +5694,10 @@
         "end": "17:30"
       },
       "2026-07-13": {
+        "start": "11:30",
+        "end": "17:30"
+      },
+      "2026-07-15": {
         "start": "11:30",
         "end": "17:30"
       }
@@ -6505,6 +6522,10 @@
       "2026-07-14": {
         "start": "13:00",
         "end": "00:00"
+      },
+      "2026-07-15": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Madeleine": {
@@ -6627,6 +6648,10 @@
         "end": "18:00"
       },
       "2026-07-11": {
+        "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-07-15": {
         "start": "11:00",
         "end": "18:00"
       }
@@ -6872,6 +6897,10 @@
       },
       "2026-07-12": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -8344,6 +8373,10 @@
       "2026-07-14": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-07-15": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Lisa": {
@@ -8520,6 +8553,10 @@
       "2026-06-19": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Aven": {
@@ -8624,6 +8661,10 @@
       "2026-07-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Bambi": {
@@ -8660,6 +8701,10 @@
       "2026-07-13": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-15": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Kora-Jade": {
@@ -8680,10 +8725,20 @@
       "2026-07-14": {
         "start": "19:30",
         "end": "16:00"
+      },
+      "2026-07-15": {
+        "start": "19:30",
+        "end": "16:00"
       }
     },
-    "Roxi": {}
+    "Roxi": {},
+    "Blaze": {
+      "2026-07-15": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    }
   },
   "lastGirlsSync": "2026-07-12T16:44:45.172Z",
-  "lastCalendarSync": "2026-07-14T08:35:17.896Z"
+  "lastCalendarSync": "2026-07-14T14:24:26.257Z"
 }

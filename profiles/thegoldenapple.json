@@ -637,7 +637,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Janelle",
@@ -4128,6 +4128,10 @@
       "2026-07-06": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-07-15": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "Tiffany": {
@@ -4564,5 +4568,5 @@
     "Taylor": {}
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-15T03:44:52.984Z"
+  "lastCalendarSync": "2026-07-15T05:13:15.328Z"
 }

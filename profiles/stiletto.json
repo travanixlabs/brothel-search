@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "Skye",
@@ -5968,7 +5968,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-12",
+      "lastRostered": "2026-07-29",
       "oldUrl": "https://www.stilettosydney.com/workers/suki-2/",
       "photos": [],
       "labels": [
@@ -7862,6 +7862,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-15": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Raelynn": {},
@@ -8542,7 +8546,12 @@
       }
     },
     "Malibu": {},
-    "Suki": {},
+    "Suki": {
+      "2026-07-29": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Mel": {
       "2026-07-01": {
         "start": "22:00",
@@ -8665,5 +8674,5 @@
     "Adeline": {}
   },
   "lastGirlsSync": "2026-07-15T06:18:44.519Z",
-  "lastCalendarSync": "2026-07-15T05:13:34.697Z"
+  "lastCalendarSync": "2026-07-15T06:36:21.962Z"
 }

@@ -237,7 +237,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-16",
       "desc": "Blonde Bombshell Chanel! Chanel is a petite size 6. She is a passionate kisser, energetic lover and a patient listener. Chanel offers a variety of services from the sensual GFE to the exciting PSE for those who are adventurous."
     },
     {
@@ -521,7 +521,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-15",
+      "lastRostered": "2026-07-16",
       "desc": "She might look sweet, but Evie is a cheeky little redhead with a bit of a wild side. She specialises in a naught girlfriend experience and loves to create a space for you to explore your most passionate and adventurous self. With her DD bust and playful smile, Evie will have you hooked and wanting more."
     },
     {
@@ -594,7 +594,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12",
+      "lastRostered": "2026-07-16",
       "desc": "Beautiful Egyptian / Lebanese goddess Sabrina, 32 years old & curvy in the right places. She has an appetite for sensual intimacy, affection and loves giving an exotic body slide massage."
     },
     {
@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-16",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -1279,7 +1279,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-16",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-15"
+      "lastRostered": "2026-07-16"
     },
     {
       "name": "Samira",
@@ -1767,7 +1767,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-16"
     },
     {
       "name": "Layla",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-15"
+      "lastRostered": "2026-07-16"
     },
     {
       "name": "Clarisse",
@@ -2722,7 +2722,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-16",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2832,7 +2832,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-14",
+      "lastRostered": "2026-07-16",
       "oldUrl": "https://wivesonly.com.au/vIvianna/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2896,7 +2896,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-03",
-      "lastRostered": "2026-07-15",
+      "lastRostered": "2026-07-16",
       "oldUrl": "https://wivesonly.com.au/nicki/",
       "photos": [],
       "labels": [],
@@ -3004,7 +3004,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-01",
-      "lastRostered": "2026-07-15",
+      "lastRostered": "2026-07-16",
       "oldUrl": "https://wivesonly.com.au/blaze/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/07/blaze-new.jpg"
@@ -3616,6 +3616,10 @@
         "end": "02:00"
       },
       "2026-07-11": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-16": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -5018,7 +5022,8 @@
       "2026-07-12",
       "2026-07-13",
       "2026-07-14",
-      "2026-07-15"
+      "2026-07-15",
+      "2026-07-16"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -5694,6 +5699,10 @@
         "end": "17:30"
       },
       "2026-07-15": {
+        "start": "11:30",
+        "end": "17:30"
+      },
+      "2026-07-16": {
         "start": "11:30",
         "end": "17:30"
       }
@@ -6460,6 +6469,10 @@
       "2026-07-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Luna": {
@@ -6648,6 +6661,10 @@
         "end": "18:00"
       },
       "2026-07-15": {
+        "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-07-16": {
         "start": "11:00",
         "end": "18:00"
       }
@@ -7749,6 +7766,10 @@
       "2026-07-11": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-07-16": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Lina": {
@@ -7905,6 +7926,10 @@
         "end": "04:00"
       },
       "2026-07-14": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -8159,6 +8184,10 @@
       "2026-07-11": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-07-16": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Maddison": {
@@ -8535,6 +8564,10 @@
       "2026-07-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Valentina": {
@@ -8551,6 +8584,10 @@
         "end": "06:00"
       },
       "2026-07-15": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -8601,6 +8638,10 @@
         "end": "04:00"
       },
       "2026-07-14": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -8656,6 +8697,10 @@
       },
       "2026-07-12": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-07-16": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -8728,9 +8773,13 @@
       "2026-07-15": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-16": {
+        "start": "14:00",
+        "end": "22:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-12T16:44:45.172Z",
-  "lastCalendarSync": "2026-07-15T10:23:58.324Z"
+  "lastCalendarSync": "2026-07-15T14:20:05.613Z"
 }

@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14"
+      "lastRostered": "2026-07-16"
     },
     {
       "name": "Ami",
@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-16"
     },
     {
       "name": "Irene",
@@ -1434,6 +1434,10 @@
       "2026-07-13": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-16": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Anjali": {
@@ -2006,6 +2010,10 @@
         "end": "03:00"
       },
       "2026-07-12": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-16": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3169,5 +3177,5 @@
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-15T14:19:33.542Z"
+  "lastCalendarSync": "2026-07-15T15:58:51.534Z"
 }

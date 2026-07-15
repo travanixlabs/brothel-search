@@ -10336,6 +10336,34 @@
       "labels": [],
       "lastModified": "2026-07-13T10:00:55.930Z",
       "lastRostered": ""
+    },
+    {
+      "name": "kome",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kome-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93751784101845_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93771784101847_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93781784101848_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93791784101850_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93801784101851_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/93761784101846_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-15T10:00:14.697Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15854,7 +15882,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-14T10:00:42.824Z",
+  "lastGirlsSync": "2026-07-15T10:00:14.697Z",
   "lastCalendarSync": "2026-06-16T18:42:05.705Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

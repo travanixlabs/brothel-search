@@ -38,7 +38,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-30",
-      "lastRostered": "2026-07-21",
+      "lastRostered": "2026-07-22",
       "oldUrl": "https://jinia.com.au/lucy-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260401094425.jpg"
@@ -685,7 +685,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-21",
+      "lastRostered": "2026-07-22",
       "oldUrl": "https://jinia.com.au/rose-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251202094000_%E5%89%AF%E6%9C%AC.jpg"
@@ -1993,7 +1993,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-06",
-      "lastRostered": "2026-07-21",
+      "lastRostered": "2026-07-22",
       "oldUrl": "https://jinia.com.au/wendy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260506111256.jpg"
@@ -3537,6 +3537,10 @@
       "2026-07-21": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-07-22": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -3797,7 +3801,8 @@
       "2026-07-18",
       "2026-07-19",
       "2026-07-20",
-      "2026-07-21"
+      "2026-07-21",
+      "2026-07-22"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4766,6 +4771,10 @@
       "2026-07-17": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-07-22": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Lin": {
@@ -5226,9 +5235,13 @@
       "2026-07-17": {
         "start": "12:00",
         "end": "04:00"
+      },
+      "2026-07-22": {
+        "start": "12:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-07-15T06:36:31.339Z"
+  "lastCalendarSync": "2026-07-15T14:20:11.463Z"
 }

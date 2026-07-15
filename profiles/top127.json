@@ -1149,6 +1149,32 @@
       "labels": [],
       "lastModified": "2026-07-08T04:00:27.505Z",
       "lastRostered": "2026-07-15"
+    },
+    {
+      "name": "Nina",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "150",
+      "cup": "D",
+      "val1": "200",
+      "val2": "260",
+      "val3": "310",
+      "startDate": "2026-07-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-nina-new-diamond-diamond200-260-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Nina3-579x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Nina2-587x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Nina4-591x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Nina5-580x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-15T10:00:14.388Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -4252,7 +4278,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-08T04:00:27.505Z",
+  "lastGirlsSync": "2026-07-15T10:00:14.388Z",
   "lastCalendarSync": "2026-07-14T14:23:40.731Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

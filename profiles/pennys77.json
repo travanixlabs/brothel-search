@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-14"
+      "lastRostered": "2026-07-17"
     },
     {
       "name": "Ally",
@@ -798,7 +798,8 @@
         "https://pennys77.com.au/wp-content/uploads/2026/07/IMG_2396-scaled.webp"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-17"
     }
   ],
   "calendar": {
@@ -1949,6 +1950,10 @@
         "end": "03:00"
       },
       "2026-07-13": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-17": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3203,8 +3208,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Gabby": {
+      "2026-07-17": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-03T00:19:00.057Z",
-  "lastCalendarSync": "2026-07-16T17:48:05.142Z"
+  "lastCalendarSync": "2026-07-16T23:28:50.481Z"
 }

@@ -10309,7 +10309,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-12T04:00:23.066Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-07-16T17:18:25.481Z"
     },
     {
       "name": "Akino",

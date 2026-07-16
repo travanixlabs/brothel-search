@@ -4963,7 +4963,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-04-30",
+      "lastRostered": "2026-07-16",
       "oldUrl": "https://www.stilettosydney.com/workers/lorena-new-3/",
       "photos": [],
       "labels": [
@@ -7585,10 +7585,6 @@
     },
     "Jess": {},
     "Sasha": {
-      "2026-07-16": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-07-17": {
         "start": "09:00",
         "end": "17:00"
@@ -8230,8 +8226,8 @@
     "Karina": {},
     "Bree": {
       "2026-07-17": {
-        "start": "09:00",
-        "end": "17:00"
+        "start": "08:00",
+        "end": "16:00"
       },
       "2026-07-20": {
         "start": "09:00",
@@ -8377,7 +8373,12 @@
       }
     },
     "Lana": {},
-    "Lorena": {},
+    "Lorena": {
+      "2026-07-16": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
     "Yasmin": {
       "2026-04-30": {
         "start": "22:00",
@@ -8680,5 +8681,5 @@
     "Adeline": {}
   },
   "lastGirlsSync": "2026-07-16T06:22:43.744Z",
-  "lastCalendarSync": "2026-07-16T06:41:54.169Z"
+  "lastCalendarSync": "2026-07-16T08:40:46.112Z"
 }

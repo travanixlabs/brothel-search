@@ -5814,7 +5814,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-06-21",
+      "lastRostered": "2026-07-24",
       "oldUrl": "https://www.stilettosydney.com/workers/gemma-new/",
       "photos": [],
       "labels": [
@@ -7529,10 +7529,6 @@
       }
     },
     "Ruby": {
-      "2026-07-19": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-07-21": {
         "start": "10:00",
         "end": "18:00"
@@ -8569,7 +8565,20 @@
     "Luanna": {},
     "Rosie": {},
     "Alex": {},
-    "Gemma": {},
+    "Gemma": {
+      "2026-07-20": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-22": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-24": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
     "Naomi": {
       "2026-07-19": {
         "start": "18:00",
@@ -8720,5 +8729,5 @@
     }
   },
   "lastGirlsSync": "2026-07-18T10:57:34.217Z",
-  "lastCalendarSync": "2026-07-18T11:29:02.408Z"
+  "lastCalendarSync": "2026-07-18T13:57:29.864Z"
 }

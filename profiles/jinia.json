@@ -853,7 +853,7 @@
       "val2": "",
       "val3": "250",
       "startDate": "2025-10-30",
-      "lastRostered": "2026-07-19",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://jinia.com.au/june/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2024/05/Image_20240524100124.jpg"
@@ -3469,6 +3469,14 @@
       "2026-07-12": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-07-20": {
+        "start": "15:00",
+        "end": "00:00"
+      },
+      "2026-07-19": {
+        "start": "15:00",
+        "end": "00:00"
       }
     },
     "Eva": {
@@ -5274,5 +5282,5 @@
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-07-18T15:28:20.349Z"
+  "lastCalendarSync": "2026-07-18T23:30:36.259Z"
 }

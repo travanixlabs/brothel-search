@@ -38,7 +38,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-30",
-      "lastRostered": "2026-07-24",
+      "lastRostered": "2026-07-25",
       "oldUrl": "https://jinia.com.au/lucy-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260401094425.jpg"
@@ -685,7 +685,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-24",
+      "lastRostered": "2026-07-25",
       "oldUrl": "https://jinia.com.au/rose-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/12/%E5%9B%BE%E7%89%87_20251202094000_%E5%89%AF%E6%9C%AC.jpg"
@@ -872,7 +872,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-10-28",
-      "lastRostered": "2026-07-19",
+      "lastRostered": "2026-07-25",
       "oldUrl": "https://jinia.com.au/anna-5/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
@@ -1993,7 +1993,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-06",
-      "lastRostered": "2026-07-24",
+      "lastRostered": "2026-07-25",
       "oldUrl": "https://jinia.com.au/wendy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260506111256.jpg"
@@ -3541,6 +3541,10 @@
       "2026-07-24": {
         "start": "13:00",
         "end": "03:00"
+      },
+      "2026-07-25": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -3665,6 +3669,10 @@
         "end": "04:00"
       },
       "2026-07-19": {
+        "start": "17:00",
+        "end": "04:00"
+      },
+      "2026-07-25": {
         "start": "17:00",
         "end": "04:00"
       }
@@ -3800,7 +3808,8 @@
       "2026-07-21",
       "2026-07-22",
       "2026-07-23",
-      "2026-07-24"
+      "2026-07-24",
+      "2026-07-25"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4781,6 +4790,10 @@
       "2026-07-24": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-07-25": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Lin": {
@@ -5253,9 +5266,13 @@
       "2026-07-19": {
         "start": "12:00",
         "end": "04:00"
+      },
+      "2026-07-25": {
+        "start": "12:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-06-23T07:53:52.290Z",
-  "lastCalendarSync": "2026-07-18T03:42:31.604Z"
+  "lastCalendarSync": "2026-07-18T15:28:20.349Z"
 }

@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-10",
+      "lastRostered": "2026-07-19",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-25",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -1423,7 +1423,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-19"
     },
     {
       "name": "Gloria",
@@ -6690,6 +6690,22 @@
       "2026-07-06": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-07-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-07-23": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-07-24": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-25": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Opal": {
@@ -6797,10 +6813,6 @@
         "start": "19:00",
         "end": "05:00"
       },
-      "2026-07-18": {
-        "start": "19:00",
-        "end": "05:00"
-      },
       "2026-07-22": {
         "start": "19:00",
         "end": "05:00"
@@ -6826,10 +6838,6 @@
       "2026-06-30": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-07-18": {
-        "start": "20:00",
-        "end": "04:00"
       },
       "2026-07-22": {
         "start": "20:00",
@@ -7111,10 +7119,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-07-18": {
-        "start": "20:00",
-        "end": "04:00"
-      },
       "2026-07-24": {
         "start": "20:00",
         "end": "04:00"
@@ -7327,6 +7331,10 @@
     "Giselle": {
       "2026-04-05": {
         "start": "01:00",
+        "end": "09:00"
+      },
+      "2026-07-19": {
+        "start": "04:00",
         "end": "09:00"
       }
     },
@@ -7972,10 +7980,6 @@
       "2026-07-11": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-07-18": {
-        "start": "21:00",
-        "end": "05:00"
       }
     },
     "Parker": {
@@ -8202,10 +8206,6 @@
       "2026-07-24": {
         "start": "11:00",
         "end": "17:00"
-      },
-      "2026-07-18": {
-        "start": "23:00",
-        "end": "05:00"
       }
     },
     "Gloria": {},
@@ -8217,10 +8217,6 @@
       "2026-07-04": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-07-18": {
-        "start": "21:00",
-        "end": "05:00"
       },
       "2026-07-24": {
         "start": "21:00",
@@ -8277,12 +8273,7 @@
         "end": "06:00"
       }
     },
-    "Zara": {
-      "2026-07-18": {
-        "start": "21:00",
-        "end": "05:00"
-      }
-    },
+    "Zara": {},
     "Quinn": {},
     "London": {},
     "Aspen": {},
@@ -8309,6 +8300,10 @@
       "2026-07-10": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-19": {
+        "start": "04:00",
+        "end": "20:00"
       }
     },
     "Piper": {
@@ -8671,5 +8666,5 @@
     }
   },
   "lastGirlsSync": "2026-07-18T16:43:04.115Z",
-  "lastCalendarSync": "2026-07-18T17:33:14.120Z"
+  "lastCalendarSync": "2026-07-18T19:39:17.785Z"
 }

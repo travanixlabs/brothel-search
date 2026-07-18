@@ -3719,6 +3719,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-24"
+    },
+    {
+      "name": "Lena",
+      "country": [
+        "Australian"
+      ],
+      "age": "29",
+      "height": "163",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-19",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -14784,6 +14802,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-12T10:00:27.562Z",
+  "lastGirlsSync": "2026-07-18T16:42:27.560Z",
   "lastCalendarSync": "2026-07-18T15:27:54.499Z"
 }

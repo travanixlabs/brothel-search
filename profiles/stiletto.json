@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06",
+      "lastRostered": "2026-07-19",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29",
+      "lastRostered": "2026-08-01",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -6475,7 +6475,8 @@
       "2026-07-28",
       "2026-07-29",
       "2026-07-30",
-      "2026-07-31"
+      "2026-07-31",
+      "2026-08-01"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -7394,10 +7395,6 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-07-18": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-07-19": {
         "start": "08:00",
         "end": "16:00"
@@ -8145,6 +8142,10 @@
       "2026-06-14": {
         "start": "21:00",
         "end": "22:00"
+      },
+      "2026-07-19": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Inanna Lux": {
@@ -8202,6 +8203,10 @@
         "end": "21:00"
       },
       "2026-07-29": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-08-01": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -8755,5 +8760,5 @@
     }
   },
   "lastGirlsSync": "2026-07-17T22:42:18.631Z",
-  "lastCalendarSync": "2026-07-17T23:28:44.990Z"
+  "lastCalendarSync": "2026-07-18T03:42:22.245Z"
 }

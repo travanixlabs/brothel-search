@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-20",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -999,7 +999,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18",
+      "lastRostered": "2026-07-20",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1529,7 +1529,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-19"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Sophia",
@@ -1682,7 +1682,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Shell",
@@ -2043,7 +2043,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-27"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Vera",
@@ -2183,7 +2183,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-19"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Sienna",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-16"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Clarisse",
@@ -2722,7 +2722,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-19",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2832,7 +2832,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://wivesonly.com.au/vIvianna/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3004,7 +3004,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-01",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-20",
       "oldUrl": "https://wivesonly.com.au/blaze/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/07/blaze-new.jpg"
@@ -3274,6 +3274,10 @@
       "2026-07-19": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-20": {
+        "start": "19:30",
+        "end": "03:30"
       }
     },
     "Delilah": {
@@ -4540,6 +4544,10 @@
       "2026-07-19": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-20": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Giselle": {
@@ -4852,6 +4860,10 @@
       "2026-07-18": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-07-20": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -4964,6 +4976,10 @@
       "2026-06-27": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-07-20": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "_published": [
@@ -5078,7 +5094,8 @@
       "2026-07-16",
       "2026-07-17",
       "2026-07-18",
-      "2026-07-19"
+      "2026-07-19",
+      "2026-07-20"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -5775,6 +5792,10 @@
       },
       "2026-07-16": {
         "start": "11:30",
+        "end": "17:30"
+      },
+      "2026-07-20": {
+        "start": "11:00",
         "end": "17:30"
       }
     },
@@ -7445,6 +7466,10 @@
       "2026-07-13": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-07-20": {
+        "start": "19:00",
+        "end": "04:00"
       }
     },
     "London": {
@@ -8047,6 +8072,10 @@
       "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-20": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Belle": {
@@ -8303,6 +8332,10 @@
       "2026-07-16": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-20": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Maddison": {
@@ -8423,6 +8456,10 @@
       "2026-07-19": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-20": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Chrissy": {
@@ -8783,6 +8820,10 @@
       "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-20": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Gia": {
@@ -8956,9 +8997,19 @@
       "2026-07-16": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-07-20": {
+        "start": "11:00",
+        "end": "19:30"
+      }
+    },
+    "Dallas": {
+      "2026-07-20": {
+        "start": "19:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-12T16:44:45.172Z",
-  "lastCalendarSync": "2026-07-18T15:28:15.707Z"
+  "lastCalendarSync": "2026-07-19T14:01:15.948Z"
 }

@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01",
+      "lastRostered": "2026-08-02",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -4227,7 +4227,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-17"
+      "lastRostered": "2026-07-19"
     },
     {
       "name": "Trinity",
@@ -6243,7 +6243,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-19",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -6476,7 +6476,8 @@
       "2026-07-29",
       "2026-07-30",
       "2026-07-31",
-      "2026-08-01"
+      "2026-08-01",
+      "2026-08-02"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6966,6 +6967,10 @@
       "2026-07-17": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-19": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Chanel": {
@@ -7368,10 +7373,6 @@
     },
     "Victoria": {
       "2026-04-05": {
-        "start": "08:00",
-        "end": "16:00"
-      },
-      "2026-07-19": {
         "start": "08:00",
         "end": "16:00"
       }
@@ -8126,6 +8127,10 @@
       "2026-08-01": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-08-02": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Lacey": {},
@@ -8623,7 +8628,12 @@
         "end": "20:00"
       }
     },
-    "Georgina": {},
+    "Georgina": {
+      "2026-07-19": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Adeline": {},
     "Chelsea": {},
     "Fern": {
@@ -8638,5 +8648,5 @@
     }
   },
   "lastGirlsSync": "2026-07-18T22:42:10.592Z",
-  "lastCalendarSync": "2026-07-18T23:30:27.725Z"
+  "lastCalendarSync": "2026-07-19T04:04:22.585Z"
 }

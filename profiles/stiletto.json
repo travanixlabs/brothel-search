@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-17",
+      "lastRostered": "2026-07-24",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -3547,7 +3547,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-17"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Sadie",
@@ -6595,6 +6595,22 @@
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
+      },
+      "2026-07-20": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-21": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-23": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-24": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Bambi": {
@@ -7225,10 +7241,6 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-07-19": {
-        "start": "16:00",
-        "end": "00:00"
       },
       "2026-07-21": {
         "start": "14:00",
@@ -8256,6 +8268,10 @@
       "2026-07-17": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-20": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Zara": {},
@@ -8635,5 +8651,5 @@
     }
   },
   "lastGirlsSync": "2026-07-19T11:06:38.121Z",
-  "lastCalendarSync": "2026-07-19T11:35:48.392Z"
+  "lastCalendarSync": "2026-07-19T14:01:11.275Z"
 }

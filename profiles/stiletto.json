@@ -712,7 +712,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "CeCe",
@@ -1500,7 +1500,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-05"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Halo",
@@ -1573,7 +1573,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Hennessy",
@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Skye",
@@ -5928,7 +5928,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-08-02",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -6202,7 +6202,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-23",
+      "lastRostered": "2026-07-31",
       "oldUrl": "https://www.stilettosydney.com/workers/veronica/",
       "photos": [],
       "labels": [
@@ -6882,6 +6882,18 @@
       "2026-07-25": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-07-30": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-07-31": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-08-01": {
+        "start": "19:00",
+        "end": "05:00"
       }
     },
     "Hennessy": {
@@ -7192,6 +7204,14 @@
       "2026-07-25": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-31": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-01": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Carmen": {
@@ -7924,6 +7944,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-20": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Raelynn": {
@@ -8043,6 +8067,10 @@
       "2026-05-29": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-20": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "CeCe": {},
@@ -8730,6 +8758,18 @@
       "2026-07-26": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-28": {
+        "start": "18:00",
+        "end": "01:00"
+      },
+      "2026-07-29": {
+        "start": "18:00",
+        "end": "01:00"
+      },
+      "2026-08-02": {
+        "start": "18:00",
+        "end": "01:00"
       }
     },
     "Malibu": {},
@@ -8831,6 +8871,10 @@
       "2026-07-23": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Georgina": {},
@@ -8864,5 +8908,5 @@
     }
   },
   "lastGirlsSync": "2026-07-19T22:44:20.972Z",
-  "lastCalendarSync": "2026-07-20T04:13:45.876Z"
+  "lastCalendarSync": "2026-07-20T05:53:01.094Z"
 }

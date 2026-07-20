@@ -6353,6 +6353,71 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Jenna",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "23",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Stunning & Sweet Hey boys, my name is Jenna. I am every man’s fantasy come to life. I have shiny blonde hair, pretty doll-like features, an incredibly petite, tight body and perky bust, You’ll notice as soon as we meet how warm and friendly I am. I love to chat and get to ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-07-20",
+      "oldUrl": "https://www.stilettosydney.com/workers/jenna-new-2/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "Couple",
+        "Adventurous Positions",
+        "BDSM",
+        "DFK",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Foot Fetish",
+        "Fingering",
+        "Anal Play"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Romy",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "C",
+      "body": "10",
+      "desc": "Heya handsome, I’m Romy, your seductive Australian muse. I’m a confident size 10 with sun-kissed blonde hair and piercing blue eyes that will mesmerize you. I love to indulge in deep, sensual connections and know exactly how to ignite your fantasies. Whether you’re seeking a passionate escape or a tender, intimate ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-07-20",
+      "oldUrl": "https://www.stilettosydney.com/workers/romy-new/",
+      "photos": [],
+      "labels": [
+        "Couple",
+        "Double",
+        "Double Lesbian",
+        "COB",
+        "COF",
+        "BDSM",
+        "Golden Showers",
+        "2 Men",
+        "Role Play",
+        "Strap on",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -8905,8 +8970,36 @@
         "start": "19:00",
         "end": "03:00"
       }
+    },
+    "Jenna": {
+      "2026-07-20": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-21": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-07-23": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-26": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
+    "Romy": {
+      "2026-07-20": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "17:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-07-19T22:44:20.972Z",
+  "lastGirlsSync": "2026-07-20T06:50:44.579Z",
   "lastCalendarSync": "2026-07-20T05:53:01.094Z"
 }

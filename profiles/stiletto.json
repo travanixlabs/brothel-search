@@ -290,7 +290,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-09",
+      "lastRostered": "2026-07-21",
       "desc": "Hello gentlemen my name is Annika. I have beautiful soft skin and enchanting brown eyes. I am effortless sophisticated and intelligent. I can be the epitome of elegance and glamour, but only if that’s the type of girlfriend you want. Seemingly normal girl in the streets and naughty playmate in the ..."
     },
     {
@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18",
+      "lastRostered": "2026-07-26",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-24",
+      "lastRostered": "2026-08-01",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -2172,7 +2172,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-27"
     },
     {
       "name": "Kiara",
@@ -2283,7 +2283,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Lacey",
@@ -2615,7 +2615,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-17"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Mel",
@@ -3104,7 +3104,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-26"
     },
     {
       "name": "Piper",
@@ -3238,7 +3238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-28"
     },
     {
       "name": "Raven",
@@ -3267,7 +3267,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Rebecca",
@@ -4464,7 +4464,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-12"
+      "lastRostered": "2026-07-27"
     },
     {
       "name": "Zara",
@@ -4849,7 +4849,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-13",
+      "lastRostered": "2026-07-27",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -6311,7 +6311,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-25",
+      "lastRostered": "2026-08-01",
       "oldUrl": "https://www.stilettosydney.com/workers/fern-new/",
       "photos": [],
       "labels": [
@@ -6472,6 +6472,7 @@
       "2026-07-24",
       "2026-07-25",
       "2026-07-26",
+      "2026-07-27",
       "2026-07-28",
       "2026-07-29",
       "2026-07-30",
@@ -6631,6 +6632,26 @@
       "2026-07-24": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-07-27": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-28": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-30": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-31": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-01": {
+        "start": "07:00",
+        "end": "12:00"
       }
     },
     "Bambi": {
@@ -6815,6 +6836,14 @@
       "2026-07-26": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-07-29": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-08-01": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Carol": {
@@ -7413,8 +7442,8 @@
         "end": "16:00"
       },
       "2026-07-20": {
-        "start": "10:00",
-        "end": "16:00"
+        "start": "11:00",
+        "end": "18:00"
       }
     },
     "Ella": {
@@ -7897,7 +7926,24 @@
         "end": "07:00"
       }
     },
-    "Raelynn": {},
+    "Raelynn": {
+      "2026-07-21": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-23": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-27": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-28": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Blake": {},
     "Kennedy": {
       "2026-04-13": {
@@ -7939,6 +7985,34 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-22": {
+        "start": "19:00",
+        "end": "23:00"
+      },
+      "2026-07-23": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-07-29": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-30": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-07-31": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-08-01": {
+        "start": "07:00",
+        "end": "11:00"
       }
     },
     "Kelsey": {
@@ -8055,6 +8129,22 @@
       "2026-07-10": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-22": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-23": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-24": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-07-26": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Kianna": {
@@ -8089,6 +8179,26 @@
       "2026-07-18": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-07-20": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-07-24": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-25": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-26": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-27": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Trinity": {
@@ -8102,7 +8212,16 @@
       }
     },
     "Dallas": {},
-    "Annika": {},
+    "Annika": {
+      "2026-07-20": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-21": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Audrina": {
       "2026-04-13": {
         "start": "21:00",
@@ -8130,7 +8249,24 @@
       }
     },
     "Rebecca": {},
-    "Arizona": {},
+    "Arizona": {
+      "2026-07-20": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-21": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-25": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-07-26": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Imogen": {},
     "Poppy": {
       "2026-04-13": {
@@ -8224,19 +8360,26 @@
       "2026-07-11": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-07-23": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-07-24": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-07-25": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Karina": {},
-    "Bree": {
-      "2026-07-20": {
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "2026-07-24": {
-        "start": "11:00",
-        "end": "17:00"
-      }
-    },
+    "Bree": {},
     "Gloria": {},
     "Valerie": {
       "2026-06-06": {
@@ -8317,8 +8460,38 @@
       }
     },
     "Brandy": {},
-    "Yvette": {},
-    "Sonya": {},
+    "Yvette": {
+      "2026-07-20": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-21": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-24": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-26": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-07-27": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
+    "Sonya": {
+      "2026-07-22": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-07-27": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -8536,10 +8709,6 @@
     "Rosie": {},
     "Alex": {},
     "Gemma": {
-      "2026-07-20": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-07-22": {
         "start": "10:00",
         "end": "18:00"
@@ -8675,9 +8844,25 @@
       "2026-07-24": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-07-25": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-07-31": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-01": {
+        "start": "19:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-19T22:44:20.972Z",
-  "lastCalendarSync": "2026-07-19T23:33:05.740Z"
+  "lastCalendarSync": "2026-07-20T04:13:45.876Z"
 }

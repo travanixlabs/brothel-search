@@ -213,7 +213,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-20"
     },
     {
       "name": "Charlie",
@@ -3929,7 +3929,12 @@
       }
     },
     "Lily": {},
-    "Bree": {},
+    "Bree": {
+      "2026-07-20": {
+        "start": "10:00",
+        "end": "19:00"
+      }
+    },
     "Jessica": {
       "2026-04-10": {
         "start": "12:00",
@@ -4684,5 +4689,5 @@
     }
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-19T23:32:47.351Z"
+  "lastCalendarSync": "2026-07-20T04:13:24.255Z"
 }

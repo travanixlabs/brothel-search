@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2024-11-01",
+      "lastRostered": "2026-07-21",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -9079,8 +9079,14 @@
         "start": "19:30",
         "end": "04:00"
       }
+    },
+    "Summer": {
+      "2026-07-21": {
+        "start": "14:00",
+        "end": "22:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-21T11:44:19.018Z",
-  "lastCalendarSync": "2026-07-21T09:09:12.396Z"
+  "lastCalendarSync": "2026-07-21T12:07:40.770Z"
 }

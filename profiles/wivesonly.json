@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-07-19",
+      "lastRostered": "2026-07-22",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -3553,7 +3553,7 @@
       },
       "2026-07-22": {
         "start": "12:00",
-        "end": "17:30"
+        "end": "17:00"
       }
     },
     "Desiree": {
@@ -7105,7 +7105,7 @@
         "end": "04:00"
       },
       "2026-07-22": {
-        "start": "19:30",
+        "start": "20:30",
         "end": "04:00"
       }
     },
@@ -8946,6 +8946,10 @@
       "2026-07-19": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-22": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Ella": {
@@ -9133,5 +9137,5 @@
     }
   },
   "lastGirlsSync": "2026-07-21T11:44:19.018Z",
-  "lastCalendarSync": "2026-07-22T03:57:37.945Z"
+  "lastCalendarSync": "2026-07-22T09:08:32.358Z"
 }

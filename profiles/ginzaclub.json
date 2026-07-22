@@ -5691,7 +5691,8 @@
         "69",
         "Double"
       ],
-      "lastModified": "2026-07-22T22:00:52.745Z"
+      "lastModified": "2026-07-22T22:00:52.745Z",
+      "lastRostered": "2026-07-22"
     }
   ],
   "calendar": {
@@ -15238,5 +15239,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T22:00:52.745Z",
-  "lastCalendarSync": "2026-07-22T10:39:00.615Z"
+  "lastCalendarSync": "2026-07-22T23:31:27.571Z"
 }

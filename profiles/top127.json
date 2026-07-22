@@ -1175,6 +1175,55 @@
       "labels": [],
       "lastModified": "2026-07-15T10:00:14.388Z",
       "lastRostered": "2026-07-22"
+    },
+    {
+      "name": "Abby",
+      "country": [
+        "Japanese"
+      ],
+      "age": "18",
+      "height": "153",
+      "cup": "C",
+      "val1": "200",
+      "val2": "270",
+      "val3": "310",
+      "startDate": "2026-07-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-abby-new-diamond-diamond200-270-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Abby2-514x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Abby-519x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Abby1-529x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-22T10:00:53.644Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "Airi",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "155",
+      "cup": "B",
+      "val1": "190",
+      "val2": "260",
+      "val3": "300",
+      "startDate": "2026-07-22",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-airi-new-diamond-diamond190-260-300-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Airi-531x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Airi1-535x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-22T10:00:53.644Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -4487,7 +4536,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-15T10:00:14.388Z",
+  "lastGirlsSync": "2026-07-22T10:00:53.644Z",
   "lastCalendarSync": "2026-07-21T14:34:23.399Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

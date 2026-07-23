@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     },
     {
       "name": "Nicole",
@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     },
     {
       "name": "Ami",
@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     },
     {
       "name": "Anjali",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     },
     {
       "name": "Tea",
@@ -778,7 +778,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     },
     {
       "name": "Gabby",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-24"
     }
   ],
   "calendar": {
@@ -1033,6 +1033,10 @@
       "2026-07-23": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1146,7 +1150,8 @@
       "2026-07-20",
       "2026-07-21",
       "2026-07-22",
-      "2026-07-23"
+      "2026-07-23",
+      "2026-07-24"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -1536,6 +1541,10 @@
         "end": "03:00"
       },
       "2026-07-23": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-24": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2330,6 +2339,10 @@
       "2026-07-23": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -2960,6 +2973,10 @@
       "2026-07-23": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -3357,6 +3374,10 @@
       "2026-07-23": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-24": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Gabby": {},
@@ -3384,5 +3405,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-07-23T03:54:07.244Z"
+  "lastCalendarSync": "2026-07-23T14:41:05.041Z"
 }

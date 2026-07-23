@@ -10050,7 +10050,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-22T04:00:49.135Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-22"
     },
     {
       "name": "misaka",
@@ -10075,7 +10075,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-25T07:49:06.115Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-25"
     },
     {
       "name": "iroha",
@@ -10102,7 +10102,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-29T04:00:09.602Z",
-      "lastRostered": ""
+      "lastRostered": "2026-06-29"
     },
     {
       "name": "shina",
@@ -10126,7 +10126,7 @@
       ],
       "labels": [],
       "lastModified": "2026-06-30T04:00:09.667Z",
-      "lastRostered": "",
+      "lastRostered": "2026-06-30",
       "deleted": "Yes",
       "deletedAt": "2026-07-11T17:01:19.851Z"
     },
@@ -10153,7 +10153,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-02T07:35:10.549Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-02"
     },
     {
       "name": "Hoshimo",
@@ -10179,7 +10179,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-03T07:23:19.426Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-03"
     },
     {
       "name": "Lumi",
@@ -10207,7 +10207,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-04T04:00:38.737Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-04"
     },
     {
       "name": "chiemi",
@@ -10231,7 +10231,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-04T04:00:38.737Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-04"
     },
     {
       "name": "airo",
@@ -10256,7 +10256,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-07T04:00:41.397Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-07"
     },
     {
       "name": "chocoo",
@@ -10282,7 +10282,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-11T06:16:46.271Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-11"
     },
     {
       "name": "hakimi",
@@ -10309,7 +10309,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-12T04:00:23.066Z",
-      "lastRostered": "",
+      "lastRostered": "2026-07-12",
       "deleted": "Yes",
       "deletedAt": "2026-07-16T17:18:25.481Z"
     },
@@ -10337,7 +10337,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-13T10:00:55.930Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-13"
     },
     {
       "name": "kome",
@@ -10365,7 +10365,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-15T10:00:14.697Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-15"
     },
     {
       "name": "miria",
@@ -10388,7 +10388,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-21T04:00:37.122Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-21"
     },
     {
       "name": "yolia",
@@ -10413,7 +10413,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-21T04:00:37.122Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-21"
     },
     {
       "name": "aoma",
@@ -10439,7 +10439,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-23T10:00:54.425Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-23"
     }
   ],
   "calendar": {
@@ -15959,7 +15959,7 @@
     }
   },
   "lastGirlsSync": "2026-07-23T10:00:54.425Z",
-  "lastCalendarSync": "2026-06-16T18:42:05.705Z",
+  "lastCalendarSync": "2026-07-23T12:09:03.662Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

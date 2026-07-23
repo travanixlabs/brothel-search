@@ -6202,7 +6202,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-31",
+      "lastRostered": "2026-08-06",
       "oldUrl": "https://www.stilettosydney.com/workers/veronica/",
       "photos": [],
       "labels": [
@@ -7630,8 +7630,8 @@
         "end": "16:00"
       },
       "2026-07-24": {
-        "start": "09:00",
-        "end": "17:00"
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Ella": {
@@ -8972,6 +8972,10 @@
       "2026-07-31": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-08-06": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Georgina": {
@@ -9080,5 +9084,5 @@
     }
   },
   "lastGirlsSync": "2026-07-23T11:47:16.014Z",
-  "lastCalendarSync": "2026-07-23T10:41:48.753Z"
+  "lastCalendarSync": "2026-07-23T12:09:38.002Z"
 }

@@ -1279,7 +1279,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-16",
+      "lastRostered": "2026-07-24",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-07-22",
+      "lastRostered": "2026-07-24",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -8076,6 +8076,10 @@
       "2026-07-16": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-07-24": {
+        "start": "15:00",
+        "end": "04:00"
       }
     },
     "Lina": {
@@ -9052,6 +9056,10 @@
       "2026-07-22": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-07-24": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Ella": {
@@ -9259,5 +9267,5 @@
     }
   },
   "lastGirlsSync": "2026-07-21T11:44:19.018Z",
-  "lastCalendarSync": "2026-07-23T14:41:34.186Z"
+  "lastCalendarSync": "2026-07-24T05:33:45.250Z"
 }

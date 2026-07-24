@@ -358,7 +358,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18",
+      "lastRostered": "2026-07-25",
       "desc": "Boys, Please allow me to introduce myself. I'm Aspen. I am gorgeous, fun, energetic, curious and sexually charged. I have beautiful red hair, sparkling eyes, a sexy, slim size 8 body, and a perky B cup bust. My service ensures that I provide the ultimate girlfriend experience but also like ..."
     },
     {
@@ -574,7 +574,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18",
+      "lastRostered": "2026-07-25",
       "desc": "Beautiful brandy Hello Gentlemen, My name is Brandy, I am in my mid 20's and new to Stiletto. I am an energetic pocket rocket. My dress size is 6 and my bust is a natural B-cup. I have gorgeous brown eyes with blonde luscious hair to match. I specialise in a genuine girlfriend ..."
     },
     {
@@ -989,7 +989,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Darcie",
@@ -1150,7 +1150,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Eva",
@@ -1442,7 +1442,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Grace",
@@ -2700,7 +2700,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Mia",
@@ -3385,7 +3385,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Roxi",
@@ -5153,7 +5153,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-07-24",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -7451,10 +7451,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-07-24": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-07-26": {
         "start": "16:00",
         "end": "00:00"
@@ -7608,7 +7604,7 @@
         "end": "06:00"
       },
       "2026-07-24": {
-        "start": "19:00",
+        "start": "21:30",
         "end": "03:00"
       },
       "2026-07-25": {
@@ -8021,8 +8017,8 @@
         "end": "08:00"
       },
       "2026-07-25": {
-        "start": "17:00",
-        "end": "01:00"
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Roxi": {
@@ -8091,6 +8087,10 @@
     },
     "Robin": {
       "2026-04-08": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-07-25": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -8209,7 +8209,12 @@
       }
     },
     "CeCe": {},
-    "Erika": {},
+    "Erika": {
+      "2026-07-25": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Ginger": {
       "2026-04-28": {
         "start": "21:00",
@@ -8370,7 +8375,12 @@
         "end": "06:00"
       }
     },
-    "Dallas": {},
+    "Dallas": {
+      "2026-07-25": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Annika": {},
     "Audrina": {
       "2026-04-13": {
@@ -8430,10 +8440,6 @@
       }
     },
     "Aurora": {
-      "2026-07-24": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-07-25": {
         "start": "13:00",
         "end": "21:00"
@@ -8518,7 +8524,12 @@
     },
     "Karina": {},
     "Bree": {},
-    "Gloria": {},
+    "Gloria": {
+      "2026-07-25": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Valerie": {
       "2026-06-06": {
         "start": "22:00",
@@ -8590,14 +8601,28 @@
     "Zara": {},
     "Quinn": {},
     "London": {},
-    "Aspen": {},
+    "Aspen": {
+      "2026-07-25": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Mercy": {
       "2026-06-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-25": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
-    "Brandy": {},
+    "Brandy": {
+      "2026-07-25": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Yvette": {
       "2026-07-26": {
         "start": "12:00",
@@ -8775,6 +8800,10 @@
       "2026-07-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-24": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Angelina": {},
@@ -9046,5 +9075,5 @@
     }
   },
   "lastGirlsSync": "2026-07-24T11:38:00.249Z",
-  "lastCalendarSync": "2026-07-24T10:35:48.757Z"
+  "lastCalendarSync": "2026-07-24T12:00:16.554Z"
 }

@@ -6228,7 +6228,7 @@
         "GFE"
       ],
       "lastModified": "2026-05-18T18:01:43.201Z",
-      "lastRostered": "2026-07-15",
+      "lastRostered": "2026-07-26",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -18470,6 +18470,10 @@
       "2026-07-15": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-07-26": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Kiki": {
@@ -21480,5 +21484,5 @@
     }
   },
   "lastGirlsSync": "2026-07-23T04:00:52.687Z",
-  "lastCalendarSync": "2026-07-25T08:28:07.492Z"
+  "lastCalendarSync": "2026-07-25T10:09:43.145Z"
 }

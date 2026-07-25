@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06",
+      "lastRostered": "2026-08-08",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-24"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Skye",
@@ -4227,7 +4227,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Trinity",
@@ -6586,7 +6586,8 @@
       "2026-08-02",
       "2026-08-03",
       "2026-08-05",
-      "2026-08-06"
+      "2026-08-06",
+      "2026-08-08"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -7144,6 +7145,14 @@
       "2026-07-26": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-07-25": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-07-29": {
+        "start": "17:00",
+        "end": "22:00"
       }
     },
     "Chanel": {
@@ -7626,6 +7635,10 @@
       "2026-08-01": {
         "start": "13:00",
         "end": "02:00"
+      },
+      "2026-07-25": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Kay": {
@@ -8059,6 +8072,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-25": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Raelynn": {
@@ -8381,8 +8398,8 @@
     },
     "Aurora": {
       "2026-07-25": {
-        "start": "13:00",
-        "end": "21:00"
+        "start": "14:00",
+        "end": "22:00"
       },
       "2026-07-26": {
         "start": "13:00",
@@ -8409,6 +8426,10 @@
         "end": "21:00"
       },
       "2026-08-06": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-08-08": {
         "start": "13:00",
         "end": "21:00"
       }
@@ -8587,12 +8608,7 @@
         "end": "07:00"
       }
     },
-    "Piper": {
-      "2026-07-25": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
+    "Piper": {},
     "Felicity": {},
     "Mia": {},
     "Fendi": {
@@ -8971,5 +8987,5 @@
     }
   },
   "lastGirlsSync": "2026-07-24T22:56:42.559Z",
-  "lastCalendarSync": "2026-07-24T23:36:27.400Z"
+  "lastCalendarSync": "2026-07-25T03:48:51.129Z"
 }

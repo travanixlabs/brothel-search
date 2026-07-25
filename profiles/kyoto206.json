@@ -10117,6 +10117,33 @@
       "labels": [],
       "lastModified": "2026-07-20T04:00:36.426Z",
       "lastRostered": "2026-07-20"
+    },
+    {
+      "name": "niina",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-25",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/niina-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/94341784939624_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/94361784939626_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/94371784939629_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/94351784939625_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/94331784939611_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-25T04:00:53.799Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16055,7 +16082,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-20T04:00:36.426Z",
+  "lastGirlsSync": "2026-07-25T04:00:53.799Z",
   "lastCalendarSync": "2026-07-24T05:32:36.358Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

@@ -807,7 +807,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-05-18"
+      "lastRostered": "2026-07-25"
     },
     {
       "name": "Clara",
@@ -1423,7 +1423,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-07-26"
     },
     {
       "name": "Gloria",
@@ -7369,6 +7369,10 @@
       "2026-04-10": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-07-25": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Queen": {
@@ -7536,9 +7540,9 @@
         "start": "23:45",
         "end": "07:45"
       },
-      "2026-07-25": {
-        "start": "23:45",
-        "end": "07:45"
+      "2026-07-26": {
+        "start": "02:00",
+        "end": "10:00"
       }
     },
     "Tyler": {
@@ -8969,5 +8973,5 @@
     }
   },
   "lastGirlsSync": "2026-07-25T06:21:02.302Z",
-  "lastCalendarSync": "2026-07-25T05:27:35.281Z"
+  "lastCalendarSync": "2026-07-25T06:37:59.645Z"
 }

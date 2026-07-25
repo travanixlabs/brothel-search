@@ -171,7 +171,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-07-26"
     },
     {
       "name": "Belle",
@@ -4428,6 +4428,10 @@
       "2026-07-25": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-07-26": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Dahlia ***": {},
@@ -4685,5 +4689,5 @@
     "Hazel": {}
   },
   "lastGirlsSync": "2026-07-01T08:15:47.907Z",
-  "lastCalendarSync": "2026-07-25T17:33:28.846Z"
+  "lastCalendarSync": "2026-07-25T23:33:40.155Z"
 }

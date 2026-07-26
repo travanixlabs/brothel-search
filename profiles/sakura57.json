@@ -10440,6 +10440,32 @@
       "labels": [],
       "lastModified": "2026-07-23T10:00:54.425Z",
       "lastRostered": "2026-07-23"
+    },
+    {
+      "name": "mihana",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "163",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-26",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mihana-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/94421785036948_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/94431785036949_.pic_-1400x934.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/94441785036950_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/07/94451785036952_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-26T04:00:40.939Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -15958,7 +15984,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-23T10:00:54.425Z",
+  "lastGirlsSync": "2026-07-26T04:00:40.939Z",
   "lastCalendarSync": "2026-07-23T12:09:03.662Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

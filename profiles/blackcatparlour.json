@@ -3757,6 +3757,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-26"
+    },
+    {
+      "name": "Dominique",
+      "country": [
+        "Croation"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-26",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Marria",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "D",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-26",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -15430,6 +15466,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-26T06:39:18.660Z",
+  "lastGirlsSync": "2026-07-26T11:14:57.933Z",
   "lastCalendarSync": "2026-07-26T08:44:57.843Z"
 }

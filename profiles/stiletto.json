@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-07-31",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-24"
+      "lastRostered": "2026-07-27"
     },
     {
       "name": "Riley",
@@ -7798,6 +7798,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-07-27": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Jayde": {
@@ -8259,6 +8263,26 @@
       "2026-06-14": {
         "start": "21:00",
         "end": "22:00"
+      },
+      "2026-07-27": {
+        "start": "11:30",
+        "end": "18:00"
+      },
+      "2026-07-28": {
+        "start": "10:00",
+        "end": "14:30"
+      },
+      "2026-07-29": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-07-30": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-07-31": {
+        "start": "10:00",
+        "end": "20:00"
       }
     },
     "Inanna Lux": {
@@ -8303,10 +8327,6 @@
         "start": "13:00",
         "end": "21:00"
       },
-      "2026-07-28": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-07-29": {
         "start": "13:00",
         "end": "21:00"
@@ -8334,6 +8354,10 @@
       "2026-08-09": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-07-30": {
+        "start": "13:00",
+        "end": "13:00"
       }
     },
     "Lacey": {},
@@ -8452,10 +8476,6 @@
     },
     "Brandy": {},
     "Yvette": {
-      "2026-07-26": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-07-27": {
         "start": "10:00",
         "end": "18:00"
@@ -8874,5 +8894,5 @@
     }
   },
   "lastGirlsSync": "2026-07-26T06:39:59.399Z",
-  "lastCalendarSync": "2026-07-26T08:45:14.916Z"
+  "lastCalendarSync": "2026-07-26T10:20:27.235Z"
 }

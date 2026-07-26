@@ -1828,7 +1828,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/09/Xena-ATMC.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-26"
     }
   ],
   "calendar": {
@@ -4850,5 +4851,5 @@
     "Hazel": {}
   },
   "lastGirlsSync": "2026-07-26T06:39:13.822Z",
-  "lastCalendarSync": "2026-07-26T05:44:32.544Z"
+  "lastCalendarSync": "2026-07-26T07:09:41.338Z"
 }

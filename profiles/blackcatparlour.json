@@ -3774,7 +3774,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-26"
     },
     {
       "name": "Marria",
@@ -3792,7 +3793,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-26"
     }
   ],
   "calendar": {
@@ -15467,5 +15469,5 @@
     }
   },
   "lastGirlsSync": "2026-07-26T11:14:57.933Z",
-  "lastCalendarSync": "2026-07-26T08:44:57.843Z"
+  "lastCalendarSync": "2026-07-26T11:43:32.362Z"
 }

@@ -1809,6 +1809,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-07-01"
+    },
+    {
+      "name": "Xena",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "173",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-07-26",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2025/09/Xena-ATMC.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4829,6 +4849,6 @@
     "Taylor": {},
     "Hazel": {}
   },
-  "lastGirlsSync": "2026-07-01T08:15:47.907Z",
+  "lastGirlsSync": "2026-07-26T06:39:13.822Z",
   "lastCalendarSync": "2026-07-26T05:44:32.544Z"
 }

@@ -4376,7 +4376,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26"
+      "lastRostered": "2026-07-27"
     },
     {
       "name": "Victoria",
@@ -6243,7 +6243,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-25",
+      "lastRostered": "2026-07-27",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7274,6 +7274,10 @@
       "2026-08-01": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-07-27": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Carmen": {
@@ -7716,6 +7720,10 @@
       "2026-07-26": {
         "start": "22:16",
         "end": "04:30"
+      },
+      "2026-07-27": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Lilith": {
@@ -8712,12 +8720,7 @@
         "end": "08:00"
       }
     },
-    "Rosie": {
-      "2026-07-26": {
-        "start": "21:00",
-        "end": "01:00"
-      }
-    },
+    "Rosie": {},
     "Alex": {},
     "Gemma": {},
     "Naomi": {
@@ -8810,6 +8813,10 @@
       "2026-07-22": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-07-27": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Adeline": {},
@@ -8880,5 +8887,5 @@
     }
   },
   "lastGirlsSync": "2026-07-26T11:15:34.449Z",
-  "lastCalendarSync": "2026-07-26T14:08:35.709Z"
+  "lastCalendarSync": "2026-07-26T15:36:27.302Z"
 }

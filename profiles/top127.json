@@ -1224,6 +1224,32 @@
       "labels": [],
       "lastModified": "2026-07-22T10:00:53.644Z",
       "lastRostered": "2026-07-27"
+    },
+    {
+      "name": "Mao",
+      "country": [
+        "Japanese"
+      ],
+      "age": "24",
+      "height": "153",
+      "cup": "B",
+      "val1": "190",
+      "val2": "260",
+      "val3": "300",
+      "startDate": "2026-07-27",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-mao-new-diamond-diamond190-260-300-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/07/Mao7-467x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Mao8-468x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Mao11-471x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/07/Mao12-471x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-07-27T10:00:59.222Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -4693,7 +4719,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-22T10:00:53.644Z",
+  "lastGirlsSync": "2026-07-27T10:00:59.222Z",
   "lastCalendarSync": "2026-07-26T14:07:58.406Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

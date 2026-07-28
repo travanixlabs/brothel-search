@@ -6458,6 +6458,33 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Sukura",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "A sweet delicacy Hello Gentlemen, My name is Sukura. I am a dreamy, brunette Australian goddess. I’m in my early 20s with a tight and toned size 6 frame. I am quite tall and have smooth, creamy skin, silky to the touch. I am very feminine, wildly friendly and enthusiastic, and my service ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-07-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/sukura-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Toys",
+        "Adventurous Positions",
+        "Fetish",
+        "Golden Showers"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9031,8 +9058,14 @@
         "start": "20:00",
         "end": "04:00"
       }
+    },
+    "Sukura": {
+      "2026-07-29": {
+        "start": "09:00",
+        "end": "17:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-07-28T17:17:54.143Z",
+  "lastGirlsSync": "2026-07-28T22:54:19.994Z",
   "lastCalendarSync": "2026-07-28T19:59:14.454Z"
 }

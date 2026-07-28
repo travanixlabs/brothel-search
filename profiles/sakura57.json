@@ -10075,7 +10075,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-25T07:49:06.115Z",
-      "lastRostered": "2026-06-25"
+      "lastRostered": "2026-06-25",
+      "deleted": "Yes",
+      "deletedAt": "2026-07-28T17:29:55.494Z"
     },
     {
       "name": "iroha",

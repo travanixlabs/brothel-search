@@ -5895,7 +5895,8 @@
         "2 Men",
         "GFE"
       ],
-      "lastModified": "2026-07-28T11:51:44.472Z"
+      "lastModified": "2026-07-28T11:51:44.472Z",
+      "lastRostered": "2026-07-29"
     }
   ],
   "calendar": {
@@ -15853,8 +15854,14 @@
         "start": "10:30",
         "end": "02:00"
       }
+    },
+    "Momoko": {
+      "2026-07-29": {
+        "start": "10:30",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-28T11:51:44.472Z",
-  "lastCalendarSync": "2026-07-28T10:58:26.320Z"
+  "lastCalendarSync": "2026-07-28T12:19:05.598Z"
 }

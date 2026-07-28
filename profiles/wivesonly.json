@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-07-28",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -9358,6 +9358,10 @@
       "2026-07-26": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-07-28": {
+        "start": "18:00",
+        "end": "22:30"
       }
     },
     "Ava": {
@@ -9471,13 +9475,9 @@
       "2026-07-26": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-07-28": {
-        "start": "16:00",
-        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-21T11:44:19.018Z",
-  "lastCalendarSync": "2026-07-27T15:23:59.002Z"
+  "lastCalendarSync": "2026-07-28T03:46:40.533Z"
 }

@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Nicole",
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Hana",
@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Irene",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Siya",
@@ -778,7 +778,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Gabby",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     },
     {
       "name": "Jenny",
@@ -860,7 +860,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-28"
+      "lastRostered": "2026-07-29"
     }
   ],
   "calendar": {
@@ -1074,6 +1074,10 @@
       "2026-07-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1192,7 +1196,8 @@
       "2026-07-25",
       "2026-07-26",
       "2026-07-27",
-      "2026-07-28"
+      "2026-07-28",
+      "2026-07-29"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -2218,6 +2223,10 @@
       "2026-07-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Hana": {
@@ -2596,6 +2605,10 @@
         "end": "03:00"
       },
       "2026-07-28": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-29": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3424,6 +3437,10 @@
       "2026-07-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Siya": {
@@ -3491,6 +3508,10 @@
       "2026-07-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Gabby": {},
@@ -3524,9 +3545,13 @@
       "2026-07-28": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-07-29": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-07-27T16:38:12.574Z"
+  "lastCalendarSync": "2026-07-28T14:58:48.618Z"
 }

@@ -6485,6 +6485,33 @@
         "Golden Showers"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Sakura",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "A sweet delicacy Hello Gentlemen, My name is Sakura. I am a dreamy, brunette Australian goddess. I’m in my early 20s with a tight and toned size 6 frame. I am quite tall and have smooth, creamy skin, silky to the touch. I am very feminine, wildly friendly and enthusiastic, and my service ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-07-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/sakura-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Toys",
+        "Adventurous Positions",
+        "Fetish",
+        "Golden Showers"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9072,8 +9099,14 @@
         "end": "04:00"
       }
     },
-    "Sukura": {}
+    "Sukura": {},
+    "Sakura": {
+      "2026-07-29": {
+        "start": "09:00",
+        "end": "17:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-07-28T22:54:19.994Z",
+  "lastGirlsSync": "2026-07-29T06:34:32.934Z",
   "lastCalendarSync": "2026-07-29T05:36:07.452Z"
 }

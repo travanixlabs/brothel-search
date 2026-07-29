@@ -1253,7 +1253,7 @@
         "PSE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01"
+      "lastRostered": "2026-08-08"
     },
     {
       "name": "Flora",
@@ -4135,7 +4135,7 @@
         "Kissing (on body)"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Tahlia",
@@ -5814,7 +5814,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-24",
+      "lastRostered": "2026-07-29",
       "oldUrl": "https://www.stilettosydney.com/workers/gemma-new/",
       "photos": [],
       "labels": [
@@ -7042,6 +7042,10 @@
       "2026-08-01": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-07-29": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hennessy": {
@@ -7718,6 +7722,10 @@
       "2026-07-29": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-08-01": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Jamie": {
@@ -8181,8 +8189,8 @@
         "end": "04:00"
       },
       "2026-07-29": {
-        "start": "13:00",
-        "end": "21:00"
+        "start": "18:00",
+        "end": "02:00"
       },
       "2026-07-30": {
         "start": "13:00",
@@ -8625,9 +8633,9 @@
       }
     },
     "Felicity": {
-      "2026-08-01": {
+      "2026-08-08": {
         "start": "20:00",
-        "end": "04:00"
+        "end": "06:00"
       }
     },
     "Mia": {},
@@ -8889,7 +8897,12 @@
     },
     "Rosie": {},
     "Alex": {},
-    "Gemma": {},
+    "Gemma": {
+      "2026-07-29": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
     "Naomi": {
       "2026-07-29": {
         "start": "18:00",
@@ -9062,5 +9075,5 @@
     "Sukura": {}
   },
   "lastGirlsSync": "2026-07-28T22:54:19.994Z",
-  "lastCalendarSync": "2026-07-29T03:50:27.754Z"
+  "lastCalendarSync": "2026-07-29T05:36:07.452Z"
 }

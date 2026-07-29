@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29"
+      "lastRostered": "2026-07-30"
     },
     {
       "name": "Irene",
@@ -568,7 +568,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-30"
     },
     {
       "name": "Sabrina",
@@ -901,7 +901,8 @@
         "https://pennys77.com.au/wp-content/uploads/2026/07/IMG_2449.webp"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-07-30"
     }
   ],
   "calendar": {
@@ -1797,10 +1798,6 @@
       "2026-07-29": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-07-30": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Sonia": {
@@ -2275,6 +2272,10 @@
         "end": "03:00"
       },
       "2026-07-28": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-30": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2799,6 +2800,10 @@
         "end": "03:00"
       },
       "2026-07-09": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-07-30": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3511,10 +3516,6 @@
       "2026-07-29": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-07-30": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Siya": {
@@ -3625,8 +3626,14 @@
         "end": "03:00"
       }
     },
-    "Savannah": {}
+    "Savannah": {},
+    "Chilly": {
+      "2026-07-30": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-07-29T14:41:15.819Z"
+  "lastCalendarSync": "2026-07-29T19:51:14.938Z"
 }

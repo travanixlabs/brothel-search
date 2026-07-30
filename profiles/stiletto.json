@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-31",
+      "lastRostered": "2026-08-09",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -3146,7 +3146,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-08"
+      "lastRostered": "2026-08-12"
     },
     {
       "name": "Polly",
@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-07-30"
     },
     {
       "name": "Skye",
@@ -6645,7 +6645,9 @@
       "2026-08-07",
       "2026-08-08",
       "2026-08-09",
-      "2026-08-10"
+      "2026-08-10",
+      "2026-08-11",
+      "2026-08-12"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -7673,8 +7675,8 @@
         "end": "18:00"
       },
       "2026-07-31": {
-        "start": "10:00",
-        "end": "18:00"
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -8194,6 +8196,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-07-30": {
+        "start": "14:30",
+        "end": "22:30"
       }
     },
     "Raelynn": {},
@@ -8448,6 +8454,34 @@
       "2026-07-31": {
         "start": "10:00",
         "end": "20:00"
+      },
+      "2026-08-02": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-08-03": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-04": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-05": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-06": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-08-07": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-09": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Inanna Lux": {
@@ -8654,19 +8688,39 @@
       }
     },
     "Piper": {
-      "2026-08-03": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-08-04": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-08-07": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-08-08": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-07-31": {
+        "start": "14:00",
+        "end": "00:00"
+      },
+      "2026-08-01": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-08-02": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-05": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-06": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-09": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-08-11": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-12": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -9131,5 +9185,5 @@
     "Sakura": {}
   },
   "lastGirlsSync": "2026-07-29T22:55:37.978Z",
-  "lastCalendarSync": "2026-07-30T03:42:10.864Z"
+  "lastCalendarSync": "2026-07-30T05:23:23.740Z"
 }

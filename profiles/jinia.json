@@ -2328,7 +2328,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-07-30",
-      "lastRostered": "2026-07-30",
+      "lastRostered": "2026-07-31",
       "oldUrl": "https://jinia.com.au/canlily/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/07/%E5%9B%BE%E7%89%87_20260730110248.jpg"
@@ -5515,8 +5515,18 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "🆕 Canlily": {
+      "2026-07-30": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-07-31": {
+        "start": "10:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-30T06:32:43.127Z",
-  "lastCalendarSync": "2026-07-30T03:42:21.372Z"
+  "lastCalendarSync": "2026-07-30T07:11:06.787Z"
 }

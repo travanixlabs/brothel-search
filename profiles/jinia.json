@@ -1530,7 +1530,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/05/%E5%9B%BE%E7%89%87_20250609131213.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Baby",
@@ -2311,6 +2311,27 @@
       "oldUrl": "https://jinia.com.au/sakura-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/06/%E5%9B%BE%E7%89%87_20260623112617.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Canlily",
+      "country": [
+        "Singapore"
+      ],
+      "age": "20",
+      "height": "154",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-07-30",
+      "lastRostered": "2026-07-30",
+      "oldUrl": "https://jinia.com.au/canlily/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/07/%E5%9B%BE%E7%89%87_20260730110248.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -5496,6 +5517,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-22T11:44:59.631Z",
+  "lastGirlsSync": "2026-07-30T06:32:43.127Z",
   "lastCalendarSync": "2026-07-30T03:42:21.372Z"
 }

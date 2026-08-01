@@ -6574,7 +6574,7 @@
         "2 Men"
       ],
       "lastModified": "2026-05-18T18:01:39.781Z",
-      "lastRostered": "2026-05-23",
+      "lastRostered": "2026-08-02",
       "pornstar": "",
       "englishLevel": "No English",
       "experienceLevel": "Inexperienced"
@@ -19347,6 +19347,10 @@
       "2026-05-23": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-08-02": {
+        "start": "10:30",
+        "end": "03:00"
       }
     },
     "Bailey": {
@@ -22342,5 +22346,5 @@
     }
   },
   "lastGirlsSync": "2026-08-01T06:31:24.980Z",
-  "lastCalendarSync": "2026-08-01T07:00:43.215Z"
+  "lastCalendarSync": "2026-08-01T23:30:12.736Z"
 }

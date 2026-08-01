@@ -604,7 +604,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-30",
+      "lastRostered": "2026-08-01",
       "desc": "Oh so cute! Hello Gentlemen, my name is Cali x I am 22, seductive, and easy on the eyes. My petite frame, gorgeous curves, and sweet, girl-next-door looks will captivate you. I have a C-cup bust and long dark locks. Whether you desire a sensual girlfriend experience or something more dominant, I am ..."
     },
     {
@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Cindy",
@@ -1200,7 +1200,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-23"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Faith",
@@ -1280,7 +1280,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-22"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Gabrielle",
@@ -3889,7 +3889,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-30"
+      "lastRostered": "2026-08-01"
     },
     {
       "name": "Skye",
@@ -6243,7 +6243,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-27",
+      "lastRostered": "2026-08-01",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7089,6 +7089,10 @@
       "2026-07-14": {
         "start": "20:30",
         "end": "04:30"
+      },
+      "2026-08-01": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Gabrielle": {
@@ -7455,6 +7459,10 @@
       "2026-05-12": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-01": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Ophelia": {
@@ -7465,10 +7473,6 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-08-01": {
-        "start": "16:00",
-        "end": "00:00"
       }
     },
     "Maddie": {
@@ -7599,6 +7603,10 @@
         "end": "07:00"
       },
       "2026-07-13": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-08-01": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -7882,6 +7890,10 @@
       "2026-05-22": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-08-01": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Ria": {
@@ -8114,6 +8126,10 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-08-01": {
+        "start": "22:00",
+        "end": "05:00"
       }
     },
     "Raelynn": {},
@@ -8983,15 +8999,14 @@
       "2026-07-22": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-01": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Adeline": {},
-    "Chelsea": {
-      "2026-08-01": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
+    "Chelsea": {},
     "Fern": {},
     "Jenna": {
       "2026-07-31": {
@@ -9047,5 +9062,5 @@
     "Sakura": {}
   },
   "lastGirlsSync": "2026-08-01T11:12:41.985Z",
-  "lastCalendarSync": "2026-08-01T10:18:46.187Z"
+  "lastCalendarSync": "2026-08-01T14:06:39.561Z"
 }

@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-19",
+      "lastRostered": "2026-08-02",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -6156,7 +6156,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-30",
+      "lastRostered": "2026-08-02",
       "oldUrl": "https://www.stilettosydney.com/workers/lara-new/",
       "photos": [],
       "labels": [
@@ -6988,10 +6988,6 @@
         "start": "17:00",
         "end": "23:00"
       },
-      "2026-08-01": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-08-03": {
         "start": "15:00",
         "end": "23:00"
@@ -7348,10 +7344,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-08-01": {
-        "start": "19:00",
-        "end": "03:00"
-      },
       "2026-08-06": {
         "start": "18:00",
         "end": "02:00"
@@ -7641,10 +7633,6 @@
       "2026-06-27": {
         "start": "15:00",
         "end": "06:00"
-      },
-      "2026-08-01": {
-        "start": "13:00",
-        "end": "02:00"
       },
       "2026-08-04": {
         "start": "11:00",
@@ -8595,6 +8583,10 @@
       "2026-07-10": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-08-02": {
+        "start": "02:00",
+        "end": "10:00"
       }
     },
     "Piper": {
@@ -8822,10 +8814,6 @@
       }
     },
     "Annabelle": {
-      "2026-08-01": {
-        "start": "17:00",
-        "end": "03:00"
-      },
       "2026-08-04": {
         "start": "12:00",
         "end": "22:00"
@@ -8953,6 +8941,10 @@
       "2026-07-07": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-02": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Pia": {
@@ -9032,10 +9024,6 @@
       "2026-08-09": {
         "start": "16:00",
         "end": "00:00"
-      },
-      "2026-08-01": {
-        "start": "19:00",
-        "end": "03:00"
       }
     },
     "Romy": {
@@ -9062,5 +9050,5 @@
     "Sakura": {}
   },
   "lastGirlsSync": "2026-08-01T16:46:13.410Z",
-  "lastCalendarSync": "2026-08-01T14:06:39.561Z"
+  "lastCalendarSync": "2026-08-01T17:34:23.327Z"
 }

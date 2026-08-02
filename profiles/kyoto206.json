@@ -10144,6 +10144,31 @@
       "labels": [],
       "lastModified": "2026-07-25T04:00:53.799Z",
       "lastRostered": ""
+    },
+    {
+      "name": "akirra",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "166",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/akirra-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94701785640253_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94711785640276_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-02T04:00:49.182Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16082,7 +16107,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-25T04:00:53.799Z",
+  "lastGirlsSync": "2026-08-02T04:00:49.182Z",
   "lastCalendarSync": "2026-07-24T05:32:36.358Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

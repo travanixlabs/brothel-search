@@ -9935,7 +9935,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-26T10:00:50.626Z",
-      "lastRostered": "2026-06-26"
+      "lastRostered": "2026-06-26",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-02T17:00:36.740Z"
     },
     {
       "name": "shizu",

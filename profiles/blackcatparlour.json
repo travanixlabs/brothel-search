@@ -3795,6 +3795,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-08"
+    },
+    {
+      "name": "Jan",
+      "country": [
+        "Thai"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-02",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16133,6 +16151,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-26T11:14:57.933Z",
+  "lastGirlsSync": "2026-08-02T10:00:12.989Z",
   "lastCalendarSync": "2026-08-02T08:43:42.074Z"
 }

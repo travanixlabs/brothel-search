@@ -1830,6 +1830,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-02"
+    },
+    {
+      "name": "Janille",
+      "country": [
+        "African"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-03",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2019/04/Michelle-IMG_7621.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -4950,6 +4970,6 @@
     "Hazel": {},
     "Xena": {}
   },
-  "lastGirlsSync": "2026-07-26T06:39:13.822Z",
+  "lastGirlsSync": "2026-08-02T16:00:08.635Z",
   "lastCalendarSync": "2026-08-02T15:35:34.020Z"
 }

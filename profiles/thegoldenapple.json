@@ -1849,7 +1849,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2019/04/Michelle-IMG_7621.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-08-03"
     }
   ],
   "calendar": {
@@ -4971,5 +4972,5 @@
     "Xena": {}
   },
   "lastGirlsSync": "2026-08-02T16:00:08.635Z",
-  "lastCalendarSync": "2026-08-02T15:35:34.020Z"
+  "lastCalendarSync": "2026-08-02T17:34:44.155Z"
 }

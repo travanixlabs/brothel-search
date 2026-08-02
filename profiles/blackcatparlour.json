@@ -3814,6 +3814,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-03"
+    },
+    {
+      "name": "Janille",
+      "country": [
+        "African"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16491,6 +16509,6 @@
     },
     "Jan": {}
   },
-  "lastGirlsSync": "2026-08-02T10:00:12.989Z",
+  "lastGirlsSync": "2026-08-02T16:44:24.425Z",
   "lastCalendarSync": "2026-08-02T15:35:38.562Z"
 }

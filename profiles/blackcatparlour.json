@@ -3833,6 +3833,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-08"
+    },
+    {
+      "name": "Jade",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "D",
+      "body": "12",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16456,6 +16474,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-02T16:44:24.425Z",
+  "lastGirlsSync": "2026-08-02T22:48:41.837Z",
   "lastCalendarSync": "2026-08-02T21:16:24.615Z"
 }

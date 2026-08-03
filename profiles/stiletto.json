@@ -634,7 +634,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-08-09",
       "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
@@ -1573,7 +1573,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Hennessy",
@@ -2283,7 +2283,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-10"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Lacey",
@@ -3491,7 +3491,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-05"
+      "lastRostered": "2026-08-12"
     },
     {
       "name": "Sabrina",
@@ -4510,7 +4510,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Zarina",
@@ -5133,7 +5133,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-07",
+      "lastRostered": "2026-08-14",
       "oldUrl": "https://www.stilettosydney.com/workers/pia-new/",
       "photos": [],
       "labels": [],
@@ -5599,7 +5599,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://www.stilettosydney.com/workers/lulu-new/",
       "photos": [],
       "labels": [
@@ -6368,7 +6368,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-08-15",
       "oldUrl": "https://www.stilettosydney.com/workers/jenna-new-2/",
       "photos": [],
       "labels": [
@@ -6648,8 +6648,10 @@
       "2026-08-10",
       "2026-08-11",
       "2026-08-12",
+      "2026-08-13",
       "2026-08-14",
-      "2026-08-15"
+      "2026-08-15",
+      "2026-08-16"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -6964,10 +6966,6 @@
         "start": "17:00",
         "end": "23:00"
       },
-      "2026-08-03": {
-        "start": "15:00",
-        "end": "23:00"
-      },
       "2026-08-05": {
         "start": "10:00",
         "end": "18:00"
@@ -6983,6 +6981,14 @@
       "2026-08-10": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-08-13": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-08-15": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Carol": {
@@ -7307,6 +7313,14 @@
       "2026-08-06": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-08-14": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-15": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Carmen": {
@@ -7709,6 +7723,14 @@
       "2026-08-05": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-08-11": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-12": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Viv": {
@@ -8058,10 +8080,6 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-08-03": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Raelynn": {},
@@ -8476,7 +8494,20 @@
         "end": "05:00"
       }
     },
-    "Zara": {},
+    "Zara": {
+      "2026-08-14": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-15": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-16": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Quinn": {},
     "London": {},
     "Aspen": {},
@@ -8746,7 +8777,12 @@
         "end": "05:00"
       }
     },
-    "Lulu": {},
+    "Lulu": {
+      "2026-08-04": {
+        "start": "17:00",
+        "end": "01:00"
+      }
+    },
     "Kat": {},
     "Brenda": {},
     "Tequila": {
@@ -8861,6 +8897,26 @@
       "2026-08-07": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-08-10": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-11": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-12": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-13": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-14": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Veronica": {
@@ -8898,6 +8954,18 @@
       "2026-08-09": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-08-11": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-14": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-08-15": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Romy": {
@@ -8916,5 +8984,5 @@
     "Sakura": {}
   },
   "lastGirlsSync": "2026-08-03T12:52:08.999Z",
-  "lastCalendarSync": "2026-08-03T11:59:34.320Z"
+  "lastCalendarSync": "2026-08-03T13:24:13.457Z"
 }

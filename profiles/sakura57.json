@@ -10954,6 +10954,30 @@
       "labels": [],
       "lastModified": "2026-07-30T06:30:50.915Z",
       "lastRostered": ""
+    },
+    {
+      "name": "noa",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "157",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-08-03",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/noa-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/94761785718978_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/94771785718979_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-03T04:00:07.580Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16472,7 +16496,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-07-31T04:01:00.394Z",
+  "lastGirlsSync": "2026-08-03T04:00:07.580Z",
   "lastCalendarSync": "2026-07-23T12:09:03.662Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

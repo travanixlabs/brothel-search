@@ -10171,6 +10171,33 @@
       "labels": [],
       "lastModified": "2026-08-02T04:00:49.182Z",
       "lastRostered": ""
+    },
+    {
+      "name": "rissa",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/rissa-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94821785748793_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94851785748799_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94841785748798_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/94831785748797_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-03T12:51:14.730Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16109,7 +16136,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-02T04:00:49.182Z",
+  "lastGirlsSync": "2026-08-03T12:51:14.730Z",
   "lastCalendarSync": "2026-07-24T05:32:36.358Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

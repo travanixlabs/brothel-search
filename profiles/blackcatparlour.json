@@ -3852,6 +3852,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-09"
+    },
+    {
+      "name": "Courtney",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16493,6 +16511,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-02T22:48:41.837Z",
+  "lastGirlsSync": "2026-08-03T07:31:08.138Z",
   "lastCalendarSync": "2026-08-03T05:56:02.039Z"
 }

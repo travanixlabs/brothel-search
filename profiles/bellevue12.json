@@ -67,7 +67,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-08-04"
     },
     {
       "name": "Nana",
@@ -173,7 +173,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-08-04"
     },
     {
       "name": "Coco",
@@ -239,7 +239,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-08-04"
     },
     {
       "name": "Tiffany",
@@ -281,7 +281,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-08-04"
     },
     {
       "name": "Wendy",
@@ -297,7 +297,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -315,7 +315,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -335,7 +335,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -355,7 +355,7 @@
       "val2": "130",
       "val3": "160",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://bellevue12.com.au/roster/",
       "photos": [],
       "labels": [],
@@ -485,7 +485,8 @@
       "2026-07-31",
       "2026-08-01",
       "2026-08-02",
-      "2026-08-03"
+      "2026-08-03",
+      "2026-08-04"
     ],
     "Mimi": {
       "2026-04-03": {
@@ -973,6 +974,10 @@
         "end": "02:00"
       },
       "2026-08-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-08-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -1947,6 +1952,10 @@
       "2026-08-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-08-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Jojo": {
@@ -2435,6 +2444,10 @@
         "end": "02:00"
       },
       "2026-08-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-08-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -2927,6 +2940,10 @@
       "2026-08-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-08-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Wendy": {
@@ -3403,6 +3420,10 @@
         "end": "02:00"
       },
       "2026-08-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-08-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -3883,6 +3904,10 @@
       "2026-08-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-08-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Linda": {
@@ -4359,6 +4384,10 @@
         "end": "02:00"
       },
       "2026-08-03": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-08-04": {
         "start": "10:00",
         "end": "02:00"
       }
@@ -4839,9 +4868,13 @@
       "2026-08-03": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-08-04": {
+        "start": "10:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-08-02T14:07:52.478Z"
+  "lastCalendarSync": "2026-08-03T15:25:38.545Z"
 }

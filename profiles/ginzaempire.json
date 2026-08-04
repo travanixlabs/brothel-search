@@ -9927,7 +9927,9 @@
         "GFE"
       ],
       "lastModified": "2026-08-04T06:29:46.278Z",
-      "lastRostered": "2026-08-04"
+      "lastRostered": "2026-08-04",
+      "age": "23",
+      "cup": "C"
     }
   ],
   "calendar": {
@@ -22733,6 +22735,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-04T06:29:46.278Z",
+  "lastGirlsSync": "2026-08-04T10:00:06.900Z",
   "lastCalendarSync": "2026-08-04T09:18:32.639Z"
 }

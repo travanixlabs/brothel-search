@@ -435,7 +435,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-04T17:50:54.281Z"
     },
     {
       "name": "Mila",
@@ -8778,7 +8780,9 @@
       "lastRostered": "2019-05-01",
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-04T17:51:07.820Z"
     },
     {
       "name": "Sagi",
@@ -10050,7 +10054,9 @@
       "photos": [],
       "labels": [],
       "lastModified": "2026-05-25T04:01:02.381Z",
-      "lastRostered": "2026-05-25"
+      "lastRostered": "2026-05-25",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-04T17:51:17.763Z"
     },
     {
       "name": "Aori",

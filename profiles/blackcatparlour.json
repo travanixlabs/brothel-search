@@ -3871,6 +3871,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-03"
+    },
+    {
+      "name": "Iris",
+      "country": [
+        "South American"
+      ],
+      "age": "22",
+      "height": "152",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-04",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16657,6 +16675,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-03T07:31:08.138Z",
+  "lastGirlsSync": "2026-08-04T11:58:52.091Z",
   "lastCalendarSync": "2026-08-04T11:05:49.079Z"
 }

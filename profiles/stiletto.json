@@ -6527,7 +6527,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/olive-new/",
       "photos": [],
       "labels": [
@@ -9130,5 +9130,5 @@
     }
   },
   "lastGirlsSync": "2026-08-04T06:30:55.111Z",
-  "lastCalendarSync": "2026-08-04T05:29:34.791Z"
+  "lastCalendarSync": "2026-08-04T07:11:37.619Z"
 }

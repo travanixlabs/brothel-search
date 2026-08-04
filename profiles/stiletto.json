@@ -232,7 +232,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-08-15",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -6527,7 +6527,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-08-04",
       "oldUrl": "https://www.stilettosydney.com/workers/olive-new/",
       "photos": [],
       "labels": [
@@ -6830,6 +6830,26 @@
       "2026-08-09": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-08-10": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-11": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-12": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-14": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-15": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Audrey": {
@@ -7655,10 +7675,6 @@
         "start": "15:00",
         "end": "06:00"
       },
-      "2026-08-04": {
-        "start": "11:00",
-        "end": "19:00"
-      },
       "2026-08-06": {
         "start": "11:00",
         "end": "19:00"
@@ -7783,10 +7799,6 @@
       }
     },
     "Ruby": {
-      "2026-08-04": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-08-05": {
         "start": "10:00",
         "end": "18:00"
@@ -8387,10 +8399,6 @@
         "start": "21:00",
         "end": "22:00"
       },
-      "2026-08-04": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-08-05": {
         "start": "10:00",
         "end": "18:00"
@@ -8667,18 +8675,6 @@
       "2026-06-15": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-08-04": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-08-05": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-08-06": {
-        "start": "16:00",
-        "end": "00:00"
       },
       "2026-08-07": {
         "start": "16:00",
@@ -9060,10 +9056,6 @@
         "start": "19:00",
         "end": "05:00"
       },
-      "2026-08-04": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-08-05": {
         "start": "07:00",
         "end": "15:00"
@@ -9127,8 +9119,14 @@
         "start": "16:00",
         "end": "00:00"
       }
+    },
+    "Olive": {
+      "2026-08-04": {
+        "start": "19:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-04T06:30:55.111Z",
-  "lastCalendarSync": "2026-08-04T07:11:37.619Z"
+  "lastCalendarSync": "2026-08-04T09:20:17.857Z"
 }

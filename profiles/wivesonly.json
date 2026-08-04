@@ -143,7 +143,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-08-04",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -6924,7 +6924,7 @@
         "end": "04:00"
       },
       "2026-08-04": {
-        "start": "20:00",
+        "start": "20:30",
         "end": "04:00"
       }
     },
@@ -9807,8 +9807,14 @@
         "start": "16:00",
         "end": "02:00"
       }
+    },
+    "Dior": {
+      "2026-08-04": {
+        "start": "17:00",
+        "end": "00:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-21T11:44:19.018Z",
-  "lastCalendarSync": "2026-08-04T07:11:42.482Z"
+  "lastCalendarSync": "2026-08-04T09:20:21.624Z"
 }

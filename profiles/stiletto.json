@@ -574,7 +574,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25",
+      "lastRostered": "2026-08-07",
       "desc": "Beautiful brandy Hello Gentlemen, My name is Brandy, I am in my mid 20's and new to Stiletto. I am an energetic pocket rocket. My dress size is 6 and my bust is a natural B-cup. I have gorgeous brown eyes with blonde luscious hair to match. I specialise in a genuine girlfriend ..."
     },
     {
@@ -3033,7 +3033,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Paloma",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-05"
+      "lastRostered": "2026-08-07"
     },
     {
       "name": "Viv",
@@ -7545,6 +7545,30 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-06": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-07": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-08-08": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-08-13": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-14": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-08-15": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Maddie": {
@@ -7684,9 +7708,13 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-08-05": {
-        "start": "22:00",
-        "end": "06:00"
+      "2026-08-06": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-08-07": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Ella": {
@@ -8632,7 +8660,20 @@
         "end": "06:00"
       }
     },
-    "Brandy": {},
+    "Brandy": {
+      "2026-08-05": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-06": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-08-07": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Yvette": {},
     "Sonya": {},
     "Zarina": {
@@ -9150,5 +9191,5 @@
     "Olive": {}
   },
   "lastGirlsSync": "2026-08-04T22:56:37.476Z",
-  "lastCalendarSync": "2026-08-04T23:36:37.849Z"
+  "lastCalendarSync": "2026-08-05T03:43:47.014Z"
 }

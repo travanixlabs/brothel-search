@@ -10096,7 +10096,8 @@
         "2 Men",
         "Couple"
       ],
-      "lastModified": "2026-08-05T16:00:33.913Z"
+      "lastModified": "2026-08-05T16:00:33.913Z",
+      "lastRostered": "2026-08-05"
     }
   ],
   "calendar": {
@@ -23016,5 +23017,5 @@
     }
   },
   "lastGirlsSync": "2026-08-05T16:00:33.913Z",
-  "lastCalendarSync": "2026-08-05T11:01:11.220Z"
+  "lastCalendarSync": "2026-08-05T16:13:05.930Z"
 }

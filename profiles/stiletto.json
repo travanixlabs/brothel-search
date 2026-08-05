@@ -6598,6 +6598,37 @@
         "Social Escort"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Farah",
+      "country": [
+        "South American"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "C-D",
+      "body": "",
+      "desc": "Hi, my name is Farah and I am a drop dead gorgeous lady with a South American background. I have a slim waist and an amazing round bum. I am curvy & hot blooded with a natural C cup bust. I am beautiful on the outside and the inside as well. ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-08-05",
+      "oldUrl": "https://www.stilettosydney.com/workers/farah-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Fantasy",
+        "COB",
+        "DFK",
+        "Escort",
+        "Dirty Talk",
+        "Body Slide",
+        "Party Bookings",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -9184,8 +9215,18 @@
         "end": "20:00"
       }
     },
-    "Olive": {}
+    "Olive": {},
+    "Farah": {
+      "2026-08-10": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-11": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-08-04T22:56:37.476Z",
+  "lastGirlsSync": "2026-08-05T06:31:37.728Z",
   "lastCalendarSync": "2026-08-05T05:28:45.045Z"
 }

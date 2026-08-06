@@ -6144,7 +6144,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-08-06T11:58:02.514Z"
+      "lastModified": "2026-08-06T11:58:02.514Z",
+      "lastRostered": "2026-08-07"
     }
   ],
   "calendar": {
@@ -16823,8 +16824,14 @@
         "start": "10:30",
         "end": "00:00"
       }
+    },
+    "Maple": {
+      "2026-08-07": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-06T11:58:02.514Z",
-  "lastCalendarSync": "2026-08-06T11:02:27.203Z"
+  "lastCalendarSync": "2026-08-06T12:23:28.705Z"
 }

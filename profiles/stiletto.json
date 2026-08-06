@@ -5794,7 +5794,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-08-06",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -6570,7 +6570,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-05",
+      "lastRostered": "2026-08-07",
       "oldUrl": "https://www.stilettosydney.com/workers/kaia-new/",
       "photos": [],
       "labels": [
@@ -6644,7 +6644,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-08-18",
       "oldUrl": "https://www.stilettosydney.com/workers/sapphire-new-2/",
       "photos": [],
       "labels": [
@@ -8558,10 +8558,6 @@
         "start": "21:00",
         "end": "22:00"
       },
-      "2026-08-06": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-08-07": {
         "start": "10:00",
         "end": "18:00"
@@ -9038,6 +9034,10 @@
       "2026-08-01": {
         "start": "22:00",
         "end": "08:00"
+      },
+      "2026-08-06": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Rosie": {},
@@ -9181,7 +9181,12 @@
     },
     "Adeline": {},
     "Chelsea": {},
-    "Fern": {},
+    "Fern": {
+      "2026-08-06": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Jenna": {
       "2026-07-31": {
         "start": "19:00",
@@ -9258,6 +9263,14 @@
       "2026-08-05": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-08-06": {
+        "start": "19:00",
+        "end": "05:00"
+      },
+      "2026-08-07": {
+        "start": "19:00",
+        "end": "05:00"
       }
     },
     "IVY": {
@@ -9285,8 +9298,22 @@
         "start": "23:00",
         "end": "07:00"
       }
+    },
+    "Sapphire": {
+      "2026-08-15": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-17": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-18": {
+        "start": "20:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-06T06:34:20.437Z",
-  "lastCalendarSync": "2026-08-06T05:31:00.383Z"
+  "lastCalendarSync": "2026-08-06T07:15:14.138Z"
 }

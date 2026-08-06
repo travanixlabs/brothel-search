@@ -1870,7 +1870,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2021/04/Bianca-1.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-08-06"
     },
     {
       "name": "Xena (She's Back!!)",
@@ -1890,7 +1891,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2025/09/Xena-ATMC.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-08-06"
     }
   ],
   "calendar": {
@@ -5119,8 +5121,14 @@
         "start": "00:00",
         "end": "09:00"
       }
+    },
+    "Tia": {
+      "2026-08-06": {
+        "start": "10:00",
+        "end": "19:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-06T03:49:24.235Z"
+  "lastCalendarSync": "2026-08-06T05:30:39.118Z"
 }

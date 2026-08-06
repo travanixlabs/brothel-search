@@ -10988,6 +10988,31 @@
       "labels": [],
       "lastModified": "2026-08-03T04:00:07.580Z",
       "lastRostered": "2026-08-03"
+    },
+    {
+      "name": "mocha",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "165",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-08-06",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mocha-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95091785979263_.pic_hd.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95111785979287_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95101785979285_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-06T04:00:35.361Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16506,7 +16531,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-04T04:00:07.814Z",
+  "lastGirlsSync": "2026-08-06T04:00:35.361Z",
   "lastCalendarSync": "2026-08-05T03:43:04.251Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

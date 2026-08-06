@@ -5710,7 +5710,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-04-01",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-08-13",
       "oldUrl": "https://www.stilettosydney.com/workers/rosie-new-2/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/04/Edit-DSCF0052-1.jpeg",
@@ -8272,10 +8272,6 @@
         "start": "23:00",
         "end": "07:00"
       },
-      "2026-08-06": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-08-08": {
         "start": "13:00",
         "end": "21:00"
@@ -9032,7 +9028,12 @@
         "end": "03:00"
       }
     },
-    "Rosie": {},
+    "Rosie": {
+      "2026-08-13": {
+        "start": "17:00",
+        "end": "22:00"
+      }
+    },
     "Alex": {},
     "Gemma": {
       "2026-08-07": {
@@ -9303,5 +9304,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T11:59:09.734Z",
-  "lastCalendarSync": "2026-08-06T11:04:07.794Z"
+  "lastCalendarSync": "2026-08-06T12:25:06.230Z"
 }

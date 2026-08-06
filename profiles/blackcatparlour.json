@@ -3890,6 +3890,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-13"
+    },
+    {
+      "name": "Tia",
+      "country": [
+        "Thai"
+      ],
+      "age": "24",
+      "height": "163",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-07",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Xena (She&#039;s Back!!)",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "173",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-07",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -16852,6 +16888,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-04T11:58:52.091Z",
+  "lastGirlsSync": "2026-08-06T16:00:41.658Z",
   "lastCalendarSync": "2026-08-06T14:53:21.635Z"
 }

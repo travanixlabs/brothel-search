@@ -539,7 +539,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-08-04",
+      "lastRostered": "2026-08-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -646,7 +646,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-08-05",
+      "lastRostered": "2026-08-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Alice-536x705.jpg"
       ],
@@ -796,7 +796,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-18T13:39:45.878Z",
-      "lastRostered": "2026-08-07",
+      "lastRostered": "2026-08-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/04/Vicky-425x705.jpg",
         "https://127city.com/wp-content/uploads/2026/04/Vicky1-529x705.jpg"
@@ -1122,7 +1122,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-05T07:29:45.625Z",
-      "lastRostered": "2026-08-07"
+      "lastRostered": "2026-08-08"
     },
     {
       "name": "Clara",
@@ -1250,6 +1250,35 @@
       "labels": [],
       "lastModified": "2026-07-27T10:00:59.222Z",
       "lastRostered": "2026-08-02"
+    },
+    {
+      "name": "Yuzu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "155",
+      "cup": "Y",
+      "val1": "200",
+      "val2": "270",
+      "val3": "310",
+      "startDate": "2026-08-07",
+      "oldUrl": "https://127city.com/j-yuzu-new-diamond-diamond200-270-310-30-45-60/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-08-07T13:48:40.024Z",
+      "lastRostered": "2026-08-08",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/08/Yuzu1-529x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/08/Yuzu-529x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/08/Yuzu2-396x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/08/Yuzu3-396x705.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -1386,7 +1415,8 @@
       "2026-08-04",
       "2026-08-05",
       "2026-08-06",
-      "2026-08-07"
+      "2026-08-07",
+      "2026-08-08"
     ],
     "Sana": {
       "2026-03-26": {
@@ -2125,6 +2155,10 @@
       "2026-08-05": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-08": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Annie": {
@@ -3401,6 +3435,10 @@
       "2026-08-04": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-08": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Summer": {
@@ -4101,6 +4139,10 @@
         "end": "02:00"
       },
       "2026-08-07": {
+        "start": "12:00",
+        "end": "03:00"
+      },
+      "2026-08-08": {
         "start": "12:00",
         "end": "03:00"
       }
@@ -4831,6 +4873,10 @@
       "2026-08-07": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-08-08": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "Clara": {
@@ -5018,10 +5064,16 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Yuzu": {
+      "2026-08-08": {
+        "start": "12:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-01T16:00:50.710Z",
-  "lastCalendarSync": "2026-08-06T14:52:59.630Z",
+  "lastCalendarSync": "2026-08-07T13:48:41.924Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

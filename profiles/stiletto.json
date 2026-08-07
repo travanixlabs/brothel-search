@@ -5599,7 +5599,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-06",
+      "lastRostered": "2026-08-07",
       "oldUrl": "https://www.stilettosydney.com/workers/lulu-new/",
       "photos": [],
       "labels": [
@@ -8961,7 +8961,12 @@
         "end": "05:00"
       }
     },
-    "Lulu": {},
+    "Lulu": {
+      "2026-08-07": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Kat": {},
     "Brenda": {},
     "Tequila": {
@@ -9279,5 +9284,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T11:59:09.734Z",
-  "lastCalendarSync": "2026-08-06T14:53:40.364Z"
+  "lastCalendarSync": "2026-08-07T00:22:04.132Z"
 }

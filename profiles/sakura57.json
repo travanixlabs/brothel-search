@@ -10292,7 +10292,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-11T04:00:24.287Z",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-11",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-07T16:57:23.650Z"
     },
     {
       "name": "rinko",

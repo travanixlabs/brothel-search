@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-25",
+      "lastRostered": "2026-08-09",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -1280,7 +1280,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01"
+      "lastRostered": "2026-08-09"
     },
     {
       "name": "Gabrielle",
@@ -3949,7 +3949,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06"
+      "lastRostered": "2026-08-09"
     },
     {
       "name": "Star",
@@ -7055,6 +7055,10 @@
       "2026-07-06": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-09": {
+        "start": "23:00",
+        "end": "06:00"
       }
     },
     "Opal": {
@@ -7217,6 +7221,10 @@
       "2026-07-14": {
         "start": "20:30",
         "end": "04:30"
+      },
+      "2026-08-09": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Gabrielle": {
@@ -8233,10 +8241,6 @@
       "2026-06-11": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-08-09": {
-        "start": "15:00",
-        "end": "23:00"
       }
     },
     "Raelynn": {},
@@ -8710,10 +8714,6 @@
       }
     },
     "Piper": {
-      "2026-08-09": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-08-11": {
         "start": "16:00",
         "end": "00:00"
@@ -8779,6 +8779,10 @@
       "2026-06-07": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-08-09": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Molly": {},
@@ -8894,10 +8898,6 @@
       }
     },
     "Annabelle": {
-      "2026-08-09": {
-        "start": "12:00",
-        "end": "22:00"
-      },
       "2026-08-11": {
         "start": "12:00",
         "end": "22:00"
@@ -9232,5 +9232,5 @@
     }
   },
   "lastGirlsSync": "2026-08-09T10:26:35.752Z",
-  "lastCalendarSync": "2026-08-09T11:01:08.459Z"
+  "lastCalendarSync": "2026-08-09T13:30:52.053Z"
 }

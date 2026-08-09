@@ -10187,7 +10187,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-06T06:55:18.000Z",
-      "lastRostered": "2026-06-06"
+      "lastRostered": "2026-06-06",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-09T16:36:45.928Z"
     },
     {
       "name": "nina",
@@ -10319,7 +10321,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-11T08:48:19.564Z",
-      "lastRostered": "2026-06-11"
+      "lastRostered": "2026-06-11",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-09T16:36:57.312Z"
     },
     {
       "name": "moya",
@@ -10629,7 +10633,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-02T07:35:10.549Z",
-      "lastRostered": "2026-07-02"
+      "lastRostered": "2026-07-02",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-09T16:36:58.847Z"
     },
     {
       "name": "Hoshimo",

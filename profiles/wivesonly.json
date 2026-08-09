@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-08-10",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-08",
+      "lastRostered": "2026-08-10",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -928,7 +928,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-18",
+      "lastRostered": "2026-08-10",
       "desc": "Vivacious sassy Savannah, very open in the bedroom, where you can feel comfortable to play out your fantasies in a safe space. Loves to party & indulge in a variety of doubles."
     },
     {
@@ -1137,7 +1137,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-10",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -1529,7 +1529,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09"
+      "lastRostered": "2026-08-10"
     },
     {
       "name": "Sophia",
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-16"
+      "lastRostered": "2026-08-10"
     },
     {
       "name": "Samira",
@@ -1971,7 +1971,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09"
+      "lastRostered": "2026-08-10"
     },
     {
       "name": "Brooke",
@@ -2166,7 +2166,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-07"
+      "lastRostered": "2026-08-10"
     },
     {
       "name": "Dasha",
@@ -2217,7 +2217,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09"
+      "lastRostered": "2026-08-10"
     },
     {
       "name": "Ivy",
@@ -2722,7 +2722,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-08-03",
+      "lastRostered": "2026-08-10",
       "oldUrl": "https://wivesonly.com.au/vv/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-08-08",
+      "lastRostered": "2026-08-10",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3048,7 +3048,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-08-10",
       "oldUrl": "https://wivesonly.com.au/sofia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3354,6 +3354,10 @@
       "2026-08-09": {
         "start": "14:00",
         "end": "20:00"
+      },
+      "2026-08-10": {
+        "start": "17:00",
+        "end": "03:30"
       }
     },
     "Delilah": {
@@ -5419,7 +5423,8 @@
       "2026-08-06",
       "2026-08-07",
       "2026-08-08",
-      "2026-08-09"
+      "2026-08-09",
+      "2026-08-10"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7179,6 +7184,10 @@
       "2026-08-09": {
         "start": "17:00",
         "end": "22:00"
+      },
+      "2026-08-10": {
+        "start": "17:00",
+        "end": "02:00"
       }
     },
     "Madeleine": {
@@ -7725,6 +7734,10 @@
       "2026-08-07": {
         "start": "11:00",
         "end": "20:00"
+      },
+      "2026-08-10": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Neena": {
@@ -7867,6 +7880,10 @@
       "2026-08-08": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Roxanne": {
@@ -7957,6 +7974,10 @@
         "end": "19:30"
       },
       "2026-08-03": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-08-10": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -8552,6 +8573,10 @@
       "2026-08-09": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Veronika": {
@@ -8824,6 +8849,10 @@
       "2026-08-08": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -9116,6 +9145,10 @@
       "2026-08-03": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddison": {
@@ -9302,6 +9335,10 @@
         "end": "19:30"
       },
       "2026-08-05": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-08-10": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -9662,6 +9699,10 @@
       "2026-07-16": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Aven": {
@@ -10010,6 +10051,10 @@
       "2026-07-18": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-08-10": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Roxi": {},
@@ -10101,9 +10146,13 @@
       "2026-08-09": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-10": {
+        "start": "19:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-08-07T22:28:40.781Z",
-  "lastCalendarSync": "2026-08-09T09:20:23.014Z"
+  "lastCalendarSync": "2026-08-09T15:00:16.349Z"
 }

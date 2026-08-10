@@ -10224,6 +10224,32 @@
       "labels": [],
       "lastModified": "2026-08-10T04:00:58.831Z",
       "lastRostered": ""
+    },
+    {
+      "name": "uki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "167",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/uki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95361786333707_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95371786333708_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95381786333709_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-10T05:35:53.878Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16264,7 +16290,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-10T04:00:58.831Z",
+  "lastGirlsSync": "2026-08-10T05:35:53.878Z",
   "lastCalendarSync": "2026-08-09T20:58:49.602Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

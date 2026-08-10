@@ -3055,6 +3055,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Tiana",
+      "country": [
+        "Aussie"
+      ],
+      "age": "40",
+      "height": "169",
+      "cup": "D",
+      "body": "",
+      "desc": "Beautiful and elegant mature Aussie Tiana is ready to please....",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-05-01",
+      "lastRostered": "2026-05-01",
+      "oldUrl": "https://wivesonly.com.au/tiana/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/05/jewel-fake-photo.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10202,6 +10224,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-07T22:28:40.781Z",
+  "lastGirlsSync": "2026-08-10T22:30:23.072Z",
   "lastCalendarSync": "2026-08-10T15:30:03.643Z"
 }

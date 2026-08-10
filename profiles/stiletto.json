@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-03",
+      "lastRostered": "2026-08-15",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -517,7 +517,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-08-23",
       "desc": "Gentlemen, My name is Bella. I am in my early 20s and the beauty of your dreams! I’m in my prime—sensual, sultry, and ready to steal your breath away. With luscious brown hair, a juicy size 12 figure, and standing 170cm tall, I’m all soft curves and feminine allure. My ..."
     },
     {
@@ -5928,7 +5928,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-11",
+      "lastRostered": "2026-08-23",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -6156,7 +6156,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-08-23",
       "oldUrl": "https://www.stilettosydney.com/workers/lara-new/",
       "photos": [],
       "labels": [
@@ -6401,7 +6401,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-13",
+      "lastRostered": "2026-08-21",
       "oldUrl": "https://www.stilettosydney.com/workers/romy-new/",
       "photos": [],
       "labels": [
@@ -6570,7 +6570,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-07",
+      "lastRostered": "2026-08-22",
       "oldUrl": "https://www.stilettosydney.com/workers/kaia-new/",
       "photos": [],
       "labels": [
@@ -6822,6 +6822,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-08-15": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -7096,6 +7100,26 @@
         "end": "05:00"
       },
       "2026-08-16": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-19": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-20": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-21": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-22": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-23": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -7512,6 +7536,10 @@
       "2026-08-21": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-08-11": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Carmen": {
@@ -8019,6 +8047,14 @@
       "2026-08-23": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-08-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-11": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Halo": {
@@ -9100,6 +9136,18 @@
       "2026-08-11": {
         "start": "18:30",
         "end": "02:30"
+      },
+      "2026-08-18": {
+        "start": "18:30",
+        "end": "02:30"
+      },
+      "2026-08-19": {
+        "start": "18:30",
+        "end": "02:30"
+      },
+      "2026-08-23": {
+        "start": "18:30",
+        "end": "02:30"
       }
     },
     "Malibu": {},
@@ -9152,6 +9200,22 @@
       "2026-07-07": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-20": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-21": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-22": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-23": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Pia": {
@@ -9253,6 +9317,14 @@
       "2026-08-13": {
         "start": "15:00",
         "end": "23:00"
+      },
+      "2026-08-17": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-08-21": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Rocket": {
@@ -9299,6 +9371,22 @@
       "2026-08-06": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-08-19": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-08-20": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-21": {
+        "start": "13:00",
+        "end": "02:00"
+      },
+      "2026-08-22": {
+        "start": "13:00",
+        "end": "02:00"
       }
     },
     "IVY": {
@@ -9351,5 +9439,5 @@
     }
   },
   "lastGirlsSync": "2026-08-10T11:01:50.947Z",
-  "lastCalendarSync": "2026-08-10T10:00:18.113Z"
+  "lastCalendarSync": "2026-08-10T11:30:16.647Z"
 }

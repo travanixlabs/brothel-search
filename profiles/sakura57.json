@@ -10947,7 +10947,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-26T04:00:40.939Z",
-      "lastRostered": "2026-07-26"
+      "lastRostered": "2026-07-26",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-10T16:56:05.827Z"
     },
     {
       "name": "miro",

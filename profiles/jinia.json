@@ -799,7 +799,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "Lily",
+      "name": "🆕 Lily",
       "country": [
         "Chinese"
       ],
@@ -2337,7 +2337,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 Yaya",
+      "name": "Yaya",
       "country": [
         "Hong Kong"
       ],
@@ -2358,7 +2358,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 Kiki",
+      "name": "Kiki",
       "country": [
         "Hong Kong"
       ],
@@ -2374,6 +2374,27 @@
       "oldUrl": "https://jinia.com.au/kiki/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260809030722_10_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Lily",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-09-14",
+      "lastRostered": "2025-09-14",
+      "oldUrl": "https://jinia.com.au/lily-7/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250915093112.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -5819,19 +5840,19 @@
         "end": "00:30"
       }
     },
-    "🆕 Yaya": {
+    "Yaya": {
       "2026-08-09": {
         "start": "11:00",
         "end": "04:00"
       }
     },
-    "🆕 Kiki": {
+    "Kiki": {
       "2026-08-09": {
         "start": "10:30",
         "end": "04:00"
       }
     }
   },
-  "lastGirlsSync": "2026-08-09T05:09:55.796Z",
+  "lastGirlsSync": "2026-08-10T05:37:49.470Z",
   "lastCalendarSync": "2026-08-10T02:41:52.079Z"
 }

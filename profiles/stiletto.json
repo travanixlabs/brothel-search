@@ -207,7 +207,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-04-07",
+      "lastRostered": "2026-08-14",
       "desc": "I am an elegant and graceful petite angel with a statuesque figure, complemented by size 6 measurements and B cup bust. My brunette locks cascade down my shoulders, framing my striking face. My sparkling brown eyes are windows to a world of mystery and allure, drawing you in with ..."
     },
     {
@@ -4135,7 +4135,7 @@
         "Kissing (on body)"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-08"
+      "lastRostered": "2026-08-13"
     },
     {
       "name": "Tahlia",
@@ -6967,10 +6967,6 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-08-11": {
-        "start": "10:00",
-        "end": "17:00"
-      },
       "2026-08-12": {
         "start": "10:00",
         "end": "17:00"
@@ -7830,8 +7826,8 @@
         "end": "16:00"
       },
       "2026-08-11": {
-        "start": "08:00",
-        "end": "20:00"
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Ella": {
@@ -7914,6 +7910,10 @@
       "2026-08-08": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-08-13": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Jamie": {
@@ -7968,10 +7968,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-08-11": {
-        "start": "12:00",
-        "end": "17:00"
       },
       "2026-08-12": {
         "start": "12:00",
@@ -8084,10 +8080,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-08-11": {
-        "start": "12:00",
-        "end": "16:00"
-      },
       "2026-08-12": {
         "start": "08:00",
         "end": "16:00"
@@ -8105,6 +8097,14 @@
       "2026-04-07": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-08-13": {
+        "start": "09:30",
+        "end": "15:30"
+      },
+      "2026-08-14": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Jess": {
@@ -9253,6 +9253,10 @@
       "2026-08-23": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-08-11": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Pia": {
@@ -9484,5 +9488,5 @@
     }
   },
   "lastGirlsSync": "2026-08-11T05:12:28.170Z",
-  "lastCalendarSync": "2026-08-11T02:35:34.159Z"
+  "lastCalendarSync": "2026-08-11T07:46:18.355Z"
 }

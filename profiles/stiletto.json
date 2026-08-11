@@ -332,7 +332,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-26",
+      "lastRostered": "2026-08-15",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -8655,7 +8655,16 @@
       }
     },
     "Rebecca": {},
-    "Arizona": {},
+    "Arizona": {
+      "2026-08-11": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-15": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Imogen": {},
     "Poppy": {
       "2026-04-13": {
@@ -8845,8 +8854,8 @@
     },
     "Piper": {
       "2026-08-11": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "10:00",
+        "end": "18:00"
       },
       "2026-08-12": {
         "start": "16:00",
@@ -9475,5 +9484,5 @@
     }
   },
   "lastGirlsSync": "2026-08-10T22:30:01.380Z",
-  "lastCalendarSync": "2026-08-10T19:28:29.742Z"
+  "lastCalendarSync": "2026-08-11T02:35:34.159Z"
 }

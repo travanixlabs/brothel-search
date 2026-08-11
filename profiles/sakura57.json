@@ -496,7 +496,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:15.160Z"
     },
     {
       "name": "Maniya",
@@ -679,7 +681,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:14.047Z"
     },
     {
       "name": "Aimy",
@@ -10270,7 +10274,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-08T10:00:26.299Z",
-      "lastRostered": "2026-06-08"
+      "lastRostered": "2026-06-08",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:09.696Z"
     },
     {
       "name": "Sachika",
@@ -10399,7 +10405,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-15T04:01:04.131Z",
-      "lastRostered": "2026-06-15"
+      "lastRostered": "2026-06-15",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:17.520Z"
     },
     {
       "name": "hikaro",
@@ -10661,7 +10669,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-03T07:23:19.426Z",
-      "lastRostered": "2026-07-03"
+      "lastRostered": "2026-07-03",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:02.020Z"
     },
     {
       "name": "Lumi",
@@ -10819,7 +10829,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-13T10:00:55.930Z",
-      "lastRostered": "2026-07-13"
+      "lastRostered": "2026-07-13",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-11T17:10:23.592Z"
     },
     {
       "name": "kome",

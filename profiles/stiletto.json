@@ -1280,7 +1280,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-11"
+      "lastRostered": "2026-08-13"
     },
     {
       "name": "Gabrielle",
@@ -6243,7 +6243,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-10",
+      "lastRostered": "2026-08-13",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7323,6 +7323,10 @@
       "2026-07-14": {
         "start": "20:30",
         "end": "04:30"
+      },
+      "2026-08-13": {
+        "start": "01:00",
+        "end": "06:00"
       }
     },
     "Gabrielle": {
@@ -9342,6 +9346,10 @@
       "2026-07-22": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-13": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Adeline": {},
@@ -9412,10 +9420,6 @@
       "2026-07-21": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-08-12": {
-        "start": "19:00",
-        "end": "03:00"
       }
     },
     "Sukura": {},
@@ -9517,5 +9521,5 @@
     }
   },
   "lastGirlsSync": "2026-08-12T16:44:52.522Z",
-  "lastCalendarSync": "2026-08-12T15:27:35.459Z"
+  "lastCalendarSync": "2026-08-12T17:32:44.502Z"
 }

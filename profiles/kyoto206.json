@@ -10250,6 +10250,31 @@
       "labels": [],
       "lastModified": "2026-08-10T05:35:53.878Z",
       "lastRostered": ""
+    },
+    {
+      "name": "isa",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/isa-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/54971786526940_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95461786523226_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95471786523232_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-12T10:00:59.118Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16290,7 +16315,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-10T10:00:59.397Z",
+  "lastGirlsSync": "2026-08-12T10:00:59.118Z",
   "lastCalendarSync": "2026-08-09T20:58:49.602Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

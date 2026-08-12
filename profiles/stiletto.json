@@ -4093,7 +4093,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-05"
+      "lastRostered": "2026-08-17"
     },
     {
       "name": "Sydney",
@@ -8984,6 +8984,10 @@
       "2026-05-30": {
         "start": "10:00",
         "end": "08:00"
+      },
+      "2026-08-17": {
+        "start": "16:00",
+        "end": "02:00"
       }
     },
     "Cameron": {},
@@ -9462,5 +9466,5 @@
     }
   },
   "lastGirlsSync": "2026-08-12T05:40:05.079Z",
-  "lastCalendarSync": "2026-08-12T04:21:43.598Z"
+  "lastCalendarSync": "2026-08-12T05:54:40.866Z"
 }

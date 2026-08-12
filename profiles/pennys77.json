@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29"
+      "lastRostered": "2026-08-13"
     },
     {
       "name": "Nicole",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29"
+      "lastRostered": "2026-08-13"
     },
     {
       "name": "Jenny",
@@ -1114,6 +1114,10 @@
         "end": "03:00"
       },
       "2026-07-28": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-08-13": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -1894,10 +1898,6 @@
         "end": "03:00"
       },
       "2026-08-12": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-08-13": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3970,5 +3970,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-12T15:27:08.512Z"
+  "lastCalendarSync": "2026-08-12T17:32:17.493Z"
 }

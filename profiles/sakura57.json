@@ -11037,6 +11037,32 @@
       "labels": [],
       "lastModified": "2026-08-06T04:00:35.361Z",
       "lastRostered": ""
+    },
+    {
+      "name": "ori",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-08-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/ori-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95551786581635_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95521786581605_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95531786581632_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95541786581633_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-13T10:01:00.120Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16555,7 +16581,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-09T04:01:00.122Z",
+  "lastGirlsSync": "2026-08-13T10:01:00.120Z",
   "lastCalendarSync": "2026-08-05T03:43:04.251Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

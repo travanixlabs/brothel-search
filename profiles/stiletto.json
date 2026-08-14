@@ -786,7 +786,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06"
+      "lastRostered": "2026-08-14"
     },
     {
       "name": "Cindy",
@@ -3146,7 +3146,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Polly",
@@ -6433,7 +6433,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-12",
+      "lastRostered": "2026-08-20",
       "oldUrl": "https://www.stilettosydney.com/workers/rocket-new/",
       "photos": [],
       "labels": [
@@ -7857,6 +7857,10 @@
       "2026-08-06": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-14": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Victoria": {
@@ -8904,13 +8908,13 @@
       }
     },
     "Piper": {
-      "2026-08-14": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-08-15": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-08-16": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Felicity": {},
@@ -9379,6 +9383,22 @@
       "2026-07-21": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-14": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-18": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-08-19": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-08-20": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Sukura": {},
@@ -9476,5 +9496,5 @@
     }
   },
   "lastGirlsSync": "2026-08-14T05:40:45.605Z",
-  "lastCalendarSync": "2026-08-14T05:54:33.051Z"
+  "lastCalendarSync": "2026-08-14T07:58:00.432Z"
 }

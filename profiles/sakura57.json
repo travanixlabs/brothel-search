@@ -10780,7 +10780,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-11T06:16:46.271Z",
-      "lastRostered": "2026-07-11"
+      "lastRostered": "2026-07-11",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-14T16:54:46.631Z"
     },
     {
       "name": "hakimi",

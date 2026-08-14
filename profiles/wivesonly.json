@@ -2285,7 +2285,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-13"
+      "lastRostered": "2026-08-14"
     },
     {
       "name": "Katalina",
@@ -6548,6 +6548,10 @@
       "2026-08-13": {
         "start": "22:30",
         "end": "04:00"
+      },
+      "2026-08-14": {
+        "start": "18:30",
+        "end": "06:00"
       }
     },
     "Talia": {
@@ -10400,5 +10404,5 @@
     }
   },
   "lastGirlsSync": "2026-08-10T22:30:23.072Z",
-  "lastCalendarSync": "2026-08-13T15:29:44.633Z"
+  "lastCalendarSync": "2026-08-14T13:52:54.409Z"
 }

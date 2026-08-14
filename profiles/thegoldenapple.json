@@ -1850,7 +1850,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-12"
+      "lastRostered": "2026-08-14"
     },
     {
       "name": "Tia",
@@ -5234,6 +5234,10 @@
       "2026-08-08": {
         "start": "01:00",
         "end": "09:00"
+      },
+      "2026-08-14": {
+        "start": "02:00",
+        "end": "11:00"
       }
     },
     "Tia": {
@@ -5256,5 +5260,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-14T13:52:28.634Z"
+  "lastCalendarSync": "2026-08-14T17:31:13.066Z"
 }

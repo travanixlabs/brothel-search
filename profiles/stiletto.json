@@ -4227,7 +4227,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06"
+      "lastRostered": "2026-08-21"
     },
     {
       "name": "Trinity",
@@ -4376,7 +4376,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-29"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Victoria",
@@ -8045,6 +8045,10 @@
       "2026-04-07": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-08-15": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Lilith": {
@@ -9386,6 +9390,14 @@
       "2026-07-17": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-08-19": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-08-21": {
+        "start": "22:00",
+        "end": "10:00"
       }
     },
     "Sapphire": {
@@ -9413,5 +9425,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-14T22:16:07.290Z",
-  "lastCalendarSync": "2026-08-14T22:53:38.128Z"
+  "lastCalendarSync": "2026-08-15T01:57:23.677Z"
 }

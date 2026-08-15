@@ -4135,7 +4135,7 @@
         "Kissing (on body)"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-20"
     },
     {
       "name": "Tahlia",
@@ -5794,7 +5794,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-07",
+      "lastRostered": "2026-08-16",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -7901,7 +7901,15 @@
       },
       "2026-08-15": {
         "start": "10:00",
-        "end": "18:00"
+        "end": "16:00"
+      },
+      "2026-08-18": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-08-20": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Jamie": {
@@ -9129,6 +9137,14 @@
       "2026-08-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-15": {
+        "start": "14:00",
+        "end": "00:00"
+      },
+      "2026-08-16": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Rosie": {
@@ -9422,5 +9438,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-15T04:34:36.779Z",
-  "lastCalendarSync": "2026-08-15T03:11:10.316Z"
+  "lastCalendarSync": "2026-08-15T04:56:55.053Z"
 }

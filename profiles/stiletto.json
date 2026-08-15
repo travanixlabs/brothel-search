@@ -2409,7 +2409,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-07"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Lilly",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-14"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Viv",
@@ -6706,7 +6706,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/darcy-new/",
       "photos": [],
       "labels": [
@@ -7880,6 +7880,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-08-16": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -8110,6 +8114,10 @@
         "end": "00:00"
       },
       "2026-04-08": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-16": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -8705,10 +8713,6 @@
       }
     },
     "Aurora": {
-      "2026-08-15": {
-        "start": "13:00",
-        "end": "20:00"
-      },
       "2026-08-16": {
         "start": "13:00",
         "end": "20:00"
@@ -9139,6 +9143,10 @@
       "2026-08-23": {
         "start": "13:00",
         "end": "21:00"
+      },
+      "2026-08-16": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Luanna": {
@@ -9224,6 +9232,10 @@
       "2026-08-23": {
         "start": "18:30",
         "end": "02:30"
+      },
+      "2026-08-16": {
+        "start": "19:30",
+        "end": "03:30"
       }
     },
     "Malibu": {},
@@ -9482,5 +9494,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-15T10:16:23.030Z",
-  "lastCalendarSync": "2026-08-15T08:58:01.790Z"
+  "lastCalendarSync": "2026-08-15T10:46:44.817Z"
 }

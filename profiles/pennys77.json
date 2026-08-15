@@ -778,7 +778,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-14"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Gabby",
@@ -3891,6 +3891,10 @@
       "2026-08-13": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-15": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Gabby": {},
@@ -4020,5 +4024,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-15T01:56:59.883Z"
+  "lastCalendarSync": "2026-08-15T10:46:20.043Z"
 }

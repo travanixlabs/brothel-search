@@ -497,7 +497,7 @@
       ],
       "lastModified": "2026-07-16T17:16:52.499Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -557,7 +557,7 @@
       ],
       "lastModified": "2026-08-11T17:02:35.912Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -1234,7 +1234,7 @@
       ],
       "lastModified": "2026-03-13T06:22:17.643Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-12",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -1379,7 +1379,7 @@
       ],
       "lastModified": "2026-03-13T06:22:40.774Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Experienced"
@@ -1415,7 +1415,7 @@
       ],
       "lastModified": "2026-03-13T06:23:21.618Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-08-16",
       "country": [
         "NA"
       ],
@@ -1573,7 +1573,7 @@
       ],
       "lastModified": "2026-03-13T06:24:05.092Z",
       "originalSite": "",
-      "lastRostered": "2026-03-01",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -1869,7 +1869,7 @@
       ],
       "lastModified": "2026-03-13T06:26:33.523Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-12",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Experienced"
@@ -2096,7 +2096,7 @@
       ],
       "lastModified": "2026-03-13T08:15:21.147Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": ""
@@ -2415,7 +2415,7 @@
         "CIM"
       ],
       "lastModified": "2026-03-19T08:00:18.395Z",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -3245,7 +3245,7 @@
         "Couple"
       ],
       "lastModified": "2026-04-20T17:06:04.124Z",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -5120,7 +5120,7 @@
         "GFE"
       ],
       "lastModified": "2026-06-23T07:52:21.942Z",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Double!!!",
@@ -5633,7 +5633,7 @@
         "CIM"
       ],
       "lastModified": "2026-07-15T17:02:57.075Z",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Luno",
@@ -5822,7 +5822,7 @@
         "GFE"
       ],
       "lastModified": "2026-08-04T17:49:59.080Z",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": "Inexperienced"
@@ -5905,7 +5905,7 @@
         "GFE"
       ],
       "lastModified": "2026-07-28T11:51:44.472Z",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Maki",
@@ -6117,7 +6117,7 @@
         "CIM"
       ],
       "lastModified": "2026-08-14T16:53:37.929Z",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -6251,7 +6251,12 @@
     }
   ],
   "calendar": {
-    "Moon": {},
+    "Moon": {
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "02:00"
+      }
+    },
     "Emi": {
       "2026-05-05": {
         "start": "10:30",
@@ -7227,6 +7232,10 @@
       "2026-08-12": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Rosie": {
@@ -8121,6 +8130,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Hana": {
@@ -8734,6 +8747,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Erena": {
@@ -9130,6 +9147,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Yuyu": {
@@ -9486,6 +9507,10 @@
         "end": "02:00"
       },
       "2026-08-15": {
+        "start": "10:30",
+        "end": "02:00"
+      },
+      "2026-08-16": {
         "start": "10:30",
         "end": "02:00"
       }
@@ -9897,7 +9922,8 @@
       "2026-08-12",
       "2026-08-13",
       "2026-08-14",
-      "2026-08-15"
+      "2026-08-15",
+      "2026-08-16"
     ],
     "Rum": {
       "2026-03-26": {
@@ -11048,6 +11074,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "01:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "01:00"
       }
     },
     "Ruka": {},
@@ -11215,6 +11245,10 @@
         "end": "19:00"
       },
       "2026-08-02": {
+        "start": "10:30",
+        "end": "19:00"
+      },
+      "2026-08-16": {
         "start": "10:30",
         "end": "19:00"
       }
@@ -13213,6 +13247,10 @@
       "2026-08-12": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Mirai": {
@@ -13907,6 +13945,10 @@
         "end": "02:00"
       },
       "2026-08-15": {
+        "start": "11:00",
+        "end": "02:00"
+      },
+      "2026-08-16": {
         "start": "11:00",
         "end": "02:00"
       }
@@ -16601,6 +16643,10 @@
       "2026-08-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Helen": {
@@ -17099,6 +17145,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "01:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "01:00"
       }
     },
     "Luno": {
@@ -17255,6 +17305,10 @@
       "2026-08-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Runa": {
@@ -17371,6 +17425,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Maki": {
@@ -17485,6 +17543,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "00:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "00:00"
       }
     },
     "Maple": {
@@ -17523,5 +17585,5 @@
     }
   },
   "lastGirlsSync": "2026-08-08T16:00:59.219Z",
-  "lastCalendarSync": "2026-08-14T09:37:14.386Z"
+  "lastCalendarSync": "2026-08-15T07:05:53.292Z"
 }

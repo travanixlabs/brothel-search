@@ -234,7 +234,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-05"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Charlotte",
@@ -3362,6 +3362,10 @@
       "2026-07-24": {
         "start": "1230:00",
         "end": "930:00"
+      },
+      "2026-08-15": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Claire": {
@@ -5223,5 +5227,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-15T14:45:01.315Z"
+  "lastCalendarSync": "2026-08-15T18:53:36.416Z"
 }

@@ -1531,7 +1531,7 @@
       ],
       "lastModified": "2026-03-13T06:23:43.324Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -12501,6 +12501,10 @@
       "2026-08-15": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-08-16": {
+        "start": "10:30",
+        "end": "18:00"
       }
     },
     "Kathy": {
@@ -17585,5 +17589,5 @@
     }
   },
   "lastGirlsSync": "2026-08-08T16:00:59.219Z",
-  "lastCalendarSync": "2026-08-15T07:05:53.292Z"
+  "lastCalendarSync": "2026-08-15T08:56:23.886Z"
 }

@@ -1490,7 +1490,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/08/%E5%9B%BE%E7%89%87_20250806093914.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Yoyo",
@@ -2395,6 +2395,28 @@
       "oldUrl": "https://jinia.com.au/lily-7/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250915093112.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Endy",
+      "country": [
+        "Chinese"
+      ],
+      "age": "21",
+      "height": "165",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-15",
+      "lastRostered": "2026-08-15",
+      "oldUrl": "https://jinia.com.au/8100-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192320_25_10.jpg",
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192319_24_10.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -5976,6 +5998,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-10T05:37:49.470Z",
+  "lastGirlsSync": "2026-08-15T10:16:49.757Z",
   "lastCalendarSync": "2026-08-15T07:07:47.403Z"
 }

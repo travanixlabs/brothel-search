@@ -881,7 +881,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-13"
+      "lastRostered": "2026-08-15"
     },
     {
       "name": "Chilly",
@@ -3998,6 +3998,10 @@
       "2026-08-12": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-15": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Chilly": {
@@ -4016,5 +4020,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-14T17:31:10.164Z"
+  "lastCalendarSync": "2026-08-15T01:56:59.883Z"
 }

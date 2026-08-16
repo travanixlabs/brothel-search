@@ -1469,7 +1469,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/07/%E5%9B%BE%E7%89%87_20250706132853.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Min",
@@ -2337,7 +2337,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "Yaya",
+      "name": "🆕 Yaya",
       "country": [
         "Hong Kong"
       ],
@@ -2417,6 +2417,27 @@
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192320_25_10.jpg",
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192319_24_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Nora",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-16",
+      "lastRostered": "2026-08-16",
+      "oldUrl": "https://jinia.com.au/nora/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -5876,36 +5897,6 @@
         "end": "00:30"
       }
     },
-    "Yaya": {
-      "2026-08-09": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-10": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-11": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-12": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-13": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-14": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-08-15": {
-        "start": "11:00",
-        "end": "04:00"
-      }
-    },
     "Kiki": {
       "2026-08-09": {
         "start": "10:30",
@@ -6013,8 +6004,38 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "🆕 Yaya": {
+      "2026-08-09": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-10": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-11": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-12": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-13": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-14": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-08-15": {
+        "start": "11:00",
+        "end": "04:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-08-15T10:16:49.757Z",
+  "lastGirlsSync": "2026-08-16T10:16:43.592Z",
   "lastCalendarSync": "2026-08-16T02:06:46.162Z"
 }

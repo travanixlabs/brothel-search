@@ -1132,7 +1132,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-16T16:26:09.029Z"
     },
     {
       "name": "Ivy",
@@ -10705,7 +10707,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-04T04:00:38.737Z",
-      "lastRostered": "2026-07-04"
+      "lastRostered": "2026-07-04",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-16T16:26:22.819Z"
     },
     {
       "name": "chiemi",
@@ -10941,7 +10945,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-23T10:00:54.425Z",
-      "lastRostered": "2026-07-23"
+      "lastRostered": "2026-07-23",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-16T16:26:27.216Z"
     },
     {
       "name": "mihana",

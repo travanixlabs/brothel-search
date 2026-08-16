@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-22",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -207,7 +207,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-14",
+      "lastRostered": "2026-08-20",
       "desc": "I am an elegant and graceful petite angel with a statuesque figure, complemented by size 6 measurements and B cup bust. My brunette locks cascade down my shoulders, framing my striking face. My sparkling brown eyes are windows to a world of mystery and allure, drawing you in with ..."
     },
     {
@@ -1793,7 +1793,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-16"
+      "lastRostered": "2026-08-22"
     },
     {
       "name": "Jess",
@@ -3333,7 +3333,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-07"
+      "lastRostered": "2026-08-17"
     },
     {
       "name": "Riley",
@@ -7641,10 +7641,6 @@
       "2026-08-21": {
         "start": "19:00",
         "end": "03:00"
-      },
-      "2026-08-16": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Queen": {
@@ -8190,6 +8186,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-08-17": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Jayde": {
@@ -8276,6 +8276,18 @@
       "2026-07-22": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-08-19": {
+        "start": "23:59",
+        "end": "07:59"
+      },
+      "2026-08-21": {
+        "start": "23:59",
+        "end": "07:59"
+      },
+      "2026-08-22": {
+        "start": "23:59",
+        "end": "07:59"
       }
     },
     "Elizabeth": {
@@ -8681,10 +8693,6 @@
       }
     },
     "Aurora": {
-      "2026-08-16": {
-        "start": "13:00",
-        "end": "20:00"
-      },
       "2026-08-19": {
         "start": "13:00",
         "end": "19:00"
@@ -8850,10 +8858,6 @@
       "2026-08-15": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-08-16": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Quinn": {},
@@ -9469,5 +9473,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-16T10:16:16.458Z",
-  "lastCalendarSync": "2026-08-16T08:59:20.517Z"
+  "lastCalendarSync": "2026-08-16T10:47:17.480Z"
 }

@@ -410,7 +410,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -4376,7 +4376,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-15"
+      "lastRostered": "2026-08-16"
     },
     {
       "name": "Victoria",
@@ -6884,7 +6884,8 @@
       "2026-08-23",
       "2026-08-25",
       "2026-08-26",
-      "2026-08-29"
+      "2026-08-29",
+      "2026-08-30"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -8078,6 +8079,10 @@
       "2026-08-15": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-16": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Lilith": {
@@ -8693,6 +8698,10 @@
         "end": "19:00"
       },
       "2026-08-29": {
+        "start": "13:00",
+        "end": "19:00"
+      },
+      "2026-08-30": {
         "start": "13:00",
         "end": "19:00"
       }
@@ -9457,5 +9466,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-15T22:14:14.191Z",
-  "lastCalendarSync": "2026-08-16T02:06:37.560Z"
+  "lastCalendarSync": "2026-08-16T03:25:55.551Z"
 }

@@ -6329,7 +6329,8 @@
         "Couple",
         "GFE"
       ],
-      "lastModified": "2026-08-16T04:37:44.041Z"
+      "lastModified": "2026-08-16T04:37:44.041Z",
+      "lastRostered": "2026-08-16"
     }
   ],
   "calendar": {
@@ -17677,5 +17678,5 @@
     }
   },
   "lastGirlsSync": "2026-08-16T04:37:44.041Z",
-  "lastCalendarSync": "2026-08-15T16:51:33.918Z"
+  "lastCalendarSync": "2026-08-16T04:59:03.375Z"
 }

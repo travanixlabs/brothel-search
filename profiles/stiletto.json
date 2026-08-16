@@ -8876,12 +8876,7 @@
         "end": "06:00"
       }
     },
-    "Piper": {
-      "2026-08-16": {
-        "start": "10:00",
-        "end": "18:00"
-      }
-    },
+    "Piper": {},
     "Felicity": {},
     "Mia": {},
     "Fendi": {
@@ -9462,5 +9457,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-16T04:39:22.638Z",
-  "lastCalendarSync": "2026-08-16T07:09:26.913Z"
+  "lastCalendarSync": "2026-08-16T08:59:20.517Z"
 }

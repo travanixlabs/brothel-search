@@ -2896,7 +2896,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-07-03",
-      "lastRostered": "2026-08-15",
+      "lastRostered": "2026-08-16",
       "oldUrl": "https://wivesonly.com.au/nicki/",
       "photos": [],
       "labels": [],
@@ -10277,6 +10277,10 @@
       "2026-08-15": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-08-16": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Bambi": {
@@ -10528,5 +10532,5 @@
     }
   },
   "lastGirlsSync": "2026-08-15T04:34:58.954Z",
-  "lastCalendarSync": "2026-08-16T02:06:41.361Z"
+  "lastCalendarSync": "2026-08-16T07:09:30.301Z"
 }

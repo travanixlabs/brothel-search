@@ -390,7 +390,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22",
+      "lastRostered": "2026-08-28",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -877,7 +877,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-14"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Daisy",
@@ -1612,7 +1612,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Honey",
@@ -1884,7 +1884,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-16"
+      "lastRostered": "2026-08-18"
     },
     {
       "name": "Julia",
@@ -2136,7 +2136,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-11"
+      "lastRostered": "2026-08-17"
     },
     {
       "name": "Kianna",
@@ -2172,7 +2172,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-16"
+      "lastRostered": "2026-08-17"
     },
     {
       "name": "Kiara",
@@ -2444,7 +2444,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-05"
+      "lastRostered": "2026-08-22"
     },
     {
       "name": "London",
@@ -3238,7 +3238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-13"
+      "lastRostered": "2026-08-18"
     },
     {
       "name": "Raven",
@@ -4376,7 +4376,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-16"
+      "lastRostered": "2026-08-17"
     },
     {
       "name": "Victoria",
@@ -4412,7 +4412,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-17"
+      "lastRostered": "2026-08-18"
     },
     {
       "name": "Viv",
@@ -5325,7 +5325,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-22",
+      "lastRostered": "2026-08-28",
       "oldUrl": "https://www.stilettosydney.com/workers/annabelle-new/",
       "photos": [],
       "labels": [
@@ -6062,7 +6062,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-16",
+      "lastRostered": "2026-08-24",
       "oldUrl": "https://www.stilettosydney.com/workers/lexy-new-2/",
       "photos": [],
       "labels": [
@@ -6882,8 +6882,11 @@
       "2026-08-21",
       "2026-08-22",
       "2026-08-23",
+      "2026-08-24",
       "2026-08-25",
       "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
       "2026-08-29",
       "2026-08-30"
     ],
@@ -7036,15 +7039,27 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-08-20": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-08-21": {
         "start": "10:00",
         "end": "16:00"
       },
       "2026-08-22": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-08-25": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-08-26": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-08-27": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-08-28": {
         "start": "10:00",
         "end": "16:00"
       }
@@ -7217,6 +7232,22 @@
       "2026-06-08": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-17": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-20": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-21": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-08-22": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Kiyomi": {
@@ -7309,6 +7340,14 @@
         "end": "14:00"
       },
       "2026-08-21": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-28": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-29": {
         "start": "20:00",
         "end": "04:00"
       }
@@ -7529,6 +7568,14 @@
       "2026-08-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-17": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-18": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Claudia": {
@@ -7854,7 +7901,7 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-08-17": {
+      "2026-08-18": {
         "start": "07:00",
         "end": "15:00"
       }
@@ -8067,6 +8114,10 @@
       "2026-08-15": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-17": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Lilith": {
@@ -8083,6 +8134,26 @@
       "2026-04-07": {
         "start": "08:00",
         "end": "13:00"
+      },
+      "2026-08-24": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-08-25": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-08-26": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-08-27": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-08-28": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Amelia": {
@@ -8382,7 +8453,12 @@
         "end": "07:00"
       }
     },
-    "Raelynn": {},
+    "Raelynn": {
+      "2026-08-18": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Blake": {},
     "Kennedy": {
       "2026-04-13": {
@@ -8410,6 +8486,10 @@
         "end": "06:00"
       },
       "2026-06-09": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-17": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -8606,6 +8686,10 @@
       "2026-08-09": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-17": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Trinity": {
@@ -9043,17 +9127,17 @@
         "start": "11:30",
         "end": "21:00"
       },
-      "2026-08-20": {
+      "2026-08-25": {
+        "start": "11:00",
+        "end": "20:00"
+      },
+      "2026-08-27": {
         "start": "13:00",
-        "end": "23:00"
+        "end": "20:00"
       },
-      "2026-08-21": {
-        "start": "12:00",
-        "end": "00:00"
-      },
-      "2026-08-22": {
-        "start": "17:00",
-        "end": "05:00"
+      "2026-08-28": {
+        "start": "11:00",
+        "end": "20:00"
       }
     },
     "Ash": {},
@@ -9197,7 +9281,40 @@
         "end": "06:00"
       }
     },
-    "Lexy": {},
+    "Lexy": {
+      "2026-08-17": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-18": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-19": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-20": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-21": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-22": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-23": {
+        "start": "16:30",
+        "end": "00:30"
+      },
+      "2026-08-24": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Amber": {},
     "Serena": {
       "2026-06-27": {
@@ -9440,5 +9557,5 @@
     "Precious": {}
   },
   "lastGirlsSync": "2026-08-16T22:13:49.461Z",
-  "lastCalendarSync": "2026-08-16T22:50:33.701Z"
+  "lastCalendarSync": "2026-08-17T02:03:19.983Z"
 }

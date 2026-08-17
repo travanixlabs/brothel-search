@@ -2440,6 +2440,27 @@
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
       ],
       "labels": [],
+      "originalSite": ""
+    },
+    {
+      "name": "🆕 Vivian",
+      "country": [
+        "Chinese"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-16",
+      "lastRostered": "2026-08-16",
+      "oldUrl": "https://jinia.com.au/vivian/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
+      ],
+      "labels": [],
       "originalSite": "Exists"
     }
   ],
@@ -6090,6 +6111,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-16T10:16:43.592Z",
+  "lastGirlsSync": "2026-08-17T10:26:04.052Z",
   "lastCalendarSync": "2026-08-17T02:03:28.123Z"
 }

@@ -11091,7 +11091,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/yurika-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95791786851337_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95751786851330_.pic_.jpg",
@@ -11102,6 +11102,31 @@
       ],
       "labels": [],
       "lastModified": "2026-08-16T10:00:59.951Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "amoro",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "167",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-08-18",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/amoro-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95891787017703_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95871787017699_.pic_hd.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/95881787017701_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-18T04:00:59.750Z",
       "lastRostered": ""
     }
   ],
@@ -16621,7 +16646,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-16T10:00:59.951Z",
+  "lastGirlsSync": "2026-08-18T04:00:59.750Z",
   "lastCalendarSync": "2026-08-15T14:44:43.136Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

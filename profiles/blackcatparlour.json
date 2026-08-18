@@ -3947,6 +3947,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-24"
+    },
+    {
+      "name": "Lauren",
+      "country": [
+        "Australian"
+      ],
+      "age": "27",
+      "height": "165",
+      "cup": "B",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-18",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -17922,6 +17940,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-14T10:52:05.275Z",
+  "lastGirlsSync": "2026-08-18T04:38:09.222Z",
   "lastCalendarSync": "2026-08-18T03:14:48.094Z"
 }

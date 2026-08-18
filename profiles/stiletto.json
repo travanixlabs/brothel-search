@@ -191,7 +191,9 @@
       "startDate": "2023-06-01",
       "oldUrl": "https://www.stilettosydney.com/workers/amelia-new/",
       "photos": [
-        "https://www.stilettosydney.com/wp-content/uploads/2023/06/IMG_4525.jpg"
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/IMG_1430.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/IMG_1427.jpg",
+        "https://www.stilettosydney.com/wp-content/uploads/2023/06/IMG_1428.jpg"
       ],
       "labels": [
         "GFE",
@@ -6904,6 +6906,10 @@
       "2026-08-22": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-08-19": {
+        "start": "16:00",
+        "end": "22:00"
       }
     },
     "Anna": {
@@ -9747,6 +9753,6 @@
     },
     "Precious": {}
   },
-  "lastGirlsSync": "2026-08-18T04:38:53.657Z",
+  "lastGirlsSync": "2026-08-18T10:21:27.948Z",
   "lastCalendarSync": "2026-08-18T09:06:50.398Z"
 }

@@ -10275,6 +10275,31 @@
       "labels": [],
       "lastModified": "2026-08-12T10:00:59.118Z",
       "lastRostered": ""
+    },
+    {
+      "name": "maka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/maka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95911787020588_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/95901787020575_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-18T04:00:58.772Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16315,7 +16340,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-17T16:01:00.513Z",
+  "lastGirlsSync": "2026-08-18T04:00:58.772Z",
   "lastCalendarSync": "2026-08-09T20:58:49.602Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

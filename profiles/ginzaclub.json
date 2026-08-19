@@ -6449,7 +6449,8 @@
         "CIM",
         "GFE"
       ],
-      "lastModified": "2026-08-19T10:00:58.976Z"
+      "lastModified": "2026-08-19T10:00:58.976Z",
+      "lastRostered": "2026-08-20"
     }
   ],
   "calendar": {
@@ -18104,8 +18105,14 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Lamo": {
+      "2026-08-20": {
+        "start": "10:30",
+        "end": "23:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-19T10:00:58.976Z",
-  "lastCalendarSync": "2026-08-19T07:13:25.699Z"
+  "lastCalendarSync": "2026-08-19T10:52:24.583Z"
 }

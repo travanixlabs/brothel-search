@@ -6753,7 +6753,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/camilla-new/",
       "photos": [],
       "labels": [
@@ -6802,7 +6802,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-19",
+      "lastRostered": "2026-08-29",
       "oldUrl": "https://www.stilettosydney.com/workers/dove-new/",
       "photos": [],
       "labels": [
@@ -6843,7 +6843,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-19",
+      "lastRostered": "2026-08-21",
       "oldUrl": "https://www.stilettosydney.com/workers/ivy-new-3/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/01/IMG_0874.jpg"
@@ -9191,7 +9191,7 @@
       },
       "2026-08-19": {
         "start": "10:00",
-        "end": "18:00"
+        "end": "19:00"
       }
     },
     "Inanna Lux": {
@@ -10345,6 +10345,18 @@
       "2026-08-22": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-26": {
+        "start": "17:00",
+        "end": "00:00"
+      },
+      "2026-08-28": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-29": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Ivy": {
@@ -10365,5 +10377,5 @@
     }
   },
   "lastGirlsSync": "2026-08-19T04:40:10.463Z",
-  "lastCalendarSync": "2026-08-19T03:23:41.825Z"
+  "lastCalendarSync": "2026-08-19T05:03:02.207Z"
 }

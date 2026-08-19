@@ -10223,7 +10223,7 @@
       ],
       "labels": [],
       "lastModified": "2026-08-10T04:00:58.831Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-01"
     },
     {
       "name": "uki",
@@ -10249,7 +10249,7 @@
       ],
       "labels": [],
       "lastModified": "2026-08-10T05:35:53.878Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-01"
     },
     {
       "name": "isa",
@@ -10274,7 +10274,7 @@
       ],
       "labels": [],
       "lastModified": "2026-08-12T10:00:59.118Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-01"
     },
     {
       "name": "maka",
@@ -10299,7 +10299,7 @@
       ],
       "labels": [],
       "lastModified": "2026-08-18T04:00:58.772Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-01"
     },
     {
       "name": "kisa",
@@ -10325,7 +10325,7 @@
       ],
       "labels": [],
       "lastModified": "2026-08-18T16:00:58.597Z",
-      "lastRostered": ""
+      "lastRostered": "2026-07-01"
     }
   ],
   "calendar": {
@@ -16367,7 +16367,7 @@
     }
   },
   "lastGirlsSync": "2026-08-18T16:00:58.597Z",
-  "lastCalendarSync": "2026-08-09T20:58:49.602Z",
+  "lastCalendarSync": "2026-08-19T20:50:39.512Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

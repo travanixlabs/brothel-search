@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-17"
+      "lastRostered": "2026-08-21"
     },
     {
       "name": "Ally",
@@ -778,7 +778,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-20"
+      "lastRostered": "2026-08-21"
     },
     {
       "name": "Gabby",
@@ -2388,6 +2388,10 @@
         "end": "03:00"
       },
       "2026-08-16": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-08-21": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4013,6 +4017,10 @@
       "2026-08-18": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-21": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Gabby": {},
@@ -4146,5 +4154,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-20T15:02:15.203Z"
+  "lastCalendarSync": "2026-08-20T19:09:00.854Z"
 }

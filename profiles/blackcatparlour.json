@@ -168,7 +168,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-25"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Amy",
@@ -454,7 +454,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-20"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Camilla",
@@ -612,7 +612,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-23"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Coco",
@@ -1367,7 +1367,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Kayla",
@@ -1733,7 +1733,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Miley",
@@ -1773,7 +1773,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Nadia",
@@ -1935,7 +1935,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Petra",
@@ -2080,7 +2080,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-25"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Sasha",
@@ -2295,7 +2295,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-24"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Tokyo",
@@ -2419,7 +2419,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Winnie",
@@ -3300,7 +3300,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-25"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Bee",
@@ -3376,7 +3376,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-23"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Bailey",
@@ -3585,7 +3585,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Dior",
@@ -3642,7 +3642,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Tanya",
@@ -3737,7 +3737,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Xena",
@@ -4115,7 +4115,8 @@
       "2026-08-23",
       "2026-08-24",
       "2026-08-25",
-      "2026-08-26"
+      "2026-08-26",
+      "2026-08-27"
     ],
     "Amany": {
       "2026-04-05": {
@@ -4891,6 +4892,10 @@
       "2026-08-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Pandora": {
@@ -5077,6 +5082,10 @@
         "end": "06:00"
       },
       "2026-08-21": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -7953,6 +7962,10 @@
       "2026-08-21": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Natasha": {
@@ -8281,6 +8294,10 @@
         "end": "06:00"
       },
       "2026-08-22": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -8935,6 +8952,10 @@
         "end": "06:00"
       },
       "2026-08-20": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -11333,6 +11354,10 @@
       "2026-08-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Charlie": {
@@ -13049,6 +13074,10 @@
       "2026-08-20": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Blair": {
@@ -14495,6 +14524,10 @@
       "2026-08-20": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Amber": {
@@ -14969,6 +15002,10 @@
         "end": "06:00"
       },
       "2026-08-24": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -16073,6 +16110,10 @@
       "2026-08-23": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Abbie": {
@@ -16824,6 +16865,10 @@
       "2026-08-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Erika": {
@@ -16869,6 +16914,10 @@
       },
       "2026-08-21": {
         "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -17454,6 +17503,10 @@
       "2026-08-25": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-08-27": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Dior": {
@@ -17529,6 +17582,10 @@
         "end": "06:00"
       },
       "2026-08-22": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -17701,6 +17758,10 @@
         "end": "06:00"
       },
       "2026-08-20": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-08-27": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -17939,5 +18000,5 @@
     }
   },
   "lastGirlsSync": "2026-08-18T04:38:09.222Z",
-  "lastCalendarSync": "2026-08-20T13:27:20.550Z"
+  "lastCalendarSync": "2026-08-20T15:02:26.969Z"
 }

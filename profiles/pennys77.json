@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-10"
+      "lastRostered": "2026-08-20"
     },
     {
       "name": "Nana",
@@ -778,7 +778,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-19"
+      "lastRostered": "2026-08-20"
     },
     {
       "name": "Gabby",
@@ -1577,6 +1577,10 @@
         "end": "03:00"
       },
       "2026-08-09": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-08-20": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3984,6 +3988,10 @@
       "2026-08-18": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-20": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Gabby": {},
@@ -4117,5 +4125,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-19T14:59:58.698Z"
+  "lastCalendarSync": "2026-08-20T01:58:57.777Z"
 }

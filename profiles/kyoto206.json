@@ -10326,6 +10326,31 @@
       "labels": [],
       "lastModified": "2026-08-18T16:00:58.597Z",
       "lastRostered": "2026-07-01"
+    },
+    {
+      "name": "azuka",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "162",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/azuka-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96081787283851_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96091787283854_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-21T04:40:11.863Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16366,7 +16391,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-18T16:00:58.597Z",
+  "lastGirlsSync": "2026-08-21T04:40:11.863Z",
   "lastCalendarSync": "2026-08-19T20:50:39.512Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

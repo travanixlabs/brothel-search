@@ -1448,7 +1448,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/07/%E5%9B%BE%E7%89%87_20250713131238.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Ellsa",
@@ -2459,6 +2459,27 @@
       "oldUrl": "https://jinia.com.au/vivian/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Ruby",
+      "country": [
+        "Vietnamese"
+      ],
+      "age": "23",
+      "height": "153",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-21",
+      "lastRostered": "2026-08-21",
+      "oldUrl": "https://jinia.com.au/ruby-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6209,6 +6230,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-17T10:26:04.052Z",
+  "lastGirlsSync": "2026-08-21T10:23:12.051Z",
   "lastCalendarSync": "2026-08-21T07:23:54.866Z"
 }

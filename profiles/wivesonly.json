@@ -2217,7 +2217,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-18"
+      "lastRostered": "2026-08-21"
     },
     {
       "name": "Ivy",
@@ -7523,6 +7523,10 @@
       "2026-08-18": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-08-21": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Madeleine": {
@@ -10800,5 +10804,5 @@
     "River": {}
   },
   "lastGirlsSync": "2026-08-15T04:34:58.954Z",
-  "lastCalendarSync": "2026-08-21T09:10:53.650Z"
+  "lastCalendarSync": "2026-08-21T10:56:25.469Z"
 }

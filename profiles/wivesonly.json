@@ -2285,7 +2285,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-19"
+      "lastRostered": "2026-08-21"
     },
     {
       "name": "Katalina",
@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-08-20",
+      "lastRostered": "2026-08-21",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6697,6 +6697,10 @@
       "2026-08-19": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-21": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Talia": {
@@ -10378,10 +10382,6 @@
       "2026-08-18": {
         "start": "19:30",
         "end": "04:00"
-      },
-      "2026-08-21": {
-        "start": "11:00",
-        "end": "17:00"
       }
     },
     "Ella": {
@@ -10564,6 +10564,10 @@
       "2026-08-20": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-08-21": {
+        "start": "20:30",
+        "end": "06:00"
       }
     },
     "Ava": {
@@ -10793,13 +10797,8 @@
         "end": "19:30"
       }
     },
-    "River": {
-      "2026-08-21": {
-        "start": "11:00",
-        "end": "20:30"
-      }
-    }
+    "River": {}
   },
   "lastGirlsSync": "2026-08-15T04:34:58.954Z",
-  "lastCalendarSync": "2026-08-20T15:02:54.609Z"
+  "lastCalendarSync": "2026-08-21T09:10:53.650Z"
 }

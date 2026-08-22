@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-07"
+      "lastRostered": "2026-08-23"
     },
     {
       "name": "Alice",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-23"
     },
     {
       "name": "Hallie",
@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-23"
     },
     {
       "name": "Cammie",
@@ -4496,6 +4496,10 @@
       "2026-08-22": {
         "start": "23:00",
         "end": "08:00"
+      },
+      "2026-08-23": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Darcy": {
@@ -4926,6 +4930,10 @@
       "2026-08-22": {
         "start": "23:00",
         "end": "09:00"
+      },
+      "2026-08-23": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Audrey": {
@@ -5146,6 +5154,10 @@
       "2026-08-02": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-08-23": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Bambi": {
@@ -5362,5 +5374,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-22T18:55:26.974Z"
+  "lastCalendarSync": "2026-08-22T22:51:44.207Z"
 }

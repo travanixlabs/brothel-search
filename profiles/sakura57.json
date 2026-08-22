@@ -10468,7 +10468,9 @@
       ],
       "labels": [],
       "lastModified": "2026-06-16T04:01:02.983Z",
-      "lastRostered": "2026-06-16"
+      "lastRostered": "2026-06-16",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-22T16:25:57.666Z"
     },
     {
       "name": "mizuri",

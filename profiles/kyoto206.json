@@ -10376,6 +10376,33 @@
       "labels": [],
       "lastModified": "2026-08-21T10:00:02.313Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Koyuki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/koyuki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96231787446046_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96261787446322_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96251787446321_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/08/96241787446047_.pic_-1400x934.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-23T04:00:02.843Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16416,7 +16443,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-21T10:00:02.313Z",
+  "lastGirlsSync": "2026-08-23T04:00:02.843Z",
   "lastCalendarSync": "2026-08-19T20:50:39.512Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

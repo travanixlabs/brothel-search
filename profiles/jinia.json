@@ -872,7 +872,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-10-28",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/anna-5/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2328,7 +2328,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-07-30",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/canlily/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/07/%E5%9B%BE%E7%89%87_20260730110248.jpg"
@@ -2412,7 +2412,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-15",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/8100-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192320_25_10.jpg",
@@ -2455,7 +2455,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-16",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/vivian/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
@@ -2476,7 +2476,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-21",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/ruby-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
@@ -2497,7 +2497,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-23",
-      "lastRostered": "2026-08-23",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://jinia.com.au/jessica-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260823050333_67_10.jpg"
@@ -4033,6 +4033,10 @@
       "2026-08-23": {
         "start": "17:00",
         "end": "04:00"
+      },
+      "2026-08-30": {
+        "start": "17:00",
+        "end": "04:00"
       }
     },
     "Bobo": {
@@ -4202,7 +4206,8 @@
       "2026-08-26",
       "2026-08-27",
       "2026-08-28",
-      "2026-08-29"
+      "2026-08-29",
+      "2026-08-30"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -5817,6 +5822,10 @@
       "2026-08-29": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-08-30": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "🆕 Canlily": {
@@ -5941,6 +5950,10 @@
         "end": "04:00"
       },
       "2026-08-29": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-08-30": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -6159,6 +6172,10 @@
       "2026-08-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Mia": {
@@ -6294,6 +6311,10 @@
       "2026-08-23": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-08-30": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "🆕 Ruby": {
@@ -6316,15 +6337,23 @@
       "2026-08-23": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-08-30": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "🆕 Jessica": {
       "2026-08-23": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-08-30": {
+        "start": "12:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-08-23T04:41:15.312Z",
-  "lastCalendarSync": "2026-08-23T05:02:47.050Z"
+  "lastCalendarSync": "2026-08-23T14:47:18.503Z"
 }

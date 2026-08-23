@@ -412,7 +412,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-06",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -7082,7 +7082,8 @@
       "2026-08-31",
       "2026-09-01",
       "2026-09-04",
-      "2026-09-05"
+      "2026-09-05",
+      "2026-09-06"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -9114,6 +9115,10 @@
       "2026-09-05": {
         "start": "13:00",
         "end": "19:00"
+      },
+      "2026-09-06": {
+        "start": "13:00",
+        "end": "19:00"
       }
     },
     "Lacey": {},
@@ -10005,5 +10010,5 @@
     }
   },
   "lastGirlsSync": "2026-08-22T22:15:04.683Z",
-  "lastCalendarSync": "2026-08-23T02:10:34.812Z"
+  "lastCalendarSync": "2026-08-23T03:28:12.076Z"
 }

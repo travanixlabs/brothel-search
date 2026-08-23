@@ -1338,7 +1338,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-23T16:28:18.544Z"
     },
     {
       "name": "Yoku",
@@ -11106,7 +11108,9 @@
       ],
       "labels": [],
       "lastModified": "2026-08-16T10:00:59.951Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-23T16:28:25.929Z"
     },
     {
       "name": "amoro",

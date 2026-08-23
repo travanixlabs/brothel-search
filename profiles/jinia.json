@@ -1429,7 +1429,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/06/mmexport1750487782929.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Mei",
@@ -2480,6 +2480,27 @@
       "oldUrl": "https://jinia.com.au/ruby-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Jessica",
+      "country": [
+        "Vietnam"
+      ],
+      "age": "25",
+      "height": "160",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-23",
+      "lastRostered": "2026-08-23",
+      "oldUrl": "https://jinia.com.au/jessica-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260823050333_67_10.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6298,6 +6319,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-21T10:23:12.051Z",
+  "lastGirlsSync": "2026-08-23T04:41:15.312Z",
   "lastCalendarSync": "2026-08-22T14:45:47.613Z"
 }

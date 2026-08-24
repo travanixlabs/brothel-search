@@ -6410,7 +6410,7 @@
         "GFE"
       ],
       "lastModified": "2026-08-19T03:21:57.474Z",
-      "lastRostered": "2026-08-21",
+      "lastRostered": "2026-08-25",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -18463,6 +18463,10 @@
       "2026-08-21": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-25": {
+        "start": "14:00",
+        "end": "02:00"
       }
     },
     "Lamo": {
@@ -18507,5 +18511,5 @@
     }
   },
   "lastGirlsSync": "2026-08-19T10:00:58.976Z",
-  "lastCalendarSync": "2026-08-24T07:35:35.962Z"
+  "lastCalendarSync": "2026-08-24T11:00:04.867Z"
 }

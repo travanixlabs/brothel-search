@@ -11136,6 +11136,30 @@
       "labels": [],
       "lastModified": "2026-08-18T04:00:59.750Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Mikisa",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "E",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-08-24",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/mikisa-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/96311787531113_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/96321787531114_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-24T04:00:03.652Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16654,7 +16678,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-18T04:00:59.750Z",
+  "lastGirlsSync": "2026-08-24T04:00:03.652Z",
   "lastCalendarSync": "2026-08-15T14:44:43.136Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

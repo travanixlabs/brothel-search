@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-06"
+      "lastRostered": "2026-08-24"
     },
     {
       "name": "Hana",
@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-17"
+      "lastRostered": "2026-08-24"
     },
     {
       "name": "Sonia",
@@ -1995,6 +1995,10 @@
       "2026-08-16": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-08-24": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sonia": {
@@ -3013,6 +3017,10 @@
         "end": "03:00"
       },
       "2026-08-05": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-08-24": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4209,5 +4217,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-08-23T14:46:45.811Z"
+  "lastCalendarSync": "2026-08-24T02:07:18.626Z"
 }

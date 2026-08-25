@@ -1612,7 +1612,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-25"
+      "lastRostered": "2026-08-26"
     },
     {
       "name": "Faith",
@@ -5288,7 +5288,7 @@
       }
     },
     "Destiny": {
-      "2026-08-25": {
+      "2026-08-26": {
         "start": "12:00",
         "end": "21:00"
       }
@@ -5494,5 +5494,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-25T02:00:51.003Z"
+  "lastCalendarSync": "2026-08-25T03:24:52.139Z"
 }

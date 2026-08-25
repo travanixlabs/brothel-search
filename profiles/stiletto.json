@@ -637,7 +637,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30",
+      "lastRostered": "2026-09-06",
       "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
@@ -680,7 +680,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22",
+      "lastRostered": "2026-09-03",
       "desc": "Handsome, I’m Carmen, Stiletto's newest petite brunette and the girl of your wettest dreams. I'm in my early 20s, striking and unforgettable, with a perfect C-cup bust, pouty lips, and eyes full of mischief and mystery. My curves are delicate yet delicious, with every inch of me designed to ..."
     },
     {
@@ -811,7 +811,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29"
+      "lastRostered": "2026-09-04"
     },
     {
       "name": "Clara",
@@ -3337,7 +3337,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-26"
     },
     {
       "name": "Riley",
@@ -4022,7 +4022,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-20"
+      "lastRostered": "2026-09-05"
     },
     {
       "name": "Storm",
@@ -4328,7 +4328,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01"
+      "lastRostered": "2026-09-05"
     },
     {
       "name": "Venus",
@@ -5137,7 +5137,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-28",
+      "lastRostered": "2026-09-05",
       "oldUrl": "https://www.stilettosydney.com/workers/pia-new/",
       "photos": [],
       "labels": [],
@@ -5818,7 +5818,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-20",
+      "lastRostered": "2026-09-06",
       "oldUrl": "https://www.stilettosydney.com/workers/gemma-new/",
       "photos": [],
       "labels": [
@@ -6405,7 +6405,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-21",
+      "lastRostered": "2026-09-04",
       "oldUrl": "https://www.stilettosydney.com/workers/romy-new/",
       "photos": [],
       "labels": [
@@ -6437,7 +6437,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-22",
+      "lastRostered": "2026-09-06",
       "oldUrl": "https://www.stilettosydney.com/workers/rocket-new/",
       "photos": [],
       "labels": [
@@ -6941,7 +6941,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-25",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://www.stilettosydney.com/workers/sativa-new/",
       "photos": [],
       "labels": [
@@ -7900,6 +7900,14 @@
       "2026-08-12": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-28": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-03": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Cindy": {
@@ -7922,6 +7930,14 @@
       "2026-08-29": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-09-01": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-04": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Queen": {
@@ -8286,6 +8302,22 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-08-26": {
+        "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-09-03": {
+        "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-09-04": {
+        "start": "11:00",
+        "end": "18:00"
+      },
+      "2026-09-05": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Mara": {
@@ -8363,6 +8395,22 @@
         "end": "05:00"
       },
       "2026-08-30": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-08-31": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-04": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-05": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-06": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -8504,6 +8552,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-08-26": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Jayde": {
@@ -8716,10 +8768,6 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
-      },
-      "2026-08-25": {
-        "start": "07:00",
-        "end": "15:00"
       },
       "2026-08-26": {
         "start": "18:00",
@@ -9051,10 +9099,6 @@
       }
     },
     "Dallas": {
-      "2026-08-25": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-08-27": {
         "start": "07:00",
         "end": "15:00"
@@ -9255,6 +9299,26 @@
         "end": "07:00"
       },
       "2026-07-31": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-27": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-28": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-08-29": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-04": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-05": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -9710,7 +9774,28 @@
     },
     "Rosie": {},
     "Alex": {},
-    "Gemma": {},
+    "Gemma": {
+      "2026-08-27": {
+        "start": "08:00",
+        "end": "15:00"
+      },
+      "2026-08-30": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-09-01": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-03": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-06": {
+        "start": "08:00",
+        "end": "15:00"
+      }
+    },
     "Naomi": {
       "2026-08-25": {
         "start": "19:00",
@@ -9845,6 +9930,30 @@
       "2026-08-28": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-08-31": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-01": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-02": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-03": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-04": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-05": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Veronica": {
@@ -9921,12 +10030,44 @@
       "2026-07-31": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-31": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-09-04": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Rocket": {
       "2026-07-21": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-08-31": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-01": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-02": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-04": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-05": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-06": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Sukura": {},
@@ -10046,5 +10187,5 @@
     }
   },
   "lastGirlsSync": "2026-08-25T04:42:23.304Z",
-  "lastCalendarSync": "2026-08-25T03:25:15.536Z"
+  "lastCalendarSync": "2026-08-25T05:05:23.625Z"
 }

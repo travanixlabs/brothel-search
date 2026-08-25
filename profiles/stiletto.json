@@ -2467,7 +2467,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-18"
+      "lastRostered": "2026-08-26"
     },
     {
       "name": "Maddie",
@@ -9429,7 +9429,12 @@
         "end": "00:00"
       }
     },
-    "London": {},
+    "London": {
+      "2026-08-26": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Aspen": {
       "2026-08-26": {
         "start": "07:00",
@@ -10200,5 +10205,5 @@
     }
   },
   "lastGirlsSync": "2026-08-25T16:23:36.292Z",
-  "lastCalendarSync": "2026-08-25T19:07:33.295Z"
+  "lastCalendarSync": "2026-08-25T20:53:51.101Z"
 }

@@ -3912,7 +3912,9 @@
         "GFE"
       ],
       "lastModified": "2026-05-13T04:00:06.586Z",
-      "lastRostered": "2026-02-01"
+      "lastRostered": "2026-02-01",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-26T16:48:15.119Z"
     },
     {
       "name": "Yuua",

@@ -129,7 +129,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Athena",
@@ -150,7 +150,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-26"
     },
     {
       "name": "Audrey",
@@ -171,7 +171,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Belle",
@@ -361,7 +361,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Elise",
@@ -403,7 +403,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-22"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Gabrielle",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-23"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Hallie",
@@ -552,7 +552,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-28"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Isabella",
@@ -616,7 +616,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Jane",
@@ -933,7 +933,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Natasha",
@@ -996,7 +996,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-21"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Roxy",
@@ -1038,7 +1038,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Stacey",
@@ -1123,7 +1123,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Amy",
@@ -1277,7 +1277,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Scarlett",
@@ -1353,7 +1353,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-24"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Tiffany",
@@ -1694,7 +1694,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-25"
+      "lastRostered": "2026-08-26"
     },
     {
       "name": "Bailey",
@@ -2044,7 +2044,8 @@
       "2026-08-25",
       "2026-08-26",
       "2026-08-27",
-      "2026-08-28"
+      "2026-08-28",
+      "2026-08-29"
     ],
     "Belle": {
       "2026-04-03": {
@@ -2140,6 +2141,14 @@
       "2026-08-12": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-08-28": {
+        "start": "05:00",
+        "end": "12:00"
+      },
+      "2026-08-29": {
+        "start": "05:00",
+        "end": "12:00"
       }
     },
     "Icra": {
@@ -2168,6 +2177,10 @@
         "end": "21:00"
       },
       "2026-08-28": {
+        "start": "12:00",
+        "end": "21:00"
+      },
+      "2026-08-29": {
         "start": "12:00",
         "end": "21:00"
       }
@@ -2218,6 +2231,10 @@
       "2026-05-22": {
         "start": "12:00",
         "end": "21:00"
+      },
+      "2026-08-26": {
+        "start": "10:00",
+        "end": "19:00"
       }
     },
     "Dahlia": {
@@ -2318,6 +2335,10 @@
         "end": "22:00"
       },
       "2026-04-10": {
+        "start": "12:00",
+        "end": "22:00"
+      },
+      "2026-08-28": {
         "start": "12:00",
         "end": "22:00"
       }
@@ -2598,6 +2619,10 @@
         "end": "07:00"
       },
       "2026-08-27": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-08-28": {
         "start": "20:00",
         "end": "05:00"
       }
@@ -3130,6 +3155,10 @@
       "2026-04-10": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-08-28": {
+        "start": "10:00",
+        "end": "17:00"
       }
     },
     "Amelia": {
@@ -3364,6 +3393,10 @@
       "2026-08-26": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-08-28": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Charlie": {
@@ -3528,6 +3561,10 @@
       "2026-08-27": {
         "start": "12:00",
         "end": "21:00"
+      },
+      "2026-08-29": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Melody": {
@@ -3846,6 +3883,10 @@
       "2026-08-26": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-08-28": {
+        "start": "23:00",
+        "end": "06:00"
       }
     },
     "Ruby": {
@@ -3918,6 +3959,10 @@
         "end": "06:00"
       },
       "2026-08-27": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-08-28": {
         "start": "21:00",
         "end": "05:00"
       }
@@ -4454,6 +4499,10 @@
       "2026-08-26": {
         "start": "11:00",
         "end": "18:00"
+      },
+      "2026-08-29": {
+        "start": "07:00",
+        "end": "16:00"
       }
     },
     "Lily": {},
@@ -4707,6 +4756,10 @@
         "end": "07:00"
       },
       "2026-08-21": {
+        "start": "22:00",
+        "end": "07:00"
+      },
+      "2026-08-28": {
         "start": "22:00",
         "end": "07:00"
       }
@@ -5008,6 +5061,10 @@
       "2026-08-22": {
         "start": "23:00",
         "end": "09:00"
+      },
+      "2026-08-28": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Audrey": {
@@ -5062,6 +5119,10 @@
       "2026-08-22": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-08-28": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Dahlia ***": {},
@@ -5338,6 +5399,10 @@
       "2026-08-25": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-08-26": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Bailey": {},
@@ -5461,5 +5526,5 @@
     }
   },
   "lastGirlsSync": "2026-08-06T04:00:39.797Z",
-  "lastCalendarSync": "2026-08-25T19:07:09.528Z"
+  "lastCalendarSync": "2026-08-26T02:09:08.544Z"
 }

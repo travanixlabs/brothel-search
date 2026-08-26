@@ -11160,6 +11160,29 @@
       "labels": [],
       "lastModified": "2026-08-24T04:00:03.652Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Alia",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "155",
+      "cup": "C",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-08-26",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/alia-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/08/96471787716308_.pic_hd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-08-26T04:00:03.226Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16678,7 +16701,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-24T04:00:03.652Z",
+  "lastGirlsSync": "2026-08-26T04:00:03.226Z",
   "lastCalendarSync": "2026-08-15T14:44:43.136Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

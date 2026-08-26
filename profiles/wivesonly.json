@@ -767,7 +767,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-23",
+      "lastRostered": "2026-08-26",
       "desc": "Welcome one of our lovely new ladies, Hailey. Hailey is a smoking hot lady here to fulfil all of your dreams and desires. Her curvaceous body & striking blue eyes will leave you begging for more. She will certainly leave a memory that you will never forget!"
     },
     {
@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-08-25",
+      "lastRostered": "2026-08-26",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -5965,6 +5965,10 @@
       },
       "2026-08-23": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-08-26": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -11046,6 +11050,10 @@
       "2026-08-25": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-08-26": {
+        "start": "17:00",
+        "end": "02:00"
       }
     },
     "Dior": {
@@ -11125,5 +11133,5 @@
     }
   },
   "lastGirlsSync": "2026-08-21T16:19:26.514Z",
-  "lastCalendarSync": "2026-08-25T15:13:09.178Z"
+  "lastCalendarSync": "2026-08-26T11:00:40.633Z"
 }

@@ -108,7 +108,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-08-25",
+      "lastRostered": "2026-08-27",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Angela1-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Angela2-470x705.jpg"
@@ -510,7 +510,7 @@
       ],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-08-26",
+      "lastRostered": "2026-08-27",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Midori11-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Midori8-470x705.jpg",
@@ -539,7 +539,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-08-26",
+      "lastRostered": "2026-08-27",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -646,7 +646,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-08-26",
+      "lastRostered": "2026-08-27",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Alice-536x705.jpg"
       ],
@@ -1223,7 +1223,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-22T10:00:53.644Z",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Mao",
@@ -1249,7 +1249,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-27T10:00:59.222Z",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-27"
     },
     {
       "name": "Yuzu",
@@ -1275,6 +1275,33 @@
         "https://127city.com/wp-content/uploads/2026/08/Yuzu-529x705.jpg",
         "https://127city.com/wp-content/uploads/2026/08/Yuzu2-396x705.jpg",
         "https://127city.com/wp-content/uploads/2026/08/Yuzu3-396x705.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
+    },
+    {
+      "name": "Wendy",
+      "country": [
+        "Chinese"
+      ],
+      "age": "24",
+      "height": "161",
+      "cup": "E",
+      "val1": "220",
+      "val2": "290",
+      "val3": "330",
+      "startDate": "2026-08-26",
+      "oldUrl": "https://127city.com/c-wendy-diamond-diamond220-290-330-30-45-60-bookings-only/",
+      "desc": "",
+      "lang": "Mandarin, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-08-26T13:33:22.888Z",
+      "lastRostered": "2026-08-27",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/08/Wendy1-529x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/08/Wendy-526x705.jpg"
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
@@ -1434,7 +1461,8 @@
       "2026-08-23",
       "2026-08-24",
       "2026-08-25",
-      "2026-08-26"
+      "2026-08-26",
+      "2026-08-27"
     ],
     "Sana": {
       "2026-03-26": {
@@ -2293,6 +2321,10 @@
       "2026-08-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-27": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Annie": {
@@ -2915,6 +2947,10 @@
         "end": "02:00"
       },
       "2026-08-25": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-08-27": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -3743,6 +3779,10 @@
         "end": "02:00"
       },
       "2026-08-26": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-08-27": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -5103,6 +5143,10 @@
       "2026-08-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-27": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Hina": {
@@ -5461,6 +5505,10 @@
       "2026-08-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-27": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Abby": {
@@ -5549,6 +5597,10 @@
       "2026-08-26": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-08-27": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Yuzu": {
@@ -5572,10 +5624,16 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Wendy": {
+      "2026-08-27": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-01T16:00:50.710Z",
-  "lastCalendarSync": "2026-08-25T15:12:09.546Z",
+  "lastCalendarSync": "2026-08-26T13:33:24.207Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

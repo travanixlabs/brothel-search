@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26",
+      "lastRostered": "2026-08-27",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -2619,7 +2619,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-10"
     },
     {
       "name": "Mel",
@@ -7115,7 +7115,8 @@
       "2026-09-05",
       "2026-09-06",
       "2026-09-07",
-      "2026-09-09"
+      "2026-09-09",
+      "2026-09-10"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -8875,6 +8876,10 @@
       "2026-09-04": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-09-10": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Kelsey": {
@@ -10160,5 +10165,5 @@
     }
   },
   "lastGirlsSync": "2026-08-27T02:46:53.827Z",
-  "lastCalendarSync": "2026-08-26T23:52:26.310Z"
+  "lastCalendarSync": "2026-08-27T03:31:24.689Z"
 }

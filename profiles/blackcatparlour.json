@@ -4004,6 +4004,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-02"
+    },
+    {
+      "name": "Raven",
+      "country": [
+        "Australian"
+      ],
+      "age": "19",
+      "height": "165",
+      "cup": "",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-08-27",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -18610,6 +18628,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-25T16:22:50.800Z",
+  "lastGirlsSync": "2026-08-27T10:00:11.014Z",
   "lastCalendarSync": "2026-08-27T03:31:07.096Z"
 }

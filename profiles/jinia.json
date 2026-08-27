@@ -1408,7 +1408,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/07/%E5%9B%BE%E7%89%87_20250729100436.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Hannah",
@@ -2523,6 +2523,27 @@
       "oldUrl": "https://jinia.com.au/hanna-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260826110747.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Naomi",
+      "country": [
+        "Chinese"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-27",
+      "lastRostered": "2026-08-27",
+      "oldUrl": "https://jinia.com.au/naomi-12pm-12am/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260827131642.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6447,6 +6468,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-26T04:43:26.229Z",
+  "lastGirlsSync": "2026-08-27T15:04:24.102Z",
   "lastCalendarSync": "2026-08-27T03:31:35.167Z"
 }

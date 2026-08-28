@@ -2482,7 +2482,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
       ],
       "labels": [],
-      "originalSite": ""
+      "originalSite": "Exists"
     },
     {
       "name": "🆕 Jessica",
@@ -2525,7 +2525,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260826110747.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "🆕 Naomi",
@@ -6503,6 +6503,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-27T15:04:24.102Z",
+  "lastGirlsSync": "2026-08-28T00:41:05.705Z",
   "lastCalendarSync": "2026-08-27T23:52:06.692Z"
 }

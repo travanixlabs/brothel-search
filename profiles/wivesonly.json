@@ -3070,7 +3070,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-05-01",
+      "lastRostered": "2026-08-28",
       "oldUrl": "https://wivesonly.com.au/tiana/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/jewel-fake-photo.jpg"
@@ -11252,8 +11252,14 @@
         "start": "11:00",
         "end": "18:00"
       }
+    },
+    "Tiana": {
+      "2026-08-28": {
+        "start": "20:30",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-08-21T16:19:26.514Z",
-  "lastCalendarSync": "2026-08-28T06:16:46.066Z"
+  "lastCalendarSync": "2026-08-28T11:39:10.404Z"
 }

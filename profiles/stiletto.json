@@ -3854,7 +3854,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-08-28"
     },
     {
       "name": "Simone",
@@ -6648,7 +6648,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-30",
       "oldUrl": "https://www.stilettosydney.com/workers/sapphire-new-2/",
       "photos": [],
       "labels": [
@@ -6891,7 +6891,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-20",
+      "lastRostered": "2026-08-28",
       "oldUrl": "https://www.stilettosydney.com/workers/york-new-2/",
       "photos": [],
       "labels": [
@@ -8773,6 +8773,10 @@
       "2026-06-20": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-28": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Robin": {
@@ -10030,7 +10034,7 @@
         "start": "23:00",
         "end": "07:00"
       },
-      "2026-08-29": {
+      "2026-08-30": {
         "start": "01:00",
         "end": "09:00"
       }
@@ -10052,7 +10056,12 @@
         "end": "10:00"
       }
     },
-    "York": {},
+    "York": {
+      "2026-08-28": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
     "Camilla": {},
     "Nova": {},
     "Storm": {
@@ -10073,5 +10082,5 @@
     }
   },
   "lastGirlsSync": "2026-08-28T00:40:41.242Z",
-  "lastCalendarSync": "2026-08-28T01:06:10.576Z"
+  "lastCalendarSync": "2026-08-28T04:25:41.814Z"
 }

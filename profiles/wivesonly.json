@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-08-28",
+      "lastRostered": "2026-08-29",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -11131,6 +11131,10 @@
       "2026-08-28": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-08-29": {
+        "start": "14:00",
+        "end": "20:30"
       }
     },
     "Summer": {
@@ -11318,5 +11322,5 @@
     }
   },
   "lastGirlsSync": "2026-08-21T16:19:26.514Z",
-  "lastCalendarSync": "2026-08-29T01:50:16.311Z"
+  "lastCalendarSync": "2026-08-29T07:16:56.721Z"
 }

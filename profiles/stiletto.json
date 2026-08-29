@@ -1204,7 +1204,7 @@
         "BBBJ"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-01"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Faith",
@@ -1797,7 +1797,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "Jess",
@@ -3953,7 +3953,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-24"
+      "lastRostered": "2026-08-29"
     },
     {
       "name": "Star",
@@ -8518,6 +8518,10 @@
       "2026-05-22": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-08-29": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Ria": {
@@ -8644,6 +8648,10 @@
         "end": "07:00"
       },
       "2026-09-11": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-09-12": {
         "start": "23:00",
         "end": "07:00"
       }
@@ -9193,12 +9201,7 @@
     },
     "Karina": {},
     "Bree": {},
-    "Gloria": {
-      "2026-08-29": {
-        "start": "15:00",
-        "end": "23:00"
-      }
-    },
+    "Gloria": {},
     "Valerie": {
       "2026-06-06": {
         "start": "22:00",
@@ -9419,6 +9422,10 @@
       "2026-06-07": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-08-29": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Molly": {},
@@ -9973,5 +9980,5 @@
     }
   },
   "lastGirlsSync": "2026-08-29T10:56:09.393Z",
-  "lastCalendarSync": "2026-08-29T11:19:38.161Z"
+  "lastCalendarSync": "2026-08-29T13:59:45.924Z"
 }

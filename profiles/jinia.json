@@ -878,7 +878,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Bobo",
@@ -1389,7 +1389,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/07/%E5%9B%BE%E7%89%87_20250729100606.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Jojo",
@@ -2544,6 +2544,46 @@
       "oldUrl": "https://jinia.com.au/naomi-12pm-12am/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260827131642.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Ella",
+      "country": [
+        "Chinese"
+      ],
+      "age": "26",
+      "height": "169",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-30",
+      "lastRostered": "2026-08-30",
+      "oldUrl": "https://jinia.com.au/ella-3/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260830014632_80_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Amy",
+      "country": [],
+      "age": "26",
+      "height": "",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2025-10-28",
+      "lastRostered": "2025-10-28",
+      "oldUrl": "https://jinia.com.au/amy/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6559,6 +6599,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-28T00:41:05.705Z",
+  "lastGirlsSync": "2026-08-30T09:50:52.295Z",
   "lastCalendarSync": "2026-08-30T00:37:37.048Z"
 }

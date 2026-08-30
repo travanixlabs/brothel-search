@@ -10310,7 +10310,9 @@
         "CIM"
       ],
       "lastModified": "2026-08-12T10:00:59.055Z",
-      "lastRostered": "2026-08-12"
+      "lastRostered": "2026-08-12",
+      "deleted": "Yes",
+      "deletedAt": "2026-08-30T19:03:55.129Z"
     },
     {
       "name": "Alisa",

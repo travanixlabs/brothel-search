@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-08-31",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -3953,7 +3953,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29"
+      "lastRostered": "2026-08-31"
     },
     {
       "name": "Star",
@@ -7307,6 +7307,10 @@
       "2026-08-28": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-08-31": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Audrey": {
@@ -9063,10 +9067,6 @@
     },
     "Rebecca": {},
     "Arizona": {
-      "2026-08-30": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-08-31": {
         "start": "16:00",
         "end": "00:00"
@@ -9355,6 +9355,10 @@
       "2026-06-07": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-08-31": {
+        "start": "00:00",
+        "end": "02:00"
       }
     },
     "Molly": {},
@@ -9861,5 +9865,5 @@
     "Shantae": {}
   },
   "lastGirlsSync": "2026-08-30T14:37:16.719Z",
-  "lastCalendarSync": "2026-08-30T13:58:57.841Z"
+  "lastCalendarSync": "2026-08-30T14:56:14.892Z"
 }

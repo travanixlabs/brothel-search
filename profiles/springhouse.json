@@ -255,6 +255,29 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Lily",
+      "country": [
+        "Taiwanese"
+      ],
+      "age": "30",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "desc": "New Girl from Taiwan, 30 years old. Mimi has a size 6 small sexy body, with a pretty face. She provides exceptional premium services, making her clients feel special and relaxed. Top service in the shop. Mimi works 7 days, from 7 pm till the next day morning. Don't miss out. Book Now!",
+      "val1": "110",
+      "val2": "140",
+      "val3": "170",
+      "startDate": "2026-08-31",
+      "lastRostered": "2026-08-31",
+      "oldUrl": "https://46springhouse.com.au/mimi-2/",
+      "photos": [
+        "https://46springhouse.com.au/wp-content/uploads/2022/11/mimi.jpeg",
+        "https://46springhouse.com.au/wp-content/uploads/2022/11/mimi2.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6993,6 +7016,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-04-04T03:40:39.326Z",
+  "lastGirlsSync": "2026-08-31T10:41:15.988Z",
   "lastCalendarSync": "2026-08-30T14:56:11.770Z"
 }

@@ -637,7 +637,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-11",
       "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
@@ -881,7 +881,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-04"
     },
     {
       "name": "Daisy",
@@ -1865,7 +1865,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-07-06"
+      "lastRostered": "2026-08-31"
     },
     {
       "name": "Josie",
@@ -8413,10 +8413,6 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-08-31": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-09-04": {
         "start": "21:00",
         "end": "05:00"
@@ -8428,6 +8424,14 @@
       "2026-09-06": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-09-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-11": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Halo": {
@@ -8461,8 +8465,20 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-08-31": {
-        "start": "13:00",
+      "2026-09-01": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "2026-09-02": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "2026-09-03": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "2026-09-04": {
+        "start": "09:00",
         "end": "16:00"
       }
     },
@@ -9173,6 +9189,10 @@
       "2026-06-08": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-08-31": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Aurora": {
@@ -9411,6 +9431,10 @@
       "2026-09-05": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-08-31": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Fendi": {
@@ -9949,5 +9973,5 @@
     "Shantae": {}
   },
   "lastGirlsSync": "2026-08-31T00:07:43.985Z",
-  "lastCalendarSync": "2026-08-31T00:48:30.993Z"
+  "lastCalendarSync": "2026-08-31T05:55:09.423Z"
 }

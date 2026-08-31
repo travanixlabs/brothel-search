@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-12",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-17"
+      "lastRostered": "2026-08-31"
     },
     {
       "name": "Cindy",
@@ -1326,7 +1326,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30"
+      "lastRostered": "2026-09-06"
     },
     {
       "name": "Gaia",
@@ -5329,7 +5329,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-10",
       "oldUrl": "https://www.stilettosydney.com/workers/annabelle-new/",
       "photos": [],
       "labels": [
@@ -6160,7 +6160,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-30",
+      "lastRostered": "2026-09-05",
       "oldUrl": "https://www.stilettosydney.com/workers/lara-new/",
       "photos": [],
       "labels": [
@@ -7309,16 +7309,16 @@
       "2026-08-28": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-12": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Audrey": {
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
-      },
-      "2026-08-31": {
-        "start": "10:00",
-        "end": "16:00"
       },
       "2026-09-03": {
         "start": "10:00",
@@ -7733,6 +7733,34 @@
         "end": "07:00"
       },
       "2026-08-30": {
+        "start": "18:00",
+        "end": "03:00"
+      },
+      "2026-08-31": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-01": {
+        "start": "21:00",
+        "end": "04:00"
+      },
+      "2026-09-02": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-09-03": {
+        "start": "18:00",
+        "end": "04:00"
+      },
+      "2026-09-04": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-05": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-06": {
         "start": "18:00",
         "end": "03:00"
       }
@@ -8219,6 +8247,10 @@
       "2026-08-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-08-31": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Victoria": {
@@ -8933,10 +8965,6 @@
         "start": "23:00",
         "end": "07:00"
       },
-      "2026-08-31": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-09-05": {
         "start": "20:00",
         "end": "04:00"
@@ -9617,6 +9645,18 @@
       "2026-09-05": {
         "start": "17:00",
         "end": "05:00"
+      },
+      "2026-09-07": {
+        "start": "11:00",
+        "end": "20:00"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "20:00"
+      },
+      "2026-09-10": {
+        "start": "10:00",
+        "end": "16:00"
       }
     },
     "Ash": {},
@@ -9753,6 +9793,18 @@
       "2026-08-15": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-09-03": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-04": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-05": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Pia": {
@@ -9842,10 +9894,6 @@
       "2026-07-31": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-08-31": {
-        "start": "09:00",
-        "end": "17:00"
       },
       "2026-09-04": {
         "start": "09:00",
@@ -9973,5 +10021,5 @@
     "Shantae": {}
   },
   "lastGirlsSync": "2026-08-31T00:07:43.985Z",
-  "lastCalendarSync": "2026-08-31T05:55:09.423Z"
+  "lastCalendarSync": "2026-08-31T08:47:07.022Z"
 }

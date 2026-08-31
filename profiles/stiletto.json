@@ -334,7 +334,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-01",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-10",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -2140,7 +2140,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-18"
+      "lastRostered": "2026-09-06"
     },
     {
       "name": "Kianna",
@@ -2176,7 +2176,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-24"
+      "lastRostered": "2026-08-31"
     },
     {
       "name": "Kiara",
@@ -2619,7 +2619,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Mel",
@@ -3242,7 +3242,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27"
+      "lastRostered": "2026-09-10"
     },
     {
       "name": "Raven",
@@ -4284,7 +4284,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30"
+      "lastRostered": "2026-09-07"
     },
     {
       "name": "Valerie",
@@ -4853,7 +4853,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-07",
       "oldUrl": "https://www.stilettosydney.com/workers/sonya/",
       "photos": [],
       "labels": [
@@ -6617,7 +6617,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-18",
+      "lastRostered": "2026-09-01",
       "oldUrl": "https://www.stilettosydney.com/workers/farah-new/",
       "photos": [],
       "labels": [
@@ -7155,11 +7155,13 @@
       "2026-09-05",
       "2026-09-06",
       "2026-09-07",
+      "2026-09-08",
       "2026-09-09",
       "2026-09-10",
       "2026-09-11",
       "2026-09-12",
-      "2026-09-13"
+      "2026-09-13",
+      "2026-09-14"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -7327,6 +7329,22 @@
         "end": "16:00"
       },
       "2026-09-06": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-09-07": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-09-08": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-09-09": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-09-10": {
         "start": "10:00",
         "end": "16:00"
       }
@@ -8139,6 +8157,26 @@
       "2026-04-05": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-08-31": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-02": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-09-03": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-06": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-09-07": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "ChiChi": {
@@ -8424,7 +8462,7 @@
         "end": "13:00"
       },
       "2026-08-31": {
-        "start": "09:00",
+        "start": "13:00",
         "end": "16:00"
       }
     },
@@ -8741,7 +8779,28 @@
         "end": "07:00"
       }
     },
-    "Raelynn": {},
+    "Raelynn": {
+      "2026-09-01": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-03": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-07": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-08": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-10": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Blake": {},
     "Kennedy": {
       "2026-04-13": {
@@ -8775,6 +8834,22 @@
       "2026-08-17": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-31": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-01": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-03": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-06": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Ava": {
@@ -8807,6 +8882,10 @@
       "2026-09-11": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-09-14": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Kelsey": {
@@ -9021,6 +9100,10 @@
       "2026-08-17": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-08-31": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Trinity": {
@@ -9060,6 +9143,10 @@
     "Rebecca": {},
     "Arizona": {
       "2026-08-31": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-09-01": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -9259,7 +9346,20 @@
     },
     "Brandy": {},
     "Yvette": {},
-    "Sonya": {},
+    "Sonya": {
+      "2026-09-01": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-02": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-07": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Zarina": {
       "2026-04-22": {
         "start": "23:00",
@@ -9769,7 +9869,16 @@
     "Sukura": {},
     "Sakura": {},
     "Olive": {},
-    "Farah": {},
+    "Farah": {
+      "2026-08-31": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-01": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Kaia": {
       "2026-08-05": {
         "start": "23:45",
@@ -9840,5 +9949,5 @@
     "Shantae": {}
   },
   "lastGirlsSync": "2026-08-31T00:07:43.985Z",
-  "lastCalendarSync": "2026-08-30T22:52:55.138Z"
+  "lastCalendarSync": "2026-08-31T00:48:30.993Z"
 }

@@ -2766,7 +2766,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-08-27",
+      "lastRostered": "2026-08-31",
       "oldUrl": "https://wivesonly.com.au/maggie/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/maggie-temp-photo.jpg"
@@ -6689,7 +6689,7 @@
         "end": "17:30"
       },
       "2026-08-31": {
-        "start": "11:00",
+        "start": "13:30",
         "end": "17:30"
       }
     },
@@ -10144,6 +10144,10 @@
       "2026-08-27": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-08-31": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Sassy": {
@@ -11420,5 +11424,5 @@
     }
   },
   "lastGirlsSync": "2026-08-21T16:19:26.514Z",
-  "lastCalendarSync": "2026-08-30T14:56:18.817Z"
+  "lastCalendarSync": "2026-08-31T05:55:13.123Z"
 }

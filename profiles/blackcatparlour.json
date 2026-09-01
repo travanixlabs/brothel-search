@@ -4023,6 +4023,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-06"
+    },
+    {
+      "name": "Angelina",
+      "country": [
+        "Spanish"
+      ],
+      "age": "25",
+      "height": "168",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-02",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -19253,6 +19271,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-27T10:00:11.014Z",
+  "lastGirlsSync": "2026-09-01T18:57:12.811Z",
   "lastCalendarSync": "2026-09-01T16:49:46.455Z"
 }

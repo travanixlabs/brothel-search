@@ -53,7 +53,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Chanel2-532x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Chanel3-470x705.jpg"
@@ -510,7 +510,7 @@
       ],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-01",
+      "lastRostered": "2026-09-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Midori11-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Midori8-470x705.jpg",
@@ -539,7 +539,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-01",
+      "lastRostered": "2026-09-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -594,7 +594,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-01",
+      "lastRostered": "2026-09-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Jojo-462x705.jpg"
       ],
@@ -646,7 +646,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-02",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Alice-536x705.jpg"
       ],
@@ -1199,7 +1199,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-22T10:00:53.644Z",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-09-02"
     },
     {
       "name": "Airi",
@@ -1223,7 +1223,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-22T10:00:53.644Z",
-      "lastRostered": "2026-09-01"
+      "lastRostered": "2026-09-02"
     },
     {
       "name": "Mao",
@@ -1467,7 +1467,8 @@
       "2026-08-29",
       "2026-08-30",
       "2026-08-31",
-      "2026-09-01"
+      "2026-09-01",
+      "2026-09-02"
     ],
     "Sana": {
       "2026-03-26": {
@@ -2020,6 +2021,10 @@
       "2026-08-31": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-02": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Alice": {
@@ -2352,6 +2357,10 @@
         "end": "03:00"
       },
       "2026-08-31": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-02": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -3850,6 +3859,10 @@
       "2026-09-01": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-02": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Summer": {
@@ -4108,6 +4121,10 @@
         "end": "02:00"
       },
       "2026-09-01": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-02": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -5240,6 +5257,10 @@
       "2026-09-01": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-02": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Hina": {
@@ -5622,6 +5643,10 @@
       "2026-09-01": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-02": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Abby": {
@@ -5670,6 +5695,10 @@
         "end": "02:00"
       },
       "2026-08-03": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-02": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -5770,7 +5799,7 @@
     }
   },
   "lastGirlsSync": "2026-08-01T16:00:50.710Z",
-  "lastCalendarSync": "2026-08-31T14:15:53.469Z",
+  "lastCalendarSync": "2026-09-01T13:39:34.302Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

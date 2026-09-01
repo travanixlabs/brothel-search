@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-02"
     },
     {
       "name": "Cindy",
@@ -8311,6 +8311,10 @@
       "2026-08-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-02": {
+        "start": "03:00",
+        "end": "07:00"
       }
     },
     "Victoria": {
@@ -10052,5 +10056,5 @@
     "Shantae": {}
   },
   "lastGirlsSync": "2026-09-01T18:57:56.002Z",
-  "lastCalendarSync": "2026-09-01T16:50:05.141Z"
+  "lastCalendarSync": "2026-09-01T19:31:01.023Z"
 }

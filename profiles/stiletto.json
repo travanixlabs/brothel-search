@@ -209,7 +209,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-03",
+      "lastRostered": "2026-09-10",
       "desc": "I am an elegant and graceful petite angel with a statuesque figure, complemented by size 6 measurements and B cup bust. My brunette locks cascade down my shoulders, framing my striking face. My sparkling brown eyes are windows to a world of mystery and allure, drawing you in with ..."
     },
     {
@@ -4416,7 +4416,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-01"
+      "lastRostered": "2026-09-03"
     },
     {
       "name": "Viv",
@@ -7701,10 +7701,6 @@
         "start": "17:00",
         "end": "23:00"
       },
-      "2026-09-02": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-09-06": {
         "start": "10:00",
         "end": "18:00"
@@ -8454,6 +8450,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-09-03": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Ella": {
@@ -8603,14 +8603,6 @@
         "start": "12:00",
         "end": "20:00"
       },
-      "2026-09-03": {
-        "start": "11:00",
-        "end": "18:00"
-      },
-      "2026-09-04": {
-        "start": "11:00",
-        "end": "18:00"
-      },
       "2026-09-05": {
         "start": "10:00",
         "end": "16:00"
@@ -8723,7 +8715,15 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-09-03": {
+      "2026-09-06": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-08": {
+        "start": "09:30",
+        "end": "15:30"
+      },
+      "2026-09-10": {
         "start": "09:30",
         "end": "15:30"
       }
@@ -9576,10 +9576,6 @@
       }
     },
     "Piper": {
-      "2026-09-02": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-09-03": {
         "start": "10:00",
         "end": "18:00"
@@ -10233,5 +10229,5 @@
     }
   },
   "lastGirlsSync": "2026-09-02T14:00:40.694Z",
-  "lastCalendarSync": "2026-09-02T12:56:44.771Z"
+  "lastCalendarSync": "2026-09-02T14:36:23.868Z"
 }

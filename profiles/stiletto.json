@@ -3953,7 +3953,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-02"
     },
     {
       "name": "Star",
@@ -9588,6 +9588,10 @@
       "2026-06-07": {
         "start": "22:30",
         "end": "06:30"
+      },
+      "2026-09-02": {
+        "start": "21:00",
+        "end": "02:00"
       }
     },
     "Molly": {},
@@ -10188,5 +10192,5 @@
     }
   },
   "lastGirlsSync": "2026-09-02T08:35:14.622Z",
-  "lastCalendarSync": "2026-09-02T11:34:46.077Z"
+  "lastCalendarSync": "2026-09-02T12:56:44.771Z"
 }

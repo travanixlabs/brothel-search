@@ -2096,7 +2096,7 @@
       ],
       "lastModified": "2026-03-13T08:15:21.147Z",
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-02",
       "pornstar": "",
       "englishLevel": "English",
       "experienceLevel": ""
@@ -9713,6 +9713,10 @@
       "2026-08-31": {
         "start": "10:30",
         "end": "18:00"
+      },
+      "2026-09-02": {
+        "start": "10:30",
+        "end": "02:00"
       }
     },
     "Yuyu": {
@@ -19190,5 +19194,5 @@
     }
   },
   "lastGirlsSync": "2026-09-01T16:00:02.131Z",
-  "lastCalendarSync": "2026-09-01T07:53:35.105Z"
+  "lastCalendarSync": "2026-09-02T00:26:02.038Z"
 }

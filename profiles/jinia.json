@@ -205,7 +205,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-03-07",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/ellen-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/03/%E5%9B%BE%E7%89%87_20260307042350_107_20.jpg"
@@ -414,7 +414,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-02-06",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/vivian-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/02/%E5%9B%BE%E7%89%87_20260206151402.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2412,7 +2412,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-15",
-      "lastRostered": "2026-09-03",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/8100-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260815192320_25_10.jpg",
@@ -2455,7 +2455,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-16",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/vivian/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
@@ -2476,7 +2476,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-21",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/ruby-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
@@ -2561,7 +2561,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-30",
-      "lastRostered": "2026-09-08",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://jinia.com.au/ella-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260830014632_80_10.jpg"
@@ -4291,7 +4291,8 @@
       "2026-09-05",
       "2026-09-06",
       "2026-09-07",
-      "2026-09-08"
+      "2026-09-08",
+      "2026-09-09"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -4381,6 +4382,10 @@
         "end": "02:00"
       },
       "2026-09-03": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-09": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -6006,6 +6011,10 @@
       "2026-09-08": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-09-09": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Christina": {
@@ -6291,6 +6300,10 @@
       "2026-09-02": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-09-09": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "Yoyo": {
@@ -6349,6 +6362,10 @@
         "end": "04:00"
       },
       "2026-09-02": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-09-09": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -6413,6 +6430,10 @@
         "end": "03:00"
       },
       "2026-09-02": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-09": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -6661,6 +6682,10 @@
       "2026-09-03": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-09-09": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "Amy": {
@@ -6679,5 +6704,5 @@
     }
   },
   "lastGirlsSync": "2026-08-30T09:50:52.295Z",
-  "lastCalendarSync": "2026-09-02T07:12:30.486Z"
+  "lastCalendarSync": "2026-09-02T14:36:32.783Z"
 }

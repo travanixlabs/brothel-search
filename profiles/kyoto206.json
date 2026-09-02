@@ -400,7 +400,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-04-19",
+      "lastRostered": "2026-09-03",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/01/Sumi-Jp-01.jpeg"
       ],
@@ -10812,6 +10812,10 @@
       "2026-04-19": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-09-03": {
+        "start": "18:00",
+        "end": "00:00"
       }
     },
     "Mango": {
@@ -13304,14 +13308,6 @@
         "end": "01:00"
       },
       "2026-09-01": {
-        "start": "16:00",
-        "end": "04:00"
-      },
-      "2026-09-02": {
-        "start": "16:00",
-        "end": "04:00"
-      },
-      "2026-09-03": {
         "start": "16:00",
         "end": "04:00"
       }
@@ -16599,7 +16595,7 @@
     }
   },
   "lastGirlsSync": "2026-08-27T10:00:02.717Z",
-  "lastCalendarSync": "2026-09-02T08:55:07.421Z",
+  "lastCalendarSync": "2026-09-02T11:33:38.499Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

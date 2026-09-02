@@ -7008,7 +7008,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-11-01",
-      "lastRostered": "2026-09-02",
+      "lastRostered": "2026-09-09",
       "oldUrl": "https://www.stilettosydney.com/workers/aiko/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/11/AIKO-3.jpg",
@@ -7055,7 +7055,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2025-12-01",
-      "lastRostered": "",
+      "lastRostered": "2026-09-12",
       "oldUrl": "https://www.stilettosydney.com/workers/gracie-new/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2025/12/Grace-05.jpg",
@@ -7081,7 +7081,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/lucy-new-2/",
       "photos": [],
       "labels": [
@@ -8840,30 +8840,6 @@
       "2026-08-26": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-09-02": {
-        "start": "23:00",
-        "end": "07:00"
-      },
-      "2026-09-04": {
-        "start": "23:00",
-        "end": "07:00"
-      },
-      "2026-09-05": {
-        "start": "23:00",
-        "end": "07:00"
-      },
-      "2026-09-09": {
-        "start": "23:00",
-        "end": "07:00"
-      },
-      "2026-09-11": {
-        "start": "23:00",
-        "end": "07:00"
-      },
-      "2026-09-12": {
-        "start": "23:00",
-        "end": "07:00"
       }
     },
     "Elizabeth": {
@@ -10012,10 +9988,6 @@
         "start": "19:00",
         "end": "05:00"
       },
-      "2026-09-02": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-09-03": {
         "start": "12:00",
         "end": "20:00"
@@ -10170,9 +10142,43 @@
       "2026-09-08": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-09-09": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
+    "Gracie": {
+      "2026-09-04": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-09-05": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-09-06": {
+        "start": "10:00",
+        "end": "14:00"
+      },
+      "2026-09-09": {
+        "start": "18:00",
+        "end": "23:00"
+      },
+      "2026-09-10": {
+        "start": "19:00",
+        "end": "02:00"
+      },
+      "2026-09-11": {
+        "start": "14:00",
+        "end": "23:00"
+      },
+      "2026-09-12": {
+        "start": "09:00",
+        "end": "14:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-02T08:35:14.622Z",
-  "lastCalendarSync": "2026-09-02T07:12:20.437Z"
+  "lastCalendarSync": "2026-09-02T08:56:14.047Z"
 }

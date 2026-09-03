@@ -4042,6 +4042,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-09"
+    },
+    {
+      "name": "Sapphire",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-04",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -19295,6 +19313,6 @@
     },
     "Angelina": {}
   },
-  "lastGirlsSync": "2026-09-01T18:57:12.811Z",
+  "lastGirlsSync": "2026-09-03T23:43:50.128Z",
   "lastCalendarSync": "2026-09-03T22:41:12.027Z"
 }

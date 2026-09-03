@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-13",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -680,7 +680,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-03",
+      "lastRostered": "2026-09-11",
       "desc": "Handsome, I’m Carmen, Stiletto's newest petite brunette and the girl of your wettest dreams. I'm in my early 20s, striking and unforgettable, with a perfect C-cup bust, pouty lips, and eyes full of mischief and mystery. My curves are delicate yet delicious, with every inch of me designed to ..."
     },
     {
@@ -716,7 +716,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-02"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "CeCe",
@@ -1380,7 +1380,7 @@
         "Stripping"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "Giselle",
@@ -2176,7 +2176,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Kiara",
@@ -3108,7 +3108,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-18"
+      "lastRostered": "2026-09-13"
     },
     {
       "name": "Piper",
@@ -3271,7 +3271,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "Rebecca",
@@ -5137,7 +5137,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-13",
       "oldUrl": "https://www.stilettosydney.com/workers/pia-new/",
       "photos": [],
       "labels": [],
@@ -5234,7 +5234,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-09-01",
-      "lastRostered": "2026-08-01",
+      "lastRostered": "2026-09-05",
       "oldUrl": "https://www.stilettosydney.com/workers/layla-2/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/09/Layla-1-.jpg",
@@ -7469,10 +7469,6 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-09-08": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-09-09": {
         "start": "10:00",
         "end": "16:00"
@@ -7480,6 +7476,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-09-13": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Bambi": {
@@ -7676,16 +7676,16 @@
         "end": "05:00"
       },
       "2026-09-03": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "18:00",
+        "end": "02:00"
       },
       "2026-09-04": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "18:00",
+        "end": "02:00"
       },
       "2026-09-05": {
-        "start": "16:00",
-        "end": "00:00"
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Kiyomi": {
@@ -7750,6 +7750,22 @@
       "2026-09-02": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-04": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-10": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-12": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Hennessy": {
@@ -8168,6 +8184,14 @@
       "2026-09-03": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-09": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Cindy": {
@@ -8448,8 +8472,8 @@
         "end": "16:00"
       },
       "2026-09-03": {
-        "start": "19:00",
-        "end": "03:00"
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Ella": {
@@ -9200,6 +9224,34 @@
       "2026-08-15": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-09-03": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-04": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-05": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-08": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-10": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-11": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-12": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Parker": {
@@ -9258,6 +9310,34 @@
       "2026-08-18": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-04": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-05": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-06": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-10": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-11": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-12": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-13": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Kianna": {
@@ -9308,6 +9388,30 @@
       "2026-08-31": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-09-04": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-05": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-06": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-11": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-12": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-14": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Trinity": {
@@ -9380,7 +9484,7 @@
         "end": "19:00"
       },
       "2026-09-03": {
-        "start": "14:00",
+        "start": "15:00",
         "end": "22:00"
       },
       "2026-09-04": {
@@ -9437,6 +9541,34 @@
         "end": "06:00"
       },
       "2026-08-15": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-03": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-04": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-05": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-09": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-10": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-11": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-12": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -9690,6 +9822,14 @@
     "Tori": {},
     "Layla": {
       "2026-05-22": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-09-04": {
+        "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
       }
@@ -9952,14 +10092,42 @@
         "end": "02:00"
       },
       "2026-09-03": {
-        "start": "18:00",
-        "end": "02:00"
+        "start": "19:00",
+        "end": "03:00"
       },
       "2026-09-04": {
         "start": "18:00",
         "end": "02:00"
       },
       "2026-09-05": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-07": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-08": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-09": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-10": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-11": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-12": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-13": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -10167,6 +10335,10 @@
       "2026-09-09": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-09-05": {
+        "start": "10:00",
+        "end": "17:00"
       }
     },
     "Gracie": {
@@ -10201,5 +10373,5 @@
     }
   },
   "lastGirlsSync": "2026-09-02T23:46:00.815Z",
-  "lastCalendarSync": "2026-09-02T22:44:38.395Z"
+  "lastCalendarSync": "2026-09-03T04:52:05.410Z"
 }

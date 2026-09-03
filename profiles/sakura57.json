@@ -1163,7 +1163,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-03T19:11:19.573Z"
     },
     {
       "name": "Elma",
@@ -10760,7 +10762,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-07T04:00:41.397Z",
-      "lastRostered": "2026-07-07"
+      "lastRostered": "2026-07-07",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-03T19:11:31.394Z"
     },
     {
       "name": "chocoo",

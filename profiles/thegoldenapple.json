@@ -1893,6 +1893,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-08-06"
+    },
+    {
+      "name": "Sapphire",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-04",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -5600,6 +5618,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-06T04:00:39.797Z",
+  "lastGirlsSync": "2026-09-03T22:01:04.040Z",
   "lastCalendarSync": "2026-09-03T21:10:55.393Z"
 }

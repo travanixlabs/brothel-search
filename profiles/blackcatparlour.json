@@ -4061,6 +4061,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-11"
+    },
+    {
+      "name": "Marina",
+      "country": [
+        "Mongolian"
+      ],
+      "age": "23",
+      "height": "157",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-05",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -19445,6 +19463,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-03T23:43:50.128Z",
+  "lastGirlsSync": "2026-09-04T23:37:13.725Z",
   "lastCalendarSync": "2026-09-04T22:25:56.113Z"
 }

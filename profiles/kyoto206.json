@@ -13731,6 +13731,10 @@
       "2026-09-05": {
         "start": "18:00",
         "end": "05:00"
+      },
+      "2026-09-04": {
+        "start": "18:00",
+        "end": "05:00"
       }
     },
     "Saiki": {
@@ -16653,8 +16657,8 @@
         "end": "03:00"
       },
       "2026-09-04": {
-        "start": "11:00",
-        "end": "03:00"
+        "start": "12:00",
+        "end": "02:00"
       },
       "2026-09-05": {
         "start": "11:00",
@@ -16681,7 +16685,7 @@
     }
   },
   "lastGirlsSync": "2026-08-27T10:00:02.717Z",
-  "lastCalendarSync": "2026-09-03T21:10:06.114Z",
+  "lastCalendarSync": "2026-09-04T00:17:37.813Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

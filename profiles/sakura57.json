@@ -11080,7 +11080,9 @@
       ],
       "labels": [],
       "lastModified": "2026-08-13T10:01:00.120Z",
-      "lastRostered": "2026-08-13"
+      "lastRostered": "2026-08-13",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-04T18:53:23.839Z"
     },
     {
       "name": "yurika",

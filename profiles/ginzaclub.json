@@ -6576,7 +6576,7 @@
         "GFE"
       ],
       "lastModified": "2026-08-29T17:45:20.033Z",
-      "lastRostered": "2026-09-03",
+      "lastRostered": "2026-09-04",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -19335,6 +19335,10 @@
       "2026-09-03": {
         "start": "10:30",
         "end": "02:00"
+      },
+      "2026-09-04": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Nanaka": {
@@ -19375,5 +19379,5 @@
     }
   },
   "lastGirlsSync": "2026-09-02T10:01:08.551Z",
-  "lastCalendarSync": "2026-09-03T07:15:50.459Z"
+  "lastCalendarSync": "2026-09-04T04:53:49.889Z"
 }

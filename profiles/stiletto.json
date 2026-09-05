@@ -6066,7 +6066,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-04",
+      "lastRostered": "2026-09-05",
       "oldUrl": "https://www.stilettosydney.com/workers/lexy-new-2/",
       "photos": [],
       "labels": [
@@ -9882,6 +9882,10 @@
       "2026-08-24": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-09-05": {
+        "start": "23:45",
+        "end": "07:45"
       }
     },
     "Amber": {},
@@ -9936,8 +9940,8 @@
         "end": "02:00"
       },
       "2026-09-05": {
-        "start": "18:00",
-        "end": "02:00"
+        "start": "20:00",
+        "end": "04:00"
       },
       "2026-09-07": {
         "start": "18:00",
@@ -10185,5 +10189,5 @@
     "Lucy": {}
   },
   "lastGirlsSync": "2026-09-05T08:11:45.506Z",
-  "lastCalendarSync": "2026-09-05T08:28:52.870Z"
+  "lastCalendarSync": "2026-09-05T10:48:59.025Z"
 }

@@ -10403,6 +10403,33 @@
       "labels": [],
       "lastModified": "2026-08-23T04:00:02.843Z",
       "lastRostered": "2026-07-01"
+    },
+    {
+      "name": "Yuzuki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/yuzuki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/96861788577115_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/96831788577099_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/96841788577105_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/96851788577110_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-05T04:00:33.388Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16725,7 +16752,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-27T10:00:02.717Z",
+  "lastGirlsSync": "2026-09-05T04:00:33.388Z",
   "lastCalendarSync": "2026-09-05T00:18:27.386Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
@@ -16765,6 +16792,7 @@
     "https://citybrothel.com.au/project/kirara-japan-old/",
     "https://citybrothel.com.au/project/koharu-japan/",
     "https://citybrothel.com.au/project/momoka-japan-old/",
-    "https://citybrothel.com.au/project/hina-japan-old/"
+    "https://citybrothel.com.au/project/hina-japan-old/",
+    "https://citybrothel.com.au/project/kira-korea/"
   ]
 }

@@ -922,7 +922,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/11/IMG_2581.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-09-05"
     }
   ],
   "calendar": {
@@ -2553,10 +2554,6 @@
       "2026-09-04": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-09-05": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Sora": {
@@ -3197,10 +3194,6 @@
         "end": "03:00"
       },
       "2026-09-04": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-09-05": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4490,8 +4483,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Chloe": {
+      "2026-09-05": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-09-04T14:26:59.836Z"
+  "lastCalendarSync": "2026-09-05T00:18:48.102Z"
 }

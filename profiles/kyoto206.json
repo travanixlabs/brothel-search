@@ -10429,7 +10429,36 @@
       ],
       "labels": [],
       "lastModified": "2026-09-05T04:00:33.388Z",
-      "lastRostered": ""
+      "lastRostered": "2026-09-06"
+    },
+    {
+      "name": "Amoro",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "167",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "oldUrl": "https://citybrothel.com.au/project/amoro-japan/",
+      "desc": "",
+      "lang": "Japanese, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-09-05T04:47:31.444Z",
+      "lastRostered": "2026-09-06",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/95881787017701_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/95871787017699_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/95891787017703_.pic_.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -16385,7 +16414,7 @@
         "end": "01:00"
       },
       "2026-09-06": {
-        "start": "11:00",
+        "start": "10:00",
         "end": "01:00"
       }
     },
@@ -16741,19 +16770,31 @@
       "2026-09-03": {
         "start": "13:00",
         "end": "16:00"
-      },
+      }
+    },
+    "Amoro": {
       "2026-09-05": {
-        "start": "13:00",
-        "end": "22:00"
+        "start": "16:00",
+        "end": "00:00"
       },
       "2026-09-06": {
-        "start": "13:00",
-        "end": "22:00"
+        "start": "10:00",
+        "end": "23:00"
+      }
+    },
+    "Yuzuki": {
+      "2026-09-05": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-06": {
+        "start": "12:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-05T04:00:33.388Z",
-  "lastCalendarSync": "2026-09-05T00:18:27.386Z",
+  "lastCalendarSync": "2026-09-05T04:47:31.444Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

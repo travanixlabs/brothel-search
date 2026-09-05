@@ -194,7 +194,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2019-05-01",
+      "lastRostered": "2026-09-06",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/e5b7b0767fd8321d04631f7e043ddbfe.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/f14058623d6796ab02efa395be3144b3.jpg",
@@ -17046,17 +17046,27 @@
         "end": "02:00"
       },
       "2026-09-05": {
-        "start": "11:00",
+        "start": "13:00",
         "end": "02:00"
       },
       "2026-09-06": {
         "start": "11:00",
         "end": "02:00"
       }
+    },
+    "Mino": {
+      "2026-09-05": {
+        "start": "12:00",
+        "end": "12:00"
+      },
+      "2026-09-06": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-09-03T08:42:20.107Z",
-  "lastCalendarSync": "2026-09-04T20:53:08.257Z",
+  "lastCalendarSync": "2026-09-05T00:18:31.157Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

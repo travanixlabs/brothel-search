@@ -7129,6 +7129,62 @@
         "GFE"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "delilah",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "25",
+      "height": "",
+      "cup": "B",
+      "body": "8",
+      "desc": "Handsome, I'm Delilah, and I'm a petite Australian/Russian cutie with a sexy girl-next-door charm. I am in my mid 20s, with a perky B-cup bust, toned size 8 frame, and blonde hair. If you're looking for a beautiful, down to earth companion with natural grace and a welcoming presence, come in and ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-09-05",
+      "oldUrl": "https://www.stilettosydney.com/workers/delilah-3/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "COB",
+        "Adventurous Positions",
+        "Deep Throat",
+        "Anal",
+        "DFK",
+        "Fetish",
+        "Golden Showers",
+        "Electro Play",
+        "Anal Hook",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Strap on",
+        "Body Slide",
+        "Female Ejaculation",
+        "Party Bookings",
+        "Stripping",
+        "Foot Fetish",
+        "Social Escort",
+        "Voyeurism",
+        "Squirting",
+        "Bondage",
+        "Fingering",
+        "Anal Play",
+        "Anal ( with regular clientele",
+        "Anal as per request"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10190,8 +10246,30 @@
         "end": "14:00"
       }
     },
-    "Lucy": {}
+    "Lucy": {},
+    "delilah": {
+      "2026-09-05": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-09-06": {
+        "start": "10:00",
+        "end": "14:00"
+      },
+      "2026-09-09": {
+        "start": "18:00",
+        "end": "23:00"
+      },
+      "2026-09-10": {
+        "start": "19:00",
+        "end": "02:00"
+      },
+      "2026-09-11": {
+        "start": "14:00",
+        "end": "23:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-09-05T08:11:45.506Z",
+  "lastGirlsSync": "2026-09-05T13:11:02.739Z",
   "lastCalendarSync": "2026-09-05T11:59:23.636Z"
 }

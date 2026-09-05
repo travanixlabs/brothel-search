@@ -412,7 +412,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-12",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -8408,10 +8408,6 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-09-05": {
-        "start": "07:00",
-        "end": "15:00"
-      },
       "2026-09-06": {
         "start": "07:00",
         "end": "17:00"
@@ -8555,10 +8551,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-09-05": {
-        "start": "10:00",
-        "end": "16:00"
       }
     },
     "Mara": {
@@ -8671,10 +8663,6 @@
       "2026-09-06": {
         "start": "10:00",
         "end": "18:00"
-      },
-      "2026-09-08": {
-        "start": "09:30",
-        "end": "15:30"
       },
       "2026-09-10": {
         "start": "09:30",
@@ -9384,13 +9372,25 @@
       }
     },
     "Aurora": {
-      "2026-09-05": {
-        "start": "13:00",
-        "end": "19:00"
-      },
       "2026-09-06": {
         "start": "13:00",
         "end": "19:00"
+      },
+      "2026-09-09": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-09-10": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-09-11": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-09-12": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Lacey": {},
@@ -10045,8 +10045,8 @@
         "end": "06:00"
       },
       "2026-09-05": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "19:00",
+        "end": "03:00"
       },
       "2026-09-06": {
         "start": "12:00",
@@ -10158,10 +10158,6 @@
       "2026-09-09": {
         "start": "10:00",
         "end": "17:00"
-      },
-      "2026-09-05": {
-        "start": "10:00",
-        "end": "17:00"
       }
     },
     "Gracie": {
@@ -10193,5 +10189,5 @@
     "Lucy": {}
   },
   "lastGirlsSync": "2026-09-04T23:38:05.413Z",
-  "lastCalendarSync": "2026-09-05T04:48:16.237Z"
+  "lastCalendarSync": "2026-09-05T07:00:20.732Z"
 }

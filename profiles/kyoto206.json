@@ -16779,7 +16779,7 @@
       },
       "2026-09-06": {
         "start": "10:00",
-        "end": "23:00"
+        "end": "00:00"
       }
     },
     "Yuzuki": {
@@ -16794,7 +16794,7 @@
     }
   },
   "lastGirlsSync": "2026-09-05T04:00:33.388Z",
-  "lastCalendarSync": "2026-09-05T04:47:31.444Z",
+  "lastCalendarSync": "2026-09-05T08:28:15.651Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

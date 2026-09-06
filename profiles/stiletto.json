@@ -9846,12 +9846,7 @@
     "Rosie": {},
     "Alex": {},
     "Gemma": {},
-    "Naomi": {
-      "2026-09-06": {
-        "start": "18:30",
-        "end": "01:00"
-      }
-    },
+    "Naomi": {},
     "Malibu": {},
     "Suki": {},
     "Mel": {
@@ -10144,5 +10139,5 @@
     }
   },
   "lastGirlsSync": "2026-09-06T13:20:32.478Z",
-  "lastCalendarSync": "2026-09-06T13:44:29.442Z"
+  "lastCalendarSync": "2026-09-06T15:37:34.378Z"
 }

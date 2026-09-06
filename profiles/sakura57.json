@@ -9614,7 +9614,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-06T04:00:39.729Z",
-      "lastRostered": "2026-09-04"
+      "lastRostered": "2026-09-07"
     },
     {
       "name": "Miyoko",
@@ -16254,6 +16254,10 @@
       "2026-09-04": {
         "start": "14:00",
         "end": "05:00"
+      },
+      "2026-09-07": {
+        "start": "14:00",
+        "end": "05:00"
       }
     },
     "Miyoko": {
@@ -17082,7 +17086,7 @@
     }
   },
   "lastGirlsSync": "2026-09-03T08:42:20.107Z",
-  "lastCalendarSync": "2026-09-06T04:56:27.931Z",
+  "lastCalendarSync": "2026-09-06T15:36:52.819Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

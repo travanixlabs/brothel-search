@@ -2077,7 +2077,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-05"
+      "lastRostered": "2026-09-06"
     },
     {
       "name": "Amy",
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-08-31",
+      "lastRostered": "2026-09-06",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -4942,6 +4942,10 @@
       "2026-09-05": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-09-06": {
+        "start": "19:00",
+        "end": "02:00"
       }
     },
     "Dasha": {
@@ -10270,10 +10274,6 @@
       "2026-08-30": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-09-06": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Brittney": {
@@ -11110,6 +11110,10 @@
       "2026-08-31": {
         "start": "11:00",
         "end": "17:30"
+      },
+      "2026-09-06": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Ella": {
@@ -11730,5 +11734,5 @@
     }
   },
   "lastGirlsSync": "2026-08-21T16:19:26.514Z",
-  "lastCalendarSync": "2026-09-05T15:25:42.085Z"
+  "lastCalendarSync": "2026-09-06T04:57:06.477Z"
 }

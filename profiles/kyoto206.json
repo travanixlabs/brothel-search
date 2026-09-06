@@ -652,7 +652,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-1-Cn-scaled.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Mango-2-Cn-scaled.jpg",
@@ -2111,7 +2111,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-09-04",
+      "lastRostered": "2026-09-07",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2025/09/Riei-Jp-06-scaled.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2025/09/Riei-Jp-10.jpeg",
@@ -11142,6 +11142,10 @@
       "2026-09-05": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-09-07": {
+        "start": "10:00",
+        "end": "21:00"
       }
     },
     "Kiwi": {
@@ -13030,6 +13034,10 @@
       "2026-08-11": {
         "start": "10:00",
         "end": "22:00"
+      },
+      "2026-09-07": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Skylar": {
@@ -16824,7 +16832,7 @@
       },
       "2026-09-07": {
         "start": "10:00",
-        "end": "23:00"
+        "end": "00:00"
       }
     },
     "Yuzuki": {
@@ -16843,7 +16851,7 @@
     }
   },
   "lastGirlsSync": "2026-09-05T04:00:33.388Z",
-  "lastCalendarSync": "2026-09-05T22:07:43.589Z",
+  "lastCalendarSync": "2026-09-06T04:56:24.505Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

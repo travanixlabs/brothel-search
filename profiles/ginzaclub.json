@@ -6621,7 +6621,7 @@
         "2 Men"
       ],
       "lastModified": "2026-08-30T13:57:20.649Z",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-07",
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": "Inexperienced"
@@ -19555,6 +19555,10 @@
       "2026-09-05": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-09-07": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Melon": {
@@ -19581,5 +19585,5 @@
     }
   },
   "lastGirlsSync": "2026-09-02T10:01:08.551Z",
-  "lastCalendarSync": "2026-09-06T08:45:37.649Z"
+  "lastCalendarSync": "2026-09-06T15:36:47.013Z"
 }

@@ -3147,6 +3147,29 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Makayla",
+      "country": [
+        "African/Latina"
+      ],
+      "age": "22",
+      "height": "170cm",
+      "cup": "B",
+      "body": "6",
+      "desc": "Exotic, elegant, and undeniably captivating — Makayla is a breathtaking African-Latina beauty standing 170cm tall, with a graceful petite size 6 figure and silky, flowing black hair. Her natural charm, warm energy, and sensual touch create an unforgettable experience for those who appreciate quality and connection. Whether you're seeking engaging conversation, genuine companionship, or an intimate escape, Makayla delivers with class, confidence, and a touch of mystery.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-10-01",
+      "lastRostered": "2025-10-01",
+      "oldUrl": "https://wivesonly.com.au/makayla/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/10/IMG_8269.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2025/10/1000000332.webp"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11733,6 +11756,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-08-21T16:19:26.514Z",
+  "lastGirlsSync": "2026-09-06T08:29:15.235Z",
   "lastCalendarSync": "2026-09-06T04:57:06.477Z"
 }

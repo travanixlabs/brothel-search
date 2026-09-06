@@ -1501,7 +1501,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-06T18:06:22.760Z"
     },
     {
       "name": "Ichika",
@@ -2200,7 +2202,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-06T18:06:21.232Z"
     },
     {
       "name": "Kaho",
@@ -10882,7 +10886,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-21T04:00:37.122Z",
-      "lastRostered": "2026-07-21"
+      "lastRostered": "2026-07-21",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-06T18:06:39.671Z"
     },
     {
       "name": "aoma",

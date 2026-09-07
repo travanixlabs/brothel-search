@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-03",
+      "lastRostered": "2026-09-08",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -1444,7 +1444,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-05"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Sara",
@@ -1529,7 +1529,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Sophia",
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-16"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Samira",
@@ -1886,7 +1886,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Chicago",
@@ -1920,7 +1920,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Vixen",
@@ -1971,7 +1971,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-03"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Brooke",
@@ -2060,7 +2060,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-04"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Ximena",
@@ -2766,7 +2766,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-09-07",
+      "lastRostered": "2026-09-08",
       "oldUrl": "https://wivesonly.com.au/maggie/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/maggie-temp-photo.jpg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-09-08",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-09-07",
+      "lastRostered": "2026-09-08",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3533,6 +3533,10 @@
       "2026-09-07": {
         "start": "14:30",
         "end": "19:30"
+      },
+      "2026-09-08": {
+        "start": "18:00",
+        "end": "23:30"
       }
     },
     "Delilah": {
@@ -4831,6 +4835,10 @@
       "2026-09-05": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-09-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Ximena": {
@@ -5963,7 +5971,8 @@
       "2026-09-04",
       "2026-09-05",
       "2026-09-06",
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-08"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7563,6 +7572,10 @@
       "2026-09-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Chanel": {
@@ -8859,6 +8872,10 @@
       "2026-09-03": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-09-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Roxanne": {
@@ -9644,6 +9661,10 @@
       "2026-09-03": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Veronika": {
@@ -10210,6 +10231,10 @@
       "2026-09-04": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "VV": {
@@ -10424,6 +10449,10 @@
         "end": "06:00"
       },
       "2026-09-07": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-09-08": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -10820,6 +10849,10 @@
       "2026-09-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-09-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Clarisse": {
@@ -10978,6 +11011,10 @@
       "2026-08-16": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-09-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Aven": {
@@ -11571,6 +11608,10 @@
       "2026-08-29": {
         "start": "14:00",
         "end": "20:30"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Summer": {
@@ -11697,6 +11738,10 @@
       "2026-09-07": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-09-08": {
+        "start": "16:00",
+        "end": "01:00"
       }
     },
     "Dior": {
@@ -11799,5 +11844,5 @@
     "Makayla": {}
   },
   "lastGirlsSync": "2026-09-06T08:29:15.235Z",
-  "lastCalendarSync": "2026-09-07T12:53:01.772Z"
+  "lastCalendarSync": "2026-09-07T14:24:41.046Z"
 }

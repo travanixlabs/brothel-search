@@ -9535,7 +9535,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://citybrothel.com.au/project/kiko-japan/",
       "desc": "",
-      "originalSite": "",
+      "originalSite": "Exists",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/05/85121777956851_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/05/85151777956863_.pic_.jpg",
@@ -16927,7 +16927,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-05T04:00:33.388Z",
+  "lastGirlsSync": "2026-09-07T10:00:26.174Z",
   "lastCalendarSync": "2026-09-07T05:00:58.311Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
@@ -16968,6 +16968,8 @@
     "https://citybrothel.com.au/project/koharu-japan/",
     "https://citybrothel.com.au/project/momoka-japan-old/",
     "https://citybrothel.com.au/project/hina-japan-old/",
-    "https://citybrothel.com.au/project/kira-korea/"
+    "https://citybrothel.com.au/project/kira-korea/",
+    "https://citybrothel.com.au/project/kiko-japan-3/",
+    "https://citybrothel.com.au/project/kiko-japan-2/"
   ]
 }

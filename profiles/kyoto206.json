@@ -1223,7 +1223,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-08",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-06.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2022/09/Nana-Kr-07.jpeg",
@@ -9403,7 +9403,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-04-22T08:14:22.383Z",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-08",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/04/21776836628_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/04/31776836634_.pic_.jpg",
@@ -9543,7 +9543,7 @@
       ],
       "labels": [],
       "lastModified": "2026-05-05T06:19:39.750Z",
-      "lastRostered": "2026-06-13"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Jenna",
@@ -13463,6 +13463,14 @@
       "2026-09-05": {
         "start": "16:00",
         "end": "04:00"
+      },
+      "2026-09-07": {
+        "start": "16:00",
+        "end": "04:00"
+      },
+      "2026-09-08": {
+        "start": "16:00",
+        "end": "04:00"
       }
     },
     "Olivia": {},
@@ -15424,6 +15432,14 @@
       "2026-09-06": {
         "start": "15:00",
         "end": "03:00"
+      },
+      "2026-09-07": {
+        "start": "13:00",
+        "end": "03:00"
+      },
+      "2026-09-08": {
+        "start": "13:00",
+        "end": "03:00"
       }
     },
     "Salala": {
@@ -16222,6 +16238,14 @@
       "2026-06-13": {
         "start": "11:00",
         "end": "02:00"
+      },
+      "2026-09-07": {
+        "start": "16:00",
+        "end": "01:00"
+      },
+      "2026-09-08": {
+        "start": "11:00",
+        "end": "01:00"
       }
     },
     "Jenna": {
@@ -16904,7 +16928,7 @@
     }
   },
   "lastGirlsSync": "2026-09-05T04:00:33.388Z",
-  "lastCalendarSync": "2026-09-07T00:14:55.842Z",
+  "lastCalendarSync": "2026-09-07T05:00:58.311Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

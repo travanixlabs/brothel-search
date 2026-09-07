@@ -3170,6 +3170,51 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Shakira",
+      "country": [
+        "African/Latina"
+      ],
+      "age": "22",
+      "height": "170cm",
+      "cup": "B",
+      "body": "6",
+      "desc": "Exotic, elegant, and undeniably captivating — Makayla is a breathtaking African-Latina beauty standing 170cm tall, with a graceful petite size 6 figure and silky, flowing black hair. Her natural charm, warm energy, and sensual touch create an unforgettable experience for those who appreciate quality and connection. Whether you're seeking engaging conversation, genuine companionship, or an intimate escape, Makayla delivers with class, confidence, and a touch of mystery.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-10-01",
+      "lastRostered": "2025-10-01",
+      "oldUrl": "https://wivesonly.com.au/makayla/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/10/IMG_8269.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2025/10/1000000332.webp"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Aloha",
+      "country": [
+        "Islander/Indian"
+      ],
+      "age": "31",
+      "height": "Age",
+      "cup": "C",
+      "body": "",
+      "desc": "Photos coming soon. Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-11-01",
+      "lastRostered": "2024-11-01",
+      "oldUrl": "https://wivesonly.com.au/aloha/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11843,6 +11888,6 @@
     },
     "Makayla": {}
   },
-  "lastGirlsSync": "2026-09-06T08:29:15.235Z",
+  "lastGirlsSync": "2026-09-07T15:27:07.588Z",
   "lastCalendarSync": "2026-09-07T14:24:41.046Z"
 }

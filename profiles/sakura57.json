@@ -10861,7 +10861,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-21T04:00:37.122Z",
-      "lastRostered": "2026-07-21"
+      "lastRostered": "2026-07-21",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-07T19:40:01.574Z"
     },
     {
       "name": "yolia",

@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-09-12",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -360,7 +360,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30",
+      "lastRostered": "2026-09-13",
       "desc": "Boys, Please allow me to introduce myself. I'm Aspen. I am gorgeous, fun, energetic, curious and sexually charged. I have beautiful red hair, sparkling eyes, a sexy, slim size 8 body, and a perky B cup bust. My service ensures that I provide the ultimate girlfriend experience but also like ..."
     },
     {
@@ -811,7 +811,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-15"
     },
     {
       "name": "Clara",
@@ -1135,7 +1135,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Erika",
@@ -4380,7 +4380,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Victoria",
@@ -4416,7 +4416,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Viv",
@@ -7369,6 +7369,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-09-12": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -7517,10 +7521,6 @@
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
-      },
-      "2026-09-07": {
-        "start": "10:00",
-        "end": "16:00"
       },
       "2026-09-09": {
         "start": "10:00",
@@ -7679,10 +7679,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
-      },
-      "2026-09-07": {
-        "start": "07:00",
-        "end": "17:00"
       }
     },
     "Grace": {
@@ -8223,6 +8219,18 @@
       "2026-09-11": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-09-08": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-14": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-15": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Queen": {
@@ -8468,9 +8476,9 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-09-07": {
+      "2026-09-08": {
         "start": "07:00",
-        "end": "17:00"
+        "end": "15:00"
       }
     },
     "Ella": {
@@ -8500,11 +8508,23 @@
       },
       "2026-09-11": {
         "start": "11:00",
-        "end": "19:00"
+        "end": "02:00"
       },
       "2026-09-12": {
+        "start": "13:00",
+        "end": "02:00"
+      },
+      "2026-09-15": {
         "start": "11:00",
         "end": "19:00"
+      },
+      "2026-09-18": {
+        "start": "11:00",
+        "end": "02:00"
+      },
+      "2026-09-19": {
+        "start": "13:00",
+        "end": "02:00"
       }
     },
     "Kay": {
@@ -8702,6 +8722,10 @@
       "2026-09-07": {
         "start": "15:00",
         "end": "23:00"
+      },
+      "2026-09-08": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Lilith": {
@@ -9675,7 +9699,24 @@
     },
     "Quinn": {},
     "London": {},
-    "Aspen": {},
+    "Aspen": {
+      "2026-09-09": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-09-11": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-09-12": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-09-13": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Mercy": {
       "2026-06-07": {
         "start": "22:00",
@@ -10380,5 +10421,5 @@
     }
   },
   "lastGirlsSync": "2026-09-06T23:23:50.809Z",
-  "lastCalendarSync": "2026-09-07T05:01:38.513Z"
+  "lastCalendarSync": "2026-09-07T07:26:05.742Z"
 }

@@ -89,7 +89,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2023-04-24"
+      "lastRostered": "2026-09-07"
     },
     {
       "name": "Tina",
@@ -5995,8 +5995,14 @@
         "start": "10:00",
         "end": "02:00"
       }
+    },
+    "Nana": {
+      "2026-09-07": {
+        "start": "10:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-04-02T23:12:44.824Z",
-  "lastCalendarSync": "2026-09-06T15:37:18.638Z"
+  "lastCalendarSync": "2026-09-07T07:25:51.930Z"
 }

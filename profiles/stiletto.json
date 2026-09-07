@@ -7185,6 +7185,118 @@
         "Anal as per request"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Estelle",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "20",
+      "height": "",
+      "cup": "B",
+      "body": "6",
+      "desc": "Gentlemen, My name's Estelle and I'm a sweet 20 year old Australian/Venezuelan delight! I have a very petite size 6 frame and light brown hair that makes my hypnotic eyes pop. I am caring and affectionate, and when you spend time with me, you will feel truly appreciated, pampered, and ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "",
+      "oldUrl": "https://www.stilettosydney.com/workers/estelle-new-2-2/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Maisie",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "29",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Handsome, I'm Maisie, your gorgeous British blonde with big blue eyes, a wicked little smile and a side that’s anything but innocent. I have an irresistible, curvaceous figure adorned with a perky C-cup bust. In my late 20s, I know exactly what I like. I’m playful, adventurous, and seriously open-minded, with a ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-09-07",
+      "oldUrl": "https://www.stilettosydney.com/workers/maisie-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Adventurous Positions",
+        "Rimming",
+        "DFK",
+        "Disabled",
+        "Fetish",
+        "Prostate Massage",
+        "Golden Showers",
+        "Electro Play",
+        "Escort",
+        "Role Play",
+        "Dirty Talk",
+        "Strap on",
+        "Body Slide",
+        "CBT",
+        "Stripping",
+        "Foot Fetish",
+        "Social Escort",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Mercedes",
+      "country": [
+        "European"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Gentlemen, I'm Mercedes, a petite Italian pocket rocket, and I'm about to become your favourite new indulgence. My luscious, long dark hair frames my perfect heart-shaped face, while my dark features and mesmerising gaze create a sensual intrigue that's hard to resist. Petite in stature but full of personality, I’m ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-09-07",
+      "oldUrl": "https://www.stilettosydney.com/workers/mercedes-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Double Lesbian",
+        "Adventurous Positions",
+        "Deep Throat",
+        "BDSM",
+        "DFK",
+        "Disabled",
+        "Fetish",
+        "Prostate Massage",
+        "Golden Showers",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Strap on",
+        "Body Slide",
+        "Female Ejaculation",
+        "Party Bookings",
+        "Stripping",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10418,8 +10530,44 @@
         "start": "11:00",
         "end": "17:00"
       }
+    },
+    "Maisie": {
+      "2026-09-09": {
+        "start": "18:00",
+        "end": "23:00"
+      },
+      "2026-09-10": {
+        "start": "19:00",
+        "end": "02:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "Mercedes": {
+      "2026-09-09": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-10": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-11": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-12": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-13": {
+        "start": "18:00",
+        "end": "02:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-09-06T23:23:50.809Z",
+  "lastGirlsSync": "2026-09-07T09:06:41.210Z",
   "lastCalendarSync": "2026-09-07T07:26:05.742Z"
 }

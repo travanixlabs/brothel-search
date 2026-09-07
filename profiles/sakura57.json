@@ -194,7 +194,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-09-07",
+      "lastRostered": "2026-09-08",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/e5b7b0767fd8321d04631f7e043ddbfe.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/03/f14058623d6796ab02efa395be3144b3.jpg",
@@ -256,7 +256,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-06-02",
+      "lastRostered": "2026-09-08",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/10/Yamato-Jp-07-scaled.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2024/10/Yamato-Jp-05-scaled.jpeg",
@@ -16293,14 +16293,6 @@
       "2026-09-04": {
         "start": "14:00",
         "end": "05:00"
-      },
-      "2026-09-07": {
-        "start": "14:00",
-        "end": "05:00"
-      },
-      "2026-09-08": {
-        "start": "14:00",
-        "end": "05:00"
       }
     },
     "Miyoko": {
@@ -16929,6 +16921,14 @@
       "2026-05-28": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-09-07": {
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-09-08": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Aori": {
@@ -17129,8 +17129,12 @@
         "end": "02:00"
       },
       "2026-09-07": {
-        "start": "21:00",
-        "end": "05:00"
+        "start": "10:00",
+        "end": "02:00"
+      },
+      "2026-09-08": {
+        "start": "10:00",
+        "end": "02:00"
       }
     },
     "Shumi": {
@@ -17143,17 +17147,13 @@
         "end": "05:00"
       },
       "2026-09-07": {
-        "start": "10:00",
-        "end": "02:00"
-      },
-      "2026-09-08": {
-        "start": "10:00",
-        "end": "02:00"
+        "start": "21:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-03T08:42:20.107Z",
-  "lastCalendarSync": "2026-09-06T20:33:30.662Z",
+  "lastCalendarSync": "2026-09-07T05:01:01.786Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

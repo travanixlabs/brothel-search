@@ -2567,7 +2567,7 @@
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260830014632_80_10.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Amy",
@@ -2605,6 +2605,27 @@
       "oldUrl": "https://jinia.com.au/saya/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260906051253_121_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Lisa",
+      "country": [
+        "Chinese"
+      ],
+      "age": "26",
+      "height": "169",
+      "cup": "C",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-08-30",
+      "lastRostered": "2026-08-30",
+      "oldUrl": "https://jinia.com.au/lisa-2/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260830014632_80_10.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6794,6 +6815,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-06T13:21:06.931Z",
+  "lastGirlsSync": "2026-09-07T09:07:11.112Z",
   "lastCalendarSync": "2026-09-07T00:16:14.945Z"
 }

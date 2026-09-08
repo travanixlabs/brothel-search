@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Cindy",
@@ -1257,7 +1257,7 @@
         "PSE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "Flora",
@@ -4139,7 +4139,7 @@
         "Kissing (on body)"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-20"
+      "lastRostered": "2026-09-08"
     },
     {
       "name": "Tahlia",
@@ -8601,6 +8601,10 @@
       "2026-08-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-08": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Victoria": {
@@ -8697,6 +8701,10 @@
       "2026-08-08": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-09-08": {
+        "start": "13:00",
+        "end": "18:00"
       }
     },
     "Jamie": {
@@ -9889,7 +9897,12 @@
       }
     },
     "Piper": {},
-    "Felicity": {},
+    "Felicity": {
+      "2026-09-12": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Mia": {},
     "Fendi": {
       "2026-06-19": {
@@ -10623,5 +10636,5 @@
     }
   },
   "lastGirlsSync": "2026-09-07T23:53:41.006Z",
-  "lastCalendarSync": "2026-09-08T00:38:19.066Z"
+  "lastCalendarSync": "2026-09-08T05:00:14.850Z"
 }

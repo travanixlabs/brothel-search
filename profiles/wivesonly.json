@@ -3185,7 +3185,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-10-01",
-      "lastRostered": "2025-10-01",
+      "lastRostered": "2026-09-08",
       "oldUrl": "https://wivesonly.com.au/makayla/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/10/IMG_8269.jpg",
@@ -11892,8 +11892,14 @@
         "start": "19:30",
         "end": "04:00"
       }
+    },
+    "Shakira": {
+      "2026-09-08": {
+        "start": "19:30",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-09-07T15:27:07.588Z",
-  "lastCalendarSync": "2026-09-07T15:57:40.467Z"
+  "lastCalendarSync": "2026-09-08T11:34:15.129Z"
 }

@@ -10459,6 +10459,33 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "utta",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/utta-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97101788828463_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97131788828485_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97121788828481_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97111788828475_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-08T04:00:24.697Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -16996,7 +17023,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-07T10:00:26.174Z",
+  "lastGirlsSync": "2026-09-08T04:00:24.697Z",
   "lastCalendarSync": "2026-09-07T20:05:59.414Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

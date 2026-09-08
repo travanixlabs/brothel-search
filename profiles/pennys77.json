@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-09"
     },
     {
       "name": "Sonia",
@@ -2122,6 +2122,10 @@
         "end": "03:00"
       },
       "2026-08-30": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-09": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4576,5 +4580,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-09-08T14:40:33.964Z"
+  "lastCalendarSync": "2026-09-08T17:58:21.802Z"
 }

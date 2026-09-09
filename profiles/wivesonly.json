@@ -3215,6 +3215,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Mai",
+      "country": [
+        "British"
+      ],
+      "age": "31",
+      "height": "5'9",
+      "cup": "C",
+      "body": "",
+      "desc": "Meet Mai — a confident, polished British woman with a warm personality and effortlessly elegant style. With blonde hair, striking blue eyes, and a fit, feminine figure, Mai brings a sophisticated presence to every appointment.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/mai/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11953,6 +11975,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-07T15:27:07.588Z",
+  "lastGirlsSync": "2026-09-09T08:50:06.534Z",
   "lastCalendarSync": "2026-09-09T05:00:18.907Z"
 }

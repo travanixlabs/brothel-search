@@ -10944,6 +10944,33 @@
       "labels": [],
       "lastModified": "2026-09-08T04:00:24.697Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Kumii",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "162",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/kumii-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97231788925455_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97221788925452_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97241788925459_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97251788925462_.pic_hd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-09T08:48:37.907Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17481,7 +17508,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-08T04:00:24.697Z",
+  "lastGirlsSync": "2026-09-09T08:48:37.907Z",
   "lastCalendarSync": "2026-09-07T20:05:59.414Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

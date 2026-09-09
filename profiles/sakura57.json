@@ -11182,6 +11182,30 @@
       "pornstar": "",
       "englishLevel": "Limited English",
       "experienceLevel": ""
+    },
+    {
+      "name": "Kirari",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-09-09",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/kirari-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/09/97191788921438_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/09/97181788921434_.pic_hd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-09T04:00:46.965Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17223,7 +17247,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-07T23:52:53.366Z",
+  "lastGirlsSync": "2026-09-09T04:00:46.965Z",
   "lastCalendarSync": "2026-09-08T16:47:11.658Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

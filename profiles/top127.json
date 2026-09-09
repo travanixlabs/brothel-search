@@ -1342,6 +1342,29 @@
       "labels": [],
       "lastModified": "2026-09-03T14:02:21.762Z",
       "lastRostered": "2026-09-04"
+    },
+    {
+      "name": "Ellen",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "260",
+      "val3": "300",
+      "startDate": "2026-09-09",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-ellen-new-diamond-diamond190-260-300-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/09/Ellen6-536x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-09T10:00:34.297Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -6039,7 +6062,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-04T08:37:45.476Z",
+  "lastGirlsSync": "2026-09-09T10:00:34.297Z",
   "lastCalendarSync": "2026-09-08T14:40:22.345Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

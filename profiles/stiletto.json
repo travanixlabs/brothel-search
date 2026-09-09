@@ -6968,7 +6968,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-08-01",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-09-10",
       "oldUrl": "https://www.stilettosydney.com/workers/shantae/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/08/IMG_3351.jpeg",
@@ -8935,10 +8935,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-09-09": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-09-10": {
         "start": "09:00",
         "end": "17:00"
@@ -10554,7 +10550,12 @@
         "end": "03:00"
       }
     },
-    "Shantae": {},
+    "Shantae": {
+      "2026-09-10": {
+        "start": "18:00",
+        "end": "00:00"
+      }
+    },
     "Aiko": {
       "2026-09-09": {
         "start": "11:00",
@@ -10656,5 +10657,5 @@
     }
   },
   "lastGirlsSync": "2026-09-08T23:47:41.605Z",
-  "lastCalendarSync": "2026-09-09T05:00:14.761Z"
+  "lastCalendarSync": "2026-09-09T07:29:55.525Z"
 }

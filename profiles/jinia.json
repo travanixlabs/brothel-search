@@ -1330,7 +1330,7 @@
       "oldUrl": "https://jinia.com.au/cindy-3/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Honey",
@@ -2647,6 +2647,27 @@
       "oldUrl": "https://jinia.com.au/chloe/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260909103443.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕kiki",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "159",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-09-09",
+      "lastRostered": "2026-09-09",
+      "oldUrl": "https://jinia.com.au/kiki-4/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260910093644.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6927,6 +6948,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-09T08:50:12.648Z",
+  "lastGirlsSync": "2026-09-09T23:45:50.122Z",
   "lastCalendarSync": "2026-09-09T14:44:03.374Z"
 }

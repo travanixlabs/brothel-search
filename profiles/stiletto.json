@@ -314,7 +314,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-09",
+      "lastRostered": "2026-09-13",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -3662,7 +3662,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-13"
     },
     {
       "name": "Savana",
@@ -8370,10 +8370,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-09-09": {
-        "start": "19:00",
-        "end": "03:00"
-      },
       "2026-09-11": {
         "start": "21:00",
         "end": "05:00"
@@ -8849,12 +8845,7 @@
         "end": "05:00"
       }
     },
-    "Ruby": {
-      "2026-09-09": {
-        "start": "10:00",
-        "end": "18:00"
-      }
-    },
+    "Ruby": {},
     "Viv": {
       "2026-04-04": {
         "start": "20:00",
@@ -8982,6 +8973,14 @@
     },
     "Sasha": {
       "2026-09-11": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-09-12": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-09-13": {
         "start": "09:00",
         "end": "17:00"
       }
@@ -10407,10 +10406,6 @@
         "start": "19:00",
         "end": "05:00"
       },
-      "2026-09-09": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-09-10": {
         "start": "12:00",
         "end": "20:00"
@@ -10581,10 +10576,6 @@
       }
     },
     "Aiko": {
-      "2026-09-09": {
-        "start": "11:00",
-        "end": "18:00"
-      },
       "2026-09-10": {
         "start": "11:00",
         "end": "18:00"
@@ -10681,5 +10672,5 @@
     }
   },
   "lastGirlsSync": "2026-09-09T08:49:44.061Z",
-  "lastCalendarSync": "2026-09-09T07:29:55.525Z"
+  "lastCalendarSync": "2026-09-09T09:05:41.391Z"
 }

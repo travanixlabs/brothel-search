@@ -11004,7 +11004,9 @@
       ],
       "labels": [],
       "lastModified": "2026-08-03T04:00:07.580Z",
-      "lastRostered": "2026-08-03"
+      "lastRostered": "2026-08-03",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-10T19:01:37.211Z"
     },
     {
       "name": "mocha",

@@ -18,7 +18,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2019-04-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/susan/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2019/04/Susan-new.jpg",
@@ -41,7 +41,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-07-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/bobo/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/09/Jennifer.jpeg",
@@ -64,7 +64,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2019-04-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/rita/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2019/04/Candy.jpg"
@@ -86,7 +86,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-01-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/nana-2/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/01/WechatIMG1135.jpeg",
@@ -109,7 +109,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2022-10-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/nanoo/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2022/10/Nanoo2.jpeg",
@@ -132,7 +132,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-02-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/eva-2/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2022/04/照片-17-7-10-下午3-46-16.jpg",
@@ -160,7 +160,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2022-04-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/marry/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2022/04/Image_20260101220752.jpg"
@@ -182,7 +182,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-09-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/nina/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/09/Nina.jpeg"
@@ -204,7 +204,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-02-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/sakula/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/02/mmexport1581121274392.jpg"
@@ -226,7 +226,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2019-11-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/sasa/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2019/11/1531188393.jpeg"
@@ -248,7 +248,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2020-01-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/momo/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2020/01/christina.jpg"
@@ -270,7 +270,7 @@
       "val2": "140",
       "val3": "170",
       "startDate": "2026-08-31",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-11",
       "oldUrl": "https://46springhouse.com.au/mimi-2/",
       "photos": [
         "https://46springhouse.com.au/wp-content/uploads/2022/11/mimi.jpeg",
@@ -921,6 +921,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "Emily": {
@@ -1557,6 +1561,10 @@
         "end": "03:00"
       },
       "2026-09-10": {
+        "start": "10:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
         "start": "10:00",
         "end": "03:00"
       }
@@ -2197,6 +2205,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -2359,7 +2371,8 @@
       "2026-09-07",
       "2026-09-08",
       "2026-09-09",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-09-11"
     ],
     "Mimi": {
       "2026-04-04": {
@@ -2995,6 +3008,10 @@
         "end": "03:00"
       },
       "2026-09-10": {
+        "start": "10:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
         "start": "10:00",
         "end": "03:00"
       }
@@ -3635,6 +3652,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "JENIFFER": {
@@ -4271,6 +4292,10 @@
         "end": "03:00"
       },
       "2026-09-10": {
+        "start": "10:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
         "start": "10:00",
         "end": "03:00"
       }
@@ -4911,6 +4936,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "RUBY": {
@@ -5547,6 +5576,10 @@
         "end": "03:00"
       },
       "2026-09-10": {
+        "start": "10:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
         "start": "10:00",
         "end": "03:00"
       }
@@ -6187,6 +6220,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "Tina": {
@@ -6823,6 +6860,10 @@
         "end": "03:00"
       },
       "2026-09-10": {
+        "start": "10:00",
+        "end": "03:00"
+      },
+      "2026-09-11": {
         "start": "10:00",
         "end": "03:00"
       }
@@ -7463,6 +7504,10 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     },
     "Lily": {
@@ -7509,9 +7554,13 @@
       "2026-09-10": {
         "start": "10:00",
         "end": "03:00"
+      },
+      "2026-09-11": {
+        "start": "10:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-08-31T10:41:15.988Z",
-  "lastCalendarSync": "2026-09-09T14:43:51.829Z"
+  "lastCalendarSync": "2026-09-10T14:33:10.730Z"
 }

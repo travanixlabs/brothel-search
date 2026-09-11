@@ -10971,6 +10971,30 @@
       "labels": [],
       "lastModified": "2026-09-09T08:48:37.907Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Loona",
+      "country": [
+        "Japanese"
+      ],
+      "age": "22",
+      "height": "167",
+      "cup": "D",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/loona-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97311789087509_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-11T04:00:34.897Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17508,7 +17532,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-09T08:48:37.907Z",
+  "lastGirlsSync": "2026-09-11T04:00:34.897Z",
   "lastCalendarSync": "2026-09-07T20:05:59.414Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

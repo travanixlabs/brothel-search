@@ -785,7 +785,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-09-11"
     },
     {
       "name": "Lucy",
@@ -1219,7 +1219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-10"
+      "lastRostered": "2026-09-11"
     },
     {
       "name": "Giselle",
@@ -1315,7 +1315,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-08"
+      "lastRostered": "2026-09-11"
     },
     {
       "name": "Sophia",
@@ -2513,6 +2513,10 @@
         "end": "06:00"
       },
       "2026-09-10": {
+        "start": "00:00",
+        "end": "09:00"
+      },
+      "2026-09-11": {
         "start": "00:00",
         "end": "09:00"
       }
@@ -4599,6 +4603,10 @@
       "2026-09-05": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-09-11": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Elise": {
@@ -5599,6 +5607,10 @@
       "2026-06-19": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-09-11": {
+        "start": "14:00",
+        "end": "21:00"
       }
     },
     "Kismet": {},
@@ -5792,5 +5804,5 @@
     "Sapphire": {}
   },
   "lastGirlsSync": "2026-09-03T22:01:04.040Z",
-  "lastCalendarSync": "2026-09-11T04:59:14.728Z"
+  "lastCalendarSync": "2026-09-11T07:23:13.919Z"
 }

@@ -3237,6 +3237,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Electra",
+      "country": [
+        "Brazillian"
+      ],
+      "age": "28",
+      "height": "Age",
+      "cup": "E",
+      "body": "",
+      "desc": "Photos coming soon. Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-11-01",
+      "lastRostered": "2024-11-01",
+      "oldUrl": "https://wivesonly.com.au/electra/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -12168,6 +12190,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-09T08:50:06.534Z",
+  "lastGirlsSync": "2026-09-11T18:51:31.649Z",
   "lastCalendarSync": "2026-09-11T14:33:39.100Z"
 }

@@ -2652,7 +2652,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕kiki",
+      "name": "🆕Kiki",
       "country": [
         "Chinese"
       ],
@@ -2668,6 +2668,27 @@
       "oldUrl": "https://jinia.com.au/kiki-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260910093644.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Daisy",
+      "country": [
+        "Chinese"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "B",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-07-22",
+      "lastRostered": "2026-07-22",
+      "oldUrl": "https://jinia.com.au/daisy/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/07/%E5%9B%BE%E7%89%87_20260722165237.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6948,13 +6969,13 @@
         "end": "02:00"
       }
     },
-    "🆕kiki": {
+    "🆕Kiki": {
       "2026-09-10": {
         "start": "12:00",
         "end": "00:00"
       }
     }
   },
-  "lastGirlsSync": "2026-09-09T23:45:50.122Z",
+  "lastGirlsSync": "2026-09-11T04:00:47.952Z",
   "lastCalendarSync": "2026-09-11T00:28:09.641Z"
 }

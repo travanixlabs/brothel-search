@@ -1306,7 +1306,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Jessica",
@@ -1405,7 +1405,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-14"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Lana on holidays",
@@ -4097,7 +4097,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-09-13"
     }
   ],
   "calendar": {
@@ -4623,10 +4624,6 @@
         "end": "06:00"
       },
       "2026-09-11": {
-        "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-09-19": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -7875,6 +7872,10 @@
       "2026-09-10": {
         "start": "06:00",
         "end": "18:00"
+      },
+      "2026-09-19": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "June": {
@@ -9869,6 +9870,10 @@
         "end": "06:00"
       },
       "2026-09-12": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-19": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -20021,5 +20026,5 @@
     }
   },
   "lastGirlsSync": "2026-09-12T16:00:38.662Z",
-  "lastCalendarSync": "2026-09-12T15:43:25.920Z"
+  "lastCalendarSync": "2026-09-12T17:18:48.407Z"
 }

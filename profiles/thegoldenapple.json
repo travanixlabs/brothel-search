@@ -1675,7 +1675,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-12"
     },
     {
       "name": "Chelsea",
@@ -5590,6 +5590,10 @@
       "2026-09-11": {
         "start": "01:00",
         "end": "07:00"
+      },
+      "2026-09-12": {
+        "start": "00:00",
+        "end": "19:00"
       }
     },
     "Chelsea": {
@@ -5772,5 +5776,5 @@
     "Sapphire": {}
   },
   "lastGirlsSync": "2026-09-03T22:01:04.040Z",
-  "lastCalendarSync": "2026-09-12T00:32:27.195Z"
+  "lastCalendarSync": "2026-09-12T04:51:54.538Z"
 }

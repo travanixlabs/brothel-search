@@ -4080,6 +4080,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-19"
+    },
+    {
+      "name": "Fern",
+      "country": [
+        "European"
+      ],
+      "age": "22",
+      "height": "170",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-13",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -20002,6 +20020,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-04T23:37:13.725Z",
+  "lastGirlsSync": "2026-09-12T16:00:38.662Z",
   "lastCalendarSync": "2026-09-12T15:43:25.920Z"
 }

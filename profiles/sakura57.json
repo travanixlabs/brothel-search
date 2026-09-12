@@ -1907,7 +1907,9 @@
       ],
       "pornstar": "",
       "englishLevel": "Limited English",
-      "experienceLevel": ""
+      "experienceLevel": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-12T18:12:30.614Z"
     },
     {
       "name": "Talia",
@@ -11114,7 +11116,9 @@
       ],
       "labels": [],
       "lastModified": "2026-08-18T04:00:59.750Z",
-      "lastRostered": "2026-08-18"
+      "lastRostered": "2026-08-18",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-12T18:12:21.610Z"
     },
     {
       "name": "Mikisa",

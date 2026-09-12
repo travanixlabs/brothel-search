@@ -1524,7 +1524,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-21",
+      "lastRostered": "2026-09-13",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Ichika-Jp-02.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/11/Ichika-Jp-01.jpeg",
@@ -15912,6 +15912,14 @@
       "2026-04-19": {
         "start": "10:00",
         "end": "02:00"
+      },
+      "2026-09-12": {
+        "start": "20:00",
+        "end": "00:00"
+      },
+      "2026-09-13": {
+        "start": "10:00",
+        "end": "00:00"
       }
     },
     "Naika": {
@@ -17486,7 +17494,7 @@
     }
   },
   "lastGirlsSync": "2026-09-09T04:00:46.965Z",
-  "lastCalendarSync": "2026-09-12T00:32:09.279Z",
+  "lastCalendarSync": "2026-09-12T11:03:38.240Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

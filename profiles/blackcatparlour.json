@@ -126,7 +126,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Amber",
@@ -829,7 +829,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Elise",
@@ -1054,7 +1054,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Hallie",
@@ -1264,7 +1264,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Janelle",
@@ -1998,7 +1998,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Roxy",
@@ -2118,7 +2118,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Shannon",
@@ -2295,7 +2295,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Tokyo",
@@ -2461,7 +2461,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Thalia",
@@ -3585,7 +3585,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Dior",
@@ -3851,7 +3851,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Courtney",
@@ -4116,7 +4116,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-09-20"
     }
   ],
   "calendar": {
@@ -4290,7 +4291,8 @@
       "2026-09-16",
       "2026-09-17",
       "2026-09-18",
-      "2026-09-19"
+      "2026-09-19",
+      "2026-09-20"
     ],
     "Amany": {
       "2026-04-05": {
@@ -4508,6 +4510,10 @@
       "2026-09-16": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Audrey": {
@@ -4720,6 +4726,10 @@
         "end": "06:00"
       },
       "2026-09-13": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -5518,6 +5528,10 @@
         "end": "06:00"
       },
       "2026-09-13": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -6370,6 +6384,10 @@
         "end": "06:00"
       },
       "2026-09-17": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -9686,6 +9704,10 @@
         "end": "06:00"
       },
       "2026-09-16": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -13956,6 +13978,10 @@
       "2026-09-16": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Kayla": {
@@ -16276,6 +16302,10 @@
       "2026-09-14": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Ariel": {
@@ -16536,6 +16566,10 @@
         "end": "06:00"
       },
       "2026-09-14": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -19432,6 +19466,10 @@
       "2026-09-16": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Dior": {
@@ -19967,6 +20005,10 @@
       "2026-09-14": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Iris": {
@@ -20226,8 +20268,34 @@
         "start": "18:00",
         "end": "06:00"
       }
+    },
+    "Kendal": {
+      "2026-09-14": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-09-16": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-09-17": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-09-18": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-09-19": {
+        "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "06:00"
+      }
     }
   },
   "lastGirlsSync": "2026-09-13T14:00:35.240Z",
-  "lastCalendarSync": "2026-09-13T12:12:14.289Z"
+  "lastCalendarSync": "2026-09-13T14:31:05.409Z"
 }

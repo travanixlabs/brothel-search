@@ -4099,6 +4099,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-19"
+    },
+    {
+      "name": "Kendal",
+      "country": [
+        "Columbian"
+      ],
+      "age": "29",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-14",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -20210,6 +20228,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-12T16:00:38.662Z",
+  "lastGirlsSync": "2026-09-13T14:00:35.240Z",
   "lastCalendarSync": "2026-09-13T12:12:14.289Z"
 }

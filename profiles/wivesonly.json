@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-09-14",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-14",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -1529,7 +1529,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Sophia",
@@ -1801,7 +1801,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Belinda",
@@ -1971,7 +1971,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-13"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Brooke",
@@ -2166,7 +2166,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Dasha",
@@ -2217,7 +2217,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Ivy",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-10"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Clarisse",
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-09-13",
+      "lastRostered": "2026-09-14",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -3185,7 +3185,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-10-01",
-      "lastRostered": "2026-09-12",
+      "lastRostered": "2026-09-14",
       "oldUrl": "https://wivesonly.com.au/makayla/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/10/IMG_8269.jpg",
@@ -3208,7 +3208,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-09-13",
+      "lastRostered": "2026-09-14",
       "oldUrl": "https://wivesonly.com.au/aloha/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-09-12",
+      "lastRostered": "2026-09-14",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3636,6 +3636,10 @@
         "end": "23:00"
       },
       "2026-09-11": {
+        "start": "14:30",
+        "end": "23:00"
+      },
+      "2026-09-14": {
         "start": "14:30",
         "end": "23:00"
       }
@@ -6130,7 +6134,8 @@
       "2026-09-10",
       "2026-09-11",
       "2026-09-12",
-      "2026-09-13"
+      "2026-09-13",
+      "2026-09-14"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7046,6 +7051,10 @@
         "end": "17:30"
       },
       "2026-09-10": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-09-14": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -8250,6 +8259,10 @@
       "2026-09-12": {
         "start": "11:00",
         "end": "20:30"
+      },
+      "2026-09-14": {
+        "start": "11:00",
+        "end": "20:30"
       }
     },
     "Madeleine": {
@@ -8924,6 +8937,10 @@
       "2026-09-11": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Neena": {
@@ -9128,6 +9145,10 @@
         "end": "04:00"
       },
       "2026-09-10": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-09-14": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -9509,6 +9530,10 @@
       "2026-09-11": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-09-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Natalia": {
@@ -9935,6 +9960,10 @@
       "2026-09-13": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-09-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Veronika": {
@@ -10243,6 +10272,10 @@
       "2026-09-06": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-09-14": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Belle": {
@@ -11529,6 +11562,10 @@
       "2026-09-13": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Ella": {
@@ -12220,6 +12257,10 @@
       "2026-09-13": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Shakira": {
@@ -12242,6 +12283,10 @@
       "2026-09-12": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-09-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Mai": {
@@ -12258,9 +12303,13 @@
       "2026-09-12": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-09-14": {
+        "start": "19:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-11T18:51:31.649Z",
-  "lastCalendarSync": "2026-09-12T15:43:46.166Z"
+  "lastCalendarSync": "2026-09-13T14:31:28.426Z"
 }

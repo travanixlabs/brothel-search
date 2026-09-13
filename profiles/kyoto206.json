@@ -10995,6 +10995,32 @@
       "labels": [],
       "lastModified": "2026-09-11T04:00:34.897Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Chizu",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/chizu-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97451789261124_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97441789261121_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97461789261126_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-13T04:00:56.604Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17532,7 +17558,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-11T04:00:34.897Z",
+  "lastGirlsSync": "2026-09-13T04:00:56.604Z",
   "lastCalendarSync": "2026-09-07T20:05:59.414Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

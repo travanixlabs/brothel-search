@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-13",
+      "lastRostered": "2026-09-20",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -7659,6 +7659,26 @@
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
+      },
+      "2026-09-14": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-16": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-17": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-18": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-20": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Bambi": {
@@ -9534,8 +9554,8 @@
         "end": "06:00"
       },
       "2026-09-14": {
-        "start": "00:00",
-        "end": "08:00"
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Trinity": {
@@ -9766,10 +9786,6 @@
     "Brandy": {},
     "Yvette": {},
     "Sonya": {
-      "2026-09-14": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-09-15": {
         "start": "00:00",
         "end": "08:00"
@@ -10409,10 +10425,6 @@
       "2026-09-20": {
         "start": "18:00",
         "end": "02:00"
-      },
-      "2026-09-14": {
-        "start": "00:00",
-        "end": "08:00"
       }
     },
     "Estelle": {
@@ -10427,5 +10439,5 @@
     }
   },
   "lastGirlsSync": "2026-09-13T18:24:49.958Z",
-  "lastCalendarSync": "2026-09-13T20:59:22.162Z"
+  "lastCalendarSync": "2026-09-13T22:30:42.603Z"
 }

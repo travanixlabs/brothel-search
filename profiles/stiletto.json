@@ -637,7 +637,7 @@
         "Dirty Talk"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-27",
       "desc": "Let me Be yours&#8230; Indulge in the exquisite company of a woman who embodies grace, elegance, and supermodel looks, providing a companion experience like no other. As a courtesan, I offer a unique blend of beauty and intelligence, ready to accompany discerning individuals in their quest for an unforgettable connection. With my Chilean ..."
     },
     {
@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Cindy",
@@ -1703,7 +1703,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Jamie",
@@ -1865,7 +1865,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-31"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Josie",
@@ -3150,7 +3150,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-03"
+      "lastRostered": "2026-09-22"
     },
     {
       "name": "Polly",
@@ -3204,7 +3204,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-28"
+      "lastRostered": "2026-09-18"
     },
     {
       "name": "Quinn",
@@ -4328,7 +4328,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-09-14"
     },
     {
       "name": "Venus",
@@ -4967,7 +4967,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-07-28",
+      "lastRostered": "2026-09-14",
       "oldUrl": "https://www.stilettosydney.com/workers/lorena-new-3/",
       "photos": [],
       "labels": [
@@ -6437,7 +6437,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-19",
       "oldUrl": "https://www.stilettosydney.com/workers/rocket-new/",
       "photos": [],
       "labels": [
@@ -8380,6 +8380,26 @@
       "2026-06-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-14": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-15": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-16": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-17": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-18": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Cali": {
@@ -8584,6 +8604,10 @@
       "2026-08-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Victoria": {
@@ -8805,6 +8829,22 @@
       "2026-09-19": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-09-14": {
+        "start": "19:00",
+        "end": "01:00"
+      },
+      "2026-09-25": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-26": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-27": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Halo": {
@@ -8896,10 +8936,6 @@
       }
     },
     "Sasha": {
-      "2026-09-14": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-09-15": {
         "start": "09:00",
         "end": "17:00"
@@ -9633,15 +9669,14 @@
       "2026-06-08": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Aurora": {},
-    "Lacey": {
-      "2026-09-14": {
-        "start": "09:00",
-        "end": "17:00"
-      }
-    },
+    "Lacey": {},
     "Peach": {
       "2026-04-27": {
         "start": "22:00",
@@ -9722,6 +9757,10 @@
       "2026-09-11": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-14": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Sabrina": {
@@ -9837,7 +9876,16 @@
         "end": "06:00"
       }
     },
-    "Piper": {},
+    "Piper": {
+      "2026-09-19": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-09-22": {
+        "start": "11:00",
+        "end": "19:00"
+      }
+    },
     "Felicity": {},
     "Mia": {},
     "Fendi": {
@@ -9857,7 +9905,12 @@
       }
     },
     "Lana": {},
-    "Lorena": {},
+    "Lorena": {
+      "2026-09-14": {
+        "start": "18:00",
+        "end": "03:00"
+      }
+    },
     "Yasmin": {
       "2026-04-30": {
         "start": "22:00",
@@ -9955,6 +10008,18 @@
       "2026-07-16": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-09-17": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-18": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-19": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Selena": {
@@ -10276,6 +10341,22 @@
       "2026-08-29": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-09-15": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-09-16": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-09-18": {
+        "start": "17:00",
+        "end": "03:00"
+      },
+      "2026-09-19": {
+        "start": "17:00",
+        "end": "03:00"
       }
     },
     "Sukura": {},
@@ -10443,6 +10524,10 @@
       "2026-09-20": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-09-14": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Estelle": {
@@ -10457,5 +10542,5 @@
     }
   },
   "lastGirlsSync": "2026-09-13T23:50:57.464Z",
-  "lastCalendarSync": "2026-09-14T05:16:54.192Z"
+  "lastCalendarSync": "2026-09-14T07:59:54.545Z"
 }

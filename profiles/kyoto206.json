@@ -9093,7 +9093,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2022-08-01",
+      "lastRostered": "2026-09-15",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Olivia-2-Cn.png",
         "https://citybrothel.com.au/wp-content/uploads/2022/08/Olivia-3-Cn-scaled.jpeg"
@@ -14098,7 +14098,16 @@
         "end": "04:00"
       }
     },
-    "Olivia": {},
+    "Olivia": {
+      "2026-09-14": {
+        "start": "14:00",
+        "end": "02:00"
+      },
+      "2026-09-15": {
+        "start": "14:00",
+        "end": "02:00"
+      }
+    },
     "Masami": {
       "2026-04-02": {
         "start": "10:00",
@@ -17651,27 +17660,18 @@
     },
     "Loona": {
       "2026-09-14": {
-        "start": "11:00",
-        "end": "05:00"
+        "start": "21:00",
+        "end": "03:00"
       },
       "2026-09-15": {
         "start": "11:00",
         "end": "05:00"
       }
     },
-    "Kumii": {
-      "2026-09-14": {
-        "start": "12:00",
-        "end": "01:00"
-      },
-      "2026-09-15": {
-        "start": "12:00",
-        "end": "01:00"
-      }
-    }
+    "Kumii": {}
   },
   "lastGirlsSync": "2026-09-13T04:00:56.604Z",
-  "lastCalendarSync": "2026-09-13T22:29:58.495Z",
+  "lastCalendarSync": "2026-09-14T00:21:27.790Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

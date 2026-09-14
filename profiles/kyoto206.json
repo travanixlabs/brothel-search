@@ -1142,7 +1142,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T05:32:13.926Z",
-      "lastRostered": "2026-09-01",
+      "lastRostered": "2026-09-14",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-07.jpeg",
         "https://citybrothel.com.au/wp-content/uploads/2020/07/Sue-Kr-09.jpeg",
@@ -14808,6 +14808,10 @@
       "2026-09-01": {
         "start": "19:00",
         "end": "04:00"
+      },
+      "2026-09-14": {
+        "start": "18:00",
+        "end": "23:00"
       }
     },
     "Otoha": {
@@ -17671,7 +17675,7 @@
     "Kumii": {}
   },
   "lastGirlsSync": "2026-09-13T04:00:56.604Z",
-  "lastCalendarSync": "2026-09-14T00:21:27.790Z",
+  "lastCalendarSync": "2026-09-14T05:16:11.539Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

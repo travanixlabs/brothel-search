@@ -17539,10 +17539,6 @@
         "start": "14:00",
         "end": "02:00"
       },
-      "2026-09-14": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-09-15": {
         "start": "14:00",
         "end": "22:00"
@@ -17675,7 +17671,7 @@
     "Kumii": {}
   },
   "lastGirlsSync": "2026-09-13T04:00:56.604Z",
-  "lastCalendarSync": "2026-09-14T05:16:11.539Z",
+  "lastCalendarSync": "2026-09-14T07:59:12.506Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",
     "https://citybrothel.com.au/project/cherry-china-2/",

@@ -11021,6 +11021,32 @@
       "labels": [],
       "lastModified": "2026-09-13T04:00:56.604Z",
       "lastRostered": "2026-09-16"
+    },
+    {
+      "name": "Shiki",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "162",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/shiki-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97501789436251_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97511789436253_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97521789436255_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-15T04:00:36.181Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17719,7 +17745,7 @@
     },
     "Kumii": {}
   },
-  "lastGirlsSync": "2026-09-13T04:00:56.604Z",
+  "lastGirlsSync": "2026-09-15T04:00:36.181Z",
   "lastCalendarSync": "2026-09-14T20:26:18.267Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

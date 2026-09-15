@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-07"
+      "lastRostered": "2026-09-15"
     },
     {
       "name": "Alice",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-06"
+      "lastRostered": "2026-09-17"
     },
     {
       "name": "Hallie",
@@ -3240,10 +3240,6 @@
       "2026-09-11": {
         "start": "23:00",
         "end": "08:00"
-      },
-      "2026-09-15": {
-        "start": "19:00",
-        "end": "02:00"
       }
     },
     "Valerie": {
@@ -5372,6 +5368,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "09:00"
+      },
+      "2026-09-17": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Audrey": {
@@ -5616,6 +5616,10 @@
       "2026-09-07": {
         "start": "01:00",
         "end": "08:00"
+      },
+      "2026-09-15": {
+        "start": "00:00",
+        "end": "09:00"
       }
     },
     "Bambi": {
@@ -5861,5 +5865,5 @@
     "Sapphire": {}
   },
   "lastGirlsSync": "2026-09-03T22:01:04.040Z",
-  "lastCalendarSync": "2026-09-15T13:49:19.964Z"
+  "lastCalendarSync": "2026-09-15T18:19:24.468Z"
 }

@@ -53,7 +53,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-15",
+      "lastRostered": "2026-09-16",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Chanel2-532x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Chanel3-470x705.jpg"
@@ -235,7 +235,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-15",
+      "lastRostered": "2026-09-16",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Kaori6-705x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Kaori7-705x705.jpg",
@@ -606,7 +606,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-09-15",
+      "lastRostered": "2026-09-16",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Jojo-462x705.jpg"
       ],
@@ -658,7 +658,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-09-13",
+      "lastRostered": "2026-09-16",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Alice-536x705.jpg"
       ],
@@ -709,7 +709,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-14T05:21:17.071Z",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-09-16"
     },
     {
       "name": "Momoko",
@@ -1235,7 +1235,7 @@
       ],
       "labels": [],
       "lastModified": "2026-07-22T10:00:53.644Z",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-09-16"
     },
     {
       "name": "Mao",
@@ -1365,6 +1365,33 @@
       "labels": [],
       "lastModified": "2026-09-09T10:00:34.297Z",
       "lastRostered": "2026-09-12"
+    },
+    {
+      "name": "Suji",
+      "country": [
+        "Korean"
+      ],
+      "age": "21",
+      "height": "163",
+      "cup": "B",
+      "val1": "310",
+      "val2": "360",
+      "val3": "0",
+      "startDate": "2026-09-15",
+      "oldUrl": "https://127city.com/k-suji-diamond-diamon310-360-0-30-45mins-bookings-only/",
+      "desc": "",
+      "lang": "Korean, Limited English",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-09-15T13:49:07.176Z",
+      "lastRostered": "2026-09-16",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/09/Suji-608x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/09/Suji1-608x705.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "Limited English",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -1540,7 +1567,8 @@
       "2026-09-12",
       "2026-09-13",
       "2026-09-14",
-      "2026-09-15"
+      "2026-09-15",
+      "2026-09-16"
     ],
     "Sana": {
       "2026-03-26": {
@@ -2153,6 +2181,10 @@
       "2026-09-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Alice": {
@@ -2513,6 +2545,10 @@
         "end": "03:00"
       },
       "2026-09-13": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-16": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -4407,6 +4443,10 @@
       "2026-09-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Momoko": {
@@ -4719,6 +4759,10 @@
         "end": "02:00"
       },
       "2026-09-15": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-09-16": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -5757,6 +5801,10 @@
       "2026-09-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Koharu": {
@@ -6039,6 +6087,10 @@
       "2026-09-15": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Abby": {
@@ -6228,10 +6280,16 @@
         "start": "12:00",
         "end": "03:00"
       }
+    },
+    "Suji": {
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-09-10T04:01:14.900Z",
-  "lastCalendarSync": "2026-09-14T15:12:01.678Z",
+  "lastCalendarSync": "2026-09-15T13:49:07.176Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12",
+      "lastRostered": "2026-09-19",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -4416,7 +4416,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-09-16"
     },
     {
       "name": "Viv",
@@ -7265,7 +7265,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-20",
+      "lastRostered": "2026-09-27",
       "oldUrl": "https://www.stilettosydney.com/workers/mercedes-new/",
       "photos": [],
       "labels": [
@@ -7557,6 +7557,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-09-19": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -8324,10 +8328,6 @@
         "start": "20:00",
         "end": "04:00"
       },
-      "2026-09-15": {
-        "start": "20:00",
-        "end": "04:00"
-      },
       "2026-09-23": {
         "start": "20:00",
         "end": "04:00"
@@ -8716,9 +8716,9 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-09-15": {
-        "start": "05:00",
-        "end": "17:00"
+      "2026-09-16": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Ella": {
@@ -9037,10 +9037,6 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-09-15": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-09-17": {
         "start": "09:30",
         "end": "15:30"
@@ -9069,10 +9065,6 @@
       }
     },
     "Sasha": {
-      "2026-09-15": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-09-16": {
         "start": "09:00",
         "end": "17:00"
@@ -10665,6 +10657,26 @@
       "2026-09-20": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-09-23": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-24": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-25": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-26": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-09-27": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Estelle": {
@@ -10685,5 +10697,5 @@
     }
   },
   "lastGirlsSync": "2026-09-15T00:09:15.890Z",
-  "lastCalendarSync": "2026-09-15T05:08:57.421Z"
+  "lastCalendarSync": "2026-09-15T07:55:47.578Z"
 }

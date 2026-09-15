@@ -209,7 +209,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17",
+      "lastRostered": "2026-09-24",
       "desc": "I am an elegant and graceful petite angel with a statuesque figure, complemented by size 6 measurements and B cup bust. My brunette locks cascade down my shoulders, framing my striking face. My sparkling brown eyes are windows to a world of mystery and allure, drawing you in with ..."
     },
     {
@@ -9020,6 +9020,14 @@
       "2026-09-17": {
         "start": "09:30",
         "end": "15:30"
+      },
+      "2026-09-22": {
+        "start": "09:30",
+        "end": "15:30"
+      },
+      "2026-09-24": {
+        "start": "09:30",
+        "end": "15:30"
       }
     },
     "Jess": {
@@ -10644,5 +10652,5 @@
     }
   },
   "lastGirlsSync": "2026-09-15T00:09:15.890Z",
-  "lastCalendarSync": "2026-09-14T23:14:48.897Z"
+  "lastCalendarSync": "2026-09-15T00:51:51.661Z"
 }

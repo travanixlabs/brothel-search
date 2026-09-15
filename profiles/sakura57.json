@@ -9906,7 +9906,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://www.surryhillsbrothel.com.au/project/yokina-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87341779355546_.pic_.jpg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/05/87331779355544_.pic_.jpg",
@@ -11218,6 +11218,31 @@
       "labels": [],
       "lastModified": "2026-09-09T04:00:46.965Z",
       "lastRostered": "2026-09-15"
+    },
+    {
+      "name": "Zoey",
+      "country": [
+        "Japanese"
+      ],
+      "age": "24",
+      "height": "167",
+      "cup": "C",
+      "val1": "180",
+      "val2": "240",
+      "val3": "290",
+      "startDate": "2026-09-15",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/zoey-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/09/97571789439844_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/09/97551789439838_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/09/97561789439841_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-15T04:00:37.456Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17640,7 +17665,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-14T04:00:45.395Z",
+  "lastGirlsSync": "2026-09-15T04:00:37.456Z",
   "lastCalendarSync": "2026-09-15T00:51:04.845Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

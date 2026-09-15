@@ -910,7 +910,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T07:50:01.623Z",
-      "lastRostered": "2026-04-29",
+      "lastRostered": "2026-09-16",
       "photos": [
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/08/Sasaki-Jp-12.jpeg",
         "https://www.surryhillsbrothel.com.au/wp-content/uploads/2025/08/Sasaki-Jp-10.jpeg",
@@ -14723,6 +14723,14 @@
       "2026-04-29": {
         "start": "11:00",
         "end": "14:00"
+      },
+      "2026-09-15": {
+        "start": "16:00",
+        "end": "05:00"
+      },
+      "2026-09-16": {
+        "start": "14:00",
+        "end": "05:00"
       }
     },
     "Mimoya": {
@@ -17633,7 +17641,7 @@
     }
   },
   "lastGirlsSync": "2026-09-14T04:00:45.395Z",
-  "lastCalendarSync": "2026-09-14T20:26:22.208Z",
+  "lastCalendarSync": "2026-09-15T00:51:04.845Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

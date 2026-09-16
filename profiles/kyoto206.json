@@ -11047,6 +11047,33 @@
       "labels": [],
       "lastModified": "2026-09-15T04:00:36.181Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Kanami",
+      "country": [
+        "Japanese"
+      ],
+      "age": "20",
+      "height": "160",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/kanami-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97861789524843_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97831789524831_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97841789524836_.pic_hd.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/09/97851789524839_.pic_hd.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-09-16T04:01:00.190Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17745,7 +17772,7 @@
     },
     "Kumii": {}
   },
-  "lastGirlsSync": "2026-09-15T04:00:36.181Z",
+  "lastGirlsSync": "2026-09-16T04:01:00.190Z",
   "lastCalendarSync": "2026-09-14T20:26:18.267Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

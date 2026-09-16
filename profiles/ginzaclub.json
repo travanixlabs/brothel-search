@@ -2205,7 +2205,9 @@
       "lastRostered": "2026-01-01",
       "pornstar": "",
       "englishLevel": "English",
-      "experienceLevel": "Inexperienced"
+      "experienceLevel": "Inexperienced",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-16T19:24:52.259Z"
     },
     {
       "name": "Aya",
@@ -2229,7 +2231,9 @@
       "lastRostered": "2026-01-01",
       "pornstar": "",
       "englishLevel": "English",
-      "experienceLevel": "Inexperienced"
+      "experienceLevel": "Inexperienced",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-16T19:24:47.521Z"
     },
     {
       "name": "Banana",
@@ -5152,7 +5156,9 @@
       ],
       "lastModified": "2026-06-26T04:00:50.100Z",
       "lastRostered": "2026-06-26",
-      "age": "19"
+      "age": "19",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-16T19:24:45.682Z"
     },
     {
       "name": "Helen",
@@ -5703,7 +5709,9 @@
         "Double"
       ],
       "lastModified": "2026-07-22T22:00:52.745Z",
-      "lastRostered": "2026-07-22"
+      "lastRostered": "2026-07-22",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-16T19:24:53.450Z"
     },
     {
       "name": "Yoa",

@@ -314,7 +314,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-27",
       "desc": "SHE's Back! Hey guys, my name is Aria and it is my absolute pleasure to meet you! I have porcelain smooth skin and very pretty features. I have a very enthusiastic personality; I love to form genuine connections with people. I will put you at ease with my sensuality and ignite our passion ..."
     },
     {
@@ -1797,7 +1797,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-13"
+      "lastRostered": "2026-09-17"
     },
     {
       "name": "Jess",
@@ -7705,10 +7705,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-09-16": {
-        "start": "17:00",
-        "end": "01:00"
-      },
       "2026-09-17": {
         "start": "20:00",
         "end": "04:00"
@@ -8998,10 +8994,6 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-09-16": {
-        "start": "14:00",
-        "end": "00:00"
       }
     },
     "Lilith": {
@@ -9010,10 +9002,6 @@
         "end": "00:00"
       },
       "2026-04-08": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-09-16": {
         "start": "16:00",
         "end": "00:00"
       },
@@ -9296,6 +9284,10 @@
       "2026-08-26": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-17": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Elizabeth": {
@@ -9342,6 +9334,26 @@
         "end": "03:00"
       },
       "2026-09-19": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-23": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-24": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-25": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-26": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-09-27": {
         "start": "19:00",
         "end": "03:00"
       }
@@ -10578,10 +10590,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-09-16": {
-        "start": "18:00",
-        "end": "00:00"
-      },
       "2026-09-17": {
         "start": "19:00",
         "end": "03:00"
@@ -10729,5 +10737,5 @@
     }
   },
   "lastGirlsSync": "2026-09-16T14:31:16.497Z",
-  "lastCalendarSync": "2026-09-16T13:41:58.990Z"
+  "lastCalendarSync": "2026-09-16T15:06:23.436Z"
 }

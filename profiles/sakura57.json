@@ -11242,7 +11242,7 @@
       ],
       "labels": [],
       "lastModified": "2026-09-15T04:00:37.456Z",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-17"
     }
   ],
   "calendar": {
@@ -17717,11 +17717,15 @@
       "2026-09-16": {
         "start": "10:00",
         "end": "05:00"
+      },
+      "2026-09-17": {
+        "start": "18:00",
+        "end": "05:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-15T14:34:28.713Z",
-  "lastCalendarSync": "2026-09-15T21:33:19.680Z",
+  "lastCalendarSync": "2026-09-16T05:03:40.366Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",
     "https://www.surryhillsbrothel.com.au/project/aya-japan-2/",

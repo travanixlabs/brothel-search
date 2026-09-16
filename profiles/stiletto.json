@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12",
+      "lastRostered": "2026-09-18",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -3337,7 +3337,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-11"
+      "lastRostered": "2026-09-18"
     },
     {
       "name": "Riley",
@@ -5767,7 +5767,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-06",
+      "lastRostered": "2026-09-16",
       "oldUrl": "https://www.stilettosydney.com/workers/tequila-new/",
       "photos": [],
       "labels": [
@@ -6504,7 +6504,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-14",
+      "lastRostered": "2026-09-16",
       "oldUrl": "https://www.stilettosydney.com/workers/sakura-new/",
       "photos": [],
       "labels": [
@@ -7144,7 +7144,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-27",
       "oldUrl": "https://www.stilettosydney.com/workers/delilah-3/",
       "photos": [],
       "labels": [
@@ -7312,7 +7312,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-09-18",
       "oldUrl": "https://www.stilettosydney.com/workers/tyla/",
       "photos": [],
       "labels": [
@@ -7704,6 +7704,18 @@
       "2026-09-09": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-16": {
+        "start": "17:00",
+        "end": "01:00"
+      },
+      "2026-09-17": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-09-18": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Audrey": {
@@ -8720,10 +8732,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
-      },
-      "2026-09-16": {
-        "start": "07:00",
-        "end": "15:00"
       }
     },
     "Ella": {
@@ -8770,6 +8778,10 @@
       "2026-09-26": {
         "start": "13:00",
         "end": "02:00"
+      },
+      "2026-09-16": {
+        "start": "17:30",
+        "end": "01:30"
       }
     },
     "Kay": {
@@ -9058,10 +9070,6 @@
       }
     },
     "Sasha": {
-      "2026-09-16": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-09-17": {
         "start": "09:00",
         "end": "17:00"
@@ -9175,6 +9183,10 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-09-18": {
+        "start": "08:00",
+        "end": "16:00"
       }
     },
     "Jayde": {
@@ -9469,14 +9481,6 @@
       "2026-04-10": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-09-16": {
-        "start": "10:00",
-        "end": "18:00"
-      },
-      "2026-09-18": {
-        "start": "10:00",
-        "end": "18:00"
       }
     },
     "Kelsey": {
@@ -10167,6 +10171,10 @@
       "2026-08-10": {
         "start": "16:00",
         "end": "20:00"
+      },
+      "2026-09-16": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Luanna": {
@@ -10209,10 +10217,6 @@
       "2026-08-07": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-09-16": {
-        "start": "10:00",
-        "end": "14:30"
       },
       "2026-09-17": {
         "start": "10:00",
@@ -10447,7 +10451,12 @@
       }
     },
     "Sukura": {},
-    "Sakura": {},
+    "Sakura": {
+      "2026-09-16": {
+        "start": "13:00",
+        "end": "21:00"
+      }
+    },
     "Olive": {},
     "Farah": {},
     "Kaia": {
@@ -10587,12 +10596,24 @@
         "end": "23:00"
       },
       "2026-09-18": {
-        "start": "12:00",
-        "end": "23:00"
+        "start": "10:30",
+        "end": "18:30"
       },
       "2026-09-19": {
         "start": "11:00",
         "end": "17:00"
+      },
+      "2026-09-23": {
+        "start": "19:00",
+        "end": "00:00"
+      },
+      "2026-09-24": {
+        "start": "09:00",
+        "end": "19:00"
+      },
+      "2026-09-27": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Maisie": {},
@@ -10648,8 +10669,22 @@
         "end": "20:00"
       }
     },
-    "Daria": {}
+    "Daria": {},
+    "Tyla": {
+      "2026-09-16": {
+        "start": "13:00",
+        "end": "21:00"
+      },
+      "2026-09-17": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-18": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-09-15T23:54:02.517Z",
-  "lastCalendarSync": "2026-09-15T23:00:41.078Z"
+  "lastCalendarSync": "2026-09-16T05:04:27.192Z"
 }

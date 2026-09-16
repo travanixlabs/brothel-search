@@ -1750,7 +1750,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-09-16"
     },
     {
       "name": "Desiree",
@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-09-14",
+      "lastRostered": "2026-09-16",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -8359,6 +8359,10 @@
       "2026-09-12": {
         "start": "22:30",
         "end": "04:30"
+      },
+      "2026-09-16": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Evie": {
@@ -8483,10 +8487,6 @@
         "end": "18:00"
       },
       "2026-09-09": {
-        "start": "11:00",
-        "end": "18:00"
-      },
-      "2026-09-16": {
         "start": "11:00",
         "end": "18:00"
       }
@@ -12211,6 +12211,10 @@
       "2026-09-14": {
         "start": "16:00",
         "end": "01:00"
+      },
+      "2026-09-16": {
+        "start": "12:00",
+        "end": "18:00"
       }
     },
     "Dior": {
@@ -12409,13 +12413,9 @@
       "2026-09-15": {
         "start": "19:30",
         "end": "04:00"
-      },
-      "2026-09-16": {
-        "start": "19:30",
-        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-11T18:51:31.649Z",
-  "lastCalendarSync": "2026-09-15T15:08:58.035Z"
+  "lastCalendarSync": "2026-09-16T05:04:31.123Z"
 }

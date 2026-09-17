@@ -6504,7 +6504,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-16",
+      "lastRostered": "2026-09-19",
       "oldUrl": "https://www.stilettosydney.com/workers/sakura-new/",
       "photos": [],
       "labels": [
@@ -10516,7 +10516,20 @@
       }
     },
     "Sukura": {},
-    "Sakura": {},
+    "Sakura": {
+      "2026-09-17": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-18": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-09-19": {
+        "start": "10:00",
+        "end": "18:00"
+      }
+    },
     "Olive": {},
     "Farah": {},
     "Kaia": {
@@ -10727,5 +10740,5 @@
     }
   },
   "lastGirlsSync": "2026-09-17T00:00:46.272Z",
-  "lastCalendarSync": "2026-09-16T23:05:31.441Z"
+  "lastCalendarSync": "2026-09-17T00:50:43.913Z"
 }

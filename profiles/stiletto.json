@@ -3018,7 +3018,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-13"
+      "lastRostered": "2026-09-18"
     },
     {
       "name": "Ophelia",
@@ -7913,6 +7913,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
+      },
+      "2026-09-18": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Grace": {
@@ -10674,5 +10678,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-17T19:24:40.748Z",
-  "lastCalendarSync": "2026-09-17T19:48:43.144Z"
+  "lastCalendarSync": "2026-09-17T21:32:47.637Z"
 }

@@ -7364,6 +7364,54 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Astra",
+      "country": [
+        "Caucasian"
+      ],
+      "age": "20",
+      "height": "",
+      "cup": "D",
+      "body": "",
+      "desc": "Hello there handsome! I’m Astra. I’m visiting from Melbourne and, for a little while, the stars have aligned for us to meet. How would I describe myself? Imagine a little piece of the cosmos brought to life. At just 20, I have creamy, porcelain skin, sparkling blonde & black hair, ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-09-17",
+      "oldUrl": "https://www.stilettosydney.com/workers/astra-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "COB",
+        "Adventurous Positions",
+        "COF",
+        "Deep Throat",
+        "DFK",
+        "Disabled",
+        "Fetish",
+        "Golden Showers",
+        "Electro Play",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Strap on",
+        "Body Slide",
+        "Party Bookings",
+        "Stripping",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10670,8 +10718,14 @@
         "start": "12:00",
         "end": "20:00"
       }
+    },
+    "Astra": {
+      "2026-09-17": {
+        "start": "15:00",
+        "end": "23:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-09-16T19:11:23.867Z",
+  "lastGirlsSync": "2026-09-17T00:00:46.272Z",
   "lastCalendarSync": "2026-09-16T23:05:31.441Z"
 }

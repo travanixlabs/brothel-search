@@ -4416,7 +4416,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Viv",
@@ -8776,7 +8776,11 @@
       },
       "2026-09-18": {
         "start": "05:00",
-        "end": "13:00"
+        "end": "10:00"
+      },
+      "2026-09-19": {
+        "start": "06:00",
+        "end": "14:00"
       }
     },
     "Ella": {
@@ -10678,5 +10682,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-17T19:24:40.748Z",
-  "lastCalendarSync": "2026-09-17T21:32:47.637Z"
+  "lastCalendarSync": "2026-09-17T22:57:31.876Z"
 }

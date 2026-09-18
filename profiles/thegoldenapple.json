@@ -87,7 +87,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Amber",
@@ -637,7 +637,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Janelle",
@@ -1123,7 +1123,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Amy",
@@ -1238,7 +1238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Mila",
@@ -1257,7 +1257,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Ruby",
@@ -1277,7 +1277,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Scarlett",
@@ -1296,7 +1296,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Snow",
@@ -1315,7 +1315,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Sophia",
@@ -1372,7 +1372,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Vivian",
@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-17"
+      "lastRostered": "2026-09-18"
     },
     {
       "name": "Cammie",
@@ -1789,7 +1789,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Taylor",
@@ -3000,6 +3000,10 @@
       "2026-09-16": {
         "start": "23:00",
         "end": "08:00"
+      },
+      "2026-09-20": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Mila": {
@@ -3256,6 +3260,10 @@
         "end": "08:00"
       },
       "2026-09-18": {
+        "start": "23:00",
+        "end": "08:00"
+      },
+      "2026-09-20": {
         "start": "23:00",
         "end": "08:00"
       }
@@ -3966,6 +3974,10 @@
       "2026-09-14": {
         "start": "942:00",
         "end": "630:00"
+      },
+      "2026-09-20": {
+        "start": "11:00",
+        "end": "09:00"
       }
     },
     "Zoey": {
@@ -4100,6 +4112,10 @@
       "2026-09-17": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "06:00"
       }
     },
     "Ruby": {
@@ -4174,6 +4190,10 @@
       "2026-09-14": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "21:00",
+        "end": "18:00"
       }
     },
     "Scarlett": {
@@ -4436,6 +4456,10 @@
       "2026-09-16": {
         "start": "23:00",
         "end": "08:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Snow": {
@@ -4678,6 +4702,10 @@
       "2026-09-14": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-09-20": {
+        "start": "21:00",
+        "end": "06:00"
       }
     },
     "Elise": {
@@ -4907,6 +4935,10 @@
       "2026-09-17": {
         "start": "18:00",
         "end": "03:00"
+      },
+      "2026-09-18": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Darcy": {
@@ -5161,6 +5193,10 @@
       "2026-09-16": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-09-20": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Tiffany": {
@@ -5247,6 +5283,10 @@
       "2026-08-26": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "20:00",
+        "end": "05:00"
       }
     },
     "Cammie": {},
@@ -5875,6 +5915,10 @@
       "2026-09-10": {
         "start": "18:00",
         "end": "03:00"
+      },
+      "2026-09-20": {
+        "start": "18:00",
+        "end": "03:00"
       }
     },
     "Taylor": {},
@@ -5915,5 +5959,5 @@
     "Sapphire": {}
   },
   "lastGirlsSync": "2026-09-03T22:01:04.040Z",
-  "lastCalendarSync": "2026-09-17T17:11:25.514Z"
+  "lastCalendarSync": "2026-09-18T00:43:20.049Z"
 }

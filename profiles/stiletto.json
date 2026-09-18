@@ -576,7 +576,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29",
+      "lastRostered": "2026-09-23",
       "desc": "Beautiful brandy Hello Gentlemen, My name is Brandy, I am in my mid 20's and new to Stiletto. I am an energetic pocket rocket. My dress size is 6 and my bust is a natural B-cup. I have gorgeous brown eyes with blonde luscious hair to match. I specialise in a genuine girlfriend ..."
     },
     {
@@ -2176,7 +2176,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-14"
+      "lastRostered": "2026-09-28"
     },
     {
       "name": "Kiara",
@@ -3018,7 +3018,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18"
+      "lastRostered": "2026-09-19"
     },
     {
       "name": "Ophelia",
@@ -7008,7 +7008,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-11-01",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.stilettosydney.com/workers/aiko/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/11/AIKO-3.jpg",
@@ -7122,7 +7122,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-26",
       "oldUrl": "https://www.stilettosydney.com/workers/lucy-new-2/",
       "photos": [],
       "labels": [
@@ -7144,7 +7144,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-10-01",
       "oldUrl": "https://www.stilettosydney.com/workers/delilah-3/",
       "photos": [],
       "labels": [
@@ -7918,6 +7918,10 @@
       "2026-09-18": {
         "start": "07:00",
         "end": "15:00"
+      },
+      "2026-09-19": {
+        "start": "07:00",
+        "end": "12:00"
       }
     },
     "Grace": {
@@ -8856,6 +8860,10 @@
       "2026-09-20": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-09-18": {
+        "start": "14:00",
+        "end": "19:00"
       }
     },
     "Jamie": {
@@ -9083,10 +9091,6 @@
       }
     },
     "Sasha": {
-      "2026-09-18": {
-        "start": "09:00",
-        "end": "17:00"
-      },
       "2026-09-19": {
         "start": "09:00",
         "end": "17:00"
@@ -9760,6 +9764,18 @@
       "2026-09-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-19": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-09-20": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-09-28": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Trinity": {
@@ -10007,7 +10023,20 @@
         "end": "06:00"
       }
     },
-    "Brandy": {},
+    "Brandy": {
+      "2026-09-18": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-09-19": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-09-23": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Yvette": {},
     "Sonya": {},
     "Zarina": {
@@ -10275,10 +10304,6 @@
       "2026-08-07": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-09-18": {
-        "start": "10:00",
-        "end": "14:30"
       },
       "2026-09-12": {
         "start": "22:00",
@@ -10614,11 +10639,27 @@
       "2026-09-19": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-09-21": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-09-30": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-01": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-02": {
+        "start": "10:00",
+        "end": "17:00"
       }
     },
     "Gracie": {},
     "Lucy": {
-      "2026-09-19": {
+      "2026-09-26": {
         "start": "18:00",
         "end": "02:00"
       }
@@ -10626,23 +10667,35 @@
     "Delilah": {
       "2026-09-18": {
         "start": "10:30",
-        "end": "18:30"
-      },
-      "2026-09-19": {
-        "start": "11:00",
-        "end": "17:00"
+        "end": "20:30"
       },
       "2026-09-23": {
         "start": "19:00",
         "end": "00:00"
       },
       "2026-09-24": {
-        "start": "09:00",
-        "end": "19:00"
+        "start": "19:00",
+        "end": "00:00"
       },
-      "2026-09-27": {
-        "start": "07:00",
-        "end": "15:00"
+      "2026-09-20": {
+        "start": "15:00",
+        "end": "22:00"
+      },
+      "2026-09-22": {
+        "start": "15:00",
+        "end": "22:00"
+      },
+      "2026-09-29": {
+        "start": "15:00",
+        "end": "22:00"
+      },
+      "2026-09-30": {
+        "start": "19:00",
+        "end": "00:00"
+      },
+      "2026-10-01": {
+        "start": "19:00",
+        "end": "00:00"
       }
     },
     "Maisie": {},
@@ -10691,5 +10744,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-17T23:51:02.723Z",
-  "lastCalendarSync": "2026-09-18T00:43:48.746Z"
+  "lastCalendarSync": "2026-09-18T04:59:22.365Z"
 }

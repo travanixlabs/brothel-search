@@ -606,7 +606,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-20",
+      "lastRostered": "2026-09-26",
       "desc": "Oh so cute! Hello Gentlemen, my name is Cali x I am 22, seductive, and easy on the eyes. My petite frame, gorgeous curves, and sweet, girl-next-door looks will captivate you. I have a C-cup bust and long dark locks. Whether you desire a sensual girlfriend experience or something more dominant, I am ..."
     },
     {
@@ -8590,6 +8590,18 @@
       "2026-09-20": {
         "start": "11:30",
         "end": "19:30"
+      },
+      "2026-09-23": {
+        "start": "11:00",
+        "end": "19:00"
+      },
+      "2026-09-25": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-09-26": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ophelia": {
@@ -8600,10 +8612,6 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-09-18": {
-        "start": "14:00",
-        "end": "22:00"
       },
       "2026-09-20": {
         "start": "15:00",
@@ -8774,6 +8782,10 @@
       "2026-09-19": {
         "start": "06:00",
         "end": "14:00"
+      },
+      "2026-09-18": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Ella": {
@@ -9000,10 +9012,6 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-09-18": {
-        "start": "15:00",
-        "end": "23:00"
       }
     },
     "Lilith": {
@@ -9815,10 +9823,6 @@
       }
     },
     "Aurora": {
-      "2026-09-18": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-09-19": {
         "start": "14:00",
         "end": "22:00"
@@ -10708,5 +10712,5 @@
     }
   },
   "lastGirlsSync": "2026-09-18T08:54:57.118Z",
-  "lastCalendarSync": "2026-09-18T11:35:43.499Z"
+  "lastCalendarSync": "2026-09-18T13:06:52.067Z"
 }

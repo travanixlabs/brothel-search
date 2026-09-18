@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-18",
+      "lastRostered": "2026-09-19",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -6247,7 +6247,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-17",
+      "lastRostered": "2026-09-19",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7754,6 +7754,10 @@
       "2026-09-09": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-19": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Audrey": {
@@ -10374,6 +10378,10 @@
       "2026-08-14": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-19": {
+        "start": "06:00",
+        "end": "14:00"
       }
     },
     "Adeline": {},
@@ -10627,5 +10635,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-18T18:44:13.326Z",
-  "lastCalendarSync": "2026-09-18T19:07:47.376Z"
+  "lastCalendarSync": "2026-09-18T21:03:26.752Z"
 }

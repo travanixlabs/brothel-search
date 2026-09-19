@@ -3662,7 +3662,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Savana",
@@ -7008,7 +7008,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-11-01",
-      "lastRostered": "2026-10-02",
+      "lastRostered": "2026-10-03",
       "oldUrl": "https://www.stilettosydney.com/workers/aiko/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/11/AIKO-3.jpg",
@@ -7598,7 +7598,8 @@
       "2026-09-29",
       "2026-09-30",
       "2026-10-01",
-      "2026-10-02"
+      "2026-10-02",
+      "2026-10-03"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -9086,6 +9087,10 @@
       "2026-10-02": {
         "start": "09:00",
         "end": "17:00"
+      },
+      "2026-10-03": {
+        "start": "09:00",
+        "end": "17:00"
       }
     },
     "Clara": {
@@ -10547,6 +10552,10 @@
       "2026-10-02": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-10-03": {
+        "start": "10:00",
+        "end": "17:00"
       }
     },
     "Gracie": {},
@@ -10627,5 +10636,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-18T23:48:23.815Z",
-  "lastCalendarSync": "2026-09-18T22:42:21.223Z"
+  "lastCalendarSync": "2026-09-19T00:32:23.755Z"
 }

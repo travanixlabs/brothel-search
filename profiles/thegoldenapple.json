@@ -234,7 +234,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Charlotte",
@@ -468,7 +468,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Hallie",
@@ -3616,6 +3616,10 @@
       "2026-09-19": {
         "start": "130:00",
         "end": "1030:00"
+      },
+      "2026-09-20": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Claire": {
@@ -5398,6 +5402,10 @@
       "2026-09-18": {
         "start": "23:00",
         "end": "09:00"
+      },
+      "2026-09-20": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Audrey": {
@@ -5899,5 +5907,5 @@
     "Sapphire": {}
   },
   "lastGirlsSync": "2026-09-03T22:01:04.040Z",
-  "lastCalendarSync": "2026-09-19T18:46:36.359Z"
+  "lastCalendarSync": "2026-09-19T22:21:58.895Z"
 }

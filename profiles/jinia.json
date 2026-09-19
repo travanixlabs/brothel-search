@@ -89,7 +89,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 May",
+      "name": "May",
       "country": [
         "Taiwanese",
         "Vietnamese"
@@ -1292,7 +1292,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/08/%E5%9B%BE%E7%89%87_20250825220022_77_2.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Lisa",
@@ -2694,7 +2694,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 Summer",
+      "name": "Summer",
       "country": [
         "Chinese"
       ],
@@ -5318,16 +5318,6 @@
         "end": "04:00"
       }
     },
-    "🆕 May": {
-      "2026-05-26": {
-        "start": "17:00",
-        "end": "02:00"
-      },
-      "2026-07-08": {
-        "start": "19:00",
-        "end": "02:30"
-      }
-    },
     "🆕 Kaia": {
       "2026-05-28": {
         "start": "11:00",
@@ -7174,7 +7164,7 @@
         "end": "04:00"
       }
     },
-    "🆕 Summer": {
+    "Summer": {
       "2026-09-13": {
         "start": "10:30",
         "end": "04:00"
@@ -7231,8 +7221,18 @@
         "start": "10:30",
         "end": "04:00"
       }
+    },
+    "May": {
+      "2026-05-26": {
+        "start": "17:00",
+        "end": "02:00"
+      },
+      "2026-07-08": {
+        "start": "19:00",
+        "end": "02:30"
+      }
     }
   },
-  "lastGirlsSync": "2026-09-12T13:18:27.656Z",
+  "lastGirlsSync": "2026-09-19T23:51:40.641Z",
   "lastCalendarSync": "2026-09-19T16:00:30.316Z"
 }

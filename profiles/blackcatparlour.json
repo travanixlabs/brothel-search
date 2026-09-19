@@ -4118,6 +4118,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-25"
+    },
+    {
+      "name": "Chloe",
+      "country": [
+        "Australian"
+      ],
+      "age": "23",
+      "height": "168",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-19",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -20561,6 +20579,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-13T14:00:35.240Z",
+  "lastGirlsSync": "2026-09-19T13:38:01.875Z",
   "lastCalendarSync": "2026-09-19T12:39:24.459Z"
 }

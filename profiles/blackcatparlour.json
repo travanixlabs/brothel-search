@@ -4137,6 +4137,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-26"
+    },
+    {
+      "name": "Monica",
+      "country": [
+        "Portuguese"
+      ],
+      "age": "25",
+      "height": "165",
+      "cup": "",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-20",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -20643,6 +20661,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-19T13:38:01.875Z",
+  "lastGirlsSync": "2026-09-19T18:16:23.859Z",
   "lastCalendarSync": "2026-09-19T15:59:58.501Z"
 }

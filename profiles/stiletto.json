@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-20",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1326,7 +1326,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-14"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Gaia",
@@ -4328,7 +4328,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-14"
+      "lastRostered": "2026-09-20"
     },
     {
       "name": "Venus",
@@ -6247,7 +6247,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-20",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -6941,7 +6941,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-16",
+      "lastRostered": "2026-09-20",
       "oldUrl": "https://www.stilettosydney.com/workers/sativa-new/",
       "photos": [],
       "labels": [
@@ -7427,7 +7427,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-09-20",
       "oldUrl": "https://www.stilettosydney.com/workers/angel-new/",
       "photos": [],
       "labels": [
@@ -7801,6 +7801,10 @@
       "2026-09-09": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Audrey": {
@@ -8145,10 +8149,6 @@
       "2026-07-14": {
         "start": "20:30",
         "end": "04:30"
-      },
-      "2026-09-20": {
-        "start": "16:00",
-        "end": "00:00"
       }
     },
     "Gabrielle": {
@@ -8250,6 +8250,10 @@
       },
       "2026-09-11": {
         "start": "20:00",
+        "end": "07:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
         "end": "07:00"
       }
     },
@@ -8559,6 +8563,10 @@
       "2026-09-26": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-21": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Cali": {
@@ -9896,6 +9904,10 @@
       "2026-09-11": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Sabrina": {
@@ -10255,12 +10267,7 @@
       }
     },
     "Rosie": {},
-    "Alex": {
-      "2026-09-21": {
-        "start": "20:00",
-        "end": "04:00"
-      }
-    },
+    "Alex": {},
     "Gemma": {},
     "Naomi": {
       "2026-09-20": {
@@ -10370,6 +10377,10 @@
       "2026-09-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Pia": {
@@ -10399,6 +10410,10 @@
       "2026-08-14": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Adeline": {},
@@ -10582,7 +10597,12 @@
     "Camilla": {},
     "Nova": {},
     "Storm": {},
-    "Sativa": {},
+    "Sativa": {
+      "2026-09-20": {
+        "start": "23:00",
+        "end": "07:00"
+      }
+    },
     "Shantae": {},
     "Aiko": {
       "2026-09-21": {
@@ -10672,19 +10692,15 @@
     },
     "Estelle": {},
     "Daria": {},
-    "Tyla": {
+    "Tyla": {},
+    "Astra": {},
+    "Angel": {
       "2026-09-20": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
-    "Astra": {
-      "2026-09-20": {
-        "start": "13:00",
-        "end": "23:59"
+        "start": "23:00",
+        "end": "07:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-20T13:52:22.230Z",
-  "lastCalendarSync": "2026-09-20T13:11:18.252Z"
+  "lastCalendarSync": "2026-09-20T14:18:02.762Z"
 }

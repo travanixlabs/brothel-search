@@ -3662,7 +3662,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Savana",
@@ -7427,7 +7427,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/angel-new/",
       "photos": [],
       "labels": [
@@ -7648,7 +7648,8 @@
       "2026-09-30",
       "2026-10-01",
       "2026-10-02",
-      "2026-10-03"
+      "2026-10-03",
+      "2026-10-04"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -9122,6 +9123,10 @@
         "end": "15:00"
       },
       "2026-10-03": {
+        "start": "09:00",
+        "end": "15:00"
+      },
+      "2026-10-04": {
         "start": "09:00",
         "end": "15:00"
       }
@@ -10637,5 +10642,5 @@
     "Astra": {}
   },
   "lastGirlsSync": "2026-09-19T23:51:10.738Z",
-  "lastCalendarSync": "2026-09-19T22:22:19.462Z"
+  "lastCalendarSync": "2026-09-20T00:18:38.263Z"
 }

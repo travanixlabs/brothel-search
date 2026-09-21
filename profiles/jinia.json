@@ -266,7 +266,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-02-23",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-22",
       "oldUrl": "https://jinia.com.au/ruby-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2025/05/mmexport1772181138144.jpg"
@@ -2476,7 +2476,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-21",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-22",
       "oldUrl": "https://jinia.com.au/ruby-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260821151322.jpg"
@@ -6964,6 +6964,10 @@
       "2026-09-27": {
         "start": "17:00",
         "end": "04:00"
+      },
+      "2026-09-22": {
+        "start": "17:00",
+        "end": "03:00"
       }
     },
     "Lisa": {
@@ -7000,14 +7004,6 @@
         "end": "04:00"
       },
       "2026-09-18": {
-        "start": "10:30",
-        "end": "04:00"
-      },
-      "2026-09-21": {
-        "start": "10:30",
-        "end": "04:00"
-      },
-      "2026-09-22": {
         "start": "10:30",
         "end": "04:00"
       },
@@ -7102,6 +7098,14 @@
         "end": "04:00"
       },
       "2026-09-12": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-09-21": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-09-22": {
         "start": "10:30",
         "end": "04:00"
       }
@@ -7268,5 +7272,5 @@
     }
   },
   "lastGirlsSync": "2026-09-19T23:51:40.641Z",
-  "lastCalendarSync": "2026-09-20T14:18:12.009Z"
+  "lastCalendarSync": "2026-09-21T05:16:27.433Z"
 }

@@ -7461,6 +7461,35 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Harley",
+      "country": [
+        "European"
+      ],
+      "age": "",
+      "height": "",
+      "cup": "E",
+      "body": "",
+      "desc": "Blonde bombshell Hi Handsome, My name is Harley, a striking Eastern European beauty with a slim yet curvaceous figure and a gorgeous E cup bust for you to feast your eyes on. I ooze sophisticated charm and sex appeal, with a naturally vivacious, warm, and playful presence that's sure to give you the ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "",
+      "oldUrl": "https://www.stilettosydney.com/workers/harley-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "BDSM",
+        "DFK",
+        "Role Play",
+        "Dirty Talk",
+        "Foot Fetish",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10527,7 +10556,12 @@
       }
     },
     "Rosie": {},
-    "Alex": {},
+    "Alex": {
+      "2026-09-21": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Gemma": {},
     "Naomi": {
       "2026-09-13": {
@@ -11026,6 +11060,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-20T23:47:03.556Z",
+  "lastGirlsSync": "2026-09-21T09:46:50.170Z",
   "lastCalendarSync": "2026-09-21T08:05:04.059Z"
 }

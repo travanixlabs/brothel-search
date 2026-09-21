@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-09-19",
+      "lastRostered": "2026-09-21",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -12497,10 +12497,6 @@
       "2026-08-24": {
         "start": "19:30",
         "end": "04:00"
-      },
-      "2026-09-21": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Freya": {
@@ -12678,9 +12674,13 @@
       "2026-09-19": {
         "start": "11:00",
         "end": "06:00"
+      },
+      "2026-09-21": {
+        "start": "19:30",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-11T18:51:31.649Z",
-  "lastCalendarSync": "2026-09-21T08:05:08.125Z"
+  "lastCalendarSync": "2026-09-21T10:08:00.493Z"
 }

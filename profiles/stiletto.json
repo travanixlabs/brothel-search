@@ -412,7 +412,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-10-05",
       "desc": "come say hi. Hi Handsome I'm Aurora the lady in her flirtatious 20's. I am outgoing and energetic and would like to see if you can keep up with me. I am a petite size 6 frame brunette with a natural C bust, my green eyes sparkle with passion, I am curious and ..."
     },
     {
@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-16"
+      "lastRostered": "2026-09-22"
     },
     {
       "name": "Cindy",
@@ -5185,7 +5185,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-08-11",
+      "lastRostered": "2026-09-22",
       "oldUrl": "https://www.stilettosydney.com/workers/selena-new-4/",
       "photos": [],
       "labels": [
@@ -8930,6 +8930,10 @@
       "2026-09-16": {
         "start": "18:30",
         "end": "23:00"
+      },
+      "2026-09-22": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Victoria": {
@@ -10082,6 +10086,10 @@
       "2026-09-27": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-10-05": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Lacey": {
@@ -10469,6 +10477,10 @@
       "2026-07-11": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-22": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Angelina": {},
@@ -11137,5 +11149,5 @@
     }
   },
   "lastGirlsSync": "2026-09-22T09:11:07.487Z",
-  "lastCalendarSync": "2026-09-22T11:56:17.892Z"
+  "lastCalendarSync": "2026-09-22T13:37:15.844Z"
 }

@@ -878,7 +878,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
       ],
       "labels": [],
-      "originalSite": ""
+      "originalSite": "Exists"
     },
     {
       "name": "Bobo",
@@ -1273,7 +1273,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/08/%E5%9B%BE%E7%89%87_20250828155111.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Julie",
@@ -2586,7 +2586,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/10/%E5%9B%BE%E7%89%87_20251101081431_323_2.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "🆕 Saya",
@@ -2710,6 +2710,26 @@
       "oldUrl": "https://jinia.com.au/summer/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260912072741_136_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "🆕 Ria",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-09-23",
+      "lastRostered": "2026-09-23",
+      "oldUrl": "https://jinia.com.au/ria/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260923170930.jpg",
+        "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260923170926.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -7329,6 +7349,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-19T23:51:40.641Z",
+  "lastGirlsSync": "2026-09-23T09:12:03.801Z",
   "lastCalendarSync": "2026-09-23T07:52:38.894Z"
 }

@@ -1931,6 +1931,26 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-22"
+    },
+    {
+      "name": "Sage",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "170",
+      "cup": "C",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-24",
+      "oldUrl": "https://www.thegoldenapple.com.au/escorts/",
+      "photos": [
+        "https://www.thegoldenapple.com.au/wp-content/uploads/2020/10/Darcie.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -6051,6 +6071,6 @@
     "Sapphire": {},
     "Coco": {}
   },
-  "lastGirlsSync": "2026-09-22T14:17:05.983Z",
+  "lastGirlsSync": "2026-09-24T09:07:15.820Z",
   "lastCalendarSync": "2026-09-24T05:09:45.644Z"
 }

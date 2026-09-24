@@ -680,7 +680,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23",
+      "lastRostered": "2026-10-01",
       "desc": "Handsome, I’m Carmen, Stiletto's newest petite brunette and the girl of your wettest dreams. I'm in my early 20s, striking and unforgettable, with a perfect C-cup bust, pouty lips, and eyes full of mischief and mystery. My curves are delicate yet delicious, with every inch of me designed to ..."
     },
     {
@@ -8632,6 +8632,10 @@
       "2026-09-30": {
         "start": "12:00",
         "end": "19:00"
+      },
+      "2026-10-01": {
+        "start": "12:00",
+        "end": "19:00"
       }
     },
     "Cindy": {
@@ -8964,10 +8968,6 @@
       "2026-06-27": {
         "start": "15:00",
         "end": "06:00"
-      },
-      "2026-09-24": {
-        "start": "11:00",
-        "end": "19:00"
       },
       "2026-09-25": {
         "start": "18:00",
@@ -10773,10 +10773,6 @@
     },
     "Adeline": {},
     "Chelsea": {
-      "2026-09-24": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-09-25": {
         "start": "18:00",
         "end": "02:00"
@@ -10871,10 +10867,6 @@
     },
     "Sukura": {},
     "Sakura": {
-      "2026-09-24": {
-        "start": "10:00",
-        "end": "19:00"
-      },
       "2026-09-25": {
         "start": "10:00",
         "end": "19:00"
@@ -11123,5 +11115,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T09:08:14.767Z",
-  "lastCalendarSync": "2026-09-24T07:42:37.277Z"
+  "lastCalendarSync": "2026-09-24T09:26:13.620Z"
 }

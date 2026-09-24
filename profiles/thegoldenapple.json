@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23"
+      "lastRostered": "2026-09-24"
     },
     {
       "name": "Alice",
@@ -1219,7 +1219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-21"
+      "lastRostered": "2026-09-24"
     },
     {
       "name": "Giselle",
@@ -2605,6 +2605,10 @@
       "2026-09-21": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-24": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Janelle": {
@@ -5811,6 +5815,10 @@
       "2026-09-23": {
         "start": "00:00",
         "end": "09:00"
+      },
+      "2026-09-24": {
+        "start": "01:00",
+        "end": "10:00"
       }
     },
     "Bambi": {
@@ -6059,5 +6067,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-09-24T13:43:37.893Z"
+  "lastCalendarSync": "2026-09-24T17:26:05.220Z"
 }

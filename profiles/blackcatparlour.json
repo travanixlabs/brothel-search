@@ -4156,6 +4156,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-29"
+    },
+    {
+      "name": "Sage",
+      "country": [
+        "Australian"
+      ],
+      "age": "24",
+      "height": "170",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-25",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -21144,6 +21162,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-19T18:16:23.859Z",
+  "lastGirlsSync": "2026-09-24T16:01:08.053Z",
   "lastCalendarSync": "2026-09-24T05:09:51.151Z"
 }

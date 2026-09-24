@@ -1950,7 +1950,8 @@
         "https://www.thegoldenapple.com.au/wp-content/uploads/2020/10/Darcie.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-09-24"
     }
   ],
   "calendar": {
@@ -3357,10 +3358,6 @@
         "start": "10:00",
         "end": "22:00"
       },
-      "2026-09-24": {
-        "start": "12:00",
-        "end": "19:00"
-      },
       "2026-09-27": {
         "start": "10:00",
         "end": "17:00"
@@ -3376,10 +3373,6 @@
         "end": "17:00"
       },
       "2026-04-10": {
-        "start": "10:00",
-        "end": "17:00"
-      },
-      "2026-09-24": {
         "start": "10:00",
         "end": "17:00"
       },
@@ -6069,8 +6062,14 @@
       }
     },
     "Sapphire": {},
-    "Coco": {}
+    "Coco": {},
+    "Sage": {
+      "2026-09-24": {
+        "start": "14:00",
+        "end": "21:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-09-24T05:09:45.644Z"
+  "lastCalendarSync": "2026-09-24T09:25:22.880Z"
 }

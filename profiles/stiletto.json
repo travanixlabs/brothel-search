@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-25",
+      "lastRostered": "2026-09-26",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -5826,7 +5826,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-18",
+      "lastRostered": "2026-09-25",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -7721,9 +7721,9 @@
         "start": "16:00",
         "end": "00:00"
       },
-      "2026-09-25": {
+      "2026-09-26": {
         "start": "19:00",
-        "end": "02:00"
+        "end": "03:00"
       }
     },
     "Anna": {
@@ -10538,6 +10538,10 @@
       "2026-09-12": {
         "start": "22:00",
         "end": "10:00"
+      },
+      "2026-09-25": {
+        "start": "10:30",
+        "end": "16:30"
       }
     },
     "Rosie": {
@@ -11076,5 +11080,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T19:36:30.966Z",
-  "lastCalendarSync": "2026-09-24T20:05:01.249Z"
+  "lastCalendarSync": "2026-09-24T23:16:53.101Z"
 }

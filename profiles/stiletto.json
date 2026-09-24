@@ -6275,7 +6275,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-20",
+      "lastRostered": "2026-09-24",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7407,7 +7407,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-23",
+      "lastRostered": "2026-09-24",
       "oldUrl": "https://www.stilettosydney.com/workers/astra-new/",
       "photos": [],
       "labels": [
@@ -10761,6 +10761,10 @@
       "2026-09-20": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-24": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Adeline": {},
@@ -11075,8 +11079,8 @@
     "Maisie": {},
     "Mercedes": {
       "2026-09-24": {
-        "start": "18:00",
-        "end": "02:00"
+        "start": "22:00",
+        "end": "06:00"
       },
       "2026-09-25": {
         "start": "18:00",
@@ -11094,7 +11098,12 @@
     "Estelle": {},
     "Daria": {},
     "Tyla": {},
-    "Astra": {},
+    "Astra": {
+      "2026-09-24": {
+        "start": "23:00",
+        "end": "07:00"
+      }
+    },
     "Angel": {
       "2026-09-20": {
         "start": "23:00",
@@ -11103,5 +11112,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T09:08:14.767Z",
-  "lastCalendarSync": "2026-09-24T12:03:41.929Z"
+  "lastCalendarSync": "2026-09-24T13:44:15.152Z"
 }

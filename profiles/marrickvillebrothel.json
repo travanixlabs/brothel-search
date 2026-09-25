@@ -17,7 +17,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=1",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/IMG_2170aCindy_1.jpg"
@@ -38,7 +38,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=2",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/Fri_pix44.jpg"
@@ -76,7 +76,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=4",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/Fri_pix22.jpg"
@@ -114,7 +114,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=6",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/fri_100.jpg"
@@ -171,7 +171,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=10",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/Sat_pix340.jpg"
@@ -190,7 +190,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=11",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/tues_2.jpg"
@@ -209,7 +209,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=12",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/1-1.jpg"
@@ -228,7 +228,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=13",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/IMG_1523a_1.jpg"
@@ -247,7 +247,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=14",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/IMG_2320a_1.jpg"
@@ -266,7 +266,7 @@
       "val2": "100",
       "val3": "130",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://www.marrickvillebrothel.com/page.php?ID=15",
       "photos": [
         "https://www.marrickvillebrothel.com/data/files/IMG_1695a_1.jpg"
@@ -1000,6 +1000,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "June": {
@@ -1726,6 +1730,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "La La": {
@@ -2450,6 +2458,10 @@
         "end": "00:00"
       },
       "2026-10-01": {
+        "start": "09:00",
+        "end": "00:00"
+      },
+      "2026-10-02": {
         "start": "09:00",
         "end": "00:00"
       }
@@ -4536,6 +4548,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "CoCo": {
@@ -5052,6 +5068,10 @@
         "end": "00:00"
       },
       "2026-10-01": {
+        "start": "09:00",
+        "end": "00:00"
+      },
+      "2026-10-02": {
         "start": "09:00",
         "end": "00:00"
       }
@@ -5572,6 +5592,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "Lulu": {
@@ -6088,6 +6112,10 @@
         "end": "00:00"
       },
       "2026-10-01": {
+        "start": "09:00",
+        "end": "00:00"
+      },
+      "2026-10-02": {
         "start": "09:00",
         "end": "00:00"
       }
@@ -6608,6 +6636,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "Nancy": {
@@ -7124,6 +7156,10 @@
         "end": "00:00"
       },
       "2026-10-01": {
+        "start": "09:00",
+        "end": "00:00"
+      },
+      "2026-10-02": {
         "start": "09:00",
         "end": "00:00"
       }
@@ -7644,6 +7680,10 @@
       "2026-10-01": {
         "start": "09:00",
         "end": "00:00"
+      },
+      "2026-10-02": {
+        "start": "09:00",
+        "end": "00:00"
       }
     },
     "Monica": {
@@ -8141,9 +8181,10 @@
       "2026-09-28",
       "2026-09-29",
       "2026-09-30",
-      "2026-10-01"
+      "2026-10-01",
+      "2026-10-02"
     ]
   },
   "lastGirlsSync": "2026-04-04T03:07:36.743Z",
-  "lastCalendarSync": "2026-09-24T15:20:23.343Z"
+  "lastCalendarSync": "2026-09-25T14:06:53.447Z"
 }

@@ -1391,7 +1391,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-24"
+      "lastRostered": "2026-09-25"
     },
     {
       "name": "Cammie",
@@ -5057,6 +5057,10 @@
       "2026-09-24": {
         "start": "20:00",
         "end": "05:00"
+      },
+      "2026-09-25": {
+        "start": "14:00",
+        "end": "23:00"
       }
     },
     "Darcy": {
@@ -6100,5 +6104,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-09-25T00:43:44.185Z"
+  "lastCalendarSync": "2026-09-25T05:12:04.157Z"
 }

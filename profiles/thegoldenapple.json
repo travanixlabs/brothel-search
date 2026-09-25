@@ -637,7 +637,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-22"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Janelle",
@@ -1238,7 +1238,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Mila",
@@ -1277,7 +1277,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-25"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Scarlett",
@@ -1296,7 +1296,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Snow",
@@ -1315,7 +1315,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Sophia",
@@ -1353,7 +1353,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-25"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Tiffany",
@@ -1930,7 +1930,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-22"
+      "lastRostered": "2026-09-27"
     },
     {
       "name": "Sage",
@@ -2225,6 +2225,10 @@
       "2026-09-26": {
         "start": "05:00",
         "end": "12:00"
+      },
+      "2026-09-25": {
+        "start": "13:00",
+        "end": "19:00"
       }
     },
     "Icra": {
@@ -3055,6 +3059,10 @@
       "2026-09-20": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-09-27": {
+        "start": "22:00",
+        "end": "07:00"
       }
     },
     "Mila": {
@@ -3373,6 +3381,10 @@
         "end": "17:00"
       },
       "2026-09-25": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-09-27": {
         "start": "10:00",
         "end": "17:00"
       }
@@ -4273,6 +4285,10 @@
       "2026-09-25": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-09-27": {
+        "start": "21:00",
+        "end": "06:00"
       }
     },
     "Scarlett": {
@@ -4547,6 +4563,10 @@
       "2026-09-23": {
         "start": "23:00",
         "end": "08:00"
+      },
+      "2026-09-27": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Snow": {
@@ -4805,6 +4825,10 @@
       "2026-09-23": {
         "start": "21:00",
         "end": "06:00"
+      },
+      "2026-09-27": {
+        "start": "21:00",
+        "end": "06:00"
       }
     },
     "Elise": {
@@ -4909,8 +4933,8 @@
         "end": "21:00"
       },
       "2026-09-25": {
-        "start": "13:00",
-        "end": "22:00"
+        "start": "11:00",
+        "end": "20:00"
       }
     },
     "Roxy": {},
@@ -5280,6 +5304,10 @@
         "end": "06:00"
       },
       "2026-09-16": {
+        "start": "20:00",
+        "end": "05:00"
+      },
+      "2026-09-27": {
         "start": "20:00",
         "end": "05:00"
       }
@@ -6058,7 +6086,12 @@
       }
     },
     "Sapphire": {},
-    "Coco": {},
+    "Coco": {
+      "2026-09-27": {
+        "start": "19:00",
+        "end": "04:00"
+      }
+    },
     "Sage": {
       "2026-09-26": {
         "start": "13:00",
@@ -6067,5 +6100,5 @@
     }
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-09-24T17:26:05.220Z"
+  "lastCalendarSync": "2026-09-25T00:43:44.185Z"
 }

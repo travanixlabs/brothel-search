@@ -1750,7 +1750,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-25"
+      "lastRostered": "2026-09-26"
     },
     {
       "name": "Desiree",
@@ -8553,6 +8553,10 @@
       "2026-09-25": {
         "start": "22:00",
         "end": "05:00"
+      },
+      "2026-09-26": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Evie": {
@@ -12947,5 +12951,5 @@
     }
   },
   "lastGirlsSync": "2026-09-11T18:51:31.649Z",
-  "lastCalendarSync": "2026-09-26T05:17:35.467Z"
+  "lastCalendarSync": "2026-09-26T07:53:44.687Z"
 }

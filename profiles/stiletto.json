@@ -2058,7 +2058,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-13"
+      "lastRostered": "2026-09-26"
     },
     {
       "name": "Keisha",
@@ -8974,6 +8974,10 @@
       "2026-08-14": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-26": {
+        "start": "11:30",
+        "end": "18:30"
       }
     },
     "Sydney": {
@@ -10975,5 +10979,5 @@
     }
   },
   "lastGirlsSync": "2026-09-26T00:19:35.649Z",
-  "lastCalendarSync": "2026-09-25T23:22:30.868Z"
+  "lastCalendarSync": "2026-09-26T00:48:49.256Z"
 }

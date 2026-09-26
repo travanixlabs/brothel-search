@@ -7455,7 +7455,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-20",
+      "lastRostered": "2026-09-27",
       "oldUrl": "https://www.stilettosydney.com/workers/angel-new/",
       "photos": [],
       "labels": [
@@ -8330,8 +8330,8 @@
         "end": "07:00"
       },
       "2026-09-27": {
-        "start": "18:00",
-        "end": "06:00"
+        "start": "08:00",
+        "end": "16:00"
       },
       "2026-09-29": {
         "start": "18:00",
@@ -10883,9 +10883,13 @@
       "2026-09-20": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-27": {
+        "start": "08:00",
+        "end": "16:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-26T18:48:38.112Z",
-  "lastCalendarSync": "2026-09-26T21:20:14.200Z"
+  "lastCalendarSync": "2026-09-26T23:01:30.172Z"
 }

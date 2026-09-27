@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27",
+      "lastRostered": "2026-09-27",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -4444,7 +4444,7 @@
         "Anal"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27"
+      "lastRostered": "2026-09-28"
     },
     {
       "name": "Viv",
@@ -5826,7 +5826,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-26",
+      "lastRostered": "2026-09-27",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -8093,10 +8093,6 @@
         "start": "17:00",
         "end": "23:00"
       },
-      "2026-09-27": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-09-30": {
         "start": "17:00",
         "end": "00:00"
@@ -8326,8 +8322,8 @@
         "end": "07:00"
       },
       "2026-09-27": {
-        "start": "08:00",
-        "end": "16:00"
+        "start": "18:00",
+        "end": "06:00"
       },
       "2026-09-29": {
         "start": "18:00",
@@ -8709,10 +8705,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-09-27": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-09-29": {
         "start": "13:00",
         "end": "21:00"
@@ -8879,9 +8871,9 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-09-27": {
-        "start": "09:00",
-        "end": "17:00"
+      "2026-09-28": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Ella": {
@@ -9862,6 +9854,10 @@
       "2026-06-14": {
         "start": "21:00",
         "end": "22:00"
+      },
+      "2026-09-27": {
+        "start": "14:00",
+        "end": "20:00"
       }
     },
     "Inanna Lux": {
@@ -9910,12 +9906,7 @@
         "end": "22:00"
       }
     },
-    "Lacey": {
-      "2026-09-27": {
-        "start": "10:00",
-        "end": "18:00"
-      }
-    },
+    "Lacey": {},
     "Peach": {
       "2026-04-27": {
         "start": "22:00",
@@ -10402,6 +10393,10 @@
       "2026-09-12": {
         "start": "22:00",
         "end": "10:00"
+      },
+      "2026-09-27": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Rosie": {
@@ -10600,12 +10595,7 @@
       }
     },
     "Adeline": {},
-    "Chelsea": {
-      "2026-09-27": {
-        "start": "12:00",
-        "end": "18:00"
-      }
-    },
+    "Chelsea": {},
     "Fern": {},
     "Jenna": {
       "2026-07-31": {
@@ -10837,10 +10827,6 @@
       "2026-09-28": {
         "start": "10:00",
         "end": "17:00"
-      },
-      "2026-09-27": {
-        "start": "10:00",
-        "end": "16:00"
       }
     },
     "Gracie": {},
@@ -10895,13 +10881,9 @@
       "2026-09-20": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-09-27": {
-        "start": "08:00",
-        "end": "16:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-27T00:06:12.002Z",
-  "lastCalendarSync": "2026-09-27T05:33:33.023Z"
+  "lastCalendarSync": "2026-09-27T08:24:39.147Z"
 }

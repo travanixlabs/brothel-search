@@ -10707,7 +10707,9 @@
       ],
       "labels": [],
       "lastModified": "2026-08-10T05:35:53.878Z",
-      "lastRostered": "2026-07-01"
+      "lastRostered": "2026-07-01",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-27T19:34:53.649Z"
     },
     {
       "name": "isa",

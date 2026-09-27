@@ -147,7 +147,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-09-28",
       "desc": "European and sexy Hello! My name is Alisa and I am new to Stiletto. I'm a beautiful young blonde with European spice. I have a gorgeous size 8 figure, natural C cup bust, perfectly round bubble but & soft silky skin that perfectly match my blue eyes. I offer a sweet yet playful ..."
     },
     {
@@ -8614,6 +8614,10 @@
       "2026-10-02": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-09-28": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Queen": {
@@ -9474,10 +9478,6 @@
       }
     },
     "Raelynn": {
-      "2026-09-28": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-09-29": {
         "start": "00:00",
         "end": "08:00"
@@ -9824,8 +9824,8 @@
         "end": "06:00"
       },
       "2026-09-28": {
-        "start": "00:00",
-        "end": "08:00"
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Trinity": {
@@ -9854,6 +9854,10 @@
       "2026-06-14": {
         "start": "21:00",
         "end": "22:00"
+      },
+      "2026-09-28": {
+        "start": "14:00",
+        "end": "20:00"
       }
     },
     "Inanna Lux": {
@@ -10088,10 +10092,6 @@
     "Brandy": {},
     "Yvette": {},
     "Sonya": {
-      "2026-09-28": {
-        "start": "00:00",
-        "end": "08:00"
-      },
       "2026-09-29": {
         "start": "00:00",
         "end": "08:00"
@@ -10283,10 +10283,6 @@
       "2026-08-15": {
         "start": "17:00",
         "end": "05:00"
-      },
-      "2026-09-28": {
-        "start": "11:00",
-        "end": "17:00"
       },
       "2026-09-29": {
         "start": "11:00",
@@ -10876,5 +10872,5 @@
     }
   },
   "lastGirlsSync": "2026-09-27T19:24:04.380Z",
-  "lastCalendarSync": "2026-09-27T19:50:50.145Z"
+  "lastCalendarSync": "2026-09-27T23:11:42.599Z"
 }

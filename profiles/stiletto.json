@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-09-28",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1644,7 +1644,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23"
+      "lastRostered": "2026-09-28"
     },
     {
       "name": "Honey",
@@ -2315,7 +2315,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-10"
     },
     {
       "name": "Lacey",
@@ -2441,7 +2441,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-25"
+      "lastRostered": "2026-10-11"
     },
     {
       "name": "Lilly",
@@ -7873,6 +7873,10 @@
       "2026-09-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-28": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Audrey": {
@@ -8036,9 +8040,9 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-09-28": {
-        "start": "22:00",
-        "end": "06:00"
+      "2026-09-29": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Opal": {
@@ -8119,6 +8123,14 @@
       "2026-10-05": {
         "start": "09:00",
         "end": "18:00"
+      },
+      "2026-10-08": {
+        "start": "10:30",
+        "end": "18:30"
+      },
+      "2026-10-10": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Carol": {
@@ -8215,6 +8227,10 @@
       "2026-09-21": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-28": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Flora": {
@@ -9108,6 +9124,22 @@
         "end": "00:00"
       },
       "2026-04-08": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-10-08": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-10-09": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-10-10": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-10-11": {
         "start": "16:00",
         "end": "00:00"
       }
@@ -10884,5 +10916,5 @@
     }
   },
   "lastGirlsSync": "2026-09-28T10:42:41.381Z",
-  "lastCalendarSync": "2026-09-28T11:07:40.259Z"
+  "lastCalendarSync": "2026-09-28T14:17:48.623Z"
 }

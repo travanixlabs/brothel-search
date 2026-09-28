@@ -45,7 +45,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27"
+      "lastRostered": "2026-09-28"
     },
     {
       "name": "Alice",
@@ -1553,7 +1553,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-28"
+      "lastRostered": "2026-09-30"
     },
     {
       "name": "Tina",
@@ -5897,6 +5897,10 @@
       "2026-09-27": {
         "start": "01:00",
         "end": "09:00"
+      },
+      "2026-09-28": {
+        "start": "00:00",
+        "end": "09:00"
       }
     },
     "Bambi": {
@@ -5908,7 +5912,7 @@
         "start": "430:00",
         "end": "142:00"
       },
-      "2026-09-28": {
+      "2026-09-30": {
         "start": "18:00",
         "end": "01:00"
       }
@@ -6161,5 +6165,5 @@
     "Sage": {}
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-09-28T14:17:21.214Z"
+  "lastCalendarSync": "2026-09-28T18:12:42.018Z"
 }

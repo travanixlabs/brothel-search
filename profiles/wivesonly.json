@@ -1304,7 +1304,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-09-29",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -4436,6 +4436,10 @@
       "2026-09-27": {
         "start": "20:00",
         "end": "02:00"
+      },
+      "2026-09-29": {
+        "start": "18:00",
+        "end": "00:00"
       }
     },
     "Cherry": {
@@ -13098,5 +13102,5 @@
     }
   },
   "lastGirlsSync": "2026-09-11T18:51:31.649Z",
-  "lastCalendarSync": "2026-09-28T14:17:53.068Z"
+  "lastCalendarSync": "2026-09-29T10:49:51.015Z"
 }

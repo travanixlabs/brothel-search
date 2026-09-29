@@ -7036,7 +7036,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-11-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-09",
       "oldUrl": "https://www.stilettosydney.com/workers/aiko/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/11/AIKO-3.jpg",
@@ -11106,6 +11106,26 @@
       "2026-10-04": {
         "start": "10:00",
         "end": "17:00"
+      },
+      "2026-10-05": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-06": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-07": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-08": {
+        "start": "10:00",
+        "end": "17:00"
+      },
+      "2026-10-09": {
+        "start": "10:00",
+        "end": "14:00"
       }
     },
     "Gracie": {},
@@ -11174,5 +11194,5 @@
     }
   },
   "lastGirlsSync": "2026-09-29T20:19:31.322Z",
-  "lastCalendarSync": "2026-09-29T22:27:18.520Z"
+  "lastCalendarSync": "2026-09-29T23:49:35.519Z"
 }

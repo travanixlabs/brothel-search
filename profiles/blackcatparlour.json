@@ -4175,6 +4175,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-09-26"
+    },
+    {
+      "name": "Kimberley",
+      "country": [
+        "Australian"
+      ],
+      "age": "34",
+      "height": "165",
+      "cup": "D",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-29",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -21633,6 +21651,6 @@
     },
     "Sage": {}
   },
-  "lastGirlsSync": "2026-09-24T16:01:08.053Z",
+  "lastGirlsSync": "2026-09-29T10:01:25.386Z",
   "lastCalendarSync": "2026-09-29T08:46:29.121Z"
 }

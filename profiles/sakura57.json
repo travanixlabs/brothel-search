@@ -10991,7 +10991,9 @@
       ],
       "labels": [],
       "lastModified": "2026-07-30T06:30:50.915Z",
-      "lastRostered": "2026-07-30"
+      "lastRostered": "2026-07-30",
+      "deleted": "Yes",
+      "deletedAt": "2026-09-29T20:30:25.454Z"
     },
     {
       "name": "noa",

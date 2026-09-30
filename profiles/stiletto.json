@@ -209,7 +209,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02",
+      "lastRostered": "2026-10-08",
       "desc": "I am an elegant and graceful petite angel with a statuesque figure, complemented by size 6 measurements and B cup bust. My brunette locks cascade down my shoulders, framing my striking face. My sparkling brown eyes are windows to a world of mystery and allure, drawing you in with ..."
     },
     {
@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-28",
+      "lastRostered": "2026-09-30",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -6275,7 +6275,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-28",
+      "lastRostered": "2026-09-30",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -6400,7 +6400,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-30",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://www.stilettosydney.com/workers/jenna-new-2/",
       "photos": [],
       "labels": [
@@ -8005,6 +8005,10 @@
       "2026-09-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-09-30": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Audrey": {
@@ -8477,10 +8481,6 @@
         "end": "07:00"
       },
       "2026-09-27": {
-        "start": "18:00",
-        "end": "06:00"
-      },
-      "2026-09-30": {
         "start": "18:00",
         "end": "06:00"
       },
@@ -9296,10 +9296,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-10-01": {
-        "start": "12:00",
-        "end": "19:00"
-      },
       "2026-10-02": {
         "start": "12:00",
         "end": "19:00"
@@ -9319,6 +9315,14 @@
         "end": "15:30"
       },
       "2026-10-02": {
+        "start": "09:30",
+        "end": "15:30"
+      },
+      "2026-10-06": {
+        "start": "09:30",
+        "end": "15:30"
+      },
+      "2026-10-08": {
         "start": "09:30",
         "end": "15:30"
       }
@@ -9435,14 +9439,6 @@
       "2026-04-07": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-09-30": {
-        "start": "08:00",
-        "end": "16:00"
-      },
-      "2026-10-01": {
-        "start": "08:00",
-        "end": "16:00"
       }
     },
     "Jayde": {
@@ -10623,8 +10619,8 @@
         "end": "02:00"
       },
       "2026-09-30": {
-        "start": "19:00",
-        "end": "02:00"
+        "start": "20:00",
+        "end": "03:00"
       }
     },
     "Malibu": {},
@@ -10806,6 +10802,10 @@
       "2026-09-24": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-09-30": {
+        "start": "18:00",
+        "end": "04:00"
       }
     },
     "Adeline": {},
@@ -10837,9 +10837,17 @@
         "start": "19:00",
         "end": "05:00"
       },
-      "2026-09-30": {
-        "start": "09:00",
-        "end": "17:00"
+      "2026-10-06": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-07": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Romy": {
@@ -11128,10 +11136,6 @@
     "Estelle": {},
     "Daria": {},
     "Tyla": {
-      "2026-09-30": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-10-01": {
         "start": "12:00",
         "end": "20:00"
@@ -11177,5 +11181,5 @@
     }
   },
   "lastGirlsSync": "2026-09-30T00:57:07.608Z",
-  "lastCalendarSync": "2026-09-30T05:48:52.632Z"
+  "lastCalendarSync": "2026-09-30T08:47:03.095Z"
 }

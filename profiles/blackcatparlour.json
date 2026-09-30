@@ -126,7 +126,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Amber",
@@ -168,7 +168,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Amy",
@@ -772,7 +772,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-15"
+      "lastRostered": "2026-10-02"
     },
     {
       "name": "Diamond",
@@ -1054,7 +1054,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Hallie",
@@ -1405,7 +1405,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Lana on holidays",
@@ -2118,7 +2118,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Shannon",
@@ -2158,7 +2158,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Snow",
@@ -2295,7 +2295,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Tokyo",
@@ -3300,7 +3300,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Bee",
@@ -3851,7 +3851,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Courtney",
@@ -3984,7 +3984,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Blue",
@@ -4193,7 +4193,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Elena",
@@ -4212,7 +4212,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-07"
     }
   ],
   "calendar": {
@@ -4403,7 +4403,8 @@
       "2026-10-03",
       "2026-10-04",
       "2026-10-05",
-      "2026-10-06"
+      "2026-10-06",
+      "2026-10-07"
     ],
     "Amany": {
       "2026-04-05": {
@@ -4639,6 +4640,10 @@
         "end": "06:00"
       },
       "2026-10-04": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -5966,6 +5971,10 @@
       },
       "2026-09-30": {
         "start": "06:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
         "end": "06:00"
       }
     },
@@ -10125,6 +10134,10 @@
       "2026-10-04": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Janelle": {
@@ -10397,6 +10410,10 @@
         "end": "06:00"
       },
       "2026-10-05": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -12159,10 +12176,6 @@
       "2026-09-30": {
         "start": "06:00",
         "end": "18:00"
-      },
-      "2026-10-01": {
-        "start": "06:00",
-        "end": "18:00"
       }
     },
     "Tasha": {
@@ -13095,6 +13108,10 @@
         "end": "06:00"
       },
       "2026-10-04": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -14739,6 +14756,10 @@
         "end": "06:00"
       },
       "2026-10-06": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -17475,6 +17496,10 @@
       "2026-10-04": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Charlie ***": {
@@ -19122,6 +19147,10 @@
       "2026-09-08": {
         "start": "06:00",
         "end": "06:00"
+      },
+      "2026-10-02": {
+        "start": "06:00",
+        "end": "18:00"
       }
     },
     "Faith": {
@@ -19745,6 +19774,10 @@
         "end": "06:00"
       },
       "2026-09-30": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-10-07": {
         "start": "18:00",
         "end": "06:00"
       }
@@ -21160,6 +21193,10 @@
       "2026-09-30": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Iris": {
@@ -21424,6 +21461,10 @@
       "2026-09-30": {
         "start": "06:00",
         "end": "18:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Blue": {
@@ -21643,9 +21684,19 @@
       "2026-09-30": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Elena": {
+      "2026-10-07": {
+        "start": "18:00",
+        "end": "06:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-30T10:02:31.095Z",
-  "lastCalendarSync": "2026-09-30T12:52:19.164Z"
+  "lastCalendarSync": "2026-09-30T15:11:39.266Z"
 }

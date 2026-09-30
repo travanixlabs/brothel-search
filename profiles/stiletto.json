@@ -7650,6 +7650,51 @@
         "BBBJ"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Cherri",
+      "country": [
+        "Australian"
+      ],
+      "age": "20",
+      "height": "",
+      "cup": "C",
+      "body": "10",
+      "desc": "A Sweet Time Hello there My name is Cherri & i am Stiletto's newest flavour Come meet this petite Australian beauty with a personality as bright as her hair. At 20 years old, I’m 167cm tall with a feminine size 10 figure, natural C -cup curves, captivating brown eyes, and unmistakable fluorescent hot ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-10-01",
+      "oldUrl": "https://www.stilettosydney.com/workers/cherri-new/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "BDSM",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Double Lesbian",
+        "COB",
+        "Adventurous Positions",
+        "DFK",
+        "Disabled",
+        "Golden Showers",
+        "Escort",
+        "2 Men",
+        "Role Play",
+        "Dirty Talk",
+        "Rimming",
+        "Body Slide",
+        "Female Ejaculation",
+        "Party Bookings",
+        "Stripping",
+        "Social Escort",
+        "Bondage",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11192,8 +11237,26 @@
         "start": "22:00",
         "end": "06:00"
       }
+    },
+    "Cherri": {
+      "2026-10-01": {
+        "start": "01:00",
+        "end": "05:00"
+      },
+      "2026-10-02": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-10-03": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-10-04": {
+        "start": "17:00",
+        "end": "01:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-09-30T10:22:04.933Z",
+  "lastGirlsSync": "2026-09-30T16:13:21.321Z",
   "lastCalendarSync": "2026-09-30T15:12:37.577Z"
 }

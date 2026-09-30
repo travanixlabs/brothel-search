@@ -7533,7 +7533,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-01",
       "oldUrl": "https://www.stilettosydney.com/workers/amor-new/",
       "photos": [],
       "labels": [
@@ -7665,7 +7665,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-04",
       "oldUrl": "https://www.stilettosydney.com/workers/cherri-new/",
       "photos": [],
       "labels": [
@@ -11255,8 +11255,14 @@
         "start": "17:00",
         "end": "01:00"
       }
+    },
+    "Amor": {
+      "2026-10-01": {
+        "start": "01:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-09-30T16:13:21.321Z",
-  "lastCalendarSync": "2026-09-30T15:12:37.577Z"
+  "lastCalendarSync": "2026-09-30T16:27:37.023Z"
 }

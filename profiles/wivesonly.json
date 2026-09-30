@@ -3259,6 +3259,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Maddie",
+      "country": [
+        "Maori"
+      ],
+      "age": "33",
+      "height": "5'1",
+      "cup": "C",
+      "body": "8",
+      "desc": "33, Māori, petite and pretty with fair skin, glossy black hair, and a gorgeous size 8 figure. Maddie brings a cheeky smile, playful personality, and plenty of charm wherever she goes.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/maddie/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13154,6 +13176,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-11T18:51:31.649Z",
+  "lastGirlsSync": "2026-09-30T10:22:27.595Z",
   "lastCalendarSync": "2026-09-30T08:47:06.984Z"
 }

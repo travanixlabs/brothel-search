@@ -4194,6 +4194,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-10-06"
+    },
+    {
+      "name": "Elena",
+      "country": [
+        "Australian"
+      ],
+      "age": "35",
+      "height": "165",
+      "cup": "C",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-09-30",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -21695,6 +21713,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-09-29T10:01:25.386Z",
+  "lastGirlsSync": "2026-09-30T10:02:31.095Z",
   "lastCalendarSync": "2026-09-30T01:28:09.734Z"
 }

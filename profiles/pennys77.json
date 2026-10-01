@@ -965,7 +965,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-01"
+      "lastRostered": "2026-10-02"
     },
     {
       "name": "Ruby",
@@ -1049,7 +1049,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-02"
     }
   ],
   "calendar": {
@@ -5209,6 +5209,10 @@
       "2026-09-30": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-02": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Ruby": {},
@@ -5244,9 +5248,13 @@
       "2026-09-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-02": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-01T15:36:37.330Z"
+  "lastCalendarSync": "2026-10-01T18:30:41.877Z"
 }

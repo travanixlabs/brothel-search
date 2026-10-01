@@ -7695,6 +7695,39 @@
         "Fingering"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Tessa",
+      "country": [
+        "Exotic Mix"
+      ],
+      "age": "27",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "AUSTRALIAN x Asian Sweetheart Hi Boys, I am a stunning raven-haired beauty in my mid 20s, with a petite frame adorned with a perfectly perky C-cup bust. Sexy, seductive, and here to cater to your every need. The epitome of your perfect playmate, I know how to have a good time and ensure ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-10-01",
+      "oldUrl": "https://www.stilettosydney.com/workers/tessa/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "DFK",
+        "Fetish",
+        "Role Play",
+        "Dirty Talk",
+        "Social Escort",
+        "Fingering"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -10720,7 +10753,12 @@
         "end": "03:00"
       }
     },
-    "Alex": {},
+    "Alex": {
+      "2026-10-05": {
+        "start": "20:00",
+        "end": "04:00"
+      }
+    },
     "Gemma": {},
     "Naomi": {
       "2026-09-13": {
@@ -11286,8 +11324,18 @@
         "end": "01:00"
       }
     },
-    "Amor": {}
+    "Amor": {},
+    "Tessa": {
+      "2026-10-04": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-10-05": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-10-01T00:59:30.206Z",
+  "lastGirlsSync": "2026-10-01T10:48:16.628Z",
   "lastCalendarSync": "2026-10-01T09:10:06.851Z"
 }

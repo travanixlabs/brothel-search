@@ -4167,7 +4167,7 @@
         "Kissing (on body)"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-20"
+      "lastRostered": "2026-10-01"
     },
     {
       "name": "Tahlia",
@@ -9166,6 +9166,10 @@
       "2026-08-08": {
         "start": "10:00",
         "end": "16:00"
+      },
+      "2026-10-01": {
+        "start": "12:00",
+        "end": "19:00"
       }
     },
     "Jamie": {
@@ -11234,5 +11238,5 @@
     "Amor": {}
   },
   "lastGirlsSync": "2026-09-30T20:23:37.862Z",
-  "lastCalendarSync": "2026-09-30T22:26:26.316Z"
+  "lastCalendarSync": "2026-10-01T00:00:52.818Z"
 }

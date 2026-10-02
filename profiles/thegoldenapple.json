@@ -848,7 +848,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-01"
+      "lastRostered": "2026-10-02"
     },
     {
       "name": "Mia",
@@ -3926,6 +3926,10 @@
       "2026-09-14": {
         "start": "17:00",
         "end": "23:00"
+      },
+      "2026-10-02": {
+        "start": "11:00",
+        "end": "17:00"
       }
     },
     "Amanda": {
@@ -6260,5 +6264,5 @@
     "Sage": {}
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-10-02T01:46:47.965Z"
+  "lastCalendarSync": "2026-10-02T05:58:49.170Z"
 }

@@ -799,7 +799,7 @@
       "originalSite": "Exists"
     },
     {
-      "name": "🆕 Lily",
+      "name": "Lily",
       "country": [
         "Chinese"
       ],
@@ -1210,7 +1210,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/09/11111111111.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Star",
@@ -1231,7 +1231,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250911100245.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Jasmine",
@@ -2788,6 +2788,44 @@
       "oldUrl": "https://jinia.com.au/saya-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260920044214_170_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "NEW Ivy",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-10-01",
+      "lastRostered": "2026-10-01",
+      "oldUrl": "https://jinia.com.au/ivy/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094630.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "NEW Candy",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-10-01",
+      "lastRostered": "2026-10-01",
+      "oldUrl": "https://jinia.com.au/candy/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094249.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -6496,56 +6534,6 @@
         "end": "04:00"
       }
     },
-    "🆕 Lily": {
-      "2026-08-10": {
-        "start": "16:00",
-        "end": "03:00"
-      },
-      "2026-08-11": {
-        "start": "16:00",
-        "end": "03:00"
-      },
-      "2026-08-12": {
-        "start": "16:00",
-        "end": "03:00"
-      },
-      "2026-08-18": {
-        "start": "16:00",
-        "end": "03:00"
-      },
-      "2026-08-26": {
-        "start": "16:00",
-        "end": "03:00"
-      },
-      "2026-08-27": {
-        "start": "11:00",
-        "end": "04:00"
-      },
-      "2026-09-22": {
-        "start": "10:30",
-        "end": "04:00"
-      },
-      "2026-09-23": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-09-24": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-09-25": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-09-26": {
-        "start": "11:00",
-        "end": "03:00"
-      },
-      "2026-09-27": {
-        "start": "11:00",
-        "end": "03:00"
-      }
-    },
     "Mia": {
       "2026-08-21": {
         "start": "10:30",
@@ -7661,8 +7649,57 @@
         "end": "04:00"
       }
     },
-    "Lily": {}
+    "Lily": {
+      "2026-08-10": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-08-11": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-08-12": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-08-18": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-08-26": {
+        "start": "16:00",
+        "end": "03:00"
+      },
+      "2026-08-27": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-09-22": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-09-23": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-24": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-25": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-26": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-09-27": {
+        "start": "11:00",
+        "end": "03:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-09-30T10:22:35.465Z",
+  "lastGirlsSync": "2026-10-02T01:14:41.342Z",
   "lastCalendarSync": "2026-10-01T23:59:53.022Z"
 }

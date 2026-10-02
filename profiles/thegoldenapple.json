@@ -1553,7 +1553,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Tina",
@@ -5973,6 +5973,10 @@
       "2026-07-17": {
         "start": "430:00",
         "end": "142:00"
+      },
+      "2026-10-03": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Tina": {
@@ -6223,5 +6227,5 @@
     "Sage": {}
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-10-02T17:57:36.349Z"
+  "lastCalendarSync": "2026-10-02T22:23:29.766Z"
 }

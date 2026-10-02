@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Nicole",
@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Nana",
@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Anjali",
@@ -526,7 +526,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Irene",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Tea",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Siya",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Jenny",
@@ -923,7 +923,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Honey",
@@ -965,7 +965,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Ruby",
@@ -1049,7 +1049,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-03"
     }
   ],
   "calendar": {
@@ -1363,6 +1363,10 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1547,7 +1551,8 @@
       "2026-09-29",
       "2026-09-30",
       "2026-10-01",
-      "2026-10-02"
+      "2026-10-02",
+      "2026-10-03"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -1979,6 +1984,10 @@
         "end": "03:00"
       },
       "2026-10-02": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3097,6 +3106,10 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Hana": {
@@ -3429,6 +3442,10 @@
         "end": "03:00"
       },
       "2026-10-02": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4325,6 +4342,10 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -4737,6 +4758,10 @@
         "end": "03:00"
       },
       "2026-10-02": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5169,6 +5194,10 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Honey": {
@@ -5213,6 +5242,10 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Ruby": {},
@@ -5252,9 +5285,13 @@
       "2026-10-02": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-01T18:30:41.877Z"
+  "lastCalendarSync": "2026-10-02T14:55:44.732Z"
 }

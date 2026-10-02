@@ -2183,7 +2183,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-02"
     },
     {
       "name": "Sienna",
@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -5546,6 +5546,10 @@
       "2026-09-30": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-02": {
+        "start": "14:00",
+        "end": "06:00"
       }
     },
     "Giselle": {
@@ -12548,6 +12552,10 @@
       "2026-10-01": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-02": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Ava": {
@@ -13285,5 +13293,5 @@
     }
   },
   "lastGirlsSync": "2026-09-30T10:22:27.595Z",
-  "lastCalendarSync": "2026-10-02T08:43:20.695Z"
+  "lastCalendarSync": "2026-10-02T12:58:21.924Z"
 }

@@ -2803,7 +2803,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-03",
       "oldUrl": "https://jinia.com.au/ivy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094630.jpg"
@@ -2822,7 +2822,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-02",
       "oldUrl": "https://jinia.com.au/candy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094249.jpg"
@@ -7698,8 +7698,24 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "NEW Ivy": {
+      "2026-10-02": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-10-03": {
+        "start": "11:00",
+        "end": "04:00"
+      }
+    },
+    "NEW Candy": {
+      "2026-10-02": {
+        "start": "11:00",
+        "end": "04:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-02T01:14:41.342Z",
-  "lastCalendarSync": "2026-10-01T23:59:53.022Z"
+  "lastCalendarSync": "2026-10-02T01:47:27.470Z"
 }

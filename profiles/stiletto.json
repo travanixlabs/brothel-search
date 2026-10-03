@@ -1825,7 +1825,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Jess",
@@ -5030,7 +5030,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-03",
       "oldUrl": "https://www.stilettosydney.com/workers/yasmin-new/",
       "photos": [],
       "labels": [
@@ -9554,6 +9554,10 @@
       "2026-10-01": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-04": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Elizabeth": {
@@ -10372,6 +10376,10 @@
       "2026-04-30": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-03": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Brittney": {},
@@ -10624,12 +10632,7 @@
         "end": "03:00"
       }
     },
-    "Alex": {
-      "2026-10-05": {
-        "start": "20:00",
-        "end": "04:00"
-      }
-    },
+    "Alex": {},
     "Gemma": {},
     "Naomi": {
       "2026-09-13": {
@@ -11160,5 +11163,5 @@
     }
   },
   "lastGirlsSync": "2026-10-03T14:30:30.917Z",
-  "lastCalendarSync": "2026-10-03T13:38:24.399Z"
+  "lastCalendarSync": "2026-10-03T14:47:21.308Z"
 }

@@ -4230,7 +4230,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-10-03"
     },
     {
       "name": "Zara",
@@ -4248,7 +4249,8 @@
       "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
       "photos": [],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-10-03"
     }
   ],
   "calendar": {
@@ -21880,5 +21882,5 @@
     "Elena": {}
   },
   "lastGirlsSync": "2026-10-03T09:44:22.182Z",
-  "lastCalendarSync": "2026-10-03T05:34:14.006Z"
+  "lastCalendarSync": "2026-10-03T09:58:13.248Z"
 }

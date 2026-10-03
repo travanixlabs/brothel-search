@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Nicole",
@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Nana",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Tea",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Siya",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Jenny",
@@ -1049,7 +1049,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Sulli",
@@ -1388,6 +1388,10 @@
       "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1573,7 +1577,8 @@
       "2026-09-30",
       "2026-10-01",
       "2026-10-02",
-      "2026-10-03"
+      "2026-10-03",
+      "2026-10-04"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -2009,6 +2014,10 @@
         "end": "03:00"
       },
       "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-04": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4359,6 +4368,10 @@
       "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -4775,6 +4788,10 @@
         "end": "03:00"
       },
       "2026-10-03": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-04": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5294,10 +5311,14 @@
       "2026-10-03": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sulli": {}
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-03T05:34:02.781Z"
+  "lastCalendarSync": "2026-10-03T14:46:32.810Z"
 }

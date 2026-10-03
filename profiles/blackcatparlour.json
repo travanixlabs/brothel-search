@@ -4213,6 +4213,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-10-07"
+    },
+    {
+      "name": "Baby",
+      "country": [
+        "Spanish"
+      ],
+      "age": "29",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Zara",
+      "country": [
+        "Australian"
+      ],
+      "age": "25",
+      "height": "165",
+      "cup": "B",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-03",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -21843,6 +21879,6 @@
     },
     "Elena": {}
   },
-  "lastGirlsSync": "2026-09-30T10:02:31.095Z",
+  "lastGirlsSync": "2026-10-03T09:44:22.182Z",
   "lastCalendarSync": "2026-10-03T05:34:14.006Z"
 }

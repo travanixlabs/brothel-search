@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-24"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Cindy",
@@ -1354,7 +1354,7 @@
         "Cosplay"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Gaia",
@@ -5960,7 +5960,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-14",
+      "lastRostered": "2026-10-18",
       "oldUrl": "https://www.stilettosydney.com/workers/naomi-new/",
       "photos": [],
       "labels": [
@@ -7926,7 +7926,8 @@
       "2026-10-11",
       "2026-10-13",
       "2026-10-14",
-      "2026-10-15"
+      "2026-10-15",
+      "2026-10-18"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -8528,6 +8529,10 @@
       "2026-10-03": {
         "start": "18:00",
         "end": "06:00"
+      },
+      "2026-10-04": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Jasmine": {
@@ -9064,6 +9069,10 @@
       "2026-09-22": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-04": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Victoria": {
@@ -10585,6 +10594,10 @@
       "2026-10-14": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-10-18": {
+        "start": "19:00",
+        "end": "02:00"
       }
     },
     "Malibu": {},
@@ -11085,5 +11098,5 @@
     }
   },
   "lastGirlsSync": "2026-10-04T00:18:02.103Z",
-  "lastCalendarSync": "2026-10-04T06:10:43.104Z"
+  "lastCalendarSync": "2026-10-04T08:36:56.367Z"
 }

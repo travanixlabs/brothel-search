@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Nicole",
@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Nana",
@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Sonia",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Tea",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Siya",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Jenny",
@@ -1049,7 +1049,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Sulli",
@@ -1392,6 +1392,10 @@
       "2026-10-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1578,7 +1582,8 @@
       "2026-10-01",
       "2026-10-02",
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -2018,6 +2023,10 @@
         "end": "03:00"
       },
       "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-05": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -2474,6 +2483,10 @@
         "end": "03:00"
       },
       "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-05": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4376,6 +4389,10 @@
       "2026-10-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -4796,6 +4813,10 @@
         "end": "03:00"
       },
       "2026-10-04": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-05": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5319,10 +5340,14 @@
       "2026-10-04": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sulli": {}
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-04T01:56:04.111Z"
+  "lastCalendarSync": "2026-10-04T14:18:20.453Z"
 }

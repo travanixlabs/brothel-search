@@ -143,7 +143,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03",
+      "lastRostered": "2026-10-05",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Samira",
@@ -2060,7 +2060,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-29"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Ximena",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-01"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Clarisse",
@@ -2547,7 +2547,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-08-02",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/?page_id=6172&preview=true",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-09-25",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-02",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6403,7 +6403,8 @@
       "2026-10-01",
       "2026-10-02",
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7379,6 +7380,10 @@
         "end": "17:30"
       },
       "2026-10-01": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-10-05": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -9860,6 +9865,10 @@
       "2026-06-05": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-05": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Gina": {
@@ -11166,6 +11175,10 @@
       "2026-09-29": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "VV": {
@@ -11592,6 +11605,10 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Chrissy": {
@@ -12134,6 +12151,10 @@
       "2026-10-03": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Aven": {
@@ -12381,6 +12402,10 @@
       },
       "2026-10-04": {
         "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-10-05": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -12863,6 +12888,10 @@
       "2026-09-25": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Summer": {
@@ -13057,6 +13086,10 @@
       "2026-10-04": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-10-05": {
+        "start": "16:00",
+        "end": "01:00"
       }
     },
     "Dior": {
@@ -13067,6 +13100,10 @@
       "2026-10-03": {
         "start": "17:00",
         "end": "00:00"
+      },
+      "2026-10-05": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Sofia": {
@@ -13419,6 +13456,10 @@
       "2026-10-02": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-05": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddie": {
@@ -13433,5 +13474,5 @@
     }
   },
   "lastGirlsSync": "2026-10-02T16:03:46.942Z",
-  "lastCalendarSync": "2026-10-03T14:47:25.875Z"
+  "lastCalendarSync": "2026-10-04T14:19:19.112Z"
 }

@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-26",
+      "lastRostered": "2026-10-04",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30",
+      "lastRostered": "2026-10-04",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1312,7 +1312,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Gabrielle",
@@ -3232,7 +3232,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-04"
     },
     {
       "name": "Quinn",
@@ -8419,6 +8419,10 @@
       "2026-07-14": {
         "start": "20:30",
         "end": "04:30"
+      },
+      "2026-10-04": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Gabrielle": {
@@ -8755,6 +8759,10 @@
       "2026-10-09": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-04": {
+        "start": "21:00",
+        "end": "05:00"
       }
     },
     "Carmen": {
@@ -8815,10 +8823,6 @@
       "2026-10-11": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-10-04": {
-        "start": "12:00",
-        "end": "20:00"
       }
     },
     "Queen": {
@@ -8865,6 +8869,10 @@
       "2026-09-30": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-10-04": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Cali": {
@@ -9145,8 +9153,8 @@
         "end": "06:00"
       },
       "2026-10-04": {
-        "start": "15:00",
-        "end": "22:00"
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Sydney": {
@@ -10584,12 +10592,7 @@
         "end": "17:00"
       }
     },
-    "Alex": {
-      "2026-10-05": {
-        "start": "20:00",
-        "end": "04:00"
-      }
-    },
+    "Alex": {},
     "Gemma": {},
     "Naomi": {
       "2026-09-13": {
@@ -10943,6 +10946,10 @@
       "2026-10-11": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-10-05": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Ivy": {
@@ -10981,6 +10988,10 @@
       "2026-10-10": {
         "start": "19:00",
         "end": "06:00"
+      },
+      "2026-10-04": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "York": {},
@@ -11043,10 +11054,6 @@
     "Gracie": {},
     "Lucy": {},
     "Delilah": {
-      "2026-10-04": {
-        "start": "13:00",
-        "end": "21:00"
-      },
       "2026-10-07": {
         "start": "19:00",
         "end": "23:00"
@@ -11111,5 +11118,5 @@
     }
   },
   "lastGirlsSync": "2026-10-04T10:28:47.260Z",
-  "lastCalendarSync": "2026-10-04T08:36:56.367Z"
+  "lastCalendarSync": "2026-10-04T10:41:45.637Z"
 }

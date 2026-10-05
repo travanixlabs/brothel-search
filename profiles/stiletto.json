@@ -3046,7 +3046,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-28"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Ophelia",
@@ -5826,7 +5826,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-06",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -7036,7 +7036,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-11-01",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-11",
       "oldUrl": "https://www.stilettosydney.com/workers/aiko/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/11/AIKO-3.jpg",
@@ -8228,6 +8228,22 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
+      },
+      "2026-10-06": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-10-07": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-10-08": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-10-09": {
+        "start": "08:00",
+        "end": "20:00"
       }
     },
     "Grace": {
@@ -9280,10 +9296,6 @@
       "2026-10-11": {
         "start": "16:00",
         "end": "00:00"
-      },
-      "2026-10-05": {
-        "start": "17:00",
-        "end": "01:00"
       }
     },
     "Coco": {
@@ -10504,6 +10516,10 @@
       "2026-09-12": {
         "start": "22:00",
         "end": "10:00"
+      },
+      "2026-10-06": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Rosie": {
@@ -10941,6 +10957,10 @@
       "2026-10-09": {
         "start": "10:00",
         "end": "14:00"
+      },
+      "2026-10-11": {
+        "start": "09:30",
+        "end": "09:30"
       }
     },
     "Gracie": {},
@@ -11000,5 +11020,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-05T11:16:45.841Z",
-  "lastCalendarSync": "2026-10-05T09:18:05.694Z"
+  "lastCalendarSync": "2026-10-05T15:06:07.595Z"
 }

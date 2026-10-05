@@ -3303,6 +3303,30 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Ali",
+      "country": [
+        "Australian"
+      ],
+      "age": "42",
+      "height": "160cm",
+      "cup": "D",
+      "body": "",
+      "desc": "Meet Ali — a mature blonde Aussie with a petite, feminine presence and confident personality. Standing at 160cm, she combines a sweet, approachable nature with the poise and sophistication that come with life experience.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-10-01",
+      "lastRostered": "2026-10-01",
+      "oldUrl": "https://wivesonly.com.au/ali/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/10/ali-new-1.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2026/10/ali-new-3.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2026/10/ali-new-2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13477,6 +13501,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-02T16:03:46.942Z",
+  "lastGirlsSync": "2026-10-05T11:17:09.788Z",
   "lastCalendarSync": "2026-10-05T01:09:52.863Z"
 }

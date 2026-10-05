@@ -881,7 +881,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09"
+      "lastRostered": "2026-10-10"
     },
     {
       "name": "Daisy",
@@ -9322,6 +9322,10 @@
       "2026-10-09": {
         "start": "07:30",
         "end": "13:00"
+      },
+      "2026-10-10": {
+        "start": "06:00",
+        "end": "12:00"
       }
     },
     "Amelia": {
@@ -11036,5 +11040,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-05T22:15:09.338Z",
-  "lastCalendarSync": "2026-10-05T21:32:46.764Z"
+  "lastCalendarSync": "2026-10-05T22:52:13.250Z"
 }

@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-05",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -2285,7 +2285,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-05"
     },
     {
       "name": "Katalina",
@@ -7690,6 +7690,10 @@
       "2026-10-03": {
         "start": "22:30",
         "end": "06:00"
+      },
+      "2026-10-05": {
+        "start": "21:30",
+        "end": "04:00"
       }
     },
     "Talia": {
@@ -9867,8 +9871,8 @@
         "end": "06:00"
       },
       "2026-10-05": {
-        "start": "12:00",
-        "end": "20:00"
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Gina": {
@@ -10889,6 +10893,10 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-10-05": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -13100,10 +13108,6 @@
       "2026-10-03": {
         "start": "17:00",
         "end": "00:00"
-      },
-      "2026-10-05": {
-        "start": "11:00",
-        "end": "19:30"
       }
     },
     "Sofia": {
@@ -13474,5 +13478,5 @@
     }
   },
   "lastGirlsSync": "2026-10-02T16:03:46.942Z",
-  "lastCalendarSync": "2026-10-04T14:19:19.112Z"
+  "lastCalendarSync": "2026-10-05T01:09:52.863Z"
 }

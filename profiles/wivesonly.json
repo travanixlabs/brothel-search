@@ -3318,7 +3318,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-05",
       "oldUrl": "https://wivesonly.com.au/ali/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/10/ali-new-1.jpg",
@@ -13499,8 +13499,14 @@
         "start": "20:30",
         "end": "06:00"
       }
+    },
+    "Ali": {
+      "2026-10-05": {
+        "start": "17:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-05T11:17:09.788Z",
-  "lastCalendarSync": "2026-10-05T01:09:52.863Z"
+  "lastCalendarSync": "2026-10-05T11:43:48.821Z"
 }

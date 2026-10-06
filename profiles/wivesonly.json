@@ -497,7 +497,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-07",
       "desc": "Sweet and petite, Natalia is a size 8-10 with European and South American charm. Natalia is playful, adventurous, and always ready to create an unforgettable moment. She brings a fun-loving energy and a touch of sophistication and passion to create an amazing expereince."
     },
     {
@@ -594,7 +594,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03",
+      "lastRostered": "2026-10-07",
       "desc": "Beautiful Egyptian / Lebanese goddess Sabrina, 32 years old & curvy in the right places. She has an appetite for sensual intimacy, affection and loves giving an exotic body slide massage."
     },
     {
@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-10-07",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -834,7 +834,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-07",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1529,7 +1529,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Sophia",
@@ -1971,7 +1971,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Brooke",
@@ -2060,7 +2060,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Ximena",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-07"
     },
     {
       "name": "Clarisse",
@@ -2744,7 +2744,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-07",
       "oldUrl": "https://wivesonly.com.au/sassy/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-10-07",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-07",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-07",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3772,6 +3772,10 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "20:00"
+      },
+      "2026-10-07": {
+        "start": "15:00",
+        "end": "22:30"
       }
     },
     "Delilah": {
@@ -6463,7 +6467,8 @@
       "2026-10-03",
       "2026-10-04",
       "2026-10-05",
-      "2026-10-06"
+      "2026-10-06",
+      "2026-10-07"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7443,6 +7448,10 @@
         "end": "17:30"
       },
       "2026-10-05": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-10-07": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -9351,6 +9360,10 @@
       "2026-10-04": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -10352,6 +10365,10 @@
       "2026-10-01": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Katalina": {
@@ -10628,6 +10645,10 @@
       "2026-10-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-07": {
+        "start": "12:00",
+        "end": "19:30"
       }
     },
     "Veronika": {
@@ -10972,6 +10993,10 @@
       "2026-10-05": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -11266,6 +11291,10 @@
       "2026-10-06": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-10-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "VV": {
@@ -11698,6 +11727,10 @@
         "end": "19:30"
       },
       "2026-10-06": {
+        "start": "11:00",
+        "end": "19:30"
+      },
+      "2026-10-07": {
         "start": "11:00",
         "end": "19:30"
       }
@@ -12184,6 +12217,10 @@
       "2026-10-03": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Valentina": {
@@ -12987,6 +13024,10 @@
       "2026-10-05": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-07": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Summer": {
@@ -13185,6 +13226,10 @@
       "2026-10-05": {
         "start": "16:00",
         "end": "01:00"
+      },
+      "2026-10-07": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Dior": {
@@ -13555,6 +13600,10 @@
       "2026-10-06": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-07": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddie": {
@@ -13575,5 +13624,5 @@
     }
   },
   "lastGirlsSync": "2026-10-06T11:06:43.746Z",
-  "lastCalendarSync": "2026-10-06T09:09:25.517Z"
+  "lastCalendarSync": "2026-10-06T13:30:03.336Z"
 }

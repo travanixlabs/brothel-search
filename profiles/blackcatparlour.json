@@ -4251,6 +4251,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-10-03"
+    },
+    {
+      "name": "Juliette",
+      "country": [
+        "Albanian"
+      ],
+      "age": "24",
+      "height": "168",
+      "cup": "C",
+      "body": "8",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-06",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -22216,6 +22234,6 @@
     "Elena": {},
     "Baby": {}
   },
-  "lastGirlsSync": "2026-10-03T09:44:22.182Z",
+  "lastGirlsSync": "2026-10-06T02:00:29.244Z",
   "lastCalendarSync": "2026-10-06T01:21:08.281Z"
 }

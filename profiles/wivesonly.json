@@ -3327,6 +3327,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Amber",
+      "country": [
+        "Australian"
+      ],
+      "age": "42",
+      "height": "157cm",
+      "cup": "B",
+      "body": "",
+      "desc": "Meet Amber — a confident Australian blonde with a warm, welcoming personality and effortlessly feminine style.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/amber/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13552,6 +13574,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-05T11:17:09.788Z",
+  "lastGirlsSync": "2026-10-06T11:06:43.746Z",
   "lastCalendarSync": "2026-10-06T09:09:25.517Z"
 }

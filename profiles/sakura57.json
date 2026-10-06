@@ -11323,6 +11323,32 @@
       "labels": [],
       "lastModified": "2026-09-29T04:00:31.775Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Jisoo",
+      "country": [
+        "Korean"
+      ],
+      "age": "20",
+      "height": "165",
+      "cup": "C",
+      "val1": "250",
+      "val2": "310",
+      "val3": "370",
+      "startDate": "2026-10-06",
+      "lang": "Korean, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/jisoo-korea/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/98541791271054_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/98551791271056_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/98561791271057_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/98571791271059_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-06T10:00:15.189Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17845,7 +17871,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-06T04:00:24.722Z",
+  "lastGirlsSync": "2026-10-06T10:00:15.189Z",
   "lastCalendarSync": "2026-09-17T07:51:27.550Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

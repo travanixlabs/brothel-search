@@ -680,7 +680,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-18",
       "desc": "Handsome, I’m Carmen, Stiletto's newest petite brunette and the girl of your wettest dreams. I'm in my early 20s, striking and unforgettable, with a perfect C-cup bust, pouty lips, and eyes full of mischief and mystery. My curves are delicate yet delicious, with every inch of me designed to ..."
     },
     {
@@ -8266,10 +8266,6 @@
         "start": "08:00",
         "end": "16:00"
       },
-      "2026-10-06": {
-        "start": "08:00",
-        "end": "18:00"
-      },
       "2026-10-07": {
         "start": "08:00",
         "end": "18:00"
@@ -8857,6 +8853,14 @@
       "2026-10-07": {
         "start": "14:00",
         "end": "22:00"
+      },
+      "2026-10-11": {
+        "start": "15:00",
+        "end": "23:00"
+      },
+      "2026-10-18": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Cindy": {
@@ -9392,25 +9396,17 @@
         "start": "16:00",
         "end": "00:00"
       },
-      "2026-10-08": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-10-09": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-10-10": {
-        "start": "16:00",
-        "end": "00:00"
-      },
-      "2026-10-11": {
         "start": "16:00",
         "end": "00:00"
       },
       "2026-10-06": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-10-07": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Coco": {
@@ -10914,10 +10910,6 @@
     },
     "Adeline": {},
     "Chelsea": {
-      "2026-10-06": {
-        "start": "10:00",
-        "end": "18:00"
-      },
       "2026-10-07": {
         "start": "10:00",
         "end": "18:00"
@@ -10940,10 +10932,6 @@
       "2026-07-31": {
         "start": "19:00",
         "end": "05:00"
-      },
-      "2026-10-06": {
-        "start": "12:00",
-        "end": "20:00"
       },
       "2026-10-07": {
         "start": "12:00",
@@ -11271,5 +11259,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-06T02:01:09.536Z",
-  "lastCalendarSync": "2026-10-06T06:40:43.438Z"
+  "lastCalendarSync": "2026-10-06T09:09:20.705Z"
 }

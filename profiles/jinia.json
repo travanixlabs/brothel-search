@@ -414,7 +414,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-02-06",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/vivian-3/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/02/%E5%9B%BE%E7%89%87_20260206151402.jpg"
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2455,7 +2455,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-16",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/vivian/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260816052036_54_10.jpg"
@@ -2664,7 +2664,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-09-09",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/kiki-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260910093644.jpg"
@@ -2822,7 +2822,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/candy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094249.jpg"
@@ -2841,7 +2841,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-02",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://jinia.com.au/cookie-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261005073633_262_10.jpg"
@@ -4650,7 +4650,8 @@
       "2026-10-09",
       "2026-10-10",
       "2026-10-11",
-      "2026-10-12"
+      "2026-10-12",
+      "2026-10-13"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -6471,6 +6472,10 @@
       "2026-10-12": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-10-13": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Christina": {
@@ -6806,6 +6811,10 @@
         "end": "04:00"
       },
       "2026-10-11": {
+        "start": "12:00",
+        "end": "04:00"
+      },
+      "2026-10-13": {
         "start": "12:00",
         "end": "04:00"
       }
@@ -7672,6 +7681,10 @@
       "2026-10-07": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-10-13": {
+        "start": "12:00",
+        "end": "00:00"
       }
     },
     "Chloe": {
@@ -7836,6 +7849,10 @@
       "2026-10-07": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-10-13": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "NEW Cookie": {
@@ -7854,9 +7871,13 @@
       "2026-10-07": {
         "start": "14:00",
         "end": "04:00"
+      },
+      "2026-10-13": {
+        "start": "14:00",
+        "end": "04:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-05T00:22:58.488Z",
-  "lastCalendarSync": "2026-10-05T22:52:21.453Z"
+  "lastCalendarSync": "2026-10-06T13:30:10.456Z"
 }

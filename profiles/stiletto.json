@@ -6969,7 +6969,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-16",
       "oldUrl": "https://www.stilettosydney.com/workers/sativa-new/",
       "photos": [],
       "labels": [
@@ -11109,6 +11109,18 @@
       "2026-10-11": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-14": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-10-15": {
+        "start": "20:00",
+        "end": "04:00"
+      },
+      "2026-10-16": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Shantae": {},
@@ -11268,5 +11280,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-06T20:38:30.516Z",
-  "lastCalendarSync": "2026-10-06T22:43:17.714Z"
+  "lastCalendarSync": "2026-10-06T23:55:48.457Z"
 }

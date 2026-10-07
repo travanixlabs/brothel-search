@@ -143,7 +143,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-10-08",
       "desc": "Experience luxury at Wives Only in St Peters, near Sydney Airport, public transport, and minutes from Sydney CBD. Discover what awaits you in our exclusive bordello."
     },
     {
@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-08",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -594,7 +594,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "desc": "Beautiful Egyptian / Lebanese goddess Sabrina, 32 years old & curvy in the right places. She has an appetite for sensual intimacy, affection and loves giving an exotic body slide massage."
     },
     {
@@ -1304,7 +1304,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-08",
       "desc": "Welcome Jess &#8211; mature, slim & blonde, seductive yet sensual and sweet."
     },
     {
@@ -1444,7 +1444,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-08"
     },
     {
       "name": "Sara",
@@ -1614,7 +1614,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-08"
     },
     {
       "name": "Samira",
@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-07"
+      "lastRostered": "2026-10-08"
     },
     {
       "name": "Clarisse",
@@ -2854,7 +2854,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-06-01",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://wivesonly.com.au/gia/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/06/New-girl.jpg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3318,7 +3318,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://wivesonly.com.au/ali/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/10/ali-new-1.jpg",
@@ -4574,6 +4574,10 @@
       "2026-10-06": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-08": {
+        "start": "11:00",
+        "end": "19:00"
       }
     },
     "Cherry": {
@@ -5210,6 +5214,10 @@
       "2026-10-06": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-08": {
+        "start": "14:00",
+        "end": "00:00"
       }
     },
     "Ximena": {
@@ -6468,7 +6476,8 @@
       "2026-10-04",
       "2026-10-05",
       "2026-10-06",
-      "2026-10-07"
+      "2026-10-07",
+      "2026-10-08"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -7452,6 +7461,10 @@
         "end": "17:30"
       },
       "2026-10-07": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-10-08": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -9758,6 +9771,10 @@
         "end": "04:00"
       },
       "2026-10-06": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-10-08": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -12221,6 +12238,10 @@
       "2026-10-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Valentina": {
@@ -12283,6 +12304,10 @@
       "2026-10-05": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Aven": {
@@ -12535,6 +12560,10 @@
       "2026-10-05": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-08": {
+        "start": "11:00",
+        "end": "16:00"
       }
     },
     "Ella": {
@@ -13028,6 +13057,10 @@
       "2026-10-07": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-08": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Summer": {
@@ -13240,6 +13273,10 @@
       "2026-10-03": {
         "start": "17:00",
         "end": "00:00"
+      },
+      "2026-10-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Sofia": {
@@ -13604,6 +13641,10 @@
       "2026-10-07": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-08": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddie": {
@@ -13620,9 +13661,13 @@
       "2026-10-05": {
         "start": "17:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "17:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-06T11:06:43.746Z",
-  "lastCalendarSync": "2026-10-06T13:30:03.336Z"
+  "lastCalendarSync": "2026-10-07T13:42:02.494Z"
 }

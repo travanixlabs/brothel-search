@@ -522,7 +522,7 @@
       ],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Midori11-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Midori8-470x705.jpg",
@@ -551,7 +551,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -608,7 +608,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Jojo-462x705.jpg"
       ],
@@ -634,7 +634,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:25:59.172Z",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Annie-396x705.jpg"
       ],
@@ -891,7 +891,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T16:00:32.518Z",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-08",
       "deleted": "Yes",
       "deletedAt": "2026-04-28T17:50:46.674Z"
     },
@@ -1388,7 +1388,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-09-15T13:49:07.176Z",
-      "lastRostered": "2026-10-02",
+      "lastRostered": "2026-10-08",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/09/Suji-608x705.jpg",
         "https://127city.com/wp-content/uploads/2026/09/Suji1-608x705.jpg"
@@ -1420,7 +1420,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-02T10:00:15.574Z",
-      "lastRostered": "2026-10-05"
+      "lastRostered": "2026-10-08"
     }
   ],
   "calendar": {
@@ -1618,7 +1618,8 @@
       "2026-10-04",
       "2026-10-05",
       "2026-10-06",
-      "2026-10-07"
+      "2026-10-07",
+      "2026-10-08"
     ],
     "Sana": {
       "2026-03-26": {
@@ -3083,6 +3084,10 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Angela": {
@@ -4525,6 +4530,10 @@
       "2026-10-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Summer": {
@@ -4835,6 +4844,10 @@
         "end": "02:00"
       },
       "2026-10-07": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-08": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -6111,6 +6124,10 @@
       "2026-10-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Hina": {
@@ -6871,6 +6888,10 @@
       "2026-10-02": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Nicole": {
@@ -6905,6 +6926,10 @@
       "2026-10-07": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Yoyo": {
@@ -6919,11 +6944,15 @@
       "2026-10-05": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-08": {
+        "start": "12:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-02T10:00:15.574Z",
-  "lastCalendarSync": "2026-10-06T13:29:14.261Z",
+  "lastCalendarSync": "2026-10-07T15:42:51.412Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

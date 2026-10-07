@@ -6465,7 +6465,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-03",
+      "lastRostered": "2026-10-09",
       "oldUrl": "https://www.stilettosydney.com/workers/rocket-new/",
       "photos": [],
       "labels": [
@@ -11033,6 +11033,10 @@
       "2026-10-03": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-09": {
+        "start": "01:00",
+        "end": "09:00"
       }
     },
     "Sukura": {},
@@ -11269,10 +11273,6 @@
     },
     "Maisie": {},
     "Mercedes": {
-      "2026-10-07": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-10-08": {
         "start": "18:00",
         "end": "02:00"
@@ -11349,5 +11349,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-07T10:56:07.118Z",
-  "lastCalendarSync": "2026-10-07T13:41:58.524Z"
+  "lastCalendarSync": "2026-10-07T15:43:28.445Z"
 }

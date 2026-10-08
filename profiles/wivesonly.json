@@ -3349,6 +3349,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Anastasia",
+      "country": [
+        "American"
+      ],
+      "age": "44",
+      "height": "Age",
+      "cup": "D",
+      "body": "",
+      "desc": "New Girl &#8211; meet Anastasia.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2024-11-01",
+      "lastRostered": "2024-11-01",
+      "oldUrl": "https://wivesonly.com.au/anastasia/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13664,6 +13686,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-06T11:06:43.746Z",
+  "lastGirlsSync": "2026-10-08T01:29:16.972Z",
   "lastCalendarSync": "2026-10-08T00:17:07.749Z"
 }

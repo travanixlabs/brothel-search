@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-17",
+      "lastRostered": "2026-10-08",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-10",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -7943,6 +7943,10 @@
       "2026-04-08": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-10-10": {
+        "start": "19:00",
+        "end": "02:00"
       }
     },
     "Anna": {
@@ -9436,10 +9440,6 @@
         "start": "08:00",
         "end": "13:00"
       },
-      "2026-10-08": {
-        "start": "10:00",
-        "end": "16:00"
-      },
       "2026-10-10": {
         "start": "06:00",
         "end": "12:00"
@@ -10483,6 +10483,10 @@
       "2026-08-04": {
         "start": "22:30",
         "end": "06:00"
+      },
+      "2026-10-08": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Piper": {},
@@ -10792,6 +10796,10 @@
         "end": "02:00"
       },
       "2026-10-18": {
+        "start": "19:00",
+        "end": "02:00"
+      },
+      "2026-10-08": {
         "start": "19:00",
         "end": "02:00"
       }
@@ -11222,10 +11230,6 @@
     },
     "Shantae": {},
     "Aiko": {
-      "2026-10-08": {
-        "start": "10:00",
-        "end": "17:00"
-      },
       "2026-10-09": {
         "start": "10:00",
         "end": "14:00"
@@ -11259,8 +11263,8 @@
     "Lucy": {},
     "Delilah": {
       "2026-10-09": {
-        "start": "19:00",
-        "end": "23:00"
+        "start": "11:00",
+        "end": "21:00"
       },
       "2026-10-10": {
         "start": "09:00",
@@ -11285,10 +11289,6 @@
       "2026-10-17": {
         "start": "09:00",
         "end": "21:00"
-      },
-      "2026-10-08": {
-        "start": "07:00",
-        "end": "15:00"
       }
     },
     "Maisie": {},
@@ -11369,5 +11369,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-08T01:28:54.804Z",
-  "lastCalendarSync": "2026-10-08T02:13:27.671Z"
+  "lastCalendarSync": "2026-10-08T06:27:14.876Z"
 }

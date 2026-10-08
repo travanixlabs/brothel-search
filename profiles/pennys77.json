@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Anjali",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Tea",
@@ -694,7 +694,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Siya",
@@ -923,7 +923,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Honey",
@@ -965,7 +965,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Ruby",
@@ -1111,7 +1111,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/12/IMG_2733.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-10-09"
     }
   ],
   "calendar": {
@@ -1631,7 +1632,8 @@
       "2026-10-05",
       "2026-10-06",
       "2026-10-07",
-      "2026-10-08"
+      "2026-10-08",
+      "2026-10-09"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -3551,6 +3553,10 @@
       "2026-10-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-09": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -4469,6 +4475,10 @@
       "2026-10-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-09": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -4905,6 +4915,10 @@
         "end": "03:00"
       },
       "2026-10-08": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-09": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5349,6 +5363,10 @@
       "2026-10-08": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-09": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Honey": {
@@ -5395,6 +5413,10 @@
         "end": "03:00"
       },
       "2026-10-08": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-09": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5460,8 +5482,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Ariel": {
+      "2026-10-09": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-08T11:30:53.260Z"
+  "lastCalendarSync": "2026-10-08T15:48:47.072Z"
 }

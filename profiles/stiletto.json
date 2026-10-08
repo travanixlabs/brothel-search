@@ -1731,7 +1731,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-21"
+      "lastRostered": "2026-10-08"
     },
     {
       "name": "Jamie",
@@ -6275,7 +6275,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-06",
+      "lastRostered": "2026-10-08",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -6433,7 +6433,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-16",
       "oldUrl": "https://www.stilettosydney.com/workers/romy-new/",
       "photos": [],
       "labels": [
@@ -9460,12 +9460,7 @@
         "end": "06:00"
       }
     },
-    "Sasha": {
-      "2026-10-08": {
-        "start": "09:00",
-        "end": "15:00"
-      }
-    },
+    "Sasha": {},
     "Clara": {
       "2026-04-14": {
         "start": "22:00",
@@ -10603,6 +10598,10 @@
       "2026-07-16": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-10-08": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Selena": {
@@ -10959,6 +10958,10 @@
       "2026-10-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-08": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Adeline": {},
@@ -10993,6 +10996,14 @@
         "end": "05:00"
       },
       "2026-10-09": {
+        "start": "19:00",
+        "end": "03:00"
+      },
+      "2026-10-12": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-10-16": {
         "start": "19:00",
         "end": "03:00"
       }
@@ -11337,5 +11348,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-07T20:54:04.044Z",
-  "lastCalendarSync": "2026-10-07T21:30:17.317Z"
+  "lastCalendarSync": "2026-10-08T00:17:04.193Z"
 }

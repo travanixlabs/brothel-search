@@ -10046,7 +10046,7 @@
       "lang": "Japanese, Limited English",
       "oldUrl": "https://citybrothel.com.au/project/momoka-japan/",
       "desc": "",
-      "originalSite": "Exists",
+      "originalSite": "",
       "photos": [
         "https://citybrothel.com.au/wp-content/uploads/2026/05/86181778632819_.pic_.jpg",
         "https://citybrothel.com.au/wp-content/uploads/2026/05/86191778632820_.pic_.jpg",
@@ -11103,6 +11103,31 @@
       ],
       "labels": [],
       "lastModified": "2026-09-28T10:00:37.496Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "mizuri",
+      "country": [
+        "Japanese"
+      ],
+      "age": "21",
+      "height": "168",
+      "cup": "C",
+      "val1": "200",
+      "val2": "260",
+      "val3": "320",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/mizuri-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/10/90611781570241_.pic_-238x300-1.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/10/90621781570242_.pic_-242x300-1.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-08T10:00:57.977Z",
       "lastRostered": ""
     }
   ],
@@ -17802,7 +17827,7 @@
     },
     "Kumii": {}
   },
-  "lastGirlsSync": "2026-10-08T04:00:10.000Z",
+  "lastGirlsSync": "2026-10-08T10:00:57.977Z",
   "lastCalendarSync": "2026-09-14T20:26:18.267Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

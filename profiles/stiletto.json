@@ -606,7 +606,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-26",
+      "lastRostered": "2026-10-09",
       "desc": "Oh so cute! Hello Gentlemen, my name is Cali x I am 22, seductive, and easy on the eyes. My petite frame, gorgeous curves, and sweet, girl-next-door looks will captivate you. I have a C-cup bust and long dark locks. Whether you desire a sensual girlfriend experience or something more dominant, I am ..."
     },
     {
@@ -790,7 +790,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Cindy",
@@ -1644,7 +1644,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-06"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Honey",
@@ -1731,7 +1731,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-08"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Jamie",
@@ -3232,7 +3232,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Quinn",
@@ -7577,7 +7577,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-07",
+      "lastRostered": "2026-10-09",
       "oldUrl": "https://www.stilettosydney.com/workers/daya-new/",
       "photos": [],
       "labels": [
@@ -7665,7 +7665,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-04",
+      "lastRostered": "2026-10-09",
       "oldUrl": "https://www.stilettosydney.com/workers/cherri-new/",
       "photos": [],
       "labels": [
@@ -8436,6 +8436,10 @@
       "2026-09-30": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-09": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Flora": {
@@ -8944,6 +8948,10 @@
       "2026-09-30": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-10-09": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Cali": {
@@ -8986,6 +8994,10 @@
       "2026-09-06": {
         "start": "21:00",
         "end": "05:00"
+      },
+      "2026-10-09": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Ophelia": {
@@ -8996,10 +9008,6 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-10-09": {
-        "start": "16:00",
-        "end": "00:00"
       },
       "2026-10-11": {
         "start": "16:00",
@@ -9152,6 +9160,10 @@
       "2026-09-22": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-09": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Victoria": {
@@ -9426,6 +9438,10 @@
       "2026-10-10": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-10-09": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Coco": {
@@ -10564,6 +10580,10 @@
       "2026-07-16": {
         "start": "23:45",
         "end": "07:45"
+      },
+      "2026-10-09": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Selena": {
@@ -10608,10 +10628,6 @@
       "2026-08-15": {
         "start": "17:00",
         "end": "05:00"
-      },
-      "2026-10-09": {
-        "start": "12:00",
-        "end": "23:00"
       },
       "2026-10-10": {
         "start": "17:00",
@@ -11171,13 +11187,9 @@
     "Gracie": {},
     "Lucy": {},
     "Delilah": {
-      "2026-10-09": {
-        "start": "11:00",
-        "end": "23:00"
-      },
       "2026-10-10": {
-        "start": "09:00",
-        "end": "15:00"
+        "start": "10:00",
+        "end": "14:00"
       },
       "2026-10-12": {
         "start": "10:00",
@@ -11233,9 +11245,18 @@
       "2026-10-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-09": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
-    "Cherri": {},
+    "Cherri": {
+      "2026-10-09": {
+        "start": "22:00",
+        "end": "06:00"
+      }
+    },
     "Amor": {
       "2026-10-02": {
         "start": "23:00",
@@ -11273,5 +11294,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-09T11:12:07.480Z",
-  "lastCalendarSync": "2026-10-09T11:26:40.831Z"
+  "lastCalendarSync": "2026-10-09T13:34:54.105Z"
 }

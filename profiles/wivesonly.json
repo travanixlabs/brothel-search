@@ -3371,6 +3371,50 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Nana",
+      "country": [
+        "Asian"
+      ],
+      "age": "21",
+      "height": "165cm",
+      "cup": "B",
+      "body": "",
+      "desc": "Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/nana/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Anita",
+      "country": [
+        "european"
+      ],
+      "age": "40",
+      "height": "165cm",
+      "cup": "D",
+      "body": "",
+      "desc": "Meet new Girl Anita.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/anita/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13800,6 +13844,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-08T01:29:16.972Z",
+  "lastGirlsSync": "2026-10-09T20:24:29.407Z",
   "lastCalendarSync": "2026-10-09T13:35:00.892Z"
 }

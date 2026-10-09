@@ -2397,7 +2397,7 @@
         "https://jinia.com.au/wp-content/uploads/2025/09/%E5%9B%BE%E7%89%87_20250915093112.jpg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": ""
     },
     {
       "name": "Endy",
@@ -2845,6 +2845,25 @@
       "oldUrl": "https://jinia.com.au/cookie-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261005073633_262_10.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "NEW Emily",
+      "country": [],
+      "age": "",
+      "height": "",
+      "cup": "",
+      "body": "",
+      "val1": "190",
+      "val2": "250",
+      "val3": "300",
+      "startDate": "2026-10-09",
+      "lastRostered": "2026-10-09",
+      "oldUrl": "https://jinia.com.au/emily/",
+      "photos": [
+        "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261009121109.jpg"
       ],
       "labels": [],
       "originalSite": "Exists"
@@ -7924,6 +7943,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-05T00:22:58.488Z",
+  "lastGirlsSync": "2026-10-09T01:38:20.293Z",
   "lastCalendarSync": "2026-10-08T23:28:50.672Z"
 }

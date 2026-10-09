@@ -7455,7 +7455,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-27",
+      "lastRostered": "2026-10-10",
       "oldUrl": "https://www.stilettosydney.com/workers/angel-new/",
       "photos": [],
       "labels": [
@@ -11235,6 +11235,10 @@
       "2026-09-27": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-10": {
+        "start": "02:00",
+        "end": "10:00"
       }
     },
     "Daya": {
@@ -11294,5 +11298,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-09T11:12:07.480Z",
-  "lastCalendarSync": "2026-10-09T13:34:54.105Z"
+  "lastCalendarSync": "2026-10-09T15:32:28.933Z"
 }

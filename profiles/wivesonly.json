@@ -1767,7 +1767,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-09"
     },
     {
       "name": "Layla",
@@ -4312,6 +4312,10 @@
         "end": "02:00"
       },
       "2026-10-03": {
+        "start": "19:00",
+        "end": "02:00"
+      },
+      "2026-10-09": {
         "start": "19:00",
         "end": "02:00"
       }
@@ -13744,5 +13748,5 @@
     }
   },
   "lastGirlsSync": "2026-10-08T01:29:16.972Z",
-  "lastCalendarSync": "2026-10-08T13:50:49.934Z"
+  "lastCalendarSync": "2026-10-09T00:30:53.500Z"
 }

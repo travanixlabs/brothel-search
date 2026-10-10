@@ -2341,7 +2341,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09"
+      "lastRostered": "2026-10-11"
     },
     {
       "name": "Lena",
@@ -10118,6 +10118,10 @@
       "2026-09-28": {
         "start": "10:00",
         "end": "18:00"
+      },
+      "2026-10-11": {
+        "start": "09:00",
+        "end": "18:00"
       }
     },
     "Peach": {
@@ -11141,5 +11145,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-10T19:37:32.131Z",
-  "lastCalendarSync": "2026-10-10T20:16:11.310Z"
+  "lastCalendarSync": "2026-10-10T23:41:33.022Z"
 }

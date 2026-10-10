@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-10",
+      "lastRostered": "2026-10-11",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -7945,9 +7945,9 @@
         "start": "16:00",
         "end": "00:00"
       },
-      "2026-10-10": {
-        "start": "19:00",
-        "end": "02:00"
+      "2026-10-11": {
+        "start": "13:00",
+        "end": "21:00"
       }
     },
     "Anna": {
@@ -10409,8 +10409,8 @@
         "end": "07:00"
       },
       "2026-10-10": {
-        "start": "18:00",
-        "end": "02:00"
+        "start": "20:00",
+        "end": "04:00"
       },
       "2026-10-04": {
         "start": "23:00",
@@ -11099,10 +11099,6 @@
     "Gracie": {},
     "Lucy": {},
     "Delilah": {
-      "2026-10-10": {
-        "start": "10:00",
-        "end": "14:00"
-      },
       "2026-10-12": {
         "start": "10:00",
         "end": "20:00"
@@ -11201,5 +11197,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-10T01:26:47.247Z",
-  "lastCalendarSync": "2026-10-10T01:53:14.333Z"
+  "lastCalendarSync": "2026-10-10T06:12:14.918Z"
 }

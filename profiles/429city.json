@@ -1525,7 +1525,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:54:31.426Z",
-      "lastRostered": "2025-08-01",
+      "lastRostered": "2026-10-10",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2025/08/图片_20250808011247_副本.jpg",
         "https://www.429city.com/wp-content/uploads/2025/08/图片_20250808011251_副本-687x1030.jpg"
@@ -21916,8 +21916,14 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Cherry 2": {
+      "2026-10-10": {
+        "start": "10:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-10-09T13:34:19.559Z"
+  "lastCalendarSync": "2026-10-10T06:11:43.873Z"
 }

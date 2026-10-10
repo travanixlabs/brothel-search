@@ -1049,7 +1049,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-07"
+      "lastRostered": "2026-10-10"
     },
     {
       "name": "Sulli",
@@ -5495,6 +5495,10 @@
       "2026-10-06": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-10": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sulli": {},
@@ -5516,5 +5520,5 @@
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-09T17:06:07.657Z"
+  "lastCalendarSync": "2026-10-10T06:11:47.246Z"
 }

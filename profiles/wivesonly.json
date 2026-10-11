@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-11",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -3430,7 +3430,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2025-12-01",
+      "lastRostered": "2026-10-11",
       "oldUrl": "https://wivesonly.com.au/michelle/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -6222,10 +6222,6 @@
       "2026-10-10": {
         "start": "20:30",
         "end": "06:00"
-      },
-      "2026-10-11": {
-        "start": "20:00",
-        "end": "04:00"
       }
     },
     "Lexi": {
@@ -11205,6 +11201,10 @@
       "2026-10-09": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-11": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -13913,8 +13913,14 @@
         "start": "17:00",
         "end": "02:00"
       }
+    },
+    "Michelle": {
+      "2026-10-11": {
+        "start": "12:00",
+        "end": "20:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-11T00:37:54.755Z",
-  "lastCalendarSync": "2026-10-10T14:39:03.518Z"
+  "lastCalendarSync": "2026-10-11T01:11:42.501Z"
 }

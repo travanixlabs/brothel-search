@@ -3415,6 +3415,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Michelle",
+      "country": [
+        "Kiwi"
+      ],
+      "age": "40",
+      "height": "168cm",
+      "cup": "C",
+      "body": "",
+      "desc": "Meet new Girl Michelle.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/michelle/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -13893,6 +13915,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-09T20:24:29.407Z",
+  "lastGirlsSync": "2026-10-11T00:37:54.755Z",
   "lastCalendarSync": "2026-10-10T14:39:03.518Z"
 }

@@ -3523,7 +3523,7 @@
         "Anal Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-30"
+      "lastRostered": "2026-10-14"
     },
     {
       "name": "Sabrina",
@@ -7533,7 +7533,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-17",
+      "lastRostered": "2026-10-24",
       "oldUrl": "https://www.stilettosydney.com/workers/amor-new/",
       "photos": [],
       "labels": [
@@ -9298,7 +9298,12 @@
         "end": "05:00"
       }
     },
-    "Ruby": {},
+    "Ruby": {
+      "2026-10-14": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
     "Viv": {
       "2026-04-04": {
         "start": "20:00",
@@ -11180,10 +11185,26 @@
       "2026-10-17": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-21": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-22": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-23": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-24": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-11T19:47:50.443Z",
-  "lastCalendarSync": "2026-10-11T22:10:39.503Z"
+  "lastCalendarSync": "2026-10-11T23:47:31.485Z"
 }

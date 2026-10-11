@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03",
+      "lastRostered": "2026-10-14",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -2204,7 +2204,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-18"
     },
     {
       "name": "Kiara",
@@ -3065,7 +3065,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-11"
+      "lastRostered": "2026-10-12"
     },
     {
       "name": "Paloma",
@@ -3270,7 +3270,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-01"
+      "lastRostered": "2026-10-15"
     },
     {
       "name": "Raven",
@@ -3417,7 +3417,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-29"
+      "lastRostered": "2026-10-19"
     },
     {
       "name": "Roxi",
@@ -6188,7 +6188,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-18",
+      "lastRostered": "2026-10-25",
       "oldUrl": "https://www.stilettosydney.com/workers/lara-new/",
       "photos": [],
       "labels": [
@@ -6645,7 +6645,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-29",
+      "lastRostered": "2026-10-13",
       "oldUrl": "https://www.stilettosydney.com/workers/farah-new/",
       "photos": [],
       "labels": [
@@ -7934,7 +7934,9 @@
       "2026-10-19",
       "2026-10-21",
       "2026-10-22",
-      "2026-10-23"
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25"
     ],
     "Allegra": {
       "2026-04-04": {
@@ -8100,6 +8102,10 @@
       "2026-04-05": {
         "start": "10:00",
         "end": "15:00"
+      },
+      "2026-10-14": {
+        "start": "10:00",
+        "end": "18:00"
       }
     },
     "Bambi": {
@@ -8964,6 +8970,10 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-12": {
+        "start": "18:00",
+        "end": "02:00"
       }
     },
     "Maddie": {
@@ -9671,6 +9681,26 @@
       "2026-04-08": {
         "start": "18:00",
         "end": "02:00"
+      },
+      "2026-10-12": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-10-13": {
+        "start": "07:00",
+        "end": "15:00"
+      },
+      "2026-10-14": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-10-17": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-10-19": {
+        "start": "07:00",
+        "end": "15:00"
       }
     },
     "Simone": {
@@ -9691,7 +9721,16 @@
         "end": "05:00"
       }
     },
-    "Raelynn": {},
+    "Raelynn": {
+      "2026-10-13": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-10-15": {
+        "start": "00:00",
+        "end": "08:00"
+      }
+    },
     "Blake": {},
     "Kennedy": {
       "2026-04-13": {
@@ -10027,6 +10066,22 @@
       "2026-09-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-12": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-10-16": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-10-17": {
+        "start": "00:00",
+        "end": "08:00"
+      },
+      "2026-10-18": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Trinity": {
@@ -10751,6 +10806,22 @@
       "2026-10-18": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-22": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-23": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-24": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-25": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Pia": {
@@ -10838,7 +10909,16 @@
     "Sukura": {},
     "Sakura": {},
     "Olive": {},
-    "Farah": {},
+    "Farah": {
+      "2026-10-12": {
+        "start": "18:00",
+        "end": "02:00"
+      },
+      "2026-10-13": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Kaia": {
       "2026-08-05": {
         "start": "23:45",
@@ -11105,5 +11185,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-11T19:47:50.443Z",
-  "lastCalendarSync": "2026-10-11T20:30:48.429Z"
+  "lastCalendarSync": "2026-10-11T22:10:39.503Z"
 }

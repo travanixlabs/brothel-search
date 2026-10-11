@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-11",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -5826,7 +5826,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-11",
       "oldUrl": "https://www.stilettosydney.com/workers/luanna-new/",
       "photos": [],
       "labels": [],
@@ -8802,6 +8802,10 @@
       "2026-10-17": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-11": {
+        "start": "20:30",
+        "end": "04:30"
       }
     },
     "Carmen": {
@@ -8858,10 +8862,6 @@
       "2026-04-10": {
         "start": "18:00",
         "end": "02:00"
-      },
-      "2026-10-11": {
-        "start": "12:00",
-        "end": "20:00"
       },
       "2026-10-12": {
         "start": "12:00",
@@ -10122,10 +10122,6 @@
       "2026-09-28": {
         "start": "10:00",
         "end": "18:00"
-      },
-      "2026-10-11": {
-        "start": "09:00",
-        "end": "18:00"
       }
     },
     "Peach": {
@@ -10360,6 +10356,10 @@
       "2026-08-04": {
         "start": "22:30",
         "end": "06:00"
+      },
+      "2026-10-11": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Piper": {},
@@ -10626,6 +10626,10 @@
       "2026-10-06": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-11": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Rosie": {},
@@ -10647,6 +10651,10 @@
       "2026-10-18": {
         "start": "19:00",
         "end": "02:00"
+      },
+      "2026-10-11": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Malibu": {},
@@ -10831,12 +10839,7 @@
       }
     },
     "Adeline": {},
-    "Chelsea": {
-      "2026-10-11": {
-        "start": "12:00",
-        "end": "18:00"
-      }
-    },
+    "Chelsea": {},
     "Fern": {},
     "Jenna": {
       "2026-07-31": {
@@ -10848,10 +10851,6 @@
       "2026-07-31": {
         "start": "21:00",
         "end": "05:00"
-      },
-      "2026-10-12": {
-        "start": "09:00",
-        "end": "17:00"
       },
       "2026-10-16": {
         "start": "19:00",
@@ -11153,5 +11152,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-11T00:37:34.791Z",
-  "lastCalendarSync": "2026-10-11T06:09:42.050Z"
+  "lastCalendarSync": "2026-10-11T09:06:22.541Z"
 }

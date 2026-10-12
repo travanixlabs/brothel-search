@@ -11349,7 +11349,9 @@
       ],
       "labels": [],
       "lastModified": "2026-10-06T10:00:15.189Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-10-12T22:46:07.017Z"
     },
     {
       "name": "Gammy",

@@ -3070,7 +3070,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-09-25",
+      "lastRostered": "2026-10-12",
       "oldUrl": "https://wivesonly.com.au/tiana/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/jewel-fake-photo.jpg"
@@ -12256,10 +12256,6 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-10-12": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Thorne": {
@@ -13716,6 +13712,10 @@
       "2026-09-25": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-12": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Makayla": {},
@@ -13971,5 +13971,5 @@
     }
   },
   "lastGirlsSync": "2026-10-11T00:37:54.755Z",
-  "lastCalendarSync": "2026-10-11T13:14:32.886Z"
+  "lastCalendarSync": "2026-10-12T06:18:08.041Z"
 }

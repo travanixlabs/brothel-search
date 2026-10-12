@@ -11129,6 +11129,32 @@
       "labels": [],
       "lastModified": "2026-10-08T10:00:57.977Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Runo",
+      "country": [
+        "Japanese"
+      ],
+      "age": "19",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-07-01",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://citybrothel.com.au/project/runo-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://citybrothel.com.au/wp-content/uploads/2026/10/98991791777692_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/07/WechatIMG4.jpeg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/10/99001791777707_.pic_.jpg",
+        "https://citybrothel.com.au/wp-content/uploads/2026/10/98641791502296_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-12T10:00:14.337Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -17827,7 +17853,7 @@
     },
     "Kumii": {}
   },
-  "lastGirlsSync": "2026-10-12T04:00:27.577Z",
+  "lastGirlsSync": "2026-10-12T10:00:14.337Z",
   "lastCalendarSync": "2026-09-14T20:26:18.267Z",
   "_skippedUrls": [
     "https://citybrothel.com.au/project/mei-china/",

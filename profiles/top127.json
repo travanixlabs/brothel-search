@@ -1421,6 +1421,30 @@
       "labels": [],
       "lastModified": "2026-10-02T10:00:15.574Z",
       "lastRostered": "2026-10-11"
+    },
+    {
+      "name": "Yuna",
+      "country": [
+        "Japanese"
+      ],
+      "age": "26",
+      "height": "150",
+      "cup": "B",
+      "val1": "220",
+      "val2": "297",
+      "val3": "341",
+      "startDate": "2026-10-13",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://127city.com/j-yuna-diamond220-297-341-cash-special200-270-310-30-45-60/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/10/Yuna-2-470x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/10/Yuna-1-470x705.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-13T11:31:27.924Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -7104,7 +7128,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-02T10:00:15.574Z",
+  "lastGirlsSync": "2026-10-13T11:31:27.924Z",
   "lastCalendarSync": "2026-10-12T12:16:47.068Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

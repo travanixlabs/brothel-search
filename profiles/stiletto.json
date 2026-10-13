@@ -234,7 +234,7 @@
         "Double"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-16",
       "desc": "Aussie godDess I'm 27 years old, with a bubbly and confident personality. I have a size 8 figure with a curvy booty, gorgeous facial features and an enhanced DD bust. I am always ready to play and explore your and my naughty little fantasies. You can rest assured that I will always be ..."
     },
     {
@@ -1825,7 +1825,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-04"
+      "lastRostered": "2026-10-13"
     },
     {
       "name": "Jess",
@@ -1850,7 +1850,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-02"
+      "lastRostered": "2026-10-15"
     },
     {
       "name": "Jojo",
@@ -5846,7 +5846,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-10",
+      "lastRostered": "2026-10-22",
       "oldUrl": "https://www.stilettosydney.com/workers/gemma-new/",
       "photos": [],
       "labels": [
@@ -8380,13 +8380,13 @@
         "start": "15:00",
         "end": "23:00"
       },
-      "2026-10-19": {
-        "start": "14:00",
-        "end": "22:00"
-      },
       "2026-10-23": {
         "start": "09:30",
         "end": "17:30"
+      },
+      "2026-10-18": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Carol": {
@@ -9436,10 +9436,6 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-10-13": {
-        "start": "14:00",
-        "end": "22:00"
       }
     },
     "Lilith": {
@@ -9468,6 +9464,10 @@
       "2026-08-07": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-15": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Sasha": {},
@@ -9665,6 +9665,10 @@
       "2026-10-01": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-13": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Elizabeth": {
@@ -10800,7 +10804,24 @@
     },
     "Rosie": {},
     "Alex": {},
-    "Gemma": {},
+    "Gemma": {
+      "2026-10-15": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-10-17": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-10-20": {
+        "start": "21:00",
+        "end": "05:00"
+      },
+      "2026-10-22": {
+        "start": "21:00",
+        "end": "05:00"
+      }
+    },
     "Naomi": {
       "2026-09-13": {
         "start": "22:00",
@@ -11428,5 +11449,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-13T11:32:26.514Z",
-  "lastCalendarSync": "2026-10-13T09:36:00.616Z"
+  "lastCalendarSync": "2026-10-13T12:01:31.524Z"
 }

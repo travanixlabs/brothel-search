@@ -7728,6 +7728,33 @@
         "Fingering"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Vera",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "B",
+      "body": "10",
+      "desc": "Gentlemen, Please allow me to introduce myself. I’m Vera. I am gorgeous, fun, energetic, curious and sexually charged. I'm a tall, toned, size 10 blonde beauty with sparkling green eyes and creamy skin, soft to the touch. When it comes to my service, I’m all about creating a memorable, intimate ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-10-14",
+      "oldUrl": "https://www.stilettosydney.com/workers/vera-new-2/",
+      "photos": [],
+      "labels": [
+        "GFE",
+        "PSE",
+        "Toys",
+        "Adventurous Positions",
+        "Fetish",
+        "Golden Showers"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11457,8 +11484,14 @@
         "end": "06:00"
       }
     },
-    "Tessa": {}
+    "Tessa": {},
+    "Vera": {
+      "2026-10-17": {
+        "start": "06:00",
+        "end": "14:00"
+      }
+    }
   },
-  "lastGirlsSync": "2026-10-14T00:48:22.778Z",
+  "lastGirlsSync": "2026-10-14T09:22:32.857Z",
   "lastCalendarSync": "2026-10-14T07:50:25.810Z"
 }

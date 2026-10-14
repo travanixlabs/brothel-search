@@ -999,7 +999,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-14",
       "desc": "Welcome the exotic Dua to Wives Only. Stunning, classy 29 years old with green eyes. She has beautiful long legs, a slim size 10 figure with D bust. Dua brings experience in romance and sensual service, with her warm friendly personality you will definitely feel at ease! Come in and book her today!"
     },
     {
@@ -1750,7 +1750,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-26"
+      "lastRostered": "2026-10-14"
     },
     {
       "name": "Desiree",
@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-14",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -6246,6 +6246,10 @@
       "2026-10-10": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-14": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Lexi": {
@@ -9061,6 +9065,10 @@
       "2026-09-26": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-14": {
+        "start": "20:00",
+        "end": "03:00"
       }
     },
     "Evie": {
@@ -11284,10 +11292,6 @@
       "2026-10-12": {
         "start": "17:00",
         "end": "02:00"
-      },
-      "2026-10-14": {
-        "start": "17:00",
-        "end": "02:00"
       }
     },
     "Belle": {
@@ -11862,10 +11866,6 @@
       "2026-10-12": {
         "start": "19:30",
         "end": "04:00"
-      },
-      "2026-10-14": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Sassy": {
@@ -12326,10 +12326,6 @@
       "2026-10-04": {
         "start": "12:00",
         "end": "20:00"
-      },
-      "2026-10-14": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Thorne": {
@@ -13195,6 +13191,10 @@
       },
       "2026-10-12": {
         "start": "20:30",
+        "end": "04:00"
+      },
+      "2026-10-14": {
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -14067,5 +14067,5 @@
     }
   },
   "lastGirlsSync": "2026-10-11T00:37:54.755Z",
-  "lastCalendarSync": "2026-10-13T14:28:09.490Z"
+  "lastCalendarSync": "2026-10-14T05:11:04.779Z"
 }

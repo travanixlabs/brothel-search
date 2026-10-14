@@ -7152,15 +7152,10 @@
         "end": "02:00"
       }
     },
-    "Yuna": {
-      "2026-10-14": {
-        "start": "12:00",
-        "end": "02:00"
-      }
-    }
+    "Yuna": {}
   },
   "lastGirlsSync": "2026-10-13T11:31:27.924Z",
-  "lastCalendarSync": "2026-10-14T07:49:44.784Z",
+  "lastCalendarSync": "2026-10-14T09:38:13.244Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

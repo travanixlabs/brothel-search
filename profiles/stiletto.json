@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-14",
+      "lastRostered": "2026-10-18",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -3046,7 +3046,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09"
+      "lastRostered": "2026-10-18"
     },
     {
       "name": "Ophelia",
@@ -4408,7 +4408,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-13"
+      "lastRostered": "2026-10-14"
     },
     {
       "name": "Victoria",
@@ -8120,9 +8120,21 @@
         "start": "10:00",
         "end": "15:00"
       },
-      "2026-10-14": {
-        "start": "10:00",
-        "end": "18:00"
+      "2026-10-15": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-10-16": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-10-17": {
+        "start": "09:30",
+        "end": "16:30"
+      },
+      "2026-10-18": {
+        "start": "09:30",
+        "end": "16:30"
       }
     },
     "Bambi": {
@@ -8297,6 +8309,18 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "20:00"
+      },
+      "2026-10-16": {
+        "start": "09:00",
+        "end": "17:00"
+      },
+      "2026-10-17": {
+        "start": "08:00",
+        "end": "18:00"
+      },
+      "2026-10-18": {
+        "start": "08:00",
+        "end": "18:00"
       }
     },
     "Grace": {
@@ -8307,10 +8331,6 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
-      },
-      "2026-10-14": {
-        "start": "08:00",
-        "end": "18:00"
       },
       "2026-10-15": {
         "start": "08:00",
@@ -9276,9 +9296,9 @@
         "start": "10:00",
         "end": "16:00"
       },
-      "2026-10-16": {
+      "2026-10-15": {
         "start": "12:00",
-        "end": "19:00"
+        "end": "20:00"
       }
     },
     "Jamie": {
@@ -9367,12 +9387,7 @@
         "end": "05:00"
       }
     },
-    "Ruby": {
-      "2026-10-14": {
-        "start": "10:00",
-        "end": "16:30"
-      }
-    },
+    "Ruby": {},
     "Viv": {
       "2026-04-04": {
         "start": "20:00",
@@ -9424,6 +9439,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-14": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Lilith": {
@@ -10248,10 +10267,6 @@
       "2026-09-28": {
         "start": "10:00",
         "end": "18:00"
-      },
-      "2026-10-14": {
-        "start": "09:00",
-        "end": "17:00"
       }
     },
     "Peach": {
@@ -11274,10 +11289,6 @@
     },
     "Shantae": {},
     "Aiko": {
-      "2026-10-14": {
-        "start": "10:00",
-        "end": "17:00"
-      },
       "2026-10-15": {
         "start": "10:00",
         "end": "17:00"
@@ -11449,5 +11460,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-14T00:48:22.778Z",
-  "lastCalendarSync": "2026-10-14T05:11:00.923Z"
+  "lastCalendarSync": "2026-10-14T07:50:25.810Z"
 }

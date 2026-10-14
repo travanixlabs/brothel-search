@@ -1444,7 +1444,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-13T11:31:27.924Z",
-      "lastRostered": "2026-10-13"
+      "lastRostered": "2026-10-14"
     }
   ],
   "calendar": {
@@ -7151,10 +7151,16 @@
         "start": "12:00",
         "end": "02:00"
       }
+    },
+    "Yuna": {
+      "2026-10-14": {
+        "start": "12:00",
+        "end": "02:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-13T11:31:27.924Z",
-  "lastCalendarSync": "2026-10-13T12:00:57.535Z",
+  "lastCalendarSync": "2026-10-14T07:49:44.784Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

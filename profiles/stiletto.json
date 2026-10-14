@@ -6275,7 +6275,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-09",
+      "lastRostered": "2026-10-14",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -7743,7 +7743,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-14",
+      "lastRostered": "2026-10-17",
       "oldUrl": "https://www.stilettosydney.com/workers/vera-new-2/",
       "photos": [],
       "labels": [
@@ -8988,10 +8988,6 @@
       "2026-10-21": {
         "start": "12:00",
         "end": "18:00"
-      },
-      "2026-10-14": {
-        "start": "12:00",
-        "end": "20:00"
       },
       "2026-10-18": {
         "start": "12:00",
@@ -10862,7 +10858,7 @@
         "end": "06:00"
       },
       "2026-10-14": {
-        "start": "19:00",
+        "start": "20:00",
         "end": "02:00"
       },
       "2026-10-18": {
@@ -11071,6 +11067,10 @@
         "end": "07:00"
       },
       "2026-10-06": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-14": {
         "start": "22:00",
         "end": "06:00"
       }
@@ -11336,10 +11336,6 @@
     "Gracie": {},
     "Lucy": {},
     "Delilah": {
-      "2026-10-14": {
-        "start": "09:00",
-        "end": "19:00"
-      },
       "2026-10-16": {
         "start": "14:00",
         "end": "22:00"
@@ -11493,5 +11489,5 @@
     }
   },
   "lastGirlsSync": "2026-10-14T09:22:32.857Z",
-  "lastCalendarSync": "2026-10-14T07:50:25.810Z"
+  "lastCalendarSync": "2026-10-14T09:38:45.879Z"
 }

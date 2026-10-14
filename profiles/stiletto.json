@@ -6380,7 +6380,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-23",
       "oldUrl": "https://www.stilettosydney.com/workers/chelsea-new-2/",
       "photos": [],
       "labels": [],
@@ -11042,7 +11042,24 @@
       }
     },
     "Adeline": {},
-    "Chelsea": {},
+    "Chelsea": {
+      "2026-10-19": {
+        "start": "11:30",
+        "end": "19:30"
+      },
+      "2026-10-20": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-10-22": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-10-23": {
+        "start": "18:00",
+        "end": "02:00"
+      }
+    },
     "Fern": {},
     "Jenna": {
       "2026-07-31": {
@@ -11436,5 +11453,5 @@
     "Tessa": {}
   },
   "lastGirlsSync": "2026-10-14T00:48:22.778Z",
-  "lastCalendarSync": "2026-10-13T22:57:49.165Z"
+  "lastCalendarSync": "2026-10-14T01:21:13.752Z"
 }

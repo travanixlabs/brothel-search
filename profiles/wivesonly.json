@@ -2183,7 +2183,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-03"
+      "lastRostered": "2026-10-15"
     },
     {
       "name": "Sienna",
@@ -5814,6 +5814,10 @@
       "2026-10-03": {
         "start": "11:00",
         "end": "14:00"
+      },
+      "2026-10-15": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Giselle": {
@@ -14120,5 +14124,5 @@
     }
   },
   "lastGirlsSync": "2026-10-11T00:37:54.755Z",
-  "lastCalendarSync": "2026-10-15T04:59:43.301Z"
+  "lastCalendarSync": "2026-10-15T11:52:11.875Z"
 }

@@ -1445,6 +1445,30 @@
       "labels": [],
       "lastModified": "2026-10-13T11:31:27.924Z",
       "lastRostered": "2026-10-15"
+    },
+    {
+      "name": "Vivian",
+      "country": [
+        "Vietnamese"
+      ],
+      "height": "178",
+      "cup": "C",
+      "val1": "275",
+      "val2": "330",
+      "val3": "385",
+      "startDate": "2026-10-15",
+      "lang": "Vietnamese, Limited English",
+      "oldUrl": "https://127city.com/v-vivian-new-diamond275-330-385-cash-special250-300-350-30-45-60-bookings-only/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://127city.com/wp-content/uploads/2026/10/Vivian-1-477x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/10/Vivian-2-638x705.jpg",
+        "https://127city.com/wp-content/uploads/2026/10/Vivian-3-768x691.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-15T00:13:16.116Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -7180,7 +7204,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-13T11:31:27.924Z",
+  "lastGirlsSync": "2026-10-15T00:13:16.116Z",
   "lastCalendarSync": "2026-10-14T12:12:26.341Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",

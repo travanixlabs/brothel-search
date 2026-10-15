@@ -2058,7 +2058,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-22"
+      "lastRostered": "2026-10-23"
     },
     {
       "name": "Keisha",
@@ -2341,7 +2341,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-14"
+      "lastRostered": "2026-10-15"
     },
     {
       "name": "Lena",
@@ -9360,6 +9360,10 @@
       "2026-10-22": {
         "start": "14:00",
         "end": "19:00"
+      },
+      "2026-10-23": {
+        "start": "12:00",
+        "end": "17:00"
       }
     },
     "Sydney": {
@@ -10328,6 +10332,10 @@
     "Lacey": {
       "2026-09-28": {
         "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-10-15": {
+        "start": "11:00",
         "end": "18:00"
       }
     },
@@ -11544,5 +11552,5 @@
     }
   },
   "lastGirlsSync": "2026-10-15T00:14:06.869Z",
-  "lastCalendarSync": "2026-10-14T23:20:04.404Z"
+  "lastCalendarSync": "2026-10-15T00:46:24.784Z"
 }

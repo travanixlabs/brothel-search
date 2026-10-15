@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-15",
+      "lastRostered": "2026-10-16",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -10081,6 +10081,10 @@
       "2026-10-15": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-16": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Roxanne": {
@@ -14183,5 +14187,5 @@
     }
   },
   "lastGirlsSync": "2026-10-11T00:37:54.755Z",
-  "lastCalendarSync": "2026-10-15T13:38:35.022Z"
+  "lastCalendarSync": "2026-10-15T15:10:33.030Z"
 }

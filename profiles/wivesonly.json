@@ -3437,6 +3437,28 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Gigi",
+      "country": [
+        "Asian"
+      ],
+      "age": "21",
+      "height": "165cm",
+      "cup": "B",
+      "body": "",
+      "desc": "Contact us on 02 9519 6756",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2025-12-01",
+      "lastRostered": "2025-12-01",
+      "oldUrl": "https://wivesonly.com.au/gigi-2/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -14186,6 +14208,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-11T00:37:54.755Z",
+  "lastGirlsSync": "2026-10-15T19:33:02.681Z",
   "lastCalendarSync": "2026-10-15T15:10:33.030Z"
 }

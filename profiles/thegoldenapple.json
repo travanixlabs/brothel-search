@@ -1219,7 +1219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-12"
+      "lastRostered": "2026-10-15"
     },
     {
       "name": "Giselle",
@@ -2690,6 +2690,10 @@
       "2026-10-12": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-15": {
+        "start": "00:00",
+        "end": "09:00"
       }
     },
     "Janelle": {
@@ -6471,5 +6475,5 @@
     "Sage": {}
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-10-15T13:38:04.402Z"
+  "lastCalendarSync": "2026-10-15T17:14:46.037Z"
 }

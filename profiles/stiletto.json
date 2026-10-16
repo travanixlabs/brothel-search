@@ -6872,7 +6872,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-10",
+      "lastRostered": "2026-10-17",
       "oldUrl": "https://www.stilettosydney.com/workers/ivy-new-3/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2026/01/IMG_0874.jpg"
@@ -11269,6 +11269,10 @@
       "2026-10-10": {
         "start": "19:00",
         "end": "06:00"
+      },
+      "2026-10-17": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "York": {},
@@ -11496,5 +11500,5 @@
     }
   },
   "lastGirlsSync": "2026-10-16T14:27:26.726Z",
-  "lastCalendarSync": "2026-10-16T13:28:49.521Z"
+  "lastCalendarSync": "2026-10-16T14:57:07.885Z"
 }

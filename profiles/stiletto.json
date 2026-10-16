@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-12",
+      "lastRostered": "2026-10-16",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -3232,7 +3232,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-09"
+      "lastRostered": "2026-10-16"
     },
     {
       "name": "Quinn",
@@ -7577,7 +7577,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-15",
+      "lastRostered": "2026-10-16",
       "oldUrl": "https://www.stilettosydney.com/workers/daya-new/",
       "photos": [],
       "labels": [
@@ -8427,10 +8427,6 @@
         "start": "17:00",
         "end": "23:00"
       },
-      "2026-10-16": {
-        "start": "15:00",
-        "end": "23:00"
-      },
       "2026-10-23": {
         "start": "09:30",
         "end": "17:30"
@@ -9046,6 +9042,10 @@
       "2026-09-30": {
         "start": "23:00",
         "end": "06:00"
+      },
+      "2026-10-16": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Cali": {
@@ -9106,10 +9106,6 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-10-16": {
-        "start": "16:00",
-        "end": "00:00"
       },
       "2026-10-17": {
         "start": "12:00",
@@ -9502,10 +9498,6 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-10-16": {
-        "start": "15:00",
-        "end": "23:00"
       }
     },
     "Lilith": {
@@ -10281,10 +10273,6 @@
       }
     },
     "Lovie": {
-      "2026-10-16": {
-        "start": "16:00",
-        "end": "00:00"
-      },
       "2026-10-17": {
         "start": "16:00",
         "end": "00:00"
@@ -10539,6 +10527,10 @@
       "2026-08-04": {
         "start": "22:30",
         "end": "06:00"
+      },
+      "2026-10-16": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Piper": {},
@@ -10984,10 +10976,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-10-16": {
-        "start": "22:00",
-        "end": "06:00"
-      },
       "2026-10-17": {
         "start": "22:00",
         "end": "06:00"
@@ -11425,6 +11413,10 @@
       "2026-10-15": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-16": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Cherri": {
@@ -11504,5 +11496,5 @@
     }
   },
   "lastGirlsSync": "2026-10-16T08:53:44.818Z",
-  "lastCalendarSync": "2026-10-16T11:43:46.685Z"
+  "lastCalendarSync": "2026-10-16T13:28:49.521Z"
 }

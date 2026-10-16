@@ -1130,7 +1130,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/08/IMG_2780-scaled.jpeg"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-10-16"
     }
   ],
   "calendar": {
@@ -5677,8 +5678,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Zalia": {
+      "2026-10-16": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-07-22T17:05:52.335Z",
-  "lastCalendarSync": "2026-10-16T04:48:19.458Z"
+  "lastCalendarSync": "2026-10-16T11:43:24.263Z"
 }

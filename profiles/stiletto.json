@@ -4408,7 +4408,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16"
+      "lastRostered": "2026-10-17"
     },
     {
       "name": "Victoria",
@@ -9450,6 +9450,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-17": {
+        "start": "15:00",
+        "end": "23:00"
       }
     },
     "Lilith": {
@@ -11400,13 +11404,8 @@
       }
     },
     "Tessa": {},
-    "Vera": {
-      "2026-10-17": {
-        "start": "06:00",
-        "end": "14:00"
-      }
-    }
+    "Vera": {}
   },
   "lastGirlsSync": "2026-10-17T00:05:58.854Z",
-  "lastCalendarSync": "2026-10-16T21:26:49.470Z"
+  "lastCalendarSync": "2026-10-17T04:48:57.660Z"
 }

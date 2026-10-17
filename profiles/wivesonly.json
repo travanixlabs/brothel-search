@@ -1648,7 +1648,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16"
+      "lastRostered": "2026-10-17"
     },
     {
       "name": "Cartier",
@@ -1750,7 +1750,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16"
+      "lastRostered": "2026-10-17"
     },
     {
       "name": "Desiree",
@@ -1767,7 +1767,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16"
+      "lastRostered": "2026-10-17"
     },
     {
       "name": "Layla",
@@ -4434,6 +4434,10 @@
       "2026-10-16": {
         "start": "21:00",
         "end": "02:00"
+      },
+      "2026-10-17": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Jess": {
@@ -8406,6 +8410,10 @@
       "2026-10-16": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-17": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Maisie": {
@@ -9182,6 +9190,10 @@
       "2026-10-16": {
         "start": "19:00",
         "end": "05:00"
+      },
+      "2026-10-17": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Evie": {
@@ -14265,5 +14277,5 @@
     "Anastasia": {}
   },
   "lastGirlsSync": "2026-10-15T19:33:02.681Z",
-  "lastCalendarSync": "2026-10-16T13:28:54.301Z"
+  "lastCalendarSync": "2026-10-17T11:01:57.144Z"
 }

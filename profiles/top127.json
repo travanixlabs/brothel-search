@@ -108,7 +108,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-18",
+      "lastRostered": "2026-10-19",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Angela1-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Angela2-470x705.jpg"
@@ -365,7 +365,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-16",
+      "lastRostered": "2026-10-19",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Ella-395x705.jpg"
       ],
@@ -551,7 +551,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-18",
+      "lastRostered": "2026-10-19",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -891,7 +891,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T16:00:32.518Z",
-      "lastRostered": "2026-10-18",
+      "lastRostered": "2026-10-19",
       "deleted": "Yes",
       "deletedAt": "2026-04-28T17:50:46.674Z"
     },
@@ -1388,7 +1388,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-09-15T13:49:07.176Z",
-      "lastRostered": "2026-10-17",
+      "lastRostered": "2026-10-19",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/09/Suji-608x705.jpg",
         "https://127city.com/wp-content/uploads/2026/09/Suji1-608x705.jpg"
@@ -1420,7 +1420,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-02T10:00:15.574Z",
-      "lastRostered": "2026-10-11"
+      "lastRostered": "2026-10-19"
     },
     {
       "name": "Yuna",
@@ -1444,7 +1444,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-13T11:31:27.924Z",
-      "lastRostered": "2026-10-18"
+      "lastRostered": "2026-10-19"
     },
     {
       "name": "Vivian",
@@ -1677,7 +1677,8 @@
       "2026-10-15",
       "2026-10-16",
       "2026-10-17",
-      "2026-10-18"
+      "2026-10-18",
+      "2026-10-19"
     ],
     "Sana": {
       "2026-03-26": {
@@ -3632,6 +3633,10 @@
       "2026-10-18": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Ella": {
@@ -4098,6 +4103,10 @@
       "2026-10-16": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Ai": {
@@ -4710,6 +4719,10 @@
         "end": "03:00"
       },
       "2026-10-18": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-19": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -7150,6 +7163,10 @@
       "2026-10-17": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Nicole": {
@@ -7228,6 +7245,10 @@
       "2026-10-18": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Yoyo": {
@@ -7258,6 +7279,10 @@
       "2026-10-11": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Yuna": {
@@ -7274,6 +7299,10 @@
         "end": "03:00"
       },
       "2026-10-18": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-19": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -7294,7 +7323,7 @@
     }
   },
   "lastGirlsSync": "2026-10-15T00:13:16.116Z",
-  "lastCalendarSync": "2026-10-17T12:20:15.109Z",
+  "lastCalendarSync": "2026-10-18T12:45:24.366Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

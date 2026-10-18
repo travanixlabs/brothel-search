@@ -2230,7 +2230,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-19"
+      "lastRostered": "2026-10-21"
     },
     {
       "name": "Kitana",
@@ -6532,7 +6532,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-03",
+      "lastRostered": "2026-10-18",
       "oldUrl": "https://www.stilettosydney.com/workers/sakura-new/",
       "photos": [],
       "labels": [
@@ -9373,7 +9373,12 @@
         "end": "04:00"
       }
     },
-    "Kiara": {},
+    "Kiara": {
+      "2026-10-21": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
     "Candice": {
       "2026-04-10": {
         "start": "21:00",
@@ -11004,7 +11009,12 @@
       }
     },
     "Sukura": {},
-    "Sakura": {},
+    "Sakura": {
+      "2026-10-18": {
+        "start": "16:00",
+        "end": "22:00"
+      }
+    },
     "Olive": {},
     "Farah": {},
     "Kaia": {
@@ -11330,5 +11340,5 @@
     "Vera": {}
   },
   "lastGirlsSync": "2026-10-17T23:41:54.704Z",
-  "lastCalendarSync": "2026-10-18T00:13:09.202Z"
+  "lastCalendarSync": "2026-10-18T04:55:01.975Z"
 }

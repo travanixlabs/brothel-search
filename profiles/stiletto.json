@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16",
+      "lastRostered": "2026-10-19",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -1825,7 +1825,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-18"
+      "lastRostered": "2026-10-19"
     },
     {
       "name": "Jess",
@@ -3579,7 +3579,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-16"
+      "lastRostered": "2026-10-19"
     },
     {
       "name": "Sadie",
@@ -8978,10 +8978,6 @@
       "2026-10-16": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-10-18": {
-        "start": "17:00",
-        "end": "01:00"
       }
     },
     "Cali": {
@@ -9643,6 +9639,10 @@
       },
       "2026-10-14": {
         "start": "22:00",
+        "end": "06:00"
+      },
+      "2026-10-19": {
+        "start": "00:00",
         "end": "06:00"
       }
     },
@@ -10364,6 +10364,10 @@
       "2026-10-16": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-19": {
+        "start": "00:00",
+        "end": "08:00"
       }
     },
     "Zara": {
@@ -11192,7 +11196,7 @@
     "Lucy": {},
     "Delilah": {
       "2026-10-19": {
-        "start": "10:00",
+        "start": "11:00",
         "end": "19:00"
       },
       "2026-10-20": {
@@ -11323,5 +11327,5 @@
     "Vera": {}
   },
   "lastGirlsSync": "2026-10-18T13:43:14.660Z",
-  "lastCalendarSync": "2026-10-18T11:30:48.053Z"
+  "lastCalendarSync": "2026-10-18T14:04:45.810Z"
 }

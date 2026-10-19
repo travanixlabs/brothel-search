@@ -3026,7 +3026,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-18",
+      "lastRostered": "2026-10-19",
       "oldUrl": "https://wivesonly.com.au/summer/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -7763,7 +7763,7 @@
       },
       "2026-10-19": {
         "start": "11:00",
-        "end": "17:30"
+        "end": "16:00"
       }
     },
     "Sienna": {
@@ -10216,7 +10216,7 @@
         "end": "06:00"
       },
       "2026-10-19": {
-        "start": "19:20",
+        "start": "19:30",
         "end": "04:00"
       }
     },
@@ -13888,6 +13888,10 @@
       "2026-10-18": {
         "start": "16:00",
         "end": "01:00"
+      },
+      "2026-10-19": {
+        "start": "17:00",
+        "end": "01:00"
       }
     },
     "Dior": {
@@ -14367,5 +14371,5 @@
     "Anastasia": {}
   },
   "lastGirlsSync": "2026-10-15T19:33:02.681Z",
-  "lastCalendarSync": "2026-10-18T14:04:49.437Z"
+  "lastCalendarSync": "2026-10-19T05:04:07.306Z"
 }

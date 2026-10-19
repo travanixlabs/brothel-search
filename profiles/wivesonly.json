@@ -3474,7 +3474,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2024-11-01",
+      "lastRostered": "2026-10-19",
       "oldUrl": "https://wivesonly.com.au/cj/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/Wives-Only-1-22.jpg",
@@ -14393,8 +14393,14 @@
         "end": "04:00"
       }
     },
-    "Anastasia": {}
+    "Anastasia": {},
+    "CJ": {
+      "2026-10-19": {
+        "start": "22:00",
+        "end": "04:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-10-19T09:43:39.617Z",
-  "lastCalendarSync": "2026-10-19T07:57:59.343Z"
+  "lastCalendarSync": "2026-10-19T10:08:02.569Z"
 }

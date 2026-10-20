@@ -1305,7 +1305,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-08-19",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/lisa-1100am-800pm/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2022/11/sexy-girl_meitu_1.jpg"
@@ -1326,7 +1326,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2025-08-12",
-      "lastRostered": "2026-10-20",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/cindy-3/",
       "photos": [],
       "labels": [],
@@ -2161,7 +2161,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-05-22",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/joanna/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/05/%E5%9B%BE%E7%89%87_20260522143658.jpg"
@@ -2622,7 +2622,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-08-30",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/lisa-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/08/%E5%9B%BE%E7%89%87_20260830014632_80_10.jpg"
@@ -2664,7 +2664,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-09-09",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/kiki-4/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260910093644.jpg"
@@ -2706,7 +2706,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-09-12",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/summer/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260912072741_136_10.jpg"
@@ -2764,7 +2764,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-09-27",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/happy-2/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/09/%E5%9B%BE%E7%89%87_20260927201402_211_10.jpg",
@@ -2803,7 +2803,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-11",
+      "lastRostered": "2026-10-21",
       "oldUrl": "https://jinia.com.au/ivy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094630.jpg"
@@ -2822,7 +2822,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-20",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/candy/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261002094249.jpg"
@@ -2860,7 +2860,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-09",
-      "lastRostered": "2026-10-26",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://jinia.com.au/emily/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261009121109.jpg"
@@ -4145,6 +4145,10 @@
       "2026-10-23": {
         "start": "15:00",
         "end": "00:00"
+      },
+      "2026-10-21": {
+        "start": "15:00",
+        "end": "00:00"
       }
     },
     "Eva": {
@@ -4714,7 +4718,8 @@
       "2026-10-23",
       "2026-10-24",
       "2026-10-25",
-      "2026-10-26"
+      "2026-10-26",
+      "2026-10-27"
     ],
     "Sherry 7:pm-close": {
       "2026-04-10": {
@@ -6567,6 +6572,10 @@
       "2026-10-26": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-10-27": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Christina": {
@@ -7416,6 +7425,10 @@
       "2026-10-26": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-10-27": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Ruby": {
@@ -7609,10 +7622,6 @@
         "start": "13:00",
         "end": "03:00"
       },
-      "2026-10-21": {
-        "start": "13:00",
-        "end": "03:00"
-      },
       "2026-10-22": {
         "start": "13:00",
         "end": "03:00"
@@ -7782,6 +7791,10 @@
       "2026-10-26": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-10-27": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "May": {
@@ -7922,6 +7935,14 @@
       "2026-10-20": {
         "start": "12:00",
         "end": "00:00"
+      },
+      "2026-10-27": {
+        "start": "12:00",
+        "end": "00:00"
+      },
+      "2026-10-21": {
+        "start": "12:00",
+        "end": "00:00"
       }
     },
     "Chloe": {
@@ -8052,6 +8073,10 @@
       "2026-10-04": {
         "start": "11:00",
         "end": "04:00"
+      },
+      "2026-10-21": {
+        "start": "11:00",
+        "end": "04:00"
       }
     },
     "NEW Emily": {
@@ -8095,10 +8120,6 @@
         "start": "11:00",
         "end": "04:00"
       },
-      "2026-10-21": {
-        "start": "11:00",
-        "end": "04:00"
-      },
       "2026-10-22": {
         "start": "11:00",
         "end": "04:00"
@@ -8120,6 +8141,10 @@
         "end": "04:00"
       },
       "2026-10-26": {
+        "start": "11:00",
+        "end": "04:00"
+      },
+      "2026-10-27": {
         "start": "11:00",
         "end": "04:00"
       }
@@ -8182,6 +8207,14 @@
       "2026-10-20": {
         "start": "10:30",
         "end": "04:00"
+      },
+      "2026-10-27": {
+        "start": "10:30",
+        "end": "04:00"
+      },
+      "2026-10-21": {
+        "start": "10:30",
+        "end": "04:00"
       }
     },
     "Happy": {
@@ -8229,10 +8262,6 @@
         "start": "12:00",
         "end": "03:00"
       },
-      "2026-10-21": {
-        "start": "12:00",
-        "end": "03:00"
-      },
       "2026-10-22": {
         "start": "12:00",
         "end": "03:00"
@@ -8260,6 +8289,10 @@
       "2026-10-20": {
         "start": "12:00",
         "end": "03:00"
+      },
+      "2026-10-27": {
+        "start": "12:00",
+        "end": "03:00"
       }
     },
     "NEW Mia": {
@@ -8280,5 +8313,5 @@
     }
   },
   "lastGirlsSync": "2026-10-12T11:46:28.348Z",
-  "lastCalendarSync": "2026-10-19T13:46:37.254Z"
+  "lastCalendarSync": "2026-10-20T13:48:36.858Z"
 }

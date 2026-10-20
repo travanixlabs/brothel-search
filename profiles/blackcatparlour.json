@@ -4270,6 +4270,42 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-10-14"
+    },
+    {
+      "name": "Celine",
+      "country": [
+        "New Zealander"
+      ],
+      "age": "33",
+      "height": "163",
+      "cup": "C",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-21",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yumi",
+      "country": [
+        "Korean"
+      ],
+      "age": "25",
+      "height": "165",
+      "cup": "C",
+      "body": "6",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-21",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -23365,6 +23401,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-06T02:00:29.244Z",
+  "lastGirlsSync": "2026-10-20T14:36:11.280Z",
   "lastCalendarSync": "2026-10-20T13:48:01.821Z"
 }

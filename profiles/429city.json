@@ -175,7 +175,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:52:59.643Z",
-      "lastRostered": "2026-09-21",
+      "lastRostered": "2026-10-20",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2025/11/图片_20251113210121_276_56-579x1030.jpg",
         "https://www.429city.com/wp-content/uploads/2025/11/图片_20251113210124_277_56.jpg"
@@ -252,7 +252,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:53:04.754Z",
-      "lastRostered": "2026-07-10",
+      "lastRostered": "2026-10-20",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2026/02/图片_20260206172459.jpg"
       ],
@@ -10337,6 +10337,10 @@
       "2026-09-21": {
         "start": "10:00",
         "end": "05:00"
+      },
+      "2026-10-20": {
+        "start": "10:00",
+        "end": "05:00"
       }
     },
     "Elly": {
@@ -10795,6 +10799,10 @@
         "end": "05:00"
       },
       "2026-07-10": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-10-20": {
         "start": "10:00",
         "end": "05:00"
       }
@@ -22155,5 +22163,5 @@
     }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-10-19T13:45:53.692Z"
+  "lastCalendarSync": "2026-10-20T05:05:46.733Z"
 }

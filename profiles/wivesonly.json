@@ -3484,6 +3484,29 @@
       ],
       "labels": [],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Valeria",
+      "country": [
+        "South American"
+      ],
+      "age": "35",
+      "height": "165",
+      "cup": "D",
+      "body": "",
+      "desc": "Valeria is a stunning Latina beauty with sun-kissed, tanned skin and striking blonde hair that turns heads the moment she enters a room. In her mid-30s, she brings a confident, feminine energy paired with a naturally warm and engaging personality.",
+      "val1": "250",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-02-01",
+      "lastRostered": "2026-02-01",
+      "oldUrl": "https://wivesonly.com.au/valeria/",
+      "photos": [
+        "https://wivesonly.com.au/wp-content/uploads/2026/02/caroline1.jpg",
+        "https://wivesonly.com.au/wp-content/uploads/2026/02/caroline2.jpg"
+      ],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -14495,6 +14518,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-19T09:43:39.617Z",
+  "lastGirlsSync": "2026-10-21T09:13:48.552Z",
   "lastCalendarSync": "2026-10-21T07:51:47.538Z"
 }

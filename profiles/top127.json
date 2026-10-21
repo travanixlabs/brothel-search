@@ -108,7 +108,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-22",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/02/Angela1-470x705.jpg",
         "https://127city.com/wp-content/uploads/2026/02/Angela2-470x705.jpg"
@@ -398,7 +398,7 @@
       ],
       "originalSite": "Exists",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-20",
+      "lastRostered": "2026-10-22",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Mio3-529x705.jpg",
         "https://127city.com/wp-content/uploads/2026/01/Mio4-528x705.jpg",
@@ -551,7 +551,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-14T09:22:29.824Z",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-22",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/01/Maggie1-450x715.jpg"
       ],
@@ -891,7 +891,7 @@
       ],
       "labels": [],
       "lastModified": "2026-04-25T16:00:32.518Z",
-      "lastRostered": "2026-10-21",
+      "lastRostered": "2026-10-22",
       "deleted": "Yes",
       "deletedAt": "2026-04-28T17:50:46.674Z"
     },
@@ -1468,7 +1468,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-15T00:13:16.116Z",
-      "lastRostered": "2026-10-21"
+      "lastRostered": "2026-10-22"
     },
     {
       "name": "Roa",
@@ -1492,7 +1492,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-19T04:00:49.096Z",
-      "lastRostered": "2026-10-20"
+      "lastRostered": "2026-10-22"
     },
     {
       "name": "Aoi",
@@ -1512,7 +1512,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-10-20T13:47:40.845Z",
-      "lastRostered": "2026-10-21",
+      "lastRostered": "2026-10-22",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/10/Aoi-471x705.jpg",
         "https://127city.com/wp-content/uploads/2026/10/Aoi1-471x705.jpg"
@@ -1731,7 +1731,8 @@
       "2026-10-18",
       "2026-10-19",
       "2026-10-20",
-      "2026-10-21"
+      "2026-10-21",
+      "2026-10-22"
     ],
     "Sana": {
       "2026-03-26": {
@@ -2040,6 +2041,10 @@
         "end": "02:00"
       },
       "2026-10-20": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-22": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -3706,6 +3711,10 @@
       "2026-10-19": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-22": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Ella": {
@@ -4796,6 +4805,10 @@
         "end": "02:00"
       },
       "2026-10-19": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-22": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -7338,6 +7351,10 @@
       "2026-10-21": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-22": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Yoyo": {
@@ -7424,10 +7441,18 @@
       "2026-10-21": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-22": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Roa": {
       "2026-10-20": {
+        "start": "12:00",
+        "end": "02:00"
+      },
+      "2026-10-22": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -7436,11 +7461,15 @@
       "2026-10-21": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-22": {
+        "start": "12:00",
+        "end": "02:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-19T04:00:49.096Z",
-  "lastCalendarSync": "2026-10-20T13:47:40.845Z",
+  "lastCalendarSync": "2026-10-21T12:09:08.325Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

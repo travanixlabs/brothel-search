@@ -2230,7 +2230,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-21"
+      "lastRostered": "2026-10-22"
     },
     {
       "name": "Kitana",
@@ -9468,7 +9468,12 @@
         "end": "04:00"
       }
     },
-    "Kiara": {},
+    "Kiara": {
+      "2026-10-22": {
+        "start": "10:00",
+        "end": "17:00"
+      }
+    },
     "Candice": {
       "2026-04-10": {
         "start": "21:00",
@@ -11375,10 +11380,6 @@
     },
     "Maisie": {},
     "Mercedes": {
-      "2026-10-21": {
-        "start": "18:00",
-        "end": "02:00"
-      },
       "2026-10-24": {
         "start": "18:00",
         "end": "02:00"
@@ -11521,5 +11522,5 @@
     }
   },
   "lastGirlsSync": "2026-10-21T14:48:19.937Z",
-  "lastCalendarSync": "2026-10-21T14:04:12.875Z"
+  "lastCalendarSync": "2026-10-21T15:26:54.882Z"
 }

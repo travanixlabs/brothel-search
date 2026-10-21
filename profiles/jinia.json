@@ -2898,7 +2898,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-21",
-      "lastRostered": "2026-10-21",
+      "lastRostered": "2026-10-22",
       "oldUrl": "https://jinia.com.au/hazel-2/",
       "photos": [],
       "labels": [],
@@ -8360,8 +8360,14 @@
         "start": "13:00",
         "end": "04:00"
       }
+    },
+    "NEW Hazel": {
+      "2026-10-22": {
+        "start": "17:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-21T14:48:57.081Z",
-  "lastCalendarSync": "2026-10-21T14:04:29.626Z"
+  "lastCalendarSync": "2026-10-21T15:27:02.847Z"
 }

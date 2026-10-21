@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-21"
+      "lastRostered": "2026-10-22"
     },
     {
       "name": "Ami",
@@ -610,7 +610,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-20"
+      "lastRostered": "2026-10-22"
     },
     {
       "name": "Tea",
@@ -1170,7 +1170,8 @@
         "https://pennys77.com.au/wp-content/uploads/2025/12/IMG_2804.webp"
       ],
       "labels": [],
-      "originalSite": "Exists"
+      "originalSite": "Exists",
+      "lastRostered": "2026-10-22"
     }
   ],
   "calendar": {
@@ -2434,6 +2435,10 @@
         "end": "03:00"
       },
       "2026-10-20": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-22": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -4694,6 +4699,10 @@
       "2026-10-19": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-22": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Bella": {
@@ -5795,10 +5804,6 @@
       "2026-10-21": {
         "start": "11:00",
         "end": "03:00"
-      },
-      "2026-10-22": {
-        "start": "11:00",
-        "end": "03:00"
       }
     },
     "Safaree": {
@@ -5857,8 +5862,14 @@
         "start": "11:00",
         "end": "03:00"
       }
+    },
+    "Hailey": {
+      "2026-10-22": {
+        "start": "11:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-17T04:00:23.197Z",
-  "lastCalendarSync": "2026-10-21T14:03:26.252Z"
+  "lastCalendarSync": "2026-10-21T17:30:38.579Z"
 }

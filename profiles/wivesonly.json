@@ -3474,7 +3474,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-21",
       "oldUrl": "https://wivesonly.com.au/cj/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/Wives-Only-1-22.jpg",
@@ -13212,10 +13212,6 @@
       "2026-10-19": {
         "start": "11:00",
         "end": "19:30"
-      },
-      "2026-10-21": {
-        "start": "11:00",
-        "end": "19:30"
       }
     },
     "Ella": {
@@ -14496,9 +14492,13 @@
       "2026-10-19": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-10-21": {
+        "start": "11:00",
+        "end": "19:30"
       }
     }
   },
   "lastGirlsSync": "2026-10-19T09:43:39.617Z",
-  "lastCalendarSync": "2026-10-20T13:48:28.927Z"
+  "lastCalendarSync": "2026-10-21T00:49:16.508Z"
 }

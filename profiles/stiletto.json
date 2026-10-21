@@ -3382,7 +3382,11 @@
       "startDate": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/riley-3/",
       "photos": [],
-      "labels": [],
+      "labels": [
+        "Girlfriend Experience",
+        "Doubles",
+        "Party Bookings"
+      ],
       "originalSite": "Exists",
       "lastRostered": "2026-10-24"
     },
@@ -11541,6 +11545,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-21T00:18:28.904Z",
+  "lastGirlsSync": "2026-10-21T09:13:24.134Z",
   "lastCalendarSync": "2026-10-21T07:51:43.314Z"
 }

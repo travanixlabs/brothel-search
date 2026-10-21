@@ -716,7 +716,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-17"
+      "lastRostered": "2026-10-21"
     },
     {
       "name": "CeCe",
@@ -8491,6 +8491,10 @@
       "2026-10-17": {
         "start": "20:00",
         "end": "06:00"
+      },
+      "2026-10-21": {
+        "start": "19:00",
+        "end": "03:00"
       }
     },
     "Hennessy": {
@@ -11538,5 +11542,5 @@
     }
   },
   "lastGirlsSync": "2026-10-21T00:18:28.904Z",
-  "lastCalendarSync": "2026-10-21T05:09:04.906Z"
+  "lastCalendarSync": "2026-10-21T07:51:43.314Z"
 }

@@ -127,7 +127,7 @@
         "GFE"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-23",
       "desc": "Gentlemen, Alice is my name. I am Australian with perfect creamy skin sensual to your touch, sparkling blue eyes and a natural C cup bust.&nbsp; I am down to earth, sweet and very playful. My girlfriend experience is authentic. The only thing stopping us from meeting is you. Stop hesitating, ..."
     },
     {
@@ -8714,10 +8714,6 @@
         "start": "19:00",
         "end": "03:00"
       },
-      "2026-10-22": {
-        "start": "18:00",
-        "end": "04:00"
-      },
       "2026-10-23": {
         "start": "18:00",
         "end": "06:00"
@@ -8830,13 +8826,9 @@
         "start": "21:00",
         "end": "05:00"
       },
-      "2026-10-23": {
-        "start": "22:00",
-        "end": "06:00"
-      },
       "2026-10-24": {
-        "start": "22:00",
-        "end": "06:00"
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Josie": {
@@ -8890,10 +8882,6 @@
       },
       "2026-10-20": {
         "start": "21:00",
-        "end": "04:00"
-      },
-      "2026-10-22": {
-        "start": "20:00",
         "end": "04:00"
       },
       "2026-10-23": {
@@ -9997,10 +9985,6 @@
         "start": "23:00",
         "end": "06:00"
       },
-      "2026-10-22": {
-        "start": "20:00",
-        "end": "04:00"
-      },
       "2026-10-24": {
         "start": "22:00",
         "end": "06:00"
@@ -10281,10 +10265,6 @@
     },
     "Lovie": {
       "2026-10-20": {
-        "start": "19:00",
-        "end": "03:00"
-      },
-      "2026-10-22": {
         "start": "19:00",
         "end": "03:00"
       }
@@ -10573,6 +10553,10 @@
       },
       "2026-10-16": {
         "start": "23:00",
+        "end": "07:00"
+      },
+      "2026-10-23": {
+        "start": "02:00",
         "end": "07:00"
       }
     },
@@ -10876,10 +10860,6 @@
         "end": "06:00"
       },
       "2026-10-20": {
-        "start": "19:00",
-        "end": "03:00"
-      },
-      "2026-10-22": {
         "start": "19:00",
         "end": "03:00"
       },
@@ -11496,5 +11476,5 @@
     }
   },
   "lastGirlsSync": "2026-10-22T14:48:16.434Z",
-  "lastCalendarSync": "2026-10-22T15:25:47.444Z"
+  "lastCalendarSync": "2026-10-22T17:28:12.781Z"
 }

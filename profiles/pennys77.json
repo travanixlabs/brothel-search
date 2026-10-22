@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-17"
+      "lastRostered": "2026-10-23"
     },
     {
       "name": "Anjali",
@@ -442,7 +442,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-20"
+      "lastRostered": "2026-10-23"
     },
     {
       "name": "Sonia",
@@ -1028,7 +1028,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-22"
+      "lastRostered": "2026-10-23"
     },
     {
       "name": "Safaree",
@@ -2680,6 +2680,10 @@
       "2026-10-19": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-23": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Sonia": {
@@ -3740,6 +3744,10 @@
         "end": "03:00"
       },
       "2026-10-16": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-23": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5821,6 +5829,10 @@
       "2026-10-21": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-23": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Safaree": {
@@ -5883,5 +5895,5 @@
     "Hailey": {}
   },
   "lastGirlsSync": "2026-10-17T04:00:23.197Z",
-  "lastCalendarSync": "2026-10-22T14:01:33.182Z"
+  "lastCalendarSync": "2026-10-22T23:28:38.313Z"
 }

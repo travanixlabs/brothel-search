@@ -334,7 +334,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-01",
+      "lastRostered": "2026-10-24",
       "desc": "Stiletto's pixie dream girl Hello Gentlemen, My name is Arizona. I am in my early 20’s. I am have brunette hair cascading over my ivory skin. I am a lifelike pixie dream girl. Picture a cute fairy meets playboy bunny. I have a banging size 8 body with size 10 round hips that ..."
     },
     {
@@ -576,7 +576,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-23",
+      "lastRostered": "2026-10-25",
       "desc": "Beautiful brandy Hello Gentlemen, My name is Brandy, I am in my mid 20's and new to Stiletto. I am an energetic pocket rocket. My dress size is 6 and my bust is a natural B-cup. I have gorgeous brown eyes with blonde luscious hair to match. I specialise in a genuine girlfriend ..."
     },
     {
@@ -716,7 +716,7 @@
         "Party Bookings"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-21"
+      "lastRostered": "2026-10-24"
     },
     {
       "name": "CeCe",
@@ -993,7 +993,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-27"
+      "lastRostered": "2026-10-24"
     },
     {
       "name": "Darcie",
@@ -1182,7 +1182,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-30"
+      "lastRostered": "2026-10-25"
     },
     {
       "name": "Eva",
@@ -7232,7 +7232,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-17",
+      "lastRostered": "2026-10-27",
       "oldUrl": "https://www.stilettosydney.com/workers/estelle-new-2-2/",
       "photos": [],
       "labels": [],
@@ -7344,7 +7344,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-23",
+      "lastRostered": "2026-10-25",
       "oldUrl": "https://www.stilettosydney.com/workers/tyla/",
       "photos": [],
       "labels": [
@@ -8541,6 +8541,10 @@
       "2026-10-17": {
         "start": "20:00",
         "end": "06:00"
+      },
+      "2026-10-24": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Hennessy": {
@@ -8583,10 +8587,6 @@
       "2026-09-30": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-10-24": {
-        "start": "01:00",
-        "end": "08:00"
       }
     },
     "Flora": {
@@ -9315,10 +9315,6 @@
       "2026-10-23": {
         "start": "23:45",
         "end": "07:45"
-      },
-      "2026-10-24": {
-        "start": "21:00",
-        "end": "05:00"
       }
     },
     "Kay": {
@@ -10005,7 +10001,16 @@
       }
     },
     "CeCe": {},
-    "Erika": {},
+    "Erika": {
+      "2026-10-24": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-25": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Ginger": {
       "2026-04-28": {
         "start": "21:00",
@@ -10226,7 +10231,12 @@
         "end": "06:00"
       }
     },
-    "Dallas": {},
+    "Dallas": {
+      "2026-10-24": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Annika": {},
     "Audrina": {
       "2026-04-13": {
@@ -10251,7 +10261,12 @@
       }
     },
     "Rebecca": {},
-    "Arizona": {},
+    "Arizona": {
+      "2026-10-24": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Imogen": {},
     "Poppy": {
       "2026-04-13": {
@@ -10531,7 +10546,12 @@
         "end": "06:00"
       }
     },
-    "Brandy": {},
+    "Brandy": {
+      "2026-10-25": {
+        "start": "16:00",
+        "end": "00:00"
+      }
+    },
     "Yvette": {},
     "Sonya": {},
     "Zarina": {
@@ -11145,10 +11165,6 @@
       "2026-08-25": {
         "start": "23:00",
         "end": "07:00"
-      },
-      "2026-10-24": {
-        "start": "01:00",
-        "end": "08:00"
       }
     },
     "Precious": {},
@@ -11300,9 +11316,23 @@
         "end": "02:00"
       }
     },
-    "Estelle": {},
+    "Estelle": {
+      "2026-10-27": {
+        "start": "21:00",
+        "end": "05:00"
+      }
+    },
     "Daria": {},
-    "Tyla": {},
+    "Tyla": {
+      "2026-10-24": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-10-25": {
+        "start": "14:00",
+        "end": "22:00"
+      }
+    },
     "Astra": {
       "2026-09-24": {
         "start": "23:00",
@@ -11421,5 +11451,5 @@
     "Fiamma": {}
   },
   "lastGirlsSync": "2026-10-23T19:37:26.157Z",
-  "lastCalendarSync": "2026-10-23T20:02:38.447Z"
+  "lastCalendarSync": "2026-10-23T21:32:45.584Z"
 }

@@ -11385,7 +11385,9 @@
       ],
       "labels": [],
       "lastModified": "2026-10-10T04:00:15.510Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-10-23T19:50:08.876Z"
     },
     {
       "name": "hayami",

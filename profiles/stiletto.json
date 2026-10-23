@@ -7581,7 +7581,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-16",
+      "lastRostered": "2026-10-24",
       "oldUrl": "https://www.stilettosydney.com/workers/daya-new/",
       "photos": [],
       "labels": [
@@ -9349,10 +9349,6 @@
       "2026-08-14": {
         "start": "22:00",
         "end": "06:00"
-      },
-      "2026-10-23": {
-        "start": "22:00",
-        "end": "03:00"
       },
       "2026-10-26": {
         "start": "12:00",
@@ -11387,6 +11383,10 @@
       "2026-10-16": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-24": {
+        "start": "03:00",
+        "end": "07:00"
       }
     },
     "Cherri": {
@@ -11469,5 +11469,5 @@
     "Fiamma": {}
   },
   "lastGirlsSync": "2026-10-23T14:34:49.210Z",
-  "lastCalendarSync": "2026-10-23T15:16:43.039Z"
+  "lastCalendarSync": "2026-10-23T17:21:01.197Z"
 }

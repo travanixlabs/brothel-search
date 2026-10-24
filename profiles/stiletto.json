@@ -7812,7 +7812,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-24",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.stilettosydney.com/workers/kate-new-4/",
       "photos": [],
       "labels": [
@@ -7852,7 +7852,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "",
+      "lastRostered": "2026-01-01",
       "oldUrl": "https://www.stilettosydney.com/workers/nuru-new/",
       "photos": [],
       "labels": [
@@ -11263,6 +11263,10 @@
       "2026-08-25": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-24": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Precious": {},
@@ -11559,9 +11563,17 @@
       "2026-10-30": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-10-31": {
+        "start": "16:00",
+        "end": "00:00"
+      },
+      "2026-11-01": {
+        "start": "11:00",
+        "end": "16:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-24T08:45:24.375Z",
-  "lastCalendarSync": "2026-10-24T07:28:41.210Z"
+  "lastCalendarSync": "2026-10-24T08:59:47.197Z"
 }

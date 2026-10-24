@@ -3065,7 +3065,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-20"
+      "lastRostered": "2026-10-26"
     },
     {
       "name": "Paloma",
@@ -4412,7 +4412,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-23"
+      "lastRostered": "2026-10-24"
     },
     {
       "name": "Victoria",
@@ -5266,7 +5266,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2022-09-01",
-      "lastRostered": "2026-09-05",
+      "lastRostered": "2026-10-24",
       "oldUrl": "https://www.stilettosydney.com/workers/layla-2/",
       "photos": [
         "https://www.stilettosydney.com/wp-content/uploads/2022/09/Layla-1-.jpg",
@@ -9035,8 +9035,8 @@
         "end": "02:00"
       },
       "2026-10-24": {
-        "start": "18:00",
-        "end": "02:00"
+        "start": "13:00",
+        "end": "21:00"
       },
       "2026-10-27": {
         "start": "12:00",
@@ -9151,6 +9151,14 @@
       "2026-04-05": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-25": {
+        "start": "14:00",
+        "end": "22:00"
+      },
+      "2026-10-26": {
+        "start": "14:00",
+        "end": "22:00"
       }
     },
     "Maddie": {
@@ -9515,6 +9523,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-24": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Lilith": {
@@ -10728,6 +10740,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-24": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Kitana": {},
@@ -11475,5 +11491,5 @@
     "Fiamma": {}
   },
   "lastGirlsSync": "2026-10-24T00:10:41.514Z",
-  "lastCalendarSync": "2026-10-23T23:16:34.916Z"
+  "lastCalendarSync": "2026-10-24T00:58:59.024Z"
 }

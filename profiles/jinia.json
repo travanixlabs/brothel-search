@@ -2915,7 +2915,7 @@
       "val2": "250",
       "val3": "300",
       "startDate": "2026-10-23",
-      "lastRostered": "2026-10-23",
+      "lastRostered": "2026-10-24",
       "oldUrl": "https://jinia.com.au/sky/",
       "photos": [
         "https://jinia.com.au/wp-content/uploads/2026/10/%E5%9B%BE%E7%89%87_20261024104334_75_41.jpg"
@@ -8447,8 +8447,14 @@
         "start": "17:00",
         "end": "03:00"
       }
+    },
+    "NEW Sky": {
+      "2026-10-24": {
+        "start": "22:00",
+        "end": "03:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-24T00:11:05.548Z",
-  "lastCalendarSync": "2026-10-23T13:45:19.109Z"
+  "lastCalendarSync": "2026-10-24T00:59:08.625Z"
 }

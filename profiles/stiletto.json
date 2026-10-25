@@ -1495,7 +1495,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-22"
+      "lastRostered": "2026-10-25"
     },
     {
       "name": "Hailey",
@@ -6279,7 +6279,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-25",
       "oldUrl": "https://www.stilettosydney.com/workers/georgina-new/",
       "photos": [],
       "labels": [
@@ -8482,6 +8482,10 @@
       "2026-04-05": {
         "start": "08:00",
         "end": "16:00"
+      },
+      "2026-10-25": {
+        "start": "10:00",
+        "end": "14:00"
       }
     },
     "Lilly": {
@@ -11109,6 +11113,10 @@
       "2026-10-14": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-25": {
+        "start": "12:00",
+        "end": "20:00"
       }
     },
     "Adeline": {},
@@ -11356,10 +11364,6 @@
     "Gracie": {},
     "Lucy": {},
     "Delilah": {
-      "2026-10-25": {
-        "start": "12:00",
-        "end": "17:00"
-      },
       "2026-10-26": {
         "start": "09:00",
         "end": "17:00"
@@ -11516,5 +11520,5 @@
     }
   },
   "lastGirlsSync": "2026-10-24T23:55:11.176Z",
-  "lastCalendarSync": "2026-10-24T22:36:24.292Z"
+  "lastCalendarSync": "2026-10-25T00:29:11.155Z"
 }

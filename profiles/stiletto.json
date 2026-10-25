@@ -1474,7 +1474,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-27"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Grace",
@@ -1495,7 +1495,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-25"
+      "lastRostered": "2026-10-26"
     },
     {
       "name": "Hailey",
@@ -2495,7 +2495,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-08-26"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Maddie",
@@ -7714,7 +7714,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-05",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.stilettosydney.com/workers/tessa/",
       "photos": [],
       "labels": [
@@ -7852,7 +7852,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-30",
       "oldUrl": "https://www.stilettosydney.com/workers/nuru-new/",
       "photos": [],
       "labels": [
@@ -8476,6 +8476,10 @@
         "end": "16:00"
       },
       "2026-04-05": {
+        "start": "08:00",
+        "end": "16:00"
+      },
+      "2026-10-26": {
         "start": "08:00",
         "end": "16:00"
       }
@@ -10457,6 +10461,10 @@
       "2026-10-27": {
         "start": "16:00",
         "end": "00:00"
+      },
+      "2026-10-28": {
+        "start": "16:00",
+        "end": "00:00"
       }
     },
     "Valerie": {
@@ -10602,7 +10610,20 @@
       }
     },
     "Quinn": {},
-    "London": {},
+    "London": {
+      "2026-10-27": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "20:00"
+      }
+    },
     "Aspen": {},
     "Mercy": {
       "2026-06-07": {
@@ -11451,7 +11472,20 @@
         "end": "06:00"
       }
     },
-    "Tessa": {},
+    "Tessa": {
+      "2026-10-26": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-29": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-11-01": {
+        "start": "07:00",
+        "end": "15:00"
+      }
+    },
     "Vera": {},
     "Riley": {
       "2026-10-27": {
@@ -11507,8 +11541,22 @@
         "start": "11:00",
         "end": "16:00"
       }
+    },
+    "Nuru": {
+      "2026-10-26": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "20:00"
+      },
+      "2026-10-30": {
+        "start": "21:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-10-25T18:36:48.125Z",
-  "lastCalendarSync": "2026-10-25T19:12:37.847Z"
+  "lastCalendarSync": "2026-10-25T21:00:47.242Z"
 }

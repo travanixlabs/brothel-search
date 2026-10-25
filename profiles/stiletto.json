@@ -1850,7 +1850,7 @@
         "DFK"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-20"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Jojo",
@@ -9618,6 +9618,10 @@
       "2026-10-20": {
         "start": "19:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Sasha": {},
@@ -11534,5 +11538,5 @@
     }
   },
   "lastGirlsSync": "2026-10-25T14:03:21.044Z",
-  "lastCalendarSync": "2026-10-25T13:19:43.180Z"
+  "lastCalendarSync": "2026-10-25T14:28:27.181Z"
 }

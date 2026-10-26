@@ -348,7 +348,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T02:30:34.157Z",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-10-27",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/05/Bobo.jpg"
       ],
@@ -1032,7 +1032,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T02:45:29.245Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-11-01",
       "photos": [
         "https://fantasyclub35.com.au/wp-content/uploads/2025/01/Selina3.jpg",
         "https://fantasyclub35.com.au/wp-content/uploads/2025/01/Selina2.jpg",
@@ -1455,7 +1455,7 @@
       "val2": "",
       "val3": "",
       "startDate": "2026-04-06",
-      "lastRostered": "2026-05-31",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://fantasyclub35.com.au/listing_type/lucky-vietnamese/",
       "photos": [],
       "labels": [],
@@ -1601,6 +1601,36 @@
       "labels": [],
       "lastModified": "2026-05-30T04:00:14.434Z",
       "lastRostered": "2026-05-30"
+    },
+    {
+      "name": "Veuns",
+      "country": [
+        "Hongkong"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "C",
+      "val1": "260",
+      "val2": "300",
+      "startDate": "2026-06-01",
+      "oldUrl": "https://fantasyclub35.com.au/listing_type/veunshongkong/",
+      "desc": "",
+      "lang": "",
+      "labels": [],
+      "originalSite": "Exists",
+      "lastModified": "2026-10-26T18:47:13.480Z",
+      "lastRostered": "2026-11-01",
+      "photos": [
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/Veuns.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/Veuns1.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/Veuns200.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/Veuns-N.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/VeunsN1.jpg",
+        "https://fantasyclub35.com.au/wp-content/uploads/2026/06/VeunsN2.jpg"
+      ],
+      "pornstar": "",
+      "englishLevel": "",
+      "experienceLevel": ""
     }
   ],
   "calendar": {
@@ -1674,7 +1704,14 @@
       "2026-05-28",
       "2026-05-29",
       "2026-05-30",
-      "2026-05-31"
+      "2026-05-31",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01"
     ],
     "Selena": {
       "2026-03-26": {
@@ -2215,6 +2252,14 @@
       "2026-05-25": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-10-26": {
+        "start": "14:00",
+        "end": "05:00"
+      },
+      "2026-10-27": {
+        "start": "14:00",
+        "end": "05:00"
       }
     },
     "Coco": {
@@ -2693,6 +2738,26 @@
       "2026-05-31": {
         "start": "11:00",
         "end": "05:00"
+      },
+      "2026-10-28": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-29": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-30": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-31": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-11-01": {
+        "start": "13:00",
+        "end": "05:00"
       }
     },
     "Aya": {
@@ -3001,10 +3066,66 @@
         "start": "19:00",
         "end": "05:00"
       }
+    },
+    "Veuns": {
+      "2026-10-26": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-10-27": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-10-28": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-10-29": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-10-30": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-10-31": {
+        "start": "15:00",
+        "end": "05:00"
+      },
+      "2026-11-01": {
+        "start": "15:00",
+        "end": "05:00"
+      }
+    },
+    "Selina": {
+      "2026-10-27": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-28": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-29": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-30": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-10-31": {
+        "start": "13:00",
+        "end": "05:00"
+      },
+      "2026-11-01": {
+        "start": "13:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-05-30T16:00:43.632Z",
-  "lastCalendarSync": "2026-05-30T04:33:21.734Z",
+  "lastCalendarSync": "2026-10-26T18:47:27.469Z",
   "_skippedUrls": [
     "https://fantasyclub35.com.au/listing_type/wendy-2/",
     "https://fantasyclub35.com.au/listing_type/cocochinese-2/",

@@ -1102,7 +1102,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-24"
+      "lastRostered": "2026-10-27"
     },
     {
       "name": "Zoey",
@@ -1951,7 +1951,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-26"
+      "lastRostered": "2026-10-28"
     }
   ],
   "calendar": {
@@ -3565,6 +3565,10 @@
       "2026-10-03": {
         "start": "10:00",
         "end": "19:00"
+      },
+      "2026-10-27": {
+        "start": "11:00",
+        "end": "18:00"
       }
     },
     "Tasha": {
@@ -6699,9 +6703,13 @@
       "2026-10-26": {
         "start": "18:00",
         "end": "03:00"
+      },
+      "2026-10-28": {
+        "start": "18:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-09-24T09:07:15.820Z",
-  "lastCalendarSync": "2026-10-25T21:00:23.600Z"
+  "lastCalendarSync": "2026-10-26T05:07:36.358Z"
 }

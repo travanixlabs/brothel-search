@@ -11512,7 +11512,9 @@
       ],
       "labels": [],
       "lastModified": "2026-10-18T04:00:48.899Z",
-      "lastRostered": ""
+      "lastRostered": "",
+      "deleted": "Yes",
+      "deletedAt": "2026-10-27T20:28:38.378Z"
     },
     {
       "name": "riiko",

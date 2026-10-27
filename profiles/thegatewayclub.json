@@ -2735,7 +2735,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-02-01",
-      "lastRostered": "2026-02-01",
+      "lastRostered": "2026-10-29",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/harley-new-2/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/02/IMG_20260210_155819_copy_533x533.jpg?ver=1792126379",
@@ -2773,7 +2773,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/hendrixx-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/10/Hendrix1-700x703.jpg?ver=1792648219",
@@ -2807,7 +2807,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-10-01",
-      "lastRostered": "2026-10-01",
+      "lastRostered": "2026-10-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/inanna-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/10/Inanna11-700x700.jpeg?ver=1792994299",
@@ -2911,7 +2911,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-06-01",
-      "lastRostered": "2026-06-01",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/lyla-new-2/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/06/image_copy_752x752-700x700.jpg?ver=1792126379",
@@ -6076,13 +6076,49 @@
     "Dallas": {},
     "Dina": {},
     "Emira": {},
-    "Harley": {},
-    "Hendrixx": {},
-    "Inanna": {},
+    "Harley": {
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
+    "Hendrixx": {
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-31": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
+    "Inanna": {
+      "2026-10-31": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Indi": {},
     "Kourtney": {},
-    "Luna": {}
+    "Luna": {
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-30": {
+        "start": "18:00",
+        "end": "06:00"
+      },
+      "2026-11-01": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-10-27T01:02:40.301Z",
-  "lastCalendarSync": "2026-10-26T18:47:54.899Z"
+  "lastCalendarSync": "2026-10-27T01:36:02.650Z"
 }

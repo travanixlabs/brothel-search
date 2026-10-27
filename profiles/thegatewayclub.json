@@ -911,7 +911,7 @@
         "Role Play"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-06-03",
+      "lastRostered": "2026-01-01",
       "desc": "Meet Noa! An alluring young Japanese lady blessed with natural beauty and a body you wont be able to keep your hands off. Whether you are looking for a soft, sensual and classy experience or something a little more naughty, Noa is the lady for you! Treat yourself to an experience like no other&#8230;"
     },
     {
@@ -993,7 +993,7 @@
         "DATY"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-30",
+      "lastRostered": "2026-01-01",
       "desc": "Ruby is the perfect girl next door with a beach babe vibe! Her long blonde hair and alluring eyes will have you hooked within minutes. Offering a passionate girlfriend experience with mutual oral you're sure to have a memorable moment that will leave you wanting more!"
     },
     {
@@ -1245,7 +1245,13 @@
       "startDate": "2020-10-01",
       "lastRostered": "2026-10-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/abby/",
-      "photos": [],
+      "photos": [
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/10/352b841a-519c-41ec-b29b-bc063a260742-700x700.jpg?ver=1792648848",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2019/10/Aisha5-700x700.jpg?ver=1792640457",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2019/10/grok_1792560106243-700x699.jpg?ver=1792560444",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2019/10/Screenshot_20261021_162433_Grok-700x700.jpg?ver=1792560443",
+        "https://www.gatewayclub.com.au/wp-content/uploads/2026/10/IMG_7315-700x700.jpg?ver=1792648848"
+      ],
       "labels": [
         "DFK",
         "Double",
@@ -3453,6 +3459,61 @@
         "BBBJ",
         "DATY",
         "Porn Star Experience"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Yazmin",
+      "country": [],
+      "age": "23",
+      "height": "165",
+      "cup": "F",
+      "body": "8",
+      "desc": "Blonde hair. Blue eyes. Fun. Flirty. A full voluptuous F cup bust. What more could you want? Let Yazmin take control and show you an experience you will never forget.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/yasmin-new-3/",
+      "photos": [],
+      "labels": [
+        "Double",
+        "Double Lesbian",
+        "Toys",
+        "BDSM",
+        "Golden Showers",
+        "Party Bookings",
+        "Couple",
+        "GFE",
+        "BBBJ",
+        "DATY",
+        "Role Play",
+        "Porn Star Experience"
+      ],
+      "originalSite": "Exists"
+    },
+    {
+      "name": "Zara",
+      "country": [],
+      "age": "25",
+      "height": "165",
+      "cup": "C",
+      "body": "10",
+      "desc": "Zara — Sexy goddess of middle eastern background with athletic curves, toned waist, full hips and ass, perky firm bust. Bubbly, confident, always smiling like she’s already planning the fun. She walks in looking for a good time… and she’s looking at you.",
+      "val1": "260",
+      "val2": "320",
+      "val3": "400",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-01-01",
+      "oldUrl": "https://www.gatewayclub.com.au/ladies/alina/",
+      "photos": [],
+      "labels": [
+        "Double",
+        "Toys",
+        "Party Bookings",
+        "BBBJ",
+        "DATY"
       ],
       "originalSite": "Exists"
     }
@@ -6576,8 +6637,16 @@
         "start": "12:00",
         "end": "06:00"
       }
-    }
+    },
+    "Ariah": {},
+    "Darcy": {},
+    "Mimi": {},
+    "Nina": {},
+    "Tamara": {},
+    "Tilly": {},
+    "Yazmin": {},
+    "Zara": {}
   },
-  "lastGirlsSync": "2026-10-27T09:41:24.169Z",
+  "lastGirlsSync": "2026-10-27T15:39:58.612Z",
   "lastCalendarSync": "2026-10-27T09:56:50.801Z"
 }

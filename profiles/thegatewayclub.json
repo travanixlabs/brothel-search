@@ -3101,7 +3101,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-08-01",
-      "lastRostered": "2026-08-01",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/tahlia-new/",
       "photos": [
         "https://www.gatewayclub.com.au/wp-content/uploads/2026/08/Tahlia1-700x700.jpg?ver=1792126379",
@@ -3165,7 +3165,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/alessia-new/",
       "photos": [],
       "labels": [],
@@ -3245,7 +3245,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/ariana-new-2/",
       "photos": [],
       "labels": [],
@@ -3265,7 +3265,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/catalina-new-3/",
       "photos": [],
       "labels": [
@@ -3309,7 +3309,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-31",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/georgia-new-2/",
       "photos": [],
       "labels": [
@@ -3338,7 +3338,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-01-01",
+      "lastRostered": "2026-10-30",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/max-new-2/",
       "photos": [],
       "labels": [
@@ -6490,12 +6490,94 @@
     "Michelle": {},
     "Onika": {},
     "Raven": {},
-    "Tahlia": {},
+    "Tahlia": {
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-11-01": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Victoria": {},
-    "Alessia": {},
+    "Alessia": {
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
     "Angel": {},
-    "Ari": {}
+    "Ari": {},
+    "Catalina": {
+      "2026-10-27": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-10-29": {
+        "start": "06:00",
+        "end": "12:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "18:00"
+      }
+    },
+    "Max": {
+      "2026-10-27": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "18:00"
+      },
+      "2026-10-30": {
+        "start": "18:00",
+        "end": "06:00"
+      }
+    },
+    "Ariana": {
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-11-01": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    },
+    "Georgia": {
+      "2026-10-29": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-31": {
+        "start": "12:00",
+        "end": "06:00"
+      }
+    }
   },
   "lastGirlsSync": "2026-10-27T09:41:24.169Z",
-  "lastCalendarSync": "2026-10-27T01:36:02.650Z"
+  "lastCalendarSync": "2026-10-27T09:56:50.801Z"
 }

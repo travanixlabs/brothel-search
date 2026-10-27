@@ -2234,7 +2234,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-26"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Clarisse",
@@ -7919,6 +7919,10 @@
         "end": "17:30"
       },
       "2026-10-26": {
+        "start": "11:00",
+        "end": "17:30"
+      },
+      "2026-10-28": {
         "start": "11:00",
         "end": "17:30"
       }
@@ -14853,5 +14857,5 @@
     "Valeria": {}
   },
   "lastGirlsSync": "2026-10-21T09:13:48.552Z",
-  "lastCalendarSync": "2026-10-27T14:51:50.216Z"
+  "lastCalendarSync": "2026-10-27T23:53:12.009Z"
 }

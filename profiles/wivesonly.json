@@ -285,7 +285,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "desc": "Magnolia our new flower. She is bubbly, friendly and known for her sensual girlfriend experience. She is open minded and offer couples and bi-doubles."
     },
     {
@@ -834,7 +834,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-25",
+      "lastRostered": "2026-10-28",
       "desc": "Fox is a flirty, fun and laid-back babe. She loves to keep things sweet and playful. Fox can be  your sweet escape and your naughty secret."
     },
     {
@@ -1137,7 +1137,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "desc": "Playful, passionate, and full of charm — Lulu is your irresistibly cheeky companion currently touring vibrant Sydney! With her soft baby pink hair, warm smile, and natural curves in all the right places, She brings a refreshing mix of sweetness and spice to every encounter."
     },
     {
@@ -1801,7 +1801,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-26"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Belinda",
@@ -1920,7 +1920,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-09-12"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Vixen",
@@ -2766,7 +2766,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-10-24",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/maggie/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/maggie-temp-photo.jpg"
@@ -2832,7 +2832,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-10-17",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/vIvianna/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -2916,7 +2916,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/bambi/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -2982,7 +2982,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2025-12-01",
-      "lastRostered": "2026-10-25",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/dallas/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2025/12/New-girl-image.jpeg"
@@ -3252,7 +3252,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/electra/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/A86495AC-2E0F-4913-B4A4-08F388A5D106_4_5005_c.jpeg"
@@ -3474,7 +3474,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2024-11-01",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/cj/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2024/11/Wives-Only-1-22.jpg",
@@ -6874,7 +6874,8 @@
       "2026-10-24",
       "2026-10-25",
       "2026-10-26",
-      "2026-10-27"
+      "2026-10-27",
+      "2026-10-28"
     ],
     "Hailey": {
       "2026-03-30": {
@@ -10002,6 +10003,10 @@
       "2026-10-25": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -10454,6 +10459,10 @@
       "2026-10-27": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Roxanne": {
@@ -10602,6 +10611,10 @@
       "2026-10-27": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-28": {
+        "start": "11:00",
+        "end": "17:30"
       }
     },
     "Zoe": {
@@ -10875,6 +10888,10 @@
         "end": "20:00"
       },
       "2026-10-26": {
+        "start": "19:30",
+        "end": "04:00"
+      },
+      "2026-10-28": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -12393,6 +12410,10 @@
       "2026-10-24": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-28": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Sassy": {
@@ -12887,6 +12908,10 @@
       "2026-09-08": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Clarisse": {
@@ -13287,6 +13312,10 @@
       "2026-10-17": {
         "start": "20:30",
         "end": "06:00"
+      },
+      "2026-10-28": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Gia": {
@@ -13791,6 +13820,10 @@
       "2026-10-27": {
         "start": "22:00",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "22:00",
+        "end": "04:00"
       }
     },
     "Ava": {
@@ -14010,6 +14043,10 @@
       "2026-10-25": {
         "start": "20:00",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Summer": {
@@ -14658,6 +14695,10 @@
       "2026-10-27": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "19:30",
+        "end": "04:00"
       }
     },
     "Maddie": {
@@ -14802,11 +14843,15 @@
       "2026-10-27": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-28": {
+        "start": "11:00",
+        "end": "19:30"
       }
     },
     "Gigi": {},
     "Valeria": {}
   },
   "lastGirlsSync": "2026-10-21T09:13:48.552Z",
-  "lastCalendarSync": "2026-10-26T13:25:14.625Z"
+  "lastCalendarSync": "2026-10-27T14:51:50.216Z"
 }

@@ -2251,7 +2251,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:55:22.938Z",
-      "lastRostered": "2024-12-01",
+      "lastRostered": "2026-10-27",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2024/12/图片_20241206144905_副本.jpg",
         "https://www.429city.com/wp-content/uploads/2024/12/图片_20241207132642-652x1030.jpg",
@@ -22335,8 +22335,14 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Lily": {
+      "2026-10-27": {
+        "start": "10:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-10-26T13:24:31.780Z"
+  "lastCalendarSync": "2026-10-27T05:22:30.232Z"
 }

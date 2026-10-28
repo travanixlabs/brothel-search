@@ -11563,6 +11563,57 @@
       "labels": [],
       "lastModified": "2026-10-23T10:00:12.047Z",
       "lastRostered": ""
+    },
+    {
+      "name": "Doris",
+      "country": [
+        "Chinese"
+      ],
+      "age": "22",
+      "height": "167",
+      "cup": "D",
+      "val1": "200",
+      "val2": "270",
+      "val3": "320",
+      "startDate": "2026-10-28",
+      "lang": "Mandarin, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/doris-china/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100281793159651_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100271793159649_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-28T10:00:26.543Z",
+      "lastRostered": ""
+    },
+    {
+      "name": "anika",
+      "country": [
+        "Japanese"
+      ],
+      "age": "24",
+      "height": "160",
+      "cup": "C",
+      "val1": "190",
+      "val2": "250",
+      "val3": "310",
+      "startDate": "2026-10-28",
+      "lang": "Japanese, Limited English",
+      "oldUrl": "https://www.surryhillsbrothel.com.au/project/anika-japan/",
+      "desc": "",
+      "originalSite": "Exists",
+      "photos": [
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100311793168265_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100351793168272_.pic_-1400x934.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100341793168270_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100331793168268_.pic_.jpg",
+        "https://www.surryhillsbrothel.com.au/wp-content/uploads/2026/10/100321793168267_.pic_.jpg"
+      ],
+      "labels": [],
+      "lastModified": "2026-10-28T10:00:26.543Z",
+      "lastRostered": ""
     }
   ],
   "calendar": {
@@ -18085,7 +18136,7 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-28T04:00:37.253Z",
+  "lastGirlsSync": "2026-10-28T10:00:26.543Z",
   "lastCalendarSync": "2026-09-17T07:51:27.550Z",
   "_skippedUrls": [
     "https://www.surryhillsbrothel.com.au/project/sia-japan/",

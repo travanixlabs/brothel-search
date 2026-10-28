@@ -790,7 +790,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-27",
+      "lastRostered": "2026-10-28",
       "desc": "Gentlemen, please welcome our newest blondie ‘Rachel’. Our newest matured vixen, is definitely what you are waiting for."
     },
     {
@@ -3070,7 +3070,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-05-01",
-      "lastRostered": "2026-10-14",
+      "lastRostered": "2026-10-28",
       "oldUrl": "https://wivesonly.com.au/tiana/",
       "photos": [
         "https://wivesonly.com.au/wp-content/uploads/2026/05/jewel-fake-photo.jpg"
@@ -9455,7 +9455,7 @@
         "end": "04:00"
       },
       "2026-10-28": {
-        "start": "21:00",
+        "start": "17:30",
         "end": "03:00"
       }
     },
@@ -10011,10 +10011,6 @@
       "2026-10-25": {
         "start": "20:00",
         "end": "04:00"
-      },
-      "2026-10-28": {
-        "start": "19:30",
-        "end": "04:00"
       }
     },
     "Vanessa": {
@@ -10465,10 +10461,6 @@
         "end": "04:00"
       },
       "2026-10-27": {
-        "start": "19:30",
-        "end": "04:00"
-      },
-      "2026-10-28": {
         "start": "19:30",
         "end": "04:00"
       }
@@ -11804,6 +11796,10 @@
       "2026-10-27": {
         "start": "11:00",
         "end": "19:30"
+      },
+      "2026-10-28": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Belle": {
@@ -12414,10 +12410,6 @@
       "2026-10-24": {
         "start": "20:30",
         "end": "06:00"
-      },
-      "2026-10-28": {
-        "start": "11:00",
-        "end": "19:30"
       }
     },
     "Sassy": {
@@ -14470,6 +14462,10 @@
       "2026-10-14": {
         "start": "19:30",
         "end": "04:00"
+      },
+      "2026-10-28": {
+        "start": "21:00",
+        "end": "04:00"
       }
     },
     "Makayla": {},
@@ -14850,12 +14846,12 @@
       },
       "2026-10-28": {
         "start": "11:00",
-        "end": "19:30"
+        "end": "15:00"
       }
     },
     "Gigi": {},
     "Valeria": {}
   },
   "lastGirlsSync": "2026-10-21T09:13:48.552Z",
-  "lastCalendarSync": "2026-10-28T01:35:25.963Z"
+  "lastCalendarSync": "2026-10-28T06:01:38.741Z"
 }

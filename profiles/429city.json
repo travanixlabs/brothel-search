@@ -151,7 +151,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:52:58.158Z",
-      "lastRostered": "2026-07-11",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2025/10/图片_20251024124044.jpg",
         "https://www.429city.com/wp-content/uploads/2025/10/图片_20251024124049-687x1030.jpg"
@@ -788,7 +788,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:53:40.721Z",
-      "lastRostered": "2026-08-21",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2025/11/图片_20251103160525.jpg"
       ],
@@ -2577,7 +2577,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:55:44.356Z",
-      "lastRostered": "2024-06-01",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2024/06/Image_20240626153726.jpg",
         "https://www.429city.com/wp-content/uploads/2024/06/WeChat-Photo-Editor_20240626153436.jpg"
@@ -4552,7 +4552,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:57:59.854Z",
-      "lastRostered": "2022-08-01",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2022/08/Image_20230623152103_副本-772x1030.jpg",
         "https://www.429city.com/wp-content/uploads/2022/08/Image_20230623152107_副本.jpg",
@@ -5235,7 +5235,7 @@
       "labels": [],
       "originalSite": "",
       "lastModified": "2026-03-15T04:58:39.881Z",
-      "lastRostered": "2021-06-01",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://www.429city.com/wp-content/uploads/2021/06/WeChat-Screenshot_20210618151106_副本-490x705.jpg",
         "https://www.429city.com/wp-content/uploads/2021/06/WeChat-Screenshot_20210618150626_副本-515x705.jpg"
@@ -9689,6 +9689,10 @@
         "end": "05:00"
       },
       "2026-07-11": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-10-28": {
         "start": "10:00",
         "end": "05:00"
       }
@@ -15047,6 +15051,10 @@
         "end": "05:00"
       },
       "2026-08-21": {
+        "start": "10:00",
+        "end": "05:00"
+      },
+      "2026-10-28": {
         "start": "10:00",
         "end": "05:00"
       }
@@ -22380,8 +22388,26 @@
         "start": "10:00",
         "end": "05:00"
       }
+    },
+    "Kelly": {
+      "2026-10-28": {
+        "start": "10:00",
+        "end": "05:00"
+      }
+    },
+    "Jenny": {
+      "2026-10-28": {
+        "start": "10:00",
+        "end": "05:00"
+      }
+    },
+    "E – Apple": {
+      "2026-10-28": {
+        "start": "10:00",
+        "end": "05:00"
+      }
     }
   },
   "lastGirlsSync": "2026-03-18T08:38:54.721Z",
-  "lastCalendarSync": "2026-10-28T01:34:53.328Z"
+  "lastCalendarSync": "2026-10-28T06:01:06.215Z"
 }

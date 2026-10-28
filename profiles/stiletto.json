@@ -173,7 +173,7 @@
         "Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-24",
+      "lastRostered": "2026-10-31",
       "desc": "Hello gorgeous, My name is Allegra, and I am a stunning brunette; tall slender and all class. I have a natural elegance that will enchant you, and a gorgeous supermodel body that is guaranteed to turn you on. I have long, warm brown hair, grey eyes and flawless skin that is ..."
     },
     {
@@ -1825,7 +1825,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-25"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Jess",
@@ -8109,6 +8109,10 @@
       "2026-10-24": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-31": {
+        "start": "19:30",
+        "end": "03:30"
       }
     },
     "Anna": {
@@ -8890,10 +8894,6 @@
         "start": "18:00",
         "end": "06:00"
       },
-      "2026-10-28": {
-        "start": "18:00",
-        "end": "05:00"
-      },
       "2026-10-29": {
         "start": "18:00",
         "end": "06:00"
@@ -8905,6 +8905,10 @@
       "2026-11-01": {
         "start": "18:00",
         "end": "04:00"
+      },
+      "2026-10-31": {
+        "start": "18:00",
+        "end": "06:00"
       }
     },
     "Jasmine": {
@@ -10066,6 +10070,10 @@
       "2026-10-25": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-28": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Elizabeth": {
@@ -10733,12 +10741,7 @@
     },
     "Karina": {},
     "Bree": {},
-    "Gloria": {
-      "2026-10-28": {
-        "start": "16:00",
-        "end": "00:00"
-      }
-    },
+    "Gloria": {},
     "Valerie": {
       "2026-06-06": {
         "start": "22:00",
@@ -12046,5 +12049,5 @@
     }
   },
   "lastGirlsSync": "2026-10-28T10:25:57.820Z",
-  "lastCalendarSync": "2026-10-28T10:43:34.760Z"
+  "lastCalendarSync": "2026-10-28T13:19:57.313Z"
 }

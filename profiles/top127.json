@@ -1388,7 +1388,7 @@
       "labels": [],
       "originalSite": "Exists",
       "lastModified": "2026-09-15T13:49:07.176Z",
-      "lastRostered": "2026-10-19",
+      "lastRostered": "2026-10-28",
       "photos": [
         "https://127city.com/wp-content/uploads/2026/09/Suji-608x705.jpg",
         "https://127city.com/wp-content/uploads/2026/09/Suji1-608x705.jpg"
@@ -1545,7 +1545,7 @@
       ],
       "labels": [],
       "lastModified": "2026-10-25T10:00:38.230Z",
-      "lastRostered": "2026-10-27"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Cherry",
@@ -2947,10 +2947,6 @@
         "end": "03:00"
       },
       "2026-10-26": {
-        "start": "12:00",
-        "end": "02:00"
-      },
-      "2026-10-28": {
         "start": "12:00",
         "end": "02:00"
       }
@@ -7427,6 +7423,10 @@
       "2026-10-19": {
         "start": "12:00",
         "end": "02:00"
+      },
+      "2026-10-28": {
+        "start": "12:00",
+        "end": "02:00"
       }
     },
     "Nicole": {
@@ -7681,17 +7681,16 @@
       "2026-10-27": {
         "start": "12:00",
         "end": "02:00"
-      }
-    },
-    "Cherry": {
+      },
       "2026-10-28": {
         "start": "12:00",
         "end": "02:00"
       }
-    }
+    },
+    "Cherry": {}
   },
   "lastGirlsSync": "2026-10-25T10:00:38.230Z",
-  "lastCalendarSync": "2026-10-27T12:30:53.427Z",
+  "lastCalendarSync": "2026-10-28T13:19:02.635Z",
   "_skippedUrls": [
     "https://127city.com/c-vicky-new-diamond-diamond190-260-300-30-45-60/",
     "https://127city.com/j-akiko-diamond-diamond200-270-310-30-45-60/",

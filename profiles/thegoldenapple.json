@@ -129,7 +129,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-24"
+      "lastRostered": "2026-10-28"
     },
     {
       "name": "Athena",
@@ -255,7 +255,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Claire",
@@ -2210,6 +2210,10 @@
       "2026-10-29": {
         "start": "12:00",
         "end": "19:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "19:00"
       }
     },
     "Crystal": {
@@ -3934,6 +3938,10 @@
       "2026-10-24": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-10-28": {
+        "start": "10:00",
+        "end": "22:00"
       }
     },
     "Charlie": {
@@ -5354,12 +5362,7 @@
         "end": "22:00"
       }
     },
-    "Lily": {
-      "2026-10-28": {
-        "start": "19:00",
-        "end": "22:00"
-      }
-    },
+    "Lily": {},
     "Bree": {},
     "Jessica": {
       "2026-04-10": {
@@ -6702,5 +6705,5 @@
     }
   },
   "lastGirlsSync": "2026-10-28T00:51:28.759Z",
-  "lastCalendarSync": "2026-10-28T10:43:12.945Z"
+  "lastCalendarSync": "2026-10-28T15:21:55.347Z"
 }

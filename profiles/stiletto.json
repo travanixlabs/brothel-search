@@ -1825,7 +1825,7 @@
         "Fingering"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-28"
+      "lastRostered": "2026-10-29"
     },
     {
       "name": "Jess",
@@ -3111,7 +3111,7 @@
         "Social Escort"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-27"
+      "lastRostered": "2026-10-29"
     },
     {
       "name": "Parker",
@@ -4412,7 +4412,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-28"
+      "lastRostered": "2026-10-29"
     },
     {
       "name": "Victoria",
@@ -4999,7 +4999,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-09-14",
+      "lastRostered": "2026-10-29",
       "oldUrl": "https://www.stilettosydney.com/workers/lorena-new-3/",
       "photos": [],
       "labels": [
@@ -7537,7 +7537,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-24",
+      "lastRostered": "2026-10-29",
       "oldUrl": "https://www.stilettosydney.com/workers/amor-new/",
       "photos": [],
       "labels": [
@@ -7887,7 +7887,7 @@
       "val2": "490",
       "val3": "590",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-10-29",
+      "lastRostered": "2026-10-30",
       "oldUrl": "https://www.stilettosydney.com/workers/sandy-new/",
       "photos": [],
       "labels": [
@@ -9383,10 +9383,6 @@
         "start": "22:00",
         "end": "06:00"
       },
-      "2026-10-29": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-10-31": {
         "start": "09:00",
         "end": "17:00"
@@ -9766,6 +9762,10 @@
       "2026-09-05": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-29": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Lilith": {
@@ -9778,7 +9778,7 @@
         "end": "00:00"
       },
       "2026-10-29": {
-        "start": "16:00",
+        "start": "21:00",
         "end": "00:00"
       },
       "2026-10-30": {
@@ -10095,6 +10095,10 @@
       "2026-10-25": {
         "start": "23:00",
         "end": "07:00"
+      },
+      "2026-10-29": {
+        "start": "23:00",
+        "end": "07:00"
       }
     },
     "Elizabeth": {
@@ -10171,6 +10175,10 @@
       "2026-07-20": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-29": {
+        "start": "20:00",
+        "end": "04:00"
       }
     },
     "Scarlett": {
@@ -11028,7 +11036,12 @@
       }
     },
     "Lana": {},
-    "Lorena": {},
+    "Lorena": {
+      "2026-10-29": {
+        "start": "21:00",
+        "end": "03:00"
+      }
+    },
     "Yasmin": {
       "2026-04-30": {
         "start": "22:00",
@@ -11930,6 +11943,10 @@
       "2026-10-24": {
         "start": "22:00",
         "end": "06:00"
+      },
+      "2026-10-29": {
+        "start": "22:00",
+        "end": "06:00"
       }
     },
     "Tessa": {
@@ -11940,10 +11957,6 @@
     },
     "Vera": {},
     "Riley": {
-      "2026-10-29": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-10-30": {
         "start": "16:00",
         "end": "00:00"
@@ -11971,10 +11984,6 @@
     },
     "Fiamma": {},
     "Honey": {
-      "2026-10-29": {
-        "start": "12:00",
-        "end": "20:00"
-      },
       "2026-10-30": {
         "start": "10:00",
         "end": "18:00"
@@ -12021,10 +12030,6 @@
       }
     },
     "Sandy": {
-      "2026-10-29": {
-        "start": "16:00",
-        "end": "22:00"
-      },
       "2026-10-30": {
         "start": "09:00",
         "end": "17:00"
@@ -12032,5 +12037,5 @@
     }
   },
   "lastGirlsSync": "2026-10-29T10:46:42.633Z",
-  "lastCalendarSync": "2026-10-29T08:42:29.390Z"
+  "lastCalendarSync": "2026-10-29T11:01:03.773Z"
 }

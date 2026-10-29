@@ -392,7 +392,7 @@
         "Foot Fetish"
       ],
       "originalSite": "Exists",
-      "lastRostered": "2026-11-01",
+      "lastRostered": "2026-11-07",
       "desc": "Hi! Hello Gentlemen, I'm Audrey, a brunette Australian with modelesque looks and a body to match. I am effortlessly sophisticated, and my conversation is intelligent and charming. I am often told I'm easy to get along with, and I can spin myself into the epitome of elegance and glamour, but only ..."
     },
     {
@@ -8299,12 +8299,32 @@
         "end": "16:00"
       },
       "2026-10-30": {
-        "start": "10:00",
-        "end": "16:00"
+        "start": "13:00",
+        "end": "21:00"
       },
       "2026-11-01": {
         "start": "09:00",
         "end": "13:00"
+      },
+      "2026-11-02": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-11-03": {
+        "start": "10:00",
+        "end": "18:00"
+      },
+      "2026-11-05": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-11-06": {
+        "start": "10:00",
+        "end": "16:00"
+      },
+      "2026-11-07": {
+        "start": "22:00",
+        "end": "16:00"
       }
     },
     "Bambi": {
@@ -12002,5 +12022,5 @@
     }
   },
   "lastGirlsSync": "2026-10-29T01:28:58.443Z",
-  "lastCalendarSync": "2026-10-28T22:44:32.733Z"
+  "lastCalendarSync": "2026-10-29T01:56:08.535Z"
 }

@@ -4327,6 +4327,24 @@
       "labels": [],
       "originalSite": "Exists",
       "lastRostered": "2026-11-04"
+    },
+    {
+      "name": "Vivian Last Week!",
+      "country": [
+        "Indian"
+      ],
+      "age": "28",
+      "height": "165",
+      "cup": "",
+      "body": "10",
+      "val1": "260",
+      "val2": "330",
+      "val3": "400",
+      "startDate": "2026-10-29",
+      "oldUrl": "https://blackcatparlour.com.au/our-ladies/",
+      "photos": [],
+      "labels": [],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -23975,6 +23993,6 @@
       }
     }
   },
-  "lastGirlsSync": "2026-10-28T00:51:33.461Z",
+  "lastGirlsSync": "2026-10-29T10:45:44.193Z",
   "lastCalendarSync": "2026-10-29T08:42:10.419Z"
 }

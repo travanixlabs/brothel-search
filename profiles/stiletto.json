@@ -7872,6 +7872,43 @@
         "Fingering"
       ],
       "originalSite": "Exists"
+    },
+    {
+      "name": "Sandy",
+      "country": [
+        "Australian"
+      ],
+      "age": "22",
+      "height": "",
+      "cup": "C",
+      "body": "",
+      "desc": "Gentlemen, I'm Sandy and I am here to spice up your week! At 22, my irresistibly pretty features, long legs and slim, feminine figure will take your breath away. Come in and talk to me about my services. I'm playful and open-minded, and love to provide an unforgettable experience ...",
+      "val1": "390",
+      "val2": "490",
+      "val3": "590",
+      "startDate": "2026-01-01",
+      "lastRostered": "2026-10-29",
+      "oldUrl": "https://www.stilettosydney.com/workers/sandy-new/",
+      "photos": [],
+      "labels": [
+        "PSE",
+        "Couple",
+        "Double",
+        "Fantasy",
+        "Toys",
+        "Adventurous Positions",
+        "Deep Throat",
+        "Anal",
+        "DFK",
+        "Disabled",
+        "Escort",
+        "Body Slide",
+        "Female Ejaculation",
+        "Party Bookings",
+        "Stripping",
+        "Social Escort"
+      ],
+      "originalSite": "Exists"
     }
   ],
   "calendar": {
@@ -11982,8 +12019,18 @@
         "start": "21:00",
         "end": "05:00"
       }
+    },
+    "Sandy": {
+      "2026-10-29": {
+        "start": "16:00",
+        "end": "22:00"
+      },
+      "2026-10-30": {
+        "start": "09:00",
+        "end": "17:00"
+      }
     }
   },
-  "lastGirlsSync": "2026-10-29T01:28:58.443Z",
+  "lastGirlsSync": "2026-10-29T10:46:42.633Z",
   "lastCalendarSync": "2026-10-29T08:42:29.390Z"
 }

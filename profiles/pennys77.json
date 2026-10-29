@@ -293,7 +293,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Nicole",
@@ -335,7 +335,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Nana",
@@ -356,7 +356,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Ami",
@@ -400,7 +400,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Hana",
@@ -421,7 +421,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Anjali",
@@ -839,7 +839,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Jenny",
@@ -923,7 +923,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Honey",
@@ -1028,7 +1028,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     },
     {
       "name": "Safaree",
@@ -1171,7 +1171,7 @@
       ],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-29"
+      "lastRostered": "2026-10-30"
     }
   ],
   "calendar": {
@@ -1517,6 +1517,10 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "_published": [
@@ -1728,7 +1732,8 @@
       "2026-10-26",
       "2026-10-27",
       "2026-10-28",
-      "2026-10-29"
+      "2026-10-29",
+      "2026-10-30"
     ],
     "Daisy": {
       "2026-04-03": {
@@ -2226,6 +2231,10 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Nana": {
@@ -2486,6 +2495,10 @@
         "end": "03:00"
       },
       "2026-10-29": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-30": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -3828,6 +3841,10 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Vicky": {
@@ -4076,6 +4093,10 @@
         "end": "03:00"
       },
       "2026-10-29": {
+        "start": "11:00",
+        "end": "03:00"
+      },
+      "2026-10-30": {
         "start": "11:00",
         "end": "03:00"
       }
@@ -5890,6 +5911,10 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Honey": {
@@ -5995,6 +6020,10 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     },
     "Safaree": {
@@ -6062,9 +6091,13 @@
       "2026-10-29": {
         "start": "11:00",
         "end": "03:00"
+      },
+      "2026-10-30": {
+        "start": "11:00",
+        "end": "03:00"
       }
     }
   },
   "lastGirlsSync": "2026-10-17T04:00:23.197Z",
-  "lastCalendarSync": "2026-10-29T06:11:28.823Z"
+  "lastCalendarSync": "2026-10-29T15:28:14.515Z"
 }

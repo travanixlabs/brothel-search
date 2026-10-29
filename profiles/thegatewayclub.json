@@ -2130,7 +2130,7 @@
       "val2": "320",
       "val3": "400",
       "startDate": "2026-01-01",
-      "lastRostered": "2026-05-24",
+      "lastRostered": "2026-11-01",
       "oldUrl": "https://www.gatewayclub.com.au/ladies/bianca-new/",
       "photos": [],
       "labels": [],
@@ -6269,6 +6269,18 @@
       "2026-05-24": {
         "start": "12:00",
         "end": "06:00"
+      },
+      "2026-10-30": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-10-31": {
+        "start": "12:00",
+        "end": "06:00"
+      },
+      "2026-11-01": {
+        "start": "12:00",
+        "end": "06:00"
       }
     },
     "Nikita": {
@@ -6683,5 +6695,5 @@
     }
   },
   "lastGirlsSync": "2026-10-27T15:39:58.612Z",
-  "lastCalendarSync": "2026-10-28T22:44:21.870Z"
+  "lastCalendarSync": "2026-10-29T06:11:51.558Z"
 }

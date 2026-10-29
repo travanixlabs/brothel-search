@@ -1219,7 +1219,7 @@
       "photos": [],
       "labels": [],
       "originalSite": "Exists",
-      "lastRostered": "2026-10-26"
+      "lastRostered": "2026-10-29"
     },
     {
       "name": "Giselle",
@@ -2758,6 +2758,10 @@
       "2026-10-26": {
         "start": "22:00",
         "end": "07:00"
+      },
+      "2026-10-29": {
+        "start": "23:00",
+        "end": "08:00"
       }
     },
     "Janelle": {
@@ -3582,10 +3586,6 @@
         "end": "15:00"
       },
       "2026-04-05": {
-        "start": "10:00",
-        "end": "15:00"
-      },
-      "2026-10-31": {
         "start": "10:00",
         "end": "15:00"
       }
@@ -6730,13 +6730,8 @@
       }
     },
     "Vivian Last Week!!": {},
-    "Vivian Last Week!": {
-      "2026-10-29": {
-        "start": "19:00",
-        "end": "04:00"
-      }
-    }
+    "Vivian Last Week!": {}
   },
   "lastGirlsSync": "2026-10-29T10:00:16.482Z",
-  "lastCalendarSync": "2026-10-29T13:28:55.862Z"
+  "lastCalendarSync": "2026-10-29T17:00:47.938Z"
 }
